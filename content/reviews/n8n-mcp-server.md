@@ -2,18 +2,18 @@
 title: "n8n MCP Server — Build, Expose, and Orchestrate Workflows with AI"
 date: 2026-03-23T21:00:00+09:00
 description: "n8n's MCP support now covers three roles: build workflows from natural language prompts (v2.14.0+), expose workflows as AI-callable tools, and consume external MCP servers inside n8n agents."
-og_description: "n8n MCP: now builds workflows from prompts (v2.14.0+) + bidirectional hub. 186K stars, 858 employees, fair-code. Official MCP server + czlonkowski community server (19K stars). Rating: 4.5/5."
+og_description: "n8n MCP: now builds workflows from prompts (v2.14.0+) + bidirectional hub. 201K stars, ~910 employees, fair-code. Official MCP server + czlonkowski community server (22.7K stars). Rating: 4.5/5."
 content_type: "Review"
-card_description: "Fair-code workflow automation platform with three-way MCP support: (1) build new workflows from natural language via the official n8n MCP server (v2.14.0+), (2) expose any workflow as an AI-callable tool, (3) consume external MCP servers inside n8n agents. 400+ integrations, self-hostable, no per-call fees."
-last_refreshed: 2026-05-03
-sources_audited: 2026-07-24
+card_description: "Fair-code workflow automation platform with three-way MCP support: (1) build new workflows from natural language via the official n8n MCP server (v2.14.0+), (2) expose any workflow as an AI-callable tool, (3) consume external MCP servers inside n8n agents. 2,000+ integrations, self-hostable, no per-call fees."
+last_refreshed: 2026-08-19
+sources_audited: 2026-08-19
 ---
 
-**At a glance:** 186,000 stars, 56,100+ forks, fair-code license (Sustainable Use License), TypeScript, Streamable HTTP + SSE transport, 400+ integrations, $2.5B valuation, v2.18.4+.
+**At a glance:** 201,000+ stars, 60,200+ forks, fair-code license (Sustainable Use License), TypeScript, Streamable HTTP + SSE transport, 2,000+ integrations, $5.2B valuation, v2.35+.
 
 n8n is a **workflow automation platform** that has become one of the most comprehensive MCP implementations available — not because it's another standalone MCP server, but because it covers **three distinct MCP roles**. As of v2.14.0 (April 2026), n8n can now *build* workflows from natural language prompts through an official instance-level MCP server, *expose* any workflow as a tool that external AI agents can call, and *consume* tools from external MCP servers inside n8n's own AI agents.
 
-The [n8n-io/n8n repository](https://github.com/n8n-io/n8n) has 186,000 GitHub stars, 56,100+ forks, and 631 contributors. The company [raised $240M total](https://blog.n8n.io/series-c/) across four rounds, reaching a $2.5B valuation with its $180M Series C in October 2025 (led by Accel, with participation from NVIDIA's NVentures, Meritech, Redpoint, Sequoia, Highland Europe, and Felicis Ventures). ARR hit [$40M by mid-2025](https://sacra.com/c/n8n/) (Sacra estimate) with 230,000+ active users. As of March 31, 2026, n8n has 858 employees.
+The [n8n-io/n8n repository](https://github.com/n8n-io/n8n) has 201,000+ GitHub stars, 60,200+ forks, and 425+ [contributors](https://github.com/n8n-io/n8n/graphs/contributors). The company [raised $240M total](https://blog.n8n.io/series-c/) across four rounds, reaching a $2.5B valuation with its $180M Series C in October 2025 (led by Accel, with participation from NVIDIA's NVentures, Meritech, Redpoint, Sequoia, Highland Europe, and Felicis Ventures). That valuation has since doubled: a May 2026 [strategic investment from SAP](https://blog.n8n.io/n8n-sap/) — embedding n8n's automation canvas inside SAP's Joule Studio — [valued n8n at $5.2B](https://www.prnewswire.com/news-releases/n8n-valuation-doubles-to-5-2bn-as-sap-makes-strategic-investment-and-plans-to-embed-the-ai-platform-into-joule-studio-302767227.html), with n8n reporting [more than 1,400 enterprise customers and 1.7 million monthly active developers and builders](https://blog.n8n.io/n8n-sap/) at the time. ARR hit [$40M by mid-2025](https://sacra.com/c/n8n/) (Sacra estimate) — n8n hasn't disclosed a newer figure. By June 2026 the company said its community had grown to [1.8 million monthly active developers and builders](https://blog.n8n.io/n8n-uk-international-expansion/), with more than 35% of the Fortune 500 having adopted the platform. Employee headcount isn't officially published; third-party workforce tracker [Revelio Labs estimated roughly 910 employees as of March 2026](https://www.reveliolabs.com/companies/n8n/employees/) (other trackers give figures from roughly 900 to 1,100+, so treat this as directional).
 
 ## What It Does
 
@@ -100,7 +100,7 @@ An external agent calls an n8n tool. The workflow behind that tool can itself ca
 
 ## Integrations & AI Capabilities
 
-n8n offers **400+ built-in integrations** across categories:
+n8n's [integrations directory lists 2,000+ app and software integrations](https://n8n.io/integrations/) across categories:
 
 | Category | Example Integrations |
 |----------|---------------------|
@@ -144,23 +144,24 @@ Self-hosting is genuinely free with no execution limits. You run it on your own 
 
 ## Company & Ecosystem
 
-- **Founded:** 2019 (Berlin, Germany)
-- **Founder:** Jan Oberhauser
-- **Funding:** [$240M total](https://blog.n8n.io/series-c/) ($180M Series C at $2.5B valuation, October 2025)
-- **Lead investors:** Accel, with participation from NVentures (NVIDIA), Sequoia, Highland Europe, Felicis Ventures
-- **Team:** 858 employees (as of March 31, 2026)
-- **Revenue:** [$40M ARR (mid-2025)](https://sacra.com/c/n8n/) (Sacra estimate)
-- **Users:** 230,000+ active
-- **Repository:** 186,000 stars, 56,100+ forks, 631 contributors
+- **Founded:** [2019 (Berlin, Germany)](https://n8n.io/press/), founder [Jan Oberhauser](https://www.felicis.com/blog/how-jan-oberhauser-and-n8n-became-essential-to-the-ai-revolution)
+- **Funding:** [$240M total through Series C](https://blog.n8n.io/series-c/) ($180M Series C at $2.5B valuation, October 2025), followed by an undisclosed [strategic investment from SAP in May 2026 that valued n8n at $5.2B](https://blog.n8n.io/n8n-sap/)
+- **Lead investors:** Accel, with participation from NVentures (NVIDIA), Sequoia, Highland Europe, Felicis Ventures, and (May 2026) SAP
+- **Team:** no official headcount is published; third-party tracker [Revelio Labs estimated ~910 employees as of March 2026](https://www.reveliolabs.com/companies/n8n/employees/) (other trackers report 900–1,100+)
+- **Revenue:** [$40M ARR (mid-2025)](https://sacra.com/c/n8n/) (Sacra estimate; no newer figure disclosed)
+- **Users:** [1.7M+ monthly active developers/builders and 1,400+ enterprise customers](https://blog.n8n.io/n8n-sap/) (May 2026); [1.8M+ builders](https://blog.n8n.io/n8n-uk-international-expansion/) and 35%+ of the Fortune 500 (June 2026)
+- **Repository:** [201,000+ stars, 60,200+ forks, 425+ contributors](https://github.com/n8n-io/n8n)
 - **License:** Sustainable Use License (fair-code) — free for internal business use and non-commercial use; commercial redistribution restricted
 
-The Series C at $2.5B signals strong investor confidence in the AI-native workflow automation market. n8n has grown substantially in headcount through early 2026.
+n8n's valuation doubled from $2.5B to [$5.2B](https://blog.n8n.io/n8n-sap/) in about seven months, capped by a strategic investment and product partnership with SAP (embedding n8n inside SAP's Joule Studio) — a strong signal of investor and enterprise confidence in the AI-native workflow automation market.
 
 ## Pricing (Cloud)
 
+[Current pricing](https://n8n.io/pricing/), verified 2026-08-19:
+
 | Plan | Monthly Cost | Executions | Key Features |
 |------|-------------|------------|--------------|
-| **Starter** | €24 | 2,500 | Unlimited users & workflows, 400+ integrations |
+| **Starter** | €24 | 2,500 | Unlimited users & workflows, 2,000+ integrations |
 | **Pro** | €60 | 10,000 | Advanced execution features |
 | **Business** | €800 | 40,000 | SSO, advanced permissions |
 | **Enterprise** | Custom | Custom | Dedicated support, SLA |
@@ -174,36 +175,36 @@ Annual billing gives a 17% discount. 14-day free trial on Starter and Pro plans,
 
 | Feature | n8n MCP | Zapier MCP | Composio | Pipedream MCP |
 |---------|---------|------------|----------|---------------|
-| **Approach** | Expose workflows as tools | Expose Zapier actions as tools | Gateway to 500+ apps | Per-app MCP endpoints |
-| **Integrations** | 400+ | 8,000+ | 500+ | 2,800+ |
+| **Approach** | Expose workflows as tools | Expose Zapier actions as tools | Gateway to 1,000+ apps | Per-app MCP endpoints |
+| **Integrations** | [2,000+](https://n8n.io/integrations/) | [9,000+](https://zapier.com/mcp) | [1,000+](https://composio.dev) | [3,000+](https://pipedream.com/apps) |
 | **Self-hosted** | Yes (free, unlimited) | No | Yes (SDK) | npx (stale) |
 | **MCP client** | Yes (bidirectional) | No | No | No |
 | **Custom logic** | Full (JS/Python code nodes) | Limited (Zapier paths) | API routing only | Limited (code steps) |
 | **HITL controls** | Built-in | No | No | No |
 | **Transport** | Streamable HTTP, SSE | HTTPS | stdio, HTTPS | HTTP, SSE, stdio |
-| **Free tier** | Unlimited (self-hosted) | 100 tasks/mo | 20K calls/mo | 100 credits |
-| **License** | Fair-code | Proprietary | MIT | Proprietary |
-| **Billing unit** | Execution (whole workflow) | Task (2 per MCP call) | Tool call | Credit (30s compute) |
+| **Free tier** | Unlimited (self-hosted) | [100 tasks/mo](https://help.zapier.com/hc/en-us/articles/32337438839565-What-s-included-in-Zapier-s-Free-plan) | [100K tool calls/mo](https://composio.dev/pricing) (new signups; up to 20K via shared apps) | Daily free credit allowance (varies) |
+| **License** | Fair-code | Proprietary | [MIT](https://github.com/ComposioHQ/composio) | Proprietary |
+| **Billing unit** | Execution (whole workflow) | [Task (2 per MCP call)](https://zapier.com/mcp) | Tool call | [Credit (30s compute at 256MB)](https://pipedream.com/docs/pricing) |
 
-**vs. Zapier:** Zapier covers 20x more apps, but each MCP call costs 2 tasks, and self-hosting isn't an option. n8n's unlimited self-hosted executions make it dramatically cheaper for high-volume agent use. n8n also adds bidirectional MCP and custom code — Zapier's MCP is consume-only.
+**vs. Zapier:** Zapier covers roughly 4-5x more apps ([9,000+](https://zapier.com/mcp) vs. n8n's [2,000+](https://n8n.io/integrations/)), but each MCP call costs 2 tasks, and self-hosting isn't an option. n8n's unlimited self-hosted executions make it dramatically cheaper for high-volume agent use. n8n also adds bidirectional MCP and custom code — Zapier's MCP is consume-only.
 
-**vs. Composio:** Composio's strength is managed OAuth across 500+ apps from a single endpoint. n8n requires you to configure each integration individually but gives you full workflow logic, human-in-the-loop controls, and no per-call fees. Different trade-offs: Composio is fastest to get running with many apps; n8n is most powerful for custom orchestration.
+**vs. Composio:** Composio's strength is managed OAuth across [1,000+ apps](https://composio.dev) from a single endpoint. n8n requires you to configure each integration individually but gives you full workflow logic, human-in-the-loop controls, and no per-call fees. Different trade-offs: Composio is fastest to get running with many apps; n8n is most powerful for custom orchestration.
 
-**vs. Pipedream:** Pipedream has broader app coverage (2,800+) with auto-generated tools. n8n's tools are hand-crafted workflows you build yourself — more work to set up, but higher quality and fully customizable. [Pipedream's announced acquisition by Workday](https://newsroom.workday.com/2025-11-19-Workday-Signs-Definitive-Agreement-to-Acquire-Pipedream) (November 2025) introduces platform uncertainty; n8n remains independent with strong funding.
+**vs. Pipedream:** Pipedream has broader app coverage ([3,000+](https://pipedream.com/apps)) with auto-generated tools. n8n's tools are hand-crafted workflows you build yourself — more work to set up, but higher quality and fully customizable. [Workday's acquisition of Pipedream](https://newsroom.workday.com/2025-11-19-Workday-Signs-Definitive-Agreement-to-Acquire-Pipedream), announced November 2025, [closed on December 4, 2025](https://x.com/pipedream/status/1996621666760405240); Pipedream is now a Workday subsidiary, while n8n remains independent with strong outside funding.
 
 **Unique advantage:** n8n is the only platform in this comparison that supports **bidirectional MCP** — acting as both server (exposing tools) and client (consuming tools) simultaneously. This enables n8n to serve as a middleware layer that composes multiple MCP servers behind a single, orchestrated tool interface.
 
-## Community: czlonkowski/n8n-mcp (19K Stars)
+## Community: czlonkowski/n8n-mcp (22.7K Stars)
 
-Before n8n shipped its official workflow-building MCP server, the community built one. [czlonkowski/n8n-mcp](https://github.com/czlonkowski/n8n-mcp) by Romuald Czlonkowski has grown to **19,100 stars** (3,200 forks) — the most-starred third-party n8n MCP project by far, and one that n8n's own team acknowledged by name in their April 2026 announcement.
+Before n8n shipped its official workflow-building MCP server, the community built one. [czlonkowski/n8n-mcp](https://github.com/czlonkowski/n8n-mcp) by Romuald Czlonkowski has grown to **22,700+ stars** (3,600+ forks) — the most-starred third-party n8n MCP project by far, and one that n8n's own team acknowledged by name in their April 2026 announcement.
 
-The distinction: the official n8n MCP server uses n8n's public REST API to build and run workflows. czlonkowski/n8n-mcp is an **embedded knowledge base** — it gives AI clients deep structural understanding of n8n's 1,650 nodes (820 core + 830 community) so the AI can *write correct workflow JSON* without guessing at node schemas. Key stats:
+The distinction: the official n8n MCP server uses n8n's public REST API to build and run workflows. czlonkowski/n8n-mcp is an **embedded knowledge base** — it gives AI clients deep structural understanding of n8n's [2,541 nodes (832 core + 1,709 community, 1,441 verified)](https://github.com/czlonkowski/n8n-mcp) so the AI can *write correct workflow JSON* without guessing at node schemas. Key stats (per the [project README](https://github.com/czlonkowski/n8n-mcp)):
 
-- **1,650 nodes** covered with 99% property schema coverage
+- **2,541 nodes** covered, with 99% property-schema coverage and 66.5% operation coverage
 - **2,352 workflow templates** searchable by keyword, task, or node type
-- **87% documentation coverage** from official sources
-- **5,418 passing tests** — unusually rigorous for a community MCP project
-- Compatible with n8n v2.18.4+
+- **86% documentation coverage** from official sources
+- **6,524 passing tests** — unusually rigorous for a community MCP project
+- Compatible with recent n8n releases (README currently pins compatibility to n8n v2.35.3)
 
 Think of the official MCP server as "talk to your n8n instance" and czlonkowski/n8n-mcp as "teach your AI how n8n works." Many practitioners use both together.
 
@@ -227,7 +228,7 @@ The **bidirectional MCP** capability remains genuinely powerful. You can build a
 
 **Self-hosting with unlimited executions** is the headline differentiator. While Zapier charges 2 tasks per MCP call and Composio counts tool calls against a monthly quota, n8n's self-hosted Community Edition has no execution limits at all. For AI agents that make dozens of tool calls per conversation, this matters — a lot.
 
-**The community ecosystem** is strong: czlonkowski/n8n-mcp (19K stars) provides AI clients with deep structural knowledge of n8n's 1,650 nodes, making it dramatically easier to generate correct workflow JSON. The combination of the official MCP server (for runtime control) and czlonkowski's knowledge base (for accurate construction) is more capable than either alone.
+**The community ecosystem** is strong: czlonkowski/n8n-mcp (22.7K+ stars) provides AI clients with deep structural knowledge of n8n's 2,541 nodes, making it dramatically easier to generate correct workflow JSON. The combination of the official MCP server (for runtime control) and czlonkowski's knowledge base (for accurate construction) is more capable than either alone.
 
 **Where it still falls short:** The MCP Server Trigger still has operational rough edges — multi-replica deployments break, reverse proxies need special configuration, and the lack of stdio means you can't just add n8n to Claude Desktop's config file. The workflow-building AI loop also requires careful use: n8n itself warns against editing production workflows directly with AI.
 
@@ -235,7 +236,7 @@ The **bidirectional MCP** capability remains genuinely powerful. You can build a
 
 ---
 
-*This review reflects research conducted in May 2026. n8n's MCP capabilities are actively evolving — check the [GitHub repository](https://github.com/n8n-io/n8n) and [official MCP documentation](https://docs.n8n.io/advanced-ai/mcp/) for the latest information.*
+*This review was first published in May 2026 and last fact-checked/updated 2026-08-19. n8n's MCP capabilities — and its funding/valuation — are actively evolving; check the [GitHub repository](https://github.com/n8n-io/n8n) and [official MCP documentation](https://docs.n8n.io/advanced-ai/mcp/) for the latest information.*
 
 **Category**: [Business & Productivity](/categories/business-productivity/)
 

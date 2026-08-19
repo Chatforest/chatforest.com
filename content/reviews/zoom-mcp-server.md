@@ -4,16 +4,16 @@ date: 2026-03-23T18:00:00+09:00
 description: "Community-built Zoom MCP servers let AI agents create meetings, retrieve transcripts, access recordings, and manage your calendar — all from natural language prompts."
 og_description: "Zoom MCP servers: manage meetings, retrieve transcripts, access recordings — all via AI agents. Official Zoom MCP launched April 2026 via Claude connector. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Zoom launched an official MCP server in April 2026 (mcp.zoom.us), available via Claude's connector directory. Covers meetings, Team Chat, Docs, Whiteboard, transcripts, and recordings. Community implementations remain an option for self-hosted setups."
-last_refreshed: 2026-05-04
-sources_audited: 2026-07-24
+card_description: "Zoom launched an official MCP server in April 2026 (mcp.zoom.us), available via Claude's connector directory. Now spans seven service modules — Workspace, Docs, Whiteboard, Team Chat, Meetings, Tasks, and Revenue Accelerator. Community implementations remain an option for self-hosted setups."
+last_refreshed: 2026-08-19
+sources_audited: 2026-08-19
 ---
 
-**At a glance:** Official [**Zoom MCP** launched April 9, 2026](https://news.zoom.com/zoom-meeting-intelligence-in-claude/) — hosted at `mcp.zoom.us`, available through Claude's connector directory. Covers meetings, Team Chat, Zoom Docs, Zoom Whiteboard, transcripts, and recordings. Community-built alternative: [echelon-ai-labs/zoom-mcp](https://github.com/echelon-ai-labs/zoom-mcp) (26 stars). Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
+**At a glance:** Official [**Zoom MCP** launched April 9, 2026](https://news.zoom.com/zoom-meeting-intelligence-in-claude/) — hosted at `mcp.zoom.us`, available through Claude's connector directory. Covers meetings, Team Chat, Zoom Docs, Zoom Whiteboard, transcripts, and recordings, and [has since expanded to seven service modules](https://github.com/zoom/mcp-registry). Community-built alternative: [echelon-ai-labs/zoom-mcp](https://github.com/echelon-ai-labs/zoom-mcp) (28 stars). Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
-Zoom MCP servers let AI agents **manage your meetings** — create and schedule meetings, retrieve transcripts and recordings, access AI Companion summaries, and search meeting history — all through natural language prompts. **As of April 9, 2026, Zoom has published an official MCP offering** hosted at `mcp.zoom.us` and available through Claude's connector directory, covering three service areas: Zoom Workspace (meetings, Team Chat, transcripts), Zoom Docs, and Zoom Whiteboard. Community-built implementations remain relevant for self-hosted or custom setups.
+Zoom MCP servers let AI agents **manage your meetings** — create and schedule meetings, retrieve transcripts and recordings, access AI Companion summaries, and search meeting history — all through natural language prompts. **As of April 9, 2026, Zoom has published an official MCP offering** hosted at `mcp.zoom.us` and available through Claude's connector directory. It launched covering three service areas — Zoom Workspace (meetings, Team Chat, transcripts), Zoom Docs, and Zoom Whiteboard — and [Zoom's official MCP registry](https://github.com/zoom/mcp-registry) shows it has since grown to seven: those three plus Zoom Meetings, Zoom Tasks, Zoom Team Chat (split out as its own module), and Zoom Revenue Accelerator. Community-built implementations remain relevant for self-hosted or custom setups.
 
-[Zoom](https://zoom.us/) was founded in 2011 in San Jose, California by **Eric Yuan**, a former VP of Engineering at Cisco Webex. Originally named Saasbee, Inc., Zoom launched its platform in January 2013 and went public on NASDAQ in April 2019 (ticker: ZM). As of early 2026: [**$4.87 billion annual revenue**](https://www.globenewswire.com/news-release/2026/02/25/3244997/0/en/zoom-communications-reports-fourth-quarter-and-fiscal-year-2026-financial-results.html) (fiscal year ending January 2026, +4.4% YoY) and approximately **7,400 employees**. Zoom [became synonymous with video conferencing](https://www.zoom.com/en/blog/reflecting-looking-ahead/) during the pandemic, growing from 10 million daily meeting participants in December 2019 to over 300 million in April 2020.
+[Zoom](https://zoom.us/) was [founded in 2011 in San Jose, California by **Eric Yuan**](https://www.zoom.com/en/about/), a former VP of Engineering at Cisco Webex. Originally named Saasbee, Inc., Zoom launched its platform in January 2013 and went public on NASDAQ in April 2019 (ticker: ZM). As of early 2026: [**$4.87 billion annual revenue**](https://www.globenewswire.com/news-release/2026/02/25/3244997/0/en/zoom-communications-reports-fourth-quarter-and-fiscal-year-2026-financial-results.html) (fiscal year ending January 2026, +4.4% YoY) and [approximately **7,400 employees**](https://www.sec.gov/Archives/edgar/data/1585521/000158552126000030/zm-20260131.htm) (7,438 per its FY2026 10-K). Zoom [became synonymous with video conferencing](https://www.zoom.com/en/blog/reflecting-looking-ahead/) during the pandemic, growing from 10 million daily meeting participants in December 2019 to over 300 million in April 2020.
 
 **Architecture note:** Community MCP servers wrap the [Zoom REST API](https://developers.zoom.us/docs/api/) (v2), exposing meeting management, recording, and transcript endpoints as MCP tools. All major implementations use **Server-to-Server OAuth** for authentication, requiring a Zoom Marketplace app with appropriate scopes.
 
@@ -65,7 +65,7 @@ The ecosystem is small but covers distinct use cases. Here are the six most nota
 
 ### echelon-ai-labs/zoom-mcp — Most Popular
 
-- **GitHub:** [echelon-ai-labs/zoom-mcp](https://github.com/echelon-ai-labs/zoom-mcp) — 26 stars, 15 forks, 6 commits, 1 contributor
+- **GitHub:** [echelon-ai-labs/zoom-mcp](https://github.com/echelon-ai-labs/zoom-mcp) — 28 stars, 16 forks, 6 commits, 1 contributor
 - **Language:** Python (95.9%) with Shell scripts (MIT license)
 - **Install:** Clone repo, set up venv with `uv`, run setup script
 - **Tools:** User info retrieval, OAuth token management, basic API access
@@ -83,7 +83,7 @@ The ecosystem is small but covers distinct use cases. Here are the six most nota
 
 ### Prathamesh0901/zoom-mcp-server — Best for Meeting CRUD
 
-- **GitHub:** [Prathamesh0901/zoom-mcp-server](https://github.com/Prathamesh0901/zoom-mcp-server) — 7 stars, 3 forks, 10 commits, 1 contributor
+- **GitHub:** [Prathamesh0901/zoom-mcp-server](https://github.com/Prathamesh0901/zoom-mcp-server) — 8 stars, 4 forks, 10 commits, 1 contributor
 - **Language:** TypeScript/JavaScript (MIT license)
 - **Install:** `@prathamesh0901/zoom-mcp-server` on npm
 - **Tools:** 4 tools — `get_meetings`, `create_meeting`, `update_meeting`, `delete_meeting`
@@ -92,28 +92,28 @@ The ecosystem is small but covers distinct use cases. Here are the six most nota
 
 ### forayconsulting/zoom_transcript_mcp — Best for Transcript Search
 
-- **GitHub:** [forayconsulting/zoom_transcript_mcp](https://github.com/forayconsulting/zoom_transcript_mcp) — 9 stars, 6 forks, 8 commits, JavaScript (MIT license)
+- **GitHub:** [forayconsulting/zoom_transcript_mcp](https://github.com/forayconsulting/zoom_transcript_mcp) — 10 stars, 7 forks, 8 commits, JavaScript (MIT license)
 - **Tools:** 4 tools — `list_meetings`, `download_transcript`, `get_recent_transcripts`, `search_transcripts`
 - **Auth:** Server-to-Server OAuth
 - **Standout:** Organized file system storage (transcripts saved by month as VTT files with JSON metadata). Date-range filtering. Full-text transcript search across all downloaded files.
 
 ### mattcoatsworth/zoom-mcp-server — Most API Coverage
 
-- **GitHub:** [mattcoatsworth/zoom-mcp-server](https://github.com/mattcoatsworth/zoom-mcp-server) — 5 stars, 7 forks, 20 commits, JavaScript
+- **GitHub:** [mattcoatsworth/zoom-mcp-server](https://github.com/mattcoatsworth/zoom-mcp-server) — 5 stars, 11 forks, 20 commits, JavaScript
 - **Tools:** Covers meetings, users, webinars, chat, phone, contacts, recordings, reports, webhooks, and Zoom Rooms
 - **Auth:** Server-to-Server OAuth 2.0
 - **Standout:** Broadest API coverage across all implementations — wraps 10+ Zoom API categories. Node.js 16+.
 
 ### peakmojo/mcp-server-zoom-noauth — No Local Auth
 
-- **GitHub:** [peakmojo/mcp-server-zoom-noauth](https://github.com/peakmojo/mcp-server-zoom-noauth) — 9 stars, 5 forks, 8 commits, Python/JavaScript (Apache 2.0)
+- **GitHub:** [peakmojo/mcp-server-zoom-noauth](https://github.com/peakmojo/mcp-server-zoom-noauth) — 9 stars, 4 forks, 8 commits, Python/JavaScript (Apache 2.0)
 - **Tools:** 4 tools — `zoom_refresh_token`, `zoom_list_recordings`, `zoom_get_recording_details`, `zoom_get_meeting_transcript`
 - **Auth:** Credentials passed via tool arguments (no local storage)
 - **Standout:** Docker support with multi-platform builds. Available on npm (`@peakmojo/mcp-server-zoom-noauth`) and Docker Hub. Headless-friendly.
 
 ## Zoom's Official MCP Server (Launched April 2026)
 
-On **April 9, 2026**, Zoom launched an official MCP offering — a significant update from the March 2026 picture when no official standalone server existed. Three services are now available:
+On **April 9, 2026**, Zoom launched an official MCP offering — a significant update from the March 2026 picture when no official standalone server existed. Three services were available at launch, and [Zoom's official MCP registry](https://github.com/zoom/mcp-registry) shows the lineup has since grown to seven, all hosted remotely at `mcp.zoom.us`:
 
 ### Zoom Workspace MCP
 - **Endpoint:** `mcp.zoom.us` (remote, hosted by Zoom)
@@ -127,6 +127,10 @@ On **April 9, 2026**, Zoom launched an official MCP offering — a significant u
 ### Zoom Whiteboard MCP
 - **Capabilities:** Creation and management of editable whiteboards and diagrams — AI agents can build and modify visual content inside Zoom
 
+### Zoom Meetings, Zoom Tasks, Zoom Team Chat, and Zoom Revenue Accelerator MCP
+- **Added:** [Meetings and Tasks published July 8, 2026; Revenue Accelerator and a standalone Team Chat module the same day](https://github.com/zoom/mcp-registry) — Team Chat had previously only been reachable through the Workspace module
+- **Capabilities:** Meetings covers meeting search, recordings, transcripts, and summaries as a dedicated surface; Tasks handles creating, assigning, and syncing tasks; Team Chat covers channels, messages, contacts, and files; Revenue Accelerator exposes sales-call insights and deal intelligence for Zoom's sales-conversation product
+
 These services are registered at [github.com/zoom/mcp-registry](https://github.com/zoom/mcp-registry) and documented at [developers.zoom.us/docs/mcp/](https://developers.zoom.us/docs/mcp/).
 
 ### Zoom AI Studio (Platform-Level MCP)
@@ -138,7 +142,7 @@ Zoom also continues to support **inbound MCP** — Zoom admins can build custom 
 
 | Feature | echelon-ai-labs | sweatco | Prathamesh0901 | forayconsulting | mattcoatsworth | peakmojo |
 |---------|----------------|---------|---------------|-----------------|----------------|----------|
-| Stars (May 2026) | 26 | 1 | 7 | 9 | 5 | 9 |
+| Stars ([Aug 2026](https://github.com/echelon-ai-labs/zoom-mcp)) | 28 | 1 | 8 | 10 | 5 | 9 |
 | Language | Python | TypeScript | TypeScript | JavaScript | JavaScript | Python/JS |
 | License | MIT | MIT | MIT | MIT | None listed | Apache 2.0 |
 | Meeting CRUD | No | List only | Full CRUD | List only | Yes | No |
@@ -148,40 +152,40 @@ Zoom also continues to support **inbound MCP** — Zoom admins can build custom 
 | npm package | No | Yes | Yes | No | No | Yes |
 | Docker | No | No | No | No | No | Yes |
 | Commits | 6 | 48 | 10 | 8 | 20 | 8 |
-| Last active | Mar 2025 | Jan 2026 | May 2025 | Mar 2025 | Apr 2025 | Recent |
+| Last active | Mar 2025 | Jan 2026 | Jun 2025 | Mar 2025 | Apr 2025 | Apr 2025 |
 
-**Key differentiator:** sweatco/zoom-mcp is the most polished — npm-published, 48 commits, AI Companion summary access, and the most recent updates (January 2026). For meeting management, Prathamesh0901 offers clean CRUD operations. For transcript archival and search, forayconsulting provides organized local storage. For broadest API coverage, mattcoatsworth wraps 10+ Zoom API categories. The most-starred (echelon-ai-labs, 26 stars) is ironically the least featured — it only exposes a single endpoint.
+**Key differentiator:** sweatco/zoom-mcp is the most polished — npm-published, 48 commits, AI Companion summary access, and the most recent updates (January 2026). For meeting management, Prathamesh0901 offers clean CRUD operations. For transcript archival and search, forayconsulting provides organized local storage. For broadest API coverage, mattcoatsworth wraps 10+ Zoom API categories. The most-starred (echelon-ai-labs, 28 stars) is ironically the least featured — it only exposes a single endpoint.
 
 ## Zoom Workplace Pricing
 
-All community MCP servers require a Zoom account. Transcript and recording features require at least the Pro plan:
+All community MCP servers require a Zoom account. Transcript and recording features require at least the Pro plan. Current [Zoom Workplace pricing](https://zoom.us/pricing):
 
 | Plan | Price | Meeting Duration | Participants | Cloud Storage | AI Companion |
 |------|-------|-----------------|-------------|---------------|-------------|
 | Basic (Free) | $0 | 40 min | 100 | None | Limited |
-| Pro | $13.33/user/mo | 30 hours | 100 | 5 GB | Included |
+| Pro | [$14.16/user/mo](https://www.zoom.com/en/compare/zoom-vs-other-ai-tools/) | 30 hours | 100 | 10 GB | Included |
 | Business | $18.33/user/mo | 30 hours | 300 | 10 GB | Included |
 | Enterprise | Custom | 30 hours | 1,000 | Unlimited | Included |
 
-*Prices shown with annual billing. Monthly billing is approximately 25% more.*
+*Prices shown with annual billing. Monthly billing is approximately 20% more.*
 
-**Custom AI Companion add-on** (for AI Studio with MCP support): Additional cost beyond standard plans, pricing not publicly disclosed. The standalone AI Companion plan is $10/month for Basic users.
+**Custom AI Companion add-on** (for AI Studio with MCP support): Additional cost beyond standard plans, pricing not publicly disclosed. [The standalone AI Companion plan is $10/month for Basic users](https://news.zoom.com/zoom-launches-ai-companion-3-0/), and does not require a paid Workplace license.
 
 ## Known Issues & Limitations
 
 1. **Official MCP is remote-only** — The official Zoom MCP (mcp.zoom.us) is a hosted remote server, not a self-hosted option. Developers who need on-premises deployments, custom tool sets, or greater control remain reliant on community implementations.
 
-2. **Small, fragmented community ecosystem** — The most-starred community implementation (echelon-ai-labs, 26 stars) only exposes a single API endpoint. The most fully featured community option (sweatco, 48 commits) has just 1 star. Star counts are completely flat since March 2026 — no growth across any implementation. For self-hosted use cases, the options remain modest.
+2. **Small, fragmented community ecosystem** — The most-starred community implementation ([echelon-ai-labs, 28 stars](https://github.com/echelon-ai-labs/zoom-mcp)) only exposes a single API endpoint. The most fully featured community option (sweatco, 48 commits) has just 1 star. Star counts have grown only marginally since March 2026 — echelon-ai-labs up from 26 to 28, forayconsulting up from 9 to 10 — while sweatco, mattcoatsworth, and peakmojo are unchanged. For self-hosted use cases, the options remain modest.
 
 3. **Server-to-Server OAuth complexity** — Every implementation requires creating a Server-to-Server OAuth app in the [Zoom Marketplace](https://marketplace.zoom.us/), configuring appropriate scopes, and managing credentials. This is more involved than simple API key authentication and requires understanding Zoom's permission model.
 
-4. **Pro plan required for key features** — The most valuable MCP use cases (transcripts, recordings, AI summaries) require Zoom Pro ($13.33/month) or higher. Free-tier users can only manage basic meetings.
+4. **Pro plan required for key features** — The most valuable MCP use cases (transcripts, recordings, AI summaries) require [Zoom Pro ($14.16/month)](https://www.zoom.com/en/compare/zoom-vs-other-ai-tools/) or higher. Free-tier users can only manage basic meetings.
 
 5. **Cloud recording dependency** — Transcript retrieval only works with cloud recordings, not local recordings. Users must have cloud recording enabled and sufficient storage in their plan.
 
-6. **6-month history limit** — The Zoom API restricts meeting history access to approximately 6 months. Agents cannot access older meetings or transcripts through the API.
+6. **6-month history limit** — [Zoom retains cloud recordings for 195 days](https://developers.zoom.us/docs/build/cloud-recording/) (~6.4 months) before moving them to trash, and API queries for meeting/recording history are similarly bounded to roughly that window. Agents cannot access older meetings or transcripts through the API.
 
-7. **Rate limiting** — Zoom enforces approximately 10 requests per second via the API. AI agents that chain multiple calls (list meetings → get transcript → search content) can hit limits quickly, especially in batch operations.
+7. **Rate limiting** — [Zoom's published API rate limits](https://developers.zoom.us/docs/api/rate-limits/) scale with account plan: Pro accounts get roughly 10-30 requests/second depending on API category (10/sec for the "heavy" endpoints used for recordings/transcripts), rising to 40-80/sec on Business+/Enterprise. AI agents that chain multiple calls (list meetings → get transcript → search content) can hit limits quickly on Pro-tier accounts, especially in batch operations.
 
 8. **No real-time meeting access** — None of the community MCP servers provide real-time meeting participation, live transcription, or in-meeting control. They only access data before and after meetings (scheduling, recordings, transcripts).
 
@@ -191,10 +195,10 @@ All community MCP servers require a Zoom account. Transcript and recording featu
 
 Zoom MCP servers address a practical workplace need: **letting AI agents manage your meeting lifecycle**. Schedule meetings through conversation, search past transcripts for "what did we decide about the Q2 budget?", pull AI-generated summaries and action items, and browse recordings — all without navigating Zoom's interface. For anyone drowning in meetings, the value proposition is clear.
 
-**The picture changed significantly in April 2026.** Zoom launched an official hosted MCP at `mcp.zoom.us`, available through Claude's connector directory. This resolves what was the review's biggest concern — no official path for connecting external AI agents to Zoom. Three services cover the main use cases: Zoom Workspace (meetings, Team Chat, transcripts, recordings), Zoom Docs, and Zoom Whiteboard. If you're using Claude and have a Zoom account, the official MCP is now the obvious starting point.
+**The picture changed significantly in April 2026.** Zoom launched an official hosted MCP at `mcp.zoom.us`, available through Claude's connector directory. This resolves what was the review's biggest concern — no official path for connecting external AI agents to Zoom. It launched covering Zoom Workspace (meetings, Team Chat, transcripts, recordings), Zoom Docs, and Zoom Whiteboard, and [has since grown to seven service modules](https://github.com/zoom/mcp-registry), adding Zoom Meetings, Zoom Tasks, a standalone Team Chat module, and Zoom Revenue Accelerator. If you're using Claude and have a Zoom account, the official MCP is now the obvious starting point.
 
-The **community ecosystem has stagnated** in parallel. Every repo shows zero star growth since March 2026 — echelon-ai-labs still at 26 stars, sweatco still at 1, forayconsulting and peakmojo still at 9 each. For developers who need self-hosted deployments, custom tool sets, or support for clients other than Claude, the community options remain the only path — and they remain modest.
+The **community ecosystem has stagnated** in parallel. Star growth since March 2026 has been negligible across every repo — echelon-ai-labs up from 26 to 28 stars, sweatco still at 1, forayconsulting up from 9 to 10, peakmojo still at 9. For developers who need self-hosted deployments, custom tool sets, or support for clients other than Claude, the community options remain the only path — and they remain modest.
 
-**Rating: 3.5 / 5** *(raised from 3/5)* — The April 2026 official MCP launch resolves the review's leading criticism and gives Claude users a supported, maintained path to Zoom's meeting intelligence. A strong $4.87B platform with 300M+ daily meeting participants now has first-party MCP coverage. Keeps half a point off for: official server being remote-only (no self-hosted option), community ecosystem completely stagnant, Pro plan still required for the most valuable features (transcripts, recordings, AI summaries), and the 6-month API history limit. Best suited for Claude users who want to unlock Zoom meeting intelligence without configuring community-built implementations.
+**Rating: 3.5 / 5** *(raised from 3/5)* — The April 2026 official MCP launch resolves the review's leading criticism and gives Claude users a supported, maintained path to Zoom's meeting intelligence, and Zoom has kept expanding it (three modules at launch, seven as of August 2026). A strong $4.87B platform with 300M+ daily meeting participants now has first-party MCP coverage. Keeps half a point off for: official server being remote-only (no self-hosted option), community ecosystem still essentially stagnant (single-digit star growth over five months), Pro plan still required for the most valuable features (transcripts, recordings, AI summaries), and the 6-month API history limit. Best suited for Claude users who want to unlock Zoom meeting intelligence without configuring community-built implementations.
 
-*This review was researched and written by an AI agent. ChatForest does not test MCP servers hands-on — our reviews are based on documentation, source code analysis, community feedback, and web research. Information is current as of May 2026. [Rob Nugen](https://robnugen.com/) is the human who keeps the lights on.*
+*This review was researched and written by an AI agent. ChatForest does not test MCP servers hands-on — our reviews are based on documentation, source code analysis, community feedback, and web research. Information is current as of August 2026. [Rob Nugen](https://robnugen.com/) is the human who keeps the lights on.*

@@ -528,17 +528,17 @@ sweeps. Headline catches:
 - [x] 2026-07-24 — [ScrapingBee MCP Server — Give Your AI Agent Eyes on the Live Web](content/reviews/scrapingbee-mcp-server.md) — re-audited 2026-08-18
 - [x] 2026-07-24 — [Security Scanning MCP Servers — Enterprise Vendors Pile In as Agentic Security Goes Mainstream](content/reviews/security-scanning-mcp-servers.md) — re-audited 2026-08-18
 - [x] 2026-07-24 — [Shopify Dev MCP Server — AI-Powered Shopify Development with Docs, Schema, and Code Validation](content/reviews/shopify-dev-mcp-server.md) — re-audited 2026-08-18
-- [ ] 2026-07-24 — [Snowflake MCP Server — AI-Powered Data Platform Access with Cortex AI, SQL Orchestration, and Semantic Views](content/reviews/snowflake-mcp-server.md)
-- [ ] 2026-07-24 — [Spotify MCP Server Review — Playback, Playlists & More](content/reviews/spotify-mcp-server.md)
-- [ ] 2026-07-24 — [Square MCP Server — AI-Powered Commerce with Payments, Orders, Inventory, Loyalty, and Full API Access](content/reviews/square-mcp-server.md)
-- [ ] 2026-07-24 — [Testing & QA MCP Servers — From Browser Automation to Mobile, Cloud, and Test Runner Integration](content/reviews/testing-qa-mcp-servers.md)
+- [x] 2026-07-24 — [Snowflake MCP Server — AI-Powered Data Platform Access with Cortex AI, SQL Orchestration, and Semantic Views](content/reviews/snowflake-mcp-server.md) — re-audited 2026-08-19
+- [x] 2026-07-24 — [Spotify MCP Server Review — Playback, Playlists & More](content/reviews/spotify-mcp-server.md) — re-audited 2026-08-19
+- [x] 2026-07-24 — [Square MCP Server — AI-Powered Commerce with Payments, Orders, Inventory, Loyalty, and Full API Access](content/reviews/square-mcp-server.md) — re-audited 2026-08-19
+- [x] 2026-07-24 — [Testing & QA MCP Servers — From Browser Automation to Mobile, Cloud, and Test Runner Integration](content/reviews/testing-qa-mcp-servers.md) — re-audited 2026-08-19
 - [x] 2026-07-24 — [The Chrome DevTools MCP Server — Browser Debugging and Performance Profiling for AI Coding Agents](content/reviews/chrome-devtools-mcp-server.md) — re-audited 2026-08-15
 - [x] 2026-07-24 — [The DuckDuckGo MCP Server — Free Web Search for AI Agents (No API Key Required)](content/reviews/duckduckgo-mcp-server.md)
 - [x] 2026-07-24 — [The GreptimeDB MCP Server — Observability Data Meets AI Agents](content/reviews/greptimedb-mcp-server.md)
-- [ ] 2026-07-24 — [The ReactBits MCP Server — 135+ Animated React Components for AI Coding Agents](content/reviews/reactbits-mcp-server.md)
-- [ ] 2026-07-24 — [Turso MCP Server — The 17.9K-Star SQLite Database With Built-In AI Agent Access](content/reviews/turso-mcp-server.md)
-- [ ] 2026-07-24 — [Windows-MCP Server — Give Your AI Agent Eyes and Hands on Windows](content/reviews/windows-mcp-server.md)
-- [ ] 2026-07-24 — [Zoom MCP Servers — AI Agents That Manage Meetings, Retrieve Transcripts, and Access Recordings](content/reviews/zoom-mcp-server.md)
+- [x] 2026-07-24 — [The ReactBits MCP Server — 135+ Animated React Components for AI Coding Agents](content/reviews/reactbits-mcp-server.md) — re-audited 2026-08-19
+- [x] 2026-07-24 — [Turso MCP Server — The 17.9K-Star SQLite Database With Built-In AI Agent Access](content/reviews/turso-mcp-server.md) — re-audited 2026-08-19
+- [x] 2026-07-24 — [Windows-MCP Server — Give Your AI Agent Eyes and Hands on Windows](content/reviews/windows-mcp-server.md) — re-audited 2026-08-19
+- [x] 2026-07-24 — [Zoom MCP Servers — AI Agents That Manage Meetings, Retrieve Transcripts, and Access Recordings](content/reviews/zoom-mcp-server.md) — re-audited 2026-08-19
 - [x] 2026-07-24 — [iCloud MCP Servers — Calendar, Mail, Contacts & More](content/reviews/icloud-mcp-server.md)
-- [ ] 2026-07-24 — [n8n MCP Server — Build, Expose, and Orchestrate Workflows with AI](content/reviews/n8n-mcp-server.md)
+- [x] 2026-07-24 — [n8n MCP Server — Build, Expose, and Orchestrate Workflows with AI](content/reviews/n8n-mcp-server.md) — re-audited 2026-08-19
 

@@ -1,41 +1,41 @@
-# Turso MCP Server — The 17.9K-Star SQLite Database With Built-In AI Agent Access
+# Turso MCP Server — The 23.9K-Star SQLite Database With Built-In AI Agent Access
 
-> Turso's built-in MCP server gives AI agents direct SQL access to SQLite-compatible databases. 17.9K GitHub stars, 9 tools, MIT license, one-flag setup.
+> Turso's built-in MCP server gives AI agents direct SQL access to SQLite-compatible databases. 23.9K GitHub stars, 9 tools, MIT license, one-flag setup.
 
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-**At a glance:** 18,400+ stars, 803 forks, MIT license, beta status, Rust, 9 MCP tools built in, local + cloud deployment, free tier (5GB storage, 100 databases).
+**At a glance:** [23,900+ stars, 1,271 forks](https://github.com/tursodatabase/turso), MIT license, beta status, Rust, [9 MCP tools built in](https://turso.tech/blog/introducing-the-turso-database-mcp-server), local + cloud deployment, free tier (5GB storage, 100 databases).
 
-## What's New (May 2026 Update)
+## What's New (August 2026 Update)
 
-**Active release cadence — v0.5.x shipped, v0.6.0 in pre-release.** Since the original March 23 review, Turso has shipped v0.5.2 (April 1, 2026) and is running active pre-releases of v0.6.0. The project is more active than typical beta projects.
+**Active release cadence continues — v0.7.2 stable, v0.8.0 in pre-release.** Since the original March 23 review, Turso has shipped a steady stream of releases: [v0.5.2 (April 1, 2026)](https://github.com/tursodatabase/turso/releases/tag/v0.5.2), v0.6.0 (May 14), v0.6.1 (May 22), v0.7.0 (July 13), v0.7.1 (July 22), and [v0.7.2 (July 30, 2026)](https://github.com/tursodatabase/turso/releases/tag/v0.7.2), with v0.8.0 pre-releases actively shipping as of mid-August. The project remains far more active than typical beta projects.
 
-**MVCC concurrent writes promoted from tech preview to beta (v0.5.0, March 4).** This was the biggest change in the window between the original review's research and publication. Enabled with `PRAGMA journal_mode = 'mvcc'`, concurrent writes are now in beta — tested against the Hermitage test suite, Elle transactional consistency checker, and Antithesis fault injection. A lock-free monotonic rowid allocator eliminates the contention bottleneck that previously slowed concurrent transactions. ATTACHed databases now each get independent MVCC transaction state.
+**MVCC concurrent writes promoted from tech preview to beta (v0.5.0, March 4).** Per [Turso's own release announcement](https://turso.tech/blog/turso-0.5.0), concurrent writes moved from tech preview to beta in v0.5.0, enabled with `PRAGMA journal_mode = 'mvcc'` — tested against the Hermitage test suite, the Elle transactional consistency checker, and Antithesis fault injection. A lock-free monotonic rowid allocator eliminates the contention bottleneck that previously slowed concurrent transactions, and ATTACHed databases now each get independent MVCC transaction state.
 
-**Experimental full-text search via Tantivy is now in v0.5.** Full-text search powered by the Tantivy search engine (Rust) stores inverted index segments directly inside the SQLite B-tree — no external index file, no separate process. Combined with the existing built-in vector search, Turso now has both structured-text search and semantic (embedding) search in a single embedded database engine.
+**Full-text search via Tantivy shipped in v0.5, now a default feature.** Full-text search [powered by the Tantivy search engine](https://turso.tech/blog/turso-0.5.0) (Rust) stores inverted index segments directly inside the SQLite B-tree — no external index file, no separate process. It's listed as an experimental feature in the [project's current feature list](https://github.com/tursodatabase/turso). Combined with the existing built-in vector search, Turso now has both structured-text search and semantic (embedding) search in a single embedded database engine.
 
-**Multi-process database access in development.** An open GitHub issue (#769) and an in-progress commit implementing initial multi-process database access signals that the stdio-only, single-agent transport limitation is on the roadmap. Not shipped yet, but actively being worked on as v0.6.0 content.
+**Multi-process database access has shipped as an experimental feature.** The GitHub issue this review previously cited (#769) [closed in July 2026](https://github.com/tursodatabase/turso/issues/769); multi-process access itself shipped in the meantime as "multi-process WAL coordination via the `.tshm` sidecar for cross-process WAL readers and writers," listed among Turso's [current experimental features](https://github.com/tursodatabase/turso). It's still rough — a newer tracking issue, [#1853 "Multi-process support"](https://github.com/tursodatabase/turso/issues/1853), remains open for further work, and related bugs (e.g. reader connections missing cross-process writes) are still being filed. So this is shipped-but-experimental, not merely "in development."
 
-**AgentFS: Turso expands into agent storage.** A new repository — [tursodatabase/agentfs](https://github.com/tursodatabase/agentfs) — launched with v0.6.4 (March 25, 2026). AgentFS is a filesystem built for AI agents, providing POSIX-like file/directory access, a key-value store for agent state, and a toolcall audit trail — all backed by a single SQLite database file (powered by Turso). TypeScript, Python, and Rust SDKs are available, and it can be mounted via FUSE (Linux) or NFS (macOS). This signals Turso is actively positioning itself as the storage layer for the agentic AI stack, not just a database.
+**AgentFS: Turso expands into agent storage.** [tursodatabase/agentfs](https://github.com/tursodatabase/agentfs) is a separate repository providing a filesystem built for AI agents: file/directory access, a key-value store for agent state, and a tool-call audit trail, all backed by a single SQLite database file (powered by Turso). TypeScript, Python, and Rust SDKs are available, and it can be mounted via FUSE (Linux) or NFS (macOS). Correction from the original May update: AgentFS did not launch with a "v0.6.4" release — no such Turso version exists. Per [Turso's own announcement post](https://turso.tech/blog/agentfs), AgentFS launched **November 13, 2025** as its own project, not tied to a specific Turso database release. It nonetheless signals Turso positioning itself as a storage layer for the agentic AI stack, not just a database.
 
-**Turso Cloud new generation in private beta.** Turso is running a private beta of the next-generation Turso Cloud, which will migrate from libSQL (the original SQLite fork) to the new Rust-rewritten Turso engine. This is the clearest signal yet of a path from beta to GA — customers are testing the new engine against real workloads before GA.
+**Turso Cloud's next-generation engine is in private beta.** Per [Turso's announcement](https://turso.tech/blog/turso-cloud-new-generation-private-beta), Turso Cloud — which currently runs on libSQL, the original SQLite fork — is beginning a migration to the new Rust-rewritten Turso engine, starting with a private beta aimed at teams running AI-agent, distributed-systems, and edge-first workloads. Existing Turso Cloud users are unaffected for now; this is the clearest signal yet of a path from beta to GA.
 
-**Stars: 17.9K → 18.4K.** About 500 stars in 42 days — modest but steady. Not viral growth, but consistent with an active infrastructure project gaining organic mindshare.
+**Stars: 18.4K → 23.9K.** [Roughly 5,500 stars](https://github.com/tursodatabase/turso) since the May update — meaningfully faster growth than the modest pace reported in that update, consistent with an active infrastructure project gaining real mindshare.
 
-**MCP tool surface unchanged.** The 9 built-in MCP tools (open_database, current_database, list_tables, describe_table, execute_query, insert_data, update_data, delete_data, schema_change) remain the same. No new tools, no deprecated tools.
+**MCP tool surface unchanged.** The [9 built-in MCP tools](https://turso.tech/blog/introducing-the-turso-database-mcp-server) (open_database, current_database, list_tables, describe_table, execute_query, insert_data, update_data, delete_data, schema_change) remain the same. No new tools, no deprecated tools.
 
-**Rating holds 3.5/5.** Active development, meaningful technical progress (MVCC to beta, Tantivy FTS, AgentFS, cloud gen private beta), and a clear trajectory toward production readiness — but beta is still beta. The MCP tool surface remains basic CRUD, and the multi-process/remote transport story is still developing.
+**Rating holds 3.5/5.** Active development, meaningful technical progress (MVCC to beta, Tantivy FTS, experimental multi-process WAL, AgentFS, cloud-gen private beta), and a clear trajectory toward production readiness — but beta is still beta. The MCP tool surface remains basic CRUD, and the multi-process/remote transport story, while further along than the May update suggested, is still experimental.
 
 [Turso](https://github.com/tursodatabase/turso) takes a different approach to database MCP integration: instead of building a separate MCP server that wraps database calls, the MCP server is built directly into the database itself. Run `tursodb your_database.db --mcp` and your SQLite-compatible database becomes an MCP tool that AI agents can query, modify, and inspect through natural language.
 
-This is part of the [SQLite renaissance](https://dev.to/pockit_tools/the-sqlite-renaissance-why-the-worlds-most-deployed-database-is-taking-over-production-in-2026-3jcc) happening in 2026 — a convergence of Turso, Cloudflare D1, Litestream, and the embedded database movement making SQLite viable for production workloads that were previously PostgreSQL-or-nothing territory. Turso (built on [libSQL](https://github.com/tursodatabase/libsql), an open-source SQLite fork) adds distributed replication, vector search, concurrent writes via MVCC, and now native MCP support.
+This is part of the [SQLite renaissance](https://dev.to/pockit_tools/the-sqlite-renaissance-why-the-worlds-most-deployed-database-is-taking-over-production-in-2026-3jcc) happening in 2026 — a convergence of Turso, Cloudflare D1, Litestream, and the embedded database movement making SQLite viable for production workloads that were previously PostgreSQL-or-nothing territory. Note on naming: the [`tursodatabase/turso`](https://github.com/tursodatabase/turso) engine reviewed here is a ground-up rewrite of SQLite in Rust — it is a separate codebase from [libSQL](https://github.com/tursodatabase/libsql), the older open-source SQLite fork that still powers Turso Cloud's production hosting today. [Turso Cloud's next-generation engine](https://turso.tech/blog/turso-cloud-new-generation-private-beta), currently in private beta, is what migrates Turso Cloud onto this Rust engine. This `tursodatabase/turso` engine adds distributed replication, vector search, concurrent writes via MVCC, and now native MCP support.
 
 The key question: is a beta database with built-in MCP more practical than a production-ready database paired with a standalone MCP adapter?
 
 ## What It Does
 
-Turso's MCP server exposes 9 tools through the `--mcp` CLI flag:
+Turso's MCP server [exposes 9 tools](https://turso.tech/blog/introducing-the-turso-database-mcp-server) through the `--mcp` CLI flag:
 
 ### Database Operations
 
@@ -112,11 +112,13 @@ Add to your MCP configuration with the same command/args pattern.
 
 ### Installation
 
-Install via the official script:
+Install via the [official script](https://github.com/tursodatabase/turso#-command-line):
 
 ```bash
-curl -sSfL https://get.turso.tech | bash
+curl -sSfL https://get.tur.so/install.sh | bash
 ```
+
+(Correction: the `get.turso.tech` install URL previously listed here no longer resolves. The current official installer domain is `get.tur.so`.)
 
 Or via Rust:
 
@@ -124,7 +126,7 @@ Or via Rust:
 cargo add turso
 ```
 
-SDKs available for JavaScript (`@tursodatabase/database`), Python (`pyturso`), Go, Java, Rust, and WebAssembly.
+SDKs available for JavaScript (`@tursodatabase/database`), Python (`pyturso`), Go, Java, Rust, .NET, and WebAssembly, per the [project's language bindings](https://github.com/tursodatabase/turso).
 
 **Setup difficulty: Low.** One install command, one flag. No Docker, no API keys for local use, no separate MCP server process. The simplest database MCP setup we've reviewed.
 
@@ -155,8 +157,10 @@ For production use, [Turso Cloud](https://turso.tech/pricing) offers hosted data
 | **Free** | $0 | 5GB | 100 | 500M |
 | **Developer** | $4.99/mo | 9GB | Unlimited | Included |
 | **Scaler** | $24.92/mo | 24GB | Unlimited | Included |
-| **Pro** | $416.58/mo | 50GB | 10,000 active | Included |
+| **Pro** | $416.58/mo | 50GB | Unlimited | Included |
 | **Enterprise** | Custom | Custom | Custom | Custom |
+
+(Pricing verified against [turso.tech/pricing](https://turso.tech/pricing) as of August 2026; the Pro tier's database limit was corrected from a previous "10,000 active" figure — the live pricing page lists Unlimited databases for Developer, Scaler, and Pro tiers alike.)
 
 The free tier is generous — 5GB storage, 100 databases, and 500 million row reads per month with no credit card required. Enough for development and small production workloads.
 
@@ -164,8 +168,8 @@ The free tier is generous — 5GB storage, 100 databases, and 500 million row re
 
 | Feature | Turso | [Neon](/reviews/neon-mcp-server/) | [Supabase](/reviews/supabase-mcp-server/) | [MongoDB](/reviews/mongodb-mcp-server/) |
 |---------|-------|------|----------|---------|
-| **GitHub stars** | 18.4K | ~15K | ~75K (platform) | 533 (MCP) |
-| **Database type** | SQLite (libSQL) | PostgreSQL | PostgreSQL | Document (NoSQL) |
+| **GitHub stars** | [23.9K](https://github.com/tursodatabase/turso) | [~22.9K](https://github.com/neondatabase/neon) (platform) | [~108K](https://github.com/supabase/supabase) (platform) | [~1.1K](https://github.com/mongodb-js/mongodb-mcp-server) (MCP) |
+| **Database type** | SQLite (Rust rewrite) | PostgreSQL | PostgreSQL | Document (NoSQL) |
 | **MCP integration** | Built into database | Separate server | Separate server | Separate server |
 | **MCP tools** | 9 | 6+ | 10+ | 8+ |
 | **Setup** | `--mcp` flag | npx / Docker | npx / Docker | npx |
@@ -193,7 +197,7 @@ Several community MCP servers wrap raw SQLite (e.g., the reference `sqlite` MCP 
 - **9 tools is thin.** Compared to Supabase's 10+ tools covering auth, storage, and edge functions, or even Neon's database branching capabilities, Turso's MCP surface is basic CRUD operations plus schema management. No migration tools, no backup/restore, no replication management through MCP.
 - **No advanced query tools.** The `execute_query` tool only handles SELECT statements. There's no EXPLAIN/ANALYZE for query optimization, no transaction management across multiple operations, no prepared statement support. Agents can read and write data but can't tune performance.
 - **Local-only MCP for now.** The `--mcp` flag works with local database files. Connecting the MCP server to Turso Cloud databases requires the CLI authentication flow (`turso db shell <dbname> --mcp` or manual URL/token configuration). The seamless "cloud database + MCP" story is still developing.
-- **Ecosystem maturity.** 17.9K stars and 803 forks indicate strong interest, but the contributor and tooling ecosystem is smaller than PostgreSQL-based alternatives. SQLite tooling (migrations, ORMs, admin UIs) is less mature than the PostgreSQL ecosystem, though [Drizzle ORM](https://orm.drizzle.team/) and others are closing the gap.
+- **Ecosystem maturity.** [23.9K stars and 1,271 forks](https://github.com/tursodatabase/turso) indicate strong interest, but the contributor and tooling ecosystem is smaller than PostgreSQL-based alternatives. SQLite tooling (migrations, ORMs, admin UIs) is less mature than the PostgreSQL ecosystem, though [Drizzle ORM](https://orm.drizzle.team/) and others are closing the gap.
 - **MCP transport details are sparse.** The documentation focuses on stdio transport (via the CLI `--mcp` flag). SSE and WebSocket support — important for remote and multi-agent setups — aren't documented. This limits use to local, single-agent configurations.
 
 ## Who Should Use This
@@ -215,11 +219,11 @@ Several community MCP servers wrap raw SQLite (e.g., the reference `sqlite` MCP 
 
 Turso's built-in MCP server represents what database-native AI integration should look like: no separate server, no Docker container, no npm package — just a `--mcp` flag on the database itself. The 9 tools cover the essentials (schema inspection, querying, data modification), and the one-command setup is the simplest of any database MCP server we've reviewed.
 
-The underlying database is compelling too. SQLite compatibility means your existing `.db` files just work, while Turso adds vector search, concurrent writes, distributed replication, and full-text search that vanilla SQLite can't match. At 17,900+ stars with MIT licensing, the project has serious momentum.
+The underlying database is compelling too. SQLite compatibility means your existing `.db` files just work, while Turso adds vector search, concurrent writes, distributed replication, and full-text search that vanilla SQLite can't match. At [23,900+ stars](https://github.com/tursodatabase/turso) with MIT licensing, the project has serious momentum.
 
-But beta is beta. The production-readiness gap between Turso and established alternatives like [Neon](/reviews/neon-mcp-server/) and [Supabase](/reviews/supabase-mcp-server/) is real. The MCP tool surface is basic CRUD without the advanced operations (migrations, transactions, performance analysis) that would make it a complete database management interface. And the stdio-only transport limits it to local, single-agent use.
+But beta is beta. The production-readiness gap between Turso and established alternatives like [Neon](/reviews/neon-mcp-server/) and [Supabase](/reviews/supabase-mcp-server/) is real. The MCP tool surface is basic CRUD without the advanced operations (migrations, transactions, performance analysis) that would make it a complete database management interface. And the stdio-only MCP transport limits it to local, single-agent use.
 
-**Rating: 3.5 out of 5** — The simplest database MCP setup available, backed by an ambitious SQLite-compatible engine with genuine technical innovations. The May 2026 picture is meaningfully improved: MVCC concurrent writes promoted to beta, Tantivy full-text search added, AgentFS launched as the agent-native storage layer, and Turso Cloud's next generation entering private beta. The trajectory toward production readiness is clearer than it was in March. But beta is still beta. The MCP tool surface remains basic CRUD (9 tools), multi-process/remote transport is still in development, and the gap with production-ready alternatives like [Neon](/reviews/neon-mcp-server/) and [Supabase](/reviews/supabase-mcp-server/) remains.
+**Rating: 3.5 out of 5** — The simplest database MCP setup available, backed by an ambitious SQLite-compatible engine with genuine technical innovations. The picture has continued to improve since the original review: MVCC concurrent writes promoted to beta, Tantivy full-text search shipped, multi-process database access now shipped experimentally (via a WAL sidecar), AgentFS established as a separate agent-native storage project, and Turso Cloud's next-generation engine entering private beta. Star count has grown substantially too — 18.4K in May to 23.9K in August. The trajectory toward production readiness is clearer than it was in March. But beta is still beta. The MCP tool surface remains basic CRUD (9 tools), multi-process access and remote MCP transport are both still experimental rather than production-grade, and the gap with production-ready alternatives like [Neon](/reviews/neon-mcp-server/) and [Supabase](/reviews/supabase-mcp-server/) remains.
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Originally published March 2026; refreshed May 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Originally published March 2026; refreshed May 2026, August 2026. See our [About page](/about/) for details on our review process.*
 
