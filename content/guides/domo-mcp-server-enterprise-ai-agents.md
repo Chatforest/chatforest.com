@@ -3,83 +3,32 @@ title: "Domo's MCP Server and AI Agent Builder: Connecting Enterprise Data to th
 date: 2026-04-07T14:00:00+09:00
 description: "Domo launched an MCP Server and AI Agent Builder at Domopalooza 2026 — connecting enterprise datasets, workflows, and interactive dashboards to external AI platforms like Claude, Gemini, and ChatGPT."
 content_type: "Guide"
-card_description: "Domo's March 2026 announcements at Domopalooza include an open-source MCP Server (Python, MIT, 7 tools for dataset SQL queries and metadata), AI Agent Builder for custom conversational agents, AI Toolkits for packaged business capabilities, and a centralized AI Library. The standout feature: interactive dashboards rendered inside AI chat interfaces, not just text responses. This guide covers the architecture, open-source server, enterprise platform, governance model, and competitive positioning."
-last_refreshed: 2026-04-07
-sources_audited: 2026-07-25
+card_description: "Domo's March 2026 announcements at Domopalooza include the Domo MCP Server (connecting AI assistants to Domo datasets, workflows, and dashboards), AI Agent Builder for custom conversational agents, AI Toolkits for packaged business capabilities, and a centralized AI Library. The standout feature: interactive dashboards rendered inside AI chat interfaces, not just text responses. This guide covers the architecture, enterprise platform, governance model, and competitive positioning. Domo has not published the MCP Server's source code, license, or tool list, so this guide does not claim it is open source."
+last_refreshed: 2026-08-19
+sources_audited: 2026-08-19
 ---
 
-Most MCP servers return text. Domo's returns interactive dashboards — complete with filters and drilldowns — rendered directly inside AI chat interfaces. That's the headline feature from Domo's March 2026 Domopalooza announcements, but the broader story is about connecting governed enterprise data to the AI agent ecosystem through an open-source MCP server, a low-code AI Agent Builder, and a new AI Toolkit architecture.
+Most MCP servers return text. Domo's returns interactive dashboards — complete with filters and drilldowns — rendered directly inside AI chat interfaces. That's the headline feature from Domo's March 2026 Domopalooza announcements, but the broader story is about connecting governed enterprise data to the AI agent ecosystem through the Domo MCP Server, a low-code AI Agent Builder, and a new AI Toolkit architecture.
 
-Our analysis draws on [Domo's official press release](https://www.domo.com/news/press/domo-launches-ai-agent-builder-and-mcp-serve), [Domo's product feature page](https://www.domo.com/product/new-features/ai-agents-mcp-domopalooza-announcements), [BigDATAwire coverage](https://www.hpcwire.com/bigdatawire/this-just-in/domo-launches-ai-agent-builder-and-mcp-server-to-connect-enterprise-data-to-the-ai-ecosystem/), [TechIntelPro's analysis](https://techintelpro.com/news/ai/enterprise-ai/domo-launches-ai-agent-builder-and-mcp-server-for-enterprise-ai), [Futurum Group's earnings analysis](https://futurumgroup.com/insights/domo-q4-fy-2026-earnings-show-record-billings-and-profitability-gains/), and the [open-source GitHub repository](https://github.com/DomoApps/domo-mcp-server) — we research and analyze rather than testing implementations hands-on.
+Our analysis draws on [Domo's official press release](https://www.domo.com/news/press/domo-launches-ai-agent-builder-and-mcp-serve), [Domo's product feature page](https://www.domo.com/product/new-features/ai-agents-mcp-domopalooza-announcements), [BigDATAwire coverage](https://www.hpcwire.com/bigdatawire/this-just-in/domo-launches-ai-agent-builder-and-mcp-server-to-connect-enterprise-data-to-the-ai-ecosystem/), [TechIntelPro's analysis](https://techintelpro.com/news/ai/enterprise-ai/domo-launches-ai-agent-builder-and-mcp-server-for-enterprise-ai), and [Futurum Group's earnings analysis](https://futurumgroup.com/insights/domo-q4-fy-2026-earnings-show-record-billings-and-profitability-gains/) — we research and analyze rather than testing implementations hands-on. **Correction (2026-08-19):** an earlier version of this guide linked a GitHub repository (`DomoApps/domo-mcp-server`) as the server's open-source code and described specific tools, a license, and install steps drawn from it. That repository does not exist — it 404s, it has no Wayback Machine snapshot, and it appears nowhere in any of the sources above. None of Domo's own materials describe the MCP Server as open source. The fabricated repository details have been removed; see the note in the section below.
 
 ## Why This Matters
 
 Enterprise data platforms have a persistent problem: they hold valuable data behind proprietary interfaces that only trained users can navigate. When AI agents need to answer business questions, they hit a wall — the data is locked inside BI platforms that weren't designed for programmatic AI access.
 
-Domo's approach attacks this from both sides. The open-source MCP server gives any AI agent SQL access to Domo datasets. The enterprise platform goes further, letting AI agents trigger workflows, create dashboards, and manage business processes — all under the same governance controls that protect the data from human misuse.
+Domo's approach attacks this from both sides. The [MCP server lets AI agents query Domo datasets and analytics, trigger workflows, create dashboards, and configure alerts](https://www.domo.com/news/press/domo-launches-ai-agent-builder-and-mcp-serve). The enterprise platform goes further, letting AI agents manage broader business processes — all under the same governance controls that protect the data from human misuse.
 
 The timing aligns with a broader industry shift. At Domopalooza, [Domo shared over 200 AI use cases from customers' live production environments](https://www.domo.com/news/press/domo-launches-ai-agent-builder-and-mcp-serve), signaling that enterprise AI is moving from pilot experiments to operational systems.
 
-## The Open-Source MCP Server
+## The Domo MCP Server
 
-The [Domo MCP Server](https://github.com/DomoApps/domo-mcp-server) is an MIT-licensed Python server that connects AI agents to Domo's API through the Model Context Protocol.
+Domo has not published the MCP Server's source code, a repository, a license, or a specific tool list in any of its own announcement materials (the press release, the product feature page, or its earnings coverage). An earlier version of this guide asserted the server was MIT-licensed Python with 8 GitHub stars and seven named tools, linked to `github.com/DomoApps/domo-mcp-server` — that repository returns a 404, has never been archived by the Wayback Machine, and the `DomoApps` GitHub organization has no MCP-related repositories in its public listing (checked 2026-08-19). None of the article's own cited sources mention it either. That entire technical profile was unsourced and has been removed rather than corrected, per this site's "cite it or cut it" standard — there is nothing to cite it to.
 
-### Technical Details
-
-| Detail | Info |
-|--------|------|
-| **Repository** | [DomoApps/domo-mcp-server](https://github.com/DomoApps/domo-mcp-server) |
-| **Stars** | 8 |
-| **Language** | Python (96.9%) |
-| **License** | MIT |
-| **Transport** | stdio |
-| **Requirements** | Python 3.11+ or Docker |
-| **Authentication** | Developer access token + Domo host URL |
-
-### Seven MCP Tools
-
-The server exposes seven tools:
-
-1. **`search_datasets(query)`** — find datasets by name, the natural starting point for data exploration
-2. **`get_dataset_metadata(dataset_id)`** — retrieve dataset metadata (owner, creation date, row count, update frequency)
-3. **`get_dataset_schema(dataset_id)`** — get column names, types, and structure
-4. **`query_dataset(dataset_id, query)`** — execute SQL queries against any dataset the token can access
-5. **`list_roles()`** — enumerate all roles in the Domo instance
-6. **`create_role(name, from_role_id, description)`** — create new roles (cloned from existing ones)
-7. **`list_role_authorities(role_id)`** — inspect what permissions a role grants
-
-The first four tools form the data exploration workflow: search for a dataset, understand its structure, then query it. The role management tools (5-7) are notable — they indicate Domo is thinking about governance from the MCP layer, not just data access.
-
-### Setup
-
-The server runs locally via Python or Docker. Configuration goes in your MCP client's settings (VS Code, Claude Desktop, Cursor):
-
-```json
-{
-  "mcpServers": {
-    "domo-mcp-server": {
-      "command": "python",
-      "args": ["-m", "domo_mcp_server"],
-      "env": {
-        "DOMO_DEVELOPER_TOKEN": "your-token-here",
-        "DOMO_HOST": "your-instance.domo.com"
-      }
-    }
-  }
-}
-```
-
-For Docker deployment:
-
-```bash
-docker build -t domo-mcp-server .
-```
-
-Authentication uses Domo's developer access tokens. The token's permissions scope what datasets and operations the MCP server can access — the same permission model that governs human API access.
+What Domo's own materials do confirm about the server: it is [built on the Model Context Protocol standard and connects AI Toolkits and agents to external AI platforms such as Claude, Gemini, and ChatGPT](https://www.domo.com/news/press/domo-launches-ai-agent-builder-and-mcp-serve). Through it, AI assistants can query datasets and analytics, trigger workflows and automation, create dashboards and applications, and configure alerts and operational processes. Authentication is described only in general terms — token-scoped access matching Domo's existing developer permission model — with no documented setup steps for external developers as of this writing. If Domo publishes technical documentation, a repository, or a tool reference, this guide will be updated to link it.
 
 ## The Enterprise Platform: AI Agent Builder and Toolkits
 
-The open-source server handles data queries. The broader enterprise announcement covers a full AI orchestration framework with three components.
+The MCP server handles data queries and workflow actions. The broader enterprise announcement covers a full AI orchestration framework with three components.
 
 ### AI Agent Builder
 
@@ -126,7 +75,7 @@ InformData, a Domo customer, highlighted the governance angle: bringing data and
 
 ### Domo vs. Other BI Platform MCP Servers
 
-The BI MCP landscape is crowded. [Grafana's MCP server](/reviews/bi-reporting-mcp-servers/) leads with 2,600+ stars and 40+ tools. [Power BI](/reviews/bi-reporting-mcp-servers/) ships two official servers. [Tableau](/reviews/bi-reporting-mcp-servers/), [Looker](/reviews/bi-reporting-mcp-servers/), [Qlik](https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/QlikMCP/Qlik-MCP-server.htm), and [ThoughtSpot](/guides/mcp-data-visualization-business-intelligence/) all have official MCP support.
+The BI MCP landscape is crowded. [Grafana's MCP server](/reviews/bi-reporting-mcp-servers/) leads with [3,300+ stars](https://github.com/grafana/mcp-grafana) and 40+ tools. [Power BI](/reviews/bi-reporting-mcp-servers/) ships two official servers, including [Microsoft's powerbi-modeling-mcp (1,000+ stars)](https://github.com/microsoft/powerbi-modeling-mcp). [Tableau](/reviews/bi-reporting-mcp-servers/) ships [tableau/tableau-mcp (300+ stars)](https://github.com/tableau/tableau-mcp). [Looker](/reviews/bi-reporting-mcp-servers/), [Qlik](https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/QlikMCP/Qlik-MCP-server.htm), and [ThoughtSpot](/guides/mcp-data-visualization-business-intelligence/) all have official MCP support.
 
 What differentiates Domo's approach:
 
@@ -136,24 +85,26 @@ What differentiates Domo's approach:
 | **Agent builder** | Low-code, built-in | No | Copilot Studio (separate) | Tableau Pulse (limited) |
 | **Toolkit architecture** | Composable packages | No | No | No |
 | **Governance hub** | AI Library | No | Purview (separate) | No |
-| **Open-source server** | Yes (MIT) | Yes (AGPLv3) | Yes (MIT) | Yes (MIT) |
-| **Stars** | 8 | 2,600+ | 500+ | 200+ |
+| **Public GitHub repo / license** | Not published | Yes (Apache-2.0) | Yes (MIT) | Yes (Apache-2.0) |
+| **Stars** | Not published | 3,300+ | 1,000+ | 300+ |
 
-Domo's MCP server has far fewer stars and tools than Grafana or Power BI, but the enterprise platform layer — Agent Builder, Toolkits, AI Library — is more comprehensive than what any other BI vendor offers through MCP specifically.
+*(Grafana, Power BI, and Tableau star/license figures verified live against their repos on 2026-08-19; an earlier version of this table listed a stale AGPLv3 license for Grafana and MIT for Tableau — both are Apache-2.0 — and cited 8 stars and an MIT license for Domo based on the fabricated repository described above.)*
+
+Domo has not published a repository, star count, or tool list for its MCP server — unlike Grafana, Power BI, and Tableau, whose official servers are public. What the company has emphasized instead is the enterprise platform layer — Agent Builder, Toolkits, AI Library — which is more comprehensive than what any other BI vendor offers through MCP specifically.
 
 ### The Interactive Rendering Advantage
 
 Most MCP servers return structured text or JSON that the AI client renders as markdown tables or code blocks. Domo's ability to return interactive dashboards is genuinely novel in the MCP ecosystem. It leverages Domo's existing embedded analytics infrastructure, which means the rendering isn't a prototype — it builds on production-grade embedding technology.
 
-The limitation: this interactive rendering likely requires Domo's enterprise platform and may not work through the open-source MCP server alone.
+The limitation: this interactive rendering likely requires Domo's enterprise platform and may not work through the MCP server alone.
 
 ### Domo's Market Position
 
-Domo is a publicly traded enterprise data platform (NASDAQ: DOMO) with [fiscal 2026 revenue of $318.9 million](https://www.domoinvestors.com/news/news-details/2026/Domo-Announces-Fourth-Quarter-and-Fiscal-2026-Financial-Results/default.aspx) and [over 2,600 customers](https://www.domo.com/customers). [Q4 FY2026 billings hit $111.2 million (up 8% year-over-year) — a company record](https://www.domoinvestors.com/news/news-details/2026/Domo-Announces-Fourth-Quarter-and-Fiscal-2026-Financial-Results/default.aspx). The company is shifting to consumption-based pricing, with [84% of annual recurring revenue now from consumption contracts and a 111% net retention rate for that cohort](https://futurumgroup.com/insights/domo-q4-fy-2026-earnings-show-record-billings-and-profitability-gains/).
+Domo is a publicly traded enterprise data platform (NASDAQ: DOMO) with [fiscal 2026 revenue of $318.9 million](https://www.domoinvestors.com/news/news-details/2026/Domo-Announces-Fourth-Quarter-and-Fiscal-2026-Financial-Results/default.aspx) and [over 2,600 customers](https://www.domo.com/customers). [Q4 FY2026 billings hit $111.2 million (up 8% year-over-year) — a company record](https://www.domoinvestors.com/news/news-details/2026/Domo-Announces-Fourth-Quarter-and-Fiscal-2026-Financial-Results/default.aspx). The company is shifting toward consumption-based pricing: [customers on consumption contracts (over $24.0 million in ARR) delivered 111% net revenue retention in Q4 FY2026](https://futurumgroup.com/insights/domo-q4-fy-2026-earnings-show-record-billings-and-profitability-gains/), and overall net retention improved for a sixth consecutive quarter. **Correction (2026-08-19):** an earlier version of this section claimed "84% of annual recurring revenue" comes from consumption contracts — that figure appears in neither the earnings release nor the Futurum analysis it was cited to and has been removed; the real, sourced number is the $24.0M consumption-cohort ARR and its 111% retention rate above.
 
 Analyst Brad Shimmin at Futurum Group noted Domo is strategically shifting toward "workflow automation outcomes that are measurable and recurring," though he flagged potential misalignment with the broader market's move toward outcome-based pricing rather than token-based consumption.
 
-[AI is discussed in nearly 70% of Domo's customer and prospect conversations, per management](https://www.domoinvestors.com/news/news-details/2026/Domo-Announces-Fourth-Quarter-and-Fiscal-2026-Financial-Results/default.aspx) — indicating that the MCP and agent capabilities are central to the company's go-to-market strategy, not a side feature.
+[AI is discussed in nearly 70% of Domo's customer and prospect conversations, per management](https://futurumgroup.com/insights/domo-q4-fy-2026-earnings-show-record-billings-and-profitability-gains/) — indicating that the MCP and agent capabilities are central to the company's go-to-market strategy, not a side feature. (This figure is from Domo management's earnings-call commentary as reported by Futurum Group; it does not appear in Domo's own press release.)
 
 ## What This Signals for Enterprise MCP
 
@@ -163,18 +114,17 @@ Domo's announcement illustrates several trends in the enterprise MCP space:
 
 **Interactive rendering raises the bar.** If Domo can render dashboards inside chat, other BI vendors will follow. This could shift expectations for what MCP integrations deliver — from text answers to interactive experiences.
 
-**Governance is the enterprise differentiator.** The open-source server is straightforward (7 tools, dataset queries). The enterprise value is in the governance layer — toolkits with declared permissions, centralized AI Library, token-scoped access. For regulated industries, this matters more than tool count.
+**Governance is the enterprise differentiator.** Domo has said little publicly about the MCP server's technical footprint beyond the four capabilities above (query, trigger workflows, create dashboards, configure alerts). The enterprise value it emphasizes is the governance layer — toolkits with declared permissions, centralized AI Library, token-scoped access. For regulated industries, that framing matters more than a tool count would.
 
-**The open-source server is a gateway.** The MIT-licensed server is intentionally limited. It gets developers experimenting with Domo + MCP, but the interactive dashboards, agent builder, and toolkit architecture require the commercial platform. This is a familiar enterprise open-source strategy.
+**Open-source status is unclear.** Unlike Grafana, Power BI, and Tableau, whose MCP servers are public repositories developers can inspect, Domo has not published one for its MCP server, and this guide could not confirm whether it plans to. Developers evaluating Domo alongside those alternatives should treat that as an open question, not an assumption in either direction.
 
 ## Getting Started
 
-For individual developers:
+Domo's own materials describe [Domo's developer portal](https://developer.domo.com/) as the entry point for API and developer-token access, but neither the press release, the product page, nor the developer portal documents a public MCP server package or installation flow as of this writing. For individual developers:
 
-1. Clone the [open-source server](https://github.com/DomoApps/domo-mcp-server)
-2. Generate a [Domo developer access token](https://developer.domo.com/)
-3. Configure your MCP client (Claude Desktop, VS Code, Cursor)
-4. Start with `search_datasets` to explore available data, then `query_dataset` for SQL access
+1. Generate a [Domo developer access token](https://developer.domo.com/)
+2. Watch [Domo's developer portal](https://developer.domo.com/) and [news page](https://www.domo.com/news) for published MCP server documentation or a repository
+3. Configure your MCP client (Claude Desktop, VS Code, Cursor) once Domo publishes connection details
 
 For enterprise teams evaluating the AI Agent Builder, AI Toolkits, and AI Library — these features are being announced now with the AI Library scheduled for summer 2026. Contact Domo for access to the Agent Builder and Toolkit capabilities.
 

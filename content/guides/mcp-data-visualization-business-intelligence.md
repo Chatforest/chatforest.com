@@ -137,9 +137,9 @@ ThoughtSpot's official MCP server provides secure OAuth authentication, query an
 
 ### Domo
 
-**Official Server:** DomoApps/domo-mcp-server | **Stars:** 7 | **Language:** Python
+**Official Server:** no public repository, star count, or tool list found (see correction below)
 
-Domo's official server enables running SQL queries on DataSets, searching datasets, and retrieving metadata and schemas.
+**Correction (2026-08-19):** this entry previously cited a "DomoApps/domo-mcp-server" GitHub repo with 7 stars in Python. That repo returns a 404, has no Wayback Machine snapshot, and isn't mentioned in Domo's own press release, product page, or any of the third-party coverage of the launch — it appears to have been fabricated in an earlier draft. Domo has not published a repository for its MCP server. Full detail and sourcing in our [Domo MCP Server and AI Agent Builder guide](/guides/domo-mcp-server-enterprise-ai-agents/).
 
 **Major expansion (March 2026):** At Domopalooza 2026, Domo announced a comprehensive AI orchestration framework including AI Agent Builder, AI Toolkits, a centralized AI Library, and an enhanced Domo MCP Server. The MCP Server now acts as a universal connector, giving external AI tools (Gemini, Claude, etc.) access to governed enterprise data and actions inside Domo. Unlike traditional integrations that return simple text, Domo's MCP implementation can render **interactive business experiences** directly inside chat interfaces — dashboards with filters and drilldowns, not just text responses. AI Toolkits let organizations control which actions and systems agents can access, and toolkits can be exposed externally through MCP. The AI Library (available summer 2026) will serve as a central hub for curating managed AI solutions. For a deep dive, see our [Domo MCP Server and AI Agent Builder guide](/guides/domo-mcp-server-enterprise-ai-agents/).
 
@@ -164,7 +164,7 @@ Sisense has announced MCP server capabilities enabling LLMs to query data source
 | **Superset** | Built-in | 4+ | Yes | Yes | — |
 | **Qlik** | Yes (47 tools, GA) | 3+ | Yes | Yes (dashboards, glossaries) | — |
 | **ThoughtSpot** | Yes (30★) | — | Yes | Limited | ThoughtSpot models |
-| **Domo** | Yes (7★) | — | Yes | Limited | — |
+| **Domo** | Unpublished repo | — | Yes | Limited | — |
 | **Redash** | No | 1 | Yes | Yes | — |
 
 ## Charting Library MCP Servers
