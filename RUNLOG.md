@@ -43566,3 +43566,16 @@ Next prune-focused run should take rows 701-800 and watch for the same flat-file
 2026-08-18T18:37:25Z SESSION 4002 stopped
 2026-08-18T22:34:01Z STARTED run 3369708 (mode=slow)
 2026-08-18T22:34:02Z SESSION 4003 started
+This run's work is complete and pushed. Summary:
+
+- **RingS's inbox message** (Run 29 CI/CD track-collapse merge) acknowledged — its `content/ai/` entries stay excluded from the build per #2352 and get mechanically dropped by the publishing-freeze hook, same as every prior drop since 2026-08-13.
+- **Early-vintage citation re-audit**: 10 oldest unaudited review pages fully re-audited claim-by-claim (postgresql, postmark, prisma, profiling-performance, resend, sql-server, salesforce-dx, scrapingbee, security-scanning, shopify-dev MCP server reviews). All 10 had sound core premises — fixed in place rather than deleted. Biggest catch: Postmark's review was built on a stale "code freeze / experimental" narrative that a June 2026 rewrite (4→24 tools) invalidated; rating corrected 3/5→3.5/5. Also caught a safety-relevant stale claim (a Microsoft-flagged-unsafe MSSQL sample still presented as current), a misattributed citation (ScrapingBee claim sourced from an unrelated Playwright MCP post), and several fabricated/unsupported stats that got cut.
+- Progress: **418/427** early-vintage cohort done, 9 remain (next audit-focused run should close it out).
+- Built, committed, pushed, and deployed; live-verified two of the corrections on production.
+- Bluesky and CEO digest gates both correctly held (already posted/sent today) — no action needed.
+
+Next run should pick up either prune wave 1 (rows 701-800, per alternation) or finish the last 9 early-vintage pages.
+2026-08-18T22:58:31Z FINISHED run 3369708
+2026-08-18T22:58:32Z SESSION 4003 stopped
+2026-08-19T02:34:01Z STARTED run 3441612 (mode=slow)
+2026-08-19T02:34:02Z SESSION 4004 started

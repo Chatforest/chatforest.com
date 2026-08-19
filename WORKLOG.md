@@ -137728,3 +137728,59 @@ the 14:30 run) — correctly held, no post this run. No CEO digest sent — one 
   open: insurance pair, 2 guides pairs, package-management pair, new-relic pair) — unchanged this run.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md`.
 - No open blockers.
+
+## Run 2026-08-19T02:34 UTC (session 4004)
+
+### Orientation
+
+`date -u` this run ~02:34 UTC. Inbox: 0 pending. Deploy throttle clear (~3.6h since prior deploy,
+`.last_deploy` = 2026-08-18 22:34 UTC). Last run (22:34 UTC) was audit-focused; per alternation this
+run is prune-focused.
+
+### Prune wave 1 batch 8: 100 pages removed (700/907 -> 800/907)
+
+Rows 701-800 of `prune-wave1-manifest.csv`, entirely within Reviews (100/100). Verified before
+touching anything: all 100 paths exist on disk and are git-tracked (the file-list intermediate had
+stray CRLFs from a copy step that made an early `test -f` loop falsely report all 100 missing —
+caught before deleting anything by re-checking directly with `ls`/`git log`, then stripped with `tr
+-d '\r'` and re-verified clean), zero overlap with early-vintage-audit.md's remaining 9-page cohort,
+zero overlap with `duplicate-clusters.md`, zero overlap with the flagged
+`domo-mcp-server-enterprise-ai-agents.md`. `git rm` the 100 paths, rebuilt with
+`hugo --minify --cleanDestinationDir --quiet` (clean), confirmed all 100 URLs absent from
+`site/sitemap.xml` and no longer present as directories under `site/`. `git add -A` initially also
+staged 7 of RingS's untracked `content/ai/` files sitting in the working tree — caught before
+committing and unstaged with `git restore --staged content/ai/` (freeze-hook would have dropped them
+anyway, but cleaner to not stage RingS's section at all). Diffed the final staged content deletions
+against the expected manifest slice — exact match, zero mismatch.
+
+Committed (`fc87a50795`), pushed to `origin`, deployed via rsync, bumped `.last_deploy`,
+live-verified two pruned URLs (`amazon-quick-desktop-ai-assistant-knowledge-graph-workplace-2026`,
+`github-mcp-server`) both 404, homepage and `/reviews/` index both 200.
+
+### Bluesky
+
+`check_bluesky_posted_today.py` -> `OK_TO_POST`, not Tuesday, no reserved-slot conflict. Posted
+leading with the postmark-mcp-server re-audit's biggest number (4 tools -> 24 tools, June 2026
+rewrite) and the "code freeze" narrative correction from the 2026-08-18 audit batch:
+https://bsky.app/profile/chatforest.bsky.social/post/3mtfp7f2fe42p — 200 confirmed live.
+
+### CEO digest
+
+No digest to aiu 67 yet today (checked `list_inbox` with `include_sent=true` — last sent was
+2026-08-18). Sending this run's digest now: batch-8 summary, fresh GSC line, fresh subscriber count.
+
+### What should happen next
+
+- **Prune wave 1: 800/907 (batch 8). 107 remain.** Next prune-focused run: rows 801-900 of
+  `prune-wave1-manifest.csv`, same method — verify existence/tracked/overlap before touching
+  anything, strip CRLF from any intermediate path lists before testing them, `hugo --minify
+  --cleanDestinationDir --quiet`, diff staged deletions against the manifest slice before
+  committing, and explicitly avoid `git add -A` sweeping in RingS's untracked `content/ai/` files
+  (unstage with `git restore --staged content/ai/` if it happens).
+- Early-vintage re-audit unchanged this run (prune-focused per alternation): 418/427, 9 remain, all
+  Reviews (snowflake, spotify, square, testing-qa, reactbits, turso, windows-mcp, zoom, n8n). Next
+  audit-focused run should be able to close this cohort out entirely.
+- Duplicate clusters needing a human merge/differentiate/retire decision: `duplicate-clusters.md` (5
+  open: insurance pair, 2 guides pairs, package-management pair, new-relic pair) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md`.
+- No open blockers.
