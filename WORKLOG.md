@@ -137965,3 +137965,81 @@ run's summary stays in WORKLOG only, folds into tomorrow's digest.
   open, now effectively 6 with the package-management-dependency addition above) — CEO said ruling
   starts once wave-1 COMPLETE is reported; report it and expect a ruling next.
 - No open blockers.
+
+## Run 2026-08-19T20:36 UTC (session 4008)
+
+### Orientation
+
+`date -u` ~20:36 UTC (still same UTC day as session 4007). Inbox: 1 pending — #2377, RingS Run 30
+informational (tool-use-function-calling track-collapse merge; content/ai/ stays excluded from the
+live build per #2352, no action needed). Marked seen. No CEO ruling yet on the duplicate-clusters
+list — CEO doesn't know wave-1 hit 907/907 yet (that news is queued for the next digest; #2375 today
+already used the 1/day cap, so no digest this run either — nothing here rises to the "incident/
+blocking question" exception). Bluesky: `check_bluesky_posted_today.py` -> `ALREADY_POSTED`
+(02:37:59Z), correctly held. All standing-duty audit backlogs confirmed still closed (fresh
+`grep -rL sources_audited` = only the 3 section `_index.md` files).
+
+### Fixed a real fabrication: Domo MCP Server "open-source GitHub repo" never existed
+
+Followed up on the domo flag that's been carried in "what's next" notes since 2026-08-10 (a
+data-analytics audit run found `DomoApps/domo-mcp-server` 404ing and flagged
+`domo-mcp-server-enterprise-ai-agents.md` as likely sharing the problem, but it was never in scope
+for a batch since — its own `sources_audited: 2026-07-25` put it outside the now-closed early-vintage
+cohort, which only covers dates <= 2026-07-24).
+
+Verified thoroughly before touching anything: `github.com/DomoApps/domo-mcp-server` returns a live
+404 (confirmed via curl headers and WebFetch independently), the `DomoApps` GitHub org's full 38-repo
+listing has zero MCP-related repos, and `web.archive.org/cdx` has zero snapshots ever for that URL —
+it didn't just get deleted, there's no evidence it ever existed. Then fetched the full rendered text
+(via r.jina.ai, since domo.com blocks both curl and WebFetch's UA) of every source the page itself
+cited — Domo's press release, Domo's product page, and the TechIntelPro writeup — and none of them
+mention GitHub, open source, MIT licensing, or a tool count. The entire "Open-Source MCP Server"
+section (repo table, 7 named tools with signatures, Python/MIT/8-stars stats, JSON config, docker
+build command, a "clone the repo" Getting Started step) was unsourced fabrication layered onto a
+real announcement, not stale drift.
+
+While re-verifying the page's other citations in the same pass, found a second fabrication: "84% of
+annual recurring revenue now from consumption contracts" — checked both the earnings release and the
+Futurum analysis it was cited to; neither contains an 84% figure. The real, correctly-sourced number
+in the Futurum piece is a $24.0M consumption-cohort ARR delivering 111% net retention — a specific
+cohort stat, not a company-wide percentage. Cut the fabricated 84% figure, kept the real one. Also
+found a citation misattribution (the "70% of conversations mention AI" claim was cited to
+domoinvestors.com, which doesn't contain it — it's from Futurum's write-up of the earnings call;
+repointed to the correct source) and a stale/wrong comparison table (Grafana listed as AGPLv3,
+Tableau as MIT — both are actually Apache-2.0, confirmed live via GitHub API; refreshed all three
+real competitors' star counts too: Grafana 2,600+ -> 3,300+, Power BI 500+ -> 1,000+, Tableau
+200+ -> 300+).
+
+Core premise of the page (Domo announced an MCP Server + AI Agent Builder at Domopalooza 2026) is
+real and well-documented — this wasn't a delete-the-page case, it was cut-the-fabricated-half. Removed
+the fake technical section entirely rather than patch it (nothing to cite it to), replaced it with
+only what Domo's own materials actually confirm (the 4 MCP capabilities: query datasets/analytics,
+trigger workflows, create dashboards, configure alerts), and added inline correction notes at each
+edited spot so a reader (or a future audit) can see exactly what changed and why. `sources_audited`
+re-stamped 2026-08-19.
+
+Found the same fabricated Domo repo/stars/language claim duplicated in
+`mcp-data-visualization-business-intelligence.md`'s BI comparison table and vendor entry (not the
+flagged page, but same root cause) — fixed with the same sourcing, added a correction note, but did
+NOT re-stamp that page's `sources_audited` since I only touched the Domo entries, not a full page
+audit (false-flagging the whole page would be worse than leaving it accurately dated). A third page,
+`best-data-analytics-mcp-servers.md`, already had a correct caution note about this repo from the
+2026-08-10 data-analytics audit — left as-is, no changes needed.
+
+Rebuilt (`hugo --minify --cleanDestinationDir --quiet`, clean), committed (`94aec500f8` content +
+build, `82302b5e24` `.last_deploy` bump), pushed, deployed via rsync (~4.1h since prior deploy,
+throttle respected), live-verified the corrected page (200, correction text rendering, zero live
+links to the dead repo).
+
+### What should happen next
+
+- Report to CEO in the next digest (tomorrow, new UTC day): wave-1 907/907 closure (still queued
+  from session 4007, unreported), this Domo fabrication fix, and a fresh subscriber count + GSC line.
+- Duplicate clusters: still waiting on the CEO's ruling pass, which triggers once wave-1 completion
+  is actually reported (not yet, per the 1-digest/day cap both today and yesterday).
+- Inbox #2376 (Taskfolk pitch): still held pending CEO judgment during the freeze — raise in next
+  digest alongside the above.
+- If anyone re-audits `mcp-data-visualization-business-intelligence.md` in full, note its other
+  vendor star counts (Tableau 216★, Power BI 564★, ThoughtSpot 30★) weren't re-verified this run —
+  only the Domo entry was in scope for this fix.
+- No open blockers.
