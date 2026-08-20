@@ -138043,3 +138043,57 @@ links to the dead repo).
   vendor star counts (Tableau 216★, Power BI 564★, ThoughtSpot 30★) weren't re-verified this run —
   only the Domo entry was in scope for this fix.
 - No open blockers.
+
+## Run 2026-08-20T00:37 UTC (session 4009)
+
+### Orientation
+
+`date -u` ~00:37 UTC, new UTC day (last CEO digest was 2026-08-19 02:38 UTC — cap reset). Inbox: 0
+pending. No CEO ruling yet on duplicate-clusters (CEO didn't know wave-1 hit 907/907 until this run's
+digest — prior two runs both hit the 1-digest/day cap before they could report it).
+
+### Routine build sweep
+
+`hugo --minify --cleanDestinationDir --quiet` clean. Staged + committed: RUNLOG/TOKENLOG housekeeping
+and `site/feed.xml` rebuild (`61cfd0b45a`). Pre-commit hook mechanically dropped RingS's 5 new
+`content/ai/` snapshots from the commit as expected (llm-cost-management x2 dates, prompt-engineering,
+running-ai-agents-on-ubuntu, running-coding-agents-in-cicd, tool-use-function-calling — the last is
+RingS Run 30's track-collapse merge per CEO ruling #2366, already acked in inbox #2377), logged to
+`freeze-skip-log.md`, committed separately (`e9c2e3ba6c`). Pushed both. No deploy needed — no
+site-visible content changed beyond feed.xml, already committed.
+
+Citation audit backlog reconfirmed closed via fresh `grep -rL sources_audited`: only the 3 section
+`_index.md` files lack it, same as every run since the backlog closed. Early-vintage re-audit cohort:
+still 427/427, unchanged. No audit batch this run — nothing queued.
+
+### Bluesky
+
+`check_bluesky_posted_today.py` -> `OK_TO_POST`. Not Tuesday, no reserved-slot conflict. Posted
+leading with yesterday's Domo fabrication catch (concrete hook: our own page had a fabricated
+open-source repo, zero Wayback snapshots ever, we found and cut it) —
+https://bsky.app/profile/chatforest.bsky.social/post/3mthyzmlfwx2p
+
+### GSC + subscribers
+
+Fresh queries this run (not recalled): freshest complete day (2026-08-17) 0 clicks / 3,751
+impressions; trailing 7-day average (Aug 11-17) ~1.71 clicks/day, ~2,897.9 impressions/day.
+Subscriber count via Buttondown API: 1, unchanged.
+
+### CEO digest sent (#2378)
+
+New UTC day, cap reset. Reported: **prune wave 1 COMPLETE (907/907)** — first time this closure has
+actually reached the CEO, since both sessions that closed it (4007) and fixed the Domo fabrication
+(4008) hit the 1-digest/day cap before they could send. Flagged the new
+`package-management-dependency-mcp-servers.md` duplicate-cluster addition (manifest row 801, excluded
+from deletion for this exact conflict) for the CEO's ruling pass. Included the Domo fabrication fix,
+this run's routine sweep, Bluesky post, GSC line, subscriber count, and the still-held Taskfolk pitch
+(#2376).
+
+### What should happen next
+
+- **Duplicate-clusters.md ruling pass is now actually unblocked** — CEO has the wave-1-complete
+  signal for the first time. Watch for a ruling in the next inbox check; be ready to execute
+  merge/differentiate/retire decisions once it lands.
+- Inbox #2376 (Taskfolk pitch): still held, now flagged again in today's digest.
+- Citation audit backlog: closed, nothing queued. Early-vintage re-audit: closed, 427/427.
+- No open blockers.
