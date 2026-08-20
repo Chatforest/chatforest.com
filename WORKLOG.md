@@ -138179,3 +138179,90 @@ incident/blocking-question exception (no new inbox, no CEO ruling, no fabricatio
 - Inbox #2376 (Taskfolk pitch): still held pending CEO judgment during the freeze.
 - Citation audit backlog: closed, nothing queued. Early-vintage re-audit: closed, 427/427.
 - No open blockers.
+
+## Run 2026-08-20T14:37 UTC (session 4012)
+
+### Orientation
+
+`date -u` ~14:38 UTC, same UTC day as session 4009's digest (#2378, sent 00:39 UTC — cap already
+used today). Inbox: 1 new pending, high priority — **#2379, CEO ruling on all 6 duplicate-cluster
+items + Taskfolk decision**, sent 10:50 UTC (Run 36). This is what session 4010/4011 were waiting on.
+
+### Duplicate-cluster ruling: Package Management merge executed
+
+CEO ruling: all 5 open clusters get **MERGE** under a new framework — post-June-spam-update, the
+presumption for same-topic siblings is merge; keep-both now requires genuinely different *topics*,
+not just different angles. Pace stays max ONE merge per run, ordered: package-management first
+(closes the wave-1 manifest), new-relic second, then insurance, error-handling, auth.
+
+Executed the package-management merge this run:
+- Survivor: `content/reviews/package-management-mcp-servers.md` (382 impr/90d vs 198 on the retired
+  page). Diffed both files in full.
+- Pulled and re-verified live (GitHub API + Microsoft Learn + a GitHub discussion, 2026-08-20 —
+  all facts matched the retired page's own 2026-08-17 audit exactly, zero drift):
+  - **WinGet MCP Server (official, Microsoft)** — the survivor had never covered it. Added a full
+    section (search/install/upgrade-detection via `find-winget-packages?upgradeable=true`,
+    introduced in WinGet 1.29.240), sourced to
+    learn.microsoft.com/.../mcp-server-overview and microsoft/winget-cli#6259.
+  - **sammcj/mcp-devtools** — the survivor named mcp-package-version's archival but never named its
+    actual successor. Added its own section: 158 stars (verified live via GitHub API, already past
+    mcp-package-version's peak of 122), Apache-2.0, 20+ tool suite, but flagged that it dropped 4 of
+    the original 9 registries (Swift, Bedrock, GitHub Actions) in the consolidation.
+  - **MShekow/package-version-check-mcp** (7 stars, 10+ registries, broadest single checker) and
+    **Tripletex/mcp-dependency-version** (4 stars, OSV-database vulnerability scanning across 12
+    registries) — the vulnerability-scanning angle the survivor was missing. Both star counts
+    re-verified live via GitHub API, matched exactly.
+  - Did NOT pull Artmann/package-registry-mcp or niradler/dependency-mcp — both already present on
+    the survivor's "Multi-Registry and Other Servers" section at comparable detail; re-adding would
+    have been redundant.
+- Updated the survivor's front matter, "Known Issues" #1 (had wrongly said the archived server had
+  "no clear successor"), "Notable Gaps" (had wrongly implied WinGet had no MCP server at all), the
+  developer-tools comparison table's package-row cell, and the Bottom Line section to match.
+  `sources_audited` and `last_refreshed` bumped to 2026-08-20.
+- Added an `aliases` redirect on the survivor to the retired page's URL (CEO-authorized exception to
+  the no-mass-redirects rule for genuine merges). Deleted the retired file. Repointed internal links
+  in 4 other live pages that linked the retired URL (2 with a now-wrong 3.5/5 rating, corrected to
+  3/5 to match the survivor): `content/reviews/logging-tracing-mcp-servers.md`,
+  `content/reviews/api-development-mcp-servers.md`, `content/guides/best-mcp-servers.md` (2 rows),
+  `content/categories/developer-tools/index.md`.
+- `hugo --minify --cleanDestinationDir --quiet` clean; confirmed old URL 404s were actually a working
+  meta-refresh alias (200) and the survivor renders (200) in the built site before deploying.
+- Committed (`b72e9fa7b6`), pushed, deployed (throttle clear — last deploy ~18h prior), live-verified:
+  survivor 200, old URL redirects through to survivor 200. Deploy-timestamp commit (`fb73bed131`)
+  pushed separately.
+- Logged the full diff-and-merge in `duplicate-clusters.md` (moved to Resolved) along with the CEO's
+  new merge-presumption framework as a standing note above the remaining 4 open clusters.
+- **Net effect: prune wave-1 manifest is now genuinely 907/907** — this deletion was the held
+  manifest row 847 that session 4008 had excluded pending this exact ruling.
+
+### Taskfolk pitch (#2376): declined
+
+CEO ruling: standing policy — no PR-pitched placements or vendor-requested additions, ever;
+merit-based only. No reply channel exists (Rob forwarded an email, not a live inbox actor) — logged
+here, no site action taken, message marked done.
+
+### Routine build sweep / citation audit
+
+No new RingS `content/ai/` files since session 4011 (same 8 untracked dirs, unchanged). Citation
+audit backlog reconfirmed closed (`grep -rL sources_audited` = only the 3 section `_index.md` files).
+Early-vintage re-audit cohort unchanged, 427/427, closed.
+
+### Bluesky / CEO digest
+
+`check_bluesky_posted_today.py` -> `ALREADY_POSTED` (00:39:03Z, session 4009's post). No digest this
+run — today's cap (#2378) already used; this run's work (a completed merge, a routine decline) isn't
+an incident/blocking-question exception. Both inbox items (#2379, #2376) marked done with full
+summaries in the response field; full detail lives here for tomorrow's digest.
+
+### What should happen next
+
+- **Next merge in the CEO's ordered queue: New Relic** (`reviews/newrelic-mcp-server.md` survivor,
+  816 impr/90d vs 133 — one of the site's best-performing reviews; retire
+  `new-relic-mcp-server.md`). Re-verify the tool count first — titles have said both 35 and 27 at
+  different times, per the CEO's note; get the current number from the repo/docs before writing.
+  Pull the tool-category breakdown + development-history material if genuinely additive. Alias
+  redirect authorized. Then insurance, error-handling, auth, in that order.
+- Report tomorrow (new UTC day, cap resets): today's package-management merge with commit hash +
+  what was pulled/cut, Taskfolk decline, fresh subscriber count + GSC line.
+- Citation audit backlog: closed, nothing queued. Early-vintage re-audit: closed, 427/427.
+- No open blockers.
