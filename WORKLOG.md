@@ -138266,3 +138266,93 @@ summaries in the response field; full detail lives here for tomorrow's digest.
   what was pulled/cut, Taskfolk decline, fresh subscriber count + GSC line.
 - Citation audit backlog: closed, nothing queued. Early-vintage re-audit: closed, 427/427.
 - No open blockers.
+
+## Run 2026-08-20T18:39 UTC (session 4013)
+
+### Orientation
+
+`date -u` ~18:39 UTC, same UTC day as session 4009's digest (#2378, sent 00:39 UTC — cap already
+used today). Inbox: `list_inbox` status=pending returned empty — no new messages since #2379's items
+were closed out by session 4012. Next queued item per #2379's ordered merge list and session 4012's
+WORKLOG note: New Relic duplicate-cluster merge (second in the CEO's ordered queue).
+
+### New Relic duplicate-cluster merge (executed)
+
+Survivor: `content/reviews/newrelic-mcp-server.md` (816 impr/90d vs 133). Retired:
+`content/reviews/new-relic-mcp-server.md` (hyphenated).
+
+Both pages disagreed on basic facts before I touched anything — tool count (survivor's body said 35,
+its own title said 27, the retired page said 30+), GitHub stars (survivor's "What's Not" section said
+5 stars in one spot vs 7 everywhere else on the same page), and rating (4/5 vs 3.0/5). Per the CEO's
+explicit note in #2379 ("titles have said both 35 and 27 at different times — get the current number
+from the repo/docs before writing"), re-verified everything live 2026-08-21 rather than trusting
+either page:
+- **Tool count: 27**, confirmed by parsing the raw HTML of the live
+  [tool reference](https://docs.newrelic.com/docs/agentic-ai/mcp/tool-reference/) for every `<code>`
+  tool-name element (not just an AI summary of the page, which gave a third, wrong number). Rewrote
+  the survivor's tool tables: dropped 2 tools no longer current (`list_entity_types`, `query_logs`),
+  renamed `get_entity_error_groups` to the live name `list_entity_error_groups`, added a genuinely new
+  tool neither review had documented (`list_entity_performance_risk_groups`).
+- **GitHub repo re-verified via API**: 7 stars, 0 forks, 2 commits, 4 open issues (2026-08-21). Pulled
+  full current issue history including two neither review mentioned: Issue #6 (self-hosted/Helm
+  request) and **Issue #7** (filed May 27, 2026) — a **second, distinct OAuth bug** (flow completes
+  but never redirects back for custom connectors), still open. Combined with Issue #4 (OAuth fails
+  completely for SSO-enforced orgs, filed April 8, 2026, still open >4 months later — re-confirmed via
+  API today, no new comments since June 21), that's two independently-filed open OAuth bugs, not one.
+- **Rating changed 4/5 -> 3.5/5** on the survivor (not the retired page's 3.0/5 — the free-tier and
+  ecosystem-integration strengths held up under re-verification, but two confirmed-open OAuth bugs are
+  a real regression worth a real downgrade).
+- **Corrected a fabricated quote**: the survivor's "What's Not" section quoted New Relic's docs as
+  prohibiting "FedRAMP or HIPAA compliance mandates" as if verbatim. Re-fetched the live source —
+  only FedRAMP is stated; no HIPAA-specific wording exists anywhere on a New Relic-owned page.
+  Corrected in 3 spots to state FedRAMP as confirmed, HIPAA as unconfirmed.
+- **Pulled from the retired page**: company background (2008 founding, 2023 $6.5B take-private,
+  headcount estimates, March 2026 CTO appointment, IDC MarketScape Leader placement) — survivor had
+  none of this. Also pulled and re-verified cloudbring/newrelic-mcp's community-alternative stats live
+  (14 stars/8 forks/58 commits — survivor had stale 11/7/57).
+- Added `aliases` redirect on the survivor to the retired page's URL. Deleted the retired file.
+- Repointed 6 other live pages carrying the survivor's stale 4/5 or 4.5/5 rating and 35-tool-count
+  claims: `content/guides/best-observability-mcp-servers.md` (2 spots), `content/guides/
+  best-mcp-servers.md` (2 spots), `content/reviews/pagerduty-mcp-server.md`,
+  `content/reviews/honeycomb-mcp-server.md`, `content/reviews/datadog-mcp-server.md`,
+  `content/reviews/monitoring-observability-mcp-servers.md` (2 spots).
+- Fixed `content/categories/observability-monitoring/index.md`'s comparison table, which had been
+  carrying **both** pages as separate rows ("New Relic" and "New Relic NRQL & Alerts") — a duplicate
+  visible right on the category page since before this cluster was even flagged. Collapsed to one row,
+  corrected "five vendors" to "four" in the section intro to match.
+- `hugo --minify --cleanDestinationDir --quiet` clean. Committed (`69163585dd`), pushed, deployed
+  (throttle clear), live-verified: survivor 200 with correct 3.5/5 rating, old URL redirects through
+  to survivor 200. Deploy-timestamp commit (`fff745eef7`) pushed separately.
+- Logged the full diff-and-merge in `duplicate-clusters.md` (moved to Resolved, alongside
+  package-management — above the 3 remaining open clusters: insurance, error-handling, auth).
+
+Sanity check on the freeze/RingS interaction while working: confirmed `content/ai/` is genuinely
+excluded from the live build via `ignoreFiles = ["/content/ai/"]` in `config.toml` (CEO directive
+#2352) — the 8 untracked RingS snapshot dirs sitting in the working tree do NOT get built into
+`site/` regardless of git-tracking status, so they were never at risk of going live via the rsync
+deploy despite sitting uncommitted since 2026-08-13. Confirmed via `curl` 404 on two of the paths.
+Not a new finding, just verified the mechanism actually holds before trusting it silently again.
+
+### Routine build sweep / citation audit
+
+No new RingS `content/ai/` files since session 4012 (same 8 untracked dirs, unchanged — correctly
+dropped from this run's commit since they weren't staged). Citation audit backlog reconfirmed closed
+(`grep -rL sources_audited` across builders-log/guides/reviews = only the 3 section `_index.md`
+files). Early-vintage re-audit cohort: unchanged, 427/427, closed.
+
+### Bluesky / CEO digest
+
+`check_bluesky_posted_today.py` -> `ALREADY_POSTED` (00:39:03Z, session 4009's post). No digest this
+run — today's cap (#2378) already used; a completed queued merge isn't an incident/blocking-question
+exception. Full detail lives here for tomorrow's digest.
+
+### What should happen next
+
+- **Next merge in the CEO's ordered queue: Insurance** (`reviews/insurance-mcp-servers.md` survivor,
+  74 impr/90d vs 17 — same-day publish, same rating, same servers, "the clearest duplicate of the
+  five" per the CEO). Pull Root Platform MCP + any verified entries the survivor lacks; keep the
+  dead-server annotations from the retired page. Alias redirect authorized. Then error-handling, auth.
+- Report tomorrow (new UTC day, cap resets): today's New Relic merge with commit hash + what was
+  pulled/cut/corrected, fresh subscriber count + GSC line.
+- Citation audit backlog: closed, nothing queued. Early-vintage re-audit: closed, 427/427.
+- No open blockers.
