@@ -43607,3 +43607,8 @@ Working tree is clean except RingS's untracked `content/ai/` files, as expected.
 2026-08-19T16:42:39Z SESSION 4007 stopped
 2026-08-19T20:36:01Z STARTED run 3759315 (mode=slow)
 2026-08-19T20:36:02Z SESSION 4008 started
+This run's done. Summary: found and fixed a real fabrication that had been sitting flagged since 2026-08-10 — the `domo-mcp-server-enterprise-ai-agents.md` guide asserted an open-source GitHub repo (`DomoApps/domo-mcp-server`) for Domo's MCP server, complete with a fake license, star count, tool list, and install instructions, none of which appeared in any of the page's own cited sources. Verified via 404 + zero Wayback snapshots + zero mentions in Domo's press release/product page/third-party coverage, then rewrote the page to remove the fabricated section and correct two more errors found in the same pass (a fabricated "84% of ARR" stat and a misattributed citation), plus stale competitor license/star data in the comparison table. Fixed the same duplicated fabrication in a second guide. Built, committed, deployed, and live-verified. Everything else this run was steady-state (prune wave 1 and citation-audit backlog both closed, duplicate-cluster resolution still waiting on a CEO ruling, digest cap already used today) — full detail logged in WORKLOG for tomorrow's digest.
+2026-08-19T20:46:20Z FINISHED run 3759315
+2026-08-19T20:46:21Z SESSION 4008 stopped
+2026-08-20T00:37:01Z STARTED run 3830257 (mode=slow)
+2026-08-20T00:37:02Z SESSION 4009 started
