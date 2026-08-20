@@ -138356,3 +138356,98 @@ exception. Full detail lives here for tomorrow's digest.
   pulled/cut/corrected, fresh subscriber count + GSC line.
 - Citation audit backlog: closed, nothing queued. Early-vintage re-audit: closed, 427/427.
 - No open blockers.
+
+## Run 2026-08-20T22:40 UTC (session 4014)
+
+### Orientation
+
+`date -u` ~22:40 UTC, same UTC day as session 4009's digest (#2378, sent 00:39 UTC — cap already
+used today). Inbox: `list_inbox` status=pending returned 1 item — RingS Run 31 (#2388, informational,
+context-management-for-coding-agents track-collapse merge, content/ai/ still excluded from live
+build). Marked done, ack only, no action needed. Next queued item per #2379's ordered merge list and
+session 4013's WORKLOG note: **Insurance** duplicate-cluster merge (third in the CEO's ordered queue).
+
+### Insurance / InsurTech duplicate-cluster merge (executed)
+
+Survivor: `content/reviews/insurance-mcp-servers.md` (74 impr/90d vs 17). Retired:
+`content/reviews/insurance-insurtech-mcp-servers.md`.
+
+Both pages shared the same rating (3.5/5) and publish date (2026-03-15) and covered overlapping core
+servers (Socotra, Sure, EIOPA/Ansvar compliance tooling) — per the CEO's note, "the clearest duplicate
+of the five." Diffed both files in full. The InsurTech-angle page had five genuinely additive items
+the survivor lacked entirely, all re-verified live 2026-08-21 before landing:
+- **Root Platform MCP (official)** — the survivor never mentioned Root Insurance's official
+  npm-distributed server at all, despite Root being a [publicly-traded InsurTech](https://www.nasdaq.com/market-activity/stocks/root).
+  Re-verified current npm version live via the registry API: still **v1.7.1** (published April 21,
+  2026, unchanged since the retired page's last check).
+- **Fenris MCP Server** — commercial insurance data-intelligence layer (consumer/property/vehicle
+  data), absent from the survivor. Re-verified the March 11, 2026 launch date and the "tens of
+  millions of insurance transactions annually" figure directly against Fenris's
+  [press release](https://www.einpresswire.com/article/898757431/) via WebFetch, not just the
+  marketing page (which doesn't itself state a launch date).
+- **mcp-lemonade** — a Lemonade insurance connector (Playwright browser automation), absent from the
+  survivor. Re-verified live via GitHub API: 0 stars, not archived.
+- **Unstract MCP** — commercial ACORD-form document-processing server, absent from the survivor. This
+  also required correcting the survivor's own "What's Missing" section, which had claimed no ACORD
+  extraction existed anywhere — now correctly distinguishes Unstract's document-level extraction from
+  the still-real gap in ACORD *messaging*-standard (system-to-system) integration.
+- **ComplianceCow/cow-mcp** — GRC automation server, absent from the survivor. Re-verified live via
+  GitHub API: 12 stars, 19 forks, 361 commits (last push 2026-08-20).
+- Also pulled a re-verified, materially useful detail into the survivor's *existing* Apify
+  underwriting entry (both pages already had this server, but the InsurTech page's breakdown was more
+  precise): the 8 underlying data-source actors are a mix of US and UK government feeds
+  (FEMA/USGS/NOAA vs. UK Environment Agency/Police/Land Registry), confirmed live against the Apify
+  listing via WebFetch — a fact worth surfacing because US-only underwriters get only partial coverage
+  from the two UK-sourced categories (flood warnings, crime data).
+- Did **not** pull Ansvar-Systems/US_Compliance_MCP — both pages independently confirmed this repo no
+  longer exists (the retired page's own 2026-08-15 audit had already marked it dead), so there was
+  nothing live to add.
+- Updated the survivor's front matter (title, description, og_description, card_description), the
+  "landscape divides into ten areas" and headline-findings intro paragraphs, "What's Missing" (added
+  named-platform specifics for agency management and claims adjudication — Applied Epic/Vertafore/
+  HawkSoft, Guidewire/Duck Creek/Majesco — plus parametric insurance and insurance marketplaces), and
+  "The Bottom Line" to reflect the merged content. Added an `aliases` redirect to the retired page's
+  URL. `last_refreshed` and `sources_audited` bumped to 2026-08-21.
+- Repointed 3 other live pages that linked the retired URL or carried stale ratings/versions:
+  `content/guides/best-mcp-servers.md` (2 spots in its giant comparison table — the "Insurance" row
+  updated to 3.5/5 with current Root/Fenris/Socotra key servers, the separate "Insurance / InsurTech"
+  row removed outright rather than repointed, since collapsing both to one survivor URL would have
+  left two identical rows), `content/categories/finance-fintech/index.md` (collapsed two table rows
+  into one at 3.5/5; also corrected the page's stated review count from 13 to 12 in title/description/
+  og_description/intro paragraph, since removing one row genuinely shrank the count), and
+  `content/reviews/automotive-vehicle-mcp-servers.md` (1 spot, cross-reference link only).
+- `hugo --minify --cleanDestinationDir --quiet` clean; confirmed the alias redirect (200 via
+  meta-refresh) and survivor (200, correct 3.5/5 rating, Root/Fenris/Unstract/cow-mcp content present)
+  in the built site before deploying.
+- Committed (`a1caa50d0e`), pushed, deployed (throttle clear — ~4h since prior deploy), live-verified:
+  survivor 200 with merged content, old URL redirects through to survivor 200.
+- Logged the full diff-and-merge in `duplicate-clusters.md` (moved to Resolved, alongside New Relic
+  and Package Management — above the 2 remaining open clusters: error-handling, auth).
+
+### Routine build sweep / citation audit
+
+No new RingS `content/ai/` files beyond what #2388 already reported (context-management-for-
+coding-agents track-collapse merge — content/ai/ stays excluded from the live build per config.toml,
+so this had no build/deploy impact). Citation audit backlog reconfirmed closed (0 unaudited pages
+outside the 3 section `_index.md` files — re-verified via direct grep, not recalled). Early-vintage
+re-audit cohort reconfirmed closed via a precise date-parsing check (not the flawed regex from a
+first attempt this run, which over-matched on month prefixes): 0 pages with `sources_audited` <=
+2026-07-24 remain across builders-log/guides/reviews.
+
+### Bluesky / CEO digest
+
+`check_bluesky_posted_today.py` -> `ALREADY_POSTED` (00:39:03Z, session 4009's post). No digest this
+run — today's cap (#2378) already used; a completed queued merge isn't an incident/blocking-question
+exception. Full detail lives here for tomorrow's digest.
+
+### What should happen next
+
+- **Next in the CEO's ordered queue: MCP Error Handling guides** (`guides/mcp-error-handling-
+  resilience.md` survivor — superset with circuit breakers, SEP-1303, production patterns; retire
+  `mcp-error-handling-explained.md`). Pull the "Two Error Paths" framing / common-scenarios material
+  only if genuinely additive. Alias redirect authorized. Then auth guides last (closes the ordered
+  queue of 5).
+- Report tomorrow (new UTC day, cap resets): today's Insurance merge with commit hash + what was
+  pulled/cut, fresh subscriber count + GSC line.
+- Citation audit backlog: closed, nothing queued. Early-vintage re-audit: closed, 0 pages <= cutoff.
+- No open blockers.
