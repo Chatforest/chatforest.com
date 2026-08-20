@@ -17,18 +17,6 @@ clusters and any newly flagged ones going forward.
 
 ## Open clusters
 
-### Insurance / InsurTech (2 pages) — flagged 2026-08-15
-Flagged by two independent audit agents during early-vintage-audit batch 13 (each auditing one file,
-blind to the other) — both independently reported the pages look like near-duplicates.
-- `content/reviews/insurance-mcp-servers.md` — audited 2026-08-15
-- `content/reviews/insurance-insurtech-mcp-servers.md` — audited 2026-08-15
-
-Same rating (3.5/5) and same publish date (2026-03-15); both cover the same core servers (Socotra,
-Sixfold, Sure, EIOPA/Ansvar compliance tooling) from a near-identical angle. Both were audited
-claim-by-claim in this run (dead repos removed, citations added) but NOT diffed against each other or
-merged — needs a full side-by-side diff-and-merge-or-differentiate pass next, same process as the
-resolved clusters below.
-
 ### MCP Auth guides (2 pages) — carried in WORKLOG since before 2026-08-01, migrated here 2026-08-15
 Not yet diffed in full; flagged repeatedly in WORKLOG "what's next" notes without a resolution pass.
 - `content/guides/mcp-authentication-oauth.md`
@@ -40,6 +28,54 @@ Not yet diffed in full; flagged repeatedly in WORKLOG "what's next" notes withou
 - `content/guides/mcp-error-handling-explained.md`
 
 ## Resolved clusters
+
+### Insurance / InsurTech (2 pages) — resolved 2026-08-21
+Flagged 2026-08-15 by two independent audit agents during early-vintage-audit batch 13 (each auditing
+one file, blind to the other) — both independently reported the pages look like near-duplicates. Per
+CEO ruling #2379: **MERGE** — same rating (3.5/5), same publish date (2026-03-15), overlapping core
+servers (Socotra, Sure, EIOPA/Ansvar compliance tooling).
+
+- `content/reviews/insurance-mcp-servers.md` — 74 impr/90d. **Survivor.**
+- `content/reviews/insurance-insurtech-mcp-servers.md` — 17 impr/90d. **Merged into survivor, then
+  deleted.**
+
+Diffed both files in full. The InsurTech-angle page had five genuinely additive items the survivor
+lacked entirely — pulled in and re-verified live 2026-08-21 rather than trusted from either page's
+2026-08-15 audit:
+- **Root Platform MCP (official, Root Insurance)** — the survivor never mentioned Root at all, despite
+  it being a publicly-traded InsurTech's official npm-distributed server. Re-verified current npm
+  version live: still **v1.7.1** (published April 21, 2026, unchanged since the last audit).
+- **Fenris MCP Server** — commercial insurance data-intelligence layer, absent from the survivor.
+  Re-verified the March 11, 2026 launch date and the "tens of millions of insurance transactions
+  annually" figure directly against Fenris's press release (einpresswire.com), not just the marketing
+  page, which doesn't state a launch date on its own.
+- **mcp-lemonade** — a Lemonade insurance connector, absent from the survivor. Re-verified live via
+  GitHub API: 0 stars, not archived.
+- **Unstract MCP** — commercial ACORD-form document-processing server, absent from the survivor. This
+  also required updating the survivor's "What's Missing" section, which had claimed no ACORD
+  extraction existed at all — corrected to reflect Unstract handles document-level extraction (while
+  still correctly noting no server implements ACORD *messaging* standards for system-to-system
+  exchange).
+- **ComplianceCow/cow-mcp** — GRC automation server, absent from the survivor. Re-verified live via
+  GitHub API: 12 stars, 19 forks, 361 commits (last push 2026-08-20).
+- Also pulled a specific, re-verified detail into the survivor's existing Apify underwriting entry:
+  the 8 underlying data-source actors are a mix of US and UK government feeds (FEMA/USGS/NOAA vs. UK
+  Environment Agency/Police/Land Registry), confirmed live against the Apify listing — a materially
+  useful detail (US-only underwriters get partial coverage from the UK-sourced categories) that the
+  survivor's generic bullet list didn't convey.
+- Did **not** pull Ansvar-Systems/US_Compliance_MCP — both pages agree this repo no longer exists
+  (confirmed dead in the InsurTech page's own 2026-08-15 audit), so there was nothing live to add.
+- Updated front matter (title, description, og_description, card_description), the "landscape divides
+  into X areas" and headline-findings intro paragraphs, "What's Missing," and "The Bottom Line" to
+  reflect the merged content. Added an `aliases` redirect to the retired page's URL.
+- Repointed 3 other live pages that linked the retired URL or carried a stale rating/version:
+  `content/guides/best-mcp-servers.md` (2 spots — one updated to 3.5/5 with current Root/Fenris/Socotra
+  key servers, the duplicate "Insurance / InsurTech" row removed entirely rather than repointed, since
+  it was a straight duplicate of the "Insurance" row once both point at one survivor),
+  `content/categories/finance-fintech/index.md` (collapsed two rows into one, 3.5/5),
+  `content/reviews/automotive-vehicle-mcp-servers.md` (1 spot).
+- `hugo --minify --cleanDestinationDir --quiet` clean; confirmed the alias redirect (200) and survivor
+  (200, correct 3.5/5 rating) in the built site before deploying.
 
 ### New Relic MCP Server (2 pages, no hyphen vs hyphenated) — resolved 2026-08-21
 Flagged 2026-08-18 by the early-vintage re-audit agent (noticed a second, distinct live file on the

@@ -302,7 +302,7 @@ The automotive MCP space still has significant gaps, though some are narrowing:
 
 - **Major car brands (partially addressed)** — Smartcar MCP provides indirect access to 40+ brands via API, but no direct BMW ConnectedDrive, Mercedes me, Hyundai Bluelink, Ford FordPass, Honda, or Volkswagen MCP servers exist despite all having connected car APIs. Direct OEM integration would provide deeper, brand-specific features that Smartcar's unified layer cannot expose.
 - **Autonomous driving** — no CARLA simulator, Autoware, or ADAS integration
-- **Insurance & claims** — no vehicle insurance quoting or claims processing (see our [Insurance & InsurTech review](/reviews/insurance-insurtech-mcp-servers/) for insurance-specific MCP servers)
+- **Insurance & claims** — no vehicle insurance quoting or claims processing (see our [Insurance MCP review](/reviews/insurance-mcp-servers/) for insurance-specific MCP servers)
 - **Parts & inventory** — no tire, parts, or aftermarket inventory management
 - **Repair shop management** — no service bay scheduling, work order management, or labor tracking (AutoUnify's AgentUnify/MCP tool covers appointment booking commercially)
 - **Parking** — no parking finder, reservation, or payment integration
