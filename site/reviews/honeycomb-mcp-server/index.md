@@ -174,7 +174,7 @@ Required `HONEYCOMB_ENV_{NAME}_API_KEY` environment variables. Supported Claude 
 
 **[Sentry MCP Server](/reviews/sentry-mcp-server/)** (4/5) — deep error tracking with AI root cause analysis (Seer). Narrower than Honeycomb (errors only) but deeper in its niche. Sentry and Honeycomb complement each other well — Sentry for crash debugging, Honeycomb for performance investigation.
 
-**[New Relic MCP Server](/reviews/newrelic-mcp-server/)** (4/5) — 35 tools with natural language to NRQL translation and the most generous free tier (100GB/month). More accessible than Honeycomb for traditional APM workflows. Honeycomb's event-based approach is more powerful for high-cardinality debugging, but New Relic is more approachable for general observability.
+**[New Relic MCP Server](/reviews/newrelic-mcp-server/)** (3.5/5) — 27 tools with natural language to NRQL translation and the most generous free tier (100GB/month). More accessible than Honeycomb for traditional APM workflows. Honeycomb's event-based approach is more powerful for high-cardinality debugging, but New Relic is more approachable for general observability.
 
 **[kajirita2002/honeycomb-mcp-server](https://github.com/kajirita2002/honeycomb-mcp-server)** — a community-maintained alternative on npm (`@kajirita2002/honeycomb-mcp-server`). 3 stars, 20 commits, 11 documented tools, last commit ~March 2025. Not archived, but dormant for well over a year. With the hosted server now GA, Agent Skills open-sourced separately, and Honeycomb investing heavily in agent-era positioning, the case for community self-hosted alternatives is weaker than ever.
 

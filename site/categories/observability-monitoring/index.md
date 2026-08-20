@@ -11,14 +11,13 @@ Observability is where MCP is seeing the strongest vendor adoption outside of cl
 
 ## Full-Stack Observability Platforms
 
-The major observability platforms that provide unified dashboards, metrics, traces, and alerting. All five vendors in this group ship official first-party MCP servers — the highest vendor adoption rate of any subcategory.
+The major observability platforms that provide unified dashboards, metrics, traces, and alerting. All four vendors in this group ship official first-party MCP servers — the highest vendor adoption rate of any subcategory.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Grafana](/reviews/grafana-mcp-server/) | 4/5 | [mcp-grafana](https://github.com/grafana/mcp-grafana) (2,600+ stars, 303 forks, v0.11.3), 40+ tools across 15 categories |
 | [Datadog](/reviews/datadog-mcp-server/) | 4/5 | [Official Datadog MCP](https://github.com/datadog-labs/mcp-server) (22 stars, GA since March 9 2026), 50+ tools across 14 modular toolsets |
-| [New Relic](/reviews/newrelic-mcp-server/) | 4/5 | [Remote-hosted at mcp.newrelic.com](https://github.com/newrelic/mcp-server) (Streamable HTTP), 35+ tools across 6 categories, Public Preview |
-| [New Relic NRQL & Alerts](/reviews/new-relic-mcp-server/) | 3.5/5 | [Official first-party](https://github.com/newrelic/mcp-server) (4 stars, Public Preview), 15+ observability tools across 6 categories — NRQL queries, alerts, entity discovery, log analysis |
+| [New Relic](/reviews/newrelic-mcp-server/) | 3.5/5 | [Remote-hosted at mcp.newrelic.com](https://github.com/newrelic/mcp-server) (7 stars, Public Preview), 27 tools across 6 categories — NRQL queries, alerts, entity discovery, log analysis; two open OAuth bugs block SSO-enforced orgs |
 | [Honeycomb](/reviews/honeycomb-mcp-server/) | 4/5 | [Official hosted MCP](https://github.com/honeycombio/honeycomb-mcp) (replaced deprecated self-hosted, 41 stars, 12 forks), 14 tools, GA since Sep 2025, [Agent Skills](https://github.com/honeycombio/agent-skill) + Automated Investigations launched Mar 2026 |
 
 ## Error Tracking & Incident Management

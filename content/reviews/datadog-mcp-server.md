@@ -251,7 +251,7 @@ The server works with 13 named clients including Claude Code, Claude Desktop, Cu
 
 **[winor30/mcp-server-datadog](https://github.com/winor30/mcp-server-datadog)** (143 stars, 76 forks, [v1.8.0](https://github.com/winor30/mcp-server-datadog/releases) as of June 2026) — the most popular community Datadog MCP server with 20+ tools including host management (mute/unmute), downtime scheduling, and RUM analysis. TypeScript, Apache 2.0, stdio transport. Draws substantially more [PulseMCP-estimated traffic](https://www.pulsemcp.com/servers/winor30-datadog) than the official server, though the exact multiplier is volatile and shouldn't be quoted precisely. Useful if you need local deployment, capabilities the official server doesn't cover, or want to avoid rate limits. It went eight months without a release (October 2025 to June 2026) before v1.8.0 shipped, so check the releases page for how actively it's maintained before depending on it.
 
-**New Relic MCP Server** — 35 tools with natural language to NRQL translation. [More accessible pricing](https://newrelic.com/pricing/free-tier) (100GB/mo free tier). Still in Public Preview.
+**New Relic MCP Server** — 27 tools with natural language to NRQL translation. [More accessible pricing](https://newrelic.com/pricing/free-tier) (100GB/mo free tier). Still in Public Preview.
 
 **Honeycomb MCP** — event-based observability with high-cardinality debugging. A fundamentally different approach — better for distributed system investigations, weaker for traditional APM dashboarding.
 

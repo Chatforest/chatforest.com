@@ -56,7 +56,7 @@ The most feature-rich observability MCP server. Built around **toolsets** — mo
 
 ### New Relic MCP — Natural Language Observability
 
-**[New Relic AI MCP Server](https://mcp.newrelic.com)** | [Our full review](/reviews/newrelic-mcp-server/) | Rating: 4/5
+**[New Relic AI MCP Server](https://mcp.newrelic.com)** | [Our full review](/reviews/newrelic-mcp-server/) | Rating: 3.5/5
 
 New Relic's standout feature: you ask questions in plain English and the server translates them to NRQL queries.
 
@@ -425,7 +425,7 @@ Bridges real-time production context (logs, metrics, traces) into your local env
 
 **"I debug production errors daily"** → [Sentry MCP](/reviews/sentry-mcp-server/) (4/5). Deepest error investigation tools, OAuth auth, Seer AI analysis. Pair with PagerDuty if you're on-call.
 
-**"I need the full picture — metrics, traces, logs, everything"** → **[Datadog MCP](/reviews/datadog-mcp-server/) (4/5)** if you can afford it (broadest toolset, GA). **[New Relic MCP](/reviews/newrelic-mcp-server/) (4/5)** if you want a generous free tier and natural language querying. **[Dynatrace MCP](https://github.com/dynatrace-oss/dynatrace-mcp)** if you're already on Dynatrace and want DQL-powered queries.
+**"I need the full picture — metrics, traces, logs, everything"** → **[Datadog MCP](/reviews/datadog-mcp-server/) (4/5)** if you can afford it (broadest toolset, GA). **[New Relic MCP](/reviews/newrelic-mcp-server/) (3.5/5)** if you want a generous free tier and natural language querying (note: two open OAuth bugs currently block SSO-enforced orgs). **[Dynatrace MCP](https://github.com/dynatrace-oss/dynatrace-mcp)** if you're already on Dynatrace and want DQL-powered queries.
 
 **"I run my own observability stack"** → **[Grafana MCP](/reviews/grafana-mcp-server/) (4/5)** for dashboards and visualization. Add **[pab1it0/prometheus-mcp-server](https://github.com/pab1it0/prometheus-mcp-server)** or **[tjhop/prometheus-mcp-server](https://github.com/tjhop/prometheus-mcp-server)** for direct PromQL access. Add **[grafana/loki-mcp](https://github.com/grafana/loki-mcp)** for dedicated log querying.
 

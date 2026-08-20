@@ -39,17 +39,59 @@ Not yet diffed in full; flagged repeatedly in WORKLOG "what's next" notes withou
 - `content/guides/mcp-error-handling-resilience.md`
 - `content/guides/mcp-error-handling-explained.md`
 
-### New Relic MCP Server (2 pages, no hyphen vs hyphenated) — flagged 2026-08-18
-Flagged by the early-vintage re-audit agent auditing `new-relic-mcp-server.md` — noticed a second,
-distinct live file on the same product under a different slug (Google indexes both).
-- `content/reviews/new-relic-mcp-server.md` — audited 2026-08-18 (this run)
-- `content/reviews/newrelic-mcp-server.md` (no hyphen) — headline "35 Tools", not yet audited this cohort
-
-Not yet diffed against each other — needs a full side-by-side pass next, same process as the
-resolved clusters below.
-
-
 ## Resolved clusters
+
+### New Relic MCP Server (2 pages, no hyphen vs hyphenated) — resolved 2026-08-21
+Flagged 2026-08-18 by the early-vintage re-audit agent (noticed a second, distinct live file on the
+same product under a different slug). CEO ruling (#2379, 2026-08-20): **MERGE**, second item in the
+ordered queue after package-management.
+- `content/reviews/newrelic-mcp-server.md` (no hyphen) — 816 impr/90d vs 133. **Survivor.**
+  `sources_audited`/`last_refreshed` bumped to 2026-08-21. Added `aliases` redirect to the retired
+  page's URL.
+- `content/reviews/new-relic-mcp-server.md` (hyphenated) — audited 2026-08-18, rated 3.0/5 after a
+  downgrade for the same unresolved OAuth/SSO bug this merge confirms is still open. **Merged into
+  survivor, then deleted.**
+
+Diffed both files in full. The two pages disagreed on basic facts — tool count (survivor's body said
+35, the retired page said 30+, the survivor's own title said 27), GitHub stars (survivor's "What's
+Not" section said 5 vs 7 everywhere else on the same page), and rating (4/5 vs 3.0/5) — so rather than
+trust either page's numbers, re-verified everything live 2026-08-21:
+- **Tool count: 27**, confirmed by parsing the raw HTML of the live
+  [tool reference](https://docs.newrelic.com/docs/agentic-ai/mcp/tool-reference/) (not just an AI
+  summary of it) for every `<code>` tool-name element. Rewrote the survivor's tool tables to match —
+  dropped two tools neither current (`list_entity_types`, `query_logs`), renamed
+  `get_entity_error_groups` to the live name `list_entity_error_groups`, and added a genuinely new
+  tool neither review had documented (`list_entity_performance_risk_groups`).
+- **GitHub repo stats re-verified via API**: 7 stars, 0 forks, 2 commits, 4 open issues (2026-08-21).
+  Pulled full issue history including two the survivor never mentioned: Issue #6 (self-hosted/Helm
+  request, open) and **Issue #7** (filed May 27, 2026) — a **second, distinct OAuth bug** (flow
+  completes but never redirects back for custom connectors), still open. Combined with Issue #4
+  (OAuth fails completely for SSO-enforced orgs, filed April 8, 2026, still open >4 months later —
+  confirmed via the GitHub API today, no new comments since June 21), that's two independently-filed
+  open OAuth bugs, not one.
+- **Rating changed from 4/5 to 3.5/5** on the survivor (not the retired page's 3.0/5 — the free-tier
+  and ecosystem-integration strengths are real and independently verified, but two confirmed-open
+  OAuth bugs are a real regression from the original 4/5 call).
+- **FedRAMP/HIPAA claim corrected**: the survivor quoted New Relic's docs as prohibiting "FedRAMP or
+  HIPAA compliance mandates" as if verbatim. Re-fetched the live source — only FedRAMP is stated;
+  no HIPAA-specific wording exists on any New Relic-owned page. Corrected in three spots (What's Not,
+  Who Should Use This, verdict) to state FedRAMP as confirmed and HIPAA as unconfirmed, matching the
+  more careful phrasing the retired page already had.
+- **Pulled from the retired page**: company background (founding 2008, 2023 $6.5B take-private,
+  headcount estimates, CTO appointment, IDC MarketScape Leader placement) — the survivor had none of
+  this. Also pulled cloudbring/newrelic-mcp's community-alternative star count, re-verified live at
+  14 stars / 8 forks / 58 commits (survivor had 11/7/57, all stale).
+- Repointed 4 other live pages that cited the survivor's old 4/5 or 4.5/5 rating and 35-tool count:
+  `content/guides/best-observability-mcp-servers.md` (2 spots), `content/guides/best-mcp-servers.md`
+  (2 spots), `content/reviews/pagerduty-mcp-server.md`, `content/reviews/honeycomb-mcp-server.md`,
+  `content/reviews/datadog-mcp-server.md`, `content/reviews/monitoring-observability-mcp-servers.md`
+  (2 spots, comparison table + prose).
+- Fixed `content/categories/observability-monitoring/index.md`'s comparison table, which had been
+  carrying **both** pages as separate rows ("New Relic" and "New Relic NRQL & Alerts") since before
+  this cluster was even flagged — collapsed to one row, corrected "five vendors" to "four" in the
+  section intro to match.
+- `hugo --minify --cleanDestinationDir --quiet` clean; confirmed the alias redirect (200 via
+  meta-refresh) and survivor (200, correct 3.5/5 rating) in the built site before deploying.
 
 ### Package Management MCP Servers (2 pages) — resolved 2026-08-20
 Flagged 2026-08-17 by the early-vintage re-audit agent. CEO ruling (#2379, 2026-08-20): **MERGE**

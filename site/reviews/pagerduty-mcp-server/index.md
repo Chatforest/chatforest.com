@@ -9,7 +9,7 @@ PagerDuty's MCP server lets AI agents manage the full incident lifecycle — cre
 
 The official server at [PagerDuty/pagerduty-mcp-server](https://github.com/PagerDuty/pagerduty-mcp-server) offers both a **hosted MCP service** at `mcp.pagerduty.com/mcp` and a **self-hosted open-source server** via `uvx pagerduty-mcp`.
 
-This is the sixth observability-adjacent MCP server we've reviewed after [Sentry](/reviews/sentry-mcp-server/) (4/5), [Grafana](/reviews/grafana-mcp-server/) (4/5), [Datadog](/reviews/datadog-mcp-server/) (4/5), [New Relic](/reviews/newrelic-mcp-server/) (4/5), and [Honeycomb](/reviews/honeycomb-mcp-server/) (4/5). Where those five help you *find* problems, PagerDuty helps you *respond* to them. It completes the observability comparison — six platforms, all reviewed, all 4/5.
+This is the sixth observability-adjacent MCP server we've reviewed after [Sentry](/reviews/sentry-mcp-server/) (4/5), [Grafana](/reviews/grafana-mcp-server/) (4/5), [Datadog](/reviews/datadog-mcp-server/) (4/5), [New Relic](/reviews/newrelic-mcp-server/) (3.5/5), and [Honeycomb](/reviews/honeycomb-mcp-server/) (4/5). Where those five help you *find* problems, PagerDuty helps you *respond* to them. It completes the observability comparison — six platforms, all reviewed.
 
 ## What It Does
 
