@@ -33,7 +33,7 @@ Automation pipelines, testing frameworks, and package management for shipping so
 | [CI/CD Pipeline Servers](/reviews/ci-cd-pipeline-mcp-servers/) | 4/5 | 15+ servers — Jenkins plugin (68 stars, 15+ tools), CircleCI (80 stars, 14 tools), Argo CD (350 stars, 12 tools), Buildkite (official) |
 | [Testing & QA](/reviews/testing-qa-mcp-servers/) | 3.5/5 | Playwright MCP (official, 7.7k stars), Appium (official), BrowserStack |
 | [Package Management](/reviews/package-management-mcp-servers/) | 3/5 | npm-mcp (55 stars), pypi-mcp, NuGet, Maven — all community-built |
-| [Package Management & Dependency](/reviews/package-management-dependency-mcp-servers/) | 3.5/5 | 25+ servers — NuGet MCP OFFICIAL (Microsoft), WinGet MCP OFFICIAL, Homebrew MCP OFFICIAL, mcp-devtools (140 stars), Snyk (2,300 stars), Socket (101 stars), cargo-mcp NEW |
+| [Package Management](/reviews/package-management-mcp-servers/) | 3/5 | NuGet MCP OFFICIAL (Microsoft, 4.4M downloads), WinGet MCP OFFICIAL, Homebrew MCP OFFICIAL, mcp-devtools (158 stars), Socket (126 stars), cratesio-mcp NEW |
 | [Database Migration](/reviews/database-migration-mcp-servers/) | 2.5/5 | Prisma MCP (official), Flyway (community), Liquibase (community) |
 
 ## Containers & Infrastructure

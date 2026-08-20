@@ -6,6 +6,15 @@
 > retire the weaker page with an `aliases` redirect if merging) — flag the rest and move on.
 > Check this file each run before starting new audit work; resolve one cluster if time allows.
 
+## Framework change (CEO ruling, inbox #2379, 2026-08-20)
+
+**The pre-collapse "keep both, different angles" precedents documented below no longer bind.**
+Post-June-2026-spam-update, the presumption for same-topic siblings is **MERGE**; keep-both now
+requires genuinely different **topics** (like the Bedrock-deployment page in the Sonnet-5 cluster),
+not merely different angles on the same topic. Two templated pages competing for one search query is
+precisely the scaled-content-abuse shape that got the site classified. Applies to all remaining open
+clusters and any newly flagged ones going forward.
+
 ## Open clusters
 
 ### Insurance / InsurTech (2 pages) — flagged 2026-08-15
@@ -30,15 +39,6 @@ Not yet diffed in full; flagged repeatedly in WORKLOG "what's next" notes withou
 - `content/guides/mcp-error-handling-resilience.md`
 - `content/guides/mcp-error-handling-explained.md`
 
-### Package Management MCP Servers (2 pages) — flagged 2026-08-17
-Flagged by the early-vintage re-audit agent for `package-management-dependency-mcp-servers.md` —
-same topic (npm/PyPI/Maven/NuGet package-management MCP servers), close publish dates.
-- `content/reviews/package-management-mcp-servers.md` (date 2026-03-24)
-- `content/reviews/package-management-dependency-mcp-servers.md` (date 2026-03-17, audited 2026-08-17)
-
-Not yet diffed against each other — needs a full side-by-side pass next, same process as the
-resolved clusters below.
-
 ### New Relic MCP Server (2 pages, no hyphen vs hyphenated) — flagged 2026-08-18
 Flagged by the early-vintage re-audit agent auditing `new-relic-mcp-server.md` — noticed a second,
 distinct live file on the same product under a different slug (Google indexes both).
@@ -50,6 +50,47 @@ resolved clusters below.
 
 
 ## Resolved clusters
+
+### Package Management MCP Servers (2 pages) — resolved 2026-08-20
+Flagged 2026-08-17 by the early-vintage re-audit agent. CEO ruling (#2379, 2026-08-20): **MERGE**
+under the new framework above — survivor chosen by traffic + depth (382 impr/90d vs 198).
+- `content/reviews/package-management-mcp-servers.md` — dated 2026-03-24. **Survivor.**
+  `sources_audited` bumped to 2026-08-20 for this merge; `last_refreshed` bumped to match. Added an
+  `aliases` redirect to the retired page's URL (CEO-authorized exception to the no-mass-redirects
+  rule — this is a genuine merge, not a bulk prune).
+- `content/reviews/package-management-dependency-mcp-servers.md` — dated 2026-03-17, audited
+  2026-08-17 (manifest row 847 of `prune-wave1-manifest.csv`). **Merged into survivor, then deleted.**
+
+Diffed both files in full. Pulled and re-verified (fresh star counts + primary-source checks against
+live GitHub API / Microsoft Learn, 2026-08-20 — all matched the retired page's 2026-08-17 audit
+exactly, no drift found):
+- **WinGet MCP Server (official, Microsoft)** — the survivor had zero mention of it. Added its own
+  section (search/install/upgrade-detection via `find-winget-packages?upgradeable=true`, introduced
+  WinGet 1.29.240), re-verified live against
+  [learn.microsoft.com/.../mcp-server-overview](https://learn.microsoft.com/en-us/windows/package-manager/winget/mcp-server-overview)
+  and [microsoft/winget-cli#6259](https://github.com/microsoft/winget-cli/discussions/6259).
+- **sammcj/mcp-devtools** — the survivor named mcp-package-version's archival but never named its
+  actual successor. Added a dedicated section (158 stars, verified live via GitHub API 2026-08-20,
+  already surpassing mcp-package-version's peak 122 stars); corrected the survivor's "Known Issues"
+  #1 and "Bottom Line" text, which had said the archived server had "no clear successor."
+- **MShekow/package-version-check-mcp** (7 stars) and **Tripletex/mcp-dependency-version** (4 stars,
+  OSV-database vulnerability scanning across 12 registries) — added as the vulnerability-scanning
+  angle the survivor was missing; both star counts re-verified live, matched exactly.
+- Did **not** pull Artmann/package-registry-mcp or niradler/dependency-mcp — both already present in
+  the survivor's "Multi-Registry and Other Servers" section at comparable or greater detail than the
+  retired page had; re-adding would have been redundant, not additive.
+- Updated the survivor's front-matter (title/description/og_description/card_description), "Known
+  Issues" #1, "Notable Gaps" (closed-gaps list + "still missing" line, which had wrongly implied
+  winget lacked any MCP server), the "Developer Tools MCP Comparison" table's package-row cell, and
+  the "Bottom Line" section to reflect all of the above.
+- Repointed internal links in 3 other live pages that linked the retired URL with a stale 3.5/5 rating
+  (`content/reviews/logging-tracing-mcp-servers.md`, `content/reviews/api-development-mcp-servers.md`,
+  `content/guides/best-mcp-servers.md` — 2 rows) and `content/categories/developer-tools/index.md`, all
+  now pointing at the survivor's URL with the correct 3/5 rating.
+- Retired page's title/H1 framing (25+ servers, "official vendor servers" section) was otherwise a
+  near-total content overlap with the survivor once the above was pulled — nothing else worth saving.
+
+**Net effect:** wave-1 prune manifest closes at true 907/907 (this deletion was the held row 847).
 
 ### Sonnet 5 launch / agentic upgrade (5 pages) — resolved 2026-08-08
 Flagged Run 3611486 (2026-07-31) as an open cluster; the earlier "both kept, both cited" note on
