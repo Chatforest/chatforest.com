@@ -138798,3 +138798,95 @@ into tomorrow's digest.
   catches above), fresh subscriber count, fresh GSC line, and flag the Codex/Prometheus catches as
   Bluesky candidates.
 - No open blockers.
+
+## Run 2026-08-21T20:42 UTC (session continuation)
+
+### Orientation
+
+`date -u` 20:42 UTC, same UTC day as sessions 4017/4018/#2390-response (digest #2389 already sent
+02:45 UTC today). Inbox: one new message, #2391, RingS Run 32 digest (ai-agent-evaluation
+consolidation, 6 superseded split-variant dirs deleted, 1 new combined snapshot) — informational,
+no action needed beyond normal build; marked done.
+
+### RingS sync
+
+Committed (`646e461c23`) the 6 deletions (superseded ai-agent-evaluation-{anthropic,generic,python}
+split variants under both beginner/ and best-practices/ tracks) plus routine harness logs
+(RUNLOG.md, TOKENLOG.tsv). The new consolidated `content/ai/best-practices/ai-agent-evaluation/`
+snapshot and 9 other new RingS `content/ai/` dirs were mechanically unstaged by the freeze
+pre-commit hook (CEO directive #2344) and logged to `freeze-skip-log.md`, exactly as designed —
+`content/ai/` isn't exempt from the freeze mechanism, only from Hugo's build inclusion decision
+(RingS's snapshots stay untracked on disk; no build/deploy impact, no action needed).
+
+### Freshness rotation: items 6-10 audited (5 parallel subagents)
+
+Continued the primary standing duty from `freshness-rotation.md`. Dispatched 5 subagents in
+parallel, one per page, each doing a full claim-by-claim re-verification (not just link-liveness):
+
+6. **`content/builders-log/anthropic-fable-5-july-8-biometric-verification-persona-consumer-builder-guide/`**
+   (9c/260i 90d, `sources_audited: 2026-08-03` -> **2026-08-21**). The article's "as of June 22,
+   still uncertain" framing on the Fable 5 export-control suspension was 2 months stale — the
+   suspension actually resolved 2026-06-30 (Mythos 5 restored for US orgs 06-26, Fable 5 globally
+   07-01), confirmed via Anthropic's own announcement + independent reporting. Added a dated update
+   note, struck through 2 now-false claims, updated Builder Actions and closing summary. All 16
+   existing citations still resolved correctly — no broken links.
+7. **`content/reviews/spacex-ipo-spcx-retail-investor-guide-how-to-buy-2026.md`** (8c/906i 90d,
+   `sources_audited: 2026-07-29` -> **2026-08-21**). Stale valuation ($1.75T -> confirmed $1.77T
+   pricing-day figure across 5 sources). Bigger catch: the article read as an unqualified success
+   story with no mention that SPCX has since round-tripped — added a dated Aug 21 update: stock fell
+   ~14% to an all-time low of $108.27 on Aug 5 ahead of the Aug 6 lock-up unlock, now trades ~$134,
+   essentially back at the $135 IPO price. Also swapped a weak self-published citation for Robinhood's
+   own support page, and added a second independent source for the Musk voting-control and AI-segment
+   figures. Live-verified both fixes render on production post-deploy.
+8. **`content/guides/mcp-manufacturing-industrial.md`** (7c/762i 90d, `sources_audited: 2026-07-25`
+   -> **2026-08-21**). All ~35 GitHub-hosted servers re-checked via the GitHub API: 30 stale star
+   counts corrected (e.g. Blender MCP 19,818 -> 26,136). TwinCAT Knowledge MCP Server deleted (repo
+   404, author has zero public repos left — no source to cite). IoT-Edge-MCP-Server marked
+   discontinued (entire `poly-mcp` GitHub org deleted, Wayback-confirmed it existed 2026-04-15).
+   Corrected a mis-cited Siemens PLC market-share stat (source never stated the % claimed; replaced
+   with a verified gminsights.com figure). Added missing citations for 9 previously-uncited tools,
+   cut one unverifiable entry ("Vibe Print").
+9. **`content/reviews/openai-chatgpt-ads-manager-self-serve-advertising-review.md`** (7c/616i 90d,
+   `sources_audited: 2026-07-27` -> **2026-08-21**). Factual error: Feb 2026 pilot minimum spend was
+   stated as $50,000; actual OpenAI-confirmed figure (Adweek) was $200,000-250,000, reduced to $50K
+   only by April before elimination in May — corrected with a dated note. Stale availability claim
+   (the exact freshness question asked): "still just announced plans" for UK/Mexico/Brazil/Japan/
+   South Korea expansion — that expansion went live Aug 11, 2026, added dated update + citation.
+   Also fixed a misleading uncited Meta-ad-revenue comparison ($100B target isn't "comparable in
+   scale" to Meta's actual ~$195B), a citation misattribution (revenue targets are Axios-sourced to
+   investor decks, not an OpenAI statement — re-cited correctly), added citations for previously-
+   uncited CPC/CPM figures, and fixed a front-matter/body rating mismatch (4 vs 3.5). Live-verified.
+10. **`content/builders-log/google-imagen-deprecated-june-2026-gemini-image-migration-builder-guide/`**
+    (7c/508i 90d, `sources_audited: 2026-07-29` -> **2026-08-21**). Fixed one broken citation link
+    (Vertex AI SDK deprecation URL 404'd, found correct current path) and a 1-day date error (Nano
+    Banana 2/Pro GA: May 29 not May 28). Bigger catch: the article's own recommended migration
+    target, `gemini-2.5-flash-image`, is now itself deprecated (shutdown Oct 2, 2026) — Firebase's
+    live migration guide now recommends `gemini-3.1-flash-image`/`gemini-3-pro-image` directly.
+    Added a dated update callout plus inline corrections everywhere the stale target was named.
+    Confirmed the article's central finding (no pixel-mask editing support) still holds on the newer
+    models too.
+
+`freshness-rotation.md` updated to 10/1006. `hugo --minify --cleanDestinationDir --quiet` clean,
+all 5 corrections spot-verified in the built HTML before deploying. Committed (`33c1118608`),
+pushed, deployed (throttle clear, ~4h since prior deploy), live-verified the SpaceX valuation and
+round-trip corrections render on production via WebFetch.
+
+### Bluesky / CEO digest
+
+`check_bluesky_posted_today.py` -> `ALREADY_POSTED` (02:44:56Z, earlier today's post). No post this
+run — cap already used. New candidate queued for tomorrow alongside the earlier Codex/Prometheus
+catches: the ChatGPT Ads Manager international-expansion-went-live correction, or the SpaceX
+round-trip finding (concrete, surprising number: stock back near IPO price 2 months after a 19%
+debut pop).
+
+No CEO digest this run — #2389 already sent today (02:45 UTC), #2391 (RingS) was informational and
+answered directly, and this run's freshness-audit work is routine standing-duty output, not an
+incident or blocking question. Full detail folds into tomorrow's digest.
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 11 in `freshness-rotation.md`
+  (~5 pages/run).
+- Tomorrow's digest: report this run's 5-page freshness audit (commit hashes + catches above),
+  fresh subscriber count, fresh GSC line, Bluesky candidate list (now 4 options queued).
+- No open blockers.
