@@ -1,9 +1,9 @@
 # Jeff Bezos Is Building 'The CAD of the Future' — And It Has Nothing to Do With Robotics
 
-> Project Prometheus, Jeff Bezos's first startup since leaving Amazon, is building an 'artificial general engineer' — AI that designs physical objects. Here's what we actually know about the most secretive $38B company in Silicon Valley.
+> Project Prometheus, Jeff Bezos's first startup since leaving Amazon, is building an 'artificial general engineer' — AI that designs physical objects. Here's what we actually know about the most secretive $41B company in Silicon Valley.
 
 
-**At a glance:** Project Prometheus. [Founded November 2025 by Jeff Bezos and Vik Bajaj](https://en.wikipedia.org/wiki/Vik_Bajaj) (former Google X executive and co-founder of Google's life-sciences division, later spun out as Verily). Focus: "Artificial general engineer" — AI tools for designing physical objects, targeting aerospace, automotive, advanced manufacturing, and drug discovery. [Total funding: $16.2 billion ($6.2B at launch, $10B in April 2026). Valuation: $38 billion.](https://www.bloomberg.com/news/articles/2026-04-23/bezos-s-physical-ai-lab-has-closed-round-at-38-billion-value) [Employees: ~120, drawn from OpenAI, DeepMind, Meta, and xAI. Offices: San Francisco, London, Zurich.](https://www.geekwire.com/2026/jeff-bezos-describes-his-38b-startup-prometheus-for-the-first-time-nothing-to-do-with-robotics/) [First public Bezos interview: CNBC Squawk Box, May 20, 2026.](https://www.cnbc.com/2026/05/20/cnbc-exclusive-transcript-jeff-bezos-speaks-with-cnbcs-andrew-ross-sorkin-on-squawk-box-today-.html) [Separate initiative: a $100B fund to acquire and transform legacy manufacturing firms.](https://techcrunch.com/2026/03/19/jeff-bezos-reportedly-wants-100-billion-to-buy-and-transform-old-manufacturing-firms-with-ai/) Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** Project Prometheus. [Founded November 2025 by Jeff Bezos and Vik Bajaj](https://en.wikipedia.org/wiki/Vik_Bajaj) (former Google X executive and co-founder of Google's life-sciences division, later spun out as Verily). Focus: "Artificial general engineer" — AI tools for designing physical objects, targeting aerospace, automotive, advanced manufacturing, and drug discovery. [Total funding: $18.2 billion ($6.2B at launch, $12B Series B closed June 11, 2026). Valuation: $41 billion.](https://techcrunch.com/2026/06/11/jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-general-engineer-for-the-physical-world/) [Employees: ~120, drawn from OpenAI, DeepMind, Meta, and xAI. Offices: San Francisco, London, Zurich.](https://www.geekwire.com/2026/jeff-bezos-describes-his-38b-startup-prometheus-for-the-first-time-nothing-to-do-with-robotics/) [First public Bezos interview: CNBC Squawk Box, May 20, 2026.](https://www.cnbc.com/2026/05/20/cnbc-exclusive-transcript-jeff-bezos-speaks-with-cnbcs-andrew-ross-sorkin-on-squawk-box-today-.html) [Separate initiative: a $100B fund to acquire and transform legacy manufacturing firms.](https://techcrunch.com/2026/03/19/jeff-bezos-reportedly-wants-100-billion-to-buy-and-transform-old-manufacturing-firms-with-ai/) Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
@@ -11,7 +11,7 @@ On [May 20, 2026, Jeff Bezos walked onto the set of CNBC's Squawk Box for his fi
 
 "We have nothing to do with robotics."
 
-That correction — delivered without irritation, just matter-of-factly — is probably the most useful single sentence for understanding what Project Prometheus actually is. The startup that has raised $16.2 billion, employs about 120 people, and is valued at $38 billion is not building robot arms. It is not trying to compete with Figure or Boston Dynamics. It is doing something harder to visualize, more unglamorous, and arguably more consequential: it is trying to rebuild the software layer that sits between a human engineer's imagination and the physical world.
+That correction — delivered without irritation, just matter-of-factly — is probably the most useful single sentence for understanding what Project Prometheus actually is. The startup — which has since raised $18.2 billion total and is valued at $41 billion, per a [June 11, 2026 Series B](https://techcrunch.com/2026/06/11/jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-general-engineer-for-the-physical-world/) — employs about 120 people and is not building robot arms. It is not trying to compete with Figure or Boston Dynamics. It is doing something harder to visualize, more unglamorous, and arguably more consequential: it is trying to rebuild the software layer that sits between a human engineer's imagination and the physical world.
 
 ---
 
@@ -43,9 +43,9 @@ The company's target domains are:
 
 ---
 
-## The Money: $16.2 Billion and a Separate $100 Billion Fund
+## The Money: $18.2 Billion and a Separate $100 Billion Fund
 
-[Prometheus launched in November 2025 with $6.2 billion in initial funding. In April 2026, the company closed an additional $10 billion round at a $38 billion valuation.](https://www.bloomberg.com/news/articles/2026-04-23/bezos-s-physical-ai-lab-has-closed-round-at-38-billion-value) JPMorgan and BlackRock participated as investors — an unusual roster for a 6-month-old AI startup, and a signal that Prometheus is being positioned as an industrial infrastructure play, not a consumer product company.
+**Update, 2026-08-22:** this section originally covered an April 2026 Bloomberg report of a $10 billion round at a $38 billion valuation. [Prometheus closed a further, larger round on June 11, 2026](https://techcrunch.com/2026/06/11/jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-general-engineer-for-the-physical-world/) — a $12 billion Series B that brings total funding to $18.2 billion ($6.2B at launch plus the $12B round) at a $41 billion valuation, confirmed independently by [GeekWire](https://www.geekwire.com/2026/bezos-ai-startup-prometheus-raises-12b-at-41b-valuation-and-the-ceos-explain-what-theyre-doing/) and [Bloomberg](https://www.bloomberg.com/news/articles/2026-06-11/jeff-bezos-ai-startup-valued-at-41-billion-in-funding-round). The figures below are updated to reflect this. Investors in the June round included Jeff Bezos personally, JPMorgan Chase, Goldman Sachs, BlackRock, DST Global, and Arch Venture Partners — an unusual roster for a 9-month-old AI startup, and a signal that Prometheus is being positioned as an industrial infrastructure play, not a consumer product company.
 
 Separately from the company itself, [the Wall Street Journal reported in March 2026](https://www.bloomberg.com/news/articles/2026-03-19/bezos-seeks-100-billion-to-use-ai-in-manufacturing-wsj-says) that Bezos is raising a $100 billion "manufacturing transformation vehicle" — essentially a private equity fund that would acquire underperforming legacy industrial companies and rebuild them from the inside using Prometheus technology. [TechCrunch's reporting](https://techcrunch.com/2026/03/19/jeff-bezos-reportedly-wants-100-billion-to-buy-and-transform-old-manufacturing-firms-with-ai/) describes the fund as targeting factories, not AI labs: acquiring manufacturers in chipmaking, aerospace, and defense, then deploying Prometheus AI tools to modernize them. As of this writing the fund is still at the fundraising-talks stage, sourced to unnamed people familiar with the matter — not a closed, confirmed vehicle.
 
@@ -61,7 +61,7 @@ This separates Prometheus from most AI companies in a meaningful way. Most AI co
 
 He added: "The good ideas will pay for all of the losers."
 
-This is a defensible historical position — the internet bubble destroyed individual companies but built durable infrastructure that enabled everything that came after. Whether it is a useful prediction for 2026-era AI valuations is a different question. Prometheus itself is valued at $38 billion with no disclosed revenue, building technology that is not yet in production use. The argument that "infrastructure is worth the price even if the bubble pops" is somewhat harder to make for industrial AI software than it was for fiber-optic cable and web servers.
+This is a defensible historical position — the internet bubble destroyed individual companies but built durable infrastructure that enabled everything that came after. Whether it is a useful prediction for 2026-era AI valuations is a different question. Prometheus itself is now [valued at $41 billion](https://techcrunch.com/2026/06/11/jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-general-engineer-for-the-physical-world/) with no disclosed revenue, building technology that is not yet in production use. The argument that "infrastructure is worth the price even if the bubble pops" is somewhat harder to make for industrial AI software than it was for fiber-optic cable and web servers.
 
 ---
 
@@ -86,7 +86,7 @@ Specific unknowns that would materially change the assessment:
 - What the business model is — software licensing, managed service, or equity stakes through the manufacturing fund
 - How Prometheus's approach differs technically from Siemens NX AI, Autodesk AI tools, or the AI engineering work happening at NVIDIA and Ansys
 
-The $38 billion valuation implies that investors believe either the technology is already working at a level that justifies that price, or that Bezos's track record and the industrial AI market are large enough to justify the bet regardless.
+The $41 billion valuation implies that investors believe either the technology is already working at a level that justifies that price, or that Bezos's track record and the industrial AI market are large enough to justify the bet regardless.
 
 ---
 
@@ -96,13 +96,13 @@ Project Prometheus is a genuinely interesting company pursuing a non-obvious wed
 
 The "nothing to do with robotics" correction matters. Bezos is not competing with Figure, Boston Dynamics, or Tesla Optimus. He is competing with — or more accurately, trying to obsolete — the engineering workflow that happens before any robot arm or factory floor gets involved.
 
-Whether the technology is ready, whether the team is the right one to build it, and whether $38 billion is a reasonable valuation for a 6-month-old company with no disclosed customers are all open questions. What is not an open question is that Bezos's return to an operating role — combined with $16.2 billion in committed capital and a parallel fund targeting industrial acquisition — is a serious bet on physical AI as the next major AI application layer.
+Whether the technology is ready, whether the team is the right one to build it, and whether $41 billion is a reasonable valuation for a 9-month-old company with no disclosed customers are all open questions. What is not an open question is that Bezos's return to an operating role — combined with $18.2 billion in committed capital and a parallel fund targeting industrial acquisition — is a serious bet on physical AI as the next major AI application layer.
 
 The chatbot era is not over. But Bezos, at least, appears to be building for what comes after it.
 
 ---
 
-*Research note: All information sourced from public reporting as of May 24, 2026, with one post-publish correction added at audit time (2026-07-28): Bezos's June 11, 2026 CNBC remarks disputing the "world models" framing, noted inline above because it directly contradicts a claim this piece originally made. Project Prometheus has not published technical benchmarks, customer lists, or product documentation. Financial figures are from Bloomberg, CNBC, TechCrunch, and GeekWire reporting. We have not tested any Prometheus product.*
+*Research note: All information sourced from public reporting as of May 24, 2026, with two post-publish corrections: Bezos's June 11, 2026 CNBC remarks disputing the "world models" framing (added at audit time 2026-07-28), and the June 11, 2026 $12 billion Series B that brought total funding to $18.2 billion at a $41 billion valuation, superseding the article's original $16.2 billion/$38 billion figures (updated at audit time 2026-08-22 — the article's own Sources section had linked the June-round coverage since shortly after publication, but the body text was never updated to match until this pass). Project Prometheus has not published technical benchmarks, customer lists, or product documentation. Financial figures are from Bloomberg, CNBC, TechCrunch, and GeekWire reporting. We have not tested any Prometheus product.*
 
 ---
 

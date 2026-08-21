@@ -10,7 +10,7 @@ rating: 4
 ratingHalf: false
 author: "ChatForest"
 last_refreshed: 2026-05-13
-sources_audited: 2026-07-26
+sources_audited: 2026-08-22
 ---
 
 **At a glance:** IBM Granite 4.1, released April 29, 2026. Ten-model family: language (3B/8B/30B), vision (4B), speech (2B), safety (Guardian 8B), embeddings. Apache 2.0. The 8B language model outperforms IBM's prior 32B MoE. 512K training context. HumanEval 85.37%, BFCL v3 tool calling 68.27%. OpenRouter at $0.05/$0.10 per M tokens. IBM offers uncapped IP indemnification on watsonx. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -263,10 +263,10 @@ At $0.10/M output tokens, Granite 4.1 8B is among the cheapest capable language 
 
 | Model | Output price (per M tokens) |
 |---|---|
-| Granite 4.1 8B (OpenRouter) | $0.10 |
-| Arcee Trinity Large (Arcee Cloud) | $0.90 |
-| Mistral Medium 3.5 (La Plateforme) | $7.50 |
-| Claude 4.5 Opus (Anthropic API) | ~$15.00 |
+| Granite 4.1 8B ([OpenRouter](https://openrouter.ai/ibm-granite/granite-4.1-8b)) | $0.10 |
+| Arcee Trinity Large Thinking ([Arcee Cloud](https://docs.arcee.ai/get-started/pricing)) | ~$0.90 |
+| Mistral Medium 3.5 ([La Plateforme](https://openrouter.ai/mistralai/mistral-medium-3-5)) | $7.50 |
+| Claude Opus 4.5 ([Anthropic API](https://www.anthropic.com/news/claude-opus-4-5)) | $25.00 |
 
 At these prices, Granite 4.1 8B is effectively a commodity model. Developers building high-volume pipelines — document extraction, code review automation, structured data parsing — can run substantial workloads at very low cost.
 

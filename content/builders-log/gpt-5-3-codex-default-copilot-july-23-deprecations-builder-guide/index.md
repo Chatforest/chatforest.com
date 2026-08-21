@@ -5,7 +5,7 @@ description: "GPT-5.3-Codex became the base model for all GitHub Copilot Busines
 content_type: "Builder's Log"
 categories: ["OpenAI", "Model Migration", "Agent Development", "GitHub Copilot"]
 tags: ["openai", "gpt-5.3-codex", "codex", "model-deprecation", "github-copilot", "agentic-coding", "api-migration", "reasoning-effort", "computer-use", "agent-development"]
-sources_audited: 2026-07-28
+sources_audited: 2026-08-22
 ---
 
 [GPT-5.3-Codex has been OpenAI's primary agentic coding model since February 5, 2026](https://openai.com/index/introducing-gpt-5-3-codex/). [On May 17 it became the base model for all GitHub Copilot Business and Enterprise organizations](https://github.blog/changelog/2026-05-17-gpt-5-3-codex-is-now-the-base-model-for-copilot-business-and-enterprise/), replacing GPT-4.1 as the default. On June 5, GPT-5.2-Codex was removed from most Copilot model pickers.
@@ -14,13 +14,25 @@ And on July 23, 2026, [every earlier Codex API model was originally scheduled to
 
 If you have any production calls to `gpt-5-codex`, `gpt-5.1-codex`, `gpt-5.1-codex-max`, `gpt-5.2-codex`, or `gpt-5.1-codex-mini`, those calls fail in 51 days.
 
-> **Update, 2026-07-28:** OpenAI has since pushed the shutdown date for these five Codex model IDs back to **October 23, 2026**, per the [live OpenAI deprecations page](https://developers.openai.com/api/docs/deprecations) — replacement models are now listed as `gpt-5.6-sol` (for `gpt-5-codex`, `gpt-5.1-codex`, `gpt-5.1-codex-max`, `gpt-5.2-codex`) and `gpt-5.6-terra` (for `gpt-5.1-codex-mini`), part of the [GPT-5.6 family OpenAI previewed](https://openai.com/index/previewing-gpt-5-6-sol/) in July 2026. The rest of this article reflects what was true and published as of June 2, 2026; the migration advice (move off these model IDs to `gpt-5.3-codex` or newer) still stands, you now have more runway to do it.
+> **Correction, 2026-08-22:** An earlier version of this update (dated 2026-07-28) incorrectly stated
+> that OpenAI had pushed this shutdown back to October 23, 2026. Re-checking the
+> [live OpenAI deprecations page](https://developers.openai.com/api/docs/deprecations) directly:
+> the five Codex model IDs below remain listed under the **July 23, 2026** shutdown section
+> (replacement `gpt-5.6-sol`, or `gpt-5.6-terra` for `gpt-5.1-codex-mini`), part of the GPT-5.6
+> family, which [OpenAI first previewed](https://openai.com/index/previewing-gpt-5-6-sol/) in late
+> June 2026 and [moved to general availability on July 9, 2026](https://openai.com/index/gpt-5-6/).
+> October 23, 2026 is a **separate, later deprecation wave** covering different legacy model
+> snapshots (`gpt-4`, `gpt-4o-2024-05-13`, `o1`, `o3-mini`, `o4-mini`) — it does not apply to these
+> Codex IDs. That means the July 23 shutdown for `gpt-5-codex`, `gpt-5.1-codex`,
+> `gpt-5.1-codex-max`, `gpt-5.1-codex-mini`, and `gpt-5.2-codex` already happened as originally
+> scheduled: if you still have production calls to any of these model IDs, they are returning
+> errors now, not on some later date. Move to `gpt-5.3-codex` or newer immediately.
 
 ---
 
 ## What Is Being Shut Down
 
-The following model IDs were originally set to reach end-of-life on **July 23, 2026**, per [OpenAI's deprecations page](https://developers.openai.com/api/docs/deprecations) as published at the time of this article (see the update note above for the revised October 23, 2026 date):
+The following model IDs reached end-of-life on **July 23, 2026**, per [OpenAI's deprecations page](https://developers.openai.com/api/docs/deprecations) (re-verified live 2026-08-22 — see the correction note above; this date did not move):
 
 | Model ID | Status (as of original publication) |
 |---|---|
@@ -177,4 +189,4 @@ If your agent is exclusively writing, running, and debugging code — no documen
 4. **Check Copilot IDE settings.** If you have explicit model overrides in VS Code, JetBrains, or CLI settings, verify they point to `gpt-5.3-codex` or `gpt-5.5`.
 5. **Evaluate GPT-5.5 if you are on a mixed workload.** For agents that combine coding with document generation, analysis, or multimodal inputs, GPT-5.5 is now recommended as the primary model.
 
-At original publication, July 23 was 51 days out; per the update note above, OpenAI has since moved that shutdown to October 23, 2026. The migration is still a one-line change. Do it before it is urgent.
+At original publication, July 23 was 51 days out. That date held — per the correction note above, the shutdown happened as scheduled and is not October 23. If you haven't migrated yet, the affected model IDs are already returning errors. The migration is still a one-line change.

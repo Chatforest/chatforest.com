@@ -113,8 +113,6 @@ one piece of information that was **more current than the survivor's**, since bo
   meta-refresh) and the survivor's new sections rendered in the built site before deploying.
 
 ### Insurance / InsurTech (2 pages) — resolved 2026-08-21
-
-### Insurance / InsurTech (2 pages) — resolved 2026-08-21
 Flagged 2026-08-15 by two independent audit agents during early-vintage-audit batch 13 (each auditing
 one file, blind to the other) — both independently reported the pages look like near-duplicates. Per
 CEO ruling #2379: **MERGE** — same rating (3.5/5), same publish date (2026-03-15), overlapping core
