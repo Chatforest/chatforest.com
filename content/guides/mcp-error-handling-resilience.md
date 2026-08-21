@@ -1,11 +1,12 @@
 ---
 title: "MCP Error Handling & Resilience: Protocol Errors, Tool Recovery, Circuit Breakers, and Production Fault Tolerance"
 date: 2026-03-28T21:45:00+09:00
-description: "A comprehensive guide to MCP error handling and resilience — covering JSON-RPC error codes, the isError flag for tool execution errors, structured error messages for LLM"
+aliases: ["/guides/mcp-error-handling-explained/"]
+description: "A comprehensive guide to MCP error handling and resilience — covering JSON-RPC error codes, the isError flag for tool execution errors, version-negotiation errors, structured error messages for LLM recovery"
 content_type: "Guide"
-card_description: "MCP servers fail. Networks drop. APIs time out. Databases lock. The question isn't whether your MCP server will encounter errors — it's whether your error handling helps the AI recover or leaves it stuck. This guide covers the full error handling stack: JSON-RPC protocol errors, tool execution errors with isError, structured messages for LLM self-correction, circuit breakers, retries, bulkheads, timeout budgets, session recovery, and production fault tolerance."
-last_refreshed: 2026-03-28
-sources_audited: 2026-08-11
+card_description: "MCP servers fail. Networks drop. APIs time out. Databases lock. The question isn't whether your MCP server will encounter errors — it's whether your error handling helps the AI recover or leaves it stuck. This guide covers the full error handling stack: JSON-RPC protocol errors, tool execution errors with isError, version-negotiation errors, structured messages for LLM self-correction, circuit breakers, retries, bulkheads, timeout budgets, session recovery, and production fault tolerance."
+last_refreshed: 2026-08-21
+sources_audited: 2026-08-21
 ---
 
 MCP servers fail. Networks drop. APIs time out. Databases lock. Rate limits trigger. Sessions expire. The question isn't whether your MCP server will encounter errors — it's whether your error handling helps the AI agent recover or leaves it stuck in a loop of identical failing requests.
@@ -44,13 +45,22 @@ MCP inherits the standard JSON-RPC 2.0 error codes. These are handled automatica
 
 ### MCP-Specific Error Codes
 
-Beyond the standard JSON-RPC codes, MCP implementations commonly use codes in the -32000 to -32099 range (reserved for implementation-defined server errors):
+JSON-RPC 2.0 reserves the -32000 to -32099 range for implementation-defined server errors. Historically, MCP implementations used this range loosely for things like connection-closed, timeout, or session-expired conditions. As of the [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/basic#error-codes), the range is formally partitioned:
 
-| Code | Common Usage | Typical Scenario |
-|------|-------------|-----------------|
-| **-32000** | Connection Closed | Server shut down, process crashed, pipe broken |
-| **-32001** | Request Timeout | Tool execution exceeded time limit |
-| **-32002** | Session Expired | Streamable HTTP session ID no longer valid |
+| Sub-range | Status |
+|-----------|--------|
+| **-32000 to -32019** | **Legacy.** New implementations must not allocate new codes here, and — apart from -32002, kept only for backward compatibility — must not assume any specific meaning for codes in this range. |
+| **-32020 to -32099** | **Reserved for the MCP spec.** Codes here are defined exclusively by the specification. |
+
+The spec currently defines three codes in the reserved sub-range:
+
+| Code | Name | Typical Scenario |
+|------|------|-----------------|
+| **-32020** | [`HeaderMismatch`](https://modelcontextprotocol.io/specification/2026-07-28/schema#headermismatcherror) | A request header conflicts with the session or protocol state |
+| **-32021** | [`MissingRequiredClientCapability`](https://modelcontextprotocol.io/specification/2026-07-28/schema#missingrequiredclientcapabilityerror) | Server needs a client capability (e.g. elicitation) that wasn't declared for the request; `data.requiredCapabilities` lists what's missing |
+| **-32022** | [`UnsupportedProtocolVersion`](https://modelcontextprotocol.io/specification/2026-07-28/schema#unsupportedprotocolversionerror) | Server doesn't implement the protocol version the request declared |
+
+`-32002` (session/resource expired, used by protocol versions 2025-11-25 and earlier) is retired for new implementations but clients should still accept it from servers running older protocol versions — current-spec servers return `-32602` (Invalid Params) for a not-found resource instead. See [Session and Version-Negotiation Errors](#session-and-version-negotiation-errors) below.
 
 ### Custom Application Error Codes
 
@@ -379,6 +389,18 @@ Production deployments have reported several systematic issues:
 
 [SEP-1442](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1442) proposed eliminating mandatory session state entirely — stateless-by-default with per-request capabilities, removing the session concept from the critical path. The proposal was accepted (92 comments as of this audit) and its design shipped in the [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http): protocol-level sessions and the `Mcp-Session-Id` header were removed from Streamable HTTP, and every request now carries its own protocol version and capabilities via `_meta`. **This supersedes the session-based recovery patterns described above**, which applied to protocol versions 2025-03-26 through 2025-11-25.
 
+## Session and Version-Negotiation Errors
+
+The [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/basic/versioning) retired the old `initialize`-handshake model — a three-message exchange (`initialize` request, response, `initialized` notification) that negotiated protocol version and capabilities once, for the life of the connection. MCP is now a [stateless protocol](https://modelcontextprotocol.io/specification/2026-07-28/basic#statelessness): every individual request carries its own protocol version and capabilities in its `_meta` field via `io.modelcontextprotocol/protocolVersion` and `io.modelcontextprotocol/clientCapabilities`, and there is no separate initialization step. Servers that still need to support older ("legacy," per the spec's own terminology) clients can implement both models side by side.
+
+This changes what version-mismatch and capability-mismatch errors look like:
+
+- **Version mismatch:** if a server doesn't implement the protocol version a request declares, it **must** respond with [`UnsupportedProtocolVersion`](https://modelcontextprotocol.io/specification/2026-07-28/schema#unsupportedprotocolversionerror) (code `-32022`), listing the versions it does support, and the client retries with a mutually supported version. Under the older handshake model, the server instead responded to `initialize` with its own supported version and left the decision to proceed up to the client.
+- **Missing client capability:** if a request requires a client capability the client didn't declare in `_meta` (e.g. the server needs to elicit input but the client didn't declare support), the server returns [`MissingRequiredClientCapability`](https://modelcontextprotocol.io/specification/2026-07-28/schema#missingrequiredclientcapabilityerror) (code `-32021`), whose `data.requiredCapabilities` field lists what's missing.
+- **A request missing a required `_meta` field is malformed:** the server must reject it with `-32602` (Invalid Params), and on HTTP the response status must be `400 Bad Request`.
+
+**Resource-not-found errors changed code too:** current-spec (2026-07-28) servers return `-32602` (Invalid Params) when a requested resource URI doesn't exist, replacing the older `-32002` code from protocol versions 2025-11-25 and earlier. Clients should still accept `-32002` from servers running earlier protocol versions for backward compatibility. **For MCP tool errors on this path:** if you're building a client, check the error `data` field (e.g. `{"uri": "file:///nonexistent.txt"}`) to surface which resource failed, and don't assume `-32002` means "not found" from a current-spec server — check `-32602` first.
+
 ## Graceful Degradation Patterns
 
 When services are unavailable, MCP servers should degrade gracefully rather than failing completely.
@@ -478,6 +500,16 @@ The [OpenAI Agents SDK](https://github.com/openai/openai-agents-python) includes
 - Configurable retries for `list_tools()` and `call_tool()` via `max_retry_attempts` and `retry_backoff_seconds_base` — opt-in, not automatic by default
 - Manual reconnection via `MCPServerManager.reconnect()`, which can retry only failed servers or restart all of them — this requires an explicit call, not automatic health monitoring
 - A customizable `failure_error_function` for shaping the error message a server failure surfaces to the model — the docs don't describe cross-server error-format normalization
+
+## Security and Correctness Pitfalls
+
+Beyond the resilience patterns above, a handful of mistakes recur across MCP error-handling implementations:
+
+- **Leaking sensitive data in errors.** Stack traces, internal paths, and database connection details in an error message are a security incident, not just noise — sanitize error output (including the `data` field) before it leaves the server. The spec's [Tools security considerations](https://modelcontextprotocol.io/specification/2026-07-28/server/tools#security-considerations) require servers to validate all tool inputs and sanitize tool outputs; error messages are part of that output.
+- **Revealing resource existence via error differences.** Returning a distinct error for "doesn't exist" versus "exists but you lack permission" lets a caller enumerate resources they shouldn't be able to see. Use the same error response for both cases where enumeration is a real risk.
+- **Not preserving the request ID.** Every error response must carry the same `id` as the request that caused it — without this, a client juggling multiple in-flight requests can't match errors back to the calls that triggered them.
+- **Returning protocol errors for tool failures.** If a downstream API returns a 500, that's a tool execution error (`isError: true`), not a JSON-RPC Internal Error (`-32603`). Reserve `-32603` for problems with the MCP server itself, not the services it calls.
+- **Swallowing transport errors.** When an stdio server process crashes mid-response, a client without timeouts and process monitoring can hang forever waiting for a response that will never arrive.
 
 ## Production Error Handling Checklist
 

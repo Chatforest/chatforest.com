@@ -368,7 +368,7 @@ Before shipping an MCP server to production, verify:
 - [What Is MCP?](/guides/what-is-mcp/) — foundational concepts
 - [MCP Transports Explained](/guides/mcp-transports-explained/) — how stdio and HTTP transports work
 - [MCP Testing Strategies](/guides/mcp-testing-strategies/) — testing your servers before deploying
-- [MCP Error Handling](/guides/mcp-error-handling-explained/) — structured error responses
+- [MCP Error Handling & Resilience](/guides/mcp-error-handling-resilience/) — structured error responses, circuit breakers, and production fault tolerance
 - [MCP in Production](/guides/mcp-in-production/) — deployment considerations
 - [MCP Server Security](/guides/mcp-server-security/) — securing server communication
 

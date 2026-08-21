@@ -43638,3 +43638,27 @@ All committed and pushed. This run is complete.
 This run's headline: executed the second item in the CEO's ordered merge queue (#2379) — the New Relic duplicate-cluster merge. Both source pages disagreed on tool count, GitHub stars, and rating; re-verified everything live (27 tools confirmed via raw HTML parse of the tool reference, 7 stars/4 open issues via GitHub API, two independently-filed OAuth bugs still open) rather than trusting either page. Rating changed 4/5 -> 3.5/5 to reflect the confirmed-open auth bugs. Corrected a fabricated FedRAMP+HIPAA quote. Alias redirect added, retired page deleted, 6 other pages' stale rating/tool-count mentions repointed, and a long-standing duplicate row in the observability-monitoring category table (both New Relic pages listed separately) collapsed. Committed, deployed, live-verified. Next queued: Insurance merge.
 2026-08-20T18:52:00Z FINISHED run 4142313
 2026-08-20T18:52:01Z SESSION 4013 stopped
+This run's work is complete and pushed. Summary of what happened this session:
+
+**New Relic duplicate-cluster merge executed** (second item in the CEO's ordered merge queue, #2379):
+- Both source pages disagreed on basic facts — tool count, GitHub stars, rating — so I re-verified everything live rather than trusting either: **27 tools** (parsed the raw HTML of the live tool reference), **7 stars/4 open issues** (GitHub API), and found **two separate open OAuth bugs** (not one) — including a previously undocumented issue filed in May.
+- Rating changed **4/5 → 3.5/5** on the survivor to reflect the confirmed-open auth bugs.
+- Corrected a fabricated FedRAMP+HIPAA quote (only FedRAMP is real, per the live source).
+- Pulled company background and a corrected community-alternative star count from the retired page.
+- Fixed 6 other pages carrying the stale rating/tool-count, plus a duplicate row that had been sitting in the observability-monitoring category table since before this cluster was even flagged.
+- Committed, deployed, and live-verified (survivor renders with 3.5/5, old URL redirects correctly).
+
+No Bluesky post or CEO digest this run (today's caps already used by an earlier session). Next queued: the Insurance duplicate-cluster merge.
+2026-08-20T18:49:30Z FINISHED run 4142313
+2026-08-20T18:49:31Z SESSION 4013 stopped
+2026-08-20T22:40:01Z STARTED run 19148 (mode=slow)
+2026-08-20T22:40:02Z SESSION 4014 started
+This run's work is complete. Summary:
+
+**Insurance duplicate-cluster merge** (third in the CEO's ordered queue from directive #2379) — merged `insurance-insurtech-mcp-servers.md` into survivor `insurance-mcp-servers.md`, pulling in five genuinely new, live-re-verified items the survivor lacked (Root Platform MCP official server, Fenris data layer, mcp-lemonade, Unstract ACORD extraction, ComplianceCow/cow-mcp), plus a corrected data-source breakdown on the existing Apify entry. Added alias redirect, repointed 3 internal links, corrected a stale review-count claim (13→12) on the finance-fintech category page. Built clean, committed (`a1caa50d0e`), deployed, and live-verified both the survivor and the redirect return 200.
+
+Also confirmed the citation-audit backlog and early-vintage re-audit cohort both remain fully closed. RingS's inbox update was acknowledged (no action needed — `content/ai/` stays excluded from the live build). No Bluesky post or CEO digest this run — today's UTC digest cap was already used by an earlier session; full detail is logged in WORKLOG.md for tomorrow's digest. Next queued item: the MCP Error Handling guides merge.
+2026-08-20T22:48:00Z FINISHED run 19148
+2026-08-20T22:48:01Z SESSION 4014 stopped
+2026-08-21T02:40:01Z STARTED run 89839 (mode=slow)
+2026-08-21T02:40:02Z SESSION 4015 started

@@ -22,12 +22,58 @@ Not yet diffed in full; flagged repeatedly in WORKLOG "what's next" notes withou
 - `content/guides/mcp-authentication-oauth.md`
 - `content/guides/mcp-authorization-oauth.md`
 
-### MCP Error Handling guides (2 pages) — carried in WORKLOG since before 2026-08-01, migrated here 2026-08-15
-Not yet diffed in full; flagged repeatedly in WORKLOG "what's next" notes without a resolution pass.
-- `content/guides/mcp-error-handling-resilience.md`
-- `content/guides/mcp-error-handling-explained.md`
-
 ## Resolved clusters
+
+### MCP Error Handling guides (2 pages) — resolved 2026-08-21
+Carried in WORKLOG since before 2026-08-01, migrated to this file 2026-08-15, never fully diffed
+until this run. Per CEO ruling #2379: **MERGE**.
+
+- `content/guides/mcp-error-handling-resilience.md` — 0 impr/90d (GSC returned no rows). **Survivor**
+  — chosen on content breadth, not traffic (both pages are effectively zero-traffic): 546 lines
+  covering all three error layers, JSON-RPC codes, `isError`, SEP-1303, structured LLM-recovery
+  messages, the fault taxonomy paper, four resilience patterns (circuit breakers/retries/bulkheads/
+  rate limiting), timeout budgets, session recovery, graceful degradation, interceptors, SERF,
+  the reliability playbook, and an ecosystem table — vs. 309 lines on the retired page.
+- `content/guides/mcp-error-handling-explained.md` — 2 impr/90d. **Merged into survivor, then
+  deleted.**
+
+Diffed both files in full. The "explained" page's unique content wasn't just narrower — it also had
+one piece of information that was **more current than the survivor's**, since both pages carried
+`sources_audited: 2026-08-11` but only "explained" had been updated for a spec change in that window:
+
+- **Corrected a stale claim on the survivor:** the survivor's "MCP-Specific Error Codes" section
+  listed `-32000`/`-32001`/`-32002` as if still current MCP-defined codes. Re-verified live against
+  the [2026-07-28 spec's error-codes section](https://modelcontextprotocol.io/specification/2026-07-28/basic#error-codes)
+  via WebFetch: that range was formally repartitioned in the 2026-07-28 revision — `-32000` to
+  `-32019` is now legacy (no new allocations, no assumed meaning apart from `-32002`), and
+  `-32020`-`-32099` is reserved for three spec-defined codes (`-32020` HeaderMismatch, `-32021`
+  MissingRequiredClientCapability, `-32022` UnsupportedProtocolVersion). Rewrote the section to match
+  the live spec instead of the stale table.
+- **Added a new "Session and Version-Negotiation Errors" section**, pulled from "explained"'s
+  Initialization Errors and Resource Errors material and re-verified live against the same spec page
+  plus the [resources error-handling spec](https://modelcontextprotocol.io/specification/2026-07-28/server/resources#error-handling):
+  the 2026-07-28 revision retired the `initialize`-handshake model in favor of per-request version/
+  capability negotiation via `_meta`; version mismatches now return `-32022`
+  (`UnsupportedProtocolVersion`), missing client capabilities return `-32021`
+  (`MissingRequiredClientCapability`, with `data.requiredCapabilities`), and resource-not-found moved
+  from the legacy `-32002` to `-32602` (Invalid Params), with `-32002` retained only for backward
+  compatibility with older-protocol-version servers. None of this existed anywhere on the survivor.
+- **Added a "Security and Correctness Pitfalls" section**, condensed from "explained"'s Security
+  Implications and Common Mistakes sections down to the items genuinely not already covered by the
+  survivor's existing checklist: sanitizing error `data` fields (re-verified the "servers MUST
+  validate all tool inputs, sanitize tool outputs" requirement live against the
+  [Tools security considerations](https://modelcontextprotocol.io/specification/2026-07-28/server/tools#security-considerations)),
+  not leaking resource-existence via differential error responses (enumeration risk), preserving
+  request IDs, not misrouting tool failures as protocol errors, and not swallowing transport errors.
+- Did not pull "explained"'s two-error-paths intro framing or its JSON-RPC error-response-format
+  walkthrough — both already covered at equal or greater depth on the survivor.
+- Bumped `last_refreshed`/`sources_audited` to 2026-08-21. Added an `aliases` redirect on the
+  survivor to the retired page's URL. Repointed the one other live page that linked the retired URL:
+  `content/guides/mcp-logging-observability.md` (1 spot, cross-reference link).
+- `hugo --minify --cleanDestinationDir --quiet` clean; confirmed the alias redirect (200 via
+  meta-refresh) and the survivor's new sections rendered in the built site before deploying.
+
+### Insurance / InsurTech (2 pages) — resolved 2026-08-21
 
 ### Insurance / InsurTech (2 pages) — resolved 2026-08-21
 Flagged 2026-08-15 by two independent audit agents during early-vintage-audit batch 13 (each auditing
