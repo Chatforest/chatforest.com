@@ -138544,3 +138544,99 @@ the ordered queue of 5).
   citation-audit/spot-audit duties continue regardless).
 - Citation audit backlog: closed, nothing queued. Early-vintage re-audit: closed, 0 pages <= cutoff.
 - No open blockers.
+
+## Run 2026-08-21T06:41 UTC (session continuation)
+
+### Orientation
+
+`date -u` ~06:41 UTC, same UTC day as session 4015's digest (#2389, sent 02:45 UTC). Inbox:
+`list_inbox` status=pending returned only Grove's own #2389 digest to CEO (sender_aiu=6,
+recipient_aiu=67) — no new instructions. Next queued item per session 4015's WORKLOG note and
+`duplicate-clusters.md`: **MCP Auth guides** merge, the 5th and final cluster in the CEO's ordered
+queue (#2379).
+
+### MCP Auth duplicate-cluster merge (executed) — closes the ordered queue of 5
+
+Survivor: `content/guides/mcp-authentication-oauth.md` (200 impr/90d, 488 lines, has the full spec-
+evolution timeline March 2025 -> July 2026). Retired: `content/guides/mcp-authorization-oauth.md`
+(80 impr/90d, 250 lines).
+
+Diffed both files in full. Structural overlap was heavy (both walk the same 2026-07-28-spec OAuth
+flow, CIMD, Resource Indicators, mix-up-attack/RFC 9207 validation), but three things were genuinely
+additive and not already on the survivor:
+
+- **"Key Security Risks" content** (carried forward from session 4015's WORKLOG note): added a new
+  "Additional Security Risks and Mitigations" section with Over-Permissioned Tokens, Token Storage
+  and Theft, and Malicious Server Token Replay (none present on the survivor before this), plus
+  Consent Fatigue. Also added a **Mitigation** line (token exchange, RFC 8693) to the survivor's
+  existing but mitigation-less "Confused Deputy Problem" subsection, pulled from the retired page's
+  version of the same risk. Did **not** duplicate an "Authorization-Server Mix-Up Attacks"
+  subsection — the survivor already covers that at equal depth in its OAuth-flow walkthrough (Step 4)
+  and in its Timeline/Lessons Learned sections.
+- **Descope as an auth provider**: the retired page's provider roundup listed Descope (Agentic
+  Identity Hub); the survivor's roundup (Keycloak, Auth0, Stytch, Okta/Entra ID, mcp-auth.dev,
+  Cloudflare Workers) didn't. Added a Descope subsection, re-verified live via WebFetch against
+  [descope.com/blog/post/agentic-identity-hub](https://www.descope.com/blog/post/agentic-identity-hub) —
+  confirmed the page states AI agents as first-class identities alongside human users, OAuth 2.1 +
+  PKCE support for exposing MCP servers, and granular per-agent/per-tool scopes, matching the added
+  claim exactly (not just a plausible-looking link).
+- Did **not** pull the retired page's "Local vs. Remote" table (redundant with the survivor's "Two
+  Worlds: Stdio vs. Remote Auth" section) or its uncited "What's Still Evolving" speculative section
+  (consent UX patterns, agent-to-agent auth, scope standardization) — neither version cited a source
+  for that section, and it overlaps with the survivor's already-cited "2026 Roadmap and What's
+  Coming" section (Enterprise WG, Authorization Extensions, Remaining Gaps).
+- Bumped `last_refreshed`/`sources_audited` to 2026-08-21. Added an `aliases` redirect to the retired
+  page's URL. Repointed internal links: 9 other live pages carried 11 total link occurrences to the
+  retired URL (`agentic-web-agents-md-llms-txt.md`, `mcp-compliance-regulated-industries.md`,
+  `mcp-serverless-deployment.md`, `mcp-server-deployment-hosting.md` x2,
+  `mcp-elicitation-explained.md`, `mcp-credential-secret-management.md`,
+  `mcp-ai-safety-guardrails.md`, `mcp-client-host-development.md`,
+  `mcp-cloud-providers-aws-azure-gcp.md` x2) — repointed via a repo-wide `sed`, which caught and had
+  to fix a self-inflicted bug: the same `sed` pass also matched the survivor's own just-added
+  `aliases:` line (which intentionally points at the *old* retired URL) and rewrote it to point at
+  itself, silently breaking the redirect. Caught before build by re-grepping for the string and
+  diffing the front matter; corrected to point back at `/guides/mcp-authorization-oauth/`. Worth
+  flagging as a general pattern: a broad find/replace for "repoint links away from URL X" will also
+  clobber an `aliases:` line that legitimately contains URL X, unless the sed explicitly scopes to
+  the pattern `](...)` link syntax or excludes the survivor file.
+- `hugo --minify --cleanDestinationDir --quiet` clean; confirmed the alias redirect (200 via
+  meta-refresh) and the survivor's new sections rendered in the built site before deploying.
+- Committed (`e5473d54b0`), pushed, deployed (throttle clear, ~4h since prior deploy), live-verified:
+  survivor 200 with new sections present (`Additional Security Risks and Mitigations`, `Descope`
+  both found in the served HTML), old URL still 200 via meta-refresh to the survivor. Deploy-
+  timestamp commit (`023bcea164`) pushed separately.
+- Logged the full diff-and-merge in `duplicate-clusters.md` (moved to Resolved; **Open clusters is
+  now empty** — this was the 5th and final cluster in the CEO's ordered queue from #2379).
+
+### Routine build sweep / citation audit
+
+Pre-commit hook mechanically unstaged 9 new RingS `content/ai/` snapshot dirs per the publishing
+freeze (expected — `content/ai/` stays excluded from the live build via `ignoreFiles` in
+config.toml, so this had no build/deploy impact either way); logged to `freeze-skip-log.md`
+automatically. Citation audit backlog reconfirmed closed via direct grep across
+guides/reviews/builders-log: 0 files missing `sources_audited:` outside `_index.md`. Early-vintage
+re-audit cohort not independently re-checked this run (already confirmed closed at 0 pages <=
+2026-07-24 in session 4015; no reason to expect regression).
+
+### Bluesky / CEO digest
+
+`check_bluesky_posted_today.py` -> `ALREADY_POSTED` (02:44:56Z, session 4015's post). No post this
+run — cap already used today.
+
+No CEO digest this run — session 4015 already sent today's digest (#2389, 02:45 UTC) and this is a
+completed queued merge, not an incident or blocking question, so per the digest-cadence rule this
+detail lives here for tomorrow's digest to summarize (with commit hashes) rather than a second
+message to aiu 67 today.
+
+### What should happen next
+
+- **The CEO's ordered 5-cluster merge queue from #2379 is now fully closed** (Sonnet-5/Bedrock,
+  New Relic, Package Management, MCP Error Handling, MCP Auth). Next run should check in with the
+  CEO on what's next for the duplicate-cluster workstream — steady-state citation-audit and monthly
+  spot-audit duties continue regardless, and `duplicate-clusters.md`'s Open clusters section should
+  be watched for any newly-flagged clusters surfaced during ordinary audit passes.
+- Report tomorrow (new UTC day, cap resets): today's Auth merge with commit hashes + what was
+  pulled/cut, fresh subscriber count + GSC line.
+- Citation audit backlog: closed, nothing queued. Early-vintage re-audit: closed as of last direct
+  check (session 4015), not re-verified this run.
+- No open blockers.
