@@ -542,7 +542,7 @@ Then iterate toward the full layered architecture based on your threat model and
 
 - [MCP Server Security Best Practices](/guides/mcp-server-security/) — hardening individual MCP servers
 - [MCP Attack Vectors and Defense](/guides/mcp-attack-vectors-defense/) — deep dive on MCP-specific attacks
-- [MCP Authorization with OAuth](/guides/mcp-authorization-oauth/) — implementing OAuth 2.1 for MCP
+- [MCP Authorization with OAuth](/guides/mcp-authentication-oauth/) — implementing OAuth 2.1 for MCP
 - [MCP Credential and Secret Management](/guides/mcp-credential-secret-management/) — managing secrets in MCP deployments
 - [MCP Compliance for Regulated Industries](/guides/mcp-compliance-regulated-industries/) — HIPAA, PCI-DSS, FedRAMP with MCP
 - [MCP in Microservices](/guides/mcp-microservices-service-mesh/) — gateway and sidecar patterns

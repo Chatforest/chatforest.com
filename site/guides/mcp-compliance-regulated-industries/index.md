@@ -380,7 +380,7 @@ The compliance tooling around MCP is maturing rapidly. Organizations that start 
 - [MCP Server Security](/guides/mcp-server-security/) — securing MCP server deployments
 - [MCP Attack Vectors and Defense](/guides/mcp-attack-vectors-defense/) — threat modeling for MCP
 - [MCP Credential and Secret Management](/guides/mcp-credential-secret-management/) — handling secrets in MCP
-- [MCP Authorization and OAuth](/guides/mcp-authorization-oauth/) — authentication patterns
+- [MCP Authorization and OAuth](/guides/mcp-authentication-oauth/) — authentication patterns
 - [MCP Gateway and Proxy Patterns](/guides/mcp-gateway-proxy-patterns/) — gateway architectures
 - [MCP Enterprise Infrastructure](/guides/mcp-enterprise-infrastructure/) — enterprise deployment patterns
 - [MCP Logging and Observability](/guides/mcp-logging-observability/) — monitoring MCP systems

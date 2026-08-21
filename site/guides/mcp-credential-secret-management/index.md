@@ -468,7 +468,7 @@ Static keys accumulate risk over time. Even if rotation is manual, establish a s
 - [OWASP Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html) — general secrets management guidance
 - [RFC 9700 §4.14](https://datatracker.ietf.org/doc/html/rfc9700#section-4.14) — OAuth 2.0 Security Best Current Practice on refresh token protection and rotation
 - Our [MCP Server Security guide](/guides/mcp-server-security/) — broader security assessment covering authentication, authorization, and input validation
-- Our [MCP Authorization & OAuth guide](/guides/mcp-authorization-oauth/) — deep dive on implementing OAuth 2.1 for MCP servers
+- Our [MCP Authorization & OAuth guide](/guides/mcp-authentication-oauth/) — deep dive on implementing OAuth 2.1 for MCP servers
 - Our [MCP Server Deployment guide](/guides/mcp-server-deployment-hosting/) — production deployment including TLS and auth setup
 
 ---

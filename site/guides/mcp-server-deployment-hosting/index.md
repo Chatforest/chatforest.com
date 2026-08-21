@@ -604,7 +604,7 @@ The [MCP spec builds its authorization mechanism on OAuth 2.1](https://modelcont
 
 In practice, most MCP servers today use simpler API key auth — [only about 8.5% of servers implement OAuth](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/), per Astrix Security's analysis of over 5,200 open-source MCP servers. But for production services with multiple users, OAuth is the right path. Frameworks like [MCPEngine](https://pypi.org/project/mcpengine/) provide built-in OIDC support for identity providers such as Okta, Keycloak, and Google SSO.
 
-For a full breakdown of the 2026-07-28 authorization changes, see our [MCP Authorization & OAuth guide](/guides/mcp-authorization-oauth/).
+For a full breakdown of the 2026-07-28 authorization changes, see our [MCP Authorization & OAuth guide](/guides/mcp-authentication-oauth/).
 
 ## Production Checklist
 
@@ -659,7 +659,7 @@ Before going live, verify each of these:
 ## What's Next
 
 - **[Migrating stdio to Streamable HTTP](/guides/mcp-server-migration-stdio-to-http/)** — If your server still uses stdio, start here
-- **[MCP Authorization & OAuth](/guides/mcp-authorization-oauth/)** — Deep dive into securing remote servers
+- **[MCP Authorization & OAuth](/guides/mcp-authentication-oauth/)** — Deep dive into securing remote servers
 - **[MCP Server Security](/guides/mcp-server-security/)** — Threat model and hardening guide
 - **[MCP Server Performance Tuning](/guides/mcp-server-performance-tuning/)** — Optimize for latency and throughput
 - **[MCP Logging & Observability](/guides/mcp-logging-observability/)** — Production monitoring setup

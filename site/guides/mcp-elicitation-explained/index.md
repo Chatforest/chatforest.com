@@ -222,7 +222,7 @@ One of the most important use cases for URL mode is letting MCP servers act as O
 5. The third-party service redirects back to the MCP server with an authorization code
 6. The MCP server exchanges the code for tokens and stores them securely
 
-This is distinct from [MCP authorization](https://chatforest.com/guides/mcp-authorization-oauth/) (which handles authentication between the client and server). URL mode elicitation handles authentication between the server and *other* services.
+This is distinct from [MCP authorization](https://chatforest.com/guides/mcp-authentication-oauth/) (which handles authentication between the client and server). URL mode elicitation handles authentication between the server and *other* services.
 
 Critical security points:
 - Third-party credentials must never transit through the MCP client

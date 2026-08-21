@@ -17,12 +17,51 @@ clusters and any newly flagged ones going forward.
 
 ## Open clusters
 
-### MCP Auth guides (2 pages) — carried in WORKLOG since before 2026-08-01, migrated here 2026-08-15
-Not yet diffed in full; flagged repeatedly in WORKLOG "what's next" notes without a resolution pass.
-- `content/guides/mcp-authentication-oauth.md`
-- `content/guides/mcp-authorization-oauth.md`
+None currently open — this was the last of the 5 clusters in the CEO's ordered queue (#2379).
 
 ## Resolved clusters
+
+### MCP Auth guides (2 pages) — resolved 2026-08-21 (5th and final of the ordered queue, #2379)
+Carried in WORKLOG since before 2026-08-01, migrated to this file 2026-08-15, never fully diffed
+until this run. Per CEO ruling #2379: **MERGE**.
+
+- `content/guides/mcp-authentication-oauth.md` — 200 impr/90d, 488 lines, has the full spec-evolution
+  timeline (March 2025 → July 2026). **Survivor.**
+- `content/guides/mcp-authorization-oauth.md` — 80 impr/90d, 250 lines. **Merged into survivor, then
+  deleted.**
+
+Diffed both files in full. The retired page's structure overlapped heavily with the survivor's
+(both walk the same 2026-07-28-spec OAuth flow, CIMD, Resource Indicators, mix-up-attack/RFC 9207
+validation), but three things were genuinely additive and not already on the survivor:
+
+- **"Key Security Risks" content** (per WORKLOG's carried-forward note): added a new "Additional
+  Security Risks and Mitigations" section covering Over-Permissioned Tokens, Token Storage and
+  Theft, and Malicious Server Token Replay (none present on the survivor), plus Consent Fatigue.
+  Also added a **Mitigation** line (token exchange, RFC 8693) to the survivor's existing but
+  mitigation-less "Confused Deputy Problem" subsection, pulled from the retired page's version of
+  that same risk. Skipped pulling a duplicate "Authorization-Server Mix-Up Attacks" subsection —
+  the survivor already covers that at equal depth in its OAuth-flow walkthrough and Timeline/Lessons
+  Learned sections.
+- **Descope as an auth provider**: the retired page's provider roundup listed Descope (Agentic
+  Identity Hub); the survivor's roundup (Keycloak, Auth0, Stytch, Okta/Entra ID, mcp-auth.dev,
+  Cloudflare Workers) didn't. Added a Descope subsection, re-verified live via WebFetch against
+  [descope.com/blog/post/agentic-identity-hub](https://www.descope.com/blog/post/agentic-identity-hub)
+  — confirmed the page states AI agents as first-class identities, OAuth 2.1 + PKCE for MCP servers,
+  and per-agent/per-tool scopes, matching the claim added.
+- Did **not** pull the retired page's "Local vs. Remote" table (redundant with the survivor's "Two
+  Worlds" section) or its uncited "What's Still Evolving" speculative section (consent UX patterns,
+  agent-to-agent auth, scope standardization) — no primary source in either version, and it
+  overlaps with the survivor's already-cited "2026 Roadmap and What's Coming" section.
+- Bumped `last_refreshed`/`sources_audited` to 2026-08-21. Added an `aliases` redirect to the retired
+  page's URL. Repointed all internal links: 9 other live pages had 11 total link occurrences to the
+  retired URL (`agentic-web-agents-md-llms-txt.md`, `mcp-compliance-regulated-industries.md`,
+  `mcp-serverless-deployment.md`, `mcp-server-deployment-hosting.md` x2, `mcp-elicitation-explained.md`,
+  `mcp-credential-secret-management.md`, `mcp-ai-safety-guardrails.md`, `mcp-client-host-development.md`,
+  `mcp-cloud-providers-aws-azure-gcp.md` x2) — repointed via sed, then caught and fixed a self-inflicted
+  bug where the same sed pass had overwritten the survivor's own newly-added alias entry to point at
+  itself instead of the retired URL; corrected before build.
+- `hugo --minify --cleanDestinationDir --quiet` clean; confirmed the alias redirect and the survivor's
+  new sections rendered in the built site before deploying.
 
 ### MCP Error Handling guides (2 pages) — resolved 2026-08-21
 Carried in WORKLOG since before 2026-08-01, migrated to this file 2026-08-15, never fully diffed

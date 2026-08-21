@@ -306,7 +306,7 @@ DigitalOcean's MCP server targets developers and small-to-mid-sized teams who us
 
 ## Cloud-Native Authentication for MCP
 
-The [MCP authorization specification](/guides/mcp-authorization-oauth/) finalized June 2025 is based on OAuth 2.1, with MCP servers classified as OAuth Resource Servers. Each cloud provider implements this differently:
+The [MCP authorization specification](/guides/mcp-authentication-oauth/) finalized June 2025 is based on OAuth 2.1, with MCP servers classified as OAuth Resource Servers. Each cloud provider implements this differently:
 
 | Provider | Auth Mechanism | Key Features |
 |---|---|---|
@@ -412,7 +412,7 @@ The cloud MCP landscape is evolving rapidly:
 - [MCP Server Deployment and Hosting](/guides/mcp-server-deployment-hosting/) — hosting patterns beyond cloud providers
 - [MCP Serverless Deployment](/guides/mcp-serverless-deployment/) — deep dive into serverless MCP patterns
 - [MCP Gateway and Proxy Patterns](/guides/mcp-gateway-proxy-patterns/) — enterprise gateway architectures
-- [MCP Authorization and OAuth](/guides/mcp-authorization-oauth/) — authentication specification details
+- [MCP Authorization and OAuth](/guides/mcp-authentication-oauth/) — authentication specification details
 - [MCP Credential and Secret Management](/guides/mcp-credential-secret-management/) — secure credential handling
 - [MCP Enterprise Infrastructure](/guides/mcp-enterprise-infrastructure/) — enterprise deployment patterns
 - [MCP and OpenAI Integration](/guides/mcp-openai-integration/) — OpenAI's MCP surfaces

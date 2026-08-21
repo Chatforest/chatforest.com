@@ -1,11 +1,12 @@
 ---
 title: "MCP Authentication & OAuth 2.1: Authorization Flows, Token Management, and Enterprise Security Patterns"
 date: 2026-03-28T12:30:00+09:00
+aliases: ["/guides/mcp-authorization-oauth/"]
 description: "A comprehensive guide to MCP authentication and authorization — covering the OAuth 2.1 spec evolution (March 2025→July 2026), Protected Resource Metadata (RFC 9728), Client ID"
 content_type: "Guide"
 card_description: "Authentication is the hardest part of deploying MCP servers in production. The spec has evolved dramatically — from coupling auth and resource servers to mandating OAuth 2.1 with PKCE, Protected Resource Metadata, and Client ID Metadata Documents, then to mandatory issuer validation and DCR deprecation in the 2026-07-28 revision. Meanwhile, real-world vulnerabilities exposed consent bypass attacks and token confusion flaws. This guide covers the full MCP auth landscape: the spec itself, three registration approaches, enterprise gateway patterns, SSO integration, known vulnerabilities, auth provider choices, and practical implementation paths for both local and remote servers."
-last_refreshed: 2026-08-11
-sources_audited: 2026-08-11
+last_refreshed: 2026-08-21
+sources_audited: 2026-08-21
 ---
 
 Authentication is the hardest problem in the MCP ecosystem. It's the area that has evolved the most since the protocol launched in late 2024, the area that drew the sharpest community criticism, and the area where real-world vulnerabilities caused the most damage. If you're deploying MCP servers beyond your local machine, you need to understand auth deeply.
@@ -238,6 +239,8 @@ The MCP auth ecosystem's first major security crisis hit in mid-2025, revealing 
 
 MCP servers that hold OAuth tokens for multiple users but fail to properly isolate actions create classic confused deputy vulnerabilities. An attacker tricks the server into using another user's credentials by exploiting the token-to-session mapping.
 
+**Mitigation:** Use token exchange ([RFC 8693](https://www.rfc-editor.org/rfc/rfc8693)) rather than passing OAuth tokens through to downstream services directly — this preserves per-request accountability and ensures each call carries the correct user context, instead of a single shared service-account token standing in for every user.
+
 ### CVE-2025-6514: mcp-remote Command Injection
 
 The popular `mcp-remote` OAuth proxy library — [downloaded more than 437,000 times by the time of disclosure](https://thehackernews.com/2025/07/critical-mcp-remote-vulnerability.html) — [was vulnerable to a critical attack](https://jfrog.com/blog/2025-6514-critical-mcp-remote-rce-vulnerability/) (CVSS 9.6): a malicious MCP server could respond with an `authorization_endpoint` value containing a crafted URI. The proxy passed this value to the Node.js `open` package to launch a browser; on Windows, `open` builds a PowerShell command from the URI, and JFrog researchers showed that a non-standard scheme using PowerShell's `$( )` subexpression operator (e.g. `"a:$(cmd.exe /c whoami)"`) achieved full arbitrary command execution on the developer's machine.
@@ -262,6 +265,34 @@ These vulnerabilities revealed systemic issues, not just individual bugs:
 3. **Never pass untrusted URLs to OS process-launching functions** — validate and sanitize all metadata endpoints before opening them
 4. **Cookie-based consent state is fragile** — `__Host-` prefix cookies and strict same-site policies are essential
 5. **Defense in depth matters** — consent screens must display client identity, redirect destination, and requested permissions clearly
+
+## Additional Security Risks and Mitigations
+
+Beyond the disclosed CVEs above, several structural risks apply to any MCP authorization deployment, not just the specific implementations that were breached:
+
+### Over-Permissioned Tokens
+
+Tokens granted to MCP servers are often broader, longer-lived, and less scoped than necessary — an agent that only needs to read Slack messages might receive a token that can also delete channels or manage users.
+
+**Mitigation:** Adopt the step-up scoping pattern described above — start with minimal permissions and request additional scopes only when a specific tool needs them. Set short token lifetimes and rely on refresh tokens for ongoing access rather than issuing long-lived access tokens.
+
+### Token Storage and Theft
+
+MCP configuration files often store API keys and tokens in plaintext JSON files on disk — an easy target for malware or anyone with local filesystem access.
+
+**Mitigation:** Use the operating system's credential store (Keychain on macOS, Credential Manager on Windows) instead of plaintext config files, and let the OAuth flow handle token lifecycle automatically rather than hardcoding long-lived secrets.
+
+### Malicious Server Token Replay
+
+Without Resource Indicators ([RFC 8707](https://www.rfc-editor.org/rfc/rfc8707.html)), a compromised MCP server could take a token it receives from a client and replay it against a different server the same client is authorized to use.
+
+**Mitigation:** Always include the `resource` parameter in authorization and token requests (Steps 4–5 above), and confirm your authorization server enforces audience restrictions on the tokens it issues.
+
+### Consent Fatigue
+
+If every MCP server connection triggers a full browser-based OAuth flow, users tend to start clicking "Approve" without reading the requested scope list — undermining the consent model the whole flow depends on.
+
+**Mitigation:** Cache authorization grants where appropriate, group related servers under the same authorization server when possible, and keep consent screens specific about exactly what's being requested.
 
 ## Enterprise Patterns: SSO, Gateways, and Token Propagation
 
@@ -352,6 +383,10 @@ Auth0 [published MCP integration guides](https://auth0.com/blog/an-introduction-
 ### Okta / Entra ID
 
 Enterprise IdPs that work as upstream authorization servers, typically behind an MCP gateway rather than directly. Okta has published an [open-source Okta MCP server](https://github.com/okta/okta-mcp-server) for managing Okta itself via natural-language commands.
+
+### Descope
+
+[Descope's Agentic Identity Hub](https://www.descope.com/blog/post/agentic-identity-hub) treats AI agents as first-class identities alongside human users, offering OAuth 2.1 and PKCE support for exposing MCP servers, with granular per-agent and per-tool scopes assignable to MCP clients.
 
 ### mcp-auth.dev
 

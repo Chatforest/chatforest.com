@@ -368,7 +368,7 @@ Whichever platform you choose, start stateless. Most MCP tools don't need sessio
 - [MCP Server Deployment and Hosting](/guides/mcp-server-deployment-hosting/) — broader hosting options beyond serverless
 - [MCP Server Performance Tuning](/guides/mcp-server-performance-tuning/) — optimization techniques for production MCP servers
 - [MCP Server Security](/guides/mcp-server-security/) — authentication, authorization, and security patterns
-- [MCP Authorization and OAuth](/guides/mcp-authorization-oauth/) — OAuth 2.1 implementation for remote MCP servers
+- [MCP Authorization and OAuth](/guides/mcp-authentication-oauth/) — OAuth 2.1 implementation for remote MCP servers
 - [MCP Cost Optimization](/guides/mcp-cost-optimization/) — reducing token usage and infrastructure costs
 - [MCP in Production](/guides/mcp-in-production/) — operational patterns for production MCP deployments
 - [Build Your First MCP Server](/guides/build-your-first-mcp-server/) — getting started with MCP server development

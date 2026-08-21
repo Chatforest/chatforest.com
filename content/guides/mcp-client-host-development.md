@@ -1105,7 +1105,7 @@ The MCP client ecosystem is evolving in several directions:
 - **[MCP Server Setup Guide](/guides/mcp-server-setup-guide/)** — the server-side complement to this guide
 - **[MCP Transports Explained](/guides/mcp-transports-explained/)** — deep dive into stdio, Streamable HTTP, and SSE
 - **[MCP Server Frameworks and SDKs](/guides/mcp-server-frameworks-sdks/)** — building servers that clients connect to
-- **[MCP Authorization and OAuth](/guides/mcp-authorization-oauth/)** — authentication details for remote connections
+- **[MCP Authorization and OAuth](/guides/mcp-authentication-oauth/)** — authentication details for remote connections
 - **[MCP Sampling Explained](/guides/mcp-sampling-explained/)** — server-to-client LLM request patterns
 - **[MCP Elicitation Explained](/guides/mcp-elicitation-explained/)** — server-to-client user input collection
 - **[MCP Testing Strategies](/guides/mcp-testing-strategies/)** — broader testing patterns for MCP

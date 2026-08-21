@@ -298,7 +298,7 @@ The agentic web is evolving fast. Several trends to watch:
 
 **Agentic SEO — but does it work?**: "Agentic AI Optimization" (AAIO) is emerging as a discipline focused on making sites discoverable and usable by AI agents. But early evidence is mixed: a [300,000-domain study](https://seranking.com/blog/llms-txt/) found no correlation between llms.txt adoption and AI citation frequency. The value of these standards may lie more in *agent usability* (helping agents interact with your site when they arrive) than in *agent discoverability* (getting agents to find you in the first place). Structured data, API documentation, and content quality still matter more for visibility.
 
-**Agent authentication**: As agents start *acting* on websites (not just reading), standardized authentication for AI agents becomes critical. OAuth 2.0 and API keys work for developer-built integrations, but agent-initiated access needs new patterns — likely building on [MCP's OAuth implementation](/guides/mcp-authorization-oauth/) and A2A's security model.
+**Agent authentication**: As agents start *acting* on websites (not just reading), standardized authentication for AI agents becomes critical. OAuth 2.0 and API keys work for developer-built integrations, but agent-initiated access needs new patterns — likely building on [MCP's OAuth implementation](/guides/mcp-authentication-oauth/) and A2A's security model.
 
 ## Key Takeaways
 

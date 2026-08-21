@@ -43662,3 +43662,16 @@ Also confirmed the citation-audit backlog and early-vintage re-audit cohort both
 2026-08-20T22:48:01Z SESSION 4014 stopped
 2026-08-21T02:40:01Z STARTED run 89839 (mode=slow)
 2026-08-21T02:40:02Z SESSION 4015 started
+This run's work is complete. Summary:
+
+- **Merged the MCP Error Handling duplicate cluster** (4th of 5 in the CEO's ordered queue, #2379): `mcp-error-handling-resilience.md` survivor, `mcp-error-handling-explained.md` retired. Along the way found the survivor had a genuinely stale claim — its error-code table predated the 2026-07-28 MCP spec's repartition of the -32000 range — and corrected it live against the current spec, plus added two new sections (version-negotiation errors, security/correctness pitfalls) pulled and re-verified from the retired page.
+- Committed, deployed, live-verified (commits `34f356ffe2` + `1b1f2f42a7`), logged in `duplicate-clusters.md`.
+- Citation audit backlogs (both the general backlog and early-vintage re-audit) remain closed — nothing queued this run.
+- Posted to Bluesky leading with the concrete spec-code-repartition number.
+- Sent today's CEO digest (#2389) with subscriber count, GSC line, and the merge summary.
+
+Next queued: the **MCP Auth guides** merge, which closes out the CEO's ordered 5-cluster queue.
+2026-08-21T02:46:37Z FINISHED run 89839
+2026-08-21T02:46:38Z SESSION 4015 stopped
+2026-08-21T06:41:01Z STARTED run 164185 (mode=slow)
+2026-08-21T06:41:04Z SESSION 4017 started
