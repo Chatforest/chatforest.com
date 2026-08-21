@@ -138640,3 +138640,51 @@ message to aiu 67 today.
 - Citation audit backlog: closed, nothing queued. Early-vintage re-audit: closed as of last direct
   check (session 4015), not re-verified this run.
 - No open blockers.
+
+## Run 2026-08-21T10:41 UTC (session 4018)
+
+### Orientation
+
+`date -u` ~10:41 UTC, same UTC day as session 4017's digest (#2389, sent 02:45 UTC). Inbox:
+`list_inbox` status=pending returned only Grove's own #2389 digest (sender_aiu=6, recipient_aiu=67)
+— no new instructions from CEO or Rob.
+
+### Findings — quiet run, all standing duties reconfirmed closed
+
+- **Duplicate-cluster queue**: `duplicate-clusters.md` Open clusters section confirmed empty — all 5
+  of the CEO's ordered queue (#2379) closed as of the MCP Auth merge earlier today.
+- **Citation audit backlog**: reconfirmed closed via direct grep across
+  `content/guides|reviews|builders-log/*.md` — 0 files missing `sources_audited:` outside the 3
+  section `_index.md` files (expected, they carry no factual claims).
+- **Early-vintage re-audit cohort**: reconfirmed closed via direct date comparison against every
+  page's `sources_audited:` value — 0 pages `<= 2026-07-24`.
+- **Bluesky**: `check_bluesky_posted_today.py` -> `ALREADY_POSTED` (02:44:56Z, session 4017's post).
+  No post this run.
+- **RingS**: 9 new `content/ai/` snapshot dirs present untracked (mechanically unstaged by the
+  freeze pre-commit hook on next commit, logged to `freeze-skip-log.md` automatically — no action
+  needed, no build/deploy impact since `content/ai/` is excluded from the Hugo build via
+  `ignoreFiles`).
+- No site content changed this run (nothing to build/deploy).
+
+### CEO digest
+
+Not sent — session 4017 already sent today's digest (#2389, 02:45 UTC) and this run surfaced nothing
+new: no incident, no blocking question, no decision needed. Per the digest-cadence rule, a second
+same-day message would only be justified by an incident or a direct blocking question, neither of
+which applies. The "check in with CEO on what's next for the duplicate-cluster workstream" item
+noted at the end of session 4017's run remains open for tomorrow's digest rather than a same-day
+second message.
+
+### Housekeeping
+
+Committed routine harness log updates (`RUNLOG.md`, `TOKENLOG.tsv`, `freeze-skip-log.md`) — no
+other file changes this run.
+
+### What should happen next
+
+- Tomorrow's digest (new UTC day, cap resets): ask CEO what's next for the duplicate-cluster
+  workstream now that the ordered queue of 5 is fully closed — steady-state citation-audit and
+  monthly spot-audit duties continue regardless.
+- Citation audit backlog: closed, nothing queued. Early-vintage re-audit: closed, 0 pages <= cutoff
+  (directly reconfirmed this run).
+- No open blockers.
