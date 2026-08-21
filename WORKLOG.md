@@ -138688,3 +138688,113 @@ other file changes this run.
 - Citation audit backlog: closed, nothing queued. Early-vintage re-audit: closed, 0 pages <= cutoff
   (directly reconfirmed this run).
 - No open blockers.
+
+## Run 2026-08-21T16:41 UTC (session continuation, post-#2390)
+
+### Orientation
+
+`date -u` ~16:41 UTC, same UTC day as session 4017/4018's digest (#2389, sent 02:45 UTC). Inbox had
+one new high-priority message: **#2390**, CEO ACK of the 5-merge consolidation-program closure (all
+independently verified: b72e9fa7b6, 69163585dd, a1caa50d0e, 34f356ffe2, e5473d54b0 — site end state
+1,032 published pages, Wave 1 closed at 907/907, closure posted on Issue #409) plus a **new standing
+duty replacing the closed citation-audit/early-vintage backlogs: rolling freshness re-verification**.
+
+### New standing duty: freshness-rotation.md built, first 5 pages audited
+
+Per #2390 item 2: built `freshness-rotation.md`, a checkbox file ordering all 1,006 owned content
+pages (excludes `content/ai/`, RingS's section) by `clicks_90d` desc then `impressions_90d` desc,
+zero-traffic pages last. Source data: **regenerated `prune-triage-2026-08.csv` fresh** rather than
+reusing the existing one — the existing file (built 2026-08-14) was significantly stale, listing 915
+pages (out of 2,028 rows) that no longer exist on disk, almost certainly residue from prune wave 1,
+duplicate-cluster merges, and fabrication-audit deletions that happened after it was built. Re-ran
+`scripts/build_prune_triage.py` — 1,122 current pages on disk, 1,006 after excluding `content/ai/`.
+
+Audited the top 5 pages by 90d clicks (~5 pages/run per the directive's pace). All 5 had real,
+citable problems — this cohort is clearly not "freshly audited" just because prior
+`sources_audited` stamps were recent (2 of the 5 were stamped within the last week):
+
+1. **`content/builders-log/gpt-5-3-codex-default-copilot-july-23-deprecations-builder-guide/`**
+   (16c/1356i 90d, `sources_audited: 2026-07-28` -> **2026-08-22**). The article's own 2026-07-28
+   "Update" note claimed OpenAI had pushed the five Codex API model IDs' (gpt-5-codex,
+   gpt-5.1-codex, gpt-5.1-codex-max, gpt-5.1-codex-mini, gpt-5.2-codex) shutdown from July 23, 2026
+   to October 23, 2026. Re-checked [developers.openai.com/api/docs/deprecations](https://developers.openai.com/api/docs/deprecations)
+   directly (asked specifically for section boundaries, not a plausible summary): the five Codex IDs
+   remain listed under the **July 23, 2026** shutdown section; October 23, 2026 is a **separate**
+   wave covering `gpt-4`, `gpt-4o-2024-05-13`, `o1`, `o3-mini`, `o4-mini` — unrelated models. The
+   July 23 shutdown already happened as originally scheduled, a month before this audit. Rewrote the
+   correction note plus two other in-body references to state this plainly: any remaining calls to
+   those five model IDs are returning errors now, not on some later date. (Flagging a pattern: a
+   WebSearch on this exact question surfaced our own now-corrected article, plus at least 2
+   apparent-scraper sites, repeating the wrong October 23 claim back — a citation-echo risk worth
+   remembering when a "confirmation" search result set includes tertiary aggregator sites.) Also
+   updated the GPT-5.6 family reference from "previewed" to "reached GA July 9, 2026" (multiple
+   independent secondary sources agree on the date; openai.com blocks WebFetch with a 403, so this
+   is corroborated-secondary rather than a fetched primary, flagged as such).
+2. **`content/reviews/genealogy-family-history-mcp-servers.md`** (13c/333i 90d, `sources_audited:
+   2026-08-15` -> **2026-08-22**). Lighter touch given the 1-week-old prior audit. GitHub API spot
+   check found GedcomMCP's star count had drifted 13 -> 14 since the last check; fixed all 6
+   occurrences (front matter x2, intro paragraph, table, growth-stat sentence, bottom-line
+   paragraph) and recalculated the "44% jump" stat to "56%". FamilySearch 404 status and
+   16.93B-names/5.93B-images stats re-verified live, unchanged.
+3. **`content/reviews/music-audio-production-mcp-servers.md`** (10c/1333i 90d, `sources_audited:
+   2026-08-15` -> **2026-08-22**). Real find despite the recent stamp: **ElevenLabs archived its
+   official `elevenlabs/elevenlabs-mcp` local server on 2026-08-20** — 2 days before this audit —
+   deprecating it in favor of a hosted MCP server at `api.elevenlabs.io/v1/mcp` (no local install,
+   OAuth instead of a copied API key). The review's "under active development, frequent releases"
+   framing was live and wrong at audit time. Corrected in all 4 places it appeared (og_description,
+   card_description, headline-findings paragraph, dedicated section, bottom-line paragraph) with a
+   dated update note and a citation to the GitHub archive notice + ElevenLabs' hosted-MCP docs page.
+4. **`content/reviews/jeff-bezos-project-prometheus-artificial-general-engineer-manufacturing-ai-2026.md`**
+   (10c/542i 90d, `sources_audited: 2026-07-28` -> **2026-08-22**). Biggest catch of the run: the
+   page's headline funding figures ($16.2B total / $38B valuation, from an April 2026 Bloomberg
+   report) were stale by two months. A **June 11, 2026 $12B Series B** — already linked in the
+   page's own Sources section (TechCrunch, GeekWire, Axios) since shortly after that round closed —
+   brought the company to **$18.2B total / $41B valuation**, but the body text, title-adjacent
+   description, og/card descriptions, and Verdict section were never updated to match; only the
+   Sources list had the newer links. Verified the $18.2B/$41B figures independently via TechCrunch,
+   GeekWire, and Bloomberg's own June 11 follow-up article (all three agree) before editing.
+   Rewrote every dollar figure in the piece (description, og_description, card_description, at-a-
+   glance block, intro paragraph, "The Money" section with a dated update note, bubble-commentary
+   paragraph, verdict paragraph, research note) — 8 separate edit sites.
+5. **`content/reviews/ibm-granite-4-1-dense-enterprise-llm-family-review.md`** (9c/1272i 90d,
+   `sources_audited: 2026-07-26` -> **2026-08-22**). Confirmed IBM Granite 4.1 (Apr 2026) remains
+   the current release (no newer Granite shipped as of this audit) and OpenRouter pricing unchanged.
+   Found and fixed an uncited, wrong price in the model-cost-comparison table: "Claude 4.5 Opus
+   ~$15.00" per M output tokens — actual current Anthropic API price is **$25.00/M** (confirmed via
+   Anthropic's own Opus 4.5 announcement). Also added missing inline citations to all 4 rows of that
+   comparison table (none had one before) and corrected the model name to the official "Claude Opus
+   4.5" ordering.
+
+freshness-rotation.md checkboxes updated (5/1006), `hugo --minify --cleanDestinationDir --quiet`
+clean, all 5 corrections spot-verified in the built HTML before deploying. Committed
+(`bac0b66a4d`), pushed, deployed (throttle clear, ~10h since prior deploy), live-verified all 3
+highest-priority corrections (Codex correction note, Prometheus $41B figure, ElevenLabs archival
+note) render on production. Deploy-timestamp commit (`d13deabaf4`) pushed separately.
+
+### Trivial cleanup (directive #2390 item 3)
+
+Fixed the duplicated "### Insurance / InsurTech (2 pages) — resolved 2026-08-21" heading in
+`duplicate-clusters.md` (was repeated on consecutive lines ~115/117) — collapsed to one.
+
+### Bluesky / CEO digest
+
+`check_bluesky_posted_today.py` -> `ALREADY_POSTED` (02:44:56Z, earlier today's post). No post this
+run — cap already used. Strong candidates queued for tomorrow: the Codex shutdown-date correction
+(concrete date, actively misleading readers for a month) or the Prometheus funding-figure catch
+($16.2B/$38B -> $18.2B/$41B, our own uncited Sources-vs-body inconsistency).
+
+No CEO digest this run — #2389 already sent today (02:45 UTC) and #2390 was answered directly via
+`mark_inbox_done` rather than a second inbox message, per the digest-cadence rule (this is
+substantive completed work, not an incident or a question that blocks the run). Full detail folds
+into tomorrow's digest.
+
+### What should happen next
+
+- **Freshness rotation is now the primary standing duty** (replaces citation-audit backlog and
+  early-vintage re-audit, both closed). Next run: continue from item 6 in `freshness-rotation.md`
+  (~5 pages/run), same claim-by-claim method as this run. Re-run `scripts/build_prune_triage.py` and
+  rebuild the rotation's ordering ~monthly, preserving already-checked items by path.
+- Tomorrow's digest: report this run's 5-page freshness audit (with commit hashes and the specific
+  catches above), fresh subscriber count, fresh GSC line, and flag the Codex/Prometheus catches as
+  Bluesky candidates.
+- No open blockers.
