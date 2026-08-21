@@ -3,9 +3,9 @@ title: "MCP and Manufacturing: How AI Agents Connect to PLCs, Industrial IoT, CA
 date: 2026-03-29T19:00:00+09:00
 description: "A comprehensive guide to MCP integrations for manufacturing and industrial operations — covering PLC and SCADA connectivity, Beckhoff TwinCAT CoAgent voice-controlled robots, HighByte Industrial MCP Server, OPC Router 5.5 MCP gateway, industrial IoT, CAD/CAM, ERP/MES, robotics, predictive maintenance, and Hannover Messe 2026 announcements"
 content_type: "Guide"
-card_description: "Manufacturing generates vast amounts of sensor, equipment, and process data across disconnected systems. This guide covers 65+ manufacturing MCP servers and tools — now including Beckhoff TwinCAT CoAgent (MCP-based voice-controlled industrial robots, Hannover Messe 2026), HighByte Intelligence Hub 4.2 (embedded Industrial MCP Server, IDC MarketScape Leader), OPC Router 5.5 (native MCP gateway), plus PLC connectivity (OPC-UA 26 stars, Siemens S7, Modbus), industrial IoT (ThingsBoard official 95 stars v2.1.0, IoT-Edge 22 stars), CAD/CAM (Blender 19.8K+ stars + official Blender MCP, FreeCAD 68 stars, OpenSCAD 139 stars), ERP (SAP, Dynamics 365 GA, Odoo), robotics (ROS 1,163 stars), 3D printing, predictive maintenance (PdM MCP 26 stars), digital twins, and architecture patterns for smart factory AI workflows."
+card_description: "Manufacturing generates vast amounts of sensor, equipment, and process data across disconnected systems. This guide covers 60+ manufacturing MCP servers and tools — including Beckhoff TwinCAT CoAgent (MCP-based voice-controlled industrial robots, Hannover Messe 2026), HighByte Intelligence Hub 4.2 (embedded Industrial MCP Server, IDC MarketScape Leader), OPC Router 5.5 (native MCP gateway), plus PLC connectivity (OPC-UA 29 stars, Siemens S7, Modbus), industrial IoT (ThingsBoard official 98 stars v2.1.0), CAD/CAM (Blender 26K+ stars + official Blender MCP, FreeCAD 112 stars, OpenSCAD 180 stars), ERP (SAP, Dynamics 365 GA, Odoo), robotics (ROS 1,408 stars), 3D printing, predictive maintenance (PdM MCP 74 stars), digital twins, and architecture patterns for smart factory AI workflows. (Star counts and tool statuses re-verified 2026-08-21; one previously covered multi-protocol server, IoT-Edge-MCP-Server, has since been discontinued.)"
 last_refreshed: 2026-04-16
-sources_audited: 2026-07-25
+sources_audited: 2026-08-21
 ---
 
 Manufacturing is undergoing its most significant transformation since the assembly line. A modern factory floor generates continuous data streams from programmable logic controllers (PLCs), sensor networks, machine vision systems, robotic arms, quality inspection stations, and enterprise resource planning systems — all operating in fragmented silos with proprietary protocols and vendor-specific interfaces. The promise of Industry 4.0 has always been connecting these systems. MCP is emerging as the protocol that lets AI agents actually do it — and [Hannover Messe 2026](https://www.hannovermesse.de/) (April 20–24) is making that real, with Beckhoff demonstrating MCP-based voice control of industrial robots, HighByte launching an embedded Industrial MCP Server, and OPC Router adding native MCP gateway capabilities.
@@ -36,35 +36,33 @@ Programmable logic controllers are the fundamental computing units of manufactur
 
 ### OPC-UA — The Universal Industrial Standard
 
-**OPC-UA MCP** (github.com/kukapay/opcua-mcp — 26 stars) connects AI agents to any OPC UA-enabled industrial system. OPC UA (Unified Architecture) is the vendor-neutral standard for industrial communication — supported by Siemens, Allen-Bradley, Mitsubishi, Beckhoff, ABB, Schneider Electric, and virtually every modern PLC manufacturer. This server provides a bridge between MCP and the OPC UA protocol, allowing AI agents to browse node hierarchies, read tag values, and monitor equipment states across any compliant device. For factories with mixed equipment from multiple vendors, OPC-UA MCP provides a single integration point.
+**OPC-UA MCP** (github.com/kukapay/opcua-mcp — 29 stars) connects AI agents to any OPC UA-enabled industrial system. OPC UA (Unified Architecture) is the vendor-neutral standard for industrial communication — supported by Siemens, Allen-Bradley, Mitsubishi, Beckhoff, ABB, Schneider Electric, and virtually every modern PLC manufacturer. This server provides a bridge between MCP and the OPC UA protocol, allowing AI agents to browse node hierarchies, read tag values, and monitor equipment states across any compliant device. For factories with mixed equipment from multiple vendors, OPC-UA MCP provides a single integration point.
 
-**OPCUA-MCP** (github.com/midhunxavier/OPCUA-MCP — 12 stars) is an alternative OPC UA implementation available on npm, providing MCP server capabilities for OPC UA operations. Having multiple OPC-UA MCP implementations reflects the protocol's importance — it's the de facto standard for modern industrial communication.
+**OPCUA-MCP** (github.com/midhunxavier/OPCUA-MCP — 17 stars) is an alternative OPC UA implementation available on npm, providing MCP server capabilities for OPC UA operations. Having multiple OPC-UA MCP implementations reflects the protocol's importance — it's the de facto standard for modern industrial communication.
 
 ### Vendor-Specific PLC Servers
 
-**S7 MCP Bridge** (github.com/cadugrillo/s7-mcp-bridge — 14 stars) connects AI agents directly to Siemens S7-1500 and S7-1200 PLCs using the native S7 communication protocol. Siemens dominates the global PLC market with [roughly 30% share](https://ladderlogicworld.com/plc-manufacturers/), and S7 PLCs are ubiquitous in automotive, pharmaceutical, food and beverage, and chemical manufacturing. This server bypasses the need for OPC-UA middleware, connecting directly to the PLC's communication interface for lower latency and simpler deployment.
+**S7 MCP Bridge** (github.com/cadugrillo/s7-mcp-bridge — 21 stars) connects AI agents directly to Siemens S7-1500 and S7-1200 PLCs using the native S7 communication protocol. Siemens leads the global PLC market with [over 20.1% share (2025)](https://www.gminsights.com/industry-analysis/programmable-logic-controller-market), and S7 PLCs are ubiquitous in automotive, pharmaceutical, food and beverage, and chemical manufacturing. This server bypasses the need for OPC-UA middleware, connecting directly to the PLC's communication interface for lower latency and simpler deployment.
 
 **Beckhoff PLC MCP Server** (github.com/malcolm-mill/beckhoff_mcp) provides read-only access to Beckhoff TwinCAT PLCs via the ADS (Automation Device Specification) protocol. Features include dynamic PLC detection, EtherCAT diagnostics, and custom ADS port support. Beckhoff's PC-based control platform is widely used in high-speed packaging, semiconductor manufacturing, and precision motion control.
 
 **Beckhoff TwinCAT CoAgent for Operations** is Beckhoff's official MCP-based platform for [physical AI in industrial automation](https://www.beckhoff.com/en-us/company/press/beckhoff-facilitates-physical-ai-2026-02.html). Demonstrated at [Hannover Messe 2026](https://www.hannovermesse.de/en/news/news-articles/my-machine-understands-me-) (April 20–24), TwinCAT CoAgent uses MCP as the protocol layer enabling voice-commanded control of the ATRO modular industrial robot system — translating natural language into machine commands, orchestrating path planning, and performing diagnostic tasks in real time. The architecture relies on MCP to let companies provide their own knowledge bases, ERP systems, or databases as MCP servers and integrate them seamlessly with physical automation. This represents the first major PLC vendor to build MCP directly into their control platform, moving from community-built bridges to native industrial MCP support.
 
-**TwinCAT Validator MCP** (github.com/agenticcontrolio/twincat-validator-mcp — 23 stars) takes a different approach — rather than connecting to running PLCs, it validates, auto-fixes, and scaffolds TwinCAT 3 XML project files. It performs 21 IEC 61131-3 OOP checks, runs auto-fix pipelines for common issues, and can generate skeleton project structures. This is valuable for manufacturing engineers building and maintaining PLC programs, catching configuration errors before deployment to production equipment.
-
-**TwinCAT Knowledge MCP Server** (github.com/njfsmallet-eng/twincat-knowledge-mcp-server — 2 stars) provides a knowledge base for TwinCAT development, helping AI agents answer questions about Beckhoff programming environments.
+**TwinCAT Validator MCP** (github.com/agenticcontrolio/twincat-validator-mcp — 34 stars) takes a different approach — rather than connecting to running PLCs, it validates, auto-fixes, and scaffolds TwinCAT 3 XML project files. It performs 21 IEC 61131-3 OOP checks, runs auto-fix pipelines for common issues, and can generate skeleton project structures. This is valuable for manufacturing engineers building and maintaining PLC programs, catching configuration errors before deployment to production equipment.
 
 ### Legacy Protocol Bridges
 
-**Modbus MCP** (github.com/kukapay/modbus-mcp — 23 stars) standardizes and contextualizes industrial Modbus data for AI agents. Modbus — [dating from 1979](https://www.se.com/us/en/faqs/FA168406/) — remains one of the most common industrial protocols, with millions of devices deployed worldwide. From simple temperature sensors to variable frequency drives to energy meters, Modbus TCP and Modbus RTU devices are found in virtually every manufacturing facility. This server bridges the gap between 1970s protocol design and modern AI capabilities.
+**Modbus MCP** (github.com/kukapay/modbus-mcp — 26 stars) standardizes and contextualizes industrial Modbus data for AI agents. Modbus — [dating from 1979](https://www.se.com/us/en/faqs/FA168406/), when Modicon (now part of Schneider Electric) published the original specification — remains one of the most common industrial protocols, with millions of devices deployed worldwide. From simple temperature sensors to variable frequency drives to energy meters, Modbus TCP and Modbus RTU devices are found in virtually every manufacturing facility. This server bridges the gap between 1970s protocol design and modern AI capabilities.
 
 ### Multi-Protocol Integration
 
-**IoT-Edge-MCP-Server** (github.com/poly-mcp/IoT-Edge-MCP-Server — 22 stars) unifies MQTT sensors, Modbus devices, and industrial equipment into a single AI-orchestrable API. Features include real-time monitoring, alarm management, time-series storage, and actuator control. For manufacturing environments running multiple protocols simultaneously — which is nearly all of them — this multi-protocol approach avoids the need to run separate MCP servers for each communication standard.
+**IoT-Edge-MCP-Server** (formerly github.com/poly-mcp/IoT-Edge-MCP-Server) unified MQTT sensors, Modbus devices, and industrial equipment into a single AI-orchestrable API, with real-time monitoring, alarm management, time-series storage, and actuator control. **Update, 2026-08-21 audit: the `poly-mcp` GitHub organization and this repository have been deleted** — the [Wayback Machine's last snapshot](http://web.archive.org/web/20260415155921/https://github.com/poly-mcp/IoT-Edge-MCP-Server) is from 2026-04-15, and both the repo and the org now 404. Treat this entry as discontinued; for a multi-protocol MQTT/Modbus gateway, evaluate Node-RED MCP Nodes or a vendor-maintained OPC-UA bridge instead.
 
-**[OPC Router 5.5](https://www.opc-router.com/mcp-and-opc-router/)** adds native MCP server capabilities, turning any connected industrial data source — PLCs, sensors, MES systems, databases — into an AI-accessible gateway. Acting as an MCP server through its REST plug-in (no additional licensing required), OPC Router translates complex heterogeneous factory data into a format language models can process. This is significant because OPC Router is already deployed in thousands of manufacturing environments for data routing — adding MCP means existing industrial infrastructure can be AI-enabled without new middleware. Use cases include proactive anomaly detection, dynamic production schedule adjustment based on machine utilization and material availability, and AI-assisted maintenance recommendations.
+**[OPC Router 5.5](https://www.opc-router.com/opc-router-5-5-update/)** adds native MCP server capabilities, turning any connected industrial data source — PLCs, sensors, MES systems, databases — into an AI-accessible gateway. Configuration is done through [the existing REST plug-in](https://www.opc-router.com/mcp-and-opc-router/), and OPC Router translates complex heterogeneous factory data into a format language models can process. This is significant because OPC Router is already deployed in many manufacturing environments for data routing — adding MCP means existing industrial infrastructure can be AI-enabled without new middleware. Use cases include proactive anomaly detection, dynamic production schedule adjustment based on machine utilization and material availability, and AI-assisted maintenance recommendations.
 
-**[HighByte Intelligence Hub 4.2](https://www.highbyte.com/intelligence-hub/mcp-server)** introduced an embedded Industrial MCP Server that powers agentic AI with native connections to Amazon Bedrock, Azure OpenAI, Google Gemini, OpenAI, and local LLMs. HighByte acts as an abstraction layer to "MCP-enable" any industrial system with governance, security, and context — [Bayer uses it with AWS](https://www.highbyte.com/blog/highbyte-at-hannover-messe-2026-ecosystem-in-action) to power industrial AI at Hannover Messe 2026. HighByte was [positioned as a Leader in the IDC MarketScape for Worldwide Industrial DataOps Platforms](https://www.businesswire.com/news/home/20260407774829/en/HighByte-Positioned-as-a-Leader-in-IDC-MarketScape-for-Worldwide-Industrial-DataOps-Platforms) (April 2026) — the first time IDC has assessed this market category. Version 4.4 with CESMII partnership and i3X support is expected soon.
+**[HighByte Intelligence Hub 4.2](https://www.highbyte.com/news/press-releases/highbyte-releases-industrial-mcp-server-for-agentic-ai)** introduced an embedded Industrial MCP Server that powers agentic AI, [with new connections for AI-assisted instance contextualization to Amazon Bedrock, Azure OpenAI, Google Gemini, and OpenAI, plus the ability to connect to local LLMs](https://www.highbyte.com/intelligence-hub/mcp-server). HighByte acts as an abstraction layer to "MCP-enable" any industrial system with governance, security, and context — [Bayer uses it with AWS](https://www.highbyte.com/blog/highbyte-at-hannover-messe-2026-ecosystem-in-action) to power industrial AI at Hannover Messe 2026. HighByte was [positioned as a Leader in the IDC MarketScape for Worldwide Industrial DataOps Platforms](https://www.businesswire.com/news/home/20260407774829/en/HighByte-Positioned-as-a-Leader-in-IDC-MarketScape-for-Worldwide-Industrial-DataOps-Platforms) (April 2026) — the first time IDC has assessed this market category. Version 4.4 with CESMII partnership and i3X support is expected soon.
 
-**IndustriConnect** (academic research, arXiv:2603.24703) is a prototype suite of MCP adapters specifically designed for industrial operations. Its flagship adapters cover Modbus, MQTT/Sparkplug B (the industrial MQTT payload standard), and OPC UA, with 7 additional protocol modules. Notable for its mock-first workflow — allowing engineers to test AI interactions before connecting to live plant equipment. Benchmarked across 870 runs and 2,820 tool calls spanning 7 fault scenarios and 12 stress scenarios, it represents the most rigorously evaluated manufacturing MCP implementation found.
+**[IndustriConnect](https://arxiv.org/abs/2603.24703)** (academic research, arXiv:2603.24703, submitted March 25, 2026) is a prototype suite of MCP adapters specifically designed for industrial operations. Its flagship adapters cover Modbus, MQTT/Sparkplug B (the industrial MQTT payload standard), and OPC UA, with 7 additional protocol modules. Notable for its mock-first workflow — allowing engineers to test AI interactions before connecting to live plant equipment. Benchmarked across 870 runs and 2,820 tool calls spanning 7 fault scenarios and 12 stress scenarios, it represents the most rigorously evaluated manufacturing MCP implementation found.
 
 ## Industrial IoT Platforms
 
@@ -72,13 +70,13 @@ While PLC servers connect to individual controllers, IoT platform MCP servers pr
 
 ### Enterprise IoT Platforms
 
-**ThingsBoard MCP Server** (github.com/thingsboard/thingsboard-mcp — 95 stars) is the highest-starred manufacturing-adjacent IoT MCP server and carries official backing from the ThingsBoard team. ThingsBoard is a major open-source IoT platform used in manufacturing for device management, data collection, and visualization. The MCP server enables AI agents to query device telemetry, manage IoT entities, and analyze sensor data via natural language. Now at version 2.1.0, with 120+ tools exposing complex queries and full write operations (create/update/delete) across entity types — devices, assets, customers, relations, and users — enabling end-to-end automation and AI-driven workflows.
+**ThingsBoard MCP Server** (github.com/thingsboard/thingsboard-mcp — 98 stars) is the highest-starred manufacturing-adjacent IoT MCP server and carries official backing from the ThingsBoard team. ThingsBoard is a major open-source IoT platform used in manufacturing for device management, data collection, and visualization. The MCP server enables AI agents to query device telemetry, manage IoT entities, and analyze sensor data via natural language. Now at version 2.1.0, with 120+ tools exposing complex queries and full write operations (create/update/delete) across entity types — devices, assets, customers, relations, and users — enabling end-to-end automation and AI-driven workflows.
 
-**Litmus MCP Server** (github.com/litmusautomation/litmus-mcp-server — 6 stars) is the official MCP server for Litmus Edge, an industrial IoT and edge computing platform specifically designed for manufacturing. Litmus Edge provides OPC-UA, MQTT, and database connectivity at the factory edge, and this MCP server allows AI agents to configure and manage Litmus instances. The focus on edge computing is significant — manufacturing AI often needs to process data locally for latency and security reasons rather than sending everything to the cloud.
+**Litmus MCP Server** (github.com/litmusautomation/litmus-mcp-server — 11 stars) is the official MCP server for Litmus Edge, an industrial IoT and edge computing platform specifically designed for manufacturing. Litmus Edge provides OPC-UA, MQTT, and database connectivity at the factory edge, and this MCP server allows AI agents to configure and manage Litmus instances. The focus on edge computing is significant — manufacturing AI often needs to process data locally for latency and security reasons rather than sending everything to the cloud.
 
 ### Industrial Workflow Integration
 
-**Node-RED MCP Nodes** (github.com/TobiasLante/node-red-contrib-mcp — 6 stars) brings MCP capabilities to Node-RED, the visual programming tool widely used in manufacturing for connecting IoT devices, PLCs, databases, and web services. Rather than replacing Node-RED workflows, this integration lets AI agents participate in existing manufacturing automation pipelines — triggering flows, reading sensor aggregations, and responding to equipment events within the visual programming paradigm that many factory automation engineers already use.
+**Node-RED MCP Nodes** (github.com/TobiasLante/node-red-contrib-mcp — 14 stars) brings MCP capabilities to Node-RED, the visual programming tool widely used in manufacturing for connecting IoT devices, PLCs, databases, and web services. Rather than replacing Node-RED workflows, this integration lets AI agents participate in existing manufacturing automation pipelines — triggering flows, reading sensor aggregations, and responding to equipment events within the visual programming paradigm that many factory automation engineers already use.
 
 ## CAD/CAM and 3D Modeling
 
@@ -86,35 +84,35 @@ Computer-aided design is where manufactured products begin their lifecycle. MCP 
 
 ### Blender — The 3D Powerhouse
 
-**Blender MCP** (github.com/ahujasid/blender-mcp — 19,818 stars) is by far the most popular MCP server in any category, with more stars than most MCP protocol libraries. It connects Blender's full 3D modeling, rendering, and animation capabilities to AI agents through natural language control. While Blender is better known for visual effects and animation, it's increasingly used in manufacturing for product visualization, packaging design, factory layout planning, and creating training materials. The Hyper3D Rodin integration enables AI-generated 3D assets, and Poly Haven provides conventional material and environment libraries.
+**Blender MCP** (github.com/ahujasid/blender-mcp — 26,136 stars) is by far the most popular MCP server in any category, with more stars than most MCP protocol libraries. It connects Blender's full 3D modeling, rendering, and animation capabilities to AI agents through natural language control. While Blender is better known for visual effects and animation, it's increasingly used in manufacturing for product visualization, packaging design, factory layout planning, and creating training materials. The Hyper3D Rodin integration enables AI-generated 3D assets, and Poly Haven provides conventional material and environment libraries.
 
 **[Blender Official MCP Server](https://www.blender.org/lab/mcp-server/)** is the Blender Foundation's own MCP implementation, hosted on [projects.blender.org](https://projects.blender.org/lab/blender_mcp). Launched as part of Blender Lab, this official server connects to a running Blender instance via a TCP socket, providing scene inspection, Python execution, rendering, and navigation tools. For manufacturing teams already standardized on Blender, the official server offers a vendor-backed alternative to community implementations.
 
-Multiple alternative Blender MCP implementations exist for different use cases: **PolyMCP Blender** (31 stars, 51 tools) for comprehensive workflow automation, **Blender MCP + n8n** (30 stars, 45+ tools) for workflow engine integration, **Blender AI MCP** (8 stars) with YAML workflows and semantic search, and **Blender MCP Pro** (4 stars, 100+ tools) covering lights, modifiers, animation, shader nodes, and geometry nodes.
+Multiple alternative Blender MCP implementations exist for different use cases: **[PolyMCP Blender](https://github.com/Pirky10/Blender-Mcp)** (51 tools) for comprehensive workflow automation orchestrated via PolyMCP, **[Blender MCP + n8n](https://github.com/seehiong/blender-mcp-n8n)** (50 stars, 93 tools) for workflow engine integration, **[Blender AI MCP](https://github.com/PatrykIti/blender-ai-mcp)** (54 stars) with goal-first routing and semantic tool search, and **[Blender MCP Pro](https://github.com/youichi-uda/blender-mcp-pro)** (27 stars, 100+ tools) covering lights, modifiers, animation, shader nodes, and geometry nodes.
 
 ### Engineering CAD
 
-**FreeCAD MCP** (github.com/contextform/freecad-mcp — 68 stars) brings AI assistance to FreeCAD, the open-source parametric 3D CAD modeler used for mechanical engineering, product design, and architecture. Tools cover document creation, object manipulation, parts library access, and visual feedback. Crucially for manufacturing, it supports PartDesign (feature-based solid modeling), Draft (2D technical drawing), and FEM (finite element analysis) — enabling AI agents to not just create designs but also simulate their structural behavior under load.
+**FreeCAD MCP** (github.com/contextform/freecad-mcp — 112 stars) brings AI assistance to FreeCAD, the open-source parametric 3D CAD modeler used for mechanical engineering, product design, and architecture. Tools cover document creation, object manipulation, parts library access, and visual feedback. Crucially for manufacturing, it supports PartDesign (feature-based solid modeling), Draft (2D technical drawing), and FEM (finite element analysis) — enabling AI agents to not just create designs but also simulate their structural behavior under load.
 
-**OpenSCAD MCP Server** (github.com/jhacksman/OpenSCAD-MCP-Server — 139 stars) generates 3D models from text descriptions or images using multi-view reconstruction combined with OpenSCAD's parametric modeling language. OpenSCAD's code-based approach to 3D modeling (rather than visual manipulation) makes it naturally well-suited for AI agent control — the AI generates the script, OpenSCAD renders the model. A second implementation (github.com/quellant/openscad-mcp — 64 stars) focuses on rendering, exporting, and analyzing existing models.
+**OpenSCAD MCP Server** (github.com/jhacksman/OpenSCAD-MCP-Server — 180 stars) generates 3D models from text descriptions or images using multi-view reconstruction combined with OpenSCAD's parametric modeling language. OpenSCAD's code-based approach to 3D modeling (rather than visual manipulation) makes it naturally well-suited for AI agent control — the AI generates the script, OpenSCAD renders the model. A second implementation (github.com/quellant/openscad-mcp — 127 stars) focuses on rendering, exporting, and analyzing existing models.
 
 ### Enterprise CAD Platforms
 
-**Autodesk** has announced MCP server support for Revit (BIM/architectural), AutoCAD (general drafting), Civil 3D (infrastructure), and Autodesk Forma (early-stage building design). AI agents can detect model conflicts, enforce naming standards across BIM models, and automate design review tasks. For manufacturing, the Revit and AutoCAD integrations are particularly relevant for factory design and facility management.
+**[Autodesk](https://www.autodesk.com/blogs/construction/mcp-servers-in-construction/)** has announced plans to run Autodesk Assistant on MCP infrastructure across Revit (BIM/architectural), AutoCAD (general drafting), Civil 3D (infrastructure), and Autodesk Forma (early-stage building design) — starting with a [public Revit MCP server](https://www.autodesk.com/blogs/aec/2026/06/17/revit-public-mcp-server/) and expanding from there. AI agents can detect model conflicts, enforce naming standards across BIM models, and automate design review tasks. For manufacturing, the Revit and AutoCAD integrations are particularly relevant for factory design and facility management.
 
-**AI Forge MCP** (github.com/HurtzDonutStudios/ai-forge-mcp — 17 stars) provides 250 AI-callable tools across 10 servers controlling Blender, Substance Painter, Substance Designer, Substance Sampler, and Unreal Engine 5. This full-pipeline approach — from concept to game-ready or visualization-ready asset — is relevant for manufacturers creating digital twins, training simulations, and marketing materials.
+**AI Forge MCP** (github.com/HurtzDonutStudios/ai-forge-mcp — 87 stars) provides 250 AI-callable tools across 10 servers controlling Blender, Substance Painter, Substance Designer, Substance Sampler, and Unreal Engine 5. This full-pipeline approach — from concept to game-ready or visualization-ready asset — is relevant for manufacturers creating digital twins, training simulations, and marketing materials.
 
 ## 3D Printing and Additive Manufacturing
 
 3D printing MCP servers are a surprisingly active niche, enabling AI agents to manage the full additive manufacturing workflow from model to finished part.
 
-**OctoEverywhere MCP** (github.com/OctoEverywhere/mcp — 33 stars) is a free 3D printing MCP server providing live printer state monitoring, webcam snapshots for visual inspection, and printer control. OctoPrint — the platform it connects to — is the dominant open-source 3D printer management system, used in both prototyping labs and small-batch manufacturing.
+**OctoEverywhere MCP** (github.com/OctoEverywhere/mcp — 35 stars) is a free 3D printing MCP server providing live printer state monitoring, webcam snapshots for visual inspection, and printer control. OctoPrint — the platform it connects to — is the dominant open-source 3D printer management system, used in both prototyping labs and small-batch manufacturing.
 
-**OpenGalatea** (github.com/GLechevalier/OpenGalatea — 9 stars) gives AI agents full control of Prusa 3D printers — from finding models online to slicing to printing, entirely hands-free. Its roadmap includes orchestrating multiple printers for production optimization, moving from single-machine prototyping toward manufacturing-scale 3D print farm management.
+**OpenGalatea** (github.com/GLechevalier/OpenGalatea — 17 stars) gives AI agents full control of Prusa 3D printers — from finding models online to slicing to printing, entirely hands-free. Its roadmap includes orchestrating multiple printers for production optimization, moving from single-machine prototyping toward manufacturing-scale 3D print farm management.
 
-**Bambu Printer MCP** (github.com/DMontgomery40/bambu-printer-mcp — 9 stars) covers STL manipulation, BambuStudio slicing, and direct control of Bambu Lab printers — one of the fastest-growing consumer and prosumer 3D printer brands.
+**Bambu Printer MCP** (github.com/DMontgomery40/bambu-printer-mcp — 114 stars) covers STL manipulation, BambuStudio slicing, and direct control of Bambu Lab printers — one of the fastest-growing consumer and prosumer 3D printer brands.
 
-Additional implementations include **OrcaSlicer MCP Optimizer** (AI-optimized print settings using Claude Vision for quality assessment), **AI Slicer MCP Server** (PrusaSlicer and OctoPrint integration), **Vibe Print** (end-to-end FDM automation), and **3D Print Oracle** (filament and materials knowledge base). Together, these servers cover the full 3D printing workflow — model preparation, slicing optimization, printer control, quality monitoring, and materials selection.
+Additional implementations include **[OrcaSlicer MCP](https://github.com/MaxEllis/orcaslicer-mcp)** (31 stars; loads models, tunes settings, slices, and analyzes G-code output through OrcaSlicer), **[PrusaMCP](https://github.com/Noosbai/PrusaMCP)** (8 stars; 17 tools for PrusaSlicer with mesh analysis and defect diagnosis), and **[3D Print Oracle](https://github.com/gregario/3dprint-oracle)** (1 star; a filament and materials knowledge base built on 7,000+ entries from the [SpoolmanDB](https://github.com/Donkie/SpoolmanDB) project). Together, these servers cover much of the 3D printing workflow — model preparation, slicing optimization, printer control, and materials selection.
 
 ## ERP and MES Integration
 
@@ -122,11 +120,11 @@ Enterprise Resource Planning and Manufacturing Execution Systems are the busines
 
 ### SAP
 
-**SAP ERP MCP Server** (github.com/CDataSoftware/sap-erp-mcp-server-by-cdata — 5 stars) provides read-only access to SAP ERP data via JDBC, with full CRUD support available through the commercial CData MCP Server. SAP runs manufacturing operations for a majority of the world's largest manufacturers, and MCP access to SAP data — production orders, material masters, bills of materials, quality notifications, maintenance orders — is transformative for manufacturing AI assistants.
+**SAP ERP MCP Server** (github.com/CDataSoftware/sap-erp-mcp-server-by-cdata — 6 stars) provides read-only access to SAP ERP data via JDBC, with full CRUD support available through the commercial CData MCP Server. SAP runs manufacturing operations for a majority of the world's largest manufacturers, and MCP access to SAP data — production orders, material masters, bills of materials, quality notifications, maintenance orders — is transformative for manufacturing AI assistants.
 
-**SAP ABAP MCP Add-on** brings MCP server capabilities directly into SAP ECC and S/4HANA systems running ABAP releases as old as 7.01. Engineers can nominate specific tables, views, and CDS views for data provisioning, and ABAP classes handle create, update, and delete actions. With 15 MCPs built for SAP across the ecosystem, SAP's manufacturing modules are among the best-served enterprise systems.
+**[SAP ECC & S/4HANA ABAP Add-On](https://community.sap.com/t5/technology-blog-posts-by-members/mcp-server-for-sap-ecc-amp-s-4hana-unlimited-abap-add-on-for-display-create/ba-p/14293485)** brings MCP server capabilities directly into SAP ECC and S/4HANA systems running ABAP releases as old as 7.01, avoiding middleware such as SAP BTP. Engineers can nominate specific tables, views, and CDS views for data provisioning, and ABAP classes handle create, update, and delete actions.
 
-**SAP Build MCP Servers** represent SAP's official direction — introducing MCP servers for agentic development of enterprise applications built on the SAP platform.
+**[SAP Build MCP Servers](https://community.sap.com/t5/technology-blog-posts-by-sap/sap-build-introduces-new-mcp-servers-to-enable-agentic-development-for/ba-p/14205602)** represent SAP's official direction — local, open-source (Apache-2.0) MCP servers, announced September 2025, that enable agentic development of enterprise applications built on the SAP platform using tools like Cursor, Claude Code, and Cline.
 
 ### Microsoft Dynamics 365
 
@@ -146,43 +144,43 @@ Industrial robotics is where MCP's potential for manufacturing is most dramatic 
 
 ### ROS — The Robot Operating System
 
-**ROS MCP Server** (github.com/robotmcp/ros-mcp-server — 1,163 stars) is the dominant robotics MCP implementation, connecting AI agents to robots through ROS (Robot Operating System). ROS is the standard middleware for industrial and research robotics, and this server provides bidirectional AI integration — agents can read sensor data, publish commands, call services, and monitor robot state through natural language. Industrial applications include analyzing gripper pressure data, leak detection from sensor arrays, and coordinating multi-robot cells. It supports both ROS1 and ROS2.
+**ROS MCP Server** (github.com/robotmcp/ros-mcp-server — 1,408 stars) is the dominant robotics MCP implementation, connecting AI agents to robots through ROS (Robot Operating System). ROS is the standard middleware for industrial and research robotics, and this server provides bidirectional AI integration — agents can read sensor data, publish commands, call services, and monitor robot state through natural language. Industrial applications include analyzing gripper pressure data, leak detection from sensor arrays, and coordinating multi-robot cells. It supports both ROS1 and ROS2.
 
-**ROS 2 Bridge MCP** (github.com/wise-vision/ros2_mcp — 72 stars) is an advanced bridge specifically for ROS 2, the current-generation robotics middleware designed for production use. **Nav2 MCP Server** (github.com/ajtudela/nav2_mcp_server — 71 stars) focuses on autonomous navigation — controlling and monitoring mobile robots using the Nav2 navigation stack, relevant for AGVs (automated guided vehicles) in warehouses and factory floors.
+**ROS 2 Bridge MCP** (github.com/wise-vision/ros2_mcp — 86 stars) is an advanced bridge specifically for ROS 2, the current-generation robotics middleware designed for production use. **Nav2 MCP Server** (github.com/ajtudela/nav2_mcp_server — 84 stars) focuses on autonomous navigation — controlling and monitoring mobile robots using the Nav2 navigation stack, relevant for AGVs (automated guided vehicles) in warehouses and factory floors.
 
 ### Industrial Robot Arms
 
-**Universal Robots MCP** (github.com/nonead/Nonead-Universal-Robots-MCP — 5 stars) enables natural language control of Universal Robots collaborative robots (cobots). UR cobots are the market leader in collaborative robotics, used extensively for pick-and-place, machine tending, assembly, welding, and quality inspection. Integrating large language models with UR robot control opens up natural language programming of manufacturing tasks — "pick up the part from conveyor A and place it in fixture B" rather than programming waypoints manually.
+**Universal Robots MCP** (github.com/nonead/Nonead-Universal-Robots-MCP — 7 stars) enables natural language control of Universal Robots collaborative robots (cobots). UR cobots are the market leader in collaborative robotics, used extensively for pick-and-place, machine tending, assembly, welding, and quality inspection. Integrating large language models with UR robot control opens up natural language programming of manufacturing tasks — "pick up the part from conveyor A and place it in fixture B" rather than programming waypoints manually.
 
-**ROSClaw UR ROS2 MCP** provides MCP server access specifically for Universal Robots UR5/UR5e through ROS 2, offering an alternative integration path through the ROS ecosystem rather than UR's native interface.
+**[ROSClaw UR ROS2 MCP](https://github.com/ros-claw/ur-ros2-mcp)** (1 star; repo since renamed from `rosclaw-ur-ros2-mcp` to `ur-ros2-mcp`) provides MCP server access specifically for Universal Robots UR5/UR5e through ROS 2 and MoveIt 2, offering an alternative integration path through the ROS ecosystem rather than UR's native interface.
 
 ## Predictive Maintenance and Equipment Monitoring
 
 Predictive maintenance is the manufacturing AI use case with the clearest ROI — the market is [projected to reach $98 billion by 2033](https://www.grandviewresearch.com/industry-analysis/predictive-maintenance-market), driven by the [enormous cost of unplanned downtime in manufacturing (estimated at $50 billion annually)](https://www2.deloitte.com/us/en/pages/operations/articles/predictive-maintenance-and-the-smart-factory.html) across industries.
 
-**Claude Edge Predictive Maintenance** (documented in academic literature via Zenodo) is an open-source reference architecture connecting industrial edge sensor hardware to LLM diagnostic assistants via MCP. MCP servers handle sensor data acquisition and vibration signal processing, with capabilities including FFT (Fast Fourier Transform) analysis, envelope analysis for bearing fault detection, ISO 10816 vibration severity classification, condition monitoring dashboards, fault diagnosis, and automated report generation. This represents the most sophisticated predictive maintenance MCP implementation documented.
+**[Claude Edge Predictive Maintenance](https://zenodo.org/records/18823667)** (documented via Zenodo, DOI 10.5281/zenodo.18823667) is an open-source reference architecture connecting industrial edge sensor hardware (STEVAL-STWINBX1 / STWIN.box) to LLM diagnostic assistants via MCP. MCP servers handle sensor data acquisition and vibration signal processing, with capabilities including FFT (Fast Fourier Transform) analysis, envelope analysis for bearing fault detection, ISO 10816 vibration severity classification, condition monitoring dashboards, fault diagnosis, and automated report generation. This represents the most sophisticated predictive maintenance MCP implementation documented.
 
-**Predictive Maintenance MCP** (github.com/LGDiMaggio/predictive-maintenance-mcp — 26 stars) is an open-source framework integrating LLMs with predictive maintenance and fault diagnosis workflows through MCP. Engineers describe needs in natural language, and the AI calls analysis tools for bearing fault detection, risk assessment, anomaly detection, and remaining useful life (RUL) estimation. This is the most complete open-source PdM-specific MCP implementation, complementing the edge-hardware approach of Claude Edge PdM with a software-focused diagnostic framework.
+**Predictive Maintenance MCP** (github.com/LGDiMaggio/predictive-maintenance-mcp — 74 stars) is an open-source framework integrating LLMs with predictive maintenance and fault diagnosis workflows through MCP. Engineers describe needs in natural language, and the AI calls analysis tools for bearing fault detection, risk assessment, anomaly detection, and remaining useful life (RUL) estimation. This is the most complete open-source PdM-specific MCP implementation, complementing the edge-hardware approach of Claude Edge PdM with a software-focused diagnostic framework.
 
 **Industrial MCP Server Demo** (github.com/lujin3/industrial-mcp-server-demo — 1 star) provides an industrial equipment operation and maintenance management system with real-time device monitoring, intelligent fault diagnosis, and preventive maintenance management.
 
-The ThingsBoard and IoT-Edge MCP servers described in the Industrial IoT section also serve predictive maintenance use cases — aggregating sensor telemetry (vibration, temperature, current draw, acoustic emissions) that feeds maintenance prediction models.
+The ThingsBoard MCP server described in the Industrial IoT section also serves predictive maintenance use cases — aggregating sensor telemetry (vibration, temperature, current draw, acoustic emissions) that feeds maintenance prediction models.
 
 ## Digital Twins and Simulation
 
 Digital twins — virtual replicas of physical manufacturing systems — are one of the fastest-growing manufacturing technology categories, with the market [projected to reach $328.5 billion by 2033 at 31.1% CAGR](https://www.grandviewresearch.com/industry-analysis/digital-twin-market).
 
-**RealVirtual Unity MCP Server** (github.com/game4automation/io.realvirtual.mcp — 6 stars) integrates AI agents with Unity-based digital twin simulations for manufacturing. RealVirtual is a manufacturing-focused digital twin platform built on Unity's game engine, providing physics simulation, 3D visualization, and real-time data connectivity for factory digital twins. The MCP server lets AI agents interact with simulated manufacturing environments — testing production scenarios, optimizing layouts, and training operators without risking physical equipment.
+**RealVirtual Unity MCP Server** (github.com/game4automation/io.realvirtual.mcp — 13 stars) integrates AI agents with Unity-based digital twin simulations for manufacturing. RealVirtual is a manufacturing-focused digital twin platform built on Unity's game engine, providing physics simulation, 3D visualization, and real-time data connectivity for factory digital twins. The MCP server lets AI agents interact with simulated manufacturing environments — testing production scenarios, optimizing layouts, and training operators without risking physical equipment.
 
-**RealVirtual Python MCP Server** (github.com/game4automation/realvirtual-MCP — 3 stars) provides a Python bridge to the same Unity digital twin simulations, useful for integration with Python-based manufacturing analytics and ML pipelines.
+**RealVirtual Python MCP Server** (github.com/game4automation/realvirtual-MCP — 5 stars) provides a Python bridge to the same Unity digital twin simulations, useful for integration with Python-based manufacturing analytics and ML pipelines.
 
-**Fujitsu Social Digital Twin MCP** (github.com/3a3/fujitsu-sdt-mcp — 2 stars) enables natural language interaction with Fujitsu's Social Digital Twin API for executing economic and social simulations. While broader than manufacturing alone, it enables verifying the effects of manufacturing decisions — supply chain changes, facility relocations, workforce adjustments — before real-world implementation.
+**Fujitsu Social Digital Twin MCP** (github.com/3a3/fujitsu-sdt-mcp — 1 star) enables natural language interaction with Fujitsu's Social Digital Twin API for executing economic and social simulations. While broader than manufacturing alone, it enables verifying the effects of manufacturing decisions — supply chain changes, facility relocations, workforce adjustments — before real-world implementation.
 
 **Supply Chain Digital Twin MCP** (github.com/Ryan-Clinton/supply-chain-digital-twin-mcp) simulates and analyzes supply chain disruptions, bottlenecks, and resilience — modeling the upstream and downstream effects of manufacturing decisions on the broader supply network.
 
 ## Operations Intelligence and Scheduling
 
-**Optim-Engine** (formerly github.com/MicheleCampi/optim-engine — repo no longer available) is a production optimization MCP server with 11 tools across 4 intelligence levels. Its scheduling capabilities include Flexible Job-Shop Scheduling (FJSP) with per-machine speeds, quality gates, shift windows, and setup matrices — a direct model of real manufacturing scheduling problems. It also handles Capacitated Vehicle Routing with Time Windows (CVRPTW) for logistics, bin packing for material optimization, and sensitivity/robust/stochastic/Pareto/prescriptive optimization. Built on Google OR-Tools with 121 tests, it's the most capable open-source manufacturing optimization MCP server found.
+**Optim-Engine** (github.com/MicheleCampi/optim-engine — 3 stars; **note, 2026-08-21 audit: this repo was unavailable at last audit but is back online** as of this check) is a production optimization MCP server with 11 tools across 4 intelligence levels. Its scheduling capabilities include Flexible Job-Shop Scheduling (FJSP) with per-machine speeds, quality gates, shift windows, and setup matrices — a direct model of real manufacturing scheduling problems. It also handles Capacitated Vehicle Routing with Time Windows (CVRPTW) for logistics, bin packing for material optimization, and sensitivity/robust/stochastic/Pareto/prescriptive optimization. Built on Google OR-Tools with 121 tests, it's the most capable open-source manufacturing optimization MCP server found.
 
 **Celonis Vehicle Manufacturing Scheduler** (github.com/sschiller089/external-mcp-server-demo) is an AI scheduling agent for vehicle manufacturing connecting Celonis process mining data with manufacturing operations — checking orders, verifying resource availability, resolving scheduling conflicts, and auto-updating records.
 
@@ -194,7 +192,7 @@ Additional supply chain MCP servers are covered in our [logistics and supply cha
 
 ## Safety and Compliance
 
-**FDA Data MCP** provides FDA regulatory, manufacturing, and compliance intelligence — relevant for pharmaceutical, food, and medical device manufacturers operating under FDA oversight.
+**[FDA Data MCP](https://www.pulsemcp.com/servers/fda-data)** (`io.github.medley/fda-data`, listed on the PulseMCP registry) provides FDA regulatory data — company resolution, facilities, recalls, inspections, and approvals — relevant for pharmaceutical, food, and medical device manufacturers operating under FDA oversight.
 
 Manufacturing compliance extends across multiple frameworks — ISO 9001 (quality management), ISO 45001 (occupational health and safety), OSHA regulations, environmental permits, and industry-specific standards like GMP (pharmaceutical), IATF 16949 (automotive), and AS9100 (aerospace). While no dedicated manufacturing compliance MCP server exists yet, the combination of ERP MCP servers (for audit trail data), IoT platform servers (for environmental monitoring), and general compliance tools creates a foundation for AI-assisted manufacturing compliance.
 
@@ -202,38 +200,38 @@ Manufacturing compliance extends across multiple frameworks — ISO 9001 (qualit
 
 | Category | Server | Stars | Key Feature | Protocol/Platform |
 |----------|--------|-------|-------------|-------------------|
-| OPC-UA | OPC-UA MCP | 26 | Universal industrial connectivity | OPC UA |
-| OPC-UA | OPCUA-MCP | 12 | npm-available OPC UA access | OPC UA |
-| Siemens PLC | S7 MCP Bridge | 14 | Direct S7-1500/1200 connection | S7 protocol |
-| Beckhoff PLC | Beckhoff PLC MCP | 0 | Read-only TwinCAT access | ADS protocol |
+| OPC-UA | OPC-UA MCP | 29 | Universal industrial connectivity | OPC UA |
+| OPC-UA | OPCUA-MCP | 17 | npm-available OPC UA access | OPC UA |
+| Siemens PLC | S7 MCP Bridge | 21 | Direct S7-1500/1200 connection | S7 protocol |
+| Beckhoff PLC | Beckhoff PLC MCP | 7 | Read-only TwinCAT access | ADS protocol |
 | Beckhoff AI | TwinCAT CoAgent | — | Voice-controlled industrial robots | MCP + TwinCAT |
-| TwinCAT | TwinCAT Validator | 23 | IEC 61131-3 validation/auto-fix | TwinCAT 3 XML |
-| Modbus | Modbus MCP | 23 | Legacy protocol bridge | Modbus TCP/RTU |
-| Multi-protocol | IoT-Edge-MCP | 22 | MQTT + Modbus + industrial unified | Multiple |
+| TwinCAT | TwinCAT Validator | 34 | IEC 61131-3 validation/auto-fix | TwinCAT 3 XML |
+| Modbus | Modbus MCP | 26 | Legacy protocol bridge | Modbus TCP/RTU |
+| Multi-protocol | IoT-Edge-MCP | discontinued | MQTT + Modbus + industrial unified (repo deleted, see entry above) | Multiple |
 | Multi-protocol | OPC Router 5.5 | — | Any industrial source → AI gateway | Multiple |
 | Industrial DataOps | HighByte Hub 4.2 | — | Embedded MCP + LLM connections | Multiple |
-| IoT Platform | ThingsBoard MCP | 95 | Official, v2.1.0, 120+ tools | ThingsBoard |
-| IoT Edge | Litmus MCP | 6 | Official industrial edge platform | Litmus Edge |
-| Workflow | Node-RED MCP | 6 | Visual programming integration | Node-RED |
-| 3D Modeling | Blender MCP | 19,818 | Natural language 3D control | Blender |
+| IoT Platform | ThingsBoard MCP | 98 | Official, v2.1.0, 120+ tools | ThingsBoard |
+| IoT Edge | Litmus MCP | 11 | Official industrial edge platform | Litmus Edge |
+| Workflow | Node-RED MCP | 14 | Visual programming integration | Node-RED |
+| 3D Modeling | Blender MCP | 26,136 | Natural language 3D control | Blender |
 | 3D Modeling | Blender Official MCP | — | Blender Foundation's own server | Blender |
-| Engineering CAD | FreeCAD MCP | 68 | Parametric CAD + FEM | FreeCAD |
-| Parametric 3D | OpenSCAD MCP | 139 | Text-to-3D model generation | OpenSCAD |
+| Engineering CAD | FreeCAD MCP | 112 | Parametric CAD + FEM | FreeCAD |
+| Parametric 3D | OpenSCAD MCP | 180 | Text-to-3D model generation | OpenSCAD |
 | Enterprise CAD | Autodesk MCP | — | Revit, AutoCAD, Civil 3D, Forma | Autodesk suite |
-| 3D Printing | OctoEverywhere MCP | 33 | Printer state + webcam + control | OctoPrint |
-| 3D Print Farm | OpenGalatea | 9 | Full Prusa automation pipeline | Prusa printers |
-| SAP ERP | SAP ERP MCP | 5 | SAP data via JDBC | SAP ERP |
+| 3D Printing | OctoEverywhere MCP | 35 | Printer state + webcam + control | OctoPrint |
+| 3D Print Farm | OpenGalatea | 17 | Full Prusa automation pipeline | Prusa printers |
+| SAP ERP | SAP ERP MCP | 6 | SAP data via JDBC | SAP ERP |
 | MS ERP | Dynamics 365 MCP | — | GA Feb 2026, dynamic framework | Dynamics 365 |
-| Open ERP | Odoo MCP | 0 | Manufacturing + Inventory + CRM | Odoo |
+| Open ERP | Odoo MCP | 1 | Manufacturing + Inventory + CRM | Odoo |
 | MES/CMMS | CMMS MCP | 0 | MES + maintenance + IoT | Multiple |
-| Robotics | ROS MCP Server | 1,163 | Bidirectional ROS1/ROS2 bridge | ROS |
-| Navigation | Nav2 MCP | 71 | Autonomous mobile robot control | Nav2/ROS2 |
-| Cobots | Universal Robots MCP | 5 | Natural language cobot control | UR robots |
+| Robotics | ROS MCP Server | 1,408 | Bidirectional ROS1/ROS2 bridge | ROS |
+| Navigation | Nav2 MCP | 84 | Autonomous mobile robot control | Nav2/ROS2 |
+| Cobots | Universal Robots MCP | 7 | Natural language cobot control | UR robots |
 | Maintenance | Claude Edge PdM | — | Vibration analysis + ISO 10816 | Edge sensors |
-| Maintenance | PdM MCP | 26 | Fault diagnosis + RUL estimation | LLM + MCP |
-| Digital Twin | RealVirtual Unity MCP | 6 | Manufacturing simulation | Unity |
-| Optimization | Optim-Engine | — | FJSP scheduling + CVRPTW routing | OR-Tools |
-| Supply Chain | SupplyMaven MCP | 0 | Disruption index + commodity data | Multiple APIs |
+| Maintenance | PdM MCP | 74 | Fault diagnosis + RUL estimation | LLM + MCP |
+| Digital Twin | RealVirtual Unity MCP | 13 | Manufacturing simulation | Unity |
+| Optimization | Optim-Engine | 3 | FJSP scheduling + CVRPTW routing | OR-Tools |
+| Supply Chain | SupplyMaven MCP | 1 | Disruption index + commodity data | Multiple APIs |
 
 ## Architecture Patterns
 
@@ -257,7 +255,7 @@ Manufacturing compliance extends across multiple frameworks — ISO 9001 (qualit
     └─────────┘ └──────────┘ └────────────┘
 ```
 
-This pattern addresses the protocol fragmentation problem. An AI agent connects through multiple MCP servers simultaneously — OPC-UA for modern Siemens/Beckhoff/ABB PLCs, Modbus for legacy equipment, and IoT-Edge for MQTT sensor networks. The agent correlates data across protocols: "Show me the vibration readings from the Modbus sensors on Line 3 alongside the production count from the S7-1500 PLC and the temperature data from the MQTT sensors."
+This pattern addresses the protocol fragmentation problem. An AI agent connects through multiple MCP servers simultaneously — OPC-UA for modern Siemens/Beckhoff/ABB PLCs, Modbus for legacy equipment, and an MQTT-capable gateway (the "IoT-Edge" slot in the diagram — the specific IoT-Edge-MCP-Server project referenced in earlier drafts of this guide has since been discontinued, see the Industrial IoT section) for sensor networks. The agent correlates data across protocols: "Show me the vibration readings from the Modbus sensors on Line 3 alongside the production count from the S7-1500 PLC and the temperature data from the MQTT sensors."
 
 ### Pattern 2: Design-to-Production Pipeline
 
@@ -372,7 +370,7 @@ Several significant manufacturing categories lack dedicated MCP server implement
 
 **Automation engineers** working with robots should start with ROS MCP Server for general robotics integration, or Universal Robots MCP for UR cobot-specific natural language control. Nav2 MCP adds autonomous navigation for AGVs and mobile robots.
 
-**IT/OT integration teams** should evaluate the multi-protocol servers — IoT-Edge-MCP for unified MQTT/Modbus access, and the IndustriConnect research framework for a rigorous approach to industrial protocol bridging with proper testing methodology.
+**IT/OT integration teams** should evaluate the multi-protocol servers — OPC Router 5.5 or HighByte Intelligence Hub 4.2 for a vendor-backed gateway, or Node-RED MCP Nodes for unified MQTT/Modbus access within an existing visual-programming pipeline — and the IndustriConnect research framework for a rigorous approach to industrial protocol bridging with proper testing methodology. (The previously recommended IoT-Edge-MCP-Server has been discontinued — see the Industrial IoT section.)
 
 ---
 

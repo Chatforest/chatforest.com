@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 5/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 10/1006.**
 
 ---
 
@@ -25,11 +25,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 3. `content/reviews/music-audio-production-mcp-servers.md` — 10c/1333i (90d), sources_audited: 2026-08-15
 - [x] 4. `content/reviews/jeff-bezos-project-prometheus-artificial-general-engineer-manufacturing-ai-2026.md` — 10c/542i (90d), sources_audited: 2026-07-28
 - [x] 5. `content/reviews/ibm-granite-4-1-dense-enterprise-llm-family-review.md` — 9c/1272i (90d), sources_audited: 2026-07-26
-- [ ] 6. `content/builders-log/anthropic-fable-5-july-8-biometric-verification-persona-consumer-builder-guide/index.md` — 9c/260i (90d), sources_audited: 2026-08-03
-- [ ] 7. `content/reviews/spacex-ipo-spcx-retail-investor-guide-how-to-buy-2026.md` — 8c/906i (90d), sources_audited: 2026-07-29
-- [ ] 8. `content/guides/mcp-manufacturing-industrial.md` — 7c/762i (90d), sources_audited: 2026-07-25
-- [ ] 9. `content/reviews/openai-chatgpt-ads-manager-self-serve-advertising-review.md` — 7c/616i (90d), sources_audited: 2026-07-27
-- [ ] 10. `content/builders-log/google-imagen-deprecated-june-2026-gemini-image-migration-builder-guide/index.md` — 7c/508i (90d), sources_audited: 2026-07-29
+- [x] 6. `content/builders-log/anthropic-fable-5-july-8-biometric-verification-persona-consumer-builder-guide/index.md` — 9c/260i (90d), sources_audited: 2026-08-21
+- [x] 7. `content/reviews/spacex-ipo-spcx-retail-investor-guide-how-to-buy-2026.md` — 8c/906i (90d), sources_audited: 2026-08-21
+- [x] 8. `content/guides/mcp-manufacturing-industrial.md` — 7c/762i (90d), sources_audited: 2026-08-21
+- [x] 9. `content/reviews/openai-chatgpt-ads-manager-self-serve-advertising-review.md` — 7c/616i (90d), sources_audited: 2026-08-21
+- [x] 10. `content/builders-log/google-imagen-deprecated-june-2026-gemini-image-migration-builder-guide/index.md` — 7c/508i (90d), sources_audited: 2026-08-21
 - [ ] 11. `content/reviews/amd-helios-mi455x-venice-zen6-rack-scale-ai-platform-computex-2026.md` — 7c/485i (90d), sources_audited: 2026-07-28
 - [ ] 12. `content/builders-log/databricks-ltap-lakehouse-rt-agent-real-time-data-architecture-builder-guide/index.md` — 7c/416i (90d), sources_audited: 2026-07-31
 - [ ] 13. `content/builders-log/apple-fm-cli-python-sdk-fm-serve-openai-compatible-psotu-wwdc-2026/index.md` — 7c/218i (90d), sources_audited: 2026-07-29

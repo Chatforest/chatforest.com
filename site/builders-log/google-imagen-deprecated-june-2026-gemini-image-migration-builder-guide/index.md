@@ -7,6 +7,23 @@ Google is shutting down its entire Imagen API surface in two waves this month. T
 
 Here is what is shutting down, when, and what to do about it.
 
+> **Update (2026-08-21):** Two things have changed since this piece published in June 2026. First,
+> this article's recommended Vertex AI migration target, `gemini-2.5-flash-image`, is now itself
+> deprecated — Google's [Gemini API deprecation table](https://ai.google.dev/gemini-api/docs/deprecations)
+> lists a shutdown date of October 2, 2026, with `gemini-3.1-flash-image` ("Nano Banana 2," GA since
+> [May 29, 2026](https://cloud.google.com/blog/products/ai-machine-learning/nano-banana-2-and-nano-banana-pro-are-generally-available))
+> as its listed replacement. Firebase's [current migration guide](https://firebase.google.com/docs/ai-logic/imagen-models-migration)
+> now recommends migrating Imagen workloads directly to `gemini-3.1-flash-image` or `gemini-3-pro-image`
+> ("Nano Banana Pro") rather than `gemini-2.5-flash-image` — if you have not migrated yet, target the
+> newer models instead of the `gemini-2.5-flash-image` recommendation in "What Replaces Everything"
+> below. Second, Google's own docs no longer agree on the Imagen shutdown date: Vertex AI's
+> [image-generation overview](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/overview)
+> still lists June 30, 2026 (as originally reported below), while Firebase's migration guide and the
+> Gemini API deprecation table's `imagen-4.0-*` entries both list August 17, 2026 instead. Both dates
+> have now passed. The mask-based-editing gap described below has NOT closed: `gemini-3.1-flash-image`
+> and `gemini-3-pro-image` still support only prompt-based ("semantic mask") editing, not explicit
+> pixel-mask input, per [Google's current image-generation docs](https://ai.google.dev/gemini-api/docs/image-generation).
+
 ---
 
 ## Shutdown Schedule
@@ -15,7 +32,7 @@ Here is what is shutting down, when, and what to do about it.
 - `gemini-3.1-flash-image-preview`
 - `gemini-3-pro-image-preview`
 
-These were the experimental preview IDs released before the stable GA versions launched. Google [promoted both models to general availability on May 28, 2026](https://cloud.google.com/blog/products/ai-machine-learning/nano-banana-2-and-nano-banana-pro-are-generally-available) and, per [Google's Gemini API deprecation table](https://ai.google.dev/gemini-api/docs/deprecations), set the preview IDs for shutdown on June 25, 2026. The fix here is trivial.
+These were the experimental preview IDs released before the stable GA versions launched. Google [promoted both models to general availability on May 29, 2026](https://cloud.google.com/blog/products/ai-machine-learning/nano-banana-2-and-nano-banana-pro-are-generally-available) and, per [Google's Gemini API deprecation table](https://ai.google.dev/gemini-api/docs/deprecations), set the preview IDs for shutdown on June 25, 2026. The fix here is trivial.
 
 **June 30, 2026 — Vertex AI (all Imagen endpoints):**
 - `imagegeneration@002` through `imagegeneration@006` (legacy Imagen 2)
@@ -29,7 +46,7 @@ These were the experimental preview IDs released before the stable GA versions l
 - `imagen-4.0-fast-generate-001`
 - `imagen-4.0-ultra-generate-001`
 
-Per [Google Cloud's image-generation deprecation table](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/overview), Google recommends updating these endpoints before June 30, 2026 "to avoid service disruption." Firebase AI Logic [follows the same schedule](https://firebase.google.com/docs/ai-logic/imagen-models-migration). [Android's Imagen documentation](https://developer.android.com/ai/imagen) points to the same Vertex-AI-in-Firebase path and is affected the same way.
+Per [Google Cloud's image-generation deprecation table](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/overview), Google recommends updating these endpoints before June 30, 2026 "to avoid service disruption." Firebase AI Logic's migration guide originally [tracked this same June 30 schedule](https://firebase.google.com/docs/ai-logic/imagen-models-migration); as of the 2026-08-21 update above, that guide now states August 17, 2026 instead — see the note at the top of this article. [Android's Imagen documentation](https://developer.android.com/ai/imagen) points to the same Vertex-AI-in-Firebase path and is affected the same way.
 
 **Google AI Studio:** The preview model IDs are gone June 25. GA models are available now.
 
@@ -102,13 +119,13 @@ If you are generating images in volume, run a cost comparison against your curre
 
 **If you use Firebase AI Logic:**
 - [ ] Follow the dedicated Firebase migration guide at `firebase.google.com/docs/ai-logic/imagen-models-migration`
-- [ ] Firebase deadline tracks Vertex AI schedule (June 30)
+- [ ] Firebase's guide now cites an August 17, 2026 shutdown and recommends `gemini-3.1-flash-image`/`gemini-3-pro-image` directly — see the 2026-08-21 update note above; do not assume it still tracks the June 30 Vertex AI date
 
 ---
 
 ## Broader Context: Google's June Model Cleanup
 
-This is part of a deliberate cleanup cycle. Per [Google's Gemini API deprecation table](https://ai.google.dev/gemini-api/docs/deprecations), Google shut down `gemini-2.0-flash-001` and `gemini-2.0-flash-lite-001` on June 1, 2026. The Vertex AI platform itself is being [rebranded as "Gemini Enterprise Agent Platform"](https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform) (announced at Google Cloud Next '26 in April 2026), and the [Vertex AI Generative Models SDK has a separate, overlapping deprecation timeline](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/genai-vertexai-sdk) (deprecated June 24, 2025; shuts down June 24, 2026).
+This is part of a deliberate cleanup cycle. Per [Google's Gemini API deprecation table](https://ai.google.dev/gemini-api/docs/deprecations), Google shut down `gemini-2.0-flash-001` and `gemini-2.0-flash-lite-001` on June 1, 2026. The Vertex AI platform itself is being [rebranded as "Gemini Enterprise Agent Platform"](https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform) (announced at Google Cloud Next '26 in April 2026), and the [Vertex AI Generative Models SDK has a separate, overlapping deprecation timeline](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/genai-vertexai-sdk) (deprecated June 24, 2025; shuts down June 24, 2026).
 
 The consolidation move is to the Gemini 2.5+ model family and the `generateContent` API surface. If you have built anything on Vertex AI's older API surfaces in the past 18 months, now is the time for a broader audit beyond just the image models.
 
