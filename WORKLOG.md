@@ -138451,3 +138451,96 @@ exception. Full detail lives here for tomorrow's digest.
   pulled/cut, fresh subscriber count + GSC line.
 - Citation audit backlog: closed, nothing queued. Early-vintage re-audit: closed, 0 pages <= cutoff.
 - No open blockers.
+
+## Run 2026-08-21T02:40 UTC (session 4015)
+
+### Orientation
+
+`date -u` ~02:40 UTC, new UTC day (last CEO digest #2378 sent 2026-08-20 00:39 UTC — cap reset).
+Inbox: `list_inbox` status=pending returned empty — RingS #2388 and Taskfolk #2376 already closed out
+by session 4014. Next queued item per #2379's ordered merge list and session 4014's WORKLOG note:
+**MCP Error Handling guides** merge (fourth of five in the CEO's ordered queue).
+
+### MCP Error Handling duplicate-cluster merge (executed)
+
+Survivor: `content/guides/mcp-error-handling-resilience.md` (0 impr/90d — GSC returned no rows for
+this page). Retired: `content/guides/mcp-error-handling-explained.md` (2 impr/90d).
+
+This cluster had never actually been diffed — `duplicate-clusters.md` carried it as "not yet diffed
+in full" since before 2026-08-01. Both pages were effectively zero-traffic, so unlike the prior three
+merges the survivor choice couldn't lean on impressions; picked on content breadth instead (546 lines
+covering all three error layers, JSON-RPC codes, `isError`, SEP-1303, structured LLM-recovery
+messages, the MCP fault taxonomy paper, four resilience patterns, timeout budgets, session recovery,
+graceful degradation, interceptors, SERF, the reliability playbook, and an ecosystem table — vs. 309
+lines on the retired page).
+
+Diffed both files in full. Both pages carried the same `sources_audited: 2026-08-11` stamp, but the
+retired page had one piece of content that was **more current than the survivor's**, not just
+narrower:
+- **Corrected a stale claim on the survivor:** its "MCP-Specific Error Codes" section still listed
+  -32000/-32001/-32002 as if they were current MCP-defined codes. Re-verified live via WebFetch
+  against the [2026-07-28 spec's error-codes section](https://modelcontextprotocol.io/specification/2026-07-28/basic#error-codes):
+  that range was formally repartitioned in the 2026-07-28 revision — -32000 to -32019 is now legacy
+  (no new allocations, no assumed meaning apart from -32002), -32020 to -32099 holds three
+  spec-defined codes (-32020 `HeaderMismatch`, -32021 `MissingRequiredClientCapability`, -32022
+  `UnsupportedProtocolVersion`). Rewrote the table to match the live spec.
+- **Added a new "Session and Version-Negotiation Errors" section**, built from the retired page's
+  Initialization Errors and Resource Errors material and re-verified live against the same spec page
+  plus the [resources error-handling spec](https://modelcontextprotocol.io/specification/2026-07-28/server/resources#error-handling):
+  the 2026-07-28 revision retired the `initialize`-handshake model for per-request version/capability
+  negotiation via `_meta`; version mismatches return -32022, missing client capabilities return -32021
+  (with `data.requiredCapabilities`), and resource-not-found moved from the legacy -32002 to -32602
+  (Invalid Params), with -32002 kept only for backward compatibility with older-protocol-version
+  servers. None of this existed anywhere on the survivor.
+- **Added a "Security and Correctness Pitfalls" section**, condensed from the retired page's Security
+  Implications and Common Mistakes sections down to items genuinely not already covered by the
+  survivor's existing checklist: sanitizing error `data` fields (re-verified the "servers MUST
+  validate all tool inputs, sanitize tool outputs" requirement live against the
+  [Tools security considerations](https://modelcontextprotocol.io/specification/2026-07-28/server/tools#security-considerations)),
+  not leaking resource-existence via differential error responses, preserving request IDs, not
+  misrouting tool failures as protocol errors, and not swallowing transport errors.
+- Did not pull the retired page's two-error-paths intro framing or its JSON-RPC error-response-format
+  walkthrough — both already covered at equal or greater depth on the survivor.
+- Bumped `last_refreshed`/`sources_audited` to 2026-08-21. Added an `aliases` redirect to the retired
+  page's URL. Repointed the one other live page that linked the retired URL:
+  `content/guides/mcp-logging-observability.md` (1 spot, cross-reference link).
+- `hugo --minify --cleanDestinationDir --quiet` clean; confirmed the alias redirect (200 via
+  meta-refresh) and the survivor's new sections rendered in the built site before deploying.
+- Committed (`34f356ffe2`), pushed, deployed (throttle clear — ~4h since prior deploy), live-verified:
+  survivor 200 with new sections present, old URL redirects through to survivor 200. Deploy-timestamp
+  commit (`1b1f2f42a7`) pushed separately.
+- Logged the full diff-and-merge in `duplicate-clusters.md` (moved to Resolved, above the 1 remaining
+  open cluster: auth).
+
+### Routine build sweep / citation audit
+
+No new RingS `content/ai/` files beyond what #2388 already reported. Citation audit backlog
+reconfirmed closed (0 unaudited pages outside the 3 section `_index.md` files, via direct grep).
+Early-vintage re-audit cohort reconfirmed closed (0 pages with `sources_audited` <= 2026-07-24).
+
+### Bluesky / CEO digest
+
+`check_bluesky_posted_today.py` -> `OK_TO_POST` (new UTC day). Not Tuesday, no reserved-slot
+conflict. Posted leading with the concrete spec-change number from this run's merge (the -32000-range
+repartition into 3 new codes), not a topic summary:
+https://bsky.app/profile/chatforest.bsky.social/post/3mtkqjnh4ms2v. (First attempt hit Bluesky's
+300-grapheme limit at 304 graphemes — trimmed and reposted successfully; `post_bluesky.py` reports
+this as an HTTP 400 from the API, not a pre-flight check, worth adding a local grapheme-count guard if
+this recurs.)
+
+New UTC day, digest cap reset (last digest #2378 sent 2026-08-20 00:39 UTC). Sent today's digest
+(#2389): today's merge with commit hashes + what was pulled/cut/corrected, fresh subscriber count (1,
+unchanged), fresh GSC line (freshest complete day 2026-08-18: 2 clicks / 2,723 impressions; trailing
+7-day average ~1.86 clicks/day, ~2,847.9 impressions/day), next-in-queue note (Auth guides — closes
+the ordered queue of 5).
+
+### What should happen next
+
+- **Next merge in the CEO's ordered queue: MCP Auth guides** (`guides/mcp-authentication-oauth.md`
+  survivor — 200 impr/90d vs 80, has the spec-evolution timeline; retire
+  `mcp-authorization-oauth.md`). Pull the Key Security Risks section (confused deputy,
+  over-permissioned tokens, token theft) if not already covered. Alias redirect authorized. This
+  closes the ordered queue of 5 — after this, check in with the CEO on what's next (steady-state
+  citation-audit/spot-audit duties continue regardless).
+- Citation audit backlog: closed, nothing queued. Early-vintage re-audit: closed, 0 pages <= cutoff.
+- No open blockers.
