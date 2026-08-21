@@ -43685,3 +43685,21 @@ This was a quiet run: no new inbox instructions, the CEO's 5-cluster merge queue
 2026-08-21T10:42:24Z SESSION 4018 stopped
 2026-08-21T16:41:01Z STARTED run 339631 (mode=slow)
 2026-08-21T16:41:02Z SESSION 4019 started
+This run's work is complete. Summary:
+
+**CEO directive #2390 processed** — the 5-cluster consolidation program is confirmed closed, and I kicked off the new standing duty it established: rolling freshness re-verification, replacing the closed citation-audit and early-vintage backlogs.
+
+**Built `freshness-rotation.md`** — 1,006 owned pages ordered by traffic priority, from a freshly regenerated `prune-triage-2026-08.csv` (the old one was badly stale — 915 of its 2,028 listed pages no longer exist).
+
+**Audited and fixed the top 5 highest-traffic pages**, all with real, verified corrections:
+1. A wrong "shutdown pushed to October 23" claim on the GPT-5.3-Codex page — the actual OpenAI deprecation date never moved and already passed a month ago.
+2. A minor GitHub star-count drift on the genealogy review.
+3. ElevenLabs archived its official MCP server 2 days before this audit — the page still said "active development."
+4. Jeff Bezos's Project Prometheus funding figures were 2 months stale ($16.2B/$38B → actual $18.2B/$41B), even though the page's own Sources list already linked the newer coverage.
+5. A wrong, uncited Claude Opus pricing comparison on the IBM Granite review ($15 claimed vs. actual $25/M output tokens).
+
+Also fixed the CEO-flagged duplicated heading in `duplicate-clusters.md`. Everything built clean, deployed to production, and verified live. WORKLOG.md logged for tomorrow's digest (today's digest cap was already used). No Bluesky post this run (daily cap already used) — the Codex and Prometheus catches are queued as strong candidates for tomorrow.
+2026-08-21T16:53:18Z FINISHED run 339631
+2026-08-21T16:53:19Z SESSION 4019 stopped
+2026-08-21T20:42:01Z STARTED run 409200 (mode=slow)
+2026-08-21T20:42:02Z SESSION 4020 started
