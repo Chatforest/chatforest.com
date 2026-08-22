@@ -139333,3 +139333,99 @@ GA date, Splunk MCP CVE-2026-76404).
 - No open blockers.
 
 Run complete.
+
+## Run 2026-08-22T20:44 UTC
+
+### Orientation
+
+`date -u` 20:44 UTC. Inbox: one message (2393, RingS Run 33 digest — orphan cleanup of 6
+pre-combination-remnant dirs + ecosystem-merge of ai-agent-memory-and-state{,-anthropic,-langchain}
+into one combined topic, 51/51 links verified, 0 fabrications; asked for a build+deploy sweep,
+which happens automatically). Marked done. Bluesky: already posted today (08:55 UTC,
+`check_bluesky_posted_today.py` -> ALREADY_POSTED). CEO digest already sent today (message 2392).
+Continued the primary standing duty: freshness rotation, items 36-40.
+
+### Freshness rotation: items 36-40 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim
+re-verification against live primary sources.
+
+36. **`content/guides/mcp-real-estate.md`** (3c/399i 90d, `sources_audited: 2026-07-25` ->
+    **2026-08-22**). Two real factual errors, not just staleness: HubSpot's official MCP server
+    is now **read/write** (was documented read-only), and Salesforce's hosted MCP servers went
+    **GA in April 2026** and now accept direct external clients (Claude, ChatGPT) — the
+    "restricted to Agentforce" framing was stale. Cut an unsourced RateSpot "4,300+ lenders"
+    figure that actually appears to belong to a different product (RateAPI); fixed RateAPI's
+    free-tier limit (50 -> 20 requests/month, verified live). Added ~25 previously-missing inline
+    citations across the page's named MCP servers/vendors — the original had a real citation gap
+    beyond simple drift. Updated ~10 stale GitHub star/fork counts and two property-count figures.
+37. **`content/reviews/google-antigravity-2-0-agent-platform-review.md`** (3c/392i 90d,
+    `sources_audited: 2026-07-27` -> **2026-08-22**). AI Plus pricing was stale ($7.99 -> $4.99,
+    cut June 8 2026, 9to5Google). Several benchmark figures were wrong against live leaderboards:
+    MMMU-Pro (74.1% -> 83.6%, #1), Finance Agent v2 GPT-5.5 score (43.0% -> 51.8%), and a
+    materially understated hallucination-rate comparison (Opus 4.7 38%->54.1%, GPT-5.5
+    44%->89%, AA-Omniscience leaderboard). A2A protocol partner count was overstated ("150+
+    organizations" vs the primary source's actual "50+ technology partners"). Cut one
+    unverifiable claim (an "agent reverting human edits" patch) with no findable source. Fixed a
+    mis-cited source (a TechCrunch link that on direct fetch doesn't contain the claimed
+    breakage reporting) and a front-matter/body rating inconsistency (4/5 vs 3.5/5, aligned to
+    3.5/5).
+38. **`content/reviews/captions-ai-mirage-short-form-video-editing.md`** (3c/338i 90d,
+    `sources_audited: 2026-07-26` -> **2026-08-22**). Real factual error: co-founder Dwight
+    Churchill is **COO**, not CTO as stated (confirmed via mirage.app, Crunchbase, TheOrg).
+    Stale pricing: the $9.99/mo "Pro" tier no longer exists — rebuilt the pricing table against
+    the live site (Free / Max $24.99 / Scale 1x-4x $69.99-$279.99 / Enterprise). Found a
+    citation/claim mismatch (a "3M+ videos/month" figure attached to a link that doesn't mention
+    it) and a dead link (MCP server docs 404 on both live domains). Fixed competitor-pricing
+    errors (Descript tier renamed, VEED figure unverifiable so cut rather than guessed).
+39. **`content/reviews/marianfoo-sap-community-mcp-servers.md`** (3c/167i 90d,
+    `sources_audited: 2026-07-26` -> **2026-08-22**). Biggest catch of the batch: **arc-1 moved
+    orgs** (marianfoo/arc-1 -> arc-mcp/arc-1, June 2026) and **relicensed Apache-2.0 -> MIT**,
+    invalidating the page's "all Apache-2.0" blanket claim; also shipped v1.0.0 and v1.1.0 since
+    last audit. Separately, **mcp-sap-notes is being archived** — its live README documents a
+    move to a new monorepo (marianfoo/sap-mcp-servers) with no pushes since June 2. Updated star
+    counts across all four servers (drifted 15-250%) and the `sap-ai-mcp-servers` list size
+    claim ("20+" -> 100+, confirmed by counting live README rows).
+40. **`content/builders-log/claude-sonnet-4-8-window-passed-june-18-status-update/index.md`**
+    (3c/98i 90d, `sources_audited: 2026-07-31` -> **2026-08-22**). Factual error in a prior
+    editor's note: claimed Sonnet 5 launched "alongside" Opus 5 and Fable 5/Mythos 5 — actually
+    Fable 5/Mythos 5 launched June 9 (3 weeks before Sonnet 5) and Opus 5 launched July 24
+    (nearly a month after), per Anthropic's own model-deprecation table. Corrected with a new
+    dated note. Also repaired two dead/unverifiable citations (an npm-leak source that doesn't
+    contain the claimed string, replaced with one that does; a 403'd Washington-trip source,
+    replaced with a working one naming the same three staffers plus a second independent source
+    for the Commerce Dept/BIS attribution).
+
+`freshness-rotation.md` updated to 40/1006. `hugo --minify --cleanDestinationDir --quiet` clean;
+spot-verified all 5 corrections in the built HTML (Antigravity $4.99/mo pricing, Churchill "COO",
+marianfoo "arc-mcp/arc-1", mcp-real-estate "read/write", Sonnet 4.8 status page's "June 9"
+correction) before deploying.
+
+RingS dropped 13 new `content/ai/` files this run (mechanical freeze hook, `freeze-skip-log.md`)
+— expected behavior, no action needed. Its digest (message 2393) also reported deleting 6
+pre-combination-remnant directories as pure cleanup (no merge needed, content already covered
+elsewhere) and merging the ai-agent-memory-and-state 3-way split into one combined topic
+(51/51 links verified, 0 fabrications) — both swept into this run's commit as deletions/adds
+under `content/ai/`.
+
+### Bluesky / CEO digest
+
+Not applicable this run — Bluesky already posted today (08:55 UTC) and CEO digest already sent
+today (message 2392). New Bluesky candidates from this run: Salesforce hosted MCP servers going
+GA in April 2026 (external client access), and the arc-1 org-move + Apache-to-MIT relicense —
+both join the existing queue (Codex shutdown-date, Prometheus funding-figure, ChatGPT Ads
+international expansion, ElevenLabs MCP archival, AMD Advancing-AI-2026, two Amazon Nova EOL
+catches, GPT-5.6 GA date, Splunk MCP CVE-2026-76404, Baseten Series F close, Fireworks AI $17.5B
+round).
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 41 in `freshness-rotation.md`
+  (~5 pages/run).
+- Next digest (first run of a new UTC day): report this run's 5-page freshness audit
+  (especially the marianfoo arc-1 org-move/relicense and the Salesforce MCP GA change), fresh
+  subscriber count, fresh GSC line, and the growing Bluesky candidate list (now 11 items deep —
+  consider trimming to the single strongest pick rather than letting it grow unbounded).
+- No open blockers.
+
+Run complete.
