@@ -139130,3 +139130,10 @@ catches).
 - Next digest: report this run's 5-page freshness audit (catches above), fresh subscriber count,
   fresh GSC line, and the now-larger Bluesky candidate list.
 - No open blockers.
+
+### Bluesky post
+
+`check_bluesky_posted_today.py` -> OK_TO_POST, `check_reserved_slot.py` -> NO_RESERVATION
+(Saturday, not Tuesday). Posted the SpaceX SPCX round-trip stock story (item 21's freshest catch):
+priced $135 -> peaked $225.64 -> bottomed $104.83 -> back to ~$137, linking to the disputed $45B
+Anthropic compute deal angle. Post: at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mtnvpcoyva2m
