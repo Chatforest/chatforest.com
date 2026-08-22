@@ -1,9 +1,9 @@
 # Splunk MCP Server — Official Cisco/Splunk Integration for SPL Queries and AI-Assisted Data Exploration
 
-> The official Splunk MCP Server (Splunkbase #7931, GA Feb 2026) runs inside your Splunk instance and exposes 14 tools for SPL search, data exploration, and AI-powered query generation. Streamable HTTP, RBAC-native, public-key token encryption. Rating: 4/5.
+> The official Splunk MCP Server (Splunkbase #7931, GA Feb 2026) runs inside your Splunk instance and exposes 15 tools for SPL search, data exploration, and AI-powered query generation. Streamable HTTP, RBAC-native, public-key token encryption. Rating: 4/5.
 
 
-**At a glance:** [Splunkbase App #7931](https://splunkbase.splunk.com/app/7931) — 12,334 downloads, 5-star rating (12 reviews), #6 in Splunkbase AI category. Official Cisco/Splunk product (Splunk LLC, "Splunk Supported" tier). GA February 4, 2026. Current version: **1.1.2** (May 12, 2026). [CiscoDevNet GitHub mirror](https://github.com/CiscoDevNet/Splunk-MCP-Server-official): 4 stars, 3 commits (thin reference only; actual distribution is via Splunkbase `.spl` package). 14 tools across two namespaced prefixes. Closed source, Splunk General Terms.
+**At a glance:** [Splunkbase App #7931](https://splunkbase.splunk.com/app/7931) — 20,537 downloads, 5-star rating (15 reviews), #6 in Splunkbase AI category. Official Cisco/Splunk product (Splunk LLC, "Splunk Supported" tier). GA February 4, 2026. Current version: **1.3.1** ([August 3, 2026](https://help.splunk.com/en/splunk-cloud-platform/mcp-server-for-splunk-platform/1.3/mcp-server-release-notes)). [CiscoDevNet GitHub mirror](https://github.com/CiscoDevNet/Splunk-MCP-Server-official): 4 stars, 3 commits (thin reference only; actual distribution is via Splunkbase `.spl` package). 15 tools across two namespaced prefixes. Closed source, Splunk General Terms.
 
 Splunk is the platform that ingests machine data at scale — logs, metrics, events, security telemetry — and makes it searchable via SPL (Search Processing Language). After Cisco's acquisition of Splunk closed in 2024, the combined Cisco/Splunk AI roadmap accelerated significantly. The Splunk MCP Server is the output: an official tool that lets AI agents run SPL queries, explore data structure, and generate SPL from natural language, without leaving the MCP client.
 
@@ -23,13 +23,13 @@ This architecture has real advantages:
 
 The server exposes **tools only** — no MCP resources or prompts are declared. This is a common pattern for observability servers where data is queried dynamically rather than exposed as static documents.
 
-## The 14 Tools
+## The 15 Tools
 
 Tools are organized by namespace prefix:
 
 ### Core Splunk Tools (`splunk_` prefix)
 
-All 10 core tools are generally available (July 2025, updated through v1.1.2):
+All 10 original core tools are generally available as of v1.3.1 — `splunk_run_saved_search` was the last to leave beta, promoted to GA in v1.2.1 (May 27, 2026). An 11th core tool, `splunk_find_data_source`, shipped in v1.3.0 (July 22, 2026) and is still in preview:
 
 | Tool | Purpose |
 |------|---------|
@@ -42,7 +42,8 @@ All 10 core tools are generally available (July 2025, updated through v1.1.2):
 | `splunk_get_user_list` | All users with roles and account status (admin-level tool). |
 | `splunk_get_kv_store_collections` | KV Store collection statistics and metrics. |
 | `splunk_get_knowledge_objects` | Retrieve 19+ types of Splunk knowledge objects — saved searches, macros, lookups, data models, field extractions, tags, event types, workflow actions, and more. |
-| `splunk_run_saved_search` | Execute an existing saved search by name. **Beta** (added April 2026). |
+| `splunk_run_saved_search` | Execute an existing saved search by name. **GA since v1.2.1** ([May 27, 2026](https://help.splunk.com/en/splunk-cloud-platform/mcp-server-for-splunk-platform/1.3/run-saved-search)) — was beta in the 1.1.x line. |
+| `splunk_find_data_source` | **Preview** (added [v1.3.0](https://help.splunk.com/en/splunk-cloud-platform/mcp-server-for-splunk-platform/1.3/mcp-server-tools), July 22, 2026). Helps an agent locate the right index/sourcetype for a natural-language data request before writing SPL. |
 
 The `splunk_run_query` guardrails deserve emphasis: SPL is a powerful language that can delete indexes, modify configurations, and perform bulk operations. The server's rejection of destructive commands is a meaningful safety layer — an AI agent can explore and query freely, but can't accidentally or maliciously destroy data.
 
@@ -111,20 +112,20 @@ Splunk's security team wrote explicitly about MCP risks and their mitigations:
 ## Known Limitations
 
 - **Not FIPS-compatible.** Relevant for government and regulated environments.
-- **OAuth 2.1 in beta.** Bearer token auth is GA; OAuth is still preview.
-- **`splunk_run_saved_search` in beta** (added April 2026). Not yet GA.
+- **OAuth 2.1's preview program closed** and it's now [enabled by default](https://help.splunk.com/en/splunk-cloud-platform/mcp-server-for-splunk-platform/1.3/oauth-for-mcp-server) on Splunk Cloud Platform 10.5.2506.3+ — but only on **AWS-hosted** instances; Azure, GCP, and IL2/IL5 GovCloud are not yet supported.
 - **1000-event cap on `splunk_run_query`.** Queries returning large result sets need SPL-level pagination (e.g., `| head 1000`, `| stats` commands to aggregate before returning).
 - **Legacy SCS endpoint deprecated** (v1.0.0+). If you were using the old Splunk Cloud Services endpoint, update.
 - **Closed source.** The Splunkbase `.spl` package is not open source; the CiscoDevNet GitHub repo is a thin reference mirror with 3 commits and no actual implementation code.
+- **A critical RCE was found and patched.** Splunk disclosed [CVE-2026-76404](https://nvd.nist.gov/vuln/detail/CVE-2026-76404) (CVSS 9.1) on August 19, 2026 via [advisory SVD-2026-0808](https://advisory.splunk.com/advisories/SVD-2026-0808): missing input validation in the credential-management component let an authenticated Splunk `admin`-role user trigger arbitrary OS command execution through unsafe deserialization. It affected all versions below 1.2.1 and is fixed in 1.2.1 — the current 1.3.1 release is not vulnerable, but the incident is worth knowing about if you're running an older install.
 
 ## Community Alternatives
 
 Two community servers exist for reference:
 
-- **[livehybrid/splunk-mcp](https://github.com/livehybrid/splunk-mcp)** — older stdio-based server for Splunk Enterprise with Cursor/Claude integration. Predates the official server; narrower tool set, no AI Assistant integration.
-- **[splunk/splunk-mcp-server2](https://github.com/splunk/splunk-mcp-server2)** — under the Splunk org but not officially supported. Python + TypeScript, SSE/stdio, Docker support, includes input guardrails and output sanitization. More exploratory than production-ready.
+- **[livehybrid/splunk-mcp](https://github.com/livehybrid/splunk-mcp)** — archived June 20, 2026 (107 stars at archival). The maintainer's archive notice directs users to the official Splunkbase app instead; no longer maintained.
+- **[splunk/splunk-mcp-server2](https://github.com/splunk/splunk-mcp-server2)** — under the Splunk org but not officially supported (37 stars). Python + TypeScript, SSE/stdio, Docker support, includes input guardrails and output sanitization. More exploratory than production-ready.
 
-Neither has significant adoption relative to the official Splunkbase app (12K+ downloads). For Splunk users, the official server is the right choice.
+Neither has significant adoption relative to the official Splunkbase app (20K+ downloads), and the more established of the two has since been archived in favor of it. For Splunk users, the official server is the right choice.
 
 ## Who Should Use This
 
@@ -144,13 +145,13 @@ Neither has significant adoption relative to the official Splunkbase app (12K+ d
 
 ## The Bottom Line
 
-The Splunk MCP Server earns its **12,334 downloads and 5-star rating** — this is a well-designed, officially supported integration that respects Splunk's existing security model rather than bolting on a new access layer. The decision to run inside the Splunk instance (not alongside it), scope everything to existing RBAC, and encrypt tokens rather than pass them raw are all correct architectural choices.
+The Splunk MCP Server earns its **20,537 downloads and 5-star rating** — this is a well-designed, officially supported integration that respects Splunk's existing security model rather than bolting on a new access layer. The decision to run inside the Splunk instance (not alongside it), scope everything to existing RBAC, and encrypt tokens rather than pass them raw are all correct architectural choices.
 
-The frustrations are real too: the setup process has too many underdocumented gotchas for an official enterprise product, OAuth is still beta, the tool count (14) is modest, and the closed-source distribution limits extensibility. The monitoring-observability category has several strong competitors (Grafana's open-source server at 2.9K stars, Datadog's remote-hosted MCP, Honeycomb's GA hosted server) — teams choosing primarily for MCP quality rather than existing Splunk investment have better-documented options.
+The frustrations are real too: the setup process has too many underdocumented gotchas for an official enterprise product, OAuth is still AWS-only, the tool count (15) is modest, and the closed-source distribution limits extensibility — and a critical RCE (CVE-2026-76404, now patched) is a reminder that a server with this much access to enterprise data is a real attack surface. The monitoring-observability category has several strong competitors (Grafana's open-source server at 2.9K stars, Datadog's remote-hosted MCP, Honeycomb's GA hosted server) — teams choosing primarily for MCP quality rather than existing Splunk investment have better-documented options.
 
 But if you're already a Splunk shop — which means you're paying for a platform purpose-built for machine data search — the MCP Server closes the gap to AI-assisted Splunk workflows with minimal additional infrastructure cost.
 
-**Rating: 4 out of 5** — Official, battle-proven architecture, RBAC-native, genuinely useful `saia_` tools. Minus one for complex setup, closed source, beta OAuth, and the event cap that complicates large result set handling.
+**Rating: 4 out of 5** — Official, battle-proven architecture, RBAC-native, genuinely useful `saia_` tools. Minus one for complex setup, closed source, region-limited OAuth, the event cap that complicates large result set handling, and the patched-but-real critical RCE history.
 
 **Category**: [Developer Tools MCP Servers](/categories/developer-tools/) | [Monitoring & Observability](/reviews/monitoring-observability-mcp-servers/)
 
@@ -158,6 +159,11 @@ But if you're already a Splunk shop — which means you're paying for a platform
 
 - [Splunkbase App #7931 — Splunk MCP Server (official)](https://splunkbase.splunk.com/app/7931)
 - [CiscoDevNet GitHub — Splunk-MCP-Server-official (reference mirror)](https://github.com/CiscoDevNet/Splunk-MCP-Server-official)
-- [Community server: livehybrid/splunk-mcp](https://github.com/livehybrid/splunk-mcp)
+- [Community server: livehybrid/splunk-mcp (archived)](https://github.com/livehybrid/splunk-mcp)
 - [Community server: splunk/splunk-mcp-server2](https://github.com/splunk/splunk-mcp-server2)
+- [Splunk MCP Server release notes](https://help.splunk.com/en/splunk-cloud-platform/mcp-server-for-splunk-platform/1.3/mcp-server-release-notes)
+- [OAuth for MCP Server docs](https://help.splunk.com/en/splunk-cloud-platform/mcp-server-for-splunk-platform/1.3/oauth-for-mcp-server)
+- [Run Saved Search docs](https://help.splunk.com/en/splunk-cloud-platform/mcp-server-for-splunk-platform/1.3/run-saved-search)
+- [Splunk advisory SVD-2026-0808 — CVE-2026-76404 (Critical RCE)](https://advisory.splunk.com/advisories/SVD-2026-0808)
+- [NVD — CVE-2026-76404](https://nvd.nist.gov/vuln/detail/CVE-2026-76404)
 
