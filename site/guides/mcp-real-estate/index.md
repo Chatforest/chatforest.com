@@ -5,7 +5,7 @@
 
 AI agents are changing how properties are searched, valued, bought, sold, and managed. What once required a team of specialists — each with access to separate, siloed systems — can increasingly be coordinated by a single AI agent pulling from multiple data sources simultaneously. A buyer's agent AI can query MLS listings, pull neighborhood demographic data, run a mortgage pre-qualification, check flood risk, and generate a comparative market analysis, all without switching applications.
 
-This transformation is happening against a backdrop of significant investment. The [AI in real estate market was estimated at $303 billion in 2025 and is projected to approach $1 trillion by 2029](https://www.researchandmarkets.com/reports/5866000/ai-in-real-estate-market-report), according to Research and Markets. The number of companies running corporate real estate AI pilots [grew from 5% to 92% in just three years](https://www.jll.com/en-de/insights/global-real-estate-cre-technology-survey), according to JLL's global real estate technology survey. The challenge has been integration: real estate data is fragmented across hundreds of MLS systems, dozens of public records databases, proprietary valuation engines, lender rate sheets, and building management platforms.
+This transformation is happening against a backdrop of significant investment. The [AI in real estate market was estimated at $301.58 billion in 2025 and is projected to reach $1.3 trillion by 2030](https://www.researchandmarkets.com/reports/5866000/ai-in-real-estate-market-report) (figures re-verified against the live report page August 2026; earlier editions of this same report cited slightly different figures, which is normal as market-research vendors revise estimates). The number of companies running corporate real estate AI pilots [grew from 5% to 92% in just three years](https://www.jll.com/en-us/insights/global-real-estate-cre-technology-survey), according to JLL's global real estate technology survey — though the same survey found only 5% of firms report having achieved most of their AI program goals, so adoption and results are not the same thing. The challenge has been integration: real estate data is fragmented across hundreds of MLS systems, dozens of public records databases, proprietary valuation engines, lender rate sheets, and building management platforms.
 
 The Model Context Protocol (MCP) is emerging as a standard for connecting AI agents to these fragmented systems. Rather than every AI product building custom integrations to every data source, MCP lets any compliant AI agent communicate with any compliant data provider through a common protocol. January 2026 saw ATTOM — one of the largest U.S. property data companies — launch what it described as the first large-scale real estate data MCP server. Enterprise valuation firm PriceHubble entered beta the same quarter. MLS platforms began building their own servers. The ecosystem is early but accelerating.
 
@@ -31,13 +31,13 @@ Real estate is structurally complex in ways that make AI integration harder than
 
 ### ATTOM MCP Server
 
-ATTOM [launched its MCP server on January 29, 2026](https://www.attomdata.com/news/most-recent/attom-introduces-mcp-server-and-databricks-delivery/), making it the first large-scale real estate data company to do so. The server covers 158 million U.S. properties — approximately 99% of the U.S. population. Data types include property details, AVMs, comparable sales, sales history, tax records, deed and mortgage data, foreclosure status, environmental risk, natural hazard assessments, and neighborhood and geospatial boundaries.
+ATTOM [launched its MCP server on January 29, 2026](https://www.attomdata.com/news/most-recent/attom-introduces-mcp-server-and-databricks-delivery/), which independent trade press [described as the first large-scale real estate data licensing company to formally launch MCP access](https://www.wavgroup.com/2026/01/27/attom-launches-mcp-server-a-milestone-moment-for-ai-native-real-estate-data/). At launch, ATTOM described coverage of 158 million U.S. properties — approximately 99% of the U.S. population; ATTOM's own product page now describes this as "160+ million" properties, reflecting the dataset's ordinary growth since launch rather than a correction. Data types include property details, AVMs, comparable sales, sales history, tax records, deed and mortgage data, foreclosure status, environmental risk, natural hazard assessments, and neighborhood and geospatial boundaries.
 
 The ATTOM MCP server is a commercial product, not open source. It requires an ATTOM API key and is positioned as enterprise-grade infrastructure. Data is linked across sources through a unique ATTOM ID for each property, and the underlying data goes through a 20-step validation process. ATTOM serves real estate, fintech, government, and insurance clients. Because it covers AVMs as well as raw property data, it appears in both the property data and valuation sections of this analysis.
 
 ### Cotality MCP Server
 
-Cotality (formerly CoreLogic) — one of the largest global property data companies — launched its MCP server on March 31, 2026. Cotality describes it as a "universal connector" between AI models and its property data foundation, which covers virtually every U.S. address. The MCP server is designed for production-grade workflows including underwriting, valuation, and risk analysis.
+Cotality (formerly CoreLogic) — one of the largest global property data companies — [launched its MCP server on March 31, 2026](https://www.cotality.com/press-releases/cotality-launches-a-universal-ai-connector-mcp-server-and-ai-ready-property-intelligence), a launch also [covered independently by National Mortgage Professional](https://nationalmortgageprofessional.com/news/cotality-launches-ai-data-connector-aimed-real-time-property-intelligence). Cotality describes it as a "universal connector" between AI models and its property data foundation, which covers virtually every U.S. address. The MCP server is designed for production-grade workflows including underwriting, valuation, and risk analysis.
 
 Key capabilities include CLIP ID access (Cotality's unique property identifiers for unambiguous cross-system matching), comprehensive property details and characteristics, climate risk assessments, and real-time market trends. Cotality also announced "AI-Ready Data" assets — structured data designed specifically for AI model consumption, acting as a "translator" that helps AI models understand the meaning behind property data values rather than just the raw numbers.
 
@@ -47,13 +47,13 @@ Cotality's entry alongside ATTOM means the two largest U.S. property data provid
 
 ### BatchData MCP Server
 
-BatchData's MCP server (GitHub: zellerhaus/batchdata-mcp-real-estate, 28 stars) provides access to 155+ million U.S. properties through 8 tools organized into two groups. Address tools handle verification, autocomplete, geocoding, and reverse geocoding. Property tools handle individual property lookup, search, boundary-based search, and property counts.
+BatchData's MCP server ([GitHub: zellerhaus/batchdata-mcp-real-estate](https://github.com/zellerhaus/batchdata-mcp-real-estate), 32 stars as of August 2026) wraps [BatchData's property API, which covers 155+ million U.S. properties](https://batchdata.io/) compiled from 3,200+ sources, through 8 tools organized into two groups. Address tools handle verification, autocomplete, geocoding, and reverse geocoding. Property tools handle individual property lookup, search, boundary-based search, and property counts.
 
-The server is built in TypeScript with Node.js and requires a BatchData API key. It is MIT-licensed and installable via Smithery. Property data includes characteristics, ownership records, transaction history, tax assessments, and mortgage details. With 28 stars and 7 forks, it has the most community traction of any property data MCP server after ATTOM.
+The server is built in TypeScript with Node.js and requires a BatchData API key. It is MIT-licensed and installable via Smithery. Property data includes characteristics, ownership records, transaction history, tax assessments, and mortgage details. With 32 stars and 8 forks, it has the most community traction of any property data MCP server after ATTOM.
 
 ### Zillow MCP Server
 
-The community-built Zillow MCP server (GitHub: sap156/zillow-mcp-server, 34 stars) exposes 7 tools: search_properties, get_property_details, get_zestimate, get_market_trends, calculate_mortgage, check_health, and get_server_tools. It is built in Python using FastMCP and connects via the Zillow Bridge API, which requires a separate API key.
+The community-built Zillow MCP server ([GitHub: sap156/zillow-mcp-server](https://github.com/sap156/zillow-mcp-server), 48 stars and 11 forks as of August 2026) exposes 7 tools: search_properties, get_property_details, get_zestimate, get_market_trends, calculate_mortgage, check_health, and get_server_tools. It is built in Python using FastMCP and connects via the Zillow Bridge API, which requires a separate API key.
 
 An important constraint: the server performs dynamic queries only and does not cache or store data locally, in compliance with Zillow's terms of service. The Zestimate tool is significant — Zillow's proprietary valuation model is one of the most-recognized AVMs in the U.S. consumer market, and having it accessible via MCP enables direct integration into agent workflows.
 
@@ -61,40 +61,40 @@ An important constraint: the server performs dynamic queries only and does not c
 
 Constellation1 provides technology infrastructure to brokerages, franchises, and MLSs across North America. Its MCP server exposes two tools: reso_query (for querying RESO-standardized entities including properties, agents, offices, media, and market analytics via OData) and reso_help (field references and best practice guidance).
 
-Coverage is 100% of the U.S. market and 90% of Canada. Authentication requires a Constellation1 client ID and secret. The server is production-grade. Notably, Redfin chose Constellation1 for MLS data aggregation in 2022, which gives some indication of the platform's position in the market.
+Coverage is 100% of the U.S. market and 90% of Canada. Authentication requires a Constellation1 client ID and secret. The server is production-grade. Notably, [Redfin chose Constellation1 for MLS data aggregation in April 2022](https://www.rismedia.com/2022/04/22/redfin-partners-constellaion1-power-market-expansion/), a partnership [also documented by Constellation1 itself](https://blog.constellation1.com/redfin-partners-constellation1), which gives some indication of the platform's position in the market.
 
 ### UNLOCK RESO Reference Implementation
 
-David Gumpper — WAV Group technology consulting lead and former CTO of Michael Saunders and Company — built a reference MCP server (GitHub: GumpperGroup/unlock-reso-mcp-remote) demonstrating how an MLS could expose data through the protocol. It implements the RESO Data Dictionary 2.0 via Bridge Interactive's RESO Web API.
+David Gumpper — WAV Group technology consulting lead and former CTO of Michael Saunders and Company — built a reference MCP server ([GitHub: GumpperGroup/unlock-reso-mcp-remote](https://github.com/GumpperGroup/unlock-reso-mcp-remote), 2 stars as of August 2026) demonstrating how an MLS could expose data through the protocol. It implements the RESO Data Dictionary 2.0 via Bridge Interactive's RESO Web API.
 
 The 4-tool implementation (search_properties, get_property_details, analyze_market, find_agent) includes support for natural language queries like "3 bedroom house under $500k in Austin TX" and 8 resource endpoints covering property types, market analysis guides, agent search, and workflow patterns. This is a reference and demonstration project, not a production MLS deployment, but it establishes a pattern other MLSs can follow.
 
 ### Real Estate MCP (agentic-ops)
 
-The comprehensive community server at agentic-ops/real-estate-mcp (30 stars, 10 forks) is the most feature-complete open-source real estate MCP implementation. It exposes 30+ tools across six categories: Property Management (7 tools for search, filtering, and insights), Agent Operations (6 tools for profiles and portfolio management), Market Analysis (7 tools for price analytics and opportunity assessment), Client Management (3 tools for preference matching and recommendations), Area Intelligence (9 tools for school, park, healthcare, and amenity data), and System Management.
+The comprehensive community server at [agentic-ops/real-estate-mcp](https://github.com/agentic-ops/real-estate-mcp) (53 stars, 19 forks as of August 2026) is the most feature-complete open-source real estate MCP implementation. It exposes 30+ tools across six categories: Property Management (7 tools for search, filtering, and insights), Agent Operations (6 tools for profiles and portfolio management), Market Analysis (7 tools for price analytics and opportunity assessment), Client Management (3 tools for preference matching and recommendations), Area Intelligence (9 tools for school, park, healthcare, and amenity data), and System Management.
 
 The server also includes 10 resource endpoints and 11 prompts covering property analysis, client consultation, investment analysis, and market reports. It is built in Python with FastMCP, supports both stdio and SSE transport, and includes GitHub Actions for CI. Its primary value is as a demonstration of what a full-featured real estate MCP implementation looks like architecturally, rather than as a production data source.
 
 ### Real Estate Intelligence (DanielJandric)
 
-This specialized server (GitHub: DanielJandric/realestatemcp) solves a specific problem: AI-powered management of a European property portfolio. The dataset includes 31,605 document chunks with OpenAI embeddings, covering 8 properties, 463 units, 95 leases, and 653+ documents including 68 land registry extracts.
+This specialized server ([GitHub: DanielJandric/realestatemcp](https://github.com/DanielJandric/realestatemcp)) solves a specific problem: AI-powered management of a European property portfolio. The dataset includes 31,605 document chunks with OpenAI embeddings, covering 8 properties, 463 units, 95 leases, and 653+ documents including 68 land registry extracts.
 
 Seven tools support semantic search, property analytics, servitude analysis (a European legal concept involving property rights), complex queries, document categorization, tenant retrieval, and maintenance contract analysis. The architecture — Supabase with pgvector plus Azure Document Intelligence for OCR — is production-ready for its target use case. It operates entirely locally without external API dependencies at query time.
 
 ### RentCast MCP Server
 
-RentCast provides AVM and rental market data for 140+ million U.S. properties. Its MCP server integration (community-built) exposes tools for property data retrieval, property valuation, rent estimation, market statistics by ZIP code, and property listings. The rent estimate tool provides a range with comparable listings, which is more useful for investment analysis than a point estimate alone.
+[RentCast provides AVM and rental market data for 150+ million U.S. properties](https://www.rentcast.io/api) (updated from the 140+ million figure at the site's earlier writing; RentCast's own site reflects the current, larger number). Its MCP server integration (community-built) exposes tools for property data retrieval, property valuation, rent estimation, market statistics by ZIP code, and property listings. The rent estimate tool provides a range with comparable listings, which is more useful for investment analysis than a point estimate alone.
 
 ### MLS Servers Under Development
 
-Two MLSs were reported to be building production MCP servers as of late 2025. UtahRealEstate.com was the first MLS to publicly announce an MCP server launch (September 2025), with CEO Brad Bjelke describing the initiative in terms of "technology sovereignty" — MLSs controlling their own AI infrastructure rather than ceding it to third parties. NorthstarMLS was reported close to completion through a partnership with reDataExport, a venture founded by UtahRealEstate.com in January 2025. Neither was production-live in the field as of early 2026.
+Two MLSs were reported to be building production MCP servers as of late 2025. [UtahRealEstate.com was the first MLS to publicly announce an MCP server launch (September 2025)](https://www.wavgroup.com/2025/09/16/utahrealestate-com-to-launch-an-mcp-server/), with [CEO Brad Bjelke describing the initiative in terms of "technology sovereignty"](https://blog.utahrealestate.com/index.php/2025/09/19/wavgroup-interviews-brad-bjelke-about-new-ai-mcp-server/) — MLSs controlling their own AI infrastructure rather than ceding it to third parties. NorthstarMLS was reported close to completion through a partnership with [reDataExport, a venture founded by UtahRealEstate.com in January 2025](https://www.prweb.com/releases/utahrealestatecoms-newest-company-redataexport-signs-northstarmls-as-its-first-customer-302466216.html). Neither was production-live in the field as of early 2026.
 
 
 ## Valuation and Appraisal
 
 ### PriceHubble
 
-PriceHubble entered early-access beta with an MCP server in Q1 2026. The platform serves 800+ enterprise clients across 11 countries with capabilities including automated property valuations (AVM), market forecasts, portfolio optimization, and energy performance assessments. Compliance certifications include ISO 27001 and GDPR, plus alignment with the NIST AI Risk Management Framework.
+[PriceHubble entered early-access beta with an MCP server in Q1 2026](https://www.pricehubble.com/pricehubble-news/pricehubble-launches-model-context-protocol), with external customer access opening in Q2 2026. The platform serves 800+ enterprise clients across [11 countries](https://www.pricehubble.com/pricehubble-news/pricehubble-launches-model-context-protocol) with capabilities including automated property valuations (AVM), market forecasts, portfolio optimization, and energy performance assessments. Compliance certifications include ISO 27001 and GDPR, plus alignment with the NIST AI Risk Management Framework.
 
 The 11-country coverage makes PriceHubble particularly relevant for firms operating across European markets, where valuation standards and data availability differ significantly from the U.S.
 
@@ -111,38 +111,38 @@ No dedicated MCP server exists for traditional appraisal workflows. The distinct
 
 ### Confer Solutions MCP Mortgage Server
 
-The Confer MCP server (GitHub: confersolutions/mcp-mortgage-server, 2 stars) focuses on TRID compliance — the mortgage disclosure rules that govern Loan Estimates (LE) and Closing Disclosures (CD). Its 4 tools parse LE and CD PDFs into MISMO-compliant JSON with LLM-enriched context, and compare LE and CD documents to flag discrepancies.
+The Confer MCP server ([GitHub: confersolutions/mcp-mortgage-server](https://github.com/confersolutions/mcp-mortgage-server), 2 stars) focuses on TRID compliance — the mortgage disclosure rules that govern Loan Estimates (LE) and Closing Disclosures (CD). Its 4 tools parse LE and CD PDFs into MISMO-compliant JSON with LLM-enriched context, and compare LE and CD documents to flag discrepancies.
 
-The server was substantially rewritten at version 2.0.0 and includes production-grade security features: HTTPS-only URLs, domain whitelisting to prevent SSRF attacks, 10MB document size limits, and 30-second timeouts. MISMO (Mortgage Industry Standards Maintenance Organization) compliance means the output format is interoperable with other mortgage industry systems. This is a narrow but genuinely useful capability — mortgage professionals reviewing TRID compliance spend significant time on these comparisons.
+The server was substantially rewritten at version 2.0.0 (released November 16, 2025) and includes production-grade security features: HTTPS-only URLs, domain whitelisting to prevent SSRF attacks, 10MB document size limits, and 30-second timeouts. MISMO (Mortgage Industry Standards Maintenance Organization) compliance means the output format is interoperable with other mortgage industry systems. This is a narrow but genuinely useful capability — mortgage professionals reviewing TRID compliance spend significant time on these comparisons.
 
 ### RateSpot
 
-RateSpot provides real-time mortgage rates from 4,300+ lenders through an MCP-compatible API. The service aggregates from established rate comparison platforms including Bankrate, Icanbuy, and Zillow. Tools support fetching current rates, comparing loan products, calculating monthly payment breakdowns, and retrieving lender information. Primary use cases are AI-powered financial advisors and mortgage chatbots.
+[RateSpot](https://ratespot.io) provides real-time mortgage rates through an [MCP-compatible API](https://mcpservers.org/servers/zad0xlik/ratespot-mcp). The service [aggregates from front-line mortgage pricing sources including Bankrate, Icanbuy, and Zillow](https://datarade.ai/top-lists/best-mortgage-apis). (Note: an earlier version of this page cited a "4,300+ lenders" figure for RateSpot; that number could not be re-verified against any current primary source and has been removed rather than repeated unsourced.) Tools support fetching current rates, comparing loan products, calculating monthly payment breakdowns, and retrieving lender information. Primary use cases are AI-powered financial advisors and mortgage chatbots.
 
 ### RateAPI
 
-RateAPI (rateapi.dev) offers native MCP support for Claude with a free tier of 50 requests per month. Beyond mortgages, it covers auto loans, HELOCs, personal loans, and credit cards — which matters for real estate contexts where buyers are evaluating their full debt picture alongside a mortgage.
+[RateAPI (rateapi.dev)](https://rateapi.dev/) offers native MCP support for Claude with a free tier of 20 requests per month, no card required (corrected from an earlier "50 requests per month" figure that no longer matches the live site). Beyond mortgages, it covers auto, RV, boat, motorcycle, powersports, HELOC, personal, student, and equipment loans, plus credit cards — which matters for real estate contexts where buyers are evaluating their full debt picture alongside a mortgage.
 
 ### Homebuyer.com
 
-Homebuyer.com's developer platform provides 8 mortgage tools free for non-commercial use. Seven tools require no API key. The eighth, which queries HMDA (Home Mortgage Disclosure Act) data through BigQuery, requires a free API key and provides access to 121 million mortgage records. HMDA data is significant for fair lending analysis — it contains loan-level data on race, ethnicity, income, and loan outcomes that regulators use to identify discriminatory lending patterns.
+[Homebuyer.com's developer platform](https://homebuyer.com/developers) provides 8 mortgage tools free for non-commercial use. Seven tools require no API key. The eighth, which queries HMDA (Home Mortgage Disclosure Act) data through BigQuery, requires a free API key and provides access to 121+ million mortgage applications. HMDA data is significant for fair lending analysis — it contains loan-level data on race, ethnicity, income, and loan outcomes that regulators use to identify discriminatory lending patterns.
 
 ### TinyFn
 
-TinyFn provides general financial calculation tools via MCP, including mortgage calculation and loan amortization. It is a supporting tool rather than a specialized mortgage MCP server, but it enables AI agents to do on-the-fly payment calculations without dedicated mortgage API access.
+[TinyFn](https://github.com/tinyfn-io/tinyfn-mcp) provides 500+ deterministic financial and math calculation tools via MCP, including mortgage/loan payment calculation and amortization schedules. It is a supporting tool rather than a specialized mortgage MCP server, but it enables AI agents to do on-the-fly payment calculations without dedicated mortgage API access.
 
 
 ## Commercial Real Estate
 
 ### LoopNet MCP Server
 
-The only CRE-specific MCP server found in research is a community scraper for LoopNet (GitHub: johnstenner/LoopnetMCP, 1 star). The server exposes 3 tools — property search, property details, and market overview — across all major property types: office, retail, industrial, multifamily, land, hospitality, special-purpose, and healthcare.
+The only CRE-specific MCP server found in research is a community scraper for LoopNet ([GitHub: johnstenner/LoopnetMCP](https://github.com/johnstenner/LoopnetMCP), 11 stars and 5 forks as of August 2026, up from 1 star at initial writing). The server exposes 3 tools — property search, property details, and market overview — across all major property types: office, retail, industrial, multifamily, land, hospitality, special-purpose, and healthcare.
 
 Because LoopNet has no public API, the server relies on scraping through curl_cffi and nodriver (headless Chrome), with logic to handle Akamai Bot Manager's TLS fingerprint checks and JavaScript challenges. Practical limitations are significant: results are first-page only, there is a 5-minute cache TTL, and CAPTCHAs may cause intermittent failures.
 
 ### The CRE Platform Gap
 
-The major commercial real estate data platforms — CoStar, ARGUS, Yardi Matrix, RCA Analytics — have not announced MCP servers. CoStar launched AI-powered conversational search on Homes.com in February 2026 through Microsoft Foundry, but this is a consumer product rather than a programmatic data API. ARGUS, widely used for DCF modeling of income-producing properties, has no MCP integration.
+The major commercial real estate data platforms — CoStar, ARGUS, Yardi Matrix, RCA Analytics — have not announced MCP servers. [CoStar launched AI-powered conversational search on Homes.com on February 17, 2026, built on Microsoft Foundry (Azure OpenAI and Mistral models)](https://www.costargroup.com/press-room/2026/costar-group-launches-transformative-ai-experience-homescom-redefining-future-home), but this is a consumer product rather than a programmatic data API. ARGUS, widely used for DCF modeling of income-producing properties, has no MCP integration.
 
 The gap in CRE is more significant than in residential. CRE transactions are larger, more complex, and involve more data types (rent rolls, CAM reconciliations, lease abstracts, NOI statements) where AI assistance would add substantial value. The absence of major platform MCP support reflects both the relative insularity of CRE data markets and the earlier adoption curve.
 
@@ -151,7 +151,7 @@ The gap in CRE is more significant than in residential. CRE transactions are lar
 
 ### ProptechOS
 
-ProptechOS is the most significant smart building platform to adopt MCP. The platform uses the RealEstateCore open standard for building data harmonization, then exposes that data through MCP for AI agent access. Building data — from BMS systems, BIM models, and IoT devices — is organized into a digital twin that AI agents can query and act on.
+[ProptechOS](https://proptechos.com/realestatecore/) is the most significant smart building platform to adopt MCP. The platform uses the RealEstateCore open standard for building data harmonization, then exposes that data through MCP for AI agent access. Building data — from BMS systems, BIM models, and IoT devices — is organized into a digital twin that AI agents can query and act on.
 
 Capabilities include energy optimization, indoor climate monitoring, building availability queries, ESG compliance reporting, and tenant experience management. ProptechOS describes its approach as "Agentic Proptech" — AI agents that investigate conditions, reason about them, and take action across portfolios. The platform is in production with commercial clients.
 
@@ -166,13 +166,13 @@ The major building management system vendors — Siemens, Honeywell, and Johnson
 
 ### DocuSign (Official)
 
-DocuSign released an official MCP server in beta, available through the Claude Connectors Directory. It covers IAM and eSignature capabilities: document sending, agreement status tracking, template management, and workflow automation. The server operates within DocuSign's established authentication and permission boundaries. It also powers DocuSign's ChatGPT integration.
+[DocuSign released an official MCP server, now in open beta](https://developers.docusign.com/platform/mcp-server/) with no intake form or approval required, available through the [Claude Connectors Directory](https://www.docusign.com/blog/developers/claude-docusign-mcp-connector-guide). It covers IAM and eSignature capabilities: document sending, agreement status tracking, template management, and workflow automation. The server operates within DocuSign's established authentication and permission boundaries. [DocuSign and Anthropic formalized a partnership on February 24, 2026](https://www.docusign.com/blog/docusign-anthropic-cowork) bringing DocuSign IAM into Claude Cowork; the integration also powers DocuSign's ChatGPT integration.
 
 For real estate, DocuSign is the dominant eSignature platform. Listing agreements, purchase contracts, disclosure packages, and addenda are routinely executed through DocuSign. An MCP-connected agent can check document status, trigger send workflows, and manage templates without manual intervention.
 
 ### DocuSign (Community Implementations)
 
-Three community implementations cover DocuSign as well. CData Software's server (GitHub: CDataSoftware/docusign-mcp-server-by-cdata) provides read-only access via JDBC drivers, useful for audit and reporting workflows. Luther Systems built a FastMCP-based server (GitHub: luthersystems/mcp-server-docusign) using JWT server-to-server authentication, suitable for automated backend workflows. Composio's DocuSign integration exposes the same capabilities through their multi-platform MCP hub, supporting Claude, ChatGPT, Cursor, and other clients.
+Three community implementations cover DocuSign as well. CData Software's server ([GitHub: CDataSoftware/docusign-mcp-server-by-cdata](https://github.com/CDataSoftware/docusign-mcp-server-by-cdata)) provides read-only access via JDBC drivers, useful for audit and reporting workflows. Luther Systems built a FastMCP-based server ([GitHub: luthersystems/mcp-server-docusign](https://github.com/luthersystems/mcp-server-docusign)) using JWT server-to-server authentication, suitable for automated backend workflows. [Composio's DocuSign integration](https://composio.dev/toolkits/docusign) exposes the same capabilities through their multi-platform MCP hub, supporting Claude, ChatGPT, Cursor, and other clients.
 
 ### The Transaction Management Gap
 
@@ -183,7 +183,7 @@ Real estate-specific transaction management platforms — Dotloop (owned by Zill
 
 ### GIS MCP Server
 
-The GIS MCP server (GitHub: mahdin75/gis-mcp, 126 stars, 41 forks) is the most-starred GIS tool in the MCP ecosystem. Version 0.14.0 beta exposes 95 tools across five Python geospatial libraries:
+The GIS MCP server ([GitHub: mahdin75/gis-mcp](https://github.com/mahdin75/gis-mcp), 187 stars, 51 forks as of August 2026 — up from 126 stars/41 forks at initial writing) is the most-starred GIS tool in the MCP ecosystem. Version 0.15.0 beta now exposes 92 functions, expanded from earlier versions to add visualization and additional data-source tools alongside the original five Python geospatial libraries:
 
 - **Shapely** (29 tools): Geometry operations — creating, measuring, and analyzing geometric shapes
 - **PyProj** (13 tools): Coordinate system transformations between geographic reference systems
@@ -195,19 +195,19 @@ For real estate, the most relevant capabilities are PySAL's spatial clustering (
 
 ### CARTO
 
-CARTO's official MCP server bridges geospatial workflows with AI agents by exposing CARTO Workflows as MCP tools. The real estate use case CARTO highlights is site selection: "Which Maryland counties have high income, favorable demographics, and limited competition?" An agent can run that query against CARTO's data platform and receive a ranked list with supporting analytics and interactive map output.
+[CARTO's official MCP server](https://carto.com/blog/carto-mcp-server-turn-your-ai-agents-into-geospatial-experts/) bridges geospatial workflows with AI agents by exposing CARTO Workflows as MCP tools. The real estate use case CARTO highlights is site selection: "Which Maryland counties have high income, favorable demographics, and limited competition?" An agent can run that query against CARTO's data platform and receive a ranked list with supporting analytics and interactive map output.
 
 Other RE applications include investment analysis with demographic overlays, retail site planning, and neighborhood market characterization. CARTO is an enterprise platform with governance controls, making it suitable for institutional real estate analytics.
 
 ### ArcGIS Location Services
 
-The ArcGIS community MCP server provides 6+ tools covering geocoding, reverse geocoding, nearby places, directions, elevation data, and basemap tiles via Esri's ArcGIS Location Platform. Real estate applications include property address verification at scale, commute time analysis, elevation data for flood risk assessment, and point-of-interest proximity for neighborhood scoring.
+[A community-built ArcGIS MCP server](https://github.com/lwsinclair/arcgis-location-services-mcp) provides 6+ tools covering geocoding, reverse geocoding, nearby places, directions, elevation data, and basemap tiles via Esri's ArcGIS Location Platform. Real estate applications include property address verification at scale, commute time analysis, elevation data for flood risk assessment, and point-of-interest proximity for neighborhood scoring.
 
-Authentication requires an ArcGIS Developer API key. The server is installable via Smithery.
+Authentication requires an ArcGIS Developer API key. The server is installable via Smithery. Update: [Esri itself began offering native MCP support (beta) directly within the ArcGIS Location Platform on June 29, 2026](https://www.esri.com/arcgis-blog/products/platform/developers/mcp-support-beta-and-arcgis-static-maps-service-in-arcgis-location-platform-release), covering geocoding, routing, elevation, and static map imagery — an official alternative to the community wrapper described above, at no additional charge beyond standard service consumption.
 
 ### Google Maps
 
-Multiple community MCP servers expose the Google Maps platform. The comprehensive version (vicpeacock/google-maps-comprehensive-mcp) provides 8 tools. An extended version (cablate/mcp-google-map) expands to 18 tools including batch geocoding of up to 50 addresses simultaneously. The standard tool set covers geocoding, reverse geocoding, place search, place details, distance matrix calculations, elevation, and directions.
+Multiple community MCP servers expose the Google Maps platform. The comprehensive version ([vicpeacock/google-maps-comprehensive-mcp](https://github.com/vicpeacock/google-maps-comprehensive-mcp)) provides 8 tools. An extended version ([cablate/mcp-google-map](https://github.com/cablate/mcp-google-map)) expands to 18 tools (14 atomic plus 4 composite) including batch geocoding of up to 50 addresses simultaneously. The standard tool set covers geocoding, reverse geocoding, place search, place details, distance matrix calculations, elevation, and directions.
 
 For real estate agents, commute time is one of the most common buyer questions. An agent AI with Google Maps MCP access can answer "what's the commute from this property to downtown during rush hour" directly, without requiring the buyer to open a separate application.
 
@@ -220,28 +220,28 @@ Walk Score, GreatSchools, NeighborhoodScout, and the EPA's Smart Location Databa
 
 ### Apify Real Estate Aggregator
 
-The sovereigntaylor Real Estate Aggregator on Apify scrapes and unifies data from Zillow, Redfin, and Realtor.com. It de-duplicates listings by address and provides unified analytics including median price, price per square foot, and days on market. Pricing is pay-per-event at $0.01 per tool call, making it accessible for low-volume research without a subscription.
+The [sovereigntaylor Real Estate Aggregator on Apify](https://apify.com/sovereigntaylor/real-estate-aggregator) scrapes and unifies data from Zillow, Redfin, Realtor.com, and Apartments.com. It de-duplicates listings by address and provides unified analytics including median price, price per square foot, and days on market. Pricing is pay-per-event at $0.01 per unique property result, making it accessible for low-volume research without a subscription.
 
 Additional Apify MCP servers target specific platforms: a Redfin scraper for property details, pricing, and photos; a Zillow scraper for listings and prices; and a harvestlabs AI Real Estate Agent for Realtor.com data including agent profiles.
 
 ### Bright Data
 
-Bright Data's MCP server (GitHub: brightdata/brightdata-mcp, 60+ tools) provides commercial-grade web data extraction with proxy rotation, CAPTCHA solving, and anti-blocking infrastructure. Bright Data also maintains a dedicated real estate AI agent repository (brightdata/real-estate-ai-agent) demonstrating structured property data extraction using AI agents plus Bright Data MCP. For applications requiring reliable, at-scale data extraction from property sites that don't offer official APIs, Bright Data represents the most robust available option.
+Bright Data's MCP server ([GitHub: brightdata/brightdata-mcp](https://github.com/brightdata/brightdata-mcp), 60+ tools) provides commercial-grade web data extraction with proxy rotation, CAPTCHA solving, and anti-blocking infrastructure. Bright Data also maintains a dedicated real estate AI agent repository ([brightdata/real-estate-ai-agent](https://github.com/brightdata/real-estate-ai-agent)) demonstrating structured property data extraction using AI agents plus Bright Data MCP. For applications requiring reliable, at-scale data extraction from property sites that don't offer official APIs, Bright Data represents the most robust available option.
 
 ### Real Estate Investment MCP
 
-The ericnsibley/GenAI_MCP project stores Zillow Housing Value Indices (ZHVI), Zillow Home Value Forecasts (ZHVF), Zillow Observed Rent Indices (ZORI), and Zillow Observed Rent Forecasts (ZORF) in a local SQLite database accessible via MCP. While limited in scope, it demonstrates how time-series market data can be made queryable by AI agents for investment analysis and forecasting workflows.
+The [ericnsibley/GenAI_MCP](https://github.com/ericnsibley/GenAI_MCP) project stores Zillow Housing Value Indices (ZHVI), Zillow Home Value Forecasts (ZHVF), Zillow Observed Rent Indices (ZORI), and Zillow Observed Rent Forecasts (ZORF) in a local SQLite database accessible via MCP. While limited in scope, it demonstrates how time-series market data can be made queryable by AI agents for investment analysis and forecasting workflows.
 
 
 ## Real Estate CRM
 
 ### HubSpot
 
-HubSpot's official MCP server (production) provides 100+ tools covering contacts, companies, deals, and other CRM objects. Access is currently read-only. HubSpot is widely used by real estate teams and brokerages as a general-purpose CRM. The MCP server enables agents to query deal pipeline, retrieve contact histories, and analyze company relationships — useful for transaction coordination and client management.
+[HubSpot's official MCP server](https://developers.hubspot.com/ai-tools/mcp) (production) covers contacts, companies, deals, tickets, carts, products, orders, line items, invoices, quotes, subscriptions, and engagements (calls, emails, meetings, notes, tasks), plus read-only access to users, campaigns, and web/blog pages. Correction: as of this re-audit, HubSpot's own documentation states the server supports **read and write** access for the objects above, not read-only as an earlier version of this page stated — that changed after this page's original writing. HubSpot is widely used by real estate teams and brokerages as a general-purpose CRM. The MCP server enables agents to query deal pipeline, retrieve contact histories, and analyze company relationships — useful for transaction coordination and client management.
 
 ### Salesforce
 
-Salesforce's official MCP server provides 60+ tools with full CRUD capability, but access is restricted to Agentforce, Salesforce's own AI agent framework. Large brokerages and commercial real estate firms using Salesforce CRM cannot currently integrate external AI agents via MCP without going through Agentforce.
+Correction: this page previously stated that Salesforce's MCP access was restricted to Agentforce. That is no longer accurate. [Salesforce's hosted MCP servers reached general availability in April 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available), and — per Salesforce's own developer blog — "any MCP-compatible client can securely connect to Salesforce," including Claude and ChatGPT directly, without requiring Agentforce as an intermediary. Access still runs under the connecting user's existing Salesforce permissions (CRUD, field-level security, sharing rules), so what an agent can read or write depends on that user's profile rather than a blanket restriction. Large brokerages and commercial real estate firms using Salesforce CRM can now connect external AI agents via MCP directly.
 
 ### The RE CRM Gap
 
@@ -254,10 +254,10 @@ Real estate-specific CRMs — Follow Up Boss, kvCORE (now Lofty), LionDesk, Real
 |---|---|---|---|---|---|
 | ATTOM | MLS/Property Data | N/A | Multiple | Official/Commercial | Production |
 | Constellation1 | MLS/Property Data | N/A | 2 | Official/Commercial | Production |
-| BatchData | MLS/Property Data | 28 | 8 | Community | Production-quality |
-| Zillow (sap156) | MLS/Property Data | 34 | 7 | Community | Active |
-| Real Estate MCP (agentic-ops) | MLS/Property Data | 30 | 30+ | Community/Demo | Demo |
-| UNLOCK RESO (GumpperGroup) | MLS/Property Data | 1 | 4 | Community/Reference | Reference |
+| BatchData | MLS/Property Data | 32 | 8 | Community | Production-quality |
+| Zillow (sap156) | MLS/Property Data | 48 | 7 | Community | Active |
+| Real Estate MCP (agentic-ops) | MLS/Property Data | 53 | 30+ | Community/Demo | Demo |
+| UNLOCK RESO (GumpperGroup) | MLS/Property Data | 2 | 4 | Community/Reference | Reference |
 | Real Estate Intelligence (DanielJandric) | Property Mgmt | 0 | 7 | Community | Production (niche) |
 | RentCast | MLS/Valuation | N/A | 5 | Community/Commercial | Active |
 | PriceHubble | Valuation | N/A | Multiple | Official/Commercial | Beta |
@@ -266,22 +266,22 @@ Real estate-specific CRMs — Follow Up Boss, kvCORE (now Lofty), LionDesk, Real
 | RateAPI | Mortgage/Lending | N/A | Multiple | Commercial | Production |
 | Homebuyer.com | Mortgage/Lending | N/A | 8 | Official | Production |
 | TinyFn | Financial Calc | N/A | Multiple | Commercial | Production |
-| LoopNet MCP | Commercial RE | 1 | 3 | Community/Scraper | Experimental |
+| LoopNet MCP | Commercial RE | 11 | 3 | Community/Scraper | Experimental |
 | ProptechOS | Smart Buildings | N/A | Multiple | Official/Commercial | Production |
 | DocuSign (official) | Documents | N/A | Multiple | Official | Beta |
 | DocuSign (CData) | Documents | N/A | Multiple | Community | Active |
 | DocuSign (Luther) | Documents | N/A | Multiple | Community | Active |
 | DocuSign (Composio) | Documents | N/A | Multiple | Platform | Production |
-| GIS MCP | Geographic/GIS | 126 | 95 | Community | Beta |
+| GIS MCP | Geographic/GIS | 187 | 92 | Community | Beta |
 | CARTO | Geographic/GIS | N/A | Multiple | Official/Commercial | Production |
 | ArcGIS | Geographic/GIS | N/A | 6+ | Community | Active |
 | Google Maps (vicpeacock) | Geographic/GIS | N/A | 8 | Community | Active |
 | Google Maps (cablate) | Geographic/GIS | N/A | 18 | Community | Active |
 | Apify RE Aggregator | Aggregator | N/A | Multiple | Commercial | Production |
 | Bright Data | Aggregator | N/A | 60+ | Commercial | Production |
-| RE Investment (ericnsibley) | Aggregator/Indices | 1 | Multiple | Community | Demo |
-| HubSpot | CRM | N/A | 100+ | Official | Production |
-| Salesforce | CRM | N/A | 60+ | Official | Production (restricted) |
+| RE Investment (ericnsibley) | Aggregator/Indices | 0 | Multiple | Community | Demo |
+| HubSpot | CRM | N/A | Multiple (read/write) | Official | Production |
+| Salesforce | CRM | N/A | Multiple | Official | Production (GA, direct MCP client access) |
 
 
 ## Architecture Patterns

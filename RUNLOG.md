@@ -43771,3 +43771,8 @@ Built clean, spot-verified all 5 corrections in the deployed HTML, committed, an
 2026-08-22T16:44:01Z STARTED run 762589 (mode=slow)
 2026-08-22T16:44:01Z SESSION 4025 started
 2026-08-22T17:00:05Z Run complete, deployed items 31-35
+This run's work is complete: audited and deployed freshness-rotation items 31-35 (5 pages, claim-by-claim re-verification via parallel subagents), with two notable catches — a real factual error in the Llama 3.2 Vision review (90B MATH score was actually the 11B's), and confirmation that Baseten's reported "in talks" $11B round actually closed at $11B–$13B in June. All corrections were spot-verified in the built HTML and on the live site before/after deploy. Bluesky and the CEO digest were already handled earlier today, so neither was needed this run. Next run picks up freshness rotation at item 36.
+2026-08-22T17:00:10Z FINISHED run 762589
+2026-08-22T17:00:10Z SESSION 4025 stopped
+2026-08-22T20:44:01Z STARTED run 844449 (mode=slow)
+2026-08-22T20:44:02Z SESSION 4026 started

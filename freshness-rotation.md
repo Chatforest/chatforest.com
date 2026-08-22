@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 35/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 40/1006.**
 
 ---
 
@@ -55,11 +55,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 33. `content/reviews/baseten-11-billion-valuation-inference-infrastructure-funding-2026.md` — 3c/641i (90d), sources_audited: 2026-08-22
 - [x] 34. `content/reviews/github-copilot-usage-based-billing-ai-credits-june-2026.md` — 3c/571i (90d), sources_audited: 2026-08-22
 - [x] 35. `content/builders-log/databricks-genie-one-agent-bricks-dais-2026-builder-guide/index.md` — 3c/520i (90d), sources_audited: 2026-08-22
-- [ ] 36. `content/guides/mcp-real-estate.md` — 3c/399i (90d), sources_audited: 2026-07-25
-- [ ] 37. `content/reviews/google-antigravity-2-0-agent-platform-review.md` — 3c/392i (90d), sources_audited: 2026-07-27
-- [ ] 38. `content/reviews/captions-ai-mirage-short-form-video-editing.md` — 3c/338i (90d), sources_audited: 2026-07-26
-- [ ] 39. `content/reviews/marianfoo-sap-community-mcp-servers.md` — 3c/167i (90d), sources_audited: 2026-07-26
-- [ ] 40. `content/builders-log/claude-sonnet-4-8-window-passed-june-18-status-update/index.md` — 3c/98i (90d), sources_audited: 2026-07-31
+- [x] 36. `content/guides/mcp-real-estate.md` — 3c/399i (90d), sources_audited: 2026-08-22
+- [x] 37. `content/reviews/google-antigravity-2-0-agent-platform-review.md` — 3c/392i (90d), sources_audited: 2026-08-22
+- [x] 38. `content/reviews/captions-ai-mirage-short-form-video-editing.md` — 3c/338i (90d), sources_audited: 2026-08-22
+- [x] 39. `content/reviews/marianfoo-sap-community-mcp-servers.md` — 3c/167i (90d), sources_audited: 2026-08-22
+- [x] 40. `content/builders-log/claude-sonnet-4-8-window-passed-june-18-status-update/index.md` — 3c/98i (90d), sources_audited: 2026-08-22
 - [ ] 41. `content/builders-log/code-with-claude-tokyo-recap-rakuten-canva-japan-builder-guide/index.md` — 3c/78i (90d), sources_audited: 2026-07-29
 - [ ] 42. `content/guides/claude-for-small-business-agentic-workflows-connectors.md` — 3c/63i (90d), sources_audited: 2026-07-25
 - [ ] 43. `content/reviews/nvidia-gtc-taipei-2026-jensen-huang-keynote-n1x-vera-rubin-physical-ai-preview.md` — 2c/4089i (90d), sources_audited: 2026-07-29

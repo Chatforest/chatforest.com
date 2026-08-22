@@ -6,7 +6,7 @@ og_description: "claude-sonnet-4-8 does not exist as of June 18, 2026. Our June 
 content_type: "Builder's Log"
 categories: ["Anthropic", "Claude", "Developer Tools", "Model Migration"]
 tags: ["anthropic", "claude", "claude-sonnet", "sonnet-4-8", "sonnet-4-6", "model-release", "june-2026", "api", "correction", "update"]
-sources_audited: 2026-07-31
+sources_audited: 2026-08-22
 ---
 
 **Update — June 18, 2026:** This article corrects the prediction in our earlier guide, [Claude Sonnet 4.8 Is Next: Builder Preview for the June 16–18 Drop](/builders-log/claude-sonnet-4-8-preview-june-2026-dynamic-workflows-builder-guide/). The window has passed. Sonnet 4.8 has not shipped.
@@ -42,7 +42,7 @@ If your production code is on `claude-sonnet-4-6`, you are on the correct and on
 
 ### The evidentiary basis was thin
 
-The "Sonnet 4.8 is coming" narrative rested almost entirely on a single signal: a string in a leaked source-map file that [accidentally shipped inside the `@anthropic-ai/claude-code` npm package on March 31, 2026](https://thehackernews.com/2026/04/claude-code-tleaked-via-npm-packaging.html). The file contained what appeared to be internal model references — including `claude-sonnet-4-8`.
+The "Sonnet 4.8 is coming" narrative rested almost entirely on a single signal: a string in a leaked source-map file that [accidentally shipped inside the `@anthropic-ai/claude-code` npm package on March 31, 2026](https://thehackernews.com/2026/04/claude-code-tleaked-via-npm-packaging.html). The file contained what appeared to be internal model references — including `claude-sonnet-4-8`, [found among Undercover Mode's list of forbidden strings](https://claudefa.st/blog/guide/mechanics/claude-code-source-leak).
 
 That single string, combined with the Opus→Sonnet release pattern, was enough to make a reasonable probabilistic case for a June window. It was not a confirmed product signal. Anthropic never acknowledged the leak or confirmed the model ID. The article's editorial disclaimer said exactly this.
 
@@ -58,7 +58,7 @@ The most likely reading: the Mythos-class work (Fable 5, Mythos 5, and the compl
 
 ### The Fable 5 disruption
 
-On [June 12, Anthropic suspended Claude Fable 5 and Mythos 5](https://www.anthropic.com/news/fable-mythos-access) to comply with a US Commerce Department export-control directive. [Senior technical staff — including security researcher Nicholas Carlini, safety-evaluations lead Logan Graham, and head of safeguards Dave Orr — traveled to Washington for direct negotiations](https://qz.com/anthropic-staff-washington-export-controls-fable-mythos-061526). That intervention — and the effort that led the Commerce Department to lift the export controls on [June 30](https://www.anthropic.com/news/redeploying-fable-5) — represents a substantial organizational focus that displaces routine product releases.
+On [June 12, Anthropic suspended Claude Fable 5 and Mythos 5](https://www.anthropic.com/news/fable-mythos-access) — three days after their [June 9 public launch](https://www.anthropic.com/news/claude-fable-5-mythos-5) — to comply with a [US Commerce Department export-control directive](https://www.forbes.com/sites/anishasircar/2026/06/16/anthropic-disabled-fable-5-and-mythos-5-after-a-us-export-control-order-heres-what-happened/) issued via the Bureau of Industry and Security. [Senior technical staff — including cybersecurity researcher Nicholas Carlini, Frontier Red Team's Logan Graham, and head of safeguards Dave Orr — traveled to Washington, D.C. to meet with U.S. officials](https://fortune.com/2026/06/30/anthropic-clash-with-u-s-government-shows-its-failure-to-play-by-trump-administration-playbook/) in the hopes of getting the export controls relaxed. That intervention — and the effort that led to the [Commerce Department lifting the export controls on June 30](https://www.anthropic.com/news/redeploying-fable-5) — represents a substantial organizational focus that displaces routine product releases.
 
 Whether this directly delayed Sonnet 4.8 is not confirmed. What is clear: Anthropic's June has been dominated by the Fable 5 crisis, and a quiet Sonnet drop in this period would have been anomalous.
 
@@ -119,4 +119,6 @@ When Anthropic announces the next Sonnet — whether numbered 4.7, 4.8, or other
 
 ---
 
-**Editor's note — added 2026-07-31, during a citation audit of this piece:** The next Sonnet arrived sooner than this article's revised estimate, and under different numbering than either option considered above. [Claude Sonnet 5 launched June 30, 2026](https://www.anthropic.com/news/claude-sonnet-5) — 12 days after this article was published — skipping 4.7 and 4.8 on the Sonnet track entirely and jumping straight from the 4.6 generation to a new major version, alongside [Claude Opus 5](https://www.anthropic.com/news/claude-opus-5) and [Claude Fable 5 / Mythos 5](https://www.anthropic.com/news/claude-fable-5-mythos-5). `claude-sonnet-4-8` never shipped as an Anthropic model.
+**Editor's note — added 2026-07-31, during a citation audit of this piece:** The next Sonnet arrived sooner than this article's revised estimate, and under different numbering than either option considered above. [Claude Sonnet 5 launched June 30, 2026](https://www.anthropic.com/news/claude-sonnet-5) — 12 days after this article was published — skipping 4.7 and 4.8 on the Sonnet track entirely and jumping straight from the 4.6 generation to a new major version. `claude-sonnet-4-8` never shipped as an Anthropic model.
+
+**Editor's note — added 2026-08-22, during a freshness re-verification of this piece:** The prior note's "alongside" framing was imprecise and is corrected here. [Claude Fable 5 and Mythos 5 actually launched earlier, on June 9, 2026](https://www.anthropic.com/news/claude-fable-5-mythos-5) — three weeks before Sonnet 5, and the models whose brief export-control suspension (covered above) is the reason this article originally guessed Anthropic's release capacity was tied up. [Claude Opus 5 launched later still, on July 24, 2026](https://www.anthropic.com/news/claude-opus-5), almost a month after Sonnet 5. None of the three launched on the same day; [Anthropic's model-deprecation schedule](https://platform.claude.com/docs/en/about-claude/model-deprecations) independently confirms all three dates (`claude-fable-5`, `claude-sonnet-5`, and `claude-opus-5` each carry a "not sooner than" retirement date exactly one year after their respective launch dates above).

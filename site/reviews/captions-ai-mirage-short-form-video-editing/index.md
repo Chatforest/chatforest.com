@@ -9,7 +9,7 @@ If you've been following AI video generation benchmarks — the ELO leaderboards
 
 It does something different: it makes the videos you already recorded into something worth posting.
 
-**Captions** is the flagship product of **Mirage** (formerly Captions Inc.), a New York-based AI company that has processed more than **3 million creator videos per month** and raised **$175 million in total capital**. The app is available on iOS, Android, and web. It auto-captions, auto-edits, corrects your eye gaze, dubs your voice into 30+ languages, generates a digital clone of you that can deliver scripts on command, and — as of March 2026 — has an **official MCP server**.
+**Captions** is the flagship product of **Mirage** (formerly Captions Inc.), a New York-based AI company that had [processed more than 3 million creator videos per month as of its July 2024 Series C round](https://www.captions.ai/blog/captions-announces-series-c-to-invest-usd100m-in-ai-video-research-in-new-york) — the company has not published a more recent monthly figure; its most recent disclosure ([March 2026](https://captions.ai/blog/announcing-mirages-usd75m-growth-financing-with-general-catalyst)) instead cites 20 million users and 250 million+ cumulative videos created — and has raised [$175 million in total capital](https://techcrunch.com/2026/03/24/mirage-raises-75m-to-continue-building-models-for-its-ai-video-editing-app-captions/). The app is available on iOS, Android, and web. It auto-captions, auto-edits, corrects your eye gaze, dubs your voice into 30+ languages, generates a digital clone of you that can deliver scripts on command, and — as of March 2026 — has an **official MCP server**.
 
 The AI video generation category has been dominated by infrastructure-layer models: Seedance 2.0, HappyHorse-1.0, Kling AI, Veo 3.1. These are models that synthesize video from nothing. Captions operates at the other end of the pipeline. It takes the video you already have — a talking-head clip recorded on your phone — and transforms it into polished short-form content optimized for TikTok, Instagram Reels, and YouTube Shorts.
 
@@ -21,7 +21,7 @@ This is a research-based review covering Captions' features, the Mirage foundati
 
 ## The Company: From Captions Inc. to Mirage
 
-**Mirage** (legal name: Mirage Inc., formerly Captions Inc.) was co-founded by **Gaurav Misra** (CEO) and **Dwight Churchill** (CTO), who met while working at **Localytics**, a mobile analytics startup. They identified the same market gap independently: TikTok and Reels were growing faster than anyone could make content for them, but the production workflow — record, caption, edit, export, schedule — was still mostly manual.
+**Mirage** (legal name: Mirage Inc., formerly Captions Inc.) was co-founded by **Gaurav Misra** (CEO) and **Dwight Churchill** ([COO](https://mirage.app/about-us/dwight-churchill) — corrected 2026-08-22; a prior version of this review misstated his title as CTO), who met while working at **Localytics**, a mobile analytics startup. They identified the same market gap independently: TikTok and Reels were growing faster than anyone could make content for them, but the production workflow — record, caption, edit, export, schedule — was still mostly manual.
 
 They launched Captions as an iOS app focused on one problem: auto-captioning short-form video. The product expanded steadily, adding AI editing, dubbing, avatar generation, and social scheduling over the following years.
 
@@ -30,14 +30,16 @@ They launched Captions as an iOS app focused on one problem: auto-captioning sho
 - **2021**: Seed funding — initial product development
 - **2022**: Series A — Index Ventures led; product-market fit confirmed
 - **2023**: Series B — expanded editing feature set
-- **July 2024**: [**$60M Series C** at a **$500M valuation**](https://www.indexventures.com/perspectives/captions-raises-60m-in-series-c-funding-to-invest-in-generative-video-research/), led by Index Ventures; users generating 3M+ videos/month
-- **September 2025**: Company rebrands from Captions Inc. to **Mirage**, signaling expanded AI research mission
-- **January 2025**: Switch to freemium model to compete directly with CapCut and Meta's Edits
+- **July 2024**: [**$60M Series C** at a **$500M valuation**](https://www.indexventures.com/perspectives/captions-raises-60m-in-series-c-funding-to-invest-in-generative-video-research/), led by Index Ventures; [customers generating 3M+ videos/month, 10M+ global creators](https://www.captions.ai/blog/captions-announces-series-c-to-invest-usd100m-in-ai-video-research-in-new-york) at the time of the round
+- **January 2025**: [Switch to freemium model](https://techcrunch.com/2026/03/24/mirage-raises-75m-to-continue-building-models-for-its-ai-video-editing-app-captions/) to compete directly with CapCut and Meta's Edits
+- **September 2025**: [Company rebrands](https://techcrunch.com/2025/09/04/captions-rebrands-as-mirage-expands-beyond-creator-tools-to-ai-video-research/) from Captions Inc. to **Mirage**, signaling expanded AI research mission
 - **March 2026**: [**$75M growth financing** from General Catalyst's Customer Value Fund](https://techcrunch.com/2026/03/24/mirage-raises-75m-to-continue-building-models-for-its-ai-video-editing-app-captions/), bringing total raised to **$175M** ([official announcement](https://captions.ai/blog/announcing-mirages-usd75m-growth-financing-with-general-catalyst))
 
-CEO Gaurav Misra described the rebrand rationale to TechCrunch in September 2025: "The new identity, Mirage, reflects our expanded vision and commitment to redefining the video category, starting with short-form video, through frontier AI research and models."
+*(Corrected 2026-08-22: the funding-timeline bullets above were reordered chronologically — the January 2025 freemium switch was previously listed after the September 2025 rebrand — and the 3M+ videos/month figure, which had been attached to the Index Ventures link, is retagged to its actual source, Captions' own Series C announcement.)*
 
-General Catalyst's managing director, who led the March 2026 investment, stated publicly that "Mirage has great product-market fit" and that "Mirage's business equation is extremely figured out" — language that suggests the company's unit economics are already favorable, not the typical growth-at-any-cost startup profile.
+CEO Gaurav Misra described the rebrand rationale to [TechCrunch in September 2025](https://techcrunch.com/2025/09/04/captions-rebrands-as-mirage-expands-beyond-creator-tools-to-ai-video-research/): "The new identity, Mirage, reflects our expanded vision and commitment to redefining the video category, starting with short-form video, through frontier AI research and models."
+
+[Pranav Singhvi, managing director of General Catalyst's Customer Value Fund](https://techcrunch.com/2026/03/24/mirage-raises-75m-to-continue-building-models-for-its-ai-video-editing-app-captions/), who led the March 2026 investment, stated publicly that "Mirage has great product-market fit" and that "Mirage's business equation is extremely figured out" — language that suggests the company's unit economics are already favorable, not the typical growth-at-any-cost startup profile.
 
 ### The Product vs. Company Naming
 
@@ -57,8 +59,8 @@ The feature set as of May 2026 covers six major capability areas:
 
 The original feature and still the anchor. Captions transcribes your video automatically and generates synchronized subtitles. 
 
-- **100+ languages** supported for transcription
-- **100+ caption template styles** — animated, styled text overlays in formats optimized for different platforms
+- [**100+ languages**](https://captions.ai/features/translate-videos-with-ai) supported for transcription
+- [**100+ caption template styles**](https://captions.ai/features/add-captions-to-videos) — animated, styled text overlays in formats optimized for different platforms
 - **Filler word removal** — automatically detects and removes "um," "uh," "like," and similar from both captions and audio
 - **Word-level timestamp sync** — captions adjust in real time if you trim or rearrange clips
 
@@ -76,7 +78,7 @@ This addresses one of the most common quality signals viewers use to assess crea
 
 The AI Twin feature creates a **digital avatar that looks like you, sounds like you, and can deliver any script you provide** — without you ever needing to record again after the initial setup.
 
-Setup: Record a short video sample (approximately 2–5 minutes of footage, per the help documentation). Captions builds a personalized avatar model from this footage. After setup, you provide a script, the avatar generates a video of you delivering it.
+Setup: Record a short video sample. **Correction (2026-08-22):** the original review cited a 2–5 minute recording requirement; re-checked live, Captions' current marketing copy states the underlying "Mirage Avatar X" model [needs only 10 seconds of footage](https://captions.ai/features/create-ai-twin) to build a twin (the same page claims this beats HeyGen's 15-second requirement and Synthesia's 1–5 minutes) — a substantially faster process than what this review originally described, whether because the requirement changed or the original figure was inaccurate. Captions builds a personalized avatar model from this footage. After setup, you provide a script, the avatar generates a video of you delivering it.
 
 Use cases Mirage cites:
 - Consistent social media posting without daily recording sessions
@@ -90,7 +92,7 @@ The AI Twin sits at the intersection of Captions the editing app and the Mirage 
 
 AI Edit is the closest Captions comes to a one-click production pipeline. You select a style, and the AI assembles a complete video edit from your raw footage: cuts, B-roll overlays, sound effects, music, and motion effects matched to the chosen aesthetic.
 
-The style library contains **116 styles in total** (as of current documentation): **21 Premium** styles and **95 Basic** styles. Style names reflect specific creator aesthetics — documentary, viral, motivational, product-showcase, talking-head-interview — rather than generic labels.
+The style library contains [**116 styles in total**](https://captions.ai/help/docs/project/ai-edit) (verified live 2026-08-22): **21 Premium** styles and **95 Basic** styles. Style names reflect specific creator aesthetics — documentary, viral, motivational, product-showcase, talking-head-interview — rather than generic labels.
 
 What AI Edit automates:
 - **Cut selection** — identifying the best takes and trimming dead air
@@ -105,7 +107,7 @@ User reviews note that AI Edit works best on talking-head monologue content alig
 
 ### 5. AI Dubbing and Translation
 
-Captions translates and dubs videos into **30+ languages** while preserving the speaker's tone, cadence, and vocal characteristics. This goes beyond subtitling: the dubbed audio is generated to match the original speaker's voice profile.
+Captions translates and dubs videos into [**30+ languages**](https://captions.ai/help/docs/captions/dubbing) while preserving the speaker's tone, cadence, and vocal characteristics. This goes beyond subtitling: the dubbed audio is generated to match the original speaker's voice profile.
 
 - Audio dubbing output is synced to the original lip movements or, when used with AI Twin, regenerates the video with the avatar speaking in the target language
 - Captions claims accent preservation across dubbed languages — a technically challenging problem the Mirage foundation model specifically addresses
@@ -174,12 +176,18 @@ In January 2025, Mirage switched Captions from a paid-first to a **freemium** mo
 
 Captions' paid plans are credit-based, with credits consumed per project creation, export, and premium feature usage.
 
+**Correction (2026-08-22):** at the time of the original review (May 2026) Captions offered a $9.99/month "Pro" tier with 200 credits. Re-checked live against [captions.ai/pricing](https://captions.ai/pricing) for this audit, that tier is gone — the paid ladder now starts at Max, and what was a single "Scale" tier has split into three sub-tiers:
+
 | Plan | Price | Credits/Month |
 |------|-------|--------------|
 | Free | $0 | Limited |
-| Pro | $9.99/month | 200 |
 | Max | $24.99/month | 500 |
-| Scale | $69.99/month | 1,400 |
+| Scale 1x | $69.99/month | 1,400 |
+| Scale 2x | $139.99/month | 2,800 |
+| Scale 4x | $279.99/month | 5,600 |
+| Enterprise | Custom | Custom |
+
+Prices per [captions.ai/pricing](https://captions.ai/pricing) (verified live 2026-08-22); that page notes the figures "reflect iOS plans only," so Android/web pricing may differ.
 
 Key notes:
 - All paid plans include no watermarks on exports
@@ -191,23 +199,25 @@ Key notes:
 
 The credit model is one of the most frequently discussed aspects of Captions in user feedback. The pros: lighter users on the free or Pro tier get access to powerful features without paying for capacity they don't use. The cons: creators with variable volume — busy weeks followed by quiet periods — can run out of credits before month end, then face overage charges without rollover for accumulated unused credits.
 
-Comparisons to competitors by pricing:
+Comparisons to competitors by pricing (re-checked against each vendor's live pricing page, 2026-08-22 — several have moved since the original review):
 
 | Tool | Entry Paid Price | Model |
 |------|-----------------|-------|
-| Captions Pro | $9.99/month | Credits |
-| OpusClip Starter | $15/month | Minutes |
-| Descript Creator | $16/month | Transcription hours |
-| CapCut Pro | Free or $9.99/month | Features |
-| VEED Basic | $18/month | Minutes |
+| Captions Max | [$24.99/month](https://captions.ai/pricing) | Credits |
+| OpusClip Starter | [$15/month](https://opus.pro/pricing) | Credits |
+| Descript Hobbyist | [$16/month](https://www.descript.com/pricing) | Transcription hours |
+| CapCut Standard | ~$9.99/month (name changed from "Pro"; CapCut does not publish official list pricing, so this figure comes from third-party trackers, not a primary source) | Features |
+| VEED | pricing/tier names have changed since the original review; current entry-tier price could not be confirmed against a primary source at audit time — see [veed.io/pricing](https://www.veed.io/pricing) directly | Minutes/credits |
 
-Captions' Pro tier at $9.99 is among the most competitive entry points in the segment. The Scale tier at $69.99 targets agencies and high-volume creators.
+**Correction (2026-08-22):** the $9.99/month Captions "Pro" tier referenced in the original version of this table no longer exists (see the pricing table above) — Max at $24.99/month is now Captions' entry paid plan. Likewise, Descript's $16/month tier is now called "Hobbyist," not "Creator" — Descript's Creator tier is $24/month as of this audit. The Scale 1x tier at $69.99/month targets agencies and high-volume creators.
 
 ---
 
 ## MCP Server: Official Integration (March 2026)
 
-This is notable: Captions has an **official MCP server**, documented at `captions.ai/help/api-reference/mcp`, launched on **March 27, 2026**.
+This is notable: Captions has an **official MCP server**, launched on **March 27, 2026** and documented (as of the original review) at `captions.ai/help/api-reference/mcp`.
+
+**Correction (2026-08-22):** re-checked live for this audit, that exact URL — and its `help.mirage.app/api-reference/mcp` equivalent, which redirects back to it — returns a 404. Search-engine indexes still surface a cached version of the page with content matching what's described below (including the same example prompt quoted in the pullquote), so the feature appears to still exist and this is most likely a routing/redirect issue on Mirage's help-center migration rather than the server itself being discontinued — but readers should verify current status directly at [captions.ai/help](https://captions.ai/help) (search "MCP") before relying on this section, since it could not be independently re-confirmed live.
 
 For context: among the video AI tools we've reviewed — HappyHorse-1.0, Seedance 2.0, Kling AI, Veo 3.1 — **none have official MCP servers**. Community-built servers exist for some of these tools, but the Captions MCP server is the first official, company-maintained MCP integration in the AI video editing space.
 
