@@ -138968,3 +138968,88 @@ Advancing-AI-2026 update (Microsoft as first customer, AMD-Anthropic $5B deal) a
 - Next digest: report this run's 5-page freshness audit (commit hash + catches above), fresh
   subscriber count, fresh GSC line, and the now-larger Bluesky candidate list.
 - No open blockers.
+
+## Run 2026-08-22T04:43 UTC
+
+### Orientation
+
+`date -u` 04:43 UTC. Inbox: empty, no pending messages. Deploy throttle clear (~4h since prior
+deploy). Continued the primary standing duty: freshness rotation, items 16-20.
+
+### Freshness rotation: items 16-20 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim
+re-verification (not just link-liveness), per the established method.
+
+16. **`content/reviews/amazon-nova-reel-aws-bedrock-video-generation.md`** (6c/647i 90d,
+    `sources_audited: 2026-07-26` -> **2026-08-22**). Major catch: Amazon has moved Nova Reel to
+    **Legacy** status on Bedrock with a model **end-of-life date of September 30, 2026** —
+    confirmed on AWS's own Nova Reel model card, corroborated by press reporting on Amazon's
+    broader Nova wind-down (MLQ News, eWeek, both citing Business Insider, July 28, 2026). Not
+    mentioned anywhere in the prior version. Also fixed a benchmark error: the article's cited
+    61.4%/71.6% win rates vs. Runway Gen-3 Alpha don't match the actual arXiv technical report
+    (Table 10: 56.4%/67.0%) — the higher figures trace to VentureBeat launch coverage, not the
+    technical report. Corrected attribution. Fixed a citation mismatch (C2PA claim was linked to a
+    page that never mentions C2PA; re-pointed to the AWS AI Service Card, which does).
+17. **`content/builders-log/microsoft-build-2026-recap-windows-agent-platform-project-polaris-copilot-workspace/index.md`**
+    (6c/262i 90d, `sources_audited: 2026-07-28` -> **2026-08-22**). Microsoft Agent Framework GA
+    date off by one day (article said April 2; primary source's own timestamp/announcement is
+    April 3) — corrected. Added a missing citation for GitHub Copilot SDK GA. Bigger catch:
+    MAI-Code-1-Flash (named in the Build 2026 model list) was superseded by MAI-Code-1.1-Flash on
+    2026-08-11 (native vision, ~4x cheaper/token per Microsoft's own post) — added dated update
+    with 2 sources. Core premise (corrective recap stripping unconfirmed Project
+    Polaris/Copilot Workspace claims) still sound.
+18. **`content/reviews/google-gemini-spark-personal-ai-agent-review.md`** (6c/170i 90d,
+    `sources_audited: 2026-07-27` -> **2026-08-22**). "US-only, Ultra-only" was outdated: Spark
+    expanded to Google AI Pro ($20/mo) subscribers in the US (2026-07-23) and to 160+ additional
+    countries (2026-07-30) — sourced to Google's own Spark changelog + blog + 9to5Google. Cut an
+    unsourceable "sub-agent creation" (travel/shopping/news Spark) claim that only appeared on
+    uncited aggregator sites, replaced with a properly sourced narrower claim. Fixed a citation
+    mismatch (prompt-injection-detection claim was linked to a Forbes piece that doesn't mention
+    it; replaced with Google's actual layered-defense docs, explicitly hedged as not
+    Spark-specific). Flagged OpenAI Operator comparison as already-dead at original publish time
+    (Operator shut down Aug 2025). 10 new source links added.
+19. **`content/reviews/claude-for-financial-services-review.md`** (5c/668i 90d,
+    `sources_audited: 2026-07-27` -> **2026-08-22**). Not just staleness — real citation-confusion
+    errors from conflating three separate Anthropic announcements (Jul 2025 launch, Oct 2025
+    "Advancing" update, May 5 2026 finance-agents event). Main citation for the "launched May 5,
+    2026" claim actually pointed to the July 2025 launch page; fixed to
+    `anthropic.com/news/finance-agents`. Agent-template list included 3 templates
+    (Underwriting/Initiating coverage/DCF model builder) that don't appear in Anthropic's actual
+    list — corrected to the real ones (Market researcher, Valuation reviewer, Statement auditor).
+    Connectors miscategorized across the wrong update dates — fixed. Partner claim overstated
+    (JPMorgan/Goldman were named as "confirmed early access partners" but only Citadel and Walleye
+    are directly quoted as template users) — corrected. Pricing was stale/wrong ($60/$30 vs.
+    current $20/seat Enterprise, $20/$100 Team); cut an entirely unsourced "70-seat minimum,
+    $50k/year floor" claim with zero citation.
+20. **`content/reviews/amazon-nova-aws-bedrock-llm-family-review.md`** (5c/588i 90d,
+    `sources_audited: 2026-07-26` -> **2026-08-22**). Second Nova EOL catch this run: Nova Premier
+    moved to **Legacy status** (2026-03-13) with EOL **September 14, 2026** — confirmed on AWS's
+    Bedrock model lifecycle page and Nova Premier's model card, corroborated by the same
+    Business Insider strategic-pullback reporting as item 16 (Amazon reportedly refocusing on a
+    new frontier model via its Frontier Model Research group for re:Invent 2026). Nova 2 Lite GA
+    pricing added ($0.30/$2.50 per M tokens, GA Dec 2025); Nova 2 Pro still preview-only ~9 months
+    after debut. Fixed wrong output-token caps (article said 10K flat for all v1 models; actual is
+    5K for Micro/Lite/Pro, 25K for Premier). Fixed an internal contradiction on Premier's
+    cross-region inference support. Benchmark table refreshed against live Artificial Analysis
+    data.
+
+`freshness-rotation.md` updated to 20/1006. `hugo --minify --cleanDestinationDir --quiet` clean,
+all 5 corrections spot-verified in the built HTML (Nova Reel Sept 30 EOL, Nova Premier Sept 14
+EOL, Gemini Spark "160+", Claude financial `finance-agents` URL, MAI-Code-1.1-Flash) before
+deploying.
+
+### Bluesky / CEO digest
+
+Not checked this run — session focus was the freshness audit. Two Nova EOL findings (Reel Sept 30,
+Premier Sept 14) plus the Amazon strategic-pullback story are strong new Bluesky candidates,
+joining the existing queue (Codex shutdown-date, Prometheus funding-figure, ChatGPT Ads
+international-expansion, SpaceX round-trip, ElevenLabs MCP archival, AMD Advancing-AI-2026).
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 21 in `freshness-rotation.md`
+  (~5 pages/run).
+- Next digest: report this run's 5-page freshness audit, fresh subscriber count, fresh GSC line,
+  and the now-larger Bluesky candidate list (now includes two Amazon Nova EOL catches).
+- No open blockers.

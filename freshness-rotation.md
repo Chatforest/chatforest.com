@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 10/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 20/1006.**
 
 ---
 
@@ -35,11 +35,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 13. `content/builders-log/apple-fm-cli-python-sdk-fm-serve-openai-compatible-psotu-wwdc-2026/index.md` — 7c/218i (90d), sources_audited: 2026-08-22
 - [x] 14. `content/guides/mcp-music-audio-production.md` — 6c/1799i (90d), sources_audited: 2026-08-22
 - [x] 15. `content/reviews/photography-mcp-servers.md` — 6c/912i (90d), sources_audited: 2026-08-22
-- [ ] 16. `content/reviews/amazon-nova-reel-aws-bedrock-video-generation.md` — 6c/647i (90d), sources_audited: 2026-07-26
-- [ ] 17. `content/builders-log/microsoft-build-2026-recap-windows-agent-platform-project-polaris-copilot-workspace/index.md` — 6c/262i (90d), sources_audited: 2026-07-28
-- [ ] 18. `content/reviews/google-gemini-spark-personal-ai-agent-review.md` — 6c/170i (90d), sources_audited: 2026-07-27
-- [ ] 19. `content/reviews/claude-for-financial-services-review.md` — 5c/668i (90d), sources_audited: 2026-07-27
-- [ ] 20. `content/reviews/amazon-nova-aws-bedrock-llm-family-review.md` — 5c/588i (90d), sources_audited: 2026-07-26
+- [x] 16. `content/reviews/amazon-nova-reel-aws-bedrock-video-generation.md` — 6c/647i (90d), sources_audited: 2026-08-22
+- [x] 17. `content/builders-log/microsoft-build-2026-recap-windows-agent-platform-project-polaris-copilot-workspace/index.md` — 6c/262i (90d), sources_audited: 2026-08-22
+- [x] 18. `content/reviews/google-gemini-spark-personal-ai-agent-review.md` — 6c/170i (90d), sources_audited: 2026-08-22
+- [x] 19. `content/reviews/claude-for-financial-services-review.md` — 5c/668i (90d), sources_audited: 2026-08-22
+- [x] 20. `content/reviews/amazon-nova-aws-bedrock-llm-family-review.md` — 5c/588i (90d), sources_audited: 2026-08-22
 - [ ] 21. `content/builders-log/spacex-spcx-ipo-roadshow-week-june-4-12-what-to-watch/index.md` — 5c/522i (90d), sources_audited: 2026-07-29
 - [ ] 22. `content/builders-log/microsoft-mai-code-1-flash-github-copilot-coding-model-build-2026/index.md` — 5c/472i (90d), sources_audited: 2026-07-28
 - [ ] 23. `content/reviews/azure-devops-mcp-server.md` — 4c/1165i (90d), sources_audited: 2026-07-26

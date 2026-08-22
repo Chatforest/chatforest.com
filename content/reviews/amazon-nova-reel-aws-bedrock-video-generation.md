@@ -4,7 +4,7 @@ date: 2026-05-11
 description: "Amazon Nova Reel (December 2024, v1.1 April 2025) is AWS's cloud-native video generation model available via Amazon Bedrock. Generates 720p / 24fps video up to 2 minutes via multi-shot storyboarding. Priced at $0.08/second. Beats Runway Gen-3 Alpha in A/B testing. Adds C2PA Content Credentials and invisible watermarking. No open weights, US East only, no audio. Rating 3/5."
 tags: ["video-ai", "ai-video-generation", "amazon", "aws", "bedrock", "cloud-ai", "text-to-video", "image-to-video", "enterprise-ai", "nova", "responsible-ai", "c2pa", "mcp-server", "commercial-model"]
 rating: 3
-sources_audited: 2026-07-26
+sources_audited: 2026-08-22
 ---
 
 # Amazon Nova Reel — AWS Bedrock's Video Generation Model: Multi-Shot, C2PA Credentials, and the Enterprise Pipeline Play
@@ -15,13 +15,15 @@ The positioning was unambiguous: this is not a consumer tool. Nova Reel is an AP
 
 This review draws on [AWS documentation](https://docs.aws.amazon.com/ai/responsible-ai/nova-reel/overview.html), official blog posts, the [Amazon Nova technical report (arXiv 2506.12103)](https://arxiv.org/abs/2506.12103), and public community benchmarks. We do not test AI tools hands-on.
 
+**Update (2026-08-22):** Amazon has moved Nova Reel to **Legacy** status on Bedrock, with a **model end-of-life date of September 30, 2026**, per [AWS's own Nova Reel model card](https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-reel.html). Existing customers can keep calling the model until then, but it will not be updated further. Reporting from Business Insider (via [MLQ News](https://mlq.ai/news/amazon-winds-down-nova-premier-omni-reel-and-canvas-ai-models-in-major-strategy-overhaul/) and [eWeek](https://www.eweek.com/news/amazon-nova-ai-overhaul/), July 28, 2026) says Amazon is winding down active development on Nova Premier, Nova Omni, Nova Reel, and Nova Canvas to redirect engineering resources toward a new frontier-model effort, with a successor expected at AWS re:Invent later in 2026. AWS has separately begun offering [Luma AI's Ray2 model in Bedrock](https://aws.amazon.com/blogs/aws/luma-ai-ray-2-video-model-is-now-available-in-amazon-bedrock/) as an additional video-generation option. The rest of this review describes Nova Reel as it existed prior to this announcement; treat any "who it's for" recommendation below in light of the September 2026 sunset date.
+
 ---
 
 ## Timeline
 
 - **December 3, 2024**: [Amazon Nova family announced at AWS re:Invent](https://aws.amazon.com/blogs/aws/introducing-amazon-nova-frontier-intelligence-and-industry-leading-price-performance/). Nova Reel 1.0 [launches on Amazon Bedrock](https://techcrunch.com/2024/12/03/amazon-announces-nova-a-new-family-of-multimodal-ai-models/). Initial capability: 6-second videos, 1280×720, 24fps. Text-to-video and image+text-to-video supported.
 - **December 2024 – March 2025**: Developer community explores the Bedrock SDK path. Python/Java/CLI workflows emerge; Lambda+S3 pipeline patterns documented by AWS.
-- **April 7, 2025**: [**Nova Reel 1.1** launches](https://aws.amazon.com/blogs/aws/amazon-nova-reel-1-1-featuring-up-to-2-minutes-multi-shot-videos/). New features: multi-shot automated mode (2-minute videos from a single prompt), multi-shot manual mode (storyboard: up to 20 shots, each with custom prompt + optional image), improved 6-second single-shot quality, reduced latency. [C2PA Content Credentials](https://aws.amazon.com/about-aws/whats-new/2025/04/amazon-nova-reel-1-1/) added to all outputs. ([TechCrunch](https://techcrunch.com/2025/04/07/amazon-says-its-ai-video-model-can-now-generate-minutes-long-clips/))
+- **April 7, 2025**: [**Nova Reel 1.1** launches](https://aws.amazon.com/blogs/aws/amazon-nova-reel-1-1-featuring-up-to-2-minutes-multi-shot-videos/). New features: multi-shot automated mode (2-minute videos from a single prompt), multi-shot manual mode (storyboard: up to 20 shots, each with custom prompt + optional image), improved 6-second single-shot quality, reduced latency. [C2PA Content Credentials](https://docs.aws.amazon.com/ai/responsible-ai/nova-reel/overview.html) added to all outputs (the [whats-new announcement](https://aws.amazon.com/about-aws/whats-new/2025/04/amazon-nova-reel-1-1/) and the [AWS blog post](https://aws.amazon.com/blogs/aws/amazon-nova-reel-1-1-featuring-up-to-2-minutes-multi-shot-videos/) cover the multi-shot features but don't mention C2PA; the AWS AI Service Card is the source confirming Content Credentials). ([TechCrunch](https://techcrunch.com/2025/04/07/amazon-says-its-ai-video-model-can-now-generate-minutes-long-clips/))
 - **Ongoing**: MCP server community implementations appear (`mirecekd/novareel-mcp`); ComfyUI-AmazonBedrock nodes add Nova Reel support; AWS publishes RAG-for-video-generation patterns.
 
 ---
@@ -96,11 +98,9 @@ Community MCP aggregators (LobeHub, mcp.aibase.com) list the server as a usable 
 
 ## Benchmark Position
 
-[Amazon's December 2024 launch materials](https://aws.amazon.com/blogs/aws/introducing-amazon-nova-frontier-intelligence-and-industry-leading-price-performance/) cited third-party A/B testing results showing Nova Reel outperforming **Runway Gen-3 Alpha** with:
-- **61.4% win rate** for video quality
-- **71.6% win rate** for video consistency
+At launch, [VentureBeat reported](https://venturebeat.com/ai/amazon-launches-nova-ai-model-family-for-generating-text-images-and-videos) Amazon's claim that Nova Reel beat **Runway Gen-3 Alpha** in A/B testing with a 61.4% win rate for video quality and 71.6% for video consistency, though AWS's own launch blog post and Amazon's press release describe the outperformance only in qualitative terms, without publishing those exact figures.
 
-These figures represent human preference evaluations at launch. Since then, Runway has released Gen-4 with multi-shot consistency as a core feature, and the competitive landscape has shifted substantially.
+**Update (2026-08-22):** The formal human-evaluation numbers Amazon later published in its [Nova technical report](https://arxiv.org/html/2506.12103v1) (Table 10, arXiv 2506.12103) are different from the launch-week press figures: Nova Reel's win rate against Gen3 Alpha was **56.4%** for video quality and **67.0%** for video consistency (it also reports 51.1%/74.7% against Luma Ray 1.6). The two sets of numbers likely reflect different evaluation runs or datasets; this review previously cited the higher launch-week figures as if they came from the technical report, which they do not. Using the technical report's own numbers: still a majority-preference win over Gen-3 Alpha, but a narrower margin than originally stated here, particularly on video quality. Since then, Runway has released Gen-4 (and Gen-4.5) with multi-shot consistency as a core feature, and the competitive landscape has shifted substantially.
 
 As of mid-2026, independent comparisons place Nova Reel as a solid mid-tier offering — competitive with Runway Gen-3 Alpha (its stated benchmark competitor) and above some consumer-tier tools, but below the current quality ceiling set by **Veo 3** (Google), **Kling 3.0** (Kuaishou), and **Runway Gen-4** in pure visual quality.
 
@@ -129,7 +129,7 @@ The pricing model aligns with AWS's positioning: pay-per-use for production work
 
 ## Limitations and Constraints
 
-**Geographic availability**: Nova Reel is available only in **US East (N. Virginia)** on Amazon Bedrock. This is a significant constraint for global teams and is a recurring criticism in developer community discussions. Many other regions are not yet supported.
+**Geographic availability**: Nova Reel 1.1, the version this review focuses on, is available only in **US East (N. Virginia)** on Amazon Bedrock, per [AWS's model card](https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-reel.html) — Nova Reel 1.0 additionally runs in eu-west-1 (Ireland) and ap-northeast-1 (Tokyo), but 1.1 never expanded beyond US East. This was a significant constraint for global teams and a recurring developer-community criticism. **Update (2026-08-22):** it is now moot in a different way — AWS lists both Nova Reel versions, in every region they run in, as **Legacy with an end-of-life date of September 30, 2026** ([source](https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-reel.html)), so regional expansion is no longer expected.
 
 **Resolution ceiling**: 720p (1280×720) is below the 1080p or 4K capabilities appearing in competitors. Kling 3.0 supports native 4K. Veo 3 supports 1080p. Nova Reel's fixed 720p limits use in contexts requiring broadcast or cinema-quality output.
 
@@ -189,3 +189,5 @@ The C2PA Content Credentials story is genuinely meaningful at a moment when AI c
 The limitations are real: 720p only, US East only, no audio, no fine-tuning, no local deployment, $0.08/second adds up. As a creative tool competing with Runway or Kling, Nova Reel is not the first choice. As an enterprise pipeline component for AWS-native teams building automated video workflows with compliance and provenance requirements, it occupies a gap that no open-source model currently fills.
 
 **Rating: 3/5** — Solid execution on a specific enterprise use case, meaningful responsible AI posture with C2PA credentials, and genuine infrastructure integration depth. Held back by geographic availability limits, 720p resolution ceiling, absent audio, no fine-tuning, and a price structure that limits high-volume use. The model to beat if you're building an AWS-native production pipeline; not the model for filmmakers or open-source practitioners.
+
+**Update (2026-08-22):** With Nova Reel now on AWS's Legacy track and scheduled for end-of-life on September 30, 2026 (see update note above), new projects should not start on Nova Reel — existing integrations have a defined runway to migrate, and AWS's own Bedrock catalog now also offers [Luma AI's Ray2](https://aws.amazon.com/blogs/aws/luma-ai-ray-2-video-model-is-now-available-in-amazon-bedrock/) as a video-generation alternative within the same managed-infrastructure story.
