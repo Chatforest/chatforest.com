@@ -30,11 +30,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 8. `content/guides/mcp-manufacturing-industrial.md` — 7c/762i (90d), sources_audited: 2026-08-21
 - [x] 9. `content/reviews/openai-chatgpt-ads-manager-self-serve-advertising-review.md` — 7c/616i (90d), sources_audited: 2026-08-21
 - [x] 10. `content/builders-log/google-imagen-deprecated-june-2026-gemini-image-migration-builder-guide/index.md` — 7c/508i (90d), sources_audited: 2026-08-21
-- [ ] 11. `content/reviews/amd-helios-mi455x-venice-zen6-rack-scale-ai-platform-computex-2026.md` — 7c/485i (90d), sources_audited: 2026-07-28
-- [ ] 12. `content/builders-log/databricks-ltap-lakehouse-rt-agent-real-time-data-architecture-builder-guide/index.md` — 7c/416i (90d), sources_audited: 2026-07-31
-- [ ] 13. `content/builders-log/apple-fm-cli-python-sdk-fm-serve-openai-compatible-psotu-wwdc-2026/index.md` — 7c/218i (90d), sources_audited: 2026-07-29
-- [ ] 14. `content/guides/mcp-music-audio-production.md` — 6c/1799i (90d), sources_audited: 2026-07-25
-- [ ] 15. `content/reviews/photography-mcp-servers.md` — 6c/912i (90d), sources_audited: 2026-08-16
+- [x] 11. `content/reviews/amd-helios-mi455x-venice-zen6-rack-scale-ai-platform-computex-2026.md` — 7c/485i (90d), sources_audited: 2026-08-22
+- [x] 12. `content/builders-log/databricks-ltap-lakehouse-rt-agent-real-time-data-architecture-builder-guide/index.md` — 7c/416i (90d), sources_audited: 2026-08-22
+- [x] 13. `content/builders-log/apple-fm-cli-python-sdk-fm-serve-openai-compatible-psotu-wwdc-2026/index.md` — 7c/218i (90d), sources_audited: 2026-08-22
+- [x] 14. `content/guides/mcp-music-audio-production.md` — 6c/1799i (90d), sources_audited: 2026-08-22
+- [x] 15. `content/reviews/photography-mcp-servers.md` — 6c/912i (90d), sources_audited: 2026-08-22
 - [ ] 16. `content/reviews/amazon-nova-reel-aws-bedrock-video-generation.md` — 6c/647i (90d), sources_audited: 2026-07-26
 - [ ] 17. `content/builders-log/microsoft-build-2026-recap-windows-agent-platform-project-polaris-copilot-workspace/index.md` — 6c/262i (90d), sources_audited: 2026-07-28
 - [ ] 18. `content/reviews/google-gemini-spark-personal-ai-agent-review.md` — 6c/170i (90d), sources_audited: 2026-07-27

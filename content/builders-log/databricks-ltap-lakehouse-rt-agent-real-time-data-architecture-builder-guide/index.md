@@ -6,7 +6,7 @@ og_description: "Databricks DAIS 2026: LTAP eliminates data pipelines for AI age
 content_type: "Builder's Log"
 categories: ["Databricks", "Data Engineering", "Agents", "Developer Tools"]
 tags: ["databricks", "ltap", "lakebase", "lakehouse-rt", "dais-2026", "etl", "real-time", "delta-lake", "iceberg", "postgresql", "ai-agents", "builder-guide", "2026", "reyden", "data-architecture"]
-sources_audited: 2026-07-31
+sources_audited: 2026-08-22
 ---
 
 At [DAIS 2026 on June 16](https://www.databricks.com/blog/introducing-lakehousert-real-time-performance-unified-lakehouse), Databricks announced two tightly linked products: **LTAP** (Lake Transactional/Analytical Processing) and **Lakehouse//RT**. Taken together they represent the most significant change to the Databricks data architecture since the original Lakehouse concept — and they are aimed squarely at the data access problem for AI agents.
@@ -53,7 +53,7 @@ The critical design decision: Databricks chose to build a transactional engine t
 
 ## Component 1: Lakebase
 
-Lakebase is Databricks' serverless Postgres-compatible database. It [launched in June 2025](https://www.databricks.com/blog/announcing-databricks-lakebase-launch-partners) and [reached general availability on AWS on February 3, 2026](https://www.databricks.com/blog/databricks-lakebase-generally-available) (Azure Databricks followed with its own GA on [March 3, 2026](https://www.databricks.com/blog/azure-databricks-lakebase-generally-available)). At DAIS 2026, Databricks promoted it to the foundational transactional layer of the LTAP architecture.
+Lakebase is Databricks' serverless Postgres-compatible database. It [launched in June 2025](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-lakebase-new-class-operational-database-ai-apps) and [reached general availability on AWS on February 3, 2026](https://www.databricks.com/blog/databricks-lakebase-generally-available) (Azure Databricks followed with its own GA on [March 3, 2026](https://www.databricks.com/blog/azure-databricks-lakebase-generally-available)). At DAIS 2026, Databricks promoted it to the foundational transactional layer of the LTAP architecture.
 
 **What Lakebase is:**
 - PostgreSQL-compatible wire protocol — existing Postgres client libraries connect without changes
@@ -156,7 +156,7 @@ Unity Catalog governs both the transactional (Lakebase) and analytical (Lakehous
 
 ### 4. Genie ZeroOps and ZeroOps agents can monitor transactional data
 
-The existing Databricks agent ecosystem — including [Genie ZeroOps](/builders-log/databricks-genie-zeroops-autonomous-data-ops-agent-builder-guide/) — monitors Lakehouse assets. With Lakebase writing to the same Delta tables, ZeroOps monitoring coverage now extends to operationally-sourced tables without special integration.
+The existing Databricks agent ecosystem — including [Genie ZeroOps](/builders-log/databricks-genie-one-agent-bricks-dais-2026-builder-guide/) — monitors Lakehouse assets. With Lakebase writing to the same Delta tables, ZeroOps monitoring coverage now extends to operationally-sourced tables without special integration.
 
 ---
 
@@ -268,7 +268,7 @@ Before LTAP changes your agent architecture, check these prerequisites:
 
 For completeness, LTAP does not replace:
 
-- **Vector databases** for semantic/embedding search — Delta tables can store embeddings, but LTAP does not add ANN index structures. [Mosaic AI Vector Search](https://docs.databricks.com/aws/en/vector-search/vector-search) remains the Databricks answer for that.
+- **Vector databases** for semantic/embedding search — Delta tables can store embeddings, but LTAP does not add ANN index structures. [Databricks AI Search](https://docs.databricks.com/aws/en/vector-search/vector-search) (formerly Mosaic AI/Databricks Vector Search — Databricks renamed the product in 2026) remains the Databricks answer for that.
 - **Streaming ingestion from external systems** — If your data originates outside Databricks (Kafka, external APIs, third-party SaaS), you still need streaming ingestion (Databricks Autoloader, Lakeflow) to bring it in. LTAP eliminates the pipeline *between Lakebase and the Lakehouse*, not the pipeline from external systems *into* Lakebase.
 - **Agent memory at inference speed** — For within-turn agent working memory (what the model needs in-context), LTAP is slower than in-process memory. It is optimized for fresh persistent state between turns, not millisecond token-level context injection.
 

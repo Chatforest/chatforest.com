@@ -6,7 +6,7 @@ og_description: "Apple's `fm` CLI (macOS 27) ships `fm chat`, `fm respond`, and 
 content_type: "Builder's Log"
 categories: ["Apple", "Developer Tools", "On-Device AI"]
 tags: ["apple", "foundation-models", "fm-cli", "python-sdk", "wwdc-2026", "psotu", "private-cloud-compute", "macos-27", "on-device-ai", "scripting", "builder-guide", "afm-3"]
-sources_audited: 2026-07-29
+sources_audited: 2026-08-22
 ---
 
 The WWDC 2026 keynote on June 8 covered the press story, including a Siri AI overhaul built on Apple Intelligence ([CNBC live coverage](https://www.cnbc.com/2026/06/08/apple-wwdc-2026-live-updates.html)). The Platforms State of the Union (PSOTU) on June 9 covered the developer story, including a Python SDK and command-line tool for Foundation Models that most WWDC recaps skipped ([MacRumors PSOTU recap](https://www.macrumors.com/2026/06/09/apple-outlines-major-ai-and-developer-tool-updates/); [PSOTU session, Apple Developer](https://developer.apple.com/videos/play/wwdc2026/102/)).
@@ -31,7 +31,9 @@ The command surface Apple actually demonstrated in that session:
 
 Flags confirmed in that session: `--model pcc` (route to Private Cloud Compute instead of the on-device default), `--image <file>` (attach an image to a prompt), `--instructions` (system instructions), `--schema <file.json>` (structured output), and `--help`.
 
-**Correction:** an earlier version of this piece also listed `fm serve`, `fm token-count`, `fm available`, `fm quota-usage`, and a `--stream` CLI flag as part of the shipped command surface. None of those appear in Apple's own session on the `fm` CLI, and a direct search of developer.apple.com turns up nothing for `fm serve`. Third-party developers have since built community wrappers that layer an OpenAI-compatible endpoint on top of the real `fm chat`/`fm respond` commands — for example [`fm-proxy`](https://github.com/gregbarbosa/fm-proxy) and [`apple-to-openai`](https://github.com/ZPVIP/apple-to-openai) — but those are third-party projects, not something Apple shipped. We've cut the fabricated commands rather than publish them as fact.
+**Correction:** an earlier version of this piece also listed `fm serve`, `fm token-count`, `fm available`, `fm quota-usage`, and a `--stream` CLI flag as part of the shipped command surface. None of those appeared in Apple's own WWDC26 session on the `fm` CLI (recorded in June 2026), and a direct search of developer.apple.com turned up nothing for `fm serve` at that time. [`apple-to-openai`](https://github.com/ZPVIP/apple-to-openai) is a third-party project that builds its own OpenAI-compatible server directly on top of the Python SDK — not something Apple shipped. We cut the fabricated commands rather than publish them as fact.
+
+**Update (2026-08-22):** The picture has gotten murkier since, not clearer. [`fm-proxy`](https://github.com/gregbarbosa/fm-proxy), a third-party project, now documents itself as sitting in front of a *native* `fm serve` process (`/usr/bin/fm serve`) rather than building a server itself — its README states "macOS 27 ships `fm serve`, which already speaks Chat Completions" and lists specific behaviors it says it tested live against `fm` build `2.0.68` on macOS 27.0 Beta 5 and Beta 6 (builds `26A5406e`/`26A5416b` — build numbers that match independent beta-tracking coverage of those releases at [mrmacintosh.com](https://mrmacintosh.com/macos-27-golden-gate-beta-5-everything-you-need-to-know/), which dates Beta 5 to 2026-08-20). That is a specific, individually-run developer's public repo, not an Apple-published source, and we could not confirm an `fm serve` subcommand via Apple's own WWDC session recordings, developer.apple.com release notes, or the Apple Developer Forums as of this writing — a search of the latter turned up no thread mentioning it. Treat third-party reports of a native `fm serve` in later macOS 27 betas as unverified until Apple documents the command itself; if you're on a recent beta, check `fm --help` directly rather than trust this article either way. We'll update this piece once Apple's own docs confirm or refute it.
 
 ### `fm respond` for scripting
 
@@ -133,7 +135,7 @@ The **full framework** (not just the utilities package) is targeted for open sou
 
 **If you're in the Small Business Program:** free PCC access is available now via `--model pcc` in the CLI or the SDK's PCC backend option. Check your download count against the 2-million threshold.
 
-**If you were expecting an Apple-hosted OpenAI-compatible server:** that isn't what Apple shipped. Third-party proxies exist that wrap the real `fm chat`/`fm respond` commands, but treat those as community tooling, not an Apple guarantee.
+**If you were expecting an Apple-hosted OpenAI-compatible server:** that isn't confirmed by Apple's own materials. Third-party tooling exists around the `fm` CLI — some wrapping `fm chat`/`fm respond`, and at least one project ([`fm-proxy`](https://github.com/gregbarbosa/fm-proxy)) now claiming to sit in front of a native `fm serve` process in later macOS 27 betas (see the update above) — but treat all of it as community tooling and unverified reporting, not an Apple guarantee, until Apple documents it directly.
 
 ---
 

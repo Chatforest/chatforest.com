@@ -9,7 +9,7 @@ This review covers the **photography** vertical — photo editing software, imag
 
 The landscape spans ten areas: **photo editing software** (Photoshop, GIMP, Lightroom, Photopea, Affinity Photo), **image processing & computer vision** (local recognition, optimization, format conversion), **RAW processing** (RawTherapee, PixInsight astrophotography), **stock photography** (Unsplash, Pexels, Pixabay multi-provider search), **AI image generation** (Stable Diffusion 3.5, Gemini 2.5 Flash, OpenAI/DALL-E, multi-model), **metadata & EXIF** (offline EXIF/XMP/IPTC reading), **photo management** (Immich, Google Photos, Apple Photos), **cloud image services** (Cloudinary official), **camera control** (Canon CCAPI, OpenCV webcam), and **image compression** (Sharp, Zipic, batch optimization).
 
-The headline findings: **Image processing leads the ecosystem** — ImageSorcery MCP (325 stars) provides 17 computer-vision tools entirely locally. **Professional editing expanded** — Photoshop gets the strongest integration (292 stars), GIMP follows with native plugin support (119 stars), and the new Photopea MCP (34 tools) brings browser-based photo editing without an Adobe subscription. **A major gap was filled** — RawTherapee MCP (49 tools) is the first dedicated RAW processing pipeline with visual feedback loops. **AI image generation matured significantly** — Stability AI MCP (84 stars, 12 tools) brings Stable Diffusion 3.5 with ControlNet, and mcp-image now routes generation through multiple backends (Gemini 3 Pro Image, gpt-image-2, Seedream 5.0 Pro) with 4K output. **Cloud image services arrived** — Cloudinary launched 5 official MCP servers. **Photo management grew substantially** — Google Photos MCP expanded from 7 to 19 tools with Picker API, and ImmichMCP reached v3.3.3 with EXIF search. **Adobe built MCP and A2A into its new CX Enterprise platform** at Summit April 2026. **Camera control improved** with a 28-tool Canon MCP server. **Astrophotography got dedicated tooling** — PixInsight MCP (60 tools) enables autonomous deep-sky processing.
+The headline findings: **Image processing leads the ecosystem** — ImageSorcery MCP (326 stars) provides 17 computer-vision tools entirely locally. **Professional editing expanded** — Photoshop gets the strongest integration (297 stars), GIMP follows with native plugin support (119 stars), and the new Photopea MCP (34 tools) brings browser-based photo editing without an Adobe subscription. **A major gap was filled** — RawTherapee MCP (49 tools) is the first dedicated RAW processing pipeline with visual feedback loops. **AI image generation matured significantly** — Stability AI MCP (84 stars, 12 tools) brings Stable Diffusion 3.5 with ControlNet, and mcp-image now routes generation through multiple backends (Gemini 3 Pro Image, gpt-image-2, Seedream 5.0 Pro) with 4K output. **Cloud image services arrived** — Cloudinary launched 5 official MCP servers. **Photo management grew substantially** — Google Photos MCP expanded from 7 to 19 tools with Picker API, and ImmichMCP reached v3.3.3 with EXIF search. **Adobe built MCP and A2A into its new CX Enterprise platform** at Summit April 2026. **Camera control improved** with a 28-tool Canon MCP server. **Astrophotography got dedicated tooling** — PixInsight MCP (60 tools) enables autonomous deep-sky processing.
 
 ## Photo Editing Software
 
@@ -17,7 +17,7 @@ The headline findings: **Image processing leads the ecosystem** — ImageSorcery
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [loonghao/photoshop-python-api-mcp-server](https://github.com/loonghao/photoshop-python-api-mcp-server) | 292 | Python | MIT | 3+ |
+| [loonghao/photoshop-python-api-mcp-server](https://github.com/loonghao/photoshop-python-api-mcp-server) | 297 | Python | MIT | 3+ |
 
 The **most popular photo editing MCP server**, interfacing with Adobe Photoshop through its Python API. Enables LLMs to execute image editing operations, automate workflows, and manage Photoshop tasks through structured commands:
 
@@ -49,7 +49,7 @@ Runs as a GIMP plugin, meaning it has full access to GIMP's internal API rather 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Automaat/lightroom-mcp](https://github.com/Automaat/lightroom-mcp) | 63 | TypeScript/Lua | — | 9 |
+| [Automaat/lightroom-mcp](https://github.com/Automaat/lightroom-mcp) | 65 | TypeScript/Lua | MIT | 9 |
 
 An MCP server for **Adobe Lightroom Classic** catalog interaction through AI assistants:
 
@@ -100,7 +100,7 @@ Also includes a Canva tool for design creation. The parallel processing capabili
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [attalla1/photopea-mcp-server](https://github.com/attalla1/photopea-mcp-server) | 27 | TypeScript | MIT | 34 |
+| [attalla1/photopea-mcp-server](https://github.com/attalla1/photopea-mcp-server) | 30 | TypeScript | MIT | 34 |
 
 A **browser-based photo editing** MCP server connecting AI agents to [Photopea](https://www.photopea.com/) — a free, browser-based alternative to Photoshop that supports PSD, XCF, Sketch, and RAW formats:
 
@@ -119,7 +119,7 @@ Uses a WebSocket bridge to communicate with the browser-based editor. The key ad
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [sunriseapps/imagesorcery-mcp](https://github.com/sunriseapps/imagesorcery-mcp) | 325 | Python | MIT | 17 |
+| [sunriseapps/imagesorcery-mcp](https://github.com/sunriseapps/imagesorcery-mcp) | 326 | Python | MIT | 17 |
 
 The **most popular server in this review** and the most comprehensive local image processing toolkit:
 
@@ -192,7 +192,7 @@ This directly addresses the "no dedicated RAW processing pipeline" gap from the 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [aescaffre/pixinsight-mcp](https://github.com/aescaffre/pixinsight-mcp) | 23 | JavaScript | MIT | 60 |
+| [aescaffre/pixinsight-mcp](https://github.com/aescaffre/pixinsight-mcp) | 24 | JavaScript | MIT | 60 |
 
 An **autonomous astrophotography processing** MCP server connecting AI agents to PixInsight — the gold standard for deep-sky image processing:
 
@@ -213,7 +213,7 @@ With 61+ commits and active development, this is remarkably specialized — it s
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [drumnation/unsplash-smart-mcp-server](https://github.com/drumnation/unsplash-smart-mcp-server) | 62 | TypeScript | MIT | 1 |
+| [drumnation/unsplash-smart-mcp-server](https://github.com/drumnation/unsplash-smart-mcp-server) | 63 | TypeScript | MIT | 1 |
 
 An **AI-powered stock photo search** with context-aware image selection from Unsplash:
 
@@ -225,7 +225,7 @@ The single-tool design is intentional — the AI agent describes what it needs, 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Zulelee/stock-images-mcp](https://github.com/Zulelee/stock-images-mcp) | 39 | Python | — | 1 |
+| [Zulelee/stock-images-mcp](https://github.com/Zulelee/stock-images-mcp) | 42 | Python | — | 1 |
 
 Searches and downloads stock images from **multiple platforms simultaneously** — Pexels, Unsplash, and Pixabay. A single search query returns results across all configured providers, making it easy to find the best match without searching each platform separately. Requires API keys for each provider.
 
@@ -233,7 +233,7 @@ Searches and downloads stock images from **multiple platforms simultaneously** �
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [joelio/stocky](https://github.com/joelio/stocky) | 24 | Python | MIT | 3 |
+| [joelio/stocky](https://github.com/joelio/stocky) | 26 | Python | MIT | 3 |
 
 Multi-provider stock photo search with **rich metadata**:
 
@@ -248,7 +248,7 @@ Returns structured results including image dimensions and photographer informati
 | Server | Stars | Language | Notes |
 |--------|-------|----------|-------|
 | [CaullenOmdahl/pexels-mcp-server](https://github.com/CaullenOmdahl/pexels-mcp-server) | 9 | TypeScript | 11 tools, Pexels photos/videos/collections |
-| [xcollantes/free-stock-images-mcp](https://github.com/xcollantes/free-stock-images-mcp) | 10 | Python | Unsplash, Pexels, Pixabay, Freepik, Burst, StockVault |
+| [xcollantes/free-stock-images-mcp](https://github.com/xcollantes/free-stock-images-mcp) | 11 | Python | Unsplash, Pexels, Pixabay, Freepik, Burst, StockVault |
 
 The Pexels-specific server offers the deepest single-provider integration with 11 tools covering photos, videos, and curated collections. The free-stock-images-mcp covers the widest range of providers (6 platforms) but with basic search functionality.
 
@@ -258,7 +258,7 @@ The Pexels-specific server offers the deepest single-provider integration with 1
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [shinpr/mcp-image](https://github.com/shinpr/mcp-image) | 152 | TypeScript | MIT | 1 |
+| [shinpr/mcp-image](https://github.com/shinpr/mcp-image) | 154 | TypeScript | MIT | 1 |
 
 AI image generation and editing with automatic prompt optimization, with significant new capabilities since the original review:
 
@@ -377,7 +377,7 @@ Designed for organizing screenshots, digital assets, and photo collections where
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [barryw/ImmichMCP](https://github.com/barryw/ImmichMCP) | 38 | C# | MIT | 49 |
+| [barryw/ImmichMCP](https://github.com/barryw/ImmichMCP) | 39 | C# | MIT | 49 |
 
 The **most feature-rich photo management server**, providing a comprehensive AI interface to [Immich](https://immich.app/) — the popular self-hosted Google Photos alternative:
 
@@ -494,7 +494,7 @@ General-purpose camera server supporting image capture with configurable options
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [13rac1/videocapture-mcp](https://github.com/13rac1/videocapture-mcp) | 19 | Python | MIT | 7 |
+| [13rac1/videocapture-mcp](https://github.com/13rac1/videocapture-mcp) | 18 | Python | MIT | 7 |
 
 Provides AI assistants with **webcam and video source access** through OpenCV:
 
@@ -573,14 +573,14 @@ The content-aware approach is interesting — a photo with fine detail (landscap
 The photography MCP ecosystem earns **4.0 out of 5** — up from 3.5 at initial review. Here's why:
 
 **What works well:**
-- **ImageSorcery MCP** (325 stars, 17 tools) remains the standout local image processing toolkit — computer vision, OCR, format conversion, and batch processing without external API dependencies
-- **Photoshop integration** (292 stars) bridges the most important professional photo editor with AI agents, and Adobe's use of MCP and A2A as the foundation of its new CX Enterprise platform validates the ecosystem
+- **ImageSorcery MCP** (326 stars, 17 tools) remains the standout local image processing toolkit — computer vision, OCR, format conversion, and batch processing without external API dependencies
+- **Photoshop integration** (297 stars) bridges the most important professional photo editor with AI agents, and Adobe's use of MCP and A2A as the foundation of its new CX Enterprise platform validates the ecosystem
 - **Photopea MCP** (34 tools) — browser-based alternative means no Adobe subscription required for professional photo editing via MCP (new)
 - **RAW processing gap filled** — RawTherapee MCP (49 tools) provides the first dedicated RAW processing pipeline with visual feedback loops and comprehensive editing controls (new)
 - **AI image generation matured** — Stability AI MCP (84 stars, 12 tools) brings SD 3.5 with ControlNet, outpainting, and relighting; mcp-image now routes generation to Gemini 3 Pro Image, gpt-image-2, or Seedream 5.0 Pro with 4K and character consistency (new/updated)
 - **Cloud image services arrived** — Cloudinary's 5 official MCP servers bring enterprise-grade image infrastructure to AI agents (new)
 - **Google Photos MCP** nearly tripled its tools (7→19) with Picker API migration and security hardening (updated)
-- **ImmichMCP** grew from 3 stars at original review to 38, now at v3.3.3 with EXIF search and CLIP semantic search (updated)
+- **ImmichMCP** grew from 3 stars at original review to 39, now at v3.3.3 with EXIF search and CLIP semantic search (updated)
 - **Canon camera control** jumped from 3 to 28 tools with the new canon-client server (new)
 - **Astrophotography** got dedicated tooling via PixInsight MCP (60 tools) — remarkably specialized (new)
 - **GIMP MCP** (119 stars) continues to demonstrate what native plugin integration can achieve
@@ -592,12 +592,12 @@ The photography MCP ecosystem earns **4.0 out of 5** — up from 3.5 at initial 
 - **No photo culling or rating tools** — reviewing hundreds of shots and selecting the best has no dedicated MCP tooling
 - **No HDR or panorama stitching** — computational photography techniques remain absent
 - **No Flickr, SmugMug, Amazon Photos, or 500px** — photo sharing platforms have no MCP presence
-- **Lightroom fragmentation** — two implementations, both growing in stars (now 63 and 2, up from 4 and 0 at original review) but neither with strong adoption
+- **Lightroom fragmentation** — two implementations, both growing in stars (now 65 and 2, up from 4 and 0 at original review) but neither with strong adoption
 
 **What changed since March 2026:**
 The biggest shift is the RAW processing gap being filled — RawTherapee MCP's 49 tools with visual feedback loops directly addresses the most significant gap identified in the original review. AI image generation also matured substantially, with Stability AI MCP bringing the full SD 3.5 pipeline and mcp-image adding 4K output via its multi-backend generation architecture. The arrival of official Cloudinary MCP servers signals enterprise cloud image services entering the ecosystem. Adobe building MCP and A2A into its new CX Enterprise platform at Summit April 2026 is the most significant industry validation — while there's no official Adobe MCP server for the creative apps themselves yet, the protocol adoption at the platform level suggests first-party integrations may follow.
 
 **Category**: [Design & Creative MCP Servers](/categories/design-creative/)
 
-*This review was refreshed on 2026-08-16 using Claude Sonnet 5 (Anthropic), as part of a claim-level citation re-audit — star counts, versions, licenses, and tool architecture were re-verified against live GitHub repositories and primary sources. Originally published 2026-03-15; previously refreshed 2026-04-27.*
+*This review was refreshed on 2026-08-22 using Claude Sonnet 5 (Anthropic), as part of a claim-level citation re-audit — star counts, versions, licenses, and tool architecture were re-verified against live GitHub repositories and primary sources. Originally published 2026-03-15; previously refreshed 2026-04-27 and 2026-08-16.*
 
