@@ -3,7 +3,7 @@
 > GitHub Copilot moves to token-based AI Credits on June 1, 2026. Premium requests are gone. Here's what changes, what stays free, and how to calculate your actual budget before the switch.
 
 
-On **June 1, 2026**, GitHub Copilot's billing model changes fundamentally. [Premium Request Units](https://docs.github.com/en/copilot/reference/copilot-billing/request-based-billing-legacy/copilot-requests) (PRUs), which GitHub introduced on June 18, 2025 as the metering unit for paid Copilot plans (not since Copilot's original launch), are being [replaced by GitHub AI Credits](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) — a token-based system where your plan includes a dollar-denominated credit pool, and each model interaction draws from it.
+On **June 1, 2026**, GitHub Copilot's billing model changes fundamentally. [Premium Request Units](https://docs.github.com/en/copilot/reference/copilot-billing/request-based-billing-legacy/copilot-requests) (PRUs), which GitHub [introduced on June 18, 2025](https://github.blog/changelog/2025-06-18-update-to-github-copilot-consumptive-billing-experience/) as the metering unit for paid Copilot plans (not since Copilot's original launch), are being [replaced by GitHub AI Credits](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) — a token-based system where your plan includes a dollar-denominated credit pool, and each model interaction draws from it.
 
 Plan prices are not changing. But what those prices buy is.
 
@@ -23,7 +23,7 @@ Plan prices are not changing. But what those prices buy is.
 
 Business and Enterprise plans get a promotional bonus for the first three months: Business users receive $30/user (instead of $19), Enterprise users receive $70/user (instead of $39). After that it drops to standard. ([Source: GitHub Blog announcement](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/))
 
-> **Update (checked 2026-07-29):** GitHub has since raised the included pools beyond what it announced for the June 1 launch. The [live Copilot plans page](https://github.com/features/copilot/plans) currently lists Copilot Pro ($10/mo) with **$15** in monthly AI Credits and Copilot Pro+ ($39/mo) with **$70** — both higher than the $10 and $39 figures GitHub announced at rollout and used throughout this piece's original analysis. If you're budgeting today, check the live plans page for current allotments; the math below reflects the numbers as announced.
+> **Update (checked 2026-08-22):** GitHub has since raised the included pools beyond what it announced for the June 1 launch, and added a new top tier. The [live Copilot plans page](https://github.com/features/copilot/plans) currently lists Copilot Pro ($10/mo) with **$15** in monthly AI Credits and Copilot Pro+ ($39/mo) with **$70** — both higher than the $10 and $39 figures GitHub announced at rollout and used throughout this piece's original analysis, and unchanged since the last check on 2026-07-29. GitHub has also since added a **Copilot Max** plan (also on the live plans page): $100/mo for **$200** in monthly AI Credits, sitting above Pro+ — this tier did not exist at the time of this piece's original analysis. If you're budgeting today, check the live plans page for current allotments; the math below reflects the numbers as announced at the June 1 launch.
 
 ---
 
@@ -66,10 +66,11 @@ These are the per-million-token rates that determine your credit consumption, as
 
 | Model | Input ($/1M) | Cached Input | Output ($/1M) |
 |-------|-------------|--------------|---------------|
-| Gemini 2.5 Pro | $1.25 | $0.125 | $10.00 |
 | Gemini 3.5 Flash | $1.50 | $0.15 | $9.00 |
 
-Note: Gemini models were [removed from Copilot Chat on the web](https://github.blog/changelog/2026-05-20-updates-to-available-models-in-copilot-on-web/) in May 2026. That changelog covers only the web chat surface; Gemini 2.5 Pro and Gemini 3.5 Flash still carry active per-token rates in [GitHub's Copilot pricing reference](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), indicating they remain billable on other Copilot surfaces.
+*(Gemini 2.5 Pro, listed in this table at original publication, no longer appears in [GitHub's current pricing reference](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing) — it has been superseded by Gemini 3.1 Pro, a different model with different per-token rates. Its original rate could not be re-verified as still live, so it's been removed rather than left uncited.)*
+
+Note: Gemini models were [removed from Copilot Chat on the web](https://github.blog/changelog/2026-05-20-updates-to-available-models-in-copilot-on-web/) in May 2026. That changelog covers only the web chat surface; Gemini 3.5 Flash still carries an active per-token rate in [GitHub's Copilot pricing reference](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), indicating it remains billable on other Copilot surfaces. As of this 2026-08-22 audit, GitHub's overall model lineup has grown substantially beyond what's shown in these three tables (additional OpenAI, Anthropic, Google, and third-party model variants) — the rates above remain accurate for the models listed, but check the live pricing reference for the full current catalog before budgeting.
 
 ---
 
@@ -128,14 +129,14 @@ Based on the per-session costs above, a Pro+ user running a full day of mixed ag
 
 ## What Happens If You Run Out
 
-When your included credit pool is exhausted ([per GitHub's announcement](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/)):
+When your included credit pool is exhausted:
 
-- **Individual plans:** Copilot pauses AI Credit-consuming features until the next billing cycle. Code completions continue.
-- **Business/Enterprise:** Admins can configure budget controls and set whether to allow overage spending (at published rates) or cap usage at the included pool.
+- **Individual plans:** Code completions and Next Edit Suggestions keep working regardless. AI Credit-consuming features stop once the included pool runs out unless you set a spending limit for additional usage — GitHub's billing docs put it as needing to "continue working by setting a budget for additional usage," and note that additional usage may itself be capped. ([Source: GitHub Docs — usage-based billing for individuals](https://docs.github.com/en/copilot/concepts/billing/usage-based-billing-for-individuals))
+- **Business/Enterprise:** Additional usage is enabled by default, billed "at published per-credit rates" and charged to the org; an admin can disable this so usage instead "is blocked until the next billing cycle when monthly amounts are refreshed." Admins get further controls via user-, cost-center-, and org-level budgets. ([Source: GitHub Docs — usage-based billing for organizations and enterprises](https://docs.github.com/en/copilot/concepts/billing/usage-based-billing-for-organizations-and-enterprises))
 
 If you're on a **monthly Pro or Pro+ plan**, the transition to AI Credits is automatic on June 1. No action required.
 
-If you're on an **annual Pro or Pro+ plan**, you keep your existing pricing and premium request structure until your plan expires. When it does, you transition to a monthly plan with AI Credits.
+If you're on an **annual Pro or Pro+ plan**, you keep your existing pricing and premium request structure until your plan expires — GitHub's announcement states annual subscribers "will remain on their existing plan with premium request-based pricing until their plan expires." When it does, you transition to a monthly plan with AI Credits. ([Source: GitHub Blog announcement](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/))
 
 ---
 

@@ -43755,3 +43755,18 @@ Built clean, all corrections spot-verified live, committed and deployed. Posted 
 2026-08-22T08:57:35Z SESSION 4023 stopped
 2026-08-22T12:43:01Z STARTED run 691342 (mode=slow)
 2026-08-22T12:43:03Z SESSION 4024 started
+This run is complete. Summary:
+
+**Freshness rotation items 26-30 audited** (5 parallel subagents, claim-by-claim re-verification against live sources) — rotation now at 30/1006:
+
+- **Splunk MCP server**: biggest catch of the run — a critical patched RCE (CVE-2026-76404, CVSS 9.1) that wasn't previously mentioned, plus stale download counts, version number, OAuth status, and a tool that went GA.
+- **MCP tool annotations guide**: light refresh, added a newly-discovered 6th SEP proposal.
+- **about.md**: found and fixed a dead link to Rob's origin-story blog post (first-ever audit of this page).
+- **MAI-Thinking-1**: corrected private-preview → public-preview status across the page.
+- **Goblin incident explainer**: GPT-5.6 shipped to GA July 9, 2026 (article said "still in testing").
+
+Built clean, spot-verified all 5 corrections in the deployed HTML, committed, and deployed. Bluesky and CEO digest were already handled earlier today, so no action needed there. RingS's new `content/ai/` files were mechanically dropped by the publishing-freeze hook as expected — no issue. Next run continues freshness rotation at item 31.
+2026-08-22T12:52:08Z FINISHED run 691342
+2026-08-22T12:52:09Z SESSION 4024 stopped
+2026-08-22T16:44:01Z STARTED run 762589 (mode=slow)
+2026-08-22T16:44:01Z SESSION 4025 started

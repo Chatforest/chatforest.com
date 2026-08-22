@@ -66,24 +66,23 @@ At DAIS 2026 it ran in two modes:
 
 The most significant technical addition at DAIS was MCP server integration — available in Agent mode only, not Chat mode, at announcement. (As noted above, Databricks has since removed the mode selector; see the Update note.) ([Data Reply IT: Connecting Genie Code to MCP Servers](https://medium.com/data-reply-it-datatech/connecting-genie-code-to-mcp-servers-extending-databricks-ai-with-external-tools-and-data-cb2792802ca8))
 
-Genie Code acts as the MCP host. Three categories of servers are supported:
+Genie Code acts as the MCP host. **Update (2026-08-22):** Databricks has since restructured this into native third-party connectors plus a manual "Add Server" flow with its own categories — the table below reflects the current docs, not the DAIS-day naming (which used "Vector Search," "Genie Space," and "Databricks SQL" as managed-type labels; those are now "AI Search," "Genie Agent," and no longer listed, respectively).
 
 | Type | Examples | Setup |
 |---|---|---|
-| **Managed** | Unity Catalog Functions, Vector Search, Genie Space, Databricks SQL | No setup — add from settings |
-| **External** | GitHub, Google Drive, SharePoint, Glean, Atlassian, Slack | Add from Marketplace; per-user OAuth |
+| **Native connectors** | Google Drive, SharePoint, GitHub, Glean, Atlassian, Slack | Built-in; per-user OAuth. Each has its own limits (e.g. Google Drive/SharePoint cap file size at 10MB and support only native Office/Workspace formats) |
+| **Managed (workspace)** | Unity Catalog function, AI Search index, Genie Agent | Add manually from Genie Code settings — no external auth |
+| **External** | A Unity Catalog connection exposed as an MCP server | Add manually; select the UC connection |
 | **Custom** | Your own tools | Deploy as a Databricks App in the same workspace |
 
-([Databricks docs: Connect Genie Code to MCP servers](https://docs.databricks.com/aws/en/genie-code/mcp))
+([Databricks docs: Connect Genie Code to MCP servers](https://docs.databricks.com/aws/en/genie-code/mcp), current as of 2026-08-22)
 
-**Setup steps (Agent mode, as of DAIS):**
+**Setup steps (current, per Databricks docs):**
 
-1. Open Genie Code settings via the gear icon
-2. Navigate to "MCP Servers"
-3. Click "+ Add Server"
-4. Select type: Unity Catalog function / Vector search index / Genie space / Unity Catalog connection / Databricks App
-5. Authenticate if prompted (external servers require per-user OAuth)
-6. Save
+1. Open Genie Code settings (gear icon → Settings)
+2. Under "MCP Servers," click "Add Server"
+3. Select the MCP servers you want to add
+4. Click Save
 
 ([Databricks docs: Connect Genie Code to MCP servers](https://docs.databricks.com/aws/en/genie-code/mcp))
 
@@ -99,7 +98,7 @@ Genie Code acts as the MCP host. Three categories of servers are supported:
 
 The custom MCP server endpoint format: `https://<server-url>/mcp` ([Databricks docs: Connect Genie Code to MCP servers](https://docs.databricks.com/aws/en/genie-code/mcp))
 
-For teams wanting to expose Databricks Genie capabilities to external agents, a community project — [databricks-genie-mcp](https://github.com/alexxx-db/databricks-genie-mcp) — has implemented an MCP server that wraps the Genie API, making it queryable from Claude Code, Cursor, and other MCP-compatible clients.
+For teams wanting to expose Databricks Genie capabilities to external agents, a community project — [databricks-genie-mcp](https://github.com/alexxx-db/databricks-genie-mcp) — has implemented an MCP server that wraps the Genie API. Its README documents setup for **Claude Desktop** specifically; because it implements the standard MCP protocol, other MCP-compatible clients should work in principle, but the project doesn't document or claim support for them, so treat that as unverified. This is a third-party, community-maintained tool, not a Databricks product.
 
 ---
 
@@ -149,7 +148,7 @@ Agents deploy to **Databricks Apps** with horizontal autoscaling. The platform h
 A new governance layer for enterprise AI, Unity AI Gateway provides:
 
 - **Centralized credential and connection management** for AI services and MCP connections — admins govern foundation model and MCP access through Unity Catalog using the same fine-grained policies used for data
-- **Audit trails**: "Unity AI Gateway enforces runtime controls across model calls, tool invocations, and agent workflows," with integrated observability for investigating policy violations
+- **Audit trails**: admins can "enforce runtime controls with contextual policies" that apply "based on the user, agent, model, MCP service, tool being invoked, or the contents of the request and response," and gateway traces feed into Lakewatch to "detect suspicious activity, investigate policy violations, and accelerate AI security investigations"
 - **Cost governance**: teams can "analyze AI spend and set budgets by user, team, tool, and use case"
 - **Access controls**: Unity Catalog permissions propagate to agent capabilities
 
@@ -163,7 +162,7 @@ This is the enterprise compliance story that has been missing from most agent pl
 
 Two infrastructure announcements are worth knowing about even if they aren't directly builder-relevant today:
 
-**LTAP (Lake Transactional/Analytical Processing)**: A new data architecture that eliminates ETL between operational and analytical workloads — "there are no pipelines synchronizing operational and analytical stores, replicas to maintain, or connectors moving data between systems." ([Databricks: Launches LTAP, first Lake Transactional/Analytical Processing architecture](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-ltap-first-lake-transactionalanalytical)) Instead of maintaining separate OLTP and OLAP systems with sync pipelines, LTAP allows the Lakehouse to serve both. The implication for agentic builders: agents that need to act on operational data (not just analyze historical data) don't need to wait for pipeline schedules.
+**LTAP (Lake Transactional/Analytical Processing)**: A new data architecture that eliminates ETL between operational and analytical workloads — "there are no pipelines synchronizing operational and analytical stores, replicas to maintain, or connectors moving data between systems." ([Databricks: Launches LTAP, first Lake Transactional/Analytical Processing architecture](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-ltap-first-lake-transactionalanalytical)) Databricks describes it as "coming soon as a part of Lakebase" — as of this update (2026-08-22) it is still pre-release, not GA. Instead of maintaining separate OLTP and OLAP systems with sync pipelines, LTAP allows the Lakehouse to serve both. The implication for agentic builders: agents that need to act on operational data (not just analyze historical data) don't need to wait for pipeline schedules.
 
 **Lakehouse//RT**: A real-time analytics engine delivering "sub-100 millisecond latency at 12,000 queries per second," with response times as low as 10ms on smaller datasets. ([Databricks: Launches Lakehouse//RT](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-lakehousert-bring-real-time-analytics-directly)) Relevant for agents that need low-latency access to aggregated data to drive decisions. It's currently in Beta.
 
@@ -179,9 +178,14 @@ Genie ZeroOps is a background agent that monitors production data/AI assets (pip
 
 ## Pricing
 
-Databricks is moving to a consumption model for Genie products: organizations receive **a $10 monthly credit per user at no seat-based cost**, paying only for actual AI consumption beyond that. ([Databricks: Genie One press release](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-genie-one-all-new-agentic-coworker-every-team))
+At DAIS announcement, Databricks described a consumption model for Genie products with **$10 of free monthly AI usage per user**, paying only for actual AI consumption beyond that. ([Databricks: Genie One press release](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-genie-one-all-new-agentic-coworker-every-team))
 
-This is a significant departure from seat licensing. For teams with uneven usage — some power users, many occasional users — consumption-based pricing reduces cost. For teams with heavy, predictable usage, it may cost more than a seat model. The $10/user credit provides a buffer before usage charges begin.
+**Update (2026-08-22) — this has since changed twice:**
+
+- **Since July 8, 2026**, Genie products (Genie One, Genie Agents, Genie Code) moved to a formal pay-as-you-go model: each user (excluding service principals) gets **150 Databricks Units (DBUs) of free LLM usage per month**, worth about $10.50 in the US East region, before usage-based billing kicks in. ([Databricks release notes, July 2026](https://docs.databricks.com/aws/en/release-notes/product/2026/july))
+- **Since July 15, 2026**, Databricks paused billing for **Genie One and Genie Agents specifically** — usage by users (again excluding service principals) is **free through January 31, 2027**, plus a 25% discount on any billed Genie usage during that promotional window. **Genie Code is not included in this pause** and continues to bill under the pay-as-you-go model above. ([Databricks docs: Monitor and understand your Genie cost](https://docs.databricks.com/aws/en/genie/monitor-cost))
+
+Net effect for builders as of this writing: Genie One and Genie Agents are effectively free to try through January 2027; Genie Code usage is metered from the first DBU past the 150/user monthly allowance. Confirm current terms before budgeting, since this has already shifted twice since the DAIS announcement.
 
 ---
 
@@ -194,7 +198,7 @@ This is a significant departure from seat licensing. For teams with uneven usage
 | Need to connect internal tools to Genie Code | Custom MCP server as Databricks App |
 | Need to connect external SaaS (Slack, Jira, GDrive) | External MCP server via Marketplace |
 | Building reusable enterprise agents with governance | Agent Bricks + Claude Code SDK or LangGraph |
-| Need to expose Databricks Genie to external Claude agents | [databricks-genie-mcp](https://github.com/alexxx-db/databricks-genie-mcp) wrapper |
+| Need to expose Databricks Genie to Claude Desktop | [databricks-genie-mcp](https://github.com/alexxx-db/databricks-genie-mcp) wrapper (community, unofficial) |
 | Need enterprise compliance (audit trails, SSO, cost caps) | Unity AI Gateway — baked into Agent Bricks |
 
 ---
@@ -223,6 +227,8 @@ The Data + AI Summit runs through June 18, 2026. ([Databricks: 2026 Data + AI Su
 - [Databricks Docs: Genie Code](https://docs.databricks.com/aws/en/genie-code/) — Product overview
 - [Databricks Docs: Connect Genie Code to MCP servers](https://docs.databricks.com/aws/en/genie-code/mcp) — Official MCP setup guide
 - [Databricks release notes, June 2026](https://docs.databricks.com/aws/en/release-notes/product/2026/june) — Chat/Agent mode merger
+- [Databricks release notes, July 2026](https://docs.databricks.com/aws/en/release-notes/product/2026/july) — Pay-as-you-go pricing shift (July 8, 2026)
+- [Databricks docs: Monitor and understand your Genie cost](https://docs.databricks.com/aws/en/genie/monitor-cost) — Current Genie One/Agents/Code billing status
 - [Data Reply IT: Connecting Genie Code to MCP Servers](https://medium.com/data-reply-it-datatech/connecting-genie-code-to-mcp-servers-extending-databricks-ai-with-external-tools-and-data-cb2792802ca8) — Technical walkthrough (20-tool limit, Streamable HTTP)
 - [Enterprise AI World: Genie Product Suite Expansion](https://www.enterpriseaiworld.com/Articles/News/News/Databricks-Expands-Genie-Product-Suite%C2%A0to-Empower-Teams-to-Build-Reusable-Agents-and-Vibe-Code-Business-Apps-175256.aspx) — Feature details
 - [Databricks: AI governance at DAIS 2026 — Unity AI Gateway](https://www.databricks.com/blog/ai-governance-data-ai-summit-2026-whats-new-unity-ai-gateway) — Governance feature details

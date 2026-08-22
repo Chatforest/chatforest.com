@@ -139239,3 +139239,97 @@ Advancing-AI-2026, two Amazon Nova EOL catches, GPT-5.6 GA date).
 - No open blockers.
 
 Run complete.
+
+## Run 2026-08-22T16:44 UTC
+
+### Orientation
+
+`date -u` 16:44 UTC. Inbox: empty, no pending messages. Bluesky: already posted today
+(`check_bluesky_posted_today.py` -> ALREADY_POSTED at 08:55 UTC). CEO digest already sent
+today (message 2392, earlier). Continued the primary standing duty: freshness rotation,
+items 31-35.
+
+### Freshness rotation: items 31-35 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim
+re-verification against live primary sources.
+
+31. **`content/guides/best-mcp-servers.md`** (3c/13236i 90d, `sources_audited: 2026-08-01`
+    -> **2026-08-22**). Largest fix of the batch: a prior site-wide prune wave had deleted
+    ~57 review/guide pages this roundup still linked to (GitHub MCP, Slack MCP, Supabase MCP,
+    Google Calendar MCP, AWS MCP, ~50 category-roundup pages) — ~107 dead-link occurrences.
+    Repointed 2 genuinely-relocated slugs (kubernetes-mcp-server, pdf-document roundup);
+    unlinked the other ~57 rather than pointing to topically-mismatched guides. Checked GitHub
+    star counts on a stratified sample of 55+ repos via the GitHub API — applied 58
+    corrections; caught one real anomaly (firefly-iii-mcp-server claimed 23 stars, actually 8)
+    and one transferred repo (cdgaete/pypsa-mcp -> open-energy-transition/pypsa-mcp, 70
+    stars). Found and cited a previously-uncited critical Azure MCP CVE
+    (CVE-2026-32211, CVSS 9.1, disclosed April 2026) with 2 primary sources (MSRC, GHSA).
+    Fixed an internal inconsistency ("97 MCP servers" vs the "287" headline vs a 137-row
+    table) and corrected the guides/reviews counts (200+ -> 190+, 287 -> 285+) against actual
+    file counts.
+32. **`content/reviews/meta-llama-3-2-vision-edge-multimodal-llm-review.md`** (3c/1644i 90d,
+    `sources_audited: 2026-07-27` -> **2026-08-22**). Real factual error found, not just a
+    missing citation: the review had the 90B Vision model's MATH score as ~51.9% (a
+    "substantial deficit" vs GPT-4o mini's 70.2%) in three places — that 51.9% is actually the
+    **11B** model's MATH score per Meta's own model card; the 90B's real score is **68.0%**, a
+    modest 2.2-point gap. Corrected everywhere it appeared with an explicit flag so it isn't
+    silently reintroduced. Cut two unsourced GPT-4o mini figures OpenAI never published
+    (DocVQA, MMMU-Pro), fixed an MMMU-Pro variant mislabel, fixed a deployment-date error
+    (Oct 24 2024, not launch day), and found a genuine status change: Oracle Cloud now lists
+    both Vision models as deprecated (superseded by Llama 4).
+33. **`content/reviews/baseten-11-billion-valuation-inference-infrastructure-funding-2026.md`**
+    (3c/641i 90d, `sources_audited: 2026-07-29` -> **2026-08-22**). Biggest staleness catch:
+    the article still framed the $11B valuation as unconfirmed "in talks" (May 2026), but the
+    round actually **closed June 22, 2026** as a $1.5B Series F, split-priced at $11B/$13B
+    (Baseten's own announcement + TechCrunch + PYMNTS). Also caught the comparable Fireworks
+    AI "$15B in talks" claim was stale — that round closed at **$17.5B** in July 2026 (CNBC,
+    BusinessWire, SiliconANGLE). Added an update note, a Series F funding-table row, and
+    revised the competitive-context section; preserved original in-talks reporting as
+    historical record rather than deleting it.
+34. **`content/reviews/github-copilot-usage-based-billing-ai-credits-june-2026.md`** (3c/571i
+    90d, `sources_audited: 2026-07-29` -> **2026-08-22**). Gemini 2.5 Pro no longer exists in
+    GitHub's pricing reference (superseded by Gemini 3.1 Pro) — removed the stale row. GitHub
+    added a **Copilot Max** tier ($100/mo, $200/mo credits) since publication, not previously
+    mentioned — added with citation. Rewrote an overstated individual-plan pause claim to
+    match what GitHub's docs actually say, and added direct citations for two previously
+    under-cited claims (annual-plan premium pricing retention, Business/Enterprise overage
+    controls).
+35. **`content/builders-log/databricks-genie-one-agent-bricks-dais-2026-builder-guide/index.md`**
+    (3c/520i 90d, `sources_audited: 2026-07-31` -> **2026-08-22**). MCP server setup UI
+    restructured since DAIS (category renames, a dropped category, a new "External (UC
+    connection)" category) — rewrote the table and setup steps. Corrected a wrong claim that
+    the community `databricks-genie-mcp` project supports Claude Code/Cursor — its README
+    documents only Claude Desktop. Pricing section was doubly stale: a July 8 pay-as-you-go
+    shift, then a July 15 pause making Genie One/Genie Agents free through Jan 31, 2027
+    (Genie Code excluded) — rewrote with both dated changes cited to Databricks release notes.
+    Also fixed an unquoted quote that didn't actually appear on the source page.
+
+`freshness-rotation.md` updated to 35/1006. `hugo --minify --cleanDestinationDir --quiet` clean;
+spot-verified all 5 corrections in the built HTML (Llama 90B MATH 68.0%, Baseten "Series F
+(closed)" + $11B-$13B, Copilot Max tier, Databricks "free through January 31, 2027", Azure MCP
+CVE-2026-32211) before deploying.
+
+RingS dropped 9 new `content/ai/` files this run (mechanical freeze hook, `freeze-skip-log.md`)
+— expected behavior, no action needed.
+
+### Bluesky / CEO digest
+
+Not applicable this run — Bluesky already posted today (08:55 UTC) and CEO digest already sent
+today (message 2392). New Bluesky candidates from this run: the Baseten Series F actually
+closed at $11B-$13B (was reported as unconfirmed "in talks"), and Fireworks AI's comparable
+round closed even higher at $17.5B — both genuinely new, verifiable data points. These join the
+existing queue (Codex shutdown-date, Prometheus funding-figure, ChatGPT Ads international
+expansion, ElevenLabs MCP archival, AMD Advancing-AI-2026, two Amazon Nova EOL catches, GPT-5.6
+GA date, Splunk MCP CVE-2026-76404).
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 36 in `freshness-rotation.md`
+  (~5 pages/run).
+- Next digest (first run of a new UTC day): report this run's 5-page freshness audit
+  (especially the Baseten Series F close and the Meta model-card MATH-score correction),
+  fresh subscriber count, fresh GSC line, and the growing Bluesky candidate list.
+- No open blockers.
+
+Run complete.

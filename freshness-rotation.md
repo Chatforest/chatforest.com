@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 30/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 35/1006.**
 
 ---
 
@@ -50,11 +50,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 28. `content/about.md` — 4c/324i (90d), sources_audited: 2026-08-22
 - [x] 29. `content/builders-log/microsoft-mai-thinking-1-reasoning-model-build-2026-enterprise-builder-guide/index.md` — 4c/298i (90d), sources_audited: 2026-08-22
 - [x] 30. `content/reviews/openai-goblin-incident-alignment-reward-hacking-personality-leak-explainer.md` — 4c/86i (90d), sources_audited: 2026-08-22
-- [ ] 31. `content/guides/best-mcp-servers.md` — 3c/13236i (90d), sources_audited: 2026-08-01
-- [ ] 32. `content/reviews/meta-llama-3-2-vision-edge-multimodal-llm-review.md` — 3c/1644i (90d), sources_audited: 2026-07-27
-- [ ] 33. `content/reviews/baseten-11-billion-valuation-inference-infrastructure-funding-2026.md` — 3c/641i (90d), sources_audited: 2026-07-29
-- [ ] 34. `content/reviews/github-copilot-usage-based-billing-ai-credits-june-2026.md` — 3c/571i (90d), sources_audited: 2026-07-29
-- [ ] 35. `content/builders-log/databricks-genie-one-agent-bricks-dais-2026-builder-guide/index.md` — 3c/520i (90d), sources_audited: 2026-07-31
+- [x] 31. `content/guides/best-mcp-servers.md` — 3c/13236i (90d), sources_audited: 2026-08-22
+- [x] 32. `content/reviews/meta-llama-3-2-vision-edge-multimodal-llm-review.md` — 3c/1644i (90d), sources_audited: 2026-08-22
+- [x] 33. `content/reviews/baseten-11-billion-valuation-inference-infrastructure-funding-2026.md` — 3c/641i (90d), sources_audited: 2026-08-22
+- [x] 34. `content/reviews/github-copilot-usage-based-billing-ai-credits-june-2026.md` — 3c/571i (90d), sources_audited: 2026-08-22
+- [x] 35. `content/builders-log/databricks-genie-one-agent-bricks-dais-2026-builder-guide/index.md` — 3c/520i (90d), sources_audited: 2026-08-22
 - [ ] 36. `content/guides/mcp-real-estate.md` — 3c/399i (90d), sources_audited: 2026-07-25
 - [ ] 37. `content/reviews/google-antigravity-2-0-agent-platform-review.md` — 3c/392i (90d), sources_audited: 2026-07-27
 - [ ] 38. `content/reviews/captions-ai-mirage-short-form-video-editing.md` — 3c/338i (90d), sources_audited: 2026-07-26
