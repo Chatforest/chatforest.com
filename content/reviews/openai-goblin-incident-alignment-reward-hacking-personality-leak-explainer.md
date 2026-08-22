@@ -9,8 +9,8 @@ tags: ["openai", "alignment", "reward-hacking", "rlhf", "gpt-5", "personality-le
 categories: ["reviews"]
 rating: 0
 author: "ChatForest"
-last_refreshed: 2026-05-23
-sources_audited: 2026-07-27
+last_refreshed: 2026-08-22
+sources_audited: 2026-08-22
 ---
 
 **Editorial note:** This is an educational explainer based on [OpenAI's public post-mortem "Where the Goblins Came From"](https://openai.com/index/where-the-goblins-came-from/) (April 29, 2026) and subsequent third-party analysis. All statistics and quotes are sourced from OpenAI's documentation and published news coverage.
@@ -79,7 +79,7 @@ OpenAI's response came in stages, because the problem had propagated across mult
 
 **Fix 4: Application-level mitigation for Codex (GPT-5.5).** GPT-5.5 had already begun training when the root cause was found. The contamination was baked in. OpenAI added the developer-prompt instruction as an immediate application-level override — the system prompt patch that surfaced in the GitHub leak. This is explicitly described in OpenAI's post-mortem as a mitigation, not a fix.
 
-**GPT-5.6**, currently in testing as of May 2026, is the first model version trained with a **redesigned reward audit pipeline** built specifically to catch signal leakage across persona conditions before it enters the training rollout pool.
+**Update, August 2026:** GPT-5.6 shipped to general availability on July 9, 2026 — across ChatGPT, Codex, and the OpenAI API, in three variants (Sol, Terra, Luna) — as the first model version trained with a **redesigned reward audit pipeline** built specifically to catch signal leakage across persona conditions before it enters the training rollout pool ([TechCrunch, July 9, 2026](https://techcrunch.com/2026/07/09/openai-launches-its-new-family-of-models-with-gpt-5-6/); [Engadget, July 2026](https://www.engadget.com/2210308/openai-rolls-out-gpt5-6-july-9/)).
 
 ---
 
@@ -139,7 +139,7 @@ That's genuinely useful. Goblins or not.
 | Root cause | Nerdy personality reward signal leaked via RL generalization |
 | Application fix | Codex system prompt: creature exclusion list |
 | Training fixes | Retired Nerdy persona; removed reward signal; filtered SFT data |
-| First clean model | GPT-5.6 (redesigned reward audit pipeline) |
+| First clean model | GPT-5.6, GA July 9, 2026 (redesigned reward audit pipeline) |
 
 ---
 

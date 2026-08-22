@@ -4,9 +4,9 @@ date: 2026-03-28T22:00:00+09:00
 description: "A practical guide to MCP tool annotations — covering readOnlyHint, destructiveHint, idempotentHint, openWorldHint, trust models, and how clients should use these hints to build safer AI workflows."
 content_type: "Guide"
 card_description: "MCP tool annotations tell clients what a tool might do — read data, destroy it, or reach into the open world. Here's how the hint system works and why trust matters."
-last_refreshed: 2026-08-12
-lastmod: 2026-08-12
-sources_audited: 2026-08-12
+last_refreshed: 2026-08-22
+lastmod: 2026-08-22
+sources_audited: 2026-08-22
 ---
 
 When an AI model discovers a tool through MCP, it sees a name, description, and input schema. But that doesn't answer a critical question: **what will this tool actually do?** Will it just read data, or could it delete something? Does it talk to external services, or stay within a closed system?
@@ -201,7 +201,8 @@ A tool that queries your company's internal database is `openWorldHint: false` �
 The tool annotations system is actively evolving. As of March 2026, five Specification Enhancement Proposals (SEPs) were under consideration, per the [MCP blog's tool-annotations post](https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/). **Update, August 2026:** checking each proposal's current status, three of the five have since closed without being merged into the spec, and a fourth has been restructured off the core-spec track:
 
 - **[SEP #1913](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1913)**: Trust and sensitivity annotations, co-authored with an OpenAI engineer and with input from Microsoft's Azure MCP team. Still **open** as of August 2026, but the authors have since moved the work off the core-spec SEP track and split it into modular proposals (a `trust-annotations` extension, an `action-metadata` extension, and interchangeable "scheme" models such as FIDES) for experimental adoption ahead of any eventual core-spec merge.
-- **[SEP #1984](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1984)**: Comprehensive governance/UX annotations. Still **open** and in draft, now proposing six specific new hints (`aiProcessingHint`, `slowExecutionHint`, `resourceIntensiveHint`, `sensitiveDataHint`, `privilegedAccessHint`, `reversibleHint`), though the discussion thread shows extended inactivity.
+- **[SEP #1984](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1984)**: Comprehensive governance/UX annotations. Still **open** and in draft, now proposing six specific new hints (`aiProcessingHint`, `slowExecutionHint`, `resourceIntensiveHint`, `sensitiveDataHint`, `privilegedAccessHint`, `reversibleHint`) — the thread was largely quiet for months but saw new activity in mid-August 2026, including a proposal to split `reversibleHint` into its own SEP with a tiered vocabulary (snapshot / compensable / not reversible).
+- **[SEP #2417](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2417)**: "Model Preferences for Tools" (opened March 17, 2026, still open/draft). Proposes an optional `modelPreferences` field on `ToolAnnotations` letting a server signal which model capability tier (intelligence/cost/speed) best suits a given tool.
 - **[SEP #1561](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1561)**: `unsafeOutputHint` — flagging tools whose output may contain untrusted content. **Closed** (dormant, no sponsor) — not currently advancing.
 - **[SEP #1560](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1560)**: `secretHint` — marking tools that handle secrets or credentials. **Closed** (dormant, no sponsor).
 - **[SEP #1487](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1487)**: `trustedHint` — server self-attestation of trust level. **Closed** (dormant, no sponsor).

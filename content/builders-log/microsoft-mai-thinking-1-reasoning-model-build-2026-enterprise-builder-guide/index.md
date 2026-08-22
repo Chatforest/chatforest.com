@@ -2,16 +2,16 @@
 title: "MAI-Thinking-1: Microsoft's First Reasoning Model Is Not a Distillation"
 date: 2026-06-02
 description: "Microsoft announced MAI-Thinking-1 at Build 2026 — a reasoning model trained from scratch, not distilled from GPT-4 or any other frontier model. It launched in private preview on Microsoft Foundry. Here's what builders need to know."
-og_description: "MAI-Thinking-1 arrived at Build 2026 as Microsoft's first dedicated reasoning model. Not distilled, Microsoft says. Published AIME and SWE-Bench Pro numbers at launch. Private preview on Microsoft Foundry; pricing TBD."
+og_description: "MAI-Thinking-1 arrived at Build 2026 as Microsoft's first dedicated reasoning model. Not distilled, Microsoft says. Published AIME and SWE-Bench Pro numbers at launch. Now in public preview on Microsoft Foundry; per-token pricing still TBD."
 content_type: "Builder Guide"
-card_description: "Microsoft's first reasoning model landed at Build 2026. MAI-Thinking-1 was not distilled from GPT-4 or any other model's outputs, Microsoft says — trained from scratch instead. That's a deliberate positioning move: enterprise customers in regulated industries want an auditable model lineage. It launched in private preview on Microsoft Foundry, with AIME and SWE-Bench Pro benchmark numbers published at announcement. Per-token pricing hasn't been published yet."
+card_description: "Microsoft's first reasoning model landed at Build 2026. MAI-Thinking-1 was not distilled from GPT-4 or any other model's outputs, Microsoft says — trained from scratch instead. That's a deliberate positioning move: enterprise customers in regulated industries want an auditable model lineage. It launched in private preview and has since moved to public preview on Microsoft Foundry, with AIME and SWE-Bench Pro benchmark numbers published at announcement. Per-token pricing hasn't been published yet."
 tags: ["microsoft", "mai-thinking-1", "reasoning-model", "build-2026", "enterprise-ai", "microsoft-foundry", "azure-ai-foundry", "mai", "agents", "mustafa-suleyman"]
 categories: ["builders-log"]
 author: "ChatForest"
-sources_audited: 2026-07-28
+sources_audited: 2026-08-22
 ---
 
-**At a glance:** [MAI-Thinking-1](https://microsoft.ai/news/introducing-mai-thinking-1/), announced June 2, 2026 at Microsoft Build. Microsoft's first dedicated reasoning model. Microsoft says it was not trained via distillation from existing frontier models. Launched in [private preview on Microsoft Foundry](https://microsoft.ai/models/mai-thinking-1/), with public preview on the MAI Playground to follow; per-token pricing not yet published. Part of our **[Builder's Log](/builders-log/)**.
+**At a glance:** [MAI-Thinking-1](https://microsoft.ai/news/introducing-mai-thinking-1/), announced June 2, 2026 at Microsoft Build. Microsoft's first dedicated reasoning model. Microsoft says it was not trained via distillation from existing frontier models. Launched in private preview and has since moved to [public preview on Microsoft Foundry](https://microsoft.ai/models/mai-thinking-1/) (confirmed live August 2026); per-token pricing not yet published. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -43,9 +43,9 @@ For builders at startups or working in unregulated contexts, this distinction ma
 
 ---
 
-## Access: Private Preview on Microsoft Foundry
+## Access: Public Preview on Microsoft Foundry
 
-As of the Build 2026 announcement, [MAI-Thinking-1 is in private preview on Microsoft Foundry](https://microsoft.ai/models/mai-thinking-1/), with a public preview on the MAI Playground "coming" and Chat Completions API compatibility. Microsoft's own model page and announcement post do not state general availability on Azure AI Foundry, a GitHub Models listing, GitHub Copilot Enterprise bundling, or a confidential-computing enclave variant for this model — none of that has been confirmed by Microsoft for MAI-Thinking-1, so treat any such claim as unverified until Microsoft documents it. (GitHub Copilot's newly announced in-house model at Build 2026 is a separate model, [MAI-Code-1-Flash](https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/), not MAI-Thinking-1.)
+At the Build 2026 announcement, MAI-Thinking-1 launched in private preview. **Update, August 2026:** it has since moved to [public preview on Microsoft Foundry](https://microsoft.ai/models/mai-thinking-1/) — both Microsoft's model page and its [announcement post](https://microsoft.ai/news/introducing-mai-thinking-1/) now read "available in public preview," with Chat Completions API compatibility. Microsoft's own pages still do not state general availability on Azure AI Foundry, a GitHub Models listing, GitHub Copilot Enterprise bundling, or a confidential-computing enclave variant for this model — none of that has been confirmed by Microsoft for MAI-Thinking-1, so treat any such claim as unverified until Microsoft documents it. (GitHub Copilot's newly announced in-house model at Build 2026 is a separate model, [MAI-Code-1-Flash](https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/), not MAI-Thinking-1.)
 
 Per-token pricing for MAI-Thinking-1 has not been published. For comparison context: [OpenAI's o3](https://developers.openai.com/api/docs/pricing) is currently priced at $2/1M input tokens and $8/1M output tokens (cut 80% from its original $10/$40 launch pricing in [June 2025](https://venturebeat.com/ai/openai-announces-80-price-drop-for-o3-its-most-powerful-reasoning-model)); [Gemini 2.5 Pro](https://ai.google.dev/gemini-api/docs/pricing) is $1.25/$10 per 1M tokens for prompts up to 200K tokens (thinking tokens are billed as output tokens, not a separate "thinking budget"). Where MAI-Thinking-1 lands in that range will determine whether it competes on value or positions as a premium enterprise product.
 
@@ -75,7 +75,7 @@ The [announcement](https://microsoft.ai/news/introducing-mai-thinking-1/) confir
 - **Per-token pricing** — not published
 - **Max output tokens** — not disclosed
 - **API schema** — no parameter names published (thinking budget, effort level, etc.)
-- **General availability timeline** — currently private preview on Microsoft Foundry only; no date given for public preview or GA
+- **General availability timeline** — now in public preview on Microsoft Foundry; no GA date given
 
 This is a day-one announcement. Expect the Microsoft Foundry documentation to fill in these gaps over the coming days as Microsoft publishes post-Build technical details. The [What's New in Microsoft Foundry blog](https://devblogs.microsoft.com/foundry/) is the canonical tracking source.
 
@@ -83,8 +83,8 @@ This is a day-one announcement. Expect the Microsoft Foundry documentation to fi
 
 ## Builder Checklist
 
-**Now (day one):**
-- [ ] Request [private preview access on Microsoft Foundry](https://microsoft.ai/models/mai-thinking-1/) if you want hands-on evaluation before general availability
+**Now:**
+- [ ] Try MAI-Thinking-1 directly — it's in [public preview on Microsoft Foundry](https://microsoft.ai/models/mai-thinking-1/), no access request needed
 - [ ] Bookmark the [Azure AI Foundry model catalog](https://ai.azure.com/explore/models) — MAI-Thinking-1 should appear there with pricing when it moves past private preview
 - [ ] Watch the [Microsoft Foundry blog](https://devblogs.microsoft.com/foundry/) for the public-preview and GA announcements
 
@@ -103,6 +103,8 @@ MAI-Thinking-1 is one piece of a larger announcement pattern at Build 2026. Alon
 - **[MCP in M365 declarative agents](https://devblogs.microsoft.com/microsoft365dev/build-declarative-agents-for-microsoft-365-copilot-with-mcp/)** — Reached GA in December 2025, enabling cross-vendor agent interoperability
 
 *Editor's note (2026-07-28): an earlier version of this article referenced "Project Polaris" and "Azure Agent Mesh" as Build 2026 announcements. A citation audit found neither name appears in any Microsoft primary source (official blogs, devblogs, techcommunity, github.blog, microsoft.ai, or the Build 2026 live blog/keynote/Book of News) — both references traced back to aggregator content, not Microsoft. They have been removed as unconfirmed.*
+
+*Update (2026-08-22): MAI-Code-1-Flash, mentioned above as a separate Build 2026 model, is being retired across all Copilot experiences on September 10, 2026, superseded by MAI-Code-1.1-Flash — see [GitHub's changelog](https://github.blog/changelog/2026-08-11-upcoming-deprecation-of-mai-code-1-flash/). Doesn't affect MAI-Thinking-1, this article's subject.*
 
 The through-line: Microsoft is investing in a proprietary, in-house model stack — spanning reasoning, code, image, voice, and transcription — that it can price, fine-tune, and control the training provenance of, rather than relying solely on OpenAI's models. MAI-Thinking-1 is the reasoning layer of that stack.
 

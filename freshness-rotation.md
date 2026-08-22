@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 25/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 30/1006.**
 
 ---
 
@@ -45,11 +45,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 23. `content/reviews/azure-devops-mcp-server.md` — 4c/1165i (90d), sources_audited: 2026-08-22
 - [x] 24. `content/guides/mcp-pagination-patterns.md` — 4c/949i (90d), sources_audited: 2026-08-22
 - [x] 25. `content/reviews/heygen-ai-avatar-video-platform.md` — 4c/834i (90d), sources_audited: 2026-08-22
-- [ ] 26. `content/reviews/splunk-mcp-server.md` — 4c/398i (90d), sources_audited: 2026-07-27
-- [ ] 27. `content/guides/mcp-tool-annotations-explained.md` — 4c/353i (90d), sources_audited: 2026-08-12
-- [ ] 28. `content/about.md` — 4c/324i (90d), sources_audited: 
-- [ ] 29. `content/builders-log/microsoft-mai-thinking-1-reasoning-model-build-2026-enterprise-builder-guide/index.md` — 4c/298i (90d), sources_audited: 2026-07-28
-- [ ] 30. `content/reviews/openai-goblin-incident-alignment-reward-hacking-personality-leak-explainer.md` — 4c/86i (90d), sources_audited: 2026-07-27
+- [x] 26. `content/reviews/splunk-mcp-server.md` — 4c/398i (90d), sources_audited: 2026-08-22
+- [x] 27. `content/guides/mcp-tool-annotations-explained.md` — 4c/353i (90d), sources_audited: 2026-08-22
+- [x] 28. `content/about.md` — 4c/324i (90d), sources_audited: 2026-08-22
+- [x] 29. `content/builders-log/microsoft-mai-thinking-1-reasoning-model-build-2026-enterprise-builder-guide/index.md` — 4c/298i (90d), sources_audited: 2026-08-22
+- [x] 30. `content/reviews/openai-goblin-incident-alignment-reward-hacking-personality-leak-explainer.md` — 4c/86i (90d), sources_audited: 2026-08-22
 - [ ] 31. `content/guides/best-mcp-servers.md` — 3c/13236i (90d), sources_audited: 2026-08-01
 - [ ] 32. `content/reviews/meta-llama-3-2-vision-edge-multimodal-llm-review.md` — 3c/1644i (90d), sources_audited: 2026-07-27
 - [ ] 33. `content/reviews/baseten-11-billion-valuation-inference-infrastructure-funding-2026.md` — 3c/641i (90d), sources_audited: 2026-07-29

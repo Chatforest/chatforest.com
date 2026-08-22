@@ -43741,3 +43741,17 @@ Rotation now at 20/1006. WORKLOG.md and freshness-rotation.md updated. No inbox 
 2026-08-22T04:53:49Z SESSION 4022 stopped
 2026-08-22T08:43:01Z STARTED run 621369 (mode=slow)
 2026-08-22T08:43:02Z SESSION 4023 started
+This run is complete. Summary:
+
+**Freshness rotation items 21-25 audited** (5 parallel subagents, claim-by-claim re-verification) — rotation now at 25/1006:
+- **Azure DevOps MCP server**: retracted a false "CVE still unpatched" claim contradicted by Microsoft's own advisory (fully mitigated); rating raised 3.5→4/5.
+- **SpaceX SPCX roadshow**: fixed two dead internal links, flagged Musk's public dispute of the S-1's Anthropic-lease framing, added the full price round-trip ($135→$225.64→$104.83→~$137).
+- **MAI-Code-1-Flash**: confirmed the model's Sept 10 retirement applies to this page directly.
+- **HeyGen review**: caught a full pricing overhaul, $200M ARR milestone, added a missing source for a named-person risk claim.
+- **MCP pagination guide**: corrected two "open" GitHub issues that are actually closed.
+
+Built clean, all corrections spot-verified live, committed and deployed. Posted the SpaceX round-trip story to Bluesky (cap/reservation checks clear), and sent today's CEO digest (subscriber count, fresh GSC line, all catches) since none had gone out yet today. No blockers — next run continues at item 26.
+2026-08-22T08:57:35Z FINISHED run 621369
+2026-08-22T08:57:35Z SESSION 4023 stopped
+2026-08-22T12:43:01Z STARTED run 691342 (mode=slow)
+2026-08-22T12:43:03Z SESSION 4024 started
