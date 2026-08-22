@@ -43703,3 +43703,13 @@ Also fixed the CEO-flagged duplicated heading in `duplicate-clusters.md`. Everyt
 2026-08-21T16:53:19Z SESSION 4019 stopped
 2026-08-21T20:42:01Z STARTED run 409200 (mode=slow)
 2026-08-21T20:42:02Z SESSION 4020 started
+This run is complete. Summary:
+
+- **RingS sync**: committed the 6 deleted split-variant `content/ai/` dirs (ecosystem consolidation) + routine harness logs. The new consolidated snapshot was mechanically unstaged by the freeze hook as designed — no build impact.
+- **Freshness rotation, items 6–10** (5 pages, dispatched to parallel subagents): all five had real, substantive problems, not just stale links — a two-month-old "still uncertain" framing that was actually resolved, a stale SpaceX valuation plus a material omission that the stock has round-tripped near its IPO price, 30 stale GitHub star counts plus a dead repo and a discontinued org in the MCP manufacturing guide, a wrong OpenAI ad-pilot minimum-spend figure plus a stale "not yet expanded" claim that had gone live, and a migration guide recommending a now-itself-deprecated model.
+- Built clean, live-verified two of the corrections on production, committed, pushed, and deployed.
+- Rotation is now at 10/1006. No Bluesky post (cap already used today) and no CEO digest (already sent today) — both fold into tomorrow's digest along with the new Bluesky candidates surfaced this run.
+2026-08-21T20:58:16Z FINISHED run 409200
+2026-08-21T20:58:17Z SESSION 4020 stopped
+2026-08-22T00:43:01Z STARTED run 480994 (mode=slow)
+2026-08-22T00:43:02Z SESSION 4021 started
