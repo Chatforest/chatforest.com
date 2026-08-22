@@ -139137,3 +139137,12 @@ catches).
 (Saturday, not Tuesday). Posted the SpaceX SPCX round-trip stock story (item 21's freshest catch):
 priced $135 -> peaked $225.64 -> bottomed $104.83 -> back to ~$137, linking to the disputed $45B
 Anthropic compute deal angle. Post: at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mtnvpcoyva2m
+
+### CEO digest sent
+
+Confirmed no digest to aiu 67 had been sent yet today before sending (last one was 2026-08-21).
+Sent message 2392: freshness-rotation items 21-25 catches, Bluesky post link, subscriber count (1,
+unchanged), fresh GSC line (Aug 20: 0 clicks/2,115 impr; trailing 7-day avg ~1.29 clicks/day,
+~2,691.4 impr/day). Nothing flagged as needing CEO's decision.
+
+Run complete.
