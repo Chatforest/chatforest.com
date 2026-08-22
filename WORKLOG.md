@@ -139146,3 +139146,96 @@ unchanged), fresh GSC line (Aug 20: 0 clicks/2,115 impr; trailing 7-day avg ~1.2
 ~2,691.4 impr/day). Nothing flagged as needing CEO's decision.
 
 Run complete.
+
+## Run 2026-08-22T12:43 UTC
+
+### Orientation
+
+`date -u` 12:43 UTC. Inbox: empty, no pending messages. Bluesky: already posted today
+(`check_bluesky_posted_today.py` -> ALREADY_POSTED at 08:55 UTC), so no Bluesky action this
+run. CEO digest already sent today (message 2392, 08:xx UTC) — no second digest per the
+max-1/day rule. Continued the primary standing duty: freshness rotation, items 26-30.
+
+### Freshness rotation: items 26-30 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim
+re-verification against live primary sources.
+
+26. **`content/reviews/splunk-mcp-server.md`** (4c/398i 90d, `sources_audited: 2026-07-27` ->
+    **2026-08-22**). Heaviest update of the batch: Splunkbase downloads grew 12,334 -> 20,537
+    (15 reviews, still 5-star); version bumped 1.1.2 -> 1.3.1 (Aug 3, 2026); OAuth 2.1's
+    preview program closed and it's now enabled by default (AWS-hosted Splunk Cloud only —
+    Azure/GCP/GovCloud still unsupported); `splunk_run_saved_search` went GA in v1.2.1 (was
+    beta); a new preview tool `splunk_find_data_source` shipped in v1.3.0 (now 15 tools, not
+    14); `livehybrid/splunk-mcp` community alternative was archived June 20, 2026 in favor of
+    the official app. Most significant catch: a **critical RCE, CVE-2026-76404 (CVSS 9.1)**,
+    disclosed by Splunk 2026-08-19 (advisory SVD-2026-0808) and independently confirmed via
+    NVD — unsafe deserialization in the credential-management component let an authenticated
+    `admin`-role user run arbitrary OS commands. Affected all versions below 1.2.1, fixed in
+    1.2.1 (current 1.3.1 is not vulnerable) — this was previously unmentioned on a page whose
+    whole "Security Model" section praises the architecture. Added as a Known Limitations
+    bullet + Bottom Line line, cited to both Splunk's own advisory and NVD.
+27. **`content/guides/mcp-tool-annotations-explained.md`** (4c/353i 90d, `sources_audited:
+    2026-08-12` -> **2026-08-22**, light re-check given the recent prior pass). All core
+    claims (spec revision currency, ToolAnnotations defaults, SEP #1913/#1561/#1560/#1487
+    statuses, Claude Code issue #30142 still closed/not-planned) reconfirmed live and
+    accurate. Refreshed SEP #1984's "extended inactivity" line — it saw new activity
+    2026-08-17 (a proposal to split `reversibleHint` into its own SEP with a tiered
+    vocabulary). Added a newly-discovered 6th SEP, **#2417 "Model Preferences for Tools"**
+    (open since March 2026, proposes a `modelPreferences` field on `ToolAnnotations`), found
+    via the MCP Tool Annotations Interest Group charter page, not previously covered.
+28. **`content/about.md`** (4c/324i 90d, first-ever audit — `sources_audited` was empty).
+    Found and fixed a **dead link**: the "how Grove came to be" link to Rob's origin-story
+    blog post had an extraneous `/tech/` path segment and 404'd. Corrected to the live URL
+    (confirmed 200, content-verified to match). The other two external links (Rob's bio page,
+    used twice; Grove's profile image) and the Review Methodology section were confirmed live
+    and accurate — no other changes needed on this low-claim editorial page.
+29. **`content/builders-log/microsoft-mai-thinking-1-reasoning-model-build-2026-enterprise-builder-guide/index.md`**
+    (4c/298i 90d, `sources_audited: 2026-07-28` -> **2026-08-22**). MAI-Thinking-1 moved from
+    private preview to **public preview on Microsoft Foundry** since the last audit — corrected
+    across front matter (title/og/card descriptions), the "At a glance" line, the Access
+    section heading and body, the "still missing" bullet, and the builder checklist (dropped
+    the "request access" framing). Benchmark numbers, pricing-still-unpublished status, and the
+    DeepSeek/OpenAI distillation dispute links all reconfirmed accurate — explicitly did NOT
+    add a fabricated-looking "$2/$8 per token" pricing figure that a search aggregator had
+    misattributed to this model (it's actually OpenAI o3's pricing, already correctly cited
+    elsewhere in the same article). Added a dated footnote noting MAI-Code-1-Flash's Sept 10
+    retirement (confirmed via GitHub's changelog), which doesn't affect this article's actual
+    subject but was a passing reference worth flagging.
+30. **`content/reviews/openai-goblin-incident-alignment-reward-hacking-personality-leak-explainer.md`**
+    (4c/86i 90d, `sources_audited: 2026-07-27` -> **2026-08-22**). Core post-mortem stats
+    (175%/52% goblin/gremlin increase, 76.2% reward uplift) reconfirmed accurate against
+    OpenAI's original post-mortem and corroborating secondary sources. One real staleness
+    catch: the article said GPT-5.6 was "currently in testing as of May 2026" — it has since
+    **shipped to general availability July 9, 2026** (three variants: Sol, Terra, Luna),
+    confirmed via TechCrunch and Engadget. Updated the body text and the Key Facts table's
+    "First clean model" row with the GA date and two citations.
+
+`freshness-rotation.md` updated to 30/1006. `hugo --minify --cleanDestinationDir --quiet` clean;
+spot-verified all 5 corrections in the built HTML (Splunk 20,537 downloads + CVE-2026-76404,
+SEP #2417 mention, about.md's fixed blog link, MAI-Thinking-1 "public preview", goblin
+incident's GPT-5.6 GA line) before deploying.
+
+RingS dropped 11 new `content/ai/` files from this commit again (mechanical freeze hook,
+`freeze-skip-log.md` — same files logged three times already since 2026-08-21; files remain
+on disk, untracked). No action needed from this side — expected behavior of the freeze gate,
+not something to fix.
+
+### Bluesky / CEO digest
+
+Not applicable this run — Bluesky already posted today (08:55 UTC) and CEO digest already sent
+today (message 2392). New Bluesky candidate from this run: the Splunk critical-RCE catch
+(CVE-2026-76404, CVSS 9.1, patched) — joins the existing queue (Codex shutdown-date, Prometheus
+funding-figure, ChatGPT Ads international-expansion, ElevenLabs MCP archival, AMD
+Advancing-AI-2026, two Amazon Nova EOL catches, GPT-5.6 GA date).
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 31 in `freshness-rotation.md`
+  (~5 pages/run).
+- Next digest (first run of a new UTC day): report this run's 5-page freshness audit
+  (especially the Splunk RCE), fresh subscriber count, fresh GSC line, and the growing Bluesky
+  candidate list.
+- No open blockers.
+
+Run complete.
