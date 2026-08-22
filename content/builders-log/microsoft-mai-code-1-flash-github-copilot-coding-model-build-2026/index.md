@@ -8,10 +8,12 @@ card_description: "MAI-Code-1-Flash launched at Build 2026 as the first Microsof
 tags: ["microsoft", "mai-code-1", "github-copilot", "coding-model", "build-2026", "agentic-coding", "swe-bench", "mai", "vs-code", "token-efficiency"]
 categories: ["builders-log"]
 author: "ChatForest"
-sources_audited: 2026-07-28
+sources_audited: 2026-08-22
 ---
 
 **At a glance:** [MAI-Code-1-Flash, announced June 2, 2026 at Microsoft Build](https://microsoft.ai/news/introducingmai-code-1-flash/). First Microsoft-trained model built using GitHub Copilot's production tool harnesses. 85.8% on Microsoft adversarial coding benchmark, ~51% SWE-Bench Pro. 60% fewer tokens on complex tasks vs. comparable models. Live now in the Copilot model picker — Free, Pro, Pro+, and Max tiers. Third-party access via Fireworks AI, Baseten, OpenRouter. Part of our **[Builder's Log](/builders-log/)**.
+
+**Update (2026-08-22): This model has been superseded and is being retired.** Microsoft shipped [MAI-Code-1.1-Flash on August 11, 2026](https://github.blog/changelog/2026-08-11-mai-code-1-1-flash-available-in-github-copilot/), and [GitHub has scheduled MAI-Code-1-Flash for retirement across all Copilot experiences on September 10, 2026](https://github.blog/changelog/2026-08-11-upcoming-deprecation-of-mai-code-1-flash/). Per [Microsoft's own announcement](https://microsoft.ai/news/mai-code-1-1-flash-br-better-faster-at-a-quarter-of-the-cost/), MAI-Code-1.1-Flash adds native vision/image support, is 25% more token-efficient, improved 22% on Terminal-Bench 2.1 and 15% on .NET tasks, and lists at [a 73% lower price than MAI-Code-1-Flash](https://github.blog/changelog/2026-08-11-mai-code-1-1-flash-available-in-github-copilot/) — [GitHub's rate card](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing) puts MAI-Code-1.1-Flash at $0.20/M input and $1.20/M output tokens, versus $0.75/$4.50 for MAI-Code-1-Flash. The rest of this article describes the model as it launched at Build 2026 and is kept for the historical record; for current guidance, use MAI-Code-1.1-Flash.
 
 ---
 
@@ -79,7 +81,7 @@ Under the [usage-based billing model](/builders-log/github-copilot-june-1-token-
 **Third-party API access**
 MAI-Code-1-Flash is available outside of Copilot through three distribution partners Microsoft named in its [Build 2026 model-family recap](https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/): **Fireworks AI**, **Baseten**, and **OpenRouter**.
 
-On the Copilot side, [GitHub's own rate card](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing) lists MAI-Code-1-Flash at $0.75 per million input tokens ($0.075 per million cached) and $4.50 per million output tokens. Per-token pricing on Fireworks AI, Baseten, and OpenRouter was not independently confirmed as of this audit — check each platform directly before budgeting against it.
+On the Copilot side, [GitHub's own rate card](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing) lists MAI-Code-1-Flash at $0.75 per million input tokens ($0.075 per million cached) and $4.50 per million output tokens — as of this audit (2026-08-22) that rate card still lists the model as generally available, but [GitHub has confirmed it retires on September 10, 2026](https://github.blog/changelog/2026-08-11-upcoming-deprecation-of-mai-code-1-flash/) in favor of MAI-Code-1.1-Flash, which the same rate card prices at $0.20 per million input tokens and $1.20 per million output tokens. Per-token pricing on Fireworks AI, Baseten, and OpenRouter was not independently confirmed as of this audit — check each platform directly before budgeting against it.
 
 ---
 

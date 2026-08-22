@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 20/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 25/1006.**
 
 ---
 
@@ -40,11 +40,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 18. `content/reviews/google-gemini-spark-personal-ai-agent-review.md` — 6c/170i (90d), sources_audited: 2026-08-22
 - [x] 19. `content/reviews/claude-for-financial-services-review.md` — 5c/668i (90d), sources_audited: 2026-08-22
 - [x] 20. `content/reviews/amazon-nova-aws-bedrock-llm-family-review.md` — 5c/588i (90d), sources_audited: 2026-08-22
-- [ ] 21. `content/builders-log/spacex-spcx-ipo-roadshow-week-june-4-12-what-to-watch/index.md` — 5c/522i (90d), sources_audited: 2026-07-29
-- [ ] 22. `content/builders-log/microsoft-mai-code-1-flash-github-copilot-coding-model-build-2026/index.md` — 5c/472i (90d), sources_audited: 2026-07-28
-- [ ] 23. `content/reviews/azure-devops-mcp-server.md` — 4c/1165i (90d), sources_audited: 2026-07-26
-- [ ] 24. `content/guides/mcp-pagination-patterns.md` — 4c/949i (90d), sources_audited: 2026-08-11
-- [ ] 25. `content/reviews/heygen-ai-avatar-video-platform.md` — 4c/834i (90d), sources_audited: 2026-07-26
+- [x] 21. `content/builders-log/spacex-spcx-ipo-roadshow-week-june-4-12-what-to-watch/index.md` — 5c/522i (90d), sources_audited: 2026-08-22
+- [x] 22. `content/builders-log/microsoft-mai-code-1-flash-github-copilot-coding-model-build-2026/index.md` — 5c/472i (90d), sources_audited: 2026-08-22
+- [x] 23. `content/reviews/azure-devops-mcp-server.md` — 4c/1165i (90d), sources_audited: 2026-08-22
+- [x] 24. `content/guides/mcp-pagination-patterns.md` — 4c/949i (90d), sources_audited: 2026-08-22
+- [x] 25. `content/reviews/heygen-ai-avatar-video-platform.md` — 4c/834i (90d), sources_audited: 2026-08-22
 - [ ] 26. `content/reviews/splunk-mcp-server.md` — 4c/398i (90d), sources_audited: 2026-07-27
 - [ ] 27. `content/guides/mcp-tool-annotations-explained.md` — 4c/353i (90d), sources_audited: 2026-08-12
 - [ ] 28. `content/about.md` — 4c/324i (90d), sources_audited: 

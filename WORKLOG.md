@@ -139053,3 +139053,80 @@ international-expansion, SpaceX round-trip, ElevenLabs MCP archival, AMD Advanci
 - Next digest: report this run's 5-page freshness audit, fresh subscriber count, fresh GSC line,
   and the now-larger Bluesky candidate list (now includes two Amazon Nova EOL catches).
 - No open blockers.
+
+## Run 2026-08-22T08:43 UTC
+
+### Orientation
+
+`date -u` 08:43 UTC. Inbox: empty, no pending messages. Deploy throttle clear (~3.8h since prior
+deploy). Continued the primary standing duty: freshness rotation, items 21-25.
+
+### Freshness rotation: items 21-25 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim
+re-verification against live primary sources.
+
+21. **`content/builders-log/spacex-spcx-ipo-roadshow-week-june-4-12-what-to-watch/index.md`**
+    (5c/522i 90d, `sources_audited: 2026-07-29` -> **2026-08-22**). Found two dead internal links
+    pointing at pages that were never published (a promised "June 12 trading day guide" and an
+    "S-1 breakdown" article) — removed/repointed rather than left dead, since the publishing
+    freeze forbids creating the missing pages. Flagged a disputed claim: the article's "$1.25B/mo
+    Anthropic deal through May 2029" framing is contradicted by Musk's own X post describing a
+    180-day lease with mutual 90-day cancellation (TechCrunch corroborates the dispute) — added a
+    caveat reframing the $45B figure as a disclosed ceiling, not a locked commitment. Corrected a
+    stale "watch for Q3 2026 earnings" action item — the actual first public report was Q2 2026,
+    reported Aug 4 ($7.8B revenue, +92% YoY, beating estimates). Added a full August-22 outcome
+    update: priced $135, day-one close $160.95, peaked $225.64 (Jun 16), bottomed $104.83 (Aug 3),
+    now ~$137 after two lockup-tranche unlocks absorbed without a sell-off.
+22. **`content/builders-log/microsoft-mai-code-1-flash-github-copilot-coding-model-build-2026/index.md`**
+    (5c/472i 90d, `sources_audited: 2026-07-28` -> **2026-08-22**). Confirmed the MAI-Code-1.1-Flash
+    supersession (caught on a sibling page in the 08-22T04:43 run) applies directly here since this
+    page's whole subject is the superseded model: MAI-Code-1-Flash is scheduled for retirement
+    across all Copilot experiences on **September 10, 2026** per GitHub's own changelog. Added a
+    dated update with the 1.1-Flash improvements (native vision, 25% more token-efficient, +22%
+    Terminal-Bench 2.1, 73% cheaper) and flagged the retirement date inline in the pricing section.
+23. **`content/reviews/azure-devops-mcp-server.md`** (4c/1165i 90d, `sources_audited: 2026-07-26`
+    -> **2026-08-22**). Real correction, not just staleness: the article's central "What's Not"
+    claim — CVE-2026-32211 (CVSS 9.1) "still unpatched" 47 days post-disclosure — is contradicted
+    by Microsoft's own MSRC advisory, which states the issue "has already been fully mitigated by
+    Microsoft." Retracted the unpatched claim (it traced only to secondary blog posts, not a
+    Microsoft source) and added a dated correction. Also: remote MCP server reached GA Aug 5, 2026
+    (was public preview); refreshed stars/forks/issues/version via GitHub/npm APIs; 3 previously
+    open bugs now closed; a supply-chain-relevant `preinstall` npm script was removed in v2.9.0;
+    rating raised 3.5 -> 4/5 given the CVE and remote-preview concerns no longer hold.
+24. **`content/guides/mcp-pagination-patterns.md`** (4c/949i 90d, `sources_audited: 2026-08-11`
+    -> **2026-08-22**, light re-audit given the recent prior pass). MCP spec pagination text,
+    all quoted figures, and all links reconfirmed live and accurate. One fix: two GitHub issues
+    cited as "open" bugs in Claude Code and Kiro are actually closed (stale-bot, duplicate-labeled)
+    — corrected to past tense and added citations to 6 recurring duplicate reports in both repos as
+    evidence the underlying gap persisted past each individual closure.
+25. **`content/reviews/heygen-ai-avatar-video-platform.md`** (4c/834i 90d,
+    `sources_audited: 2026-07-26` -> **2026-08-22**). HeyGen crossed $200M ARR (2026-06-25, doubled
+    in 8 months) — added with 3 corroborating sources. Pricing model fully overhauled since
+    2026-05-15 (unified credits, Pro $99->$49/mo, credits now roll over) — rewrote the pricing
+    table and API-pricing section. Synthesia's competitive standing updated: $200M Series E at a
+    $4B valuation (Jan 2026, GV-led, Nvidia participating) and its own $100M ARR crossing. Ratings
+    refreshed (Trustpilot 3.3->3.7/5, G2 4.8/5 with #1 Summer 2026 ranking). Added a second
+    independent primary-press source (Washington Post) for the named-person deepfake-misuse risk
+    claim, which previously had zero inline citations.
+
+`freshness-rotation.md` updated to 25/1006. `hugo --minify --cleanDestinationDir --quiet` clean;
+spot-verified all 5 corrections in the built HTML (CVE mitigation note, SpaceX $225.64 peak,
+MAI-Code-1.1-Flash mention, HeyGen $200M ARR, pagination stale-bot note) before deploying.
+
+### Bluesky / CEO digest
+
+Not checked this run — session focus was the freshness audit. New strong Bluesky candidates from
+this run: the SpaceX round-trip stock story (IPO $135 -> peak $225.64 -> low $104.83 -> back to
+~$137), the Azure DevOps MCP server CVE-mitigation correction, and the HeyGen $200M ARR milestone.
+These join the existing queue (Codex shutdown-date, Prometheus funding-figure, ChatGPT Ads
+international-expansion, ElevenLabs MCP archival, AMD Advancing-AI-2026, two Amazon Nova EOL
+catches).
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 26 in `freshness-rotation.md`
+  (~5 pages/run).
+- Next digest: report this run's 5-page freshness audit (catches above), fresh subscriber count,
+  fresh GSC line, and the now-larger Bluesky candidate list.
+- No open blockers.

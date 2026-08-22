@@ -60,16 +60,17 @@ The growth trajectory here is exceptional enough to be worth stating precisely:
 
 Year-over-year ARR growth from 2023 to 2025: approximately [**1,024%**](https://www.arr.club/signal/heygen-arr-hits-100m).
 
-Supporting metrics:
+Supporting metrics (as of publication, mid-2025):
 - **31 million+ total registered users**
 - **100,000+ paying business customers** (as of early 2026)
 - **239 countries** with active users
-- **129 million+ videos** generated on the platform, cumulatively
 - **101 million minutes** of video generated in 2025 alone — 4x more than all of 2024
 - **Profitable since Q2 2023** — operating margins estimated at ~20% as of 2025
 - **~200–330 employees** (sources vary by date, range reflects different measurement points)
 
-The G2/Trustpilot split is instructive: **4.8/5 from 1,400+ verified reviews on G2** (predominantly business users), versus **3.3/5 on Trustpilot** (wider consumer base). The divergence maps cleanly to user type — enterprise customers with dedicated support report a fundamentally different experience than individual creators encountering credit complexity without support escalation paths. Both data points are accurate. They describe the same product used by different audiences.
+**Update (2026-08-22):** HeyGen's growth continued well past the $100M milestone. On [June 25, 2026, HeyGen announced it had surpassed $200 million in ARR](https://www.heygen.com/blog/heygen-surpasses-200m-arr) — doubling in eight months — with a community of **"more than 30 million users"** across **196 countries**, **175+ languages**, and **more than 118 million videos** generated cumulatively; the company also said **85% of the Fortune 100** now use the platform. [Yahoo Finance/Business Wire](https://finance.yahoo.com/technology/ai/articles/heygen-doubles-200m-arr-eight-160200783.html) and an independent interview with CEO Joshua Xu at [Upstarts Media](https://www.upstartsmedia.com/p/exclusive-heygen-200m-arr-without-burn) corroborate the figure and add that the company has burned only ~$25M of its ~$74.6M raised, remained cash-flow break-even through 2026, and employs **approximately 200 people** (up from 131 in 2024) — narrowing the earlier "~200–330 employees" range cited above. Note the country count (196) is lower than the October 2025 figure (239) cited above; that is HeyGen's own revised figure, not a ChatForest correction. No new funding round accompanied this milestone — the $500M valuation from the June 2024 Series A remains the last disclosed figure as of this update.
+
+Review-platform ratings have also shifted since this page's original 4.8/5-vs-3.3/5 framing: HeyGen's own [Summer 2026 G2 report recap](https://www.heygen.com/blog/heygen-2026-g2-summer-reports) cites **4.8/5 across 1,924+ verified reviews** on G2 (predominantly business users) and a #1 ranking in 23 G2 category reports, while [Trustpilot](https://www.trustpilot.com/review/heygen.com) now shows **~3.7/5 from 2,700+ reviews** (wider consumer base) — up from 3.3/5 at last audit. The gap has narrowed but the underlying pattern holds: enterprise customers with dedicated support report a meaningfully better experience than individual creators navigating credit complexity without support escalation paths.
 
 ---
 
@@ -100,7 +101,7 @@ These are not the same use cases as generative video. HeyGen is not competing wi
 
 HeyGen offers six distinct avatar categories, each serving a different use case and fidelity level:
 
-**Stock Avatars**: 1,000+ pre-built presenters across ethnicities, styles, languages, and professional contexts. Ready immediately, no recording required, no personal data shared. The right choice when you want a professional AI presenter without any connection to a real individual.
+**Stock Avatars**: [1,100+ pre-built presenters](https://www.heygen.com/avatars) across ethnicities, styles, languages, and professional contexts (the Free plan surfaces a 500+ subset; paid plans unlock the full library). Ready immediately, no recording required, no personal data shared. The right choice when you want a professional AI presenter without any connection to a real individual.
 
 **Custom Video Avatars**: Created from a recording of yourself (or a consented individual), these produce a hyper-realistic digital twin that speaks any script using your voice and likeness. Earlier versions required 5–10 minutes of guided studio-quality recording. **Avatar V** — the current flagship model — requires only **15 seconds of webcam footage**.
 
@@ -133,6 +134,8 @@ A single natural language prompt triggers a complete automated production workfl
 HeyGen describes it as "the world's first creative operating system for video." That claim is debatable in specifics but directionally accurate: the Video Agent compresses what was previously a multi-step production workflow (scripting → recording/avatar selection → editing → captioning → resizing → exporting) into a single prompt-driven operation.
 
 The former CEO of Alisa, Bin Liu, joined HeyGen as VP of Product Engineering following the acquisition. This was a talent acquisition as much as a product one — Alisa had built expertise in agentic content workflows that HeyGen integrated into its core platform.
+
+**Update (2026-08-22):** Video Agent has continued shipping past its September 2025 beta. HeyGen's [January 2026 product release notes](https://www.heygen.com/blog/heygen-january-2026-release) describe a "Video Agent 2.0" as a standing part of the product, and later 2026 release notes describe it expanding to over 100 curated visual styles. HeyGen has not published an explicit "general availability" announcement using that language, so this update should be read as "actively developed and shipping," not a formal beta-exit milestone.
 
 ### Personalized Video at Scale
 
@@ -175,7 +178,7 @@ HeyGen offers three integration paths for developers and automated workflows:
 
 Full programmatic control via a standard asynchronous REST API. Video generation is inherently time-consuming at high fidelity, so the API is event-driven: clients submit generation requests and register webhook URLs to receive completion notifications rather than polling. API version 3 is the active platform; V1 and V2 continue to be supported until October 31, 2026. Documentation is at developers.heygen.com.
 
-API pricing: pay-as-you-go starting at $5. Tiers at $0.99/credit (Pro) and $0.50/credit (Scale). Ten concurrent video processing slots on the API plan. This is a direct API with no intermediary marketplace requirement — in contrast to several competitors whose API access is exclusively through third-party platforms like fal.ai.
+**Update (2026-08-22):** HeyGen's API pricing structure has changed since this page's last audit. It is now a straight pay-as-you-go wallet with no plan or subscription required: purchase USD balance starting at $5, then draw it down per output. Per [HeyGen's own API pricing help article](https://help.heygen.com/en/articles/10060327-heygen-api-pricing-explained), current rates are **$1/minute** for standard avatar video (720p/1080p), **$4/minute** for Avatar IV at 1080p, **$2/minute** for video translation, and **$2/minute** for Video Agent output; credits expire after 12 months. Ten concurrent video-processing slots remain part of the API plan, and HeyGen has offered no free API credits since February 2026. This is a direct API with no intermediary marketplace requirement — in contrast to several competitors whose API access is exclusively through third-party platforms like fal.ai.
 
 ### Official MCP Server
 
@@ -212,24 +215,26 @@ Beyond the API and MCP:
 
 ## Pricing
 
-HeyGen uses a dual billing model that is a consistent source of user confusion: a **flat subscription fee** for unlimited standard video generation, combined with **Premium Credits** that gate access to advanced features including Avatar IV generation and video translation.
+**Update (2026-08-22):** HeyGen's pricing model changed materially since this page's last audit. Per [HeyGen's own help center](https://help.heygen.com/en/articles/9204682-heygen-legacy-unlimited-plans), the company migrated away from the "flat subscription + gated Premium Credits" structure described below to a **unified credit-based model for all purchases made on or after May 15, 2026** — every plan now draws from a single monthly credit pool rather than offering "unlimited standard video" plus a separate advanced-feature credit tier. Subscribers who bought a legacy unlimited plan before that date keep it as long as their subscription stays active and in good standing, but switching away from a legacy plan is irreversible. Current plans, per [heygen.com/pricing](https://www.heygen.com/pricing):
 
 | Plan | Monthly Price | Annual Monthly | Key Inclusions |
 |---|---|---|---|
-| Free | $0 | $0 | 3 videos/month, watermark, limited features |
-| Creator | ~$29/mo | ~$24/mo | Unlimited standard video, 200 Premium Credits, 1080p, voice cloning, no watermark |
-| Pro | ~$99/mo | ~$82/mo | 2,000 Premium Credits, Avatar IV access, video translation |
-| Business | ~$149/mo + $20/seat | Custom | 1,000 shared credits, 4K export, team collaboration |
-| Enterprise | Custom | Custom | Custom credits, SSO, dedicated support, SLA |
+| Free | $0 | $0 | 3 videos/month (up to 1 min each), Avatar IV access, 500+ stock avatars, 1 custom digital twin, 30+ languages |
+| Creator | $29/mo | $24/mo | 600 credits/month, videos up to 30 min, 1080p export, voice cloning, 175+ languages, unlimited photo avatars |
+| Pro | $49/mo | — | 1,000 credits/month, videos up to 30 min, 4K export, access to all advanced AI models |
+| Business | $149/mo + $20/seat | Custom | 1,500 credits/month, videos up to 60 min, 4K export, 5 custom digital twins, SAML/SSO, **SCORM export**, LMS integrations |
+| Enterprise | Custom | Custom | No duration limits, multi-workspace control, SCIM provisioning, dedicated success manager, priority support |
 
-**Critical pricing notes**:
-- "Unlimited videos" on paid plans means unlimited **standard** video (Avatar III, lower fidelity). Avatar IV and video translation consume Premium Credits on top of the subscription fee.
-- Credits do not roll over — unused credits expire at the billing reset date.
+Pro dropped from the ~$99/mo figure originally reported here to **$49/mo** under the new credit structure — a meaningful price cut, not a typo. Note also that the Business plan now explicitly includes **SCORM export and LMS integrations**, features this review's original Competition section (below) described as a HeyGen gap relative to Synthesia; that gap has narrowed.
+
+**Current pricing notes** (superseding the "Critical pricing notes" originally published here):
+- Every plan is now credit-metered; there is no longer an "unlimited standard video" tier separate from Premium Credits. One credit buys roughly 3 seconds of standard-quality avatar video; Avatar IV and translation consume credits at a steeper rate.
+- Credits **do roll over**, contrary to what this page originally stated: per [HeyGen's credits help article](https://help.heygen.com/en/articles/15126059-how-to-use-credits-on-heygen), monthly subscribers' unused credits carry into one additional billing cycle (~60 days total), and annual subscribers' credits accumulate until the annual renewal date. Credits are forfeited only if the account downgrades to Free.
 - The Business plan replaced a deprecated Team plan in January 2026.
 - Enterprise pricing is negotiated per account; no published rates.
-- No free API credits as of February 2026.
+- No free API credits as of February 2026 (unchanged from original audit).
 
-The credit system generates recurring friction in user reviews. New subscribers on Creator or Pro plans frequently discover that the capabilities they purchased the plan to access — specifically Avatar IV generation and translation — incur credit costs they did not anticipate. This is not a hidden billing issue; it is disclosed in plan documentation. But the "unlimited" framing creates an expectation that the fine print around advanced feature credits consistently violates.
+The credit system still generates recurring friction in user reviews, but the specific complaint has shifted with the model: subscribers now watch a single shared credit pool drain across every action (not just "advanced" features), which several third-party pricing breakdowns flag as making effective per-video cost less predictable than the old flat-fee framing implied.
 
 ---
 
@@ -241,11 +246,13 @@ The AI avatar video market has two distinct competitive tiers: **Synthesia** at 
 
 Synthesia is HeyGen's closest and most directly comparable competitor. Both target business users producing AI avatar video. The differences are matters of emphasis rather than fundamental architecture.
 
-**Synthesia strengths**: SCORM export for enterprise L&D (learning management system compatibility), formal approval and commenting workflows, stricter consent protocols for custom avatar creation, Fortune 500 enterprise penetration particularly in HR and compliance training.
+**Synthesia strengths**: formal approval and commenting workflows, stricter consent protocols for custom avatar creation, Fortune 500 enterprise penetration particularly in HR and compliance training.
 
-**HeyGen strengths**: Superior video translation (175+ languages vs. Synthesia's narrower set), Avatar V benchmark leadership on face similarity and lip sync, broader language support, official MCP server, faster ARR growth (152% Y/Y customer count growth vs. Synthesia's more established but slower-growing base), $100M ARR vs. Synthesia's $50M+ range.
+**HeyGen strengths**: Superior video translation (175+ languages vs. Synthesia's narrower set), Avatar V benchmark leadership on face similarity and lip sync, broader language support, official MCP server.
 
-**Key trade-off**: Synthesia's stricter governance features make it more defensible in large regulated enterprises. HeyGen's faster iteration, stronger translation, and better developer story make it more attractive for mid-market companies and developer-driven use cases.
+**Update (2026-08-22):** Both companies have grown substantially and the ARR gap has narrowed since this page was first published, so the original "$100M ARR vs. Synthesia's $50M+ range" framing is stale. HeyGen [surpassed $200M ARR in June 2026](https://www.heygen.com/blog/heygen-surpasses-200m-arr). Synthesia crossed [$100M ARR in April 2025 by its own account](https://www.synthesia.io/post/100-million-revenue-adobe-investment) and raised a **$200M Series E at a $4 billion valuation** (up from $2.1B a year earlier) led by GV (Google Ventures) with participation from Nvidia's NVentures, announced [January 26, 2026](https://www.unite.ai/synthesia-doubles-valuation-to-4-billion-with-employee-friendly-secondary-sale/) and corroborated by [Yahoo Finance](https://finance.yahoo.com/news/synthesia-hits-4b-valuation-lets-090000792.html). Industry trackers estimate Synthesia's ARR has continued growing into the $150M+ range during 2026, though Synthesia has not published a more recent official ARR figure as of this update — treat that specific number as an estimate, not a confirmed figure. Synthesia's SCORM export advantage has also narrowed: HeyGen's Business plan now includes SCORM export and LMS integrations (see Pricing section above), which was not the case when this comparison was first written.
+
+**Key trade-off**: Synthesia's stricter governance and consent features still make it more defensible in large regulated enterprises, and it remains the larger company by valuation. HeyGen's faster iteration, stronger translation, and better developer story make it more attractive for mid-market companies and developer-driven use cases — and the SCORM gap that used to be a clean differentiator for Synthesia is now narrower.
 
 ### HeyGen vs. D-ID
 
@@ -263,11 +270,11 @@ Tavus targets a narrower but technically adjacent use case: hyper-personalized v
 
 ## Deepfake Risk and Consent Policy
 
-HeyGen has a documented misuse problem. Russian cybersecurity firm Group-IB named HeyGen in its [2023/2024 Hi-Tech Crimes Report](https://www.group-ib.com/landing/hi-tech-crime-trends-2023-2024/) as a tool exploited by threat actors for deepfake fraud, consumer scams, health misinformation, and geopolitical propaganda. Group-IB analysts noted growing interest from bad actors in bypassing HeyGen's safety measures.
+HeyGen has a documented misuse problem, corroborated by multiple independent sources. Russian cybersecurity firm Group-IB named HeyGen in its [2023/2024 Hi-Tech Crimes Report](https://www.group-ib.com/landing/hi-tech-crime-trends-2023-2024/) as a tool exploited by threat actors for deepfake fraud, consumer scams, health misinformation, and geopolitical propaganda, noting growing interest from bad actors in bypassing HeyGen's safety measures. Separately, [The Washington Post reported in March 2024](https://www.washingtonpost.com/technology/2024/03/28/ai-women-clone-ads/) that scammers used HeyGen (alongside ElevenLabs) to create unauthorized deepfake ads cloning the faces and voices of several women, including content creators Michel Janse and Olga Loiek, without their consent.
 
 The platform requires verbal consent and a spoken password for custom avatar creation, and employs automated content filtering plus human moderation. These controls are real. They are also less strict than Synthesia's, which requires more extensive identity verification and consent documentation before a custom avatar is generated. The gap matters: it creates a meaningful difference in misuse potential between the two platforms.
 
-The problem is not purely theoretical. In October 2024, CEO Joshua Xu was himself the victim of a deepfake attack — criminals created a fraudulent "ChatGPT tutorial" video using an AI-generated replica of Xu's avatar and voice to distribute cryptocurrency malware. HeyGen confirmed the fraudulent video was not created on their platform, reported it to YouTube, and had it removed. The irony of a deepfake CEO impersonation targeting the CEO of an avatar video platform was widely noted.
+The problem is not purely theoretical. In [October 2024, CEO Joshua Xu was himself the victim of a deepfake attack](https://boingboing.net/2024/10/23/ceo-who-sells-fake-faces-gets-his-own-stolen-for-crypto-scam.html) — criminals created a fraudulent "ChatGPT tutorial" video using an AI-generated replica of Xu's avatar and voice to distribute cryptocurrency malware. [Cointelegraph's coverage](https://cointelegraph.com/news/ai-increase-crypto-identity-verification-risk) confirms HeyGen stated the fraudulent video was not created on their platform and that it maintains automated/manual content review and live-video consent verification for avatar creation. HeyGen reported the video to YouTube and had it removed. The irony of a deepfake CEO impersonation targeting the CEO of an avatar video platform was widely noted.
 
 HeyGen's policy choices represent a deliberate trade-off: stricter consent requirements reduce utility for legitimate use cases and create competitive friction; looser requirements increase market accessibility but also increase misuse surface area. Synthesia has resolved this trade-off in one direction; HeyGen in another. Both choices are defensible at the business level. The security community's documented concern is accurate and worth weighing for enterprise customers in sensitive industries.
 
@@ -291,9 +298,9 @@ Several factors combine to explain why HeyGen has grown faster and more profitab
 
 **Credit system complexity**: The "unlimited" plan framing misleads users about what requires credit consumption. This is the most consistent complaint across review platforms, and it reflects a product design decision that prioritizes revenue structure over user experience clarity.
 
-**Consumer support quality**: G2 (business users) shows 4.8/5. Trustpilot (general consumers) shows 3.3/5. The gap is real and maps to support access. Enterprise customers have dedicated account management; consumer tier customers do not. For a company at $100M ARR, this disparity is a solvable problem — it has not yet been prioritized.
+**Consumer support quality**: G2 (business users) shows 4.8/5. Trustpilot (general consumers) has improved to ~3.7/5 as of mid-2026 (up from 3.3/5 at this page's original publication — see Revenue section for sourcing), but the gap is still real and still maps to support access. Enterprise customers have dedicated account management; consumer tier customers do not. For a company now at $200M+ ARR, this disparity is a solvable problem — it has not yet been fully closed.
 
-**Enterprise governance gap vs. Synthesia**: SCORM export, commenting/approval workflows, and formal identity verification for avatar creation are table-stakes for large regulated enterprises. HeyGen is iterating toward feature parity, but Synthesia retains a meaningful lead in formal enterprise governance tooling.
+**Enterprise governance gap vs. Synthesia**: commenting/approval workflows and formal identity verification for avatar creation are table-stakes for large regulated enterprises, and Synthesia retains a meaningful lead there. **Update (2026-08-22):** SCORM export — cited in this review's original version as a HeyGen gap — is no longer one; HeyGen's Business plan now includes SCORM export and LMS integrations (see Pricing section). HeyGen is iterating toward broader feature parity, but the remaining governance and consent-verification gaps below still favor Synthesia.
 
 **Deepfake misuse surface**: Less strict consent requirements than Synthesia create documented misuse risk. For enterprise procurement teams in financial services, healthcare, or government, this is a compliance consideration that Synthesia does not trigger to the same degree.
 
@@ -303,9 +310,9 @@ Several factors combine to explain why HeyGen has grown faster and more profitab
 
 ## Rating: 4 out of 5
 
-HeyGen is the clearest commercial success story in AI avatar video. The revenue trajectory ($100M ARR, profitable from Q2 2023, 1,024% Y/Y growth), the technical benchmark leadership (Avatar V face similarity and lip sync outperforming major competitors), the language breadth (175+ languages — broader than any direct competitor), and the official MCP server (ahead of Synthesia, D-ID, and Colossyan) combine to make this a category-defining product.
+HeyGen is the clearest commercial success story in AI avatar video. The revenue trajectory ($100M ARR at time of original publication, [since surpassed $200M in June 2026](https://www.heygen.com/blog/heygen-surpasses-200m-arr), profitable from Q2 2023), the technical benchmark leadership (Avatar V face similarity and lip sync outperforming major competitors), the language breadth (175+ languages — broader than any direct competitor), and the official MCP server (ahead of Synthesia, D-ID, and Colossyan) combine to make this a category-defining product.
 
-The rating stops at 4 rather than 5 because three genuine weaknesses are worth quantifying: the credit system opacity creates friction that damages consumer trust (Trustpilot 3.3/5 vs. G2 4.8/5 is a meaningful signal, not noise); the enterprise governance feature set still lags Synthesia for formal procurement requirements; and the deepfake misuse risk from less strict consent requirements is documented by Group-IB and represents a real, not theoretical, problem.
+The rating stops at 4 rather than 5 because three genuine weaknesses are worth quantifying: the credit system opacity creates friction that damages consumer trust (Trustpilot has since improved to ~3.7/5 vs. G2's 4.8/5, still a real gap even though it has narrowed since this page's original 3.3/5 figure — see Revenue section); the enterprise governance feature set still lags Synthesia on approval workflows and consent verification, though HeyGen closed the SCORM-export gap in its Business plan; and the deepfake misuse risk from less strict consent requirements is documented by Group-IB and represents a real, not theoretical, problem.
 
 A company that has grown this fast, stayed profitable, and built a technically defensible position in a genuinely useful category earns serious credit. The 4/5 acknowledges both the strength and the specific, addressable gaps that currently exist.
 

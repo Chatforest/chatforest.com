@@ -5,7 +5,7 @@ description: "How to implement pagination in MCP servers — covering the spec's
 content_type: "Guide"
 card_description: "MCP tools that return thousands of rows will choke your AI agent. Here's how to paginate properly at every level."
 last_refreshed: 2026-04-14
-sources_audited: 2026-08-11
+sources_audited: 2026-08-22
 ---
 
 An MCP tool that returns 10,000 database rows in a single response will overwhelm any AI agent's context window. The tokens get consumed, the model loses focus, and the user gets a slow, expensive, unhelpful answer. Pagination solves this — but MCP handles it differently than traditional REST APIs.
@@ -87,7 +87,9 @@ The [spec](https://modelcontextprotocol.io/specification/2026-07-28/server/utili
 
 If your server exposes 5 tools, list pagination is irrelevant. But consider a server that dynamically generates tools from a database schema or an API catalog. A server wrapping a large REST API might expose hundreds of tools. Without pagination, the `tools/list` response alone could consume thousands of tokens.
 
-Some MCP clients still don't fully support list pagination. Claude Code had an [open issue](https://github.com/anthropics/claude-code/issues/24785) about not following `nextCursor` for `tools/list`, and Kiro had a [similar bug](https://github.com/kirodotdev/Kiro/issues/5972). The concrete impact is significant: when connecting through AWS Bedrock AgentCore Gateway — which [paginates `tools/list` at 30 tools per page](https://github.com/anthropics/claude-code/issues/24785) — a setup with 48 total tools leaves 18 tools invisible and uncallable. If you're building a server with many tools, test with your target clients to confirm they handle pagination correctly.
+Some MCP clients still don't fully support list pagination. Claude Code had a [bug report](https://github.com/anthropics/claude-code/issues/24785) about not following `nextCursor` for `tools/list`, and Kiro had a [similar report](https://github.com/kirodotdev/Kiro/issues/5972). The concrete impact described was significant: when connecting through AWS Bedrock AgentCore Gateway — which paginates `tools/list` at 30 tools per page — a setup with 48 total tools left 18 tools invisible and uncallable. If you're building a server with many tools, test with your target clients to confirm they handle pagination correctly.
+
+*Update (2026-08-22): both linked issues are now closed — stale-bot auto-closed and labeled duplicate, not closed with a maintainer-confirmed fix. The same "`tools/list` doesn't follow `nextCursor`" report has recurred as a fresh issue repeatedly in both repos since ([claude-code #39586](https://github.com/anthropics/claude-code/issues/39586), [#48126](https://github.com/anthropics/claude-code/issues/48126), [#59538](https://github.com/anthropics/claude-code/issues/59538), [#66537](https://github.com/anthropics/claude-code/issues/66537); [Kiro #9935](https://github.com/kirodotdev/Kiro/issues/9935), [#10375](https://github.com/kirodotdev/Kiro/issues/10375)) — evidence the underlying gap persisted past each individual report's closure, even though no single issue stayed open. Don't rely on any one issue's open/closed status; test pagination behavior directly against your current client version.*
 
 Note that tool call limits also vary widely by client: [GitHub Copilot allows 128 tools, Junie 100, and Cursor only 40](https://blog.jetbrains.com/ruby/2026/02/rubymine-mcp-and-the-rails-toolset/) — constraints that interact with pagination when your server exposes many tools.
 

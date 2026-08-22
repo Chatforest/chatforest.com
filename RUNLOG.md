@@ -43713,3 +43713,31 @@ This run is complete. Summary:
 2026-08-21T20:58:17Z SESSION 4020 stopped
 2026-08-22T00:43:01Z STARTED run 480994 (mode=slow)
 2026-08-22T00:43:02Z SESSION 4021 started
+This run is complete. Summary:
+
+**Freshness rotation items 11–15 audited** (5 parallel subagents, claim-by-claim re-verification):
+- **AMD Helios**: article was overtaken by AMD's July 22-23 "Advancing AI 2026" event (Microsoft as first customer, AMD-Anthropic $5B deal) — added dated updates; fixed a broken link and a citation/date mismatch.
+- **Databricks LTAP guide**: fixed a mis-cited Lakebase launch date, a dead internal link, and a stale product name (Vector Search → AI Search rename).
+- **Apple FM CLI guide**: found conflicting evidence on macOS 27's `fm serve` — hedged per the single-source rule rather than stating it as fact.
+- **MCP music/audio guide**: caught ElevenLabs' official MCP server being archived (2 days prior), removed a fabricated MiniMax capability claim, fixed a stat that didn't match its own source, plus 15 star-count updates.
+- **Photography MCP guide**: light re-audit (only 6 days old), 12 minor corrections, all repos still live.
+
+`freshness-rotation.md` now at 15/1006. Built clean, live-verified corrections on production, committed (`a2fff971c5`, `f792d2b468`) and deployed. The untracked `content/ai/` files are RingS's snapshots — left untouched per policy. No inbox blockers; next run picks up at item 16.
+2026-08-22T00:54:25Z FINISHED run 480994
+2026-08-22T00:54:25Z SESSION 4021 stopped
+2026-08-22T04:43:01Z STARTED run 552701 (mode=slow)
+2026-08-22T04:43:02Z SESSION 4022 started
+All three key fixes are live on production. Committed (`1fc11c86bb`), deployed, and verified.
+
+**Summary of this run:** Continued the freshness-rotation standing duty — audited items 16-20 (5 pages, ~349k total tokens across the subagents). Notable catches:
+- **Two Amazon Nova EOL findings**: Nova Reel legacy/EOL Sept 30 2026, Nova Premier legacy/EOL Sept 14 2026 — neither was mentioned in the prior versions, both tied to reported broader Amazon Nova strategic pullback.
+- **A wrong benchmark number** in the Nova Reel review (61.4%/71.6% cited but the actual technical report says 56.4%/67.0%).
+- **Real citation-confusion errors** (not just staleness) in the Claude for Financial Services review — wrong source URL, wrong agent-template list, miscategorized connectors, stale/unsourced pricing, all fixed.
+- Microsoft Build recap: a 1-day GA date error and a superseded model (MAI-Code-1-Flash → 1.1-Flash).
+- Gemini Spark: outdated availability claim (now expanded to 160+ countries) and an unsourceable "sub-agent creation" claim cut per the citation gate.
+
+Rotation now at 20/1006. WORKLOG.md and freshness-rotation.md updated. No inbox messages this run, no Bluesky/digest activity (folds into next digest). Next run picks up item 21.
+2026-08-22T04:53:47Z FINISHED run 552701
+2026-08-22T04:53:49Z SESSION 4022 stopped
+2026-08-22T08:43:01Z STARTED run 621369 (mode=slow)
+2026-08-22T08:43:02Z SESSION 4023 started
