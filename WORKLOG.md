@@ -139528,3 +139528,85 @@ verifiable data points — join the existing growing queue.
 - No open blockers.
 
 Run complete.
+
+## Run 2026-08-23T04:45 UTC
+
+### Orientation
+
+`date -u` 04:45 UTC. Inbox: only my own already-sent 00:44 UTC digest (message 2394), no new
+pending instructions. Committed a leftover RUNLOG.md/TOKENLOG.tsv update from the prior run
+that hadn't been committed yet. Continued the primary standing duty: freshness rotation, items
+46-50.
+
+### Freshness rotation: items 46-50 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim
+re-verification against live primary sources.
+
+46. **`content/reviews/minimax-m2-7-self-evolving-agentic-llm-review.md`** (2c/828i 90d,
+    `sources_audited: 2026-07-26` -> **2026-08-23**). Biggest catch: **M2.7 has been superseded**
+    — MiniMax released M3 (June 1/7, 2026, new MSA architecture, 1M-token context); Artificial
+    Analysis now marks M2.7 "deprecated." Added a supersession note. Also fixed two misattributed
+    quotes (a "faux open-source" headline wrongly attributed to Decrypt — it's actually BigGo
+    Finance; a quote wrongly attributed to "Hacker News" — it's actually a HuggingFace discussion
+    thread, restored to verbatim) and corrected a fused stat (the 24,000 fraudulent-accounts figure
+    is Anthropic's combined total across DeepSeek/Moonshot/MiniMax, not MiniMax alone).
+47. **`content/reviews/newrelic-mcp-server.md`** (2c/824i 90d, `sources_audited: 2026-08-21` ->
+    **2026-08-23**). Light re-check since this page had a very thorough audit just 2 days prior.
+    GitHub issue states, tool count (27), Public Preview status, and pricing all confirmed
+    unchanged live. Only PulseMCP traffic stats had moved (expected, page already flags these as
+    week-to-week) — updated to current figures.
+48. **`content/reviews/nvidia-cosmos-3-open-physical-ai-foundation-model-review.md`** (2c/797i
+    90d, `sources_audited: 2026-07-30` -> **2026-08-23**). Real catches: **Cosmos 3 Edge actually
+    shipped** July 20, 2026 at SIGGRAPH (page said "coming soon") — updated variants table and
+    hardware section; **R-Bench leaderboard position lost** — Ant Group's LingBot-Video (July 2026)
+    now scores higher than Cosmos 3 Super, so softened the "tops R-Bench" claim; Cosmos Coalition
+    roster grew substantially (Japanese manufacturers + Telexistence/Mujin joined July 2026) —
+    added a dated note. License (OpenMDW-1.1) and pricing confirmed unchanged.
+49. **`content/reviews/amazon-kiro-aws-agentic-ide-spec-driven-review.md`** (2c/721i 90d,
+    `sources_audited: 2026-07-27` -> **2026-08-23**). Deepest catch of the batch: the **Amazon
+    Nova model-routing claim was wrong** — Kiro never used Nova; current docs show Claude, GPT-5.6,
+    and open-weight models via an Auto router. Pricing was stale (Pro $19->$20/month, three new
+    tiers added at Nov 2025 GA). CodeCatalyst integration is now legacy (AWS closed it to new
+    customers Nov 2025). MCP config path corrected (`.kiro/mcp.json` -> `.kiro/settings/mcp.json`).
+    Also converted the page from 3 bottom-of-page links to ~20 inline per-claim citations
+    (Sources section expanded 3 -> 16 entries) per the site's citation standard.
+50. **`content/reviews/postgres-mcp-server.md`** (2c/595i 90d, `sources_audited: 2026-08-14` ->
+    **2026-08-23**). Numeric drift across the board: npm/PyPI download counts updated in 6+ places
+    (server-postgres downloads up ~27%, Supabase MCP downloads nearly doubled, postgres-mcp PyPI
+    downloads up ~44% — all flagged with dated notes rather than silently overwritten), Google
+    Toolbox latest release bumped (v1.8.0 -> v1.9.0), PulseMCP Postgres-server count corrected
+    (199, not "over 200"). One real dead link found and fixed: the standalone Azure Postgres MCP
+    repo 404s — its capability was folded into the unified `microsoft/mcp` repo with a different
+    auth model; updated with a dated correction.
+
+`freshness-rotation.md` updated to 50/1006. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified all 5 corrections in the built HTML (Cosmos3-Edge,
+"MiniMax M3" supersession note, `.kiro/settings/mcp.json`, updated postgres download figures,
+New Relic's refreshed PulseMCP stats) before committing.
+
+RingS dropped new `content/ai/` files this run (mechanical freeze hook, `freeze-skip-log.md`)
+— expected behavior, no action needed.
+
+### Bluesky / CEO digest
+
+Not applicable this run — Bluesky already posted today (per prior run's digest) and CEO digest
+already sent today (message 2394, 00:58 UTC). New Bluesky candidates from this run: MiniMax M2.7
+being superseded by M3 with a "deprecated" label from Artificial Analysis, and NVIDIA Cosmos 3
+Edge's actual SIGGRAPH ship date (July 20) contradicting the site's prior "coming soon" — both
+join the existing growing candidate queue (now well past a dozen items; still worth trimming to
+one strong pick per the standing note rather than letting it grow unbounded).
+
+Deploy: throttle clear (last deploy 2026-08-23T00:55 UTC, >1h prior). Deployed this run.
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 51 in `freshness-rotation.md`
+  (~5 pages/run).
+- Next digest (first run of a new UTC day): report this run's 5-page freshness audit
+  (especially the MiniMax M2.7->M3 supersession and the Amazon Kiro model-routing/pricing
+  corrections), fresh subscriber count, fresh GSC line, and the still-growing Bluesky candidate
+  queue.
+- No open blockers.
+
+Run complete.

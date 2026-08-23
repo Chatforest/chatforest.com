@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 40/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 50/1006.**
 
 ---
 
@@ -65,11 +65,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 43. `content/reviews/nvidia-gtc-taipei-2026-jensen-huang-keynote-n1x-vera-rubin-physical-ai-preview.md` — 2c/4089i (90d), sources_audited: 2026-08-23
 - [x] 44. `content/builders-log/nvidia-dgx-spark-june-2026-update-multi-node-clustering-nvfp4-nemoclaw-builder-guide/index.md` — 2c/2115i (90d), sources_audited: 2026-08-23
 - [x] 45. `content/builders-log/openai-realtime-cedar-marin-voice-selection-gpt-realtime-2-builder-guide/index.md` — 2c/941i (90d), sources_audited: 2026-08-23
-- [ ] 46. `content/reviews/minimax-m2-7-self-evolving-agentic-llm-review.md` — 2c/828i (90d), sources_audited: 2026-07-26
-- [ ] 47. `content/reviews/newrelic-mcp-server.md` — 2c/824i (90d), sources_audited: 2026-08-21
-- [ ] 48. `content/reviews/nvidia-cosmos-3-open-physical-ai-foundation-model-review.md` — 2c/797i (90d), sources_audited: 2026-07-30
-- [ ] 49. `content/reviews/amazon-kiro-aws-agentic-ide-spec-driven-review.md` — 2c/721i (90d), sources_audited: 2026-07-27
-- [ ] 50. `content/reviews/postgres-mcp-server.md` — 2c/595i (90d), sources_audited: 2026-08-14
+- [x] 46. `content/reviews/minimax-m2-7-self-evolving-agentic-llm-review.md` — 2c/828i (90d), sources_audited: 2026-08-23
+- [x] 47. `content/reviews/newrelic-mcp-server.md` — 2c/824i (90d), sources_audited: 2026-08-23
+- [x] 48. `content/reviews/nvidia-cosmos-3-open-physical-ai-foundation-model-review.md` — 2c/797i (90d), sources_audited: 2026-08-23
+- [x] 49. `content/reviews/amazon-kiro-aws-agentic-ide-spec-driven-review.md` — 2c/721i (90d), sources_audited: 2026-08-23
+- [x] 50. `content/reviews/postgres-mcp-server.md` — 2c/595i (90d), sources_audited: 2026-08-23
 - [ ] 51. `content/guides/ai-subscription-tiers-openai-anthropic-google-xai-2026.md` — 2c/544i (90d), sources_audited: 2026-07-25
 - [ ] 52. `content/reviews/pika-labs-ai-video-generation-consumer-creative.md` — 2c/538i (90d), sources_audited: 2026-07-26
 - [ ] 53. `content/reviews/robotics-mcp-servers.md` — 2c/446i (90d), sources_audited: 2026-08-16

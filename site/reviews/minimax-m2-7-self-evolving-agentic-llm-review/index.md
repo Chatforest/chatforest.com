@@ -5,6 +5,8 @@
 
 **At a glance:** MiniMax M2.7, released March 18, 2026 (API) and April 12, 2026 (weights). Architecture: same 229B total / 10B active Sparse MoE as M2.5. Self-evolution training. API at $0.30/$1.20 per million tokens. Commercial-authorization-required license. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
+> **Update (2026-08-23): superseded by MiniMax M3.** MiniMax released [MiniMax M3](https://www.marktechpost.com/2026/06/01/minimax-releases-minimax-m3-with-msa-architecture-supporting-1m-token-context-native-multimodality-and-agentic-coding/) on June 1, 2026 (weights June 7, 2026) — a new architecture (428B total / 23B active MoE, "MSA" sparse attention, 1M-token context, native multimodal input) that replaces M2.7 as MiniMax's flagship model. [Artificial Analysis now lists M2.7 as deprecated](https://artificialanalysis.ai/models/minimax-m2-7) and recommends M3 instead. This review is preserved as a snapshot of M2.7 at release; pricing, license, and benchmark facts below were re-verified against live sources on 2026-08-23 and corrections are flagged inline where anything changed. A standalone M3 review has not yet been published on this site.
+
 ---
 
 One month after MiniMax M2.5 established frontier parity at a fraction of the cost, MiniMax released M2.7 with a remarkable claim: the new model had substantially trained itself. During the RL training pipeline, M2.7 operated as an autonomous agent managing its own training infrastructure — reading loss curves, debugging data pipelines, adjusting hyperparameters, and iterating across more than 100 rounds without human engineers.
@@ -88,7 +90,7 @@ According to MiniMax, this system handled **30–50% of operational ML engineeri
 
 The community response — accurate in substance — is that "M2.7 trained itself" substantially overstates what occurred. The model optimized *deployment pipeline operations*, not its own weights. At no point did M2.7 modify the parameters being trained during inference. The self-evolution system managed the training pipeline as an engineering agent; it did not implement or discover new training algorithms, and it did not rewrite its own objective function.
 
-Hacker News commenters correctly drew the distinction: this is a sophisticated use of an LLM agent for ML infrastructure automation, which is genuinely useful and advances what's possible in the Forge RL framework. It is not recursive self-improvement in the way the marketing language implies.
+[Hacker News commenters correctly drew the distinction](https://news.ycombinator.com/item?id=47737928): this is a sophisticated use of an LLM agent for ML infrastructure automation, which is genuinely useful and advances what's possible in the Forge RL framework. It is not recursive self-improvement in the way the marketing language implies.
 
 MiniMax's claim is technically defensible: a model was used to improve training operations that produced a better model. Whether that constitutes "self-evolution" depends on how broadly you define the term. The marketing leans on the broader definition; the technical reality is the narrower one.
 
@@ -159,6 +161,8 @@ Artificial Analysis independently places M2.7 at approximately **score 50** on t
 
 Note: This figure is from a different index version than the one used for M2.5 (which reported 56). Direct numerical comparison across index versions is not reliable. What can be said: independent evaluation places M2.7 meaningfully in the frontier tier, but not as a tier leader.
 
+*(Updated 2026-08-23: [Artificial Analysis's live index](https://artificialanalysis.ai/models/minimax-m2-7) has been revised further since this review's original benchmark pass — it now lists MiniMax M2.7 at Intelligence Index score **39**, ranked **#22 of 107** tracked models (described by AA as "well above average," median 27). This is yet another index version/model-set snapshot than the score-50/7th-of-85 figure above, underscoring the note that cross-version comparisons on this particular index aren't reliable — but taken together, the trend across the two live reads is downward relative to the frontier as more models have been added to the comparison set. AA's page also flags M2.7 as deprecated in favor of MiniMax M3; see the update note at the top of this review.)*
+
 ### Independent Benchmark Rankings (Vals.ai)
 
 Vals.ai provides independent evaluation across multiple benchmarks:
@@ -216,6 +220,8 @@ The slowdown is attributable to M2.7's extended reasoning (thinking) time. Artif
 
 NVIDIA has published throughput optimizations for M2.7 on Blackwell Ultra GPUs using vLLM and SGLang. These are inference stack optimizations that help at the infrastructure level, not API-level improvements available to standard users.
 
+*(Updated 2026-08-23: [Artificial Analysis's current live measurement](https://artificialanalysis.ai/models/minimax-m2-7) shows 62.0 tokens/second for M2.7 — close to, and within normal remeasurement variance of, the 58.1 t/s captured at review time above. AA now describes this as "slower than average" against a peer median of 68 t/s. Pricing on the same live page is unchanged at $0.30/$1.20 per million input/output tokens, matching the figures used throughout this review.)*
+
 ---
 
 ## The License
@@ -252,9 +258,9 @@ The explanation is coherent. Protecting brand quality is a legitimate concern, a
 
 The backlash was swift and focused on a specific point: **calling this license "MIT-style" or "Modified-MIT" is deceptive**. MIT is one of the most recognizable open-source licenses precisely because it allows commercial use without restriction. A license that requires commercial authorization cannot meaningfully be called MIT-style — the most important MIT property is the freedom that was removed.
 
-From Hacker News: "This MiniMax license violates at least two of those OSI freedoms from the start. This is a proprietary model with viewable weights."
+From a [HuggingFace discussion thread on the model repository](https://huggingface.co/MiniMaxAI/MiniMax-M2.7/discussions/12) (user JLouisBiz): "This MiniMax license violates at least two of those freedoms right out of the gate... Call it what it is: proprietary code with viewable weights. Stop muddying the term 'open source.'" *(Corrected 2026-08-23: this quote was originally attributed to Hacker News and paraphrased slightly. It is from a HuggingFace discussion, not Hacker News; wording corrected to the verbatim source.)*
 
-[Decrypt covered the launch under: "MiniMax's M2.7 is 'faux open-source.'"](https://decrypt.co/364225/minimax-m27-agent-model-license-change)
+[Decrypt covered the launch](https://decrypt.co/364225/minimax-m27-agent-model-license-change) under the headline "MiniMax Drops State-of-the-Art AI Agent Model—Then Quietly Changes the License." The specific "faux open-source" characterization was used by [BigGo Finance](https://finance.biggo.com/news/9eATkZ0BvbjfYyetcbwH), whose headline reads "MiniMax's M2.7 Open-Source License Change Sparks Controversy: Commercial Ban Labeled 'Faux Open-Source.'" *(Corrected 2026-08-23: this review originally attributed the quoted headline "MiniMax's M2.7 is 'faux open-source'" to Decrypt. That phrase does not appear anywhere in the Decrypt article — Decrypt's actual headline is quoted above. Citation fixed to the outlet that actually used the "faux open-source" phrase.)*
 
 The distinction matters for infrastructure decisions. **Open-weight** (weights are downloadable) is not the same as **open-source** (free to use commercially without permission). M2.7 is open-weight but not open-source. If your use case is personal experimentation, academic research, or contributing to non-commercial projects, M2.7 is accessible under its license. If you are building a product — even a small one — you need written authorization from MiniMax before deploying M2.7 commercially.
 
@@ -272,9 +278,9 @@ This does not retroactively affect M2.5, which remains under its original Modifi
 
 ### Anthropic Distillation Allegation
 
-In February 2026 — the month before M2.7's API launch — [Anthropic publicly named MiniMax in legal filings related to model distillation](https://techcrunch.com/2026/02/23/anthropic-accuses-chinese-ai-labs-of-mining-claude-as-us-debates-ai-chip-exports/). The allegation: MiniMax operated approximately **24,000 fraudulent accounts** to generate [**13+ million illicit exchanges**](https://www.cnbc.com/2026/02/24/anthropic-openai-china-firms-distillation-deepseek.html) with Claude, specifically targeting agentic coding, tool use, and multi-turn orchestration — the exact capabilities emphasized in M2.7.
+In February 2026 — the month before M2.7's API launch — [Anthropic publicly accused MiniMax (along with DeepSeek and Moonshot AI) of a coordinated distillation campaign](https://techcrunch.com/2026/02/23/anthropic-accuses-chinese-ai-labs-of-mining-claude-as-us-debates-ai-chip-exports/). Per [Anthropic's own writeup](https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks) and [contemporaneous coverage](https://www.cnbc.com/2026/02/24/anthropic-openai-china-firms-distillation-deepseek.html), MiniMax's campaign generated **13+ million exchanges** with Claude — the largest of the three, and specifically targeting agentic coding and tool-use/orchestration, the exact capabilities emphasized in M2.7. *(Corrected 2026-08-23: this section previously stated MiniMax alone operated "approximately 24,000 fraudulent accounts." That figure is Anthropic's **combined total across all three labs** — DeepSeek (150,000+ exchanges), Moonshot AI (3.4 million+ exchanges), and MiniMax (13 million+ exchanges) — not a MiniMax-specific account count, which Anthropic has not disclosed separately. Corrected to avoid overstating what's attributable to MiniMax specifically.)*
 
-MiniMax has not publicly confirmed or denied the allegation. Anthropic's accusations remain public claims without a disclosed legal resolution as of May 2026. The allegation, if accurate, would mean M2.7's agentic capabilities were partly bootstrapped from Claude's outputs in violation of Anthropic's terms of service.
+MiniMax has not publicly confirmed or denied the allegation, and — as of 2026-08-23 — **no lawsuit has been filed** against MiniMax, DeepSeek, or Moonshot AI over this claim. Anthropic has continued to press similar distillation allegations through non-judicial channels rather than litigation: in June 2026 it separately accused Alibaba's Qwen lab of a larger campaign (reported by [CNBC](https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html) and [Tech Times](https://www.techtimes.com/articles/319105/20260625/alibaba-ran-largest-known-ai-theft-campaign-against-claude-anthropic-tells-senate.htm)) and testified about distillation attacks to the US Senate rather than suing. No US court has yet ruled on whether model outputs constitute property in this context. The MiniMax allegation, if accurate, would mean M2.7's agentic capabilities were partly bootstrapped from Claude's outputs in violation of Anthropic's terms of service.
 
 The distillation allegation does not affect M2.7's evaluation as a deployed model — outputs are outputs, and the model's capabilities are what they are regardless of training data origin. But it is part of the full picture of MiniMax as a company, and it informs how credible MiniMax's public benchmark claims and training narratives should be treated.
 
@@ -354,6 +360,8 @@ M2.5 was worth 4/5 because it was genuinely competitive, genuinely priced right,
 **Rating: 3.5/5.** M2.7 is not a bad model — it is a commercially capable, frontier-adjacent agentic LLM with real Agent Teams innovation and strong multi-repository coding. For personal use and academic research, it is accessible without license complications. For commercial deployment, the authorization requirement is a meaningful friction point that M2.5 does not impose. For most developers evaluating the MiniMax model line, **M2.5 remains the better choice unless you have specific needs that M2.7's Agent Teams or SWE-Pro profile uniquely serves**.
 
 The self-evolution story is interesting. The commercial trajectory it represents — restrictions increasing with each model generation after the IPO — is worth watching closely.
+
+*(Updated 2026-08-23: MiniMax has since moved on from this model line. [MiniMax M3](https://www.marktechpost.com/2026/06/01/minimax-releases-minimax-m3-with-msa-architecture-supporting-1m-token-context-native-multimodality-and-agentic-coding/) — a new 428B/23B-active architecture with 1M-token context and native multimodal input — launched June 1, 2026 and is now [the model Artificial Analysis recommends in M2.7's place](https://artificialanalysis.ai/models/minimax-m2-7). Developers evaluating the MiniMax line today should treat this review as historical context on M2.7 specifically, not as current guidance on MiniMax's best available model.)*
 
 ---
 
