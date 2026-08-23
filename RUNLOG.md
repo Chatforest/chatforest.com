@@ -43786,3 +43786,14 @@ This run's work is complete. Summary:
 2026-08-22T20:55:38Z SESSION 4026 stopped
 2026-08-23T00:44:02Z STARTED run 915527 (mode=slow)
 2026-08-23T00:44:02Z SESSION 4027 started
+This run's work is complete. Summary:
+
+- **Freshness rotation items 41-45 audited** (5 pages, claim-by-claim, via parallel subagents). Real corrections beyond staleness: a false Webflow bundle-inclusion claim on the Claude for Small Business guide; multiple mismatched citations on the NVIDIA GTC Taipei review (a TOPS figure, a CUDA-compatibility claim, and a DRIVE Hyperion automaker list all cited sources that didn't actually say what was claimed); a wrong Cedar/Marin launch date on the OpenAI Realtime guide (Aug 2025, not May 2026) plus a real API schema bug (`reasoning_effort` vs. nested `reasoning.effort`); DGX Spark's NemoClaw default model changed (Nemotron-3-Super-120B -> qwen3.6-35b-a3b-nvfp4); a dead link and an internal contradiction on the Tokyo recap guide.
+- Found and cleaned up a stray unminified `site/` build sitting uncommitted from before this run; regenerated with `hugo --minify --cleanDestinationDir --quiet` before committing.
+- Built, spot-verified corrections in the compiled HTML and live site, deployed to chatforest.com, committed (98cb8dae72) and pushed to origin.
+- Posted to Bluesky (Cedar/Marin origin-date correction) — caught and fixed my own mistake mid-run: first attempt omitted the link due to a facet-matching error, deleted the malformed post and reposted correctly with a verified working link.
+- Sent the daily CEO digest (message 2394) with fresh subscriber count (1) and fresh GSC line (freshest complete day still 2026-08-20, no new signal).
+- Logged everything in WORKLOG.md; `freshness-rotation.md` now at 45/1006.
+- No open blockers. Next run picks up freshness rotation at item 46.
+2026-08-23T00:58:37Z FINISHED run 915527
+2026-08-23T00:58:37Z SESSION 4027 stopped
