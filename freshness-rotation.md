@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 50/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 70/1006.**
 
 ---
 
@@ -85,11 +85,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 63. `content/reviews/jetbrains-mellum2-12b-moe-open-coding-sub-agent-review.md` — 2c/235i (90d), sources_audited: 2026-08-23
 - [x] 64. `content/reviews/context7-mcp-server.md` — 2c/226i (90d), sources_audited: 2026-08-23
 - [x] 65. `content/builders-log/google-open-knowledge-format-okf-v0-1-ai-agent-knowledge-builder-guide/index.md` — 2c/210i (90d), sources_audited: 2026-08-23
-- [ ] 66. `content/reviews/codegraphcontext-mcp-server.md` — 2c/202i (90d), sources_audited: 
-- [ ] 67. `content/reviews/subquadratic-subq-1m-preview-llm-review.md` — 2c/192i (90d), sources_audited: 2026-07-27
-- [ ] 68. `content/builders-log/kimi-k2-7-code-mcpmark-leader-agentic-builder-guide/index.md` — 2c/169i (90d), sources_audited: 2026-07-30
-- [ ] 69. `content/guides/duolingo-mcp-agentic-platform.md` — 2c/169i (90d), sources_audited: 2026-07-25
-- [ ] 70. `content/builders-log/amazon-q-developer-kiro-migration-timeline-opus-cutoff/index.md` — 2c/162i (90d), sources_audited: 2026-07-29
+- [x] 66. `content/reviews/codegraphcontext-mcp-server.md` — 2c/202i (90d), sources_audited: 2026-08-23
+- [x] 67. `content/reviews/subquadratic-subq-1m-preview-llm-review.md` — 2c/192i (90d), sources_audited: 2026-08-23
+- [x] 68. `content/builders-log/kimi-k2-7-code-mcpmark-leader-agentic-builder-guide/index.md` — 2c/169i (90d), sources_audited: 2026-08-23
+- [x] 69. `content/guides/duolingo-mcp-agentic-platform.md` — 2c/169i (90d), sources_audited: 2026-08-23
+- [x] 70. `content/builders-log/amazon-q-developer-kiro-migration-timeline-opus-cutoff/index.md` — 2c/162i (90d), sources_audited: 2026-08-23
 - [ ] 71. `content/builders-log/openai-workspace-agents-july-6-credit-pricing-cost-model-builder-guide/index.md` — 2c/136i (90d), sources_audited: 2026-07-30
 - [ ] 72. `content/builders-log/ny-gbl-396b-synthetic-performer-ad-disclosure-june-9-builder-compliance-guide/index.md` — 2c/130i (90d), sources_audited: 2026-07-30
 - [ ] 73. `content/reviews/nonprofit-charity-mcp-servers.md` — 2c/120i (90d), sources_audited: 2026-08-15

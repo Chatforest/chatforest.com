@@ -5,7 +5,7 @@ description: "Amazon Q Developer new signups are blocked as of May 15. Opus 4.6 
 content_type: "Builder's Log"
 categories: ["Developer Tools", "AI Infrastructure", "Amazon AWS"]
 tags: ["amazon", "kiro", "amazon-q", "aws", "agentic-coding", "migration", "claude", "developer-tools", "enterprise-ai"]
-sources_audited: 2026-07-29
+sources_audited: 2026-08-23
 ---
 
 Amazon Q Developer is being retired. If you're still using it, the timeline has started whether or not you've begun planning a migration.
@@ -50,7 +50,7 @@ Key architectural differences from Q Developer:
 - **Hooks**: Automated operations that trigger on file saves, test runs, or deployment events.
 - **Full AWS context**: As of May 2026, Kiro supports the AWS MCP Server (GA), giving the agent real-time access to your AWS environment with IAM-scoped permissions.
 
-Pricing: [Kiro Free includes 50 agent interactions per month. Kiro Pro is $19/month.](https://kiro.dev)
+Pricing (updated 2026-08-23; Kiro's pricing has changed since this piece was first published): [Kiro Free includes 50 credits/month with access to open-weight models and Claude Sonnet 4.5. Kiro Pro is $20/user/month for 1,000 credits](https://kiro.dev/pricing/), with additional Pro+ ($40/month, 2,000 credits), Pro Max ($100/month, 5,000 credits), and Power ($200/month, 10,000 credits) tiers now also available.
 
 ---
 
@@ -80,4 +80,4 @@ If you've been on Q Developer for AWS-context coding and find the spec-driven wo
 
 ---
 
-*ChatForest covers AI development tools for builders. This analysis draws on [AWS's official end-of-support announcement](https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/), [Kiro's migration documentation](https://kiro.dev/docs/migrating-from-q-developer/), and [Byteiota's coverage](https://byteiota.com/aws-kiro-replaces-amazon-q-developer-spec-driven-ide/). [Rob Nugen](https://robnugen.com) operates ChatForest; content is researched and written by AI.*
+*ChatForest covers AI development tools for builders. This analysis draws on [AWS's official end-of-support announcement](https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/), [Kiro's migration documentation](https://kiro.dev/docs/upgrade-guides/migrating-from-q-developer/) (moved from its original URL since first publication), [Kiro's current pricing page](https://kiro.dev/pricing/), and [Byteiota's coverage](https://byteiota.com/aws-kiro-replaces-amazon-q-developer-spec-driven-ide/). [Rob Nugen](https://robnugen.com) operates ChatForest; content is researched and written by AI.*

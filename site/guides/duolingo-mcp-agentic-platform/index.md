@@ -5,11 +5,11 @@
 
 Duolingo isn't just a language-learning app anymore. Behind the scenes, its DevXAI team has built one of the most ambitious enterprise MCP deployments documented to date: an internal AI Slackbot connecting 180+ MCP tools, plus a no-code platform that lets any employee — not just engineers — create and deploy AI coding agents in under five minutes.
 
-Aaron Wang, Software Engineer on Duolingo's DevXAI team, presented the Slackbot architecture as a [keynote at MCP Dev Summit North America 2026](https://mcpdevsummitna26.sched.com/) on April 2. Separately, Duolingo has published detailed engineering blog posts on their [agentic workflow platform](https://blog.duolingo.com/agentic-workflows/) and [feature flag removal agent](https://blog.duolingo.com/buildingaiagents/), and open-sourced a [Slack MCP server](https://github.com/duolingo/slack-mcp) for the community.
+Aaron Wang, Software Engineer on Duolingo's DevXAI team ([his own speaker profile](https://sessionize.com/aaron-wang/) states the team name and describes leading the Slackbot's development), presented the Slackbot architecture as a [keynote at MCP Dev Summit North America 2026](https://mcpdevsummitna26.sched.com/event/2Hbf5/keynote-duolingos-ai-slackbot-an-enterprise-assistant-with-180+-mcp-tools-aaron-wang-software-engineer-duolingo-inc) on April 2. Separately, Duolingo has published detailed engineering blog posts on their [agentic workflow platform](https://blog.duolingo.com/agentic-workflows/) and [feature flag removal agent](https://blog.duolingo.com/buildingaiagents/), and open-sourced a [Slack MCP server](https://github.com/duolingo/slack-mcp) for the community.
 
 This guide synthesizes all four sources into a comprehensive case study. Our analysis draws on Duolingo's published blog posts, the MCP Dev Summit schedule, and the open-source repository — we research and analyze rather than testing implementations hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
-For related context, see our guides on [Pinterest's MCP Production Case Study](/guides/pinterest-mcp-production-case-study/), [Datadog's MCP Server Design Lessons](/guides/datadog-mcp-server-production-lessons/), [MCP in Production](/guides/mcp-in-production/), and [MCP Dev Summit 2026](/guides/mcp-dev-summit-2026-guide/).
+For related context, see [Pinterest Engineering's own writeup of their MCP ecosystem](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1), our review of [Datadog's MCP Server](/reviews/datadog-mcp-server/), [MCP in Production](/guides/mcp-in-production/), and [MCP Dev Summit 2026](/guides/mcp-dev-summit-2026-guide/). (Our earlier dedicated Pinterest and Datadog case-study guides were removed in an August 2026 low-traffic prune; linking their primary sources directly here instead.)
 
 ---
 
@@ -46,8 +46,8 @@ Most enterprise MCP deployments documented to date operate at far smaller scales
 | Company | MCP Tools | Context |
 |---------|-----------|---------|
 | **Duolingo** | 180+ | Internal Slackbot assistant |
-| **Pinterest** | Multiple domain-specific servers (Presto, Spark, Airflow, others) | Engineering automation |
-| **Datadog** | ~16 core + 13 optional toolsets | External developer tool |
+| **Pinterest** | Multiple domain-specific servers (Presto, Spark, Airflow, others); [no total published](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1) | Engineering automation |
+| **Datadog** | 140+ tools across 17+ toolsets, [still growing as of Aug 2026](https://docs.datadoghq.com/mcp_server/tools/) | External developer tool |
 
 Duolingo's 180+ tool count is significant because it tests MCP at a scale where tool selection becomes a core challenge. When an LLM has 180+ tools to choose from, it needs effective strategies to pick the right ones — context-aware routing, tool categorization, or dynamic tool loading.
 
@@ -72,7 +72,7 @@ Duolingo open-sourced one piece of this infrastructure: [duolingo/slack-mcp](htt
 - **HTTP transport** — production-ready, not STDIO-bound
 - **Multi-user** — individual authentication tokens per user
 
-The read-only design is intentional and aligns with a principle we've seen at Pinterest and other enterprise deployments: start with read access, add write access only where human-in-the-loop approval is in place.
+The read-only design is intentional and aligns with a principle we've seen at [Pinterest](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1) and other enterprise deployments: start with read access, add write access only where human-in-the-loop approval is in place.
 
 ---
 
@@ -116,7 +116,7 @@ The no-code interface lets any employee define a workflow by filling out a JSON 
 - **Target repository** — which codebase to modify
 - **Parameters** — optional configuration (branch name, file patterns, etc.)
 
-For workflows that follow common patterns (clone → modify → commit → PR), employees can create an agent in **under 5 minutes**. More complex multi-step workflows take **1–2 days**.
+For workflows that follow common patterns (clone → modify → commit → PR), employees can create an agent in **under 5 minutes**. More complex, Temporal-based workflows [typically take **1–2 days**](https://blog.duolingo.com/agentic-workflows/) for a new creator working from existing templates.
 
 Workflows are merged into a central repository and automatically appear in internal tooling, accessible company-wide.
 
@@ -139,14 +139,14 @@ LLM calls can fail, time out, or produce unexpected results. Without orchestrati
 - **Durability** — workflow state survives process restarts
 - **Isolation** — a failed LLM call in step 3 doesn't restart steps 1 and 2
 
-This is the same pattern we've seen in [Pinterest's MCP deployment](/guides/pinterest-mcp-production-case-study/), where Airflow MCP servers orchestrate multi-step workflows. The lesson: production MCP systems need workflow orchestration, whether through Temporal, Airflow, or similar tools.
+This is the same pattern described in [Pinterest's MCP deployment](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1), where Airflow MCP servers orchestrate multi-step workflows. The lesson: production MCP systems need workflow orchestration, whether through Temporal, Airflow, or similar tools.
 
 ### MCP Integration
 
 MCP extends the platform's capabilities beyond code manipulation:
 
-- **GitHub MCP** — already in production. Agents with GitHub MCP access can reference other codebases while modifying their own, significantly improving cross-repository problem-solving.
-- **Atlassian MCP** — planned. Would connect agentic workflows to project management, documentation, and issue tracking beyond the codebase.
+- **GitHub MCP** — [already in production](https://blog.duolingo.com/agentic-workflows/). Agents with GitHub MCP access can reference other codebases while modifying their own, significantly improving cross-repository problem-solving.
+- **Atlassian MCP** — [planned](https://blog.duolingo.com/agentic-workflows/). Would connect agentic workflows to project management, documentation, and issue tracking beyond the codebase.
 
 The MCP integration follows the standard pattern: MCP servers provide tool access, the CodingAgent library decides when to use them, and Temporal ensures reliable execution.
 
@@ -185,13 +185,13 @@ Using the agentic workflow platform, Duolingo built an agent that handles the fu
 2. **Agent action:** Clones the repository, finds all references, removes the flag and dead code paths, updates tests
 3. **Output:** A pull request ready for human review
 
-The agent uses Codex CLI (or Claude Code SDK) for the code reasoning and modification, with Temporal managing the workflow durability.
+The production agent [uses Codex CLI](https://blog.duolingo.com/buildingaiagents/) for the code reasoning and modification (earlier prototypes tried LangChain and fast-agent before settling on Codex CLI), with Temporal managing the workflow durability. The CodingAgent library that underlies the wider platform also supports Claude Code SDK as a swappable option, but Duolingo's published write-up of this specific agent describes only the Codex CLI path.
 
 ### What's Notable
 
 This isn't a demo — it's a production system handling a real engineering maintenance task. The agent creates PRs that go through standard code review, maintaining human oversight. The pattern — **AI generates, humans approve** — is consistent across all of Duolingo's agentic tools.
 
-Other documented agent use cases include:
+[Other documented agent use cases](https://blog.duolingo.com/agentic-workflows/) include:
 
 - **Experiment launch/shutdown** — automating A/B test lifecycle management
 - **Terraform infrastructure changes** — modifying infrastructure-as-code with automated PR creation
@@ -231,7 +231,7 @@ This is honest framing. The platform lowers the barrier for routine automation w
 
 With 180+ MCP tools, tool selection becomes a first-class problem. Approaches to managing large tool sets include:
 
-- **Tool categorization** — grouping tools by domain (what [Datadog calls "toolsets"](/guides/datadog-mcp-server-production-lessons/))
+- **Tool categorization** — grouping tools by domain (what [Datadog calls "toolsets"](https://docs.datadoghq.com/mcp_server/tools/))
 - **Dynamic tool loading** — loading only relevant tools based on conversation context
 - **Tool descriptions** — well-crafted descriptions that help the LLM pick correctly
 - **Routing layers** — pre-classifying user intent before presenting tool options
@@ -252,9 +252,9 @@ Duolingo's published materials leave several questions unanswered:
 | **How the Slackbot selects from 180+ tools** | Not detailed |
 | **Security model for tool access** | Not detailed |
 | **Observability beyond Slack notifications** | Not detailed |
-| **Docker-in-Docker constraint** on Temporal | Was expected to resolve by early 2026 |
+| **Docker-in-Docker constraint** on Temporal | [Duolingo's Dec 11, 2025 post](https://blog.duolingo.com/agentic-workflows/) said it was "expected to be solved within the next month"; no published update since, so current status is unverified |
 
-These gaps are normal for first-generation case studies. As with Pinterest's initial blog post, expect more operational detail to emerge over time.
+These gaps are normal for first-generation case studies. As with [Pinterest's initial writeup](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1), expect more operational detail to emerge over time.
 
 ---
 
@@ -262,12 +262,12 @@ These gaps are normal for first-generation case studies. As with Pinterest's ini
 
 | Dimension | Duolingo | Pinterest | Datadog |
 |-----------|----------|-----------|---------|
-| **MCP tool count** | 180+ | ~20 | ~16 core + 13 toolsets |
+| **MCP tool count** | [180+](https://mcpdevsummitna26.sched.com/event/2Hbf5/keynote-duolingos-ai-slackbot-an-enterprise-assistant-with-180+-mcp-tools-aaron-wang-software-engineer-duolingo-inc) | Multiple domain-specific servers; [no total published](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1) | [140+ across 17+ toolsets, growing](https://docs.datadoghq.com/mcp_server/tools/) |
 | **Primary use case** | Internal assistant + code automation | Engineering automation | External developer tool |
 | **Architecture** | Centralized Slackbot + workflow platform | Domain-specific servers + registry | Remote hosted server |
 | **Orchestration** | Temporal | Airflow MCP server | — |
-| **Human oversight** | PR review for code changes | Elicitation-based approval | — |
-| **Auth model** | OAuth 2.1 (Slack MCP) | JWT + service mesh | OAuth 2.1 |
+| **Human oversight** | PR review for code changes | [Elicitation-based approval](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1) | — |
+| **Auth model** | OAuth 2.1 (Slack MCP) | [JWT + service mesh](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1) | [OAuth 2.0](/reviews/datadog-mcp-server/) |
 | **Open source** | [slack-mcp](https://github.com/duolingo/slack-mcp) | — | — |
 | **LLM providers** | Codex + Claude | Not published | Not applicable |
 
@@ -290,9 +290,9 @@ Duolingo's deployment validates three trends we've been tracking:
 - [Duolingo Blog: Agentic Workflows](https://blog.duolingo.com/agentic-workflows/) — the no-code platform architecture
 - [Duolingo Blog: Building AI Agents](https://blog.duolingo.com/buildingaiagents/) — the feature flag removal agent
 - [duolingo/slack-mcp on GitHub](https://github.com/duolingo/slack-mcp) — open-source Slack MCP server
-- [MCP Dev Summit 2026 Schedule](https://mcpdevsummitna26.sched.com/) — Aaron Wang's keynote session
-- [Pinterest's MCP Production Case Study](/guides/pinterest-mcp-production-case-study/) — similar enterprise deployment
+- [MCP Dev Summit 2026 Schedule: Aaron Wang's keynote session](https://mcpdevsummitna26.sched.com/event/2Hbf5/keynote-duolingos-ai-slackbot-an-enterprise-assistant-with-180+-mcp-tools-aaron-wang-software-engineer-duolingo-inc)
+- [Pinterest Engineering: Building an MCP Ecosystem at Pinterest](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1) — similar enterprise deployment
 - [Uber's MCP Gateway](/guides/uber-mcp-gateway-agentic-engineering/) — centralized gateway turning any endpoint into an MCP server
-- [Datadog's MCP Server Design Lessons](/guides/datadog-mcp-server-production-lessons/) — tool design at scale
+- [ChatForest's Datadog MCP Server review](/reviews/datadog-mcp-server/) — tool design at scale
 - [MCP in Production](/guides/mcp-in-production/) — patterns across enterprise deployments
 

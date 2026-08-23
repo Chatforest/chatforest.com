@@ -6,12 +6,14 @@ og_description: "Kimi K2.7 Code: 1T MoE, 32B active, 256K context, open-weight M
 content_type: "Builder's Log"
 categories: ["Models", "AI Infrastructure", "Open Source"]
 tags: ["kimi", "kimi-k2-7", "moonshot-ai", "open-source", "mcpmark", "coding-agent", "tool-use", "anthropic-compatible", "builder-guide", "june-2026", "vllm", "mcp"]
-sources_audited: 2026-07-30
+sources_audited: 2026-08-23
 ---
 
 [Moonshot AI released Kimi K2.7 Code on June 12, 2026](https://www.kimi.com/resources/kimi-k2-7-code) — the latest release in the K2 line, following [K2 (July 2025)](https://huggingface.co/moonshotai/Kimi-K2), [K2.5 (January 2026), and K2.6 (April 2026)](https://huggingface.co/moonshotai/Kimi-K2.6). It is a coding-focused upgrade to K2.6 with two headline changes: [it beats Claude Opus 4.8 on MCPMark](https://huggingface.co/moonshotai/Kimi-K2.7-Code) (the MCP tool-calling benchmark), and it uses [30% fewer thinking tokens than K2.6](https://huggingface.co/moonshotai/Kimi-K2.7-Code) while scoring higher on the coding benchmarks Moonshot tracks. It also introduces [an Anthropic-compatible API endpoint](https://platform.kimi.ai/docs/guide/claude-code-kimi), which means K2.7 Code can run inside [Claude Code, Cline, and RooCode](https://apidog.com/blog/kimi-k2-7-code-api/) without modification.
 
 The base specs are the same as K2.6: [1 trillion parameters, 32 billion active per token, 256K context](https://huggingface.co/moonshotai/Kimi-K2.7-Code), [Modified MIT license](https://github.com/moonshotai/Kimi-K2/blob/main/LICENSE). Part of the **[Builder's Log](/builders-log/)**.
+
+> **Update (2026-08-23):** Moonshot released [Kimi K3](https://huggingface.co/moonshotai/Kimi-K3) on July 16, 2026 — a separate, larger 2.8T-parameter, 1M-context model — and it has since taken the top spot on MCPMark Verified: [Moonshot's own K3 model card](https://huggingface.co/moonshotai/Kimi-K3) reports 94.5%, and the live third-party [MCPMark Verified leaderboard](https://mcpmark.ai/leaderboard/verified) shows K3 at 96.06%, both well ahead of K2.7 Code's 81.1%–81.89%. GPT-5.5 and GPT-5.6-sol (~92.9% each) and Claude Fable 5 (86.6%) also now outscore K2.7 Code on the live leaderboard. Moonshot's own [Claude Code integration guide](https://platform.kimi.ai/docs/guide/claude-code-kimi) has been updated to default `ANTHROPIC_MODEL` to `kimi-k3` rather than `kimi-k2.7-code`. K2.7 Code is still available and the setup steps below still work, but it is no longer Moonshot's top model or the MCPMark leader — see the site's [Kimi K3 builder guide](/builders-log/kimi-k3-2-8t-open-moe-frontier-mcp-atlas-builder-guide/) for the newer model.
 
 ---
 
@@ -50,6 +52,8 @@ K2.7 is not a new architecture — it is a refined fine-tune of K2.6 with a spec
 | Kimi K2.6 | 72.8% | Open-weight |
 
 Source: [Moonshot's Kimi K2.7 Code model card](https://huggingface.co/moonshotai/Kimi-K2.7-Code), corroborated independently by [MarkTechPost's benchmark table](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/).
+
+**This was the state of the leaderboard at K2.7 Code's June 12, 2026 launch.** As of this update, K2.7 Code has fallen to 5th place on the live [MCPMark Verified leaderboard](https://mcpmark.ai/leaderboard/verified): [Kimi K3](https://huggingface.co/moonshotai/Kimi-K3) leads at 96.06% (94.5% on Moonshot's own K3 model card), followed by GPT-5.5 and GPT-5.6-sol (~92.9% each) and Claude Fable 5 (86.6%). K2.7 Code (81.1%–81.89%) still beats Claude Opus 4.8 (76.4%), which is the comparison this article was written around, but it is no longer the overall MCPMark leader.
 
 K2.7 Code's 4.7-point margin over Claude Opus 4.8 on MCPMark is not noise. Anthropic's flagship proprietary model is the current standard for agentic coding quality; K2.7 beating it on this tool-use-specific benchmark while costing [roughly 5x less per million input tokens ($0.95 vs. $5.00 standard-tier)](https://platform.claude.com/docs/en/about-claude/pricing) is a real signal. Worth noting: on Moonshot's own other internal benchmarks (Kimi Code Bench v2, Program Bench, MLS Bench Lite), [Opus 4.8 actually scores higher than K2.7 Code](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/) — MCPMark is the one benchmark in this set where K2.7 leads.
 
@@ -110,7 +114,7 @@ Tool calling uses the OpenAI format (`tools`, `tool_choice`, `tool_calls`). No s
 
 ### Anthropic-compatible endpoint (new in K2.7)
 
-K2.7 Code exposes a second endpoint that speaks the Anthropic Messages API spec. Claude Code, Cline, and RooCode all communicate over this spec, which means you can point them at K2.7 with environment variables. Per [Moonshot's own Claude Code integration guide](https://platform.kimi.ai/docs/guide/claude-code-kimi), the auth variable is `ANTHROPIC_AUTH_TOKEN`, not `ANTHROPIC_API_KEY`:
+K2.7 Code exposes a second endpoint that speaks the Anthropic Messages API spec. Claude Code, Cline, and RooCode all communicate over this spec, which means you can point them at K2.7 with environment variables. Per [Moonshot's own Claude Code integration guide](https://platform.kimi.ai/docs/guide/claude-code-kimi), the auth variable is `ANTHROPIC_AUTH_TOKEN`, not `ANTHROPIC_API_KEY`. Note: as of this update, that same guide now defaults its example `ANTHROPIC_MODEL` to `kimi-k3` rather than `kimi-k2.7-code` — K2.7 Code is still a supported model string, but explicitly set it as shown below rather than assuming it is the default:
 
 ```bash
 # Linux / macOS
@@ -183,7 +187,7 @@ For coding-focused workloads:
 
 | Scenario | Use |
 |---|---|
-| Running MCP tool-calling pipelines | K2.7 Code — MCPMark leader |
+| Running MCP tool-calling pipelines, want to beat Claude Opus 4.8 specifically | K2.7 Code — 81.1% MCPMark vs Opus 4.8's 76.4% (see update note above: [Kimi K3](https://huggingface.co/moonshotai/Kimi-K3) is now the overall MCPMark leader at 94.5–96.06%) |
 | High-volume agentic coding at scale | K2.7 Code — 30% less thinking spend |
 | Claude Code / Cline drop-in replacement | K2.7 Code — Anthropic-compatible endpoint |
 | Multi-turn coding sessions needing reasoning chain continuity | K2.7 Code — preserve_thinking is forced on |
@@ -219,6 +223,6 @@ K2.7 Code is developed and operated by Moonshot AI, a Beijing-based company. The
 - API ([Anthropic-compatible](https://platform.kimi.ai/docs/guide/claude-code-kimi)): `https://api.moonshot.ai/anthropic` (auth via `ANTHROPIC_AUTH_TOKEN`)
 - [Pricing](https://developers.cloudflare.com/workers-ai/models/kimi-k2.7-code/): $0.95 input / $4.00 output / $0.19 cached input (per million tokens)
 - Context: [256K tokens](https://huggingface.co/moonshotai/Kimi-K2.7-Code)
-- [MCPMark Verified](https://huggingface.co/moonshotai/Kimi-K2.7-Code): 81.1% (vs [Claude Opus 4.8 at 76.4%](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/))
+- [MCPMark Verified](https://huggingface.co/moonshotai/Kimi-K2.7-Code): 81.1% (vs [Claude Opus 4.8 at 76.4%](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/)) — no longer the overall leader; [Kimi K3](https://huggingface.co/moonshotai/Kimi-K3) now tops the [live leaderboard](https://mcpmark.ai/leaderboard/verified) at 94.5–96.06% (see update note above)
 - License: [Modified MIT (attribution above 100M MAU or $20M/month revenue)](https://github.com/moonshotai/Kimi-K2/blob/main/LICENSE)
 - [Released: June 12, 2026](https://www.kimi.com/resources/kimi-k2-7-code)
