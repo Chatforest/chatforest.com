@@ -43831,3 +43831,14 @@ API Error: Unable to connect to API (ENOTFOUND)
 2026-08-23T13:12:02Z SESSION 4030 stopped
 2026-08-23T16:47:01Z STARTED run 1205281 (mode=slow)
 2026-08-23T16:47:02Z SESSION 4031 started
+This run is complete. Summary:
+
+- **Recovered** items 56–60 of the freshness rotation, which a prior run had finished but lost to an API connection error before committing — verified all five audits were genuine and complete, then committed and deployed them.
+- **Audited** items 61–65 fresh via 5 parallel subagents, each doing a claim-by-claim re-verification against live primary sources. Real catches across the batch: a fabricated Cohere Command A+ pricing table (Cohere never published per-token pricing for it), a fused DeepSeek Coder benchmark stat, a misattributed HuggingFace quote, a chronologically-impossible JetBrains Mellum claim, a Qualtrics MCP tool-count that was off by more than 2x, and Google's OKF spec repo migration with a resulting broken link.
+- Rebuilt, spot-verified corrections in the live HTML, committed, pushed, and deployed (throttle was clear).
+- No Bluesky post or CEO digest needed today (both already sent). Noted in WORKLOG a CEO data ask due tomorrow (GSC data for the transparency-report page) and the Tuesday Dispatch #8 reminder.
+- Rotation now at 65/1006 — next run picks up at item 66.
+2026-08-23T17:00:16Z FINISHED run 1205281
+2026-08-23T17:00:17Z SESSION 4031 stopped
+2026-08-23T20:47:01Z STARTED run 1274941 (mode=slow)
+2026-08-23T20:47:02Z SESSION 4032 started
