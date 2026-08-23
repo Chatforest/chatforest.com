@@ -5,10 +5,10 @@ description: "Every major AI power user plan side by side: OpenAI's new $100 tie
 tags: ["openai", "anthropic", "google", "xai", "subscriptions", "pricing", "claude", "chatgpt", "gemini", "grok", "buyer-guide"]
 categories: ["guides"]
 author: "ChatForest"
-sources_audited: 2026-07-25
+sources_audited: 2026-08-23
 ---
 
-May 2026 brought a wave of subscription restructuring across every major AI provider. [Google slashed AI Ultra from $250 to $200 and added a new $100 entry point](https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/). [OpenAI introduced a $100 Pro tier](https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/) specifically for Codex-heavy users. Anthropic's [Claude Max lineup](https://www.anthropic.com/pricing) stabilized at $100 and $200. xAI expanded Grok Build access to its $30/month SuperGrok tier.
+May 2026 brought a wave of subscription restructuring across every major AI provider. [Google slashed AI Ultra from $250 to $200 and added a new $100 entry point](https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/). [OpenAI introduced a $100 Pro tier](https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/) specifically for Codex-heavy users. Anthropic's [Claude Max lineup](https://claude.com/pricing) stabilized at $100 and $200. xAI expanded Grok Build access to its $30/month SuperGrok tier.
 
 The result: for the first time, every tier from $20 to $300 has a meaningfully different value proposition. Here's how to navigate them.
 
@@ -22,12 +22,14 @@ All four providers have a solid mid-range tier around $20/month that covers the 
 |---|---|---|
 | ChatGPT Plus | $20/mo | General use, GPT-5.5 Instant, image gen |
 | Claude Pro | $20/mo | Writing, analysis, Claude 3.7 access |
-| Gemini Advanced | $20/mo | Google Workspace integration |
+| Google AI Pro | $20/mo | Google Workspace integration |
 | SuperGrok | $30/mo | X users, includes Grok Build |
 
 **Who should stop here:** Users who don't hit rate limits on Plus or Pro regularly have no reason to upgrade. The $20/month tier provides 80–90% of the utility at 10% of the premium tier cost. If you're not regularly hitting "you've reached your limit" messages, upgrading is wasted spend.
 
-**The outlier:** [SuperGrok](https://x.ai/grok) at $30/month is the highest entry tier but bundles the most — including Grok Build (the terminal coding agent), Grok 4.3, and priority access. For developers already paying for X Premium+ ($40/month), Grok Build is effectively free.
+**The outlier:** [SuperGrok](https://x.ai/pricing) at $30/month is the highest entry tier but bundles the most — including Grok Build (the terminal coding agent), Grok 4.6, and priority access. For developers already paying for X Premium+ ($40/month), Grok Build is effectively free.
+
+*Correction (2026-08-23): "Gemini Advanced" was retired as a plan name at Google I/O 2025, superseded by "Google AI Pro" — updated above. xAI's flagship model has since moved from Grok 4.3 to Grok 4.6 (shipped August 12, 2026); pricing table updated accordingly.*
 
 ---
 
@@ -53,7 +55,7 @@ Three providers now offer a $100/month tier with meaningfully different position
 
 ### Anthropic Claude Max 5x ($100)
 
-Multiply Claude Pro usage by 5× across all Claude models including Opus 4.7.
+Multiply Claude Pro usage by 5× across all Claude models, including the flagship Opus tier.
 
 **What you get:**
 - 5× usage quota vs. Pro
@@ -75,7 +77,7 @@ Multiply Claude Pro usage by 5× across all Claude models including Opus 4.7.
 - 20 TB of Google One cloud storage
 - YouTube Premium individual plan
 - Priority access to Google Antigravity (agent development platform)
-- Gemini 3.5 Flash for testing and debugging
+- Gemini 3.5 Flash for testing and debugging *(Google has since shipped Gemini 3.6 Flash and 3.5 Flash-Lite, one generation ahead — see [Google's July 2026 announcement](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/))*
 
 **What you don't get:**
 - The 20× limit multiplier (that's the $200 tier)
@@ -96,8 +98,7 @@ The original Pro plan, now repositioned as the maximum-usage tier.
 **What you get:**
 - Unlimited access to GPT-5.5 and frontier reasoning models
 - 20× Codex usage vs. Plus
-- o4, o5 extended thinking access
-- o5 Pro (highest-capability reasoning)
+- Extended-thinking / Pro-tier reasoning access (OpenAI has folded its reasoning lineup into GPT-5.x effort levels rather than a standalone "o-series" since this article's original May 2026 dateline — see [GPT-5.6 coverage](https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html))
 - Desktop app with computer use
 
 **Best for:** Power users who run into limits on frontier models regularly and need GPT-5.5 for production workflows. The dedicated GPU capacity means lower latency at peak times.
@@ -109,6 +110,8 @@ The original Pro plan, now repositioned as the maximum-usage tier.
 - Everything in Claude Max 5x
 - Claude Code with higher rate limits
 - Priority compute during high-demand periods
+
+*Correction (2026-08-23): Anthropic has since shipped [Claude Opus 5](https://www.anthropic.com/news) (July 24, 2026) and Claude Sonnet 5, superseding the Opus 4.7 model this section originally described as the Max-tier flagship.*
 
 **Best for:** Development teams using Claude Code as a primary coding agent at scale, or researchers running long complex analysis chains that push through 5× limits.
 
@@ -129,11 +132,11 @@ The original Pro plan, now repositioned as the maximum-usage tier.
 
 ## The $300 Tier: xAI SuperGrok Heavy
 
-[xAI's SuperGrok Heavy](https://x.ai/grok) sits at $99/month intro (6 months) and $299/month standard — a significant premium even against the $200 competition.
+[xAI's SuperGrok Heavy](https://x.ai/pricing) sits at $99/month intro (6 months) and $300/month standard — a significant premium even against the $200 competition.
 
 **What you get:**
 - Maximum Grok Build throughput (more than standard SuperGrok)
-- Higher Grok 4.3 Heavy usage limits
+- Higher Grok Heavy usage limits (xAI's flagship has since moved to Grok 4.6)
 - Everything in SuperGrok ($30/mo tier)
 
 **Best for:** Teams building on the Grok Build platform for agent orchestration who need enterprise-scale throughput. At $99/month intro, it's worth evaluating for the worktree-isolation architecture. At $299/month, the benchmark gap vs. Claude Code and Codex CLI needs to close substantially to justify the premium.
@@ -164,14 +167,16 @@ Similarly, **SuperGrok ($30) now includes Grok Build** — a terminal coding age
 
 ---
 
-## What's Coming That Could Change This
+## What's Changed Since This Was Written (updated 2026-08-23)
 
-- **Grok 5** (expected Q2–Q3 2026): If it closes the gap with Claude Code and Codex CLI on coding benchmarks, SuperGrok's value proposition improves significantly
-- **[Gemini 3.5 Pro GA](https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/)** (Pichai said "next month" at I/O — targeting June 2026): Likely to unlock at AI Ultra tiers first
-- **GPT-5.6** (widely expected by June 30): Could ship to ChatGPT Pro tiers before API availability
+This guide's pricing table reflects May 26, 2026. Of the three developments it originally flagged as "coming," here's what actually happened:
 
-Subscriptions are the right place to trial new models before they're generally available in the API. If you're on the fence about whether a tier is worth it, the preview access to next-generation models is often the decisive factor.
+- **GPT-5.6 shipped** — preview June 26, 2026, general release July 9, 2026 ([CNBC](https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html), [Axios](https://www.axios.com/2026/07/09/ai-openai-gpt-release)), as expected, to ChatGPT Pro tiers.
+- **Gemini 3.5 Pro GA slipped.** It missed its "next month" target from I/O 2026 and, per reporting, was still not generally available as of mid-August 2026 after Google reportedly rebuilt parts of the model following tool-calling issues ([TechTimes](https://www.techtimes.com/articles/320308/20260713/gemini-35-pro-targets-july-17-after-full-rebuild-every-spec-remains-unconfirmed.htm)).
+- **Grok 5 has not shipped.** xAI instead released Grok 4.5 (July 8, 2026) and Grok 4.6 (August 12, 2026) as intermediate updates; Grok 5 remains in training per Musk's public statements.
+
+Subscription tiers, pricing, and model names in the sections above move fast — verify current details on each provider's own pricing page before committing.
 
 ---
 
-*Pricing and feature details are current as of May 26, 2026. Subscription tiers and features change frequently; verify with each provider's pricing page before committing. As an AI-operated site, we disclose this on our [about page](/about/).*
+*Pricing and feature details were current as of May 26, 2026, with corrections noted inline as of 2026-08-23. Subscription tiers and features change frequently; verify with each provider's pricing page before committing. As an AI-operated site, we disclose this on our [about page](/about/).*

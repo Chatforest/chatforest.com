@@ -3,14 +3,14 @@ title: "Mistral Medium 3.5 Review: 128B Dense, 77.6% SWE-Bench, and a Three-Mode
 date: 2026-05-13T23:00:00+09:00
 description: "Mistral Medium 3.5 (April 29, 2026) is Mistral AI's most capable open-weights model to date: 128B dense parameters, 256K context, multimodal, and adjustable reasoning built in. It replaces three prior Mistral models — Medium 3.1, Magistral, and Devstral 2 — with a single API endpoint. SWE-Bench Verified 77.6%. $1.50/$7.50 per million tokens. Modified MIT license with a $20M/month revenue cap. The consolidation is real. So is the price increase. Rating: 3.5/5."
 og_description: "Mistral Medium 3.5 (April 29, 2026): 128B dense, 256K context, multimodal, adjustable reasoning. SWE-Bench Verified 77.6%. τ³-Telecom 91.4%. API at $1.50/$7.50 per M tokens — 3.75× more than Medium 3. Modified MIT license: $20M/month revenue cap. Replaces Medium 3.1 + Magistral + Devstral 2. Self-host requires ~256GB VRAM (BF16) or 4×H100. Rating: 3.5/5."
-card_description: "Mistral Medium 3.5 (released April 29, 2026) is Mistral AI's new flagship open-weights model: 128B parameters, all active (dense architecture, not MoE), 256K context window, text and image input. Released simultaneously with Vibe remote agents and Le Chat Work Mode. Key claim: unifies instruction-following, reasoning (via adjustable reasoning_effort parameter), and agentic coding into a single model, replacing three prior Mistral products — Mistral Medium 3.1 (in Le Chat), Magistral (in Le Chat reasoning mode), and Devstral 2 (in the Vibe coding agent). SWE-Bench Verified: 77.6% (above Claude 4.5 Opus 76.8%). τ³-Telecom agentic benchmark: 91.4%. Artificial Analysis Intelligence Index: 39.23 (ranked ~#20 overall — well below Claude Opus 4.7 at 57.28 and Gemini 3.1 Pro at 57.18). API speed: 163.4 tokens/second. Available on Mistral La Plateforme and NVIDIA NIM. HuggingFace: mistralai/Mistral-Medium-3.5-128B. License: Modified MIT — companies with >$20M/month global revenue must obtain a commercial license from Mistral. Self-hosting: ~256GB VRAM at BF16 (4×H100 80GB or equivalent); quantized GGUFs available from Unsloth (~70GB at Q4). Early release included a YaRN long-context bug, patched ~May 1. Note: a smaller sibling, Mistral Small 4 (119B MoE, only 6B active parameters), was released March 16, 2026 under Apache 2.0 with no commercial restrictions. Rating: 3.5/5."
+card_description: "Mistral Medium 3.5 (released April 29, 2026) is Mistral AI's new flagship open-weights model: 128B parameters, all active (dense architecture, not MoE), 256K context window, text and image input. Released simultaneously with Vibe remote agents and Le Chat Work Mode. Key claim: unifies instruction-following, reasoning (via adjustable reasoning_effort parameter), and agentic coding into a single model, replacing three prior Mistral products — Mistral Medium 3.1 (in Le Chat), Magistral (in Le Chat reasoning mode), and Devstral 2 (in the Vibe coding agent). SWE-Bench Verified: 77.6% (per Mistral's own announcement; trails Claude Opus 4.5's Anthropic-reported 80.9%). τ³-Telecom agentic benchmark: 91.4%. Artificial Analysis Intelligence Index at launch: 39.23, well below frontier tier — index methodology and competitor scores have since shifted, so treat as a point-in-time snapshot rather than a current comparison. API speed at launch: 163.4 tokens/second (also a snapshot; current AA figures differ). Available on Mistral La Plateforme and NVIDIA NIM. HuggingFace: mistralai/Mistral-Medium-3.5-128B. License: Modified MIT — companies with >$20M/month global revenue must obtain a commercial license from Mistral. Self-hosting: ~256GB VRAM at BF16 (4×H100 80GB or equivalent); quantized GGUFs available from Unsloth (~70GB at Q4). Early release included a YaRN long-context bug, patched ~May 1. Note: a smaller sibling, Mistral Small 4 (119B MoE, only 6B active parameters), was released March 16, 2026 under Apache 2.0 with no commercial restrictions. Rating: 3.5/5."
 tags: ["llm", "open-weight", "mistral", "dense", "agentic-ai", "coding", "multimodal", "reasoning", "long-context", "swe-bench"]
 categories: ["reviews"]
 rating: 3
 ratingHalf: true
 author: "ChatForest"
 last_refreshed: 2026-05-13
-sources_audited: 2026-07-26
+sources_audited: 2026-08-23
 ---
 
 **At a glance:** Mistral Medium 3.5, released April 29, 2026. 128B dense parameters, all active. 256K context. Text + image input. Adjustable reasoning. SWE-Bench Verified: 77.6%. API at $1.50/$7.50 per million tokens. Modified MIT license. Self-hosting requires ~256GB VRAM. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -105,17 +105,18 @@ Mistral's benchmark reporting for Medium 3.5 is narrower than their prior major 
 
 This is Mistral's headline claim and their most defensible competitive number. SWE-Bench Verified tests real GitHub software engineering tasks — identifying and patching bugs in open-source Python repos — under independently verified conditions.
 
-For context at release:
+For context at release, per [Mistral's own announcement](https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/):
 
 | Model | SWE-Bench Verified |
 |---|---|
-| Mistral Medium 3.5 | **77.6%** |
-| Claude 4.5 Opus (high reasoning) | 76.8% |
-| Gemini 3.1 Flash (high reasoning) | 75.8% |
+| Mistral Medium 3.5 | **77.6%** ([Mistral](https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/)) |
+| Claude Opus 4.5 | 80.9% ([Anthropic](https://www.anthropic.com/news/claude-opus-4-5)) |
 | DeepSeek V4 Pro | 80.6% |
 | Qwen 3.6 Max Preview | ~82% |
 
-Medium 3.5 leads Claude 4.5 Opus by a narrow 0.8% on this specific benchmark, which is a legitimate achievement for an open-weights model. Notably, it arrives at this score **without** the dedicated reasoning-specialist architecture of most high-SWE-Bench models.
+*Correction (2026-08-23): this table previously listed "Claude 4.5 Opus (high reasoning)" at 76.8% and "Gemini 3.1 Flash (high reasoning)" at 75.8%, with the claim that Medium 3.5 leads Claude by 0.8 points. Neither figure could be traced to a source that supports it — Anthropic's own announcement states Claude Opus 4.5 scored **80.9%** on SWE-Bench Verified, meaning Medium 3.5 actually trails Claude Opus 4.5 by more than 3 points on this benchmark, not ahead of it. The Gemini row has been removed rather than corrected, since no primary source could be confirmed for a specific "Gemini 3.1 Flash" SWE-Bench figure.*
+
+Medium 3.5's 77.6% is nonetheless a strong result for an open-weights model without a dedicated reasoning-specialist architecture — it's competitive with, if not ahead of, the frontier closed-weight pack, just not ahead of Claude Opus 4.5 specifically.
 
 The important caveat: DeepSeek V4 Pro and Qwen 3.6 Max Preview both exceed 77.6% at competitive pricing — V4 Pro at $1.74/$3.48 per million tokens and Qwen 3.6 at significantly lower rates. Medium 3.5's $1.50/$7.50 output pricing makes direct SWE-Bench comparison more complex when cost-efficiency is a factor.
 
@@ -127,19 +128,21 @@ The τ³-Telecom benchmark tests sustained multi-tool agentic capability in tele
 
 Mistral did not publish GPQA Diamond, MMLU, Math-500, AIME, LiveCodeBench, or HumanEval scores in their launch materials. This is unusual for a flagship model launch. The SWE-Bench and τ³-Telecom emphasis is clearly strategic — both benchmarks show the model well, but neither gives a complete picture of general reasoning or scientific capability.
 
-Independent evaluation by Artificial Analysis provides the broader view:
+Independent evaluation by Artificial Analysis provides the broader view. At launch (May 2026):
 
-| Model | AI Intelligence Index | Speed (t/s) |
+| Model | AI Intelligence Index (at launch) | Speed (t/s, at launch) |
 |---|---|---|
 | GPT-5.5 | 60.24 | — |
 | Claude Opus 4.7 | 57.28 | — |
 | Gemini 3.1 Pro | 57.18 | — |
 | Qwen 3.6 Max Preview | 51.81 | — |
-| **Mistral Medium 3.5** | **see [AA page](https://artificialanalysis.ai/models/mistral-medium-3-5)** | **163.4** |
+| **Mistral Medium 3.5** | **39.23** | **163.4** |
 
-The [Artificial Analysis Intelligence Index for Mistral Medium 3.5](https://artificialanalysis.ai/models/mistral-medium-3-5) places it well below the frontier tier (GPT-5.5, Claude Opus 4.7, Gemini 3.1 Pro) — consistent with Mistral's narrow SWE-Bench and τ³-Telecom benchmark selection omitting GPQA, MMLU, and science evals. The Artificial Analysis index incorporates a broader evaluation suite (GPQA Diamond, HLE, SciCode, and others) that reveals the narrow benchmark selection in Mistral's announcement.
+*Correction (2026-08-23): [Artificial Analysis's live page](https://artificialanalysis.ai/models/mistral-medium-3-5) now shows Mistral Medium 3.5 at an Intelligence Index of ~30 and a speed of ~150.5 t/s (ranked ~8th in its size class), both revised down from the launch-week figures above — AA has since updated its Intelligence Index methodology (referred to elsewhere as "v4.0"), and competitor scores have moved too. The table above reflects the original at-launch snapshot for historical accuracy; check the live AA page for current standing rather than treating these numbers as current.*
 
-Speed is a genuine advantage: 163.4 tokens/second ranks 9th fastest among the 61 models in the evaluation. For latency-sensitive agentic applications, that's a meaningful differentiator against slower frontier models.
+The Artificial Analysis Intelligence Index for Mistral Medium 3.5 placed it well below the frontier tier (GPT-5.5, Claude Opus 4.7, Gemini 3.1 Pro) at launch — consistent with Mistral's narrow SWE-Bench and τ³-Telecom benchmark selection omitting GPQA, MMLU, and science evals. The Artificial Analysis index incorporates a broader evaluation suite (GPQA Diamond, HLE, SciCode, and others) that reveals the narrow benchmark selection in Mistral's announcement.
+
+Speed was a genuine advantage at launch: 163.4 tokens/second ranked 9th fastest among the 61 models in the evaluation at the time. For latency-sensitive agentic applications, that was a meaningful differentiator against slower frontier models — though as noted above, both the ranking and raw figure have since shifted on AA's live leaderboard.
 
 ---
 
@@ -260,7 +263,7 @@ The critical camp raised several recurring concerns:
 
 **"A little sad since they once were prominent":** A minority but notable reaction pointing to Mistral's earlier reputation for efficiency innovation with Mixtral MoE, and questioning whether a large dense model is the right architectural direction in 2026.
 
-HuggingFace community (317 likes) was more constructive: deployment-focused discussions, successful reports of 30 t/s on 2× RTX Pro 6000 hardware, research community interest (requests for academic citation DOI), and quantized format support questions.
+HuggingFace community (317 likes at launch, since grown to 427+ as of this audit) was more constructive: deployment-focused discussions, successful reports of 30 t/s on 2× RTX Pro 6000 hardware, research community interest (requests for academic citation DOI), and quantized format support questions.
 
 ---
 
@@ -323,8 +326,8 @@ For teams already in the Mistral ecosystem building with Vibe or Le Chat: the co
 | **Reasoning** | Adjustable (`reasoning_effort` param) |
 | **SWE-Bench Verified** | 77.6% |
 | **τ³-Telecom** | 91.4% |
-| **AI Intelligence Index** | [Below frontier tier](https://artificialanalysis.ai/models/mistral-medium-3-5) (Artificial Analysis) |
-| **API speed** | 163.4 t/s (9th fastest) |
+| **AI Intelligence Index** | [Below frontier tier](https://artificialanalysis.ai/models/mistral-medium-3-5) (Artificial Analysis; 39.23 at launch, ~30 as of this audit — check live page for current) |
+| **API speed** | 163.4 t/s at launch (9th fastest); ~150.5 t/s as of this audit |
 | **API pricing** | $1.50 input / $7.50 output per M tokens |
 | **License** | Modified MIT ($20M/month revenue cap) |
 | **HuggingFace** | [mistralai/Mistral-Medium-3.5-128B](https://huggingface.co/mistralai/Mistral-Medium-3.5-128B) |

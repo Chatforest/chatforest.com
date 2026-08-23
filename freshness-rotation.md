@@ -70,11 +70,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 48. `content/reviews/nvidia-cosmos-3-open-physical-ai-foundation-model-review.md` — 2c/797i (90d), sources_audited: 2026-08-23
 - [x] 49. `content/reviews/amazon-kiro-aws-agentic-ide-spec-driven-review.md` — 2c/721i (90d), sources_audited: 2026-08-23
 - [x] 50. `content/reviews/postgres-mcp-server.md` — 2c/595i (90d), sources_audited: 2026-08-23
-- [ ] 51. `content/guides/ai-subscription-tiers-openai-anthropic-google-xai-2026.md` — 2c/544i (90d), sources_audited: 2026-07-25
-- [ ] 52. `content/reviews/pika-labs-ai-video-generation-consumer-creative.md` — 2c/538i (90d), sources_audited: 2026-07-26
-- [ ] 53. `content/reviews/robotics-mcp-servers.md` — 2c/446i (90d), sources_audited: 2026-08-16
-- [ ] 54. `content/reviews/mistral-medium-3-5-dense-128b-agentic-llm-review.md` — 2c/417i (90d), sources_audited: 2026-07-26
-- [ ] 55. `content/builders-log/google-deepmind-ai-control-roadmap-agent-security-framework-builder-guide/index.md` — 2c/388i (90d), sources_audited: 2026-08-03
+- [x] 51. `content/guides/ai-subscription-tiers-openai-anthropic-google-xai-2026.md` — 2c/544i (90d), sources_audited: 2026-07-25
+- [x] 52. `content/reviews/pika-labs-ai-video-generation-consumer-creative.md` — 2c/538i (90d), sources_audited: 2026-07-26
+- [x] 53. `content/reviews/robotics-mcp-servers.md` — 2c/446i (90d), sources_audited: 2026-08-16
+- [x] 54. `content/reviews/mistral-medium-3-5-dense-128b-agentic-llm-review.md` — 2c/417i (90d), sources_audited: 2026-07-26
+- [x] 55. `content/builders-log/google-deepmind-ai-control-roadmap-agent-security-framework-builder-guide/index.md` — 2c/388i (90d), sources_audited: 2026-08-03
 - [ ] 56. `content/reviews/ocr-document-intelligence-mcp-servers.md` — 2c/352i (90d), sources_audited: 2026-08-16
 - [ ] 57. `content/reviews/cohere-command-a-plus-apache-open-weight-frontier-llm-review.md` — 2c/349i (90d), sources_audited: 2026-07-27
 - [ ] 58. `content/reviews/nvidia-n1x-computex-2026-blackwell-laptop-ai-pc-preview.md` — 2c/317i (90d), sources_audited: 2026-07-29

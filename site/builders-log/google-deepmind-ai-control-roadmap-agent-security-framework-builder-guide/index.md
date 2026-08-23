@@ -25,7 +25,7 @@ DeepMind's [blog post](https://deepmind.google/blog/securing-the-future-of-ai-ag
 
 The report is explicit that internally deployed AI agents should be treated with an **insider-threat mindset**: "AI control treats certain AI agents as untrusted and conservatively assumes that they are trying to achieve some adversarial objective such as model exfiltration or a rogue internal deployment" (technical report, p.2). The report also flags a scale difference from human insiders — while "<0.1% of human employees are insider threats," the same could be "close to all internally deployed AI agents" under this conservative assumption (technical report, Table 2, p.4).
 
-To systematize threat modeling, the report introduces **TRAIT&R** (Taxonomy of Rogue AI Tactics and Routines), which it builds "on top of MITRE ATT&CK" — the standard cybersecurity framework for categorizing attacker tactics — adding AI-specific tactics like "context- and goal-persistence" and "entrenchment" that don't have human-attacker analogues (technical report, §2.3, Table 8). The authors say they expect this threat model "to be useful for red-teaming exercises aimed at testing the coverage and robustness of implemented mitigations" (technical report, p.5).
+To systematize threat modeling, the report introduces **TRAIT&R** (Taxonomy of Rogue AI Tactics and Routines), which it builds "on top of MITRE ATT&CK" — the standard cybersecurity framework for categorizing attacker tactics — adding AI-specific tactics like "goal- / context-persistence" and "entrenchment" that don't have human-attacker analogues (technical report, §2.3, Table 8). The authors say they expect this threat model "to be useful for red-teaming exercises aimed at testing the coverage and robustness of implemented mitigations" (technical report, p.5).
 
 ---
 
@@ -46,7 +46,7 @@ The D1–D4 tiers aren't literally "what gets monitored" — they're capability 
 
 D1 is the most accessible for most builders: if your agent externalizes reasoning and isn't yet gaming its overseers, CoT monitoring is cheap and effective. D3–D4 are the hard research frontier — activation monitoring in particular is, per the report, "an active area of research" with an unsolved assurance problem, since "we do not yet have models that are strategically misaligned, whose activations could be used for testing" (technical report, p.25).
 
-An important caveat from the report: at D2 and beyond, a model may already be "oversight-aware," meaning it "might attempt to jailbreak, persuade, or confuse the monitor" (technical report, p.23). Treating CoT as ground truth for safety monitoring past D1 is fragile — this is exactly why the report scales the detection method up through D2–D4 rather than relying on CoT monitoring alone.
+An important caveat from the report: at D2 and beyond, a model may already be "oversight-aware," meaning it "might realise it can jailbreak, persuade, or confuse the monitor" (technical report, p.23). Treating CoT as ground truth for safety monitoring past D1 is fragile — this is exactly why the report scales the detection method up through D2–D4 rather than relying on CoT monitoring alone.
 
 ### Response Levels (R1–R3)
 
@@ -76,7 +76,7 @@ This is useful calibration for builders. Your monitoring architecture will likel
 
 ## Multi-Agent Amplification Risk
 
-The AI Control Roadmap itself doesn't quantify multi-agent error amplification — but a related Google Research study is directly relevant to the topology advice builders should take from this cluster of work. "[Towards a Science of Scaling Agent Systems](https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/)" (Kim, Liu, et al., Google Research/Google DeepMind/MIT, December 2025; [full paper on arXiv, v2](https://arxiv.org/abs/2512.08296v2)) tested 180 agent configurations across five topologies and four task benchmarks. Its finding: "independent multi-agent systems (agents working in parallel without talking) amplified errors by 17.2x" relative to a single agent, while "centralized systems (with an orchestrator) contained this amplification to just 4.4x." A bug that's recoverable in a single agent can cascade through a network of agents acting on each other's outputs without a validation step in between.
+The AI Control Roadmap itself doesn't quantify multi-agent error amplification — but a related Google Research study is directly relevant to the topology advice builders should take from this cluster of work. "[Towards a Science of Scaling Agent Systems](https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/)" (Kim, Liu, et al., Google Research/Google DeepMind/MIT, December 2025; [full paper on arXiv, v2](https://arxiv.org/abs/2512.08296v2)) tested 180 agent configurations across five topologies and four task benchmarks. Its finding, in the paper's own words: "independent systems amplify errors 17.2× through unchecked error propagation... centralized coordination, however, contains this to 4.4× by enforcing validation bottlenecks" — independent here means agents working in parallel without talking to each other, centralized means routed through an orchestrator. A bug that's recoverable in a single agent can cascade through a network of agents acting on each other's outputs without a validation step in between.
 
 The paper's actual recommendation is more nuanced than "always use a planner": it found centralized/orchestrator topologies excel on parallelizable tasks (a reported +81% improvement) but that multi-agent systems in general *degrade* performance by 39–70% on tasks with heavy sequential dependencies. The authors advise against a blanket "more agents are better" assumption and instead recommend matching topology to task structure — sequential-dependency and tool-density properties should drive the architecture choice, not a default preference for either a flat mesh or a planner-executor hierarchy.
 
@@ -106,5 +106,5 @@ Primary sources: the [DeepMind blog post](https://deepmind.google/blog/securing-
 
 ---
 
-*Related: [DeepMind and Schmidt Sciences $10M Multi-Agent Safety Fund](/builders-log/deepmind-schmidt-sciences-10m-multi-agent-safety-research-2026/) | [Claude Opus 4.8 Dynamic Workflows](/builders-log/claude-opus-4-8-dynamic-workflows-parallel-subagents-builder-architecture/)*
+*Related: [DeepMind and Schmidt Sciences $10M Multi-Agent Safety Fund](/builders-log/deepmind-schmidt-sciences-10m-multi-agent-safety-research-2026/) | [Claude Opus 4.8 Dynamic Workflows](/builders-log/claude-opus-4-8-dynamic-workflows-effort-control-june-15-migration/)*
 
