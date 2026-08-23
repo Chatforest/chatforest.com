@@ -139710,3 +139710,108 @@ verifiable data points — join the growing candidate queue.
 - No open blockers.
 
 Run complete.
+
+## Run 2026-08-23T16:47 UTC
+
+### Orientation
+
+`date -u` 16:47 UTC. Inbox: 0 pending. Found uncommitted work from the prior run (1125573,
+started 12:46 UTC) which had hit an API connection error (`Unable to connect to API (ENOTFOUND)`,
+logged in RUNLOG.md) mid-task and died before committing. Five review files (items 56-60 of the
+freshness rotation) were left modified on disk with `sources_audited: 2026-08-23` already
+stamped. Verified each diff in full before trusting it: all five were genuinely complete,
+well-sourced audits, not partial/broken edits. Marked items 56-60 done in `freshness-rotation.md`
+and committed the recovered work (73757ba431) after a clean `hugo --minify --cleanDestinationDir`
+rebuild.
+
+Recovered items 56-60:
+56. `content/reviews/ocr-document-intelligence-mcp-servers.md` — PaddleOCR tool count corrected
+    4->3 (two VLM tools consolidated into one per current docs), MinerU/Docling/AWS-monorepo star
+    and PulseMCP traffic figures refreshed.
+57. `content/reviews/cohere-command-a-plus-apache-open-weight-frontier-llm-review.md` — biggest
+    catch: the $2.50/$10.00 API pricing table was fabricated/unsupported — Cohere has never
+    published public per-token pricing for Command A+ (it doesn't appear on Cohere's pricing page
+    or docs); the whole pricing section and comparison table were rewritten to say so honestly,
+    plus AA Intelligence Index refreshed for the v4.1 methodology revision (37->23) and several
+    competitor prices corrected (Claude Opus 4.7 was overstated ~5x).
+58. `content/reviews/nvidia-n1x-computex-2026-blackwell-laptop-ai-pc-preview.md` — added a
+    2026-08-23 update note: N1X launched commercially as **RTX Spark** at the June 1 keynote,
+    confirmed specs, shipping "this fall" (the feared 2027 slip did not happen); pre-keynote body
+    preserved as historical record.
+59. `content/reviews/agentic-ai-foundation-aaif-mcp-linux-foundation-open-standards-review.md` —
+    membership grew 170->247 orgs (Aug 13 LF release); **A2A formally joined the AAIF** in August
+    2026, folding the two core interop protocols under one governance home — previously described
+    as separate; Executive Director bio and OAGF->Agent Control Specification naming corrected.
+60. `content/reviews/construction-architecture-mcp-servers.md` — ArchiCAD Tapir MCP star count
+    and version history refreshed (up to v0.5.4), Bentley initiative link fixed.
+
+### Freshness rotation: items 61-65 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim
+re-verification against live primary sources.
+
+61. **`content/reviews/survey-forms-mcp-servers.md`** (sources_audited 2026-07-26 -> **2026-08-23**).
+    Heaviest drift of the batch: Qualtrics MCP server tool count corrected 53->112 tools across 14
+    API areas (was badly stale); Typeform's official MCP gained OAuth + a published 50+ tool list
+    (was PAT-only, undocumented list); Tally community server (`learnwithcc/tally-mcp`) is now
+    archived by its maintainer — flagged unmaintained; several star counts and a mis-dated
+    SurveyMars commit history corrected; added a second independent source for the SurveyMonkey
+    named-company claim to satisfy the >=2-source rule.
+62. **`content/reviews/mistral-codestral-22b-code-fill-in-the-middle-llm-review.md`**
+    (2026-07-26 -> **2026-08-23**). Real fused-stat bug: the benchmark table mixed DeepSeek Coder
+    33B's HumanEval from two different eval harnesses into one inconsistent figure — split back
+    into Mistral's own consistent-source number with a note. Also fixed "Mistral Large 3 (July
+    2024)" — wrong model AND wrong date (that's Large 2; Large 3 didn't ship until Dec 2025) — and
+    corrected DeepSeek Coder's license (MIT applies to inference code only, not the weights).
+63. **`content/reviews/jetbrains-mellum2-12b-moe-open-coding-sub-agent-review.md`**
+    (2026-07-30 -> **2026-08-23**). Misattributed HF launch-post quote — source says "2x faster
+    than similarly sized **open** models," page said "dense models." Also removed an unverifiable,
+    chronologically-impossible claim that Mellum 1 shipped in JetBrains IDEs "starting with the
+    2024.2 release" (2024.2 shipped in August 2024, before Mellum was even announced in October
+    2024).
+64. **`content/reviews/context7-mcp-server.md`** (2026-08-13 -> **2026-08-23**, light re-check
+    just 10 days after its last audit). GitHub stars 60,700->61,100, PulseMCP all-time visitors
+    30.6M->32.3M, a new v4.0.3 patch release since last audit — all routine drift, no structural
+    errors found.
+65. **`content/builders-log/google-open-knowledge-format-okf-v0-1-ai-agent-knowledge-builder-guide/index.md`**
+    (2026-07-30 -> **2026-08-23**). Google migrated the OKF spec out of the `knowledge-catalog`
+    monorepo into its own dedicated repo (`GoogleCloudPlatform/open-knowledge-format`); the old
+    copy's README now explicitly says it's a frozen, unmaintained snapshot. Fixed a resulting
+    broken link (`enrichment_agent` renamed `reference_agent` in the move) and an undercounted
+    sample-bundle figure (3->4, `acme_retail` added).
+
+`freshness-rotation.md` now at 65/1006. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified corrections in the built HTML (Context7's 61,100 stars,
+survey-forms' Qualtrics 32-star/112-tool figure, the DeepMind quote fix from a prior run still
+intact) before committing (305f3ca9eb), pushing, and deploying (throttle clear, >8h since prior
+deploy).
+
+RingS dropped new `content/ai/` files again this run (mechanical freeze hook would apply on
+next commit if staged; left untouched/unstaged this run since I didn't need to touch them) —
+expected behavior, no action needed.
+
+### Bluesky / CEO digest
+
+Not applicable this run — Bluesky already posted today (00:57 UTC, per
+`check_bluesky_posted_today.py` -> ALREADY_POSTED) and CEO digest already sent today (00:58 UTC,
+message acked by CEO at 10:51 UTC with one data ask due **tomorrow** (Mon 2026-08-24): GSC
+impressions/clicks for `/transparency/claim-audit-2026/` since 08-11, plus "chatforest" query
+volume last 14d vs prior 14d, feeding a pickup-watch decision on the transparency report becoming
+a quarterly series). No new Bluesky candidate strong enough to jump the existing queue was
+produced by this run's corrections (mostly numeric drift, not new narrative hooks) — the Cohere
+Command A+ fabricated-pricing catch and the NVIDIA N1X->RTX Spark naming reveal are the two most
+bsky-worthy items from this run and join the queue.
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 66 in `freshness-rotation.md`
+  (~5 pages/run).
+- **Tomorrow (Mon 2026-08-24), the digest or a small side query must include the CEO's GSC data
+  ask**: impressions+clicks for `/transparency/claim-audit-2026/` since 2026-08-11, and
+  "chatforest"-containing query volume for the last 14 days vs. the prior 14 days.
+- Reminder from CEO ack: Tue 2026-08-25 = Dispatch #8 at 09:00Z (trust the `DISPATCH_MISSING`
+  gate script) + newsletter plug after send + subscriber before/after in that day's digest.
+  2026-09-01 = monthly citation spot-audit.
+- No open blockers.
+
+Run complete.
