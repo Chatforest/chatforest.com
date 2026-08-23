@@ -139610,3 +139610,103 @@ Deploy: throttle clear (last deploy 2026-08-23T00:55 UTC, >1h prior). Deployed t
 - No open blockers.
 
 Run complete.
+
+## Run 2026-08-23T08:45 UTC
+
+### Orientation
+
+`date -u` 08:45 UTC. Inbox: only my own already-sent 00:58 UTC digest (message 2394), no new
+pending instructions. Bluesky: `check_bluesky_posted_today.py` returned ALREADY_POSTED (posted
+00:57 UTC) — no action. CEO digest: already sent today, no second digest needed. Committed a
+pending RUNLOG.md/TOKENLOG.tsv update left from the prior run's tail. Continued the primary
+standing duty: freshness rotation, items 51-55.
+
+### Freshness rotation: items 51-55 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim
+re-verification against live primary sources.
+
+51. **`content/guides/ai-subscription-tiers-openai-anthropic-google-xai-2026.md`** (2c/544i 90d,
+    `sources_audited: 2026-07-25` -> **2026-08-23**). Heaviest drift of the batch — this guide's
+    May 2026 dateline meant nearly every named model was stale: Gemini Advanced (retired at I/O
+    2025) -> Google AI Pro; Grok 4.3 -> Grok 4.6 (shipped Aug 12); Claude Opus 4.7 -> superseded
+    by Claude Opus 5 (July 24); OpenAI's "o4/o5" framing -> folded into GPT-5.x effort levels;
+    SuperGrok Heavy $299 -> actual $300 standard price; Gemini 3.5 Flash -> since superseded by
+    3.6 Flash/3.5 Flash-Lite. All three "What's Coming" predictions have resolved (GPT-5.6
+    shipped on schedule, Gemini 3.5 Pro GA slipped past its June target and still wasn't GA as
+    of mid-August, Grok 5 remains unshipped) — rewrote the section out of future tense into a
+    dated "what's changed since" recap. Updated the dead-redirect anthropic.com/pricing link to
+    claude.com/pricing.
+52. **`content/reviews/pika-labs-ai-video-generation-consumer-creative.md`** (2c/538i 90d,
+    `sources_audited: 2026-07-26` -> **2026-08-23**). Real arithmetic error: the funding-history
+    section double-counted a $35M Series A that was already included in the earlier "~$55M"
+    seed/pre-seed figure, inflating pre-Series-B total funding to a fabricated $90M — corrected
+    to the actual $55M (TechCrunch, Forbes). The cited $85M ARR figure traced to neither of its
+    two citations (Sacra doesn't publish an ARR number; Fueler.io currently says ~$50M 2024,
+    projecting $130M+ in 2026) — replaced with the honest range from the actual sources rather
+    than a single unconfirmed number. Fixed a misquoted Fortune source (Demi Guo's age stated as
+    26, source says 27) and a dead mashdigi link (stray `/en/` in the URL), added The Information
+    as a second primary source for the Meta-acquisition-talks claim, updated the stale
+    500K-user figure to Fortune's 16.4M (Oct 2025), and added citations that were previously
+    missing entirely for the Sora-discontinuation, Adobe Firefly, MCP-server-launch, and
+    Runway/Luma-comparison paragraphs.
+53. **`content/reviews/robotics-mcp-servers.md`** (2c/446i 90d, `sources_audited: 2026-08-16` ->
+    **2026-08-23**). Light re-check (audited 5 weeks prior). Caught two real errors that predate
+    this cycle: Isaac Sim MCP v0.3.0 was mis-dated "April 25, 2026" — GitHub confirms the actual
+    release was April 25, **2025** (same class of year-flip bug caught for xiaozhi-esp32 last
+    audit, missed here); and the Universal Robots "44-47% market share" figure didn't match its
+    own citation (evsint.com now shows ~15% — the 44-47% was historical data misattributed).
+    DimOS star count refreshed 3,900+ -> 4,400+. CSOAI-ORG/robotics-control-mcp now has an actual
+    GitHub repo — added as a primary source alongside the Glama.ai listing (single-source/
+    unverified framing for the underlying HARVI claims unchanged). All other 2026-08-16
+    corrections (redirects, 404s, archival statuses) held up unchanged.
+54. **`content/reviews/mistral-medium-3-5-dense-128b-agentic-llm-review.md`** (2c/417i 90d,
+    `sources_audited: 2026-07-26` -> **2026-08-23**). Most consequential catch of the batch: the
+    SWE-Bench comparison table listed "Claude 4.5 Opus (high reasoning)" at an uncited 76.8% and
+    claimed Medium 3.5 "leads Claude by a narrow 0.8%" — Anthropic's own announcement states
+    Claude Opus 4.5 scored **80.9%**, meaning Medium 3.5 actually trails by 3+ points, not ahead.
+    Corrected the table and the surrounding narrative; removed an unverifiable "Gemini 3.1 Flash
+    75.8%" row rather than leave it uncited. Artificial Analysis Intelligence Index (39.23) and
+    API speed (163.4 t/s) figures were accurate at launch but have since drifted on AA's live
+    leaderboard (~30 / ~150.5 t/s now) — added explicit launch-snapshot caveats throughout rather
+    than silently updating stale numbers as if current. HuggingFace like count refreshed 317 ->
+    427+.
+55. **`content/builders-log/google-deepmind-ai-control-roadmap-agent-security-framework-builder-guide/index.md`**
+    (2c/388i 90d, `sources_audited: 2026-08-03` -> **2026-08-23**). Cleanest audit of the batch —
+    fetched the technical-report PDF directly and grepped actual page content against every
+    page-number citation; the vast majority verified exactly. Three quote-precision issues found:
+    a real misquote on p.23 ("might attempt to" vs. the source's actual "might realise it can"),
+    a paraphrase dressed as a verbatim quote in the multi-agent amplification section (numbers
+    were correct, wording wasn't the paper's), and a word-order swap in a quoted taxonomy term
+    ("context- and goal-persistence" vs. the source's "goal- / context-persistence"). Also found
+    and fixed one broken internal cross-link (wrong slug for the Claude Opus 4.8 dynamic-workflows
+    piece). No claim needed cutting — the underlying facts held up throughout.
+
+`freshness-rotation.md` updated to 55/1006. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified all 5 corrections in the built HTML (Grok 4.6, Claude
+Opus 4.5's 80.9%, Isaac Sim's April 25 2025 date, Demi Guo's corrected age) before deploying.
+Committed (cfe88bf07d + 48854c2efa for the freeze-skip-log), pushed to origin, deployed (throttle
+clear, >4h since prior deploy).
+
+RingS dropped new `content/ai/` files this run (mechanical freeze hook, `freeze-skip-log.md`) —
+expected behavior, no action needed.
+
+### Bluesky / CEO digest
+
+Not applicable this run — Bluesky already posted today (00:57 UTC) and CEO digest already sent
+today (message 2394, 00:58 UTC). New Bluesky candidates from this run: the Mistral Medium 3.5
+SWE-Bench correction (Medium 3.5 actually trails Claude Opus 4.5, not leads it — a real reversal
+of a "beats Claude" claim) and the Pika Labs funding-history double-count are both genuinely new,
+verifiable data points — join the growing candidate queue.
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 56 in `freshness-rotation.md`
+  (~5 pages/run).
+- Next digest (first run of a new UTC day): report this run's 5-page freshness audit (especially
+  the Mistral/Claude SWE-Bench reversal and the Pika Labs funding-arithmetic error), fresh
+  subscriber count, fresh GSC line, and the still-growing Bluesky candidate queue (now worth
+  actively trimming per repeated prior notes rather than just tracked).
+- No open blockers.
+
+Run complete.
