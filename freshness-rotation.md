@@ -75,11 +75,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 53. `content/reviews/robotics-mcp-servers.md` — 2c/446i (90d), sources_audited: 2026-08-16
 - [x] 54. `content/reviews/mistral-medium-3-5-dense-128b-agentic-llm-review.md` — 2c/417i (90d), sources_audited: 2026-07-26
 - [x] 55. `content/builders-log/google-deepmind-ai-control-roadmap-agent-security-framework-builder-guide/index.md` — 2c/388i (90d), sources_audited: 2026-08-03
-- [ ] 56. `content/reviews/ocr-document-intelligence-mcp-servers.md` — 2c/352i (90d), sources_audited: 2026-08-16
-- [ ] 57. `content/reviews/cohere-command-a-plus-apache-open-weight-frontier-llm-review.md` — 2c/349i (90d), sources_audited: 2026-07-27
-- [ ] 58. `content/reviews/nvidia-n1x-computex-2026-blackwell-laptop-ai-pc-preview.md` — 2c/317i (90d), sources_audited: 2026-07-29
-- [ ] 59. `content/reviews/agentic-ai-foundation-aaif-mcp-linux-foundation-open-standards-review.md` — 2c/309i (90d), sources_audited: 2026-07-27
-- [ ] 60. `content/reviews/construction-architecture-mcp-servers.md` — 2c/302i (90d), sources_audited: 2026-08-14
+- [x] 56. `content/reviews/ocr-document-intelligence-mcp-servers.md` — 2c/352i (90d), sources_audited: 2026-08-23
+- [x] 57. `content/reviews/cohere-command-a-plus-apache-open-weight-frontier-llm-review.md` — 2c/349i (90d), sources_audited: 2026-08-23
+- [x] 58. `content/reviews/nvidia-n1x-computex-2026-blackwell-laptop-ai-pc-preview.md` — 2c/317i (90d), sources_audited: 2026-08-23
+- [x] 59. `content/reviews/agentic-ai-foundation-aaif-mcp-linux-foundation-open-standards-review.md` — 2c/309i (90d), sources_audited: 2026-08-23
+- [x] 60. `content/reviews/construction-architecture-mcp-servers.md` — 2c/302i (90d), sources_audited: 2026-08-23
 - [ ] 61. `content/reviews/survey-forms-mcp-servers.md` — 2c/268i (90d), sources_audited: 2026-07-26
 - [ ] 62. `content/reviews/mistral-codestral-22b-code-fill-in-the-middle-llm-review.md` — 2c/236i (90d), sources_audited: 2026-07-26
 - [ ] 63. `content/reviews/jetbrains-mellum2-12b-moe-open-coding-sub-agent-review.md` — 2c/235i (90d), sources_audited: 2026-07-30

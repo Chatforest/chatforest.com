@@ -233,7 +233,7 @@ v1.2.75 (January 2026) added enhanced Python integration and single-main-thread 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [SzamosiMate/tapir-archicad-MCP](https://github.com/SzamosiMate/tapir-archicad-MCP) | ~88 | Python | — | 191+ (auto-generated) |
+| [SzamosiMate/tapir-archicad-MCP](https://github.com/SzamosiMate/tapir-archicad-MCP) | ~93 | Python | — | 191+ (auto-generated) |
 
 The most innovative approach to tool generation in the construction MCP space. Dynamically generates MCP tools (191+ as of this audit, up from 137+ at last review) from the combined Tapir API and official Archicad JSON API schemas:
 
@@ -242,7 +242,7 @@ The most innovative approach to tool generation in the construction MCP space. D
 - **Dual API merging** — community Tapir + official JSON API in a single server
 - **PyPI/uvx installation** — simplified setup (added September 2025)
 
-v0.4.0 ([released May 18, 2026](https://github.com/SzamosiMate/tapir-archicad-MCP/releases)) updated the generation pipeline to support Tapir 1.4.0, adding new commands across Element Creation, Modification, Project, Navigator, and Grouping namespaces. v0.3.2 (February 18, 2026) pinned the multiconn_archicad dependency. *Update (2026-08-14): the project has continued shipping past v0.4.0 — v0.4.2, v0.4.3, v0.5.0, and v0.5.1 have since [released](https://github.com/SzamosiMate/tapir-archicad-MCP/releases), the most recent on August 7, 2026; see the releases page for what changed in each.* 88 stars as of this audit.
+v0.4.0 ([released May 18, 2026](https://github.com/SzamosiMate/tapir-archicad-MCP/releases)) updated the generation pipeline to support Tapir 1.4.0, adding new commands across Element Creation, Modification, Project, Navigator, and Grouping namespaces. v0.3.2 (February 18, 2026) pinned the multiconn_archicad dependency. *Update (2026-08-23): the project has kept shipping — after v0.4.0 came v0.4.2 (June 18), v0.4.3 (June 24), v0.5.0 and v0.5.1 (both August 7), v0.5.2 (August 14), v0.5.3 (August 17, Tapir 1.5.7 schema), and [v0.5.4](https://github.com/SzamosiMate/tapir-archicad-MCP/releases/tag/v0.5.4) (August 19, updates tool definitions to Tapir 1.5.8); see the [releases page](https://github.com/SzamosiMate/tapir-archicad-MCP/releases) for what changed in each.* 93 stars as of this audit.
 
 ### lgradisar/archicad-mcp
 
@@ -376,7 +376,7 @@ No official Procore MCP server exists yet, but the dedicated community server ab
 
 The construction MCP ecosystem still has significant gaps, particularly in the construction operations phase, though some are narrowing:
 
-- **Bentley Systems has one public MCP server, but only for STAAD** — *Correction (2026-08-14): this entry previously cited a now-dead link (404) and claimed "no open-source repository exists." That's no longer accurate. Bentley has shipped an open-source structural-analysis MCP server, [BentleySystems/openstaad-mcp](https://github.com/BentleySystems/openstaad-mcp) (MIT license, ~39 stars), part of its [Infrastructure AI Co-Innovation Initiative](https://blog.bentley.com/insights/from-code-to-command-how-ai-is-rewiring-the-way-engineers-design-infrastructure/), enabling AI agents to interact with STAAD.Pro models for load-case definition and data extraction.* MicroStation, OpenBuildings, OpenBridge, and OpenRoads still have no public GitHub MCP repos as of this audit.
+- **Bentley Systems has one public MCP server, but only for STAAD** — *Correction (2026-08-14): this entry previously cited a now-dead link (404) and claimed "no open-source repository exists." That's no longer accurate. Bentley has shipped an open-source structural-analysis MCP server, [BentleySystems/openstaad-mcp](https://github.com/BentleySystems/openstaad-mcp) (MIT license, ~39 stars), part of its [Infrastructure AI Co-Innovation Initiative](https://www.bentley.com/software/infrastructure-ai-co-innovation-initiative/) (confirmed by the [openstaad-mcp README itself](https://github.com/BentleySystems/openstaad-mcp), which links to the initiative under that same name), enabling AI agents to interact with STAAD.Pro models for load-case definition and data extraction.* MicroStation, OpenBuildings, OpenBridge, and OpenRoads still have no public GitHub MCP repos as of this audit.
 - **No official Procore MCP** — a community server now exists (see above) but Procore hasn't shipped an official one
 - **No building code compliance** — no automated code checking or plan review
 - **No permit management** — PermitFlow and other permit platforms have no MCP servers
@@ -400,5 +400,5 @@ The design-versus-construction divide is narrowing meaningfully. The Procore com
 
 **Skip if:** you need construction project management, scheduling, estimating, or site operations — the MCP ecosystem is just starting to reach those workflows.
 
-*This review was last edited on 2026-05-21 and claim-level source-audited on 2026-08-14 using Claude Sonnet 5 (Anthropic).*
+*This review was last edited on 2026-05-21 and claim-level source-audited on 2026-08-23 using Claude Sonnet 5 (Anthropic).*
 

@@ -1,11 +1,13 @@
 ---
 title: "NVIDIA N1X Preview: The First Blackwell Laptop Chip and What It Means for Local AI"
 date: 2026-05-27
-description: "NVIDIA's N1X SoC combines a 20-core ARM CPU with a Blackwell-class GPU and full CUDA support — arriving at Computex 2026. Here's what AI developers need to know before Jensen Huang's June 1 keynote."
+description: "NVIDIA's N1X SoC — officially launched as RTX Spark at Computex 2026 — combines a 20-core Grace CPU with a Blackwell-class GPU and full CUDA support. What AI developers need to know, including what was confirmed at Jensen Huang's June 1 keynote."
 tags: ["nvidia", "ai-hardware", "local-ai", "computex", "ai-pc", "blackwell", "edge-ai"]
 categories: ["reviews"]
-sources_audited: 2026-07-29
+sources_audited: 2026-08-23
 ---
+
+**Update (2026-08-23):** At the June 1, 2026 keynote this article previewed, NVIDIA officially launched the chip as **RTX Spark** — "N1X" was the pre-announcement codename and was never adopted as the commercial name. The confirmed specs matched most of what had leaked: a 20-core Grace CPU paired with a Blackwell GPU carrying 6,144 CUDA cores and up to 128GB of unified memory, "up to 1 petaflop" of FP4 AI compute, and the ability to run 120-billion-parameter models with a 1-million-token context. NVIDIA says RTX Spark laptops and compact desktops ship "this fall" from ASUS, Dell, HP, Lenovo, Microsoft Surface, MSI, Acer, and Gigabyte. [Source: NVIDIA press release](https://nvidianews.nvidia.com/news/nvidia-microsoft-windows-pcs-agents-rtx-spark). The rest of this article is preserved as originally published (pre-keynote) for historical accuracy, with the "N1X" name used throughout as it was written; see the update note above for current naming and status.
 
 Jensen Huang takes the Computex stage on **[June 1, 2026](https://videocardz.com/newz/nvidia-confirms-jensen-huang-gtc-taipei-keynote-on-june-1st-day-before-computex)** at GTC Taipei — and for the first time, an NVIDIA chip is expected to live inside a *laptop* rather than a data center rack. The [N1X is an ARM-based SoC co-developed with MediaTek](https://www.techtimes.com/articles/317428/20260530/nvidia-arm-laptop-chip-n1x-confirmed-computex-cuda-rtx-5070-gpu-onboard.htm), packing a Blackwell-architecture GPU with [6,144 CUDA cores alongside a 20-core ARM CPU](https://nvidianews.nvidia.com/news/nvidia-microsoft-windows-pcs-agents-rtx-spark). This is a preview based on [pre-announcement leaks and confirmed specifications](https://www.tomshardware.com/pc-components/cpus/nvidias-long-awaited-n1-n1x-soc-specs-leak-ahead-of-computex-launch-n1-to-feature-up-to-20-arm-based-cores-standard-n1-equipped-with-12-and-10-core-configs).
 
@@ -82,7 +84,7 @@ If the N1X delivers on its specs and CUDA compatibility, it reshapes the local A
 - **Edge deployment testing**: AI apps targeting NVIDIA Jetson or datacenter CUDA can be developed and tested on the same architecture without a separate test machine.
 - **Windows on ARM maturation**: The N1X gives the Windows ARM ecosystem a reason to solve its remaining compatibility gaps — NVIDIA's developer relations team will be pushing hard on framework support.
 
-The risk is timing. The project has [already slipped once, from an original second-half-2025 target](https://www.trendforce.com/news/2025/07/23/news-nvidia-and-mediatek-reportedly-delay-n1x-processor-launch-from-second-half-of-2025-to-q1-2026/), with [contemporaneous reporting warning broad availability could land as late as 2027](https://winbuzzer.com/2025/07/24/nvidias-game-changing-arm-chip-for-laptops-delayed-to-2027-amid-microsoft-os-hurdles-xcxwbn/). The developer tools certification work — PyTorch, llama.cpp, TensorRT-LLM, ComfyUI — needs to complete before whatever launch date NVIDIA ultimately confirms. NVIDIA has a track record of shipping CUDA-compatible hardware with day-one framework support, but this is a new architecture class (consumer ARM laptop) where the validation pipeline hasn't been exercised before.
+At the time of this preview, the risk was timing: the project had [already slipped once, from an original second-half-2025 target](https://www.trendforce.com/news/2025/07/23/news-nvidia-and-mediatek-reportedly-delay-n1x-processor-launch-from-second-half-of-2025-to-q1-2026/), with [contemporaneous reporting warning broad availability could land as late as 2027](https://winbuzzer.com/2025/07/24/nvidias-game-changing-arm-chip-for-laptops-delayed-to-2027-amid-microsoft-os-hurdles-xcxwbn/). That risk did not materialize on the timeline feared: NVIDIA confirmed at the June 1 keynote that RTX Spark laptops and compact desktops would ship "this fall" (2026), not 2027 — see the update note above. What remains to be seen post-launch is the developer tools certification work — PyTorch, llama.cpp, TensorRT-LLM, ComfyUI — and whether framework support is genuinely day-one-ready across the confirmed OEM lineup.
 
 ## Bottom Line
 
@@ -90,7 +92,7 @@ The N1X is the most significant PC hardware announcement for local AI developmen
 
 The June 1 keynote will answer the key questions: real performance numbers, confirmed pricing, and which developer frameworks are ready at launch.
 
-*This is a pre-announcement preview based on confirmed leaks and pre-release information. We will update this article following the GTC Taipei keynote on June 1, 2026.*
+*This was originally published as a pre-announcement preview based on confirmed leaks and pre-release information. It has since been updated (2026-08-23) with a summary of what NVIDIA officially confirmed at the June 1, 2026 GTC Taipei keynote — see the update note near the top of this article. The body text below the update note is preserved as originally written, pre-keynote.*
 
 ---
 

@@ -2,18 +2,18 @@
 title: "OCR & Document Intelligence MCP Servers — PaddleOCR, MinerU, Docling, Marker, Mistral OCR, and More"
 date: 2026-03-19T15:30:00+09:00
 description: "OCR and document intelligence MCP servers let AI agents extract text from images, scanned PDFs, handwritten notes, and complex layouts."
-og_description: "OCR MCP servers: PaddleOCR (official, 77K parent stars, 4 tools), MinerU (61.7K stars, highest PulseMCP traffic at May 2026 refresh), Docling (59K stars, Red Hat official MCP), Markdownify (2.6K stars, 10 tools), Mistral OCR MCP, ocr-mcp (10+ engines). Major cloud vendor gaps persist. Rating: 3.5/5."
+og_description: "OCR MCP servers: PaddleOCR (official, 77K parent stars, 3 tools), MinerU (61.7K stars, highest PulseMCP traffic at May 2026 refresh), Docling (59K stars, Red Hat official MCP), Markdownify (2.6K stars, 10 tools), Mistral OCR MCP, ocr-mcp (10+ engines). Major cloud vendor gaps persist. Rating: 3.5/5."
 content_type: "Review"
 card_description: "OCR and document intelligence MCP servers across PaddleOCR, MinerU, Docling, Markdownify, Mistral OCR, and more. PaddleOCR and MinerU are the standout official servers; Docling has exploded to 59K stars. Major cloud vendors (Google Cloud Vision, AWS Textract, Azure) still absent."
 last_refreshed: 2026-08-16
-sources_audited: 2026-08-16
+sources_audited: 2026-08-23
 ---
 
 Every AI workflow that touches the physical world eventually needs OCR. Scanned contracts, handwritten notes, screenshots, receipts, whiteboards — if it's an image with text, you need a way to extract that text for an LLM to work with.
 
 This review covers MCP servers specifically built for **optical character recognition and document intelligence** — extracting text from images and scanned documents where the text isn't already digital. For MCP servers that process digital PDFs, DOCX, and other native document formats, see our [PDF & Document Processing review](/reviews/pdf-document-mcp-servers/). There's overlap (Docling and MarkItDown both have OCR capabilities), but the servers here are purpose-built for recognition tasks.
 
-The headline after 44 days: **the ecosystem is meaningfully stronger at the top**. PaddleOCR's MCP server doubled its tool count from 2 to 4 and added VLM-based models. MinerU — a 61,700-star document intelligence library — launched an official MCP server that had become the most-visited OCR server on PulseMCP as of that refresh (see the correction in the MinerU section below for current traffic, which has since dropped substantially). Docling grew from 35,000 to 59,000 stars with a flurry of releases. The major cloud vendor gap (Google Cloud Vision, AWS Textract, Azure Document Intelligence) remains open as of this audit.
+The headline after 44 days: **the ecosystem is meaningfully stronger at the top**. PaddleOCR's MCP server doubled its tool count from 2 to 4 and added VLM-based models (the two VLM tools were later consolidated into one — see the correction in the PaddleOCR section below; the server currently exposes 3 tools). MinerU — a 61,700-star document intelligence library — launched an official MCP server that had become the most-visited OCR server on PulseMCP as of that refresh (see the correction in the MinerU section below for current traffic, which has since dropped substantially). Docling grew from 35,000 to 59,000 stars with a flurry of releases. The major cloud vendor gap (Google Cloud Vision, AWS Textract, Azure Document Intelligence) remains open as of this audit.
 
 **Category:** [Business & Productivity](/categories/business-productivity/)
 
@@ -25,15 +25,15 @@ The headline after 44 days: **the ecosystem is meaningfully stronger at the top*
 
 | Detail | Info |
 |--------|------|
-| [opendatalab/MinerU](https://github.com/opendatalab/MinerU) | ~61,700 stars (~77,700 as of this audit) |
+| [opendatalab/MinerU](https://github.com/opendatalab/MinerU) | ~61,700 stars (~78,300 as of this audit) |
 | License | [MinerU Open Source License](https://github.com/opendatalab/MinerU/releases/tag/mineru-3.1.0-released) — Apache-2.0-based, relicensed from AGPLv3 in v3.1.0 (April 17, 2026) |
 | Language | Python / TypeScript / Go SDKs |
 | Formats | PDF, DOCX, PPTX, XLSX → Markdown, JSON, HTML, LaTeX |
 | PulseMCP weekly | ~1,200 at May 2026 refresh (see correction below) |
 
-MinerU arrived on PulseMCP on March 18, 2026 — one day before the original version of this review was published — and had, as of the May 2026 refresh, become the most-visited OCR/document intelligence MCP server in the directory. The parent library's 61,700 stars (now ~77,700, per GitHub) make it the second most-starred OCR-adjacent project after PaddleOCR, and it focuses specifically on high-fidelity document-to-Markdown conversion at a level of accuracy that rivals commercial services.
+MinerU arrived on PulseMCP on March 18, 2026 — one day before the original version of this review was published — and had, as of the May 2026 refresh, become the most-visited OCR/document intelligence MCP server in the directory. The parent library's 61,700 stars (now ~78,300, per GitHub) make it the second most-starred OCR-adjacent project after PaddleOCR, and it focuses specifically on high-fidelity document-to-Markdown conversion at a level of accuracy that rivals commercial services.
 
-**Correction (2026-08-16 audit):** the ~1,200 weekly-visitor figure above was accurate at the May 2026 refresh, shortly after MinerU's official MCP server launched. [PulseMCP's live listing](https://www.pulsemcp.com/servers/mineru) now shows roughly 122 weekly visitors, 622 total estimated visitors, and a #3,407 overall popularity rank as of this audit — a large drop consistent with an initial post-launch traffic spike fading, not a data error on our part. We can no longer independently confirm MinerU holds the highest PulseMCP traffic among OCR servers today; treat "most-visited" and "highest-traffic" language on this page as describing the May 2026 snapshot, not a current-state claim. Separately, the license row above has also been corrected: MinerU did not move to plain Apache-2.0, but to a custom "[MinerU Open Source License](https://github.com/opendatalab/MinerU/blob/master/LICENSE.md)" that is Apache-2.0-based but requires a separate commercial license from OpenDataLab once a deployment exceeds 100 million monthly active users or $20M/month in revenue.
+**Correction (2026-08-16 audit; traffic figures refreshed 2026-08-23):** the ~1,200 weekly-visitor figure above was accurate at the May 2026 refresh, shortly after MinerU's official MCP server launched. [PulseMCP's live listing](https://www.pulsemcp.com/servers/mineru) showed roughly 122 weekly visitors, 622 total estimated visitors, and a #3,407 overall popularity rank as of the 2026-08-16 audit; one week later it shows roughly 49 weekly visitors, 694 total estimated visitors, and a #10,712 overall popularity rank — weekly traffic keeps falling even as the cumulative total ticks up. We can no longer independently confirm MinerU holds the highest PulseMCP traffic among OCR servers today; treat "most-visited" and "highest-traffic" language on this page as describing the May 2026 snapshot, not a current-state claim. Separately, the license row above has also been corrected: MinerU did not move to plain Apache-2.0, but to a custom "[MinerU Open Source License](https://github.com/opendatalab/MinerU/blob/master/LICENSE.md)" that is Apache-2.0-based but requires a separate commercial license from OpenDataLab once a deployment exceeds 100 million monthly active users or $20M/month in revenue.
 
 ### What Works Well
 
@@ -57,10 +57,10 @@ MinerU arrived on PulseMCP on March 18, 2026 — one day before the original ver
 
 | Detail | Info |
 |--------|------|
-| [PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) (MCP at `/mcp_server`) | ~77,000 stars (was ~72K) |
+| [PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) (MCP at `/mcp_server`) | ~77,000 stars (was ~72K); ~88,100 as of this audit |
 | License | Apache-2.0 |
 | Language | Python |
-| Tools | 4 (was 2) |
+| Tools | 3 (was 2) — see correction below |
 | Languages | 111 (was 100+) |
 | Install | `pip install paddleocr-mcp` |
 | Framework | FastMCP v2 |
@@ -69,7 +69,7 @@ The most significant OCR MCP server in the original review has grown substantial
 
 ### What's Changed Since March 2026
 
-**Two new VLM-based tools.** The MCP server now exposes:
+**New VLM-based capabilities.** At the May 2026 refresh the MCP server appeared to expose four separate tools:
 - `OCR` — text detection + recognition on images/PDFs (original)
 - `PP-StructureV3` — layout parsing, tables, titles to Markdown (original)
 - `PaddleOCR-VL` — VLM-based document layout extraction to Markdown (new)
@@ -79,7 +79,9 @@ PP-OCRv5 models (mobile detection + recognition variants) are explicitly support
 
 **v3.4.1 (April 14)** added AMD GPU and Intel Arc GPU support for PaddleOCR-VL. **v3.5.0 (April 21)** added deep Hugging Face Transformers integration (20 major models), native Word/Excel/PowerPoint to Markdown conversion, DOCX export, and **PaddleOCR.js** — a browser SDK enabling PP-OCRv5 inference entirely in-browser.
 
-**111 language support** (up from 100+, adding Tibetan and Bengali).
+**111 language support** (up from 100+), adding Tibetan and Bengali per [PaddleOCR-VL-1.5's technical report](https://arxiv.org/abs/2601.21957).
+
+**Correction (2026-08-23 audit):** [PaddleOCR's current official MCP server documentation](https://github.com/PaddlePaddle/PaddleOCR/blob/main/docs/version3.x/integrations/mcp_server.en.md) shows the server now exposes exactly **3 tools** — `ocr` (covering PP-OCRv5, PP-OCRv5-latin, and PP-OCRv6), `pp_structurev3`, and a single `paddleocr_vl` tool that covers all VL model versions (PaddleOCR-VL, PaddleOCR-VL-1.5, and a newer PaddleOCR-VL-1.6 not otherwise covered on this page) as selectable model options rather than as separate tools. The "4 tools" figure and the four-item list above describe the May 2026 snapshot; the current architecture consolidates the two VL-model tools into one.
 
 ### What Still Applies
 
@@ -91,7 +93,7 @@ Resource requirements for local mode (several hundred MB model download, GPU rec
 
 | Detail | Info |
 |--------|------|
-| [docling-project/docling](https://github.com/docling-project/docling) | ~59,000 stars (was ~35K — +24K in 6 weeks); ~64,800 as of this audit |
+| [docling-project/docling](https://github.com/docling-project/docling) | ~59,000 stars (was ~35K — +24K in 6 weeks); ~65,400 as of this audit |
 | License | MIT |
 | Language | Python |
 | Official MCP | Red Hat GmbH listing on PulseMCP |
@@ -99,11 +101,11 @@ Resource requirements for local mode (several hundred MB model download, GPU rec
 
 Docling's star growth is remarkable: from roughly 35,000 stars at the time of the original review to 59,000 six weeks later. The weekly release cadence has added capabilities that directly improve OCR and document intelligence:
 
-- **Nanonets OCR2 integration** (v2.87.0, April 13) — third-party neural OCR backend option
-- **GraniteVisionTableStructureModel** (v2.90.0, April 17) — VLM-based table extraction
-- **EasyOCR model fix** (v2.91.0, April 23)
-- **Multi-lingual OCR via kserve-triton** (v2.92.0, April 29)
-- **Modular `docling-slim` package** (v2.92.0) — lighter install without optional dependencies
+- **[Nanonets OCR2 integration](https://github.com/docling-project/docling/releases/tag/v2.87.0)** (v2.87.0, April 13) — third-party neural OCR backend option
+- **[GraniteVisionTableStructureModel](https://github.com/docling-project/docling/releases/tag/v2.90.0)** (v2.90.0, April 17) — VLM-based table extraction
+- **[EasyOCR model fix](https://github.com/docling-project/docling/releases/tag/v2.91.0)** (v2.91.0, April 23)
+- **[Multi-lingual OCR via kserve-triton](https://github.com/docling-project/docling/releases/tag/v2.92.0)** (v2.92.0, April 29)
+- **Modular `docling-slim` package** ([v2.92.0](https://github.com/docling-project/docling/releases/tag/v2.92.0)) — lighter install without optional dependencies
 
 The Red Hat MCP server predates this review, but Docling's rapid expansion makes it a more prominent option than it appeared in March. Docling is now one of the highest-starred document processing libraries in the Python ecosystem, with strong LF AI & Data Foundation backing.
 
@@ -143,11 +145,11 @@ Negligible change since March. Still functional for file-path and base64-encoded
 
 | Detail | Info |
 |--------|------|
-| [awslabs/mcp](https://github.com/awslabs/mcp) (at `src/document-loader-mcp-server`) | ~8,900 stars (monorepo, was ~4,700) |
+| [awslabs/mcp](https://github.com/awslabs/mcp) (at `src/document-loader-mcp-server`) | ~8,900 stars (monorepo, was ~4,700); ~9,600 as of this audit |
 | License | Apache-2.0 |
 | Language | Python |
 
-The AWS MCP monorepo nearly doubled in stars (4,700 → 8,900) and now contains 56 MCP servers. The document loader remains a document ingestion utility (pdfplumber for PDFs, markitdown for Office formats, direct image loading) rather than a dedicated OCR server. **There is still no AWS Textract MCP server** — confirmed via monorepo directory scan. The `aws-dataprocessing-mcp-server` exists but does not expose Textract's table extraction or form parsing capabilities through MCP.
+The AWS MCP monorepo nearly doubled in stars (4,700 → 8,900; ~9,600 as of this audit) and now contains 61 MCP servers (up from 56, per a directory scan of the repo's `src/` tree during this audit). The document loader remains a document ingestion utility (pdfplumber for PDFs, markitdown for Office formats, direct image loading) rather than a dedicated OCR server. **There is still no AWS Textract MCP server** — confirmed via monorepo directory scan. The `aws-dataprocessing-mcp-server` exists but does not expose Textract's table extraction or form parsing capabilities through MCP.
 
 ---
 
@@ -192,7 +194,7 @@ A commercial OCR + entity-extraction API from Spocont, a financial/IFRS-automati
 
 | Detail | Info |
 |--------|------|
-| [zcaceres/markdownify-mcp](https://github.com/zcaceres/markdownify-mcp) | ~2,600 stars (was ~2,400) |
+| [zcaceres/markdownify-mcp](https://github.com/zcaceres/markdownify-mcp) | ~2,600 stars (was ~2,400); ~2,970 as of this audit |
 | License | MIT |
 | Language | TypeScript |
 | Tools | 10 |
@@ -201,8 +203,8 @@ A commercial OCR + entity-extraction API from Spocont, a financial/IFRS-automati
 
 Continued steady growth and active maintenance. Notable changes since March:
 
-- **v1.0.4 (April 17)** — fixed ARM/Apple Silicon Docker crash (switched from `markitdown[all]` to `markitdown[pdf]` for ARM compatibility). Image OCR and audio transcription still require `markitdown[all]` extras.
-- **v1.1.0 (May 1)** — Docker and non-standard path support; new `MARKITDOWN_PATH`, `REPOMIX_PATH`, `MD_ALLOWED_PATHS` env vars; security fix (removed `projectRoot` from MCP tool schema); fixed false-fatal stderr treatment.
+- **[v1.0.4](https://github.com/zcaceres/markdownify-mcp/releases/tag/v1.0.4) (April 17)** — fixed ARM/Apple Silicon Docker crash (switched from `markitdown[all]` to `markitdown[pdf]` for ARM compatibility). Image OCR and audio transcription still require `markitdown[all]` extras.
+- **[v1.1.0](https://github.com/zcaceres/markdownify-mcp/releases/tag/v1.1.0) (May 1)** — Docker and non-standard path support; new `MARKITDOWN_PATH`, `REPOMIX_PATH`, `MD_ALLOWED_PATHS` env vars; security fix (removed `projectRoot` from MCP tool schema); fixed false-fatal stderr treatment.
 
 Still the most adopted community option and the pragmatic choice if you need OCR alongside PDF, audio, web, and Office document conversion in a single server.
 
@@ -225,7 +227,7 @@ No meaningful change since March. Still functional, still lightly adopted. The t
 | Language | Python |
 | Tools | 1 (`convert_pdf`) |
 
-Effectively a proof of concept — one commit, no activity since publication. Tesseract (60K+ stars on the parent) remains without a quality MCP wrapper.
+Effectively a proof of concept — one commit, no activity since publication. [Tesseract](https://github.com/tesseract-ocr/tesseract) (76,000+ stars on the parent, up from 60K+) remains without a quality MCP wrapper.
 
 ### RapidOCR MCP
 
@@ -257,7 +259,7 @@ For teams processing academic literature through MCP, this fills a real niche. L
 
 | Detail | Info |
 |--------|------|
-| [sandraschi/ocr-mcp](https://github.com/sandraschi/ocr-mcp) | ~11 stars |
+| [sandraschi/ocr-mcp](https://github.com/sandraschi/ocr-mcp) | ~17 stars (was ~11) |
 | License | MIT |
 | Version | 0.2.0-alpha |
 | Language | Python |
@@ -272,14 +274,14 @@ Still alpha, still lightly adopted — but the multi-model concept continues to 
 
 | Detail | Info |
 |--------|------|
-| [Handwriting-OCR/handwriting-ocr-mcp-server](https://github.com/Handwriting-OCR/handwriting-ocr-mcp-server) | ~15 stars |
+| [Handwriting-OCR/handwriting-ocr-mcp-server](https://github.com/Handwriting-OCR/handwriting-ocr-mcp-server) | ~17 stars (was ~15) |
 | Language | TypeScript/Node.js |
 | Tools | 3 (upload, check status, retrieve results) |
 | Auth | Handwriting OCR Platform API token |
 
 No change since March. Still the only MCP server focused specifically on handwritten text recognition. Requires a paid Handwriting OCR Platform account.
 
-**New competition:** `lazyants/transkribus-mcp-server` (March 2026, 0 stars) integrates the Transkribus REST API — an academic HTR (Handwritten Text Recognition) platform widely used for historical documents and manuscripts. Zero adoption but potentially relevant for archival or historical document use cases.
+**New competition:** `lazyants/transkribus-mcp-server` (March 2026, 0 stars; ~2 as of this audit) integrates the Transkribus REST API — an academic HTR (Handwritten Text Recognition) platform widely used for historical documents and manuscripts. Zero adoption but potentially relevant for archival or historical document use cases.
 
 ### Unstructured MCP (Pipeline Orchestration)
 
@@ -291,8 +293,8 @@ No change since March. Still the only MCP server focused specifically on handwri
 
 Nearly tripled in stars (16 → 43) without adding new tools. Notable post-review changes:
 
-- **March 26** — MCP SDK upgraded 1.13.1 → 1.23.0 (DNS rebinding protection, task support, advanced auth flows)
-- **April 12** — Security patch: aiohttp, pypdf, urllib3, and tornado CVE remediation
+- **March 26** — [MCP SDK upgraded 1.13.1 → 1.23.0](https://github.com/Unstructured-IO/UNS-MCP/commit/4ae94b1) (DNS rebinding protection, task support, advanced auth flows)
+- **April 12** — [Security patch](https://github.com/Unstructured-IO/UNS-MCP/commit/8a22525): aiohttp, pypdf, urllib3, and tornado CVE remediation
 
 The 18-tool architecture (source connectors, destination connectors, workflow management, job monitoring) remains unchanged. Best suited for orchestrating document processing pipelines at scale.
 
@@ -300,11 +302,11 @@ The 18-tool architecture (source connectors, destination connectors, workflow ma
 
 ## What's Missing
 
-**No official Tesseract MCP server.** Still the same gap from March — the world's most widely deployed open-source OCR engine has only minimal community wrappers.
+**No official Tesseract MCP server.** Still the same gap from March — [Tesseract](https://github.com/tesseract-ocr/tesseract), one of the longest-established open-source OCR engines (originally built at Hewlett-Packard Labs, later maintained by Google), has only minimal community wrappers.
 
 **No Google Cloud Vision official MCP server.** Community implementations exist, led by [KohenAvocats/mcp-server-google-vision](https://github.com/KohenAvocats/mcp-server-google-vision) (built by a Paris law firm for scanned/handwritten legal documents), but Google has shipped no official offering.
 
-**No AWS Textract MCP server.** Confirmed missing from the 56-server AWS monorepo. No community implementations with meaningful adoption. Amazon Textract's table extraction, form parsing, and expense analysis capabilities remain inaccessible through MCP.
+**No AWS Textract MCP server.** Confirmed missing from the [AWS MCP monorepo](https://github.com/awslabs/mcp) (61 servers as of this audit, up from 56). No community implementations with meaningful adoption. Amazon Textract's table extraction, form parsing, and expense analysis capabilities remain inaccessible through MCP.
 
 **No Azure Document Intelligence MCP server.** A 0-star community stub exists (linzhengen/azure-document-intelligence-mcp) but no official Microsoft offering despite Azure's active MCP presence in other domains.
 
@@ -316,9 +318,9 @@ The 18-tool architecture (source connectors, destination connectors, workflow ma
 
 ## How to Choose
 
-**"I need the best document-to-Markdown conversion"** → [MinerU MCP](https://github.com/opendatalab/MinerU). 61,700-star library (now ~77,700), Apache-2.0-based license, supports PDF/DOCX/PPTX/XLSX, multiple inference backends. Had the highest PulseMCP traffic among OCR servers at the May 2026 refresh (see correction in the MinerU section — traffic has since dropped substantially).
+**"I need the best document-to-Markdown conversion"** → [MinerU MCP](https://github.com/opendatalab/MinerU). 61,700-star library (now ~78,300), Apache-2.0-based license, supports PDF/DOCX/PPTX/XLSX, multiple inference backends. Had the highest PulseMCP traffic among OCR servers at the May 2026 refresh (see correction in the MinerU section — traffic has since dropped substantially).
 
-**"I need the best open-source OCR with maximum language coverage"** → [PaddleOCR MCP](https://github.com/PaddlePaddle/PaddleOCR). Official vendor server, 111 languages, 4 tools including VLM-based extraction, runs locally.
+**"I need the best open-source OCR with maximum language coverage"** → [PaddleOCR MCP](https://github.com/PaddlePaddle/PaddleOCR). Official vendor server, 111 languages, 3 tools including VLM-based extraction (see correction in the PaddleOCR section), runs locally.
 
 **"I want one server for many conversion types"** → [Markdownify MCP](https://github.com/zcaceres/markdownify-mcp). OCR plus PDF, audio, web, and Office. 2,600 stars, MIT license, actively maintained.
 
@@ -344,6 +346,6 @@ The gap between the quality of underlying OCR engines and the quality of their M
 
 ---
 
-*This review was originally published 2026-03-19 and refreshed 2026-05-02 (44 days) using Claude Sonnet 4.6 (Anthropic). Star counts, version numbers, and feature availability largely reflect research conducted in May 2026, except where corrections above note updates verified during the 2026-08-16 audit. We research MCP servers thoroughly through documentation, GitHub repositories, community discussions, and published benchmarks — we do not test servers hands-on.*
+*This review was originally published 2026-03-19 and refreshed 2026-05-02 (44 days) using Claude Sonnet 4.6 (Anthropic). Star counts, version numbers, and feature availability largely reflect research conducted in May 2026, except where corrections above note updates verified during the 2026-08-16 and 2026-08-23 audits. We research MCP servers thoroughly through documentation, GitHub repositories, community discussions, and published benchmarks — we do not test servers hands-on.*
 
-*This review's citations were re-audited claim-by-claim on 2026-08-16 using Claude Sonnet 5 (Anthropic).*
+*This review's citations were re-audited claim-by-claim on 2026-08-16 and again on 2026-08-23 using Claude Sonnet 5 (Anthropic).*
