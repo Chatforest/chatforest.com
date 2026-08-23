@@ -9,7 +9,7 @@
 
 Mistral Codestral is [Mistral AI's](/reviews/mistral-ai-open-weight-llm-european-ai/) first code-specialized model, released May 29, 2024. Its central claims are two: first, that a 22-billion-parameter specialist can outperform 33–70B general-purpose models on code tasks; second, that fill-in-the-middle (FIM) capability, baked into pretraining rather than added post-hoc, makes it more useful than autoregressive-only models for the real-world developer workflow of IDE tab completion.
 
-Both claims hold up. Codestral's [HumanEval pass@1 of 81.1%](https://mistral.ai/news/codestral/) outperformed [Code Llama 70B (67%)](https://ai.meta.com/blog/code-llama-large-language-model-coding/) and DeepSeek Coder 33B (~79%) at launch — a striking result for a model less than a third the size. Its RepoBench exact-match score of 34.0% was the best at launch, which Mistral attributed directly to the 32K context window (large enough to hold entire files). FIM worked as advertised in IDE integrations: Continue.dev and Tabnine added Codestral support at launch.
+Both claims hold up. Codestral's [HumanEval pass@1 of 81.1%](https://mistral.ai/news/codestral/) outperformed [Code Llama 70B (67.8%, rounded to "up to 67%" in Meta's own paper)](https://arxiv.org/abs/2308.12950) and [DeepSeek Coder 33B (~79%, per DeepSeek's own reported benchmarks)](https://github.com/deepseek-ai/DeepSeek-Coder) at launch — a striking result for a model less than a third the size. Its RepoBench exact-match score of 34.0% was the best at launch, which Mistral attributed directly to the 32K context window (large enough to hold entire files). FIM worked as advertised in IDE integrations: Continue.dev and Tabnine added Codestral support at launch.
 
 The complication is the license. Codestral ships under the **Mistral AI Non-Production License (MNPL)**, which allows research and testing but prohibits commercial use — including free-of-charge SaaS — without a separate paid agreement. This was a deliberate commercial decision by Mistral, and it sets Codestral apart from the Apache 2.0 models in their lineup. For individuals and researchers, the weights are accessible on Hugging Face. For production use, a commercial arrangement is required.
 
@@ -19,7 +19,7 @@ The complication is the license. Codestral ships under the **Mistral AI Non-Prod
 
 In mid-2024, the main open-weight code models were **Code Llama** (Meta, July 2023 — 7B/13B/34B, FIM-capable, 100K context in the Instruct variant), **DeepSeek Coder** (DeepSeek, October 2023 — 1B to 33B, FIM-capable, 87% code in training data), and **StarCoder2** (BigCode/Hugging Face, February 2024 — 3B/7B/15B, FIM-capable). All were competitive on benchmarks but had gaps.
 
-Code Llama 70B scored 67% on HumanEval — strong for a general-to-code-adapted model, but the 70B scale limited deployment options. DeepSeek Coder 33B scored ~79% but required more memory. StarCoder2 was smaller and more accessible but topped out at 15B. None of the open-weight options at this scale had 32K context as standard.
+Code Llama 70B scored 67.8% on HumanEval per [Meta's own technical report](https://arxiv.org/abs/2308.12950) (rounded to "up to 67%" in Meta's paper text) — strong for a general-to-code-adapted model, but the 70B scale limited deployment options. DeepSeek Coder 33B scored 77.4% on HumanEval in Mistral's own launch comparison (DeepSeek's own self-reported figure is [79.3%](https://github.com/deepseek-ai/DeepSeek-Coder), likely a different eval harness) but required more memory. StarCoder2 was smaller and more accessible but topped out at 15B. None of the open-weight options at this scale had 32K context as standard.
 
 Codestral's positioning: a 22B model that fits within the memory envelope most practitioners were already allocating for 7B models on server hardware (BF16: ~46GB; Q4: ~13GB), with benchmark numbers competitive with models 1.5–3× larger and a context window long enough for repository-scale tasks.
 
@@ -74,20 +74,20 @@ POST https://codestral.mistral.ai/v1/fim/completions
 
 The `prompt` field is the prefix (code before the cursor). The `suffix` field is the code after the cursor. Codestral generates what belongs between them and emits `<EOT>` when done. Mistral recommends a temperature of 0.2–0.3 for deterministic autocomplete scenarios.
 
-This is distinct from the chat completion endpoint (`api.mistral.ai/v1/chat/completions`). Codestral has a dedicated FIM endpoint at `codestral.mistral.ai/v1/fim/completions`, and the model is also accessible via the standard chat interface for prompt-driven code generation tasks that don't require FIM.
+This is distinct from the chat completion endpoint (`api.mistral.ai/v1/chat/completions`). At launch, Codestral had a dedicated FIM endpoint at `codestral.mistral.ai/v1/fim/completions`; **as of this audit (2026-08-23), [Mistral's current API reference](https://docs.mistral.ai/api/endpoint/fim) documents FIM completions at `api.mistral.ai/v1/fim/completions`** — the standard token-billed endpoint now serves FIM directly, and the model is also accessible via the standard chat interface for prompt-driven code generation tasks that don't require FIM.
 
 ---
 
 ## Benchmarks
 
-Codestral's launch benchmarks:
+Codestral's launch benchmarks, [as published by Mistral](https://mistral.ai/news/codestral/) (all four columns from the same comparison so figures are apples-to-apples; DeepSeek Coder's own self-reported HumanEval figure for the same model is 79.3%, per its [GitHub repo](https://github.com/deepseek-ai/DeepSeek-Coder) — the gap is evaluation-harness variance, not a typo):
 
 | Benchmark | Codestral 22B | DeepSeek Coder 33B | Code Llama 70B | Llama 3 70B |
 |---|---|---|---|---|
-| HumanEval pass@1 | **81.1%** | ~79% | ~67% | ~76% |
+| HumanEval pass@1 | **81.1%** | 77.4% | 67.1% | 76.2% |
 | MBPP pass@1 | 78.2% | **80.2%** | 70.8% | 76.7% |
-| RepoBench EM | **34.0%** | lower | lower | lower |
-| CruxEval-O | **51.3%** | — | — | — |
+| RepoBench EM | **34.0%** | 28.4% | 11.4% | 18.4% |
+| CruxEval-O | **51.3%** | 49.5% | 47.3% | 26.0% |
 
 The headline result is HumanEval: 81.1% at 22B, beating Code Llama 70B at less than a third the parameter count. This is the "code specialist beats generalist" argument in concrete numbers.
 
@@ -109,7 +109,7 @@ The 80+ language claim puts Codestral in the same tier as Code Llama and DeepSee
 
 ## License: The MNPL Constraint
 
-Codestral ships under the **Mistral AI Non-Production License (MNPL)**. This is the most consequential limitation in the model's profile.
+Codestral ships under the **[Mistral AI Non-Production License (MNPL)](https://mistral.ai/licenses/MNPL-0.1.md)**. This is the most consequential limitation in the model's profile.
 
 What MNPL allows:
 - Research and academic use
@@ -128,7 +128,7 @@ At launch in May 2024, this generated significant community discussion. Develope
 
 For individual developers running Codestral locally for personal projects, the license is permissive enough. For organizations building products, the license gates production use behind a negotiated commercial agreement. Mistral's commercial license inquiry goes through `license@mistral.ai`.
 
-Compare this to DeepSeek Coder (MIT license, fully open) and Code Llama (Meta Llama license, permissive with a 700M MAU threshold). Both alternatives allow commercial use without a separate agreement. For organizations making a build-vs-buy decision, this is a real cost factor in the MNPL path.
+Compare this to DeepSeek Coder ([DeepSeek's own Model License](https://github.com/deepseek-ai/deepseek-coder/blob/main/LICENSE-MODEL) — MIT applies only to the inference code, not the model weights; the weights carry a custom license with acceptable-use restrictions but no paid-agreement requirement) and Code Llama ([Meta Llama 2 Community License](https://ai.meta.com/llama/license/), permissive with a 700M MAU threshold). Both alternatives allow commercial use without a separate negotiated agreement. For organizations making a build-vs-buy decision, this is a real cost factor in the MNPL path.
 
 ---
 
@@ -148,11 +148,11 @@ Compare this to DeepSeek Coder (MIT license, fully open) and Code Llama (Meta Ll
 
 Codestral has evolved significantly since v0.1 in May 2024. The v0.1 model described in this review is the launch version; subsequent releases address its main constraints.
 
-**Codestral Mamba (July 2024):** A separate 7B model built on the Mamba2 state-space architecture — not a Transformer. Smaller, faster inference due to linear (not quadratic) attention scaling. Apache 2.0 license, fully open. Performance comparable to Transformer-based models of similar scale on code benchmarks. This was Mistral's experimental move into non-Transformer architectures for code; it does not supersede the 22B v0.1.
+**[Codestral Mamba](https://mistral.ai/news/codestral-mamba/) (July 16, 2024):** A separate ~7.3B model built on the Mamba2 state-space architecture — not a Transformer. Smaller, faster inference due to linear (not quadratic) attention scaling. Apache 2.0 license, fully open. Performance comparable to Transformer-based models of similar scale on code benchmarks. This was Mistral's experimental move into non-Transformer architectures for code; it does not supersede the 22B v0.1.
 
-**Codestral 25.01 (January 2025):** A substantial update to the API model (not directly open-weight in the same way). Key changes: improved tokenizer, more efficient architecture with fewer than 100B parameters (exact count not disclosed), approximately 2× faster generation, and context window extended to 256K tokens — eight times the original 32K. Debuted at #1 on the LMSys Copilot Arena leaderboard at launch, indicating meaningful quality improvement over v0.1. The 256K window addresses the primary limitation of v0.1 for very large repository work.
+**[Codestral 25.01](https://mistral.ai/news/codestral-2501/) (January 13, 2025):** A substantial update to the API model (not directly open-weight in the same way). Key changes: improved tokenizer, more efficient architecture with fewer than 100B parameters (exact count not disclosed), approximately 2× faster generation, and context window extended to 256K tokens — eight times the original 32K. Debuted at #1 on the LMSys Copilot Arena leaderboard at launch, indicating meaningful quality improvement over v0.1. The 256K window addresses the primary limitation of v0.1 for very large repository work.
 
-**Codestral 25.08 (~August 2025):** Part of Mistral's "Mistral Coding Stack" enterprise offering. Claimed improvements: 30% increase in accepted code suggestions (as measured in IDE deployment contexts), 5% improvement in instruction following. Positioned for enterprise code assistance deployment.
+**Correction (2026-08-23): [Codestral 25.08](https://mistral.ai/news/codestral-25-08/) shipped July 30, 2025, not "~August 2025" as this review previously stated.** Part of Mistral's "Mistral Coding Stack" enterprise offering. Mistral's own claimed improvements: +30% increase in accepted code completions and +5% on the IF-eval v8 instruction-following benchmark (both measured via live IDE usage in production codebases). Positioned for enterprise code assistance deployment.
 
 For practical purposes: if you are accessing Codestral via the Mistral API, you are getting a model significantly better than v0.1. The `codestral-latest` alias routes to the current production version. The v0.1 weights on Hugging Face and Ollama are the original May 2024 release.
 
@@ -167,7 +167,7 @@ For practical purposes: if you are accessing Codestral via the Mistral API, you 
 - Organizations that have negotiated a commercial license with Mistral
 
 **Where alternatives are stronger:**
-- Commercial production use without a Mistral agreement: DeepSeek Coder (MIT) or Code Llama (Meta Llama license) are drop-in alternatives without licensing overhead
+- Commercial production use without a Mistral agreement: DeepSeek Coder (custom DeepSeek Model License, commercial use allowed without a paid agreement) or Code Llama (Meta Llama license) are drop-in alternatives without licensing overhead
 - General reasoning alongside code generation: a general-purpose model at 70B+ is likely stronger on MBPP and multi-step reasoning tasks
 - Very long repository context: Codestral 25.01 (via API, 256K) addresses this, but v0.1 is limited to 32K
 
@@ -178,7 +178,7 @@ Codestral is optimized for the cursor-insertion pattern — FIM completions via 
 
 ## In the Mistral Model Family
 
-Codestral sits alongside, not above, [Mistral AI's](/reviews/mistral-ai-open-weight-llm-european-ai/) general-purpose lineup. The contemporaneous general models in May 2024 included Mistral 7B and Mixtral 8x22B (both Apache 2.0). [Mistral Large 3](/reviews/mistral-large-3-open-weight-moe-llm-review/) (July 2024) and [Mistral Medium 3.5](/reviews/mistral-medium-3-5-dense-128b-agentic-llm-review/) arrived later with stronger general-purpose performance.
+Codestral sits alongside, not above, [Mistral AI's](/reviews/mistral-ai-open-weight-llm-european-ai/) general-purpose lineup. The contemporaneous general models in May 2024 included Mistral 7B and Mixtral 8x22B (both Apache 2.0). **Correction (2026-08-23): this section previously misdated "Mistral Large 3" to July 2024 — that date and 123B/dense spec actually belong to [Mistral Large 2](/reviews/mistral-large-2-123b-apache-2-0-flagship-llm-review/), released July 24, 2024. [Mistral Large 3](/reviews/mistral-large-3-open-weight-moe-llm-review/), a 675B MoE model, did not arrive until December 2, 2025.** Mistral Large 2, Mistral Large 3, and [Mistral Medium 3.5](/reviews/mistral-medium-3-5-dense-128b-agentic-llm-review/) all arrived later with stronger general-purpose performance than Codestral offers.
 
 Codestral is a domain specialist, not a general-purpose upgrade. A developer choosing between Codestral and a general model should think of it the way one thinks of any specialized tool: narrowly excellent, broadly weaker.
 
@@ -190,9 +190,9 @@ The MNPL license also means Codestral exists in a separate commercial tier from 
 
 Codestral v0.1 deserves a 4. The technical achievement is real: 81.1% HumanEval at 22B was a genuine state-of-the-art result for parameter-efficient code generation in May 2024. Native FIM training at pretraining-time is the right approach for IDE autocomplete, and the RepoBench result demonstrates that 32K context was a meaningful advantage at launch. The model works as described, and the IDE integrations were ready at launch.
 
-The MNPL license keeps it from a 5. A code model intended for developer tooling, with commercial use gated behind negotiated agreements, is harder to recommend than MIT-licensed or Apache-2.0-licensed alternatives for most practical deployments. DeepSeek Coder 33B's ~79% HumanEval with MIT licensing is only modestly weaker technically, but dramatically more flexible commercially.
+The MNPL license keeps it from a 5. A code model intended for developer tooling, with commercial use gated behind negotiated agreements, is harder to recommend than freely-commercial or Apache-2.0-licensed alternatives for most practical deployments. DeepSeek Coder 33B's ~79% self-reported HumanEval (77.4% in Mistral's own comparison), licensed for commercial use without a paid agreement, is only modestly weaker technically, but dramatically more flexible commercially.
 
-For research, personal use, or organizations with a Mistral commercial agreement: Codestral v0.1 is excellent, and Codestral 25.01 (via API) is better still. For production deployment without an existing Mistral relationship: the licensing overhead is a real cost that MIT-licensed alternatives avoid.
+For research, personal use, or organizations with a Mistral commercial agreement: Codestral v0.1 is excellent, and Codestral 25.01 (via API) is better still. For production deployment without an existing Mistral relationship: the licensing overhead is a real cost that permissively-licensed alternatives avoid.
 
 ---
 

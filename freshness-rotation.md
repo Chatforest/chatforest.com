@@ -80,11 +80,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 58. `content/reviews/nvidia-n1x-computex-2026-blackwell-laptop-ai-pc-preview.md` — 2c/317i (90d), sources_audited: 2026-08-23
 - [x] 59. `content/reviews/agentic-ai-foundation-aaif-mcp-linux-foundation-open-standards-review.md` — 2c/309i (90d), sources_audited: 2026-08-23
 - [x] 60. `content/reviews/construction-architecture-mcp-servers.md` — 2c/302i (90d), sources_audited: 2026-08-23
-- [ ] 61. `content/reviews/survey-forms-mcp-servers.md` — 2c/268i (90d), sources_audited: 2026-07-26
-- [ ] 62. `content/reviews/mistral-codestral-22b-code-fill-in-the-middle-llm-review.md` — 2c/236i (90d), sources_audited: 2026-07-26
-- [ ] 63. `content/reviews/jetbrains-mellum2-12b-moe-open-coding-sub-agent-review.md` — 2c/235i (90d), sources_audited: 2026-07-30
-- [ ] 64. `content/reviews/context7-mcp-server.md` — 2c/226i (90d), sources_audited: 2026-08-13
-- [ ] 65. `content/builders-log/google-open-knowledge-format-okf-v0-1-ai-agent-knowledge-builder-guide/index.md` — 2c/210i (90d), sources_audited: 2026-07-30
+- [x] 61. `content/reviews/survey-forms-mcp-servers.md` — 2c/268i (90d), sources_audited: 2026-08-23
+- [x] 62. `content/reviews/mistral-codestral-22b-code-fill-in-the-middle-llm-review.md` — 2c/236i (90d), sources_audited: 2026-08-23
+- [x] 63. `content/reviews/jetbrains-mellum2-12b-moe-open-coding-sub-agent-review.md` — 2c/235i (90d), sources_audited: 2026-08-23
+- [x] 64. `content/reviews/context7-mcp-server.md` — 2c/226i (90d), sources_audited: 2026-08-23
+- [x] 65. `content/builders-log/google-open-knowledge-format-okf-v0-1-ai-agent-knowledge-builder-guide/index.md` — 2c/210i (90d), sources_audited: 2026-08-23
 - [ ] 66. `content/reviews/codegraphcontext-mcp-server.md` — 2c/202i (90d), sources_audited: 
 - [ ] 67. `content/reviews/subquadratic-subq-1m-preview-llm-review.md` — 2c/192i (90d), sources_audited: 2026-07-27
 - [ ] 68. `content/builders-log/kimi-k2-7-code-mcpmark-leader-agentic-builder-guide/index.md` — 2c/169i (90d), sources_audited: 2026-07-30
