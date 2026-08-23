@@ -139815,3 +139815,103 @@ bsky-worthy items from this run and join the queue.
 - No open blockers.
 
 Run complete.
+
+## Run 2026-08-23T20:47 UTC
+
+### Orientation
+
+`date -u` 20:47 UTC (same UTC day as the last CEO digest, #2394 sent 00:58 UTC). Inbox: 1 pending
+— RingS Run 34 digest (#2395, sender aiu 64). RingS merged the 3-way orchestration ecosystem split
+(`ai-agent-orchestration-{generic,anthropic-claude}` + `langgraph-orchestration-patterns`) into one
+combined `content/ai/best-practices/ai-agent-orchestration/2026-08-24/` entry and deleted the 6
+superseded split-variant dirs. It also flagged a policy question: Run 33 (ai-agent-memory-and-state)
+published both a best-practices AND beginner entry, apparently reverting from the full-track-collapse
+ruling (#2366) that Run 32 and this run both followed correctly — RingS wants a CEO read on which
+run was the deviation before it propagates the wrong pattern through the rest of the sweep. Since
+today's one-digest cap is already used (#2394), this isn't an incident/blocker/direct-CEO-question,
+so per the digest-cadence rule it's logged here for tomorrow's digest rather than sent immediately.
+Marked #2395 seen (not done — queued for CEO relay).
+
+### Git sync — RingS content/ai consolidation
+
+Committed (f28a56ae70) the 6 deletions from RingS's orchestration merge plus routine log files
+(RUNLOG.md, TOKENLOG.tsv, .last_deploy). content/ai/ stays excluded from the Hugo build
+(`ignoreFiles` in config.toml) and out of scope for me to edit — this was purely syncing RingS's
+already-applied disk state into git, same pattern as every prior run. 13 new RingS content/ai/ dirs
+remain untracked (will be mechanically unstaged and logged to freeze-skip-log.md on next commit
+touching them, per the publishing-freeze hook — no action needed).
+
+### Freshness rotation: items 66-70 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim re-verification
+against live primary sources.
+
+66. **`content/reviews/codegraphcontext-mcp-server.md`** (never previously stamped ->
+    **2026-08-23**). Heaviest drift of the batch — stars 3.1K->4.1K, forks 563->826, version
+    0.4.6->0.6.5, MCP tools 20+->29, default backend changed (LadybugDB -> FalkorDB
+    Lite/KuzuDB). Most important catch: the Security section had cited an issue as "concrete,
+    tracked... not theoretical" — the maintainer actually closed it 2026-08-01 as spam, an ad
+    pitching a paid $29 third-party audit PDF with no reproducible finding. Rewrote to state the
+    real disposition and cite two genuinely-fixed injection issues instead. Also removed a
+    nonexistent tool from the tools table and cut an unverifiable "Phase 4/5 roadmap" claim (the
+    project's roadmap numbering has since changed).
+67. **`content/reviews/subquadratic-subq-1m-preview-llm-review.md`** (2026-07-27 ->
+    **2026-08-23**). The VentureBeat citation used 6 times throughout had 404'd — repointed to
+    the live URL. Cut the $0.50/$1.50 pricing and "150+ tok/s" figures per the hard cite-or-cut
+    rule: VentureBeat itself says pricing was never disclosed, and multiple sources confirm
+    they're unconfirmed analyst estimates the company never confirmed. Corrected a false "no
+    rebuttal published" claim — CTO Alex Whedon publicly confirmed (X, corroborated by DataCamp)
+    that SubQ builds on open-source weights rather than training from scratch, partially
+    validating outside skepticism. RULER score corrected 95.0%->95.6%; GPT-5.5 context window
+    corrected ~256K->~1.05M tokens.
+68. **`content/builders-log/kimi-k2-7-code-mcpmark-leader-agentic-builder-guide/index.md`**
+    (2026-07-30 -> **2026-08-23**). No fabrications, but the central "MCPMark leader" framing is
+    now stale: Kimi K3 (2.8T params, released July 16 2026) has since taken the MCPMark Verified
+    lead (94.5% per Moonshot's own model card, 96.1% on the live leaderboard), pushing K2.7 Code
+    to 5th place behind GPT-5.5, GPT-5.6-sol, and Claude Fable 5. Moonshot's own Claude Code guide
+    now defaults to `kimi-k3`. Added a dated correction block rather than silently updating the
+    "leader" framing as if it still held.
+69. **`content/guides/duolingo-mcp-agentic-platform.md`** (2026-07-25 -> **2026-08-23**). Fixed a
+    misstated feature-flag-removal agent claim (Duolingo's post only documents Codex CLI for that
+    agent, not "Codex CLI or Claude Code SDK"), corrected badly stale Datadog comparison numbers
+    (16 tools/13 toolsets -> 140+ tools/17+ toolsets per Datadog's own live docs and our own
+    audited review), cut an unverifiable Pinterest "~20 tools" figure (no such total is published
+    anywhere), and fixed Datadog's auth model (OAuth 2.1 -> 2.0). Also fixed 5 dead internal links
+    left over from the Aug 19 low-traffic prune (`/guides/pinterest-mcp-production-case-study/`
+    and `/guides/datadog-mcp-server-production-lessons/` both 404 now) — repointed to live primary
+    sources. **Flag for a follow-up pass**: those same two dead slugs are still referenced by
+    ~10 other guide pages sitewide, out of scope for this single-page audit.
+70. **`content/builders-log/amazon-q-developer-kiro-migration-timeline-opus-cutoff/index.md`**
+    (2026-07-29 -> **2026-08-23**). All three migration-timeline dates and the "not impacted" list
+    held up against AWS's own end-of-support post. Kiro pricing had drifted: $19/mo -> $20/user/mo
+    for the Pro tier, plus three new tiers added since (Pro+ $40, Pro Max $100, Power $200) — all
+    per live kiro.dev/pricing. Fixed a moved migration-docs URL.
+
+`freshness-rotation.md` now at 70/1006. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified all 5 corrections in the built HTML (CodeGraphContext's
+4.1K stars, Kimi K3 mention, Kiro's $20/user/month + new tiers, SubQ's fixed VentureBeat link,
+Duolingo's 140+ Datadog tools) before committing (41f7b97a59), pushing, deploying (throttle clear,
+~4h since prior deploy), and live-verifying the CodeGraphContext star count on the served page.
+
+### Bluesky / CEO digest
+
+Not applicable this run — Bluesky already posted today (00:57 UTC per
+`check_bluesky_posted_today.py` -> `ALREADY_POSTED`) and CEO digest already sent today (#2394,
+00:58 UTC). RingS's policy question (see Orientation) queues for tomorrow's digest. New Bluesky
+candidate from this run: the CodeGraphContext "security issue was actually spam" catch is a solid,
+verifiable, non-alarmist data point worth adding to the growing candidate queue.
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 71 in `freshness-rotation.md`
+  (~5 pages/run).
+- **Tomorrow's digest (first run of UTC 2026-08-24) must include**: fresh subscriber count, fresh
+  GSC line, the CEO's outstanding GSC data ask for `/transparency/claim-audit-2026/` (due today per
+  session 4031's note), the Tue 08-25 Dispatch #8 reminder, and RingS's track-collapse policy
+  question from #2395 (Run 33 vs. Run 32/34 — which one deviated from ruling #2366).
+- Follow-up (not urgent): ~10 guide pages sitewide still link the two dead slugs identified during
+  item 69's audit (`/guides/pinterest-mcp-production-case-study/`,
+  `/guides/datadog-mcp-server-production-lessons/`) — worth a dedicated dead-link sweep.
+- No open blockers.
+
+Run complete.
