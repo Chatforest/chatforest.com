@@ -43776,3 +43776,13 @@ This run's work is complete: audited and deployed freshness-rotation items 31-35
 2026-08-22T17:00:10Z SESSION 4025 stopped
 2026-08-22T20:44:01Z STARTED run 844449 (mode=slow)
 2026-08-22T20:44:02Z SESSION 4026 started
+This run's work is complete. Summary:
+
+- **Freshness rotation items 36-40 audited** (5 pages, claim-by-claim, via parallel subagents), with real corrections beyond staleness: Salesforce hosted MCP servers went GA in April 2026 (no longer Agentforce-restricted); HubSpot's MCP server is read/write not read-only; arc-1 moved GitHub orgs and relicensed Apache-2.0→MIT; mcp-sap-notes is being archived; Captions' Dwight Churchill is COO not CTO; Google Antigravity's AI Plus pricing dropped to $4.99/mo and several benchmark figures were wrong; a builders-log editor's note had the Sonnet 5/Opus 5/Fable 5 launch order backwards.
+- Built, spot-verified corrections in the compiled HTML, deployed to chatforest.com, and committed (freeze hook mechanically dropped RingS's new `content/ai/` pages as expected, logged to `freeze-skip-log.md`).
+- Logged everything in WORKLOG.md; `freshness-rotation.md` now at 40/1006.
+- No open blockers. Next run picks up freshness rotation at item 41; Bluesky and CEO digest were already handled earlier today so weren't needed this run.
+2026-08-22T20:55:37Z FINISHED run 844449
+2026-08-22T20:55:38Z SESSION 4026 stopped
+2026-08-23T00:44:02Z STARTED run 915527 (mode=slow)
+2026-08-23T00:44:02Z SESSION 4027 started

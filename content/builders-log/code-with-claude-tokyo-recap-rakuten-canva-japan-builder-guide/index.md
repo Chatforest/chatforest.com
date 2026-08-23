@@ -2,11 +2,11 @@
 title: "Code with Claude Tokyo Recap: What Rakuten, Canva, and the Japan Enterprise Wave Tell Builders"
 date: 2026-06-10
 description: "Code with Claude Tokyo ran June 10 with three tracks and five case studies. Here's what was presented, what Rakuten's 97% error reduction actually means architecturally, and the four things any builder should do differently after watching."
-og_description: "Code with Claude Tokyo June 10 recap: Rakuten cut feature delivery from 24 to 5 days using 24 parallel Claude Code sessions. Canva processed 50T tokens in a year. Sosuke Suzuki's CLAUDE.md workshop. What it all means for builders."
+og_description: "Code with Claude Tokyo June 10 recap: Rakuten cut feature delivery from 24 to 5 days and one engineer runs 24 parallel Claude Code sessions on monorepo updates. Canva processed 50T tokens in a year. Sosuke Suzuki's CLAUDE.md workshop. What it all means for builders."
 content_type: "Builder's Log"
 categories: ["Claude", "Developer Events", "Agent Infrastructure"]
 tags: ["code-with-claude", "tokyo", "anthropic", "claude-code", "rakuten", "canva", "japan", "agents", "multi-agent", "claude.md", "mcp", "managed-agents", "developer-conference", "recap"]
-sources_audited: 2026-07-29
+sources_audited: 2026-08-23
 ---
 
 Code with Claude Tokyo ran on June 10, 2026 — the third and final stop of [Anthropic's developer conference series](https://claude.com/blog/code-with-claude-san-francisco-london-tokyo) after San Francisco (May 6) and London (May 19). The event was livestreamed globally across three tracks: Research, Claude Platform, and Claude Code.
@@ -59,7 +59,7 @@ At the Tokyo event, Rakuten Group's Yusuke Kaji (General Manager of AI for Busin
 
 - Feature delivery time: 24 working days → 5 days (79% reduction)
 - Critical error rate: down 97%
-- Single autonomous session: 7 hours of sustained coding on a vLLM refactoring task spanning 12.5 million lines of code across multiple languages, no human intervention
+- Single autonomous session: 7 hours of sustained coding on a vLLM refactoring task spanning 12.5 million lines of code across multiple languages, with the engineer writing no code himself and providing only occasional guidance
 
 The architecture that produced these results is worth understanding. Rakuten [Machine Learning Engineer Kenta Naruse](https://claude.com/customers/rakuten) is building what the case study calls an "ambient agent" setup: [breaking complex tasks into 24 parallel Claude Code sessions](https://rakuten.today/blog/rakuten-accelerates-development-with-claude-code.html), each handling a different component of a monorepo update simultaneously. The tasks that used to take a month get distributed across parallel sessions and completed in a fraction of the time. Naruse is also the engineer behind the 7-hour vLLM session: ["I didn't write any code during those seven hours. I just provided occasional guidance,"](https://rakuten.today/blog/rakuten-accelerates-development-with-claude-code.html) he said.
 
@@ -75,7 +75,7 @@ Rakuten also [asked non-engineers to use Claude Code](https://claude.com/custome
 
 The Tokyo event sits inside a broader Japan story that has been developing for months.
 
-**Infrastructure**: Japan's megabanks — MUFG, Mizuho, and Sumitomo Mitsui — along with government agencies [gained access around June 3](https://www.nippon.com/en/news/yjj2026060201148/) to [Claude Mythos](https://www.anthropic.com/news/expanding-project-glasswing), Anthropic's specialized vulnerability-hunting model (part of Project Glasswing, built for cybersecurity vulnerability detection rather than general-purpose use) — Japan was [the first Japanese entrant](https://thenextweb.com/news/anthropic-mythos-japan-megabanks-access) into a program previously limited to the US and UK; as of that reporting, [no EU government yet had access](https://thenextweb.com/news/anthropic-mythos-japan-megabanks-access).
+**Infrastructure**: Japan's megabanks — MUFG, Mizuho, and Sumitomo Mitsui — along with government agencies [gained access around June 3](https://www.japantimes.co.jp/business/2026/06/03/tech/japan-anthropic-mythos/) to [Claude Mythos](https://www.anthropic.com/news/expanding-project-glasswing), Anthropic's specialized vulnerability-hunting model (part of Project Glasswing, built for cybersecurity vulnerability detection rather than general-purpose use) — Japan was [the first Japanese entrant](https://thenextweb.com/news/anthropic-mythos-japan-megabanks-access) into a program previously limited to the US and UK; as of that reporting, [no EU government yet had access](https://thenextweb.com/news/anthropic-mythos-japan-megabanks-access).
 
 **Enterprise**: NEC is deploying Claude to [approximately 30,000 employees worldwide](https://www.anthropic.com/news/anthropic-nec), building — in [NEC's own words](https://www.nec.com/en/press/202604/global_20260423_01.html) — one of Japan's largest AI-native engineering organizations. [Hitachi is applying Claude](https://www.hitachi.com/en/press/articles/2026/05/0519b/) to system engineering, operations, and cybersecurity across energy, transportation, manufacturing, and finance, as part of a rollout to roughly 290,000 employees.
 

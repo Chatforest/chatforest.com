@@ -139429,3 +139429,102 @@ round).
 - No open blockers.
 
 Run complete.
+
+## Run 2026-08-23T00:44 UTC
+
+### Orientation
+
+`date -u` 00:44 UTC. Inbox: empty (no pending messages). Bluesky: not yet posted today
+(`check_bluesky_posted_today.py` -> OK_TO_POST). Not Tuesday, so no reservation gate applies.
+Last deploy 2026-08-22 20:54:54 UTC (>1hr ago), so deploy unblocked this run. Continued the
+primary standing duty: freshness rotation, items 41-45.
+
+### Freshness rotation: items 41-45 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim
+re-verification against live primary sources.
+
+41. **`content/builders-log/code-with-claude-tokyo-recap-rakuten-canva-japan-builder-guide/index.md`**
+    (3c/78i 90d, `sources_audited: 2026-07-29` -> **2026-08-23**). Most claims held up (event
+    dates, Canva's 50T token figure, NEC/Hitachi headcount figures, Sakana AI Series A
+    investors, Managed Agents beta status confirmed still live). Fixed a dead link (nippon.com
+    404) with a working Japan Times source for the same June 3 Mythos-access date. Fixed an
+    internal contradiction: bullet claimed "no human intervention" during the 7-hour vLLM
+    session while the next paragraph quotes the same engineer describing "occasional guidance"
+    — reworded to match the source quote. Fixed a fact-fusion in `og_description` that implied
+    a causal link (24 parallel sessions -> 24-to-5-day reduction) between two facts the source
+    treats separately.
+42. **`content/guides/claude-for-small-business-agentic-workflows-connectors.md`** (3c/63i 90d,
+    `sources_audited: 2026-07-25` -> **2026-08-23**). Real factual error: **Webflow was listed
+    as one of the bundle's "10+ connectors" but isn't part of Claude for Small Business** in any
+    primary source (it's a general-purpose Claude connector) — removed from front matter and
+    body, replaced with a visible dated correction note rather than silently deleted. "Teams"
+    plan renamed to "Team" (current Anthropic label) in three spots. Added citations to
+    previously-uncited claims (15-workflows intro, 15-skills paragraph, connectors intro,
+    pricing, AI Fluency course, 4D Framework, Workshop Tour section). Softened an unverifiable
+    "fourth vertical in 2026" ordinal claim to "one of several verticals."
+43. **`content/reviews/nvidia-gtc-taipei-2026-jensen-huang-keynote-n1x-vera-rubin-physical-ai-preview.md`**
+    (2c/4089i 90d, `sources_audited: 2026-07-29` -> **2026-08-23**). Several mismatched
+    citations caught: an AI-throughput TOPS figure cited a source that never mentions TOPS at
+    all (replaced with Tom's Hardware/borncity + noted a separate 1,000 TOPS NVFP4 spec-leak
+    figure so readers aren't misled); a CUDA-compatibility sentence cited "Flash Attention"
+    support from a source that only names PyTorch/TensorRT-LLM/llama.cpp (swapped to match);
+    an automaker DRIVE Hyperion claim (BYD/Hyundai/Nissan/Geely) cited an Uber IR release that
+    names none of them — corrected via NVIDIA's own press release to the actual Level 4
+    adopters (BYD, Geely, Isuzu, Nissan; Hyundai's deal was a separate Level 2 announcement).
+    Also fixed a conflated laptop-pricing row (N1 $1,799+ vs N1X $2,899+ reported as one range)
+    and corrected Vera Rubin rack assembly time to NVIDIA's own "more than 1.5 hours" (was
+    "roughly 2 hours").
+44. **`content/builders-log/nvidia-dgx-spark-june-2026-update-multi-node-clustering-nvfp4-nemoclaw-builder-guide/index.md`**
+    (2c/2115i 90d, `sources_audited: 2026-07-28` -> **2026-08-23**). Most specs/claims held up
+    (GB10 specs, June update clustering math, price still $4,699, NCCL topology, vLLM benchmark
+    table, NemoClaw v0.1.0, OpenShell sandbox architecture). Real drift caught: the article said
+    the NemoClaw playbook defaults onboarding to Nemotron-3-Super-120B via Ollama — current
+    NVIDIA/dgx-spark-playbooks README shows Express Install now defaults to a managed local vLLM
+    server running qwen3.6-35b-a3b-nvfp4, with Nemotron-3-Super-120B no longer a default. Also
+    corrected a stale storage spec (1TB/4TB -> 4TB only, current NVIDIA ref spec) and an
+    internal inconsistency (Qwen3.6-35B miscategorized as a 100-130B MoE example).
+45. **`content/builders-log/openai-realtime-cedar-marin-voice-selection-gpt-realtime-2-builder-guide/index.md`**
+    (2c/941i 90d, `sources_audited: 2026-07-26` -> **2026-08-23**). Biggest catches of the
+    batch: wrong origin story (page claimed Cedar/Marin debuted with gpt-realtime-2 on May 7,
+    2026; they actually launched with the original gpt-realtime model on **August 28, 2025**,
+    confirmed via OpenAI's Aug 2025 blog post + launch tweet) — rewrote intro/closing
+    chronology. False TTS-exclusivity claim corrected (Cedar/Marin/Ballad/Verse ARE available
+    via gpt-4o-mini-tts, just not tts-1/tts-1-hd). **Real bug fix**: JSON example used flat
+    `"reasoning_effort": "medium"` — OpenAI's actual schema nests it as `"reasoning": {"effort":
+    "medium"}` — builders copy-pasting the old sample would have hit an API error. Deleted two
+    unsourced claims (Italian prosodic quality, gpt-realtime-2 voice-update tie-in). Added a
+    currency note that gpt-realtime-2.1 (July 6, 2026) has since superseded gpt-realtime-2 for
+    latency. Updated stale platform.openai.com links to current developers.openai.com paths.
+
+`freshness-rotation.md` updated to 45/1006. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (had to re-run after finding a stray unminified build sitting uncommitted in `site/`
+from before this run — regenerating with the correct minify flags cleaned that up alongside
+the 5 audited pages). Spot-verified corrections in the built HTML (Isuzu in the DRIVE Hyperion
+automaker list, `reasoning.effort` nested JSON, Webflow correction note replacing the false
+bundle-inclusion claim) before deploying.
+
+RingS dropped new `content/ai/` files this run (mechanical freeze hook, `freeze-skip-log.md`)
+— expected behavior, no action needed.
+
+### Bluesky / CEO digest
+
+Not applicable this run in terms of posting — deferring to whichever run's Bluesky pre-post
+check clears; this run's `check_bluesky_posted_today.py` returned OK_TO_POST but no post was
+made in the citation-audit run itself. CEO digest: no digest sent yet today per the "max one
+digest per UTC day" rule — deferring to next check. New Bluesky candidate from this run: the
+OpenAI Cedar/Marin origin-date correction (Aug 2025, not May 2026) and the DGX Spark NemoClaw
+default-model change (Nemotron-3-Super-120B -> qwen3.6-35b-a3b-nvfp4) are both genuinely new,
+verifiable data points — join the existing growing queue.
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 46 in `freshness-rotation.md`
+  (~5 pages/run).
+- Next digest (first run of a new UTC day, or this run if none sent yet): report this run's
+  5-page freshness audit (especially the small-business Webflow bundle error and the OpenAI
+  Realtime API schema bug fix), fresh subscriber count, fresh GSC line, and the Bluesky
+  candidate queue (now considered for trimming per last run's note).
+- No open blockers.
+
+Run complete.

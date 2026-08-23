@@ -1,15 +1,15 @@
 ---
 title: "Realtime API Voice Selection: Cedar, Marin, and the Updated Catalog for gpt-realtime-2"
 date: 2026-05-07
-description: "gpt-realtime-2 ships with ten voices including two Realtime-exclusive additions, Cedar and Marin, which OpenAI recommends for best quality. Here is what builders need to know about voice selection, session lock-in, and cache pricing."
-og_description: "Cedar and Marin are the two new voices exclusive to the Realtime API, and OpenAI calls them the best-quality options. Here's the complete voice selection guide for gpt-realtime-2 builders."
+description: "gpt-realtime-2 ships with a ten-voice catalog including Cedar and Marin, which OpenAI recommends for best quality. Here is what builders need to know about voice selection, session lock-in, and cache pricing."
+og_description: "Cedar and Marin are OpenAI's best-quality Realtime API voices. Here's the complete voice selection guide for gpt-realtime-2 builders."
 content_type: "Builder's Log"
 categories: ["AI APIs", "Voice AI", "OpenAI"]
 tags: ["openai", "realtime-api", "gpt-realtime-2", "voice-agents", "cedar", "marin", "voice-selection", "audio", "streaming"]
-sources_audited: 2026-07-26
+sources_audited: 2026-08-23
 ---
 
-When OpenAI [shipped gpt-realtime-2](https://openai.com/index/introducing-gpt-realtime/) on May 7, 2026, the voice catalog expanded to ten options and two of them — Cedar and Marin — are available exclusively in the Realtime API. OpenAI's own [documentation](https://platform.openai.com/docs/guides/realtime) recommends them over the other eight for best quality. That recommendation has practical implications for how you configure new voice agents and whether existing ones should be updated.
+Cedar and Marin, OpenAI's newest voices, actually [debuted in the Realtime API](https://openai.com/index/introducing-gpt-realtime/) when it left beta on August 28, 2025 — OpenAI's developer team [announced](https://x.com/OpenAIDevs/status/1961124918957150237) them as "the most significant improvements to natural-sounding speech" the company had shipped for the API, a claim corroborated in [OpenAI's own community announcement](https://community.openai.com/t/introducing-gpt-realtime-and-realtime-api-updates-for-production-voice-agents/1355039) of the same launch. When OpenAI [shipped gpt-realtime-2](https://community.openai.com/t/new-realtime-voice-models-in-the-api/1380471) on May 7, 2026, the same ten-voice catalog carried over unchanged, and OpenAI's own [documentation](https://developers.openai.com/api/docs/guides/realtime-conversations) still recommends Cedar and Marin over the other eight for best quality. That recommendation has practical implications for how you configure new voice agents and whether existing ones should be updated.
 
 This guide covers what changed in the voice catalog, what Cedar and Marin are, how voice assignment works in sessions, and how prompt caching affects voice agent economics.
 
@@ -19,27 +19,29 @@ This guide covers what changed in the voice catalog, what Cedar and Marin are, h
 
 gpt-realtime-2 supports ten voices:
 
-**alloy, ash, ballad, coral, echo, sage, shimmer, verse** — Available in both the Realtime API and the standard TTS API (`tts-1`, `tts-1-hd`). These eight voices were updated alongside the gpt-realtime-2 launch to benefit from the same speech quality improvements.
+**alloy, ash, coral, echo, sage, shimmer** — Available in the Realtime API and in the classic `tts-1` / `tts-1-hd` TTS models.
 
-**cedar, marin** — Available only in the Realtime API. Not accessible via the TTS endpoint. If you try to use them in a standard TTS call, the request will fail.
+**ballad, verse** — Available in the Realtime API, but on the TTS side only via the newer `gpt-4o-mini-tts` model — not `tts-1` or `tts-1-hd`.
+
+**cedar, marin** — Also available via `gpt-4o-mini-tts` (like ballad and verse, not via `tts-1`/`tts-1-hd`). ([OpenAI text-to-speech documentation](https://developers.openai.com/api/docs/guides/text-to-speech) lists the current per-model voice support.)
 
 ---
 
 ## Cedar and Marin
 
-OpenAI [describes Cedar and Marin](https://platform.openai.com/docs/guides/realtime) as representing "the most significant improvements to natural-sounding speech" in the API. The official documentation recommends: "For best quality, we recommend using `marin` or `cedar`."
+OpenAI [described Cedar and Marin at launch](https://x.com/OpenAIDevs/status/1961124918957150237) as representing "the most significant improvements to natural-sounding speech" the company had shipped for the API. The [current Realtime API documentation](https://developers.openai.com/api/docs/guides/realtime-conversations) still recommends: "For best quality, we recommend using `marin` or `cedar`."
 
 Both voices are designed for the professional-empathetic register — the tone that reads as competent and trustworthy rather than either stiff or casual. This makes them well-suited for B2B and professional use cases: intake agents, medical or legal Q&A, financial support, and customer success workflows where synthetic-voice feel is a meaningful friction point.
 
 The rest of the catalog continues to serve consumer-casual and specific character personas. Ash, Ballad, Coral, and Verse in particular offer more expressive range that may be more appropriate for entertainment or informal consumer apps. The choice depends on the persona you are building toward, not objective quality alone.
 
-That said, if you are building a professional voice agent and have not specifically reason to pick a different voice, Cedar or Marin is the current recommended default.
+That said, if you are building a professional voice agent and have no specific reason to pick a different voice, Cedar or Marin is the current recommended default.
 
 ---
 
 ## Voice Lock-In During Sessions
 
-The voice is set at session initialization and **cannot be changed once the model has emitted audio in that session**. This is a hard constraint, not a soft one — the session is committed to a voice the moment the first audio output is generated.
+The voice is set at session initialization and, per [OpenAI's Realtime API documentation](https://developers.openai.com/api/docs/guides/realtime-conversations), **cannot be changed once the model has emitted audio in that session**. This is a hard constraint, not a soft one — the session is committed to a voice the moment the first audio output is generated.
 
 This has a few practical consequences:
 
@@ -70,7 +72,7 @@ This has a few practical consequences:
 
 gpt-realtime-2 supports prompt caching on both text and audio inputs. Cache hits dramatically reduce the cost of sessions that share substantial context.
 
-Current pricing (per [OpenAI pricing page](https://platform.openai.com/docs/pricing)):
+Current pricing (per [OpenAI's pricing page](https://developers.openai.com/api/docs/pricing), which also lists $64.00/1M for uncached audio output and $24.00/1M for uncached text output — not shown below since this guide focuses on input caching):
 
 | Input type | Uncached | Cached |
 |---|---|---|
@@ -95,8 +97,6 @@ The voice decision is mostly a product decision, not a technical one. A few ques
 
 **Persona requirements?** Some product brands have a defined voice personality. Map the voice to the persona rather than picking the "best" voice in abstract. The eight standard voices offer more personality range; Cedar and Marin are optimized for naturalness and trust over expressiveness.
 
-**Language?** Cedar and Marin both support Italian with particularly good prosodic quality. If your agent handles Italian as a primary language, they are the better choice over the standard catalog.
-
 **Testing:** You cannot A/B voices mid-session, but you can route a percentage of new sessions to a different voice for a production A/B test. Run sessions in parallel with different voices and compare completion rates, user satisfaction signals, or downstream conversion.
 
 ---
@@ -104,6 +104,8 @@ The voice decision is mostly a product decision, not a technical one. A few ques
 ## What This Means for Existing Builds
 
 If you migrated from `gpt-4o-realtime-preview` to `gpt-realtime-2` after the May 7 GA launch, your voice selection likely carried over from your beta configuration. The beta only offered a subset of voices — most commonly `alloy` was the default.
+
+(Note: OpenAI has since [shipped `gpt-realtime-2.1`](https://community.openai.com/t/new-realtime-models-on-the-api-gpt-realtime-2-1-and-gpt-realtime-2-1-mini/1385896) on July 6, 2026, cutting p95 voice latency by at least 25% via improved caching — [per OpenAI's current Realtime guide](https://developers.openai.com/api/docs/guides/realtime), it's now the model referenced in the main docs. The voice catalog and selection logic in this guide are unchanged on `gpt-realtime-2.1`, so everything below still applies if you've moved to it.)
 
 Two actions worth taking:
 
@@ -123,7 +125,9 @@ Set the voice in your session initialization payload:
   "session": {
     "model": "gpt-realtime-2",
     "voice": "marin",
-    "reasoning_effort": "medium",
+    "reasoning": {
+      "effort": "medium"
+    },
     "audio": {
       "output": {
         "format": "pcm16"
@@ -133,12 +137,14 @@ Set the voice in your session initialization payload:
 }
 ```
 
+Reasoning effort is configured as a nested `reasoning.effort` object, not a flat field — see [OpenAI's realtime-models prompting guide](https://developers.openai.com/api/docs/guides/realtime-models-prompting) for the full range of accepted values (`minimal`, `low`, `medium`, `high`, `xhigh`; `low` is the default).
+
 Valid voice values: `alloy`, `ash`, `ballad`, `cedar`, `coral`, `echo`, `marin`, `sage`, `shimmer`, `verse`
 
-`cedar` and `marin` values will fail if used with the standard TTS endpoint. They are Realtime API only.
+`cedar` and `marin` will fail on the classic `tts-1` / `tts-1-hd` TTS models — same as `ballad` and `verse`. All four are supported on the newer `gpt-4o-mini-tts` TTS model. (See the [voice catalog](#the-full-voice-catalog) section above and [OpenAI's TTS docs](https://developers.openai.com/api/docs/guides/text-to-speech).)
 
 ---
 
-*Cedar and Marin launched with gpt-realtime-2 on May 7, 2026. If you are using the GA Realtime API and have not evaluated these voices, the evaluation is a ten-minute task: swap the voice string in your session config, run a test session, and listen.*
+*Cedar and Marin launched in the Realtime API on August 28, 2025 and carried forward unchanged through the gpt-realtime-2 (May 7, 2026) and gpt-realtime-2.1 (July 6, 2026) releases. If you are using the GA Realtime API and have not evaluated these voices, the evaluation is a ten-minute task: swap the voice string in your session config, run a test session, and listen.*
 
-**Sources:** [OpenAI — Introducing GPT-Realtime](https://openai.com/index/introducing-gpt-realtime/) · [OpenAI Realtime API documentation](https://platform.openai.com/docs/guides/realtime)
+**Sources:** [OpenAI — Introducing GPT-Realtime](https://openai.com/index/introducing-gpt-realtime/) · [OpenAI — Advancing voice intelligence with new models in the API](https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/) · [OpenAI Realtime API documentation](https://developers.openai.com/api/docs/guides/realtime-conversations) · [OpenAI text-to-speech documentation](https://developers.openai.com/api/docs/guides/text-to-speech) · [OpenAI community: gpt-realtime-2.1 announcement](https://community.openai.com/t/new-realtime-models-on-the-api-gpt-realtime-2-1-and-gpt-realtime-2-1-mini/1385896)

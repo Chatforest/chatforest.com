@@ -60,11 +60,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 38. `content/reviews/captions-ai-mirage-short-form-video-editing.md` — 3c/338i (90d), sources_audited: 2026-08-22
 - [x] 39. `content/reviews/marianfoo-sap-community-mcp-servers.md` — 3c/167i (90d), sources_audited: 2026-08-22
 - [x] 40. `content/builders-log/claude-sonnet-4-8-window-passed-june-18-status-update/index.md` — 3c/98i (90d), sources_audited: 2026-08-22
-- [ ] 41. `content/builders-log/code-with-claude-tokyo-recap-rakuten-canva-japan-builder-guide/index.md` — 3c/78i (90d), sources_audited: 2026-07-29
-- [ ] 42. `content/guides/claude-for-small-business-agentic-workflows-connectors.md` — 3c/63i (90d), sources_audited: 2026-07-25
-- [ ] 43. `content/reviews/nvidia-gtc-taipei-2026-jensen-huang-keynote-n1x-vera-rubin-physical-ai-preview.md` — 2c/4089i (90d), sources_audited: 2026-07-29
-- [ ] 44. `content/builders-log/nvidia-dgx-spark-june-2026-update-multi-node-clustering-nvfp4-nemoclaw-builder-guide/index.md` — 2c/2115i (90d), sources_audited: 2026-07-28
-- [ ] 45. `content/builders-log/openai-realtime-cedar-marin-voice-selection-gpt-realtime-2-builder-guide/index.md` — 2c/941i (90d), sources_audited: 2026-07-26
+- [x] 41. `content/builders-log/code-with-claude-tokyo-recap-rakuten-canva-japan-builder-guide/index.md` — 3c/78i (90d), sources_audited: 2026-08-23
+- [x] 42. `content/guides/claude-for-small-business-agentic-workflows-connectors.md` — 3c/63i (90d), sources_audited: 2026-08-23
+- [x] 43. `content/reviews/nvidia-gtc-taipei-2026-jensen-huang-keynote-n1x-vera-rubin-physical-ai-preview.md` — 2c/4089i (90d), sources_audited: 2026-08-23
+- [x] 44. `content/builders-log/nvidia-dgx-spark-june-2026-update-multi-node-clustering-nvfp4-nemoclaw-builder-guide/index.md` — 2c/2115i (90d), sources_audited: 2026-08-23
+- [x] 45. `content/builders-log/openai-realtime-cedar-marin-voice-selection-gpt-realtime-2-builder-guide/index.md` — 2c/941i (90d), sources_audited: 2026-08-23
 - [ ] 46. `content/reviews/minimax-m2-7-self-evolving-agentic-llm-review.md` — 2c/828i (90d), sources_audited: 2026-07-26
 - [ ] 47. `content/reviews/newrelic-mcp-server.md` — 2c/824i (90d), sources_audited: 2026-08-21
 - [ ] 48. `content/reviews/nvidia-cosmos-3-open-physical-ai-foundation-model-review.md` — 2c/797i (90d), sources_audited: 2026-07-30

@@ -1,15 +1,15 @@
 ---
 title: "Claude for Small Business: 15 Agentic Workflows, 15 Skills, and 10+ Connectors Explained"
 date: 2026-05-16T21:00:00+09:00
-description: "On May 13, 2026, Anthropic launched Claude for Small Business — 15 ready-to-run agentic workflows, 15 reusable AI skills, and 10+ connectors to QuickBooks, PayPal, HubSpot, Canva, DocuSign, Slack, Square, Stripe, and Webflow. No extra cost for Pro, Max, or Teams subscribers. Here's what each piece does."
+description: "On May 13, 2026, Anthropic launched Claude for Small Business — 15 ready-to-run agentic workflows, 15 reusable AI skills, and 10+ connectors to QuickBooks, PayPal, HubSpot, Canva, DocuSign, Slack, Square, and Stripe. No extra cost for Pro, Max, or Team subscribers. Here's what each piece does."
 og_description: "Anthropic's Claude for Small Business launch (May 13, 2026) packages 15 agentic workflows covering finance, operations, sales, marketing, HR, and customer service — plus 15 reusable skills and 10+ connectors to the tools small businesses already pay for. No add-on pricing. Available through Claude Cowork. This guide explains what it does and what it means for small business AI adoption."
 content_type: "Guide"
-card_description: "Anthropic launched Claude for Small Business on May 13, 2026, with 15 agentic workflows covering payroll prep, month-end close, cash flow forecasting, invoice chasing, lead triage, campaign attribution, and more — plus 15 reusable skills and connectors to QuickBooks, PayPal, HubSpot, Canva, DocuSign, Slack, Square, Stripe, Webflow, Google Workspace, and Microsoft 365. Available at no extra cost on Pro, Max, and Teams plans via Claude Cowork. A free AI Fluency course and nationwide workshop tour round out the launch."
+card_description: "Anthropic launched Claude for Small Business on May 13, 2026, with 15 agentic workflows covering payroll prep, month-end close, cash flow forecasting, invoice chasing, lead triage, campaign attribution, and more — plus 15 reusable skills and connectors to QuickBooks, PayPal, HubSpot, Canva, DocuSign, Slack, Square, Stripe, Google Workspace, and Microsoft 365. Available at no extra cost on Pro, Max, and Team plans via Claude Cowork. A free AI Fluency course and nationwide workshop tour round out the launch."
 last_refreshed: 2026-05-16
-sources_audited: 2026-07-25
+sources_audited: 2026-08-23
 ---
 
-On May 13, 2026, Anthropic [launched **Claude for Small Business**](https://www.anthropic.com/news/claude-for-small-business) — the latest entry in its systematic vertical expansion after earlier pushes into legal, creative tools, and enterprise workflows. The launch packages three things: 15 ready-to-run agentic workflows, 15 reusable AI skills, and connectors to 10+ platforms small businesses already use. It ships at no additional cost for existing Pro, Max, and Teams subscribers, and operates through **Claude Cowork** — Anthropic's agent-forward interface where users toggle in their tools and Claude handles multi-step tasks with user sign-off before anything is sent, posted, or paid.
+On May 13, 2026, Anthropic [launched **Claude for Small Business**](https://www.anthropic.com/news/claude-for-small-business) — the latest entry in its systematic vertical expansion after earlier pushes into legal, creative tools, and enterprise workflows. The launch packages three things: 15 ready-to-run agentic workflows, 15 reusable AI skills, and connectors to 10+ platforms small businesses already use. It ships at no additional cost for existing Pro, Max, and Team subscribers, and operates through **Claude Cowork** — Anthropic's agent-forward interface where users toggle in their tools and Claude handles multi-step tasks with user sign-off before anything is sent, posted, or paid.
 
 The launch also includes a free **AI Fluency for Small Business** course co-developed with PayPal and a nationwide workshop tour starting in Chicago on May 14, 2026.
 
@@ -19,7 +19,7 @@ This analysis is based on Anthropic's announcement, TechCrunch reporting, The De
 
 ## The Pattern Behind the Launch
 
-Claude for Small Business is the fourth vertical Anthropic has targeted in 2026 with packaged connectors and domain-specific workflows. The pattern is consistent: pick a knowledge-worker segment that is already using Claude in significant volume, then deepen integration by wiring Claude into the software that segment actually runs on.
+Claude for Small Business is one of several verticals Anthropic has targeted in 2026 with packaged connectors and domain-specific workflows, following pushes into [financial services](https://www.anthropic.com/news/claude-for-financial-services), [legal](/guides/claude-connectors-legal/), and [creative tools](/guides/claude-connectors-creative-tools/). The pattern is consistent: pick a knowledge-worker segment that is already using Claude in significant volume, then deepen integration by wiring Claude into the software that segment actually runs on.
 
 For small businesses, the identified problem is administrative overhead. Small business owners [lose an average of 96 minutes of productivity daily](https://www.salesforce.com/news/stories/small-business-productivity-trends-2024/) to admin tasks — bookkeeping, invoicing, payroll calculations, lead management, campaign tracking, email follow-ups. Aggregated, that is roughly three weeks of lost time per year, and for solopreneurs or two-person shops where the owner is also the accountant, marketer, and customer service rep, every administrative hour is an unbillable hour.
 
@@ -41,7 +41,7 @@ Small businesses gain access to the same Cowork infrastructure used in enterpris
 
 ## The 15 Agentic Workflows
 
-Anthropic organized the 15 workflows into the six functional areas small business owners consistently identify as their biggest time sinks.
+Anthropic [organized the 15 workflows](https://www.anthropic.com/news/claude-for-small-business) into the six functional areas small business owners consistently identify as their biggest time sinks; the [Claude for Small Business plugin listing](https://claude.com/plugins/small-business) documents the underlying commands.
 
 ### Finance and Accounting
 
@@ -89,7 +89,7 @@ Anthropic organized the 15 workflows into the six functional areas small busines
 
 ## The 15 Reusable Skills
 
-Alongside the workflows, Claude for Small Business ships 15 reusable AI skills — modular capabilities that can be invoked on demand rather than as structured workflow runs. Anthropic has not published a complete itemized list of all 15 skills, but reporting from The Decoder and PYMNTS confirms they span the same six functional categories as the workflows and are designed around the tasks owners most often describe as "I just need this done quickly."
+Alongside the workflows, Claude for Small Business ships 15 reusable AI skills — modular capabilities that can be invoked on demand rather than as structured workflow runs. Anthropic has not published a complete itemized list of all 15 skills, but reporting from [The Decoder](https://the-decoder.com/anthropic-launches-claude-for-small-business-to-embed-ai-into-the-tools-you-forgot-you-pay-for/) and [PYMNTS](https://www.pymnts.com/artificial-intelligence-2/2026/anthropic-launches-claude-ai-agents-for-small-business-finance/) confirms they span the same six functional categories as the workflows and are designed around the tasks owners most often describe as "I just need this done quickly." The [plugin listing](https://claude.com/plugins/small-business) names cash-flow forecasting, margin analysis, lead triage, invoice chasing, contract review, customer sentiment, tax prep, and a hiring-packet builder among the individual skills.
 
 Skills differ from workflows in their scope: a workflow is a multi-step orchestration with defined inputs and outputs; a skill is a focused capability an owner can invoke conversationally. "Summarize this month's PayPal settlements" is a skill invocation. "Run the month-end close" is a workflow invocation.
 
@@ -97,7 +97,7 @@ Skills differ from workflows in their scope: a workflow is a multi-step orchestr
 
 ## The 10+ Connectors
 
-Claude for Small Business connects to the platforms that form the actual SMB software stack — not the enterprise stack.
+Claude for Small Business connects to the platforms that form the actual SMB software stack — not the enterprise stack. The connectors named below are confirmed across Anthropic's [launch announcement](https://www.anthropic.com/news/claude-for-small-business), its [small-business solutions page](https://claude.com/solutions/small-business), and the [plugin listing](https://claude.com/plugins/small-business).
 
 **QuickBooks (Intuit)** — Finance backbone for the majority of U.S. small businesses. Claude reads transaction data, chart of accounts, employee records, and invoice status. Write actions (categorization, journal entries) require owner confirmation.
 
@@ -119,13 +119,13 @@ Claude for Small Business connects to the platforms that form the actual SMB sof
 
 **Stripe** — Payment processing for online and subscription businesses. Claude reads revenue data, subscription status, and chargeback information for financial and customer service workflows.
 
-**Webflow** — Website and landing page management. Claude can generate content for Webflow pages as part of marketing workflows, with owner approval before publishing.
+*Correction (2026-08-23): an earlier version of this article also listed Webflow among the Claude for Small Business connectors. Anthropic's [launch announcement](https://www.anthropic.com/news/claude-for-small-business), its [small-business solutions page](https://claude.com/solutions/small-business), and the [plugin listing](https://claude.com/plugins/small-business) do not include Webflow in this bundle — Claude's [Webflow connector](https://claude.com/connectors/webflow) is a general-purpose integration available across Claude products, not part of the Small Business package. The claim has been removed.*
 
 ---
 
 ## Pricing
 
-Claude for Small Business ships at **no additional cost** for existing Claude subscribers on Pro, Max, or Teams plans. There is no add-on fee, no per-workflow charge, and no additional connector licensing. The Claude Cowork interface where the workflows run is included in those existing subscriptions.
+Claude for Small Business ships at **no additional cost** for existing Claude subscribers on Pro, Max, or Team plans. There is no add-on fee, no per-workflow charge, and no additional connector licensing. Claude Cowork — the interface where the workflows run — is [listed as included](https://claude.com/pricing) in the Pro plan, and the Max plan's page states it includes "everything in Pro, plus" higher usage limits, so Cowork carries through to Max as well; the Team plan separately lists "Claude Code and Claude Cowork" as included.
 
 This pricing structure is a deliberate decision. Small businesses are price-sensitive in ways that enterprise buyers are not, and Anthropic is treating the initial rollout as user acquisition — building the workflows into plans people already pay for rather than requiring an additional purchase decision.
 
@@ -133,9 +133,9 @@ This pricing structure is a deliberate decision. Small businesses are price-sens
 
 ## AI Fluency for Small Business
 
-Alongside the product launch, Anthropic released a free on-demand course: **AI Fluency for Small Business**, co-developed with PayPal and taught by real small business owners who have already integrated AI into their operations.
+Alongside the product launch, Anthropic released a free on-demand course: **AI Fluency for Small Business**, [co-developed with PayPal](https://www.anthropic.com/news/claude-for-small-business) and taught by real small business owners who have already integrated AI into their operations.
 
-Course instructors include owners from Prospect Butcher Co. (Brooklyn), MAKS TIPM Rebuilders (California), and additional small businesses across industries. The course teaches a structured approach called the **4D Framework** for applying AI to business functions — a practical methodology rather than a conceptual overview.
+Course instructors include owners from [Prospect Butcher Co. (Brooklyn), MAKS TIPM Rebuilders (California), and additional small businesses across industries](https://www.anthropic.com/news/claude-for-small-business). The course teaches a structured approach called the [**4D Framework**](https://anthropic.skilljar.com/ai-fluency-for-small-businesses) — Delegation, Description, Discernment, and Diligence — for applying AI to business functions, a practical methodology rather than a conceptual overview.
 
 The course is available free via Anthropic's learning platform at [anthropic.skilljar.com](https://anthropic.skilljar.com/ai-fluency-for-small-businesses).
 
@@ -143,7 +143,7 @@ The course is available free via Anthropic's learning platform at [anthropic.ski
 
 ## The Workshop Tour
 
-Starting May 14 in Chicago, Anthropic is taking Claude for Small Business on a nationwide road show. The format is a free, half-day live AI fluency training and hands-on workshop capped at 100 small business leaders per stop. Attendees receive a one-month Claude Max subscription to begin integrating Claude into their workflows immediately following the event.
+Starting May 14 in Chicago, Anthropic is taking Claude for Small Business on a [nationwide road show](https://www.anthropic.com/news/claude-for-small-business). The format is a free, half-day live AI fluency training and hands-on workshop capped at 100 small business leaders per stop. Attendees receive a one-month Claude Max subscription to begin integrating Claude into their workflows immediately following the event. [TechCrunch](https://techcrunch.com/2026/05/13/anthropic-courts-a-new-kind-of-customer-small-business-owners/) independently confirmed the 10-city tour and per-stop attendance cap.
 
 **Spring 2026 tour stops:**
 - Chicago (May 14)
@@ -167,7 +167,7 @@ Claude for Small Business is the clearest signal yet that Anthropic is not posit
 
 Three things stand out:
 
-**The connector list targets the actual SMB stack.** Square, Stripe, and Webflow are not enterprise tools — they're the platforms small businesses chose when they needed something that worked without an IT department. Connecting Claude to these platforms meets SMBs where they already are rather than requiring a platform migration.
+**The connector list targets the actual SMB stack.** Square and Stripe are not enterprise tools — they're the platforms small businesses chose when they needed something that worked without an IT department. Connecting Claude to these platforms meets SMBs where they already are rather than requiring a platform migration.
 
 **The sign-off architecture respects how small business owners think about their money.** Claude preparing a payroll but not processing it until the owner confirms is the right model for a context where the owner is personally liable for payroll errors. This isn't a limitation — it's the appropriate trust architecture for the segment.
 
