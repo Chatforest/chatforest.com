@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 85/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 90/1006.**
 
 ---
 
@@ -105,11 +105,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 83. `content/reviews/code-intelligence-codebase-graph-mcp-servers.md` — 1c/1521i (90d), sources_audited: 2026-08-24
 - [x] 84. `content/reviews/hunyuanvideo-tencent-open-source-video-generation.md` — 1c/1442i (90d), sources_audited: 2026-08-24
 - [x] 85. `content/reviews/microsoft-phi-4-small-language-model-family-review.md` — 1c/1411i (90d), sources_audited: 2026-08-24
-- [ ] 86. `content/reviews/datadog-mcp-server.md` — 1c/1313i (90d), sources_audited: 2026-08-13
-- [ ] 87. `content/reviews/blender-mcp-server.md` — 1c/1159i (90d), sources_audited: 2026-08-01
-- [ ] 88. `content/reviews/google-imagen-3-text-to-image-generation-deepmind.md` — 1c/1113i (90d), sources_audited: 2026-07-26
-- [ ] 89. `content/reviews/notion-mcp-server.md` — 1c/1099i (90d), sources_audited: 2026-08-14
-- [ ] 90. `content/reviews/june-2026-ai-events-calendar-gtc-taipei-microsoft-build-wwdc-spacex-ipo-grok-5.md` — 1c/1087i (90d), sources_audited: 2026-07-29
+- [x] 86. `content/reviews/datadog-mcp-server.md` — 1c/1313i (90d), sources_audited: 2026-08-24
+- [x] 87. `content/reviews/blender-mcp-server.md` — 1c/1159i (90d), sources_audited: 2026-08-24
+- [x] 88. `content/reviews/google-imagen-3-text-to-image-generation-deepmind.md` — 1c/1113i (90d), sources_audited: 2026-08-24
+- [x] 89. `content/reviews/notion-mcp-server.md` — 1c/1099i (90d), sources_audited: 2026-08-24
+- [x] 90. `content/reviews/june-2026-ai-events-calendar-gtc-taipei-microsoft-build-wwdc-spacex-ipo-grok-5.md` — 1c/1087i (90d), sources_audited: 2026-08-24
 - [ ] 91. `content/reviews/cerebras-wse-wafer-scale-inference.md` — 1c/1067i (90d), sources_audited: 2026-07-26
 - [ ] 92. `content/reviews/bitbucket-mcp-server.md` — 1c/907i (90d), sources_audited: 2026-08-15
 - [ ] 93. `content/reviews/atlassian-mcp-server.md` — 1c/752i (90d), sources_audited: 2026-08-12

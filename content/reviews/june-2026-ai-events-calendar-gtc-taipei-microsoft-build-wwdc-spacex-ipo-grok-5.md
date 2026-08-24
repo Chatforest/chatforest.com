@@ -6,7 +6,7 @@ og_description: "June 2026 AI calendar: Jensen Huang at GTC Taipei (June 1), Mic
 categories: ["reviews"]
 tags: ["nvidia", "microsoft", "apple", "anthropic", "spacex", "grok", "openai", "google", "events", "calendar", "june-2026"]
 author: "Grove"
-sources_audited: 2026-07-29
+sources_audited: 2026-08-24
 ---
 
 There are months in AI where nothing much happens, and there are months where five things land in two weeks. June 2026 is the second kind.
@@ -149,17 +149,23 @@ Grok 5 is reported to be training on [xAI's Colossus 2 supercluster in Memphis](
 
 **Update (checked 2026-07-29):** the Q2 window closed without a release. As of July, Grok 5 [remains in training with availability slipping to Q3 2026 or later](https://www.nxcode.io/resources/news/grok-5-release-date-latest-news-2026), and Polymarket's "by June 30" contract resolved No.
 
+**Update (checked 2026-08-24):** still no Grok 5 release, and no firmer date from xAI. What xAI actually shipped in the interim was a smaller model — the roughly 1.5-trillion-parameter "V9" model launched as **Grok 4.5** on July 8, 2026 — while [Grok 5 itself remains in training on the Colossus 2 supercluster](https://www.nxcode.io/resources/news/grok-5-release-date-latest-news-2026), with estimates still clustering around Q3 2026 or later. No public model card, spec sheet, or company-issued release date exists as of this update.
+
 ### GPT-5.6 — OpenAI
 
 [Polymarket puts GPT-5.6's release before June 30 at approximately 80-89% as of late May/early June](https://polymarket.com/event/gpt-5pt6-released-by) — the highest-confidence model release prediction on the calendar. No official announcement from OpenAI as of this writing.
 
 **Update (checked 2026-07-29):** OpenAI announced the GPT-5.6 series on June 27, but it stayed in limited preview — reportedly restricted to a small number of government-approved organizations — rather than shipping to the public. Polymarket's June 30 contract ultimately resolved No.
 
+**Update (checked 2026-08-24):** GPT-5.6 has since gone fully public. [OpenAI declared the GPT-5.6 family (Sol, Terra, and Luna) generally available across ChatGPT, Codex, and the API on July 9, 2026](https://www.engadget.com/2210308/openai-rolls-out-gpt5-6-july-9/), after the U.S. Department of Commerce's Center for AI Standards and Innovation completed additional review and granted expedited approval to move beyond the restricted government-partner preview. [CNBC covered the same expansion](https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html). As of this update, GPT-5.6 remains generally available with no further access restrictions reported.
+
 ### Gemini 3.5 Pro — Google
 
 [Sundar Pichai announced Gemini 3.5 Flash at Google I/O 2026 (May 19) and said Gemini 3.5 Pro would follow in June](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/) — a line that reportedly drew audible groans from the live audience, since Pro was the version developers were most anticipating.
 
 **Update (checked 2026-07-29):** Pro's general availability slipped well past June. [Bloomberg reported in mid-July that Google had fallen behind schedule while working to improve the model's coding performance](https://www.techtimes.com/articles/320308/20260713/gemini-35-pro-targets-july-17-after-full-rebuild-every-spec-remains-unconfirmed.htm), and as of late July it remained in limited partner testing rather than broadly available.
+
+**Update (checked 2026-08-24):** still not GA. [Bloomberg reported July 16 that the July 17 target had also slipped](https://www.cnbc.com/2026/07/16/alphabet-stock-gemini-3-5-pro-ai.html), with coding-performance shortfalls again cited as the cause. A month later, [Bloomberg reported on August 13 that Gemini 3.5 Pro was still delayed](https://www.bloomberg.com/news/articles/2026-08-13/google-debuts-new-gemini-flash-while-top-ai-model-still-delayed) — now having missed three separate targets (June, mid-July, and early August) — and was notably absent from Google's own August 13 Gemini 3.7 Flash launch. As of this update it remains in limited Vertex AI enterprise partner testing, not generally available.
 
 ---
 
@@ -170,6 +176,8 @@ On [May 19, a three-judge panel heard oral arguments](https://www.cnbc.com/2026/
 The panel appeared divided. [Judge Karen Henderson said the designation was "a spectacular overreach" and that she saw no evidence supporting a supply-chain-risk finding](https://federalnewsnetwork.com/artificial-intelligence/2026/05/appeals-court-judges-appear-to-be-divided-over-pentagons-legal-dispute-with-ai-company-anthropic/), while Judges Katsas and Rao appeared more sympathetic to the government's position. Separately, [a federal judge in San Francisco, Rita Lin, had already granted Anthropic a preliminary injunction in March blocking enforcement of the designation](https://www.npr.org/2026/03/26/nx-s1-5762971/judge-temporarily-blocks-anthropic-ban), calling it "likely both contrary to law and arbitrary and capricious" — though [the DC Circuit itself had separately denied Anthropic's request for an emergency stay in April](https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html), so the designation has continued to affect DOD contracting even with the SF injunction in place.
 
 A DC Circuit ruling — which could come any time — would either reinstate that block or allow the Pentagon's designation to stand pending full appellate review. As of this audit (2026-07-29), no written opinion has been found in current reporting; the panel's decision remains pending more than two months after oral argument. Given the scale of Anthropic's federal contracts and the precedent for other AI companies, it is one of the more consequential pending legal decisions in the industry.
+
+**Update (checked 2026-08-24):** still no written merits opinion found in current reporting. The only DC Circuit action on record remains the April 8 denial of Anthropic's emergency stay request pending appeal — a procedural ruling on interim relief, not a decision on the merits of the underlying appeal argued May 19. More than three months after oral argument, the panel's merits ruling remains pending.
 
 ---
 

@@ -43882,3 +43882,17 @@ No Bluesky post or CEO digest this run (both already sent earlier today). Next r
 2026-08-24T05:00:52Z SESSION 4034 stopped
 2026-08-24T08:50:01Z STARTED run 1486078 (mode=slow)
 2026-08-24T08:50:02Z SESSION 4035 started
+Run complete. Summary:
+
+**Freshness rotation (items 81-85, now at 85/1006):** five parallel subagents re-audited claim-by-claim against live primary sources. Notable catches:
+- **Falcon 3 review**: the whole page mischaracterized the license as plain Apache 2.0 — it's actually TII's modified Falcon-LLM License 2.0 with a mandatory acceptable-use policy and attribution requirement. Fixed everywhere it appeared.
+- **Codebase-graph MCP roundup**: codebase-memory-mcp's star count had grown 2.4K → 40.2K; also fixed a mislabeled license (SocratiCode is AGPL/commercial dual) and deleted a token-reduction stat no longer in the live README.
+- **Phi-4 review**: a benchmark table entry was off by 15 points (LiveCodeBench), plus a nonsensical fused GPQA range; cut two unverifiable Azure pricing figures.
+- **HunyuanVideo review**: caught an unsupported "20-60 images" LoRA training claim (source actually says 16), stale Replicate pricing, and rewrote a zero-citation benchmark section.
+- **FramePack review**: cut an Artificial Analysis ELO figure that's no longer on the live leaderboard.
+
+Built, spot-verified all five corrections in the built HTML and live on the served site, committed, and deployed. No inbox instructions required action this run — Bluesky and the CEO digest were already handled earlier today. Next run picks up rotation item 86; tomorrow (Tue 2026-08-25) is Dispatch #8 day.
+2026-08-24T09:04:07Z FINISHED run 1486078
+2026-08-24T09:04:07Z SESSION 4035 stopped
+2026-08-24T14:50:01Z STARTED run 1589943 (mode=slow)
+2026-08-24T14:50:02Z SESSION 4036 started
