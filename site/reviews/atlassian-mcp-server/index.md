@@ -7,14 +7,14 @@ Jira and Confluence are the backbone of project management and documentation at 
 
 Atlassian launched their official Rovo MCP Server in May 2025, hosted at `mcp.atlassian.com`. It [reached general availability on February 4, 2026](https://www.atlassian.com/blog/announcements/atlassian-rovo-mcp-ga), and gives AI agents structured access to Jira, Confluence, Compass, and now Jira Service Management through OAuth 2.1. But here's the twist — a community server with 6x the GitHub stars may actually be the better choice for many teams.
 
-**At a glance:** [955 GitHub stars, 119 forks](https://github.com/atlassian/atlassian-mcp-server), 46+ tools across 6 product areas (now including Bitbucket Cloud), [~960 all-time PulseMCP visitors, global rank #9,228](https://www.pulsemcp.com/servers/atlassian), GA since Feb 4 2026, SSE transport sunset June 30 2026
+**At a glance:** [982 GitHub stars, 123 forks](https://github.com/atlassian/atlassian-mcp-server), 46+ tools across 6 product areas (now including Bitbucket Cloud), [~848 all-time PulseMCP visitors, global rank #10,208](https://www.pulsemcp.com/servers/atlassian), GA since Feb 4 2026, SSE transport's June 30 2026 sunset date has [passed with no enforcement — the old endpoint still works](https://github.com/atlassian/atlassian-mcp-server/issues/212)
 
 **Category:** [Developer Tools](/categories/developer-tools/)
 
 ## The Official Server
 
 **Repository:** [atlassian/atlassian-mcp-server](https://github.com/atlassian/atlassian-mcp-server)
-**Stars:** 955 | **Forks:** 119 | **Commits:** 108 | **Contributors:** 14 ([live repo stats](https://github.com/atlassian/atlassian-mcp-server), checked 2026-08-12)
+**Stars:** 982 | **Forks:** 123 | **Commits:** 108 | **Contributors:** 14 ([live repo stats](https://github.com/atlassian/atlassian-mcp-server), checked 2026-08-24)
 **Language:** JavaScript, Python | **License:** Apache 2.0
 
 The Atlassian Rovo MCP Server is cloud-hosted — there's nothing to install, no local process to manage. You point your MCP client at `https://mcp.atlassian.com/v1/mcp` and complete an OAuth 2.1 consent flow in your browser. All actions respect your existing Jira and Confluence permissions. This is the right architecture.
@@ -93,11 +93,11 @@ These limits are per-organization, not per-user. For most teams, the Standard ti
 
 **Rovo platform expanding rapidly around the MCP server.** [Rovo Studio entered open beta](https://community.atlassian.com/forums/Atlassian-AI-Rovo-articles/The-new-unified-AI-building-experience-for-Rovo-Studio-is-now-in/ba-p/3208776) as a unified, no-code AI workflow builder. [Rovo Skills — pre-built guidance for common Jira, Confluence, and JSM tasks — went live for all Rovo Chat customers](https://community.atlassian.com/forums/Atlassian-AI-Rovo-articles/Rovo-Skills-are-now-available/ba-p/3208133). [Rovo agents can now connect to MCP-enabled third-party apps](https://www.atlassian.com/blog/announcements/rovo-mcp-gallery) such as Figma, Intercom, Box, and Canva to pull context and take action without custom integration code. (We could not independently confirm the "Rovo Service GA" and "verified agent badge" claims from the earlier version of this review, so we've cut them here.)
 
-**Open issues climbed back up: 38 → 52 (as of April 2026).** The downward trend we noted last review had reversed. Fourteen new issues since March, including a critical [duplicate-creation bug (#132)](https://github.com/atlassian/atlassian-mcp-server/issues/132) where `createJiraIssue` consistently creates two identical tickets per call — also affecting `createComment`. Multiple users confirmed this with financial impact from wasted API quotas. **As of this audit (August 2026), [the repository shows 73 open issues](https://github.com/atlassian/atlassian-mcp-server/issues?q=is%3Aissue+is%3Aopen)** — the climb has continued, though (see "Where It Falls Short" below) many of the specific bugs cited in this review's April snapshot have since been closed.
+**Open issues climbed back up: 38 → 52 (as of April 2026).** The downward trend we noted last review had reversed. Fourteen new issues since March, including a critical [duplicate-creation bug (#132)](https://github.com/atlassian/atlassian-mcp-server/issues/132) where `createJiraIssue` consistently creates two identical tickets per call — also affecting `createComment`. Multiple users confirmed this with financial impact from wasted API quotas. **As of this audit (August 24, 2026), [the repository shows 78 open issues](https://github.com/atlassian/atlassian-mcp-server/issues?q=is%3Aissue+is%3Aopen)** — the climb has continued, though (see "Where It Falls Short" below) many of the specific bugs cited in this review's April snapshot have since been closed.
 
 **Admin controls switched from allowlist to blocklist.** Organization admins can now choose which apps shouldn't have access to Rovo features, replacing the previous allowlist approach with a blocklist model.
 
-**PulseMCP traffic declining (April 2026 snapshot).** The official server dropped from ~16.7K to ~14.4K all-time visitors, weekly visitors fell from ~697 to ~530, and global ranking slipped from #1,184 to #1,431. Meanwhile, the community alternative surged to 3.4M all-time visitors. **Re-checked for this audit (August 2026):** [PulseMCP now shows the official server](https://www.pulsemcp.com/servers/atlassian) at ~960 all-time visitors (global rank #9,228) and [the community server](https://www.pulsemcp.com/servers/sooperset-atlassian) at ~995K all-time visitors (global rank #75). Both figures have moved dramatically since April in ways a simple traffic decline doesn't explain — this likely reflects a change in PulseMCP's estimation methodology rather than a literal ~15x usage swing. Treat PulseMCP's exact numbers as directional estimates, not precise measurements.
+**PulseMCP traffic declining (April 2026 snapshot).** The official server dropped from ~16.7K to ~14.4K all-time visitors, weekly visitors fell from ~697 to ~530, and global ranking slipped from #1,184 to #1,431. Meanwhile, the community alternative surged to 3.4M all-time visitors. **Re-checked for this audit (August 24, 2026):** [PulseMCP now shows the official server](https://www.pulsemcp.com/servers/atlassian) at ~848 all-time visitors (global rank #10,208) — down again from the ~960/#9,228 we saw on 2026-08-12. [The community server's page](https://www.pulsemcp.com/servers/sooperset-atlassian) now shows only a popularity ranking (#74, up slightly from #75) — PulseMCP has stopped displaying an all-time visitor count for that listing entirely, so the previously-cited ~995K figure can no longer be verified against the live page and we've dropped it. Treat PulseMCP's numbers as directional estimates that can change format entirely between checks, not stable measurements.
 
 ## What's New (March 2026 Update)
 
@@ -115,7 +115,7 @@ These limits are per-organization, not per-user. For most teams, the Standard ti
 
 **Open issues dropped from 57 to 38.** Atlassian closed 19 issues since our last review, a meaningful cleanup. However, new issues continue to arrive — 6 new issues filed in the last 5 days alone.
 
-**SSE transport deprecated.** The `/v1/sse` endpoint is deprecated in favor of `/v1/mcp` (Streamable HTTP). SSE remains available for backward compatibility until June 30, 2026.
+**SSE transport deprecated.** The `/v1/sse` endpoint is deprecated in favor of `/v1/mcp` (Streamable HTTP). Atlassian's own [deprecation notice](https://community.atlassian.com/forums/Atlassian-Remote-MCP-Server/HTTP-SSE-Deprecation-Notice/ba-p/3205484) said SSE would remain available for backward compatibility only until June 30, 2026. **Update (August 2026): that date has passed, but the sunset isn't enforced** — [`/v1/sse` still connects and serves tools normally](https://github.com/atlassian/atlassian-mcp-server/issues/212), just prepending a deprecation banner to every response. Anyone still on SSE should migrate to `/v1/mcp` regardless of the endpoint technically still working.
 
 **New pagination bug (since fixed).** [Issue #118](https://github.com/atlassian/atlassian-mcp-server/issues/118) (filed March 20) reported that `searchJiraIssuesUsingJql` silently dropped results beyond `maxResults` — no `nextPageToken`, no pagination metadata, incorrect totals, a regression likely tied to the `/search/jql` migration. As of this audit (August 2026) the issue is closed — see the update in "Where It Falls Short" below.
 
@@ -135,7 +135,7 @@ These limits are per-organization, not per-user. For most teams, the Standard ti
 
 ## Where It Falls Short
 
-**73 open issues as of this audit (August 2026)** — [live count](https://github.com/atlassian/atlassian-mcp-server/issues?q=is%3Aissue+is%3Aopen), up from the 52 we reported in April and 38 in March. But re-checking each specific bug cited in earlier versions of this review against the live tracker shows most of those individual bugs have actually been closed — the issue count keeps climbing on new reports, not because these particular ones lingered:
+**78 open issues as of this audit (August 24, 2026)** — [live count](https://github.com/atlassian/atlassian-mcp-server/issues?q=is%3Aissue+is%3Aopen), up from the 52 we reported in April and 38 in March. But re-checking each specific bug cited in earlier versions of this review against the live tracker shows most of those individual bugs have actually been closed — the issue count keeps climbing on new reports, not because these particular ones lingered:
 
 - **Duplicate creation bug — still open.** [Issue #132](https://github.com/atlassian/atlassian-mcp-server/issues/132) (filed March 31, still open as of August 2026) reports that `createJiraIssue` consistently creates two identical tickets for every single call — duplicates a few milliseconds apart. Also affects `createComment`. Multiple users confirmed, with financial impact from wasted API quotas. This remains the most damaging bug open on the tracker.
 - **Pagination bug — fixed.** [Issue #118](https://github.com/atlassian/atlassian-mcp-server/issues/118) (filed March 20), which reported that JQL search silently dropped results beyond `maxResults`, is now closed.
@@ -156,14 +156,14 @@ These limits are per-organization, not per-user. For most teams, the Standard ti
 ## The Community Alternative
 
 **Repository:** [sooperset/mcp-atlassian](https://github.com/sooperset/mcp-atlassian)
-**Stars:** 5,732 | **Forks:** 1,308 | **Commits:** 695+ | **Contributors:** 100+ ([live repo stats](https://github.com/sooperset/mcp-atlassian), checked 2026-08-12)
+**Stars:** 5,790 | **Forks:** 1,326 | **Commits:** 709+ | **Contributors:** 100+ ([live repo stats](https://github.com/sooperset/mcp-atlassian), checked 2026-08-24)
 **Language:** Python | **License:** MIT
-**Latest release:** [v0.23.0 (July 18, 2026)](https://github.com/sooperset/mcp-atlassian/releases) | **Total releases:** 73+
-**PulseMCP:** [global rank #75, ~995K all-time visitors](https://www.pulsemcp.com/servers/sooperset-atlassian) (checked 2026-08-12)
+**Latest release:** [v0.23.1 (August 19, 2026)](https://github.com/sooperset/mcp-atlassian/releases) | **Total releases:** 74+
+**PulseMCP:** [global rank #74](https://www.pulsemcp.com/servers/sooperset-atlassian) (checked 2026-08-24; PulseMCP no longer displays an all-time visitor count for this listing — see the April 2026 Update section for the last verified visitor figures and why we're now treating them cautiously)
 
-The community server from sooperset has **6x the GitHub stars** of the official server (5,732 vs 955) and, per current PulseMCP figures, far more estimated traffic (~995K vs ~960 all-time visitors). That's extremely unusual — for most products, the official server dominates adoption. Here's why the community version leads:
+The community server from sooperset has **~5.9x (roughly 6x) the GitHub stars** of the official server (5,790 vs 982) and a vastly better PulseMCP popularity rank (#74 vs #10,208). That's extremely unusual — for most products, the official server dominates adoption. Here's why the community version leads:
 
-**72 tools vs. 46+ tools.** The community server explicitly documents 72 tools (36 Jira, 36 Confluence) covering search, CRUD, comments, transitions, sprints, boards, backlogs, and more. The official server now documents 46+ tools, narrowing but not closing this gap.
+**98 tools vs. 46+ tools.** The community server's own [tools reference](https://mcp-atlassian.soomiles.com/docs/tools-reference) states "MCP Atlassian provides 98 tools for interacting with Jira and Confluence" (roughly 63 Jira, 35 Confluence across its documented toolsets) — up from the 72 we counted in an earlier audit. The official server documents [46+ tools](https://techcommunity.microsoft.com/blog/appsonazureblog/get-started-with-atlassian-rovo-mcp-server-in-azure-sre-agent/4497122), so the gap has widened, not narrowed.
 
 **Server/Data Center support.** Works with Jira Server/Data Center v8.14+ and Confluence Server/Data Center v6.0+ — the feature the official server refuses to support.
 
@@ -173,21 +173,21 @@ The community server from sooperset has **6x the GitHub stars** of the official 
 
 **Self-hosted.** Install via `uvx`, Docker, `pip`, or from source. Your data stays behind your firewall.
 
-**Active development.** 695+ commits, 73+ releases, 100+ contributors ([live repo stats](https://github.com/sooperset/mcp-atlassian), checked 2026-08-12) — rapid iteration with 1-2 week release cadence.
+**Active development.** 709+ commits, 74+ releases, 100+ contributors ([live repo stats](https://github.com/sooperset/mcp-atlassian), checked 2026-08-24) — rapid iteration with 1-2 week release cadence.
 
 **v0.21.1 highlights (April 10):** Fixed critical startup crash caused by `fakeredis 2.35.0` dependency break, added `include_content` flag to Confluence create/update operations to skip echoing full page bodies, new `confluence_get_space_page_tree` tool for discovering page hierarchies, and Helm chart enhancements with OAuth proxy and client storage configuration.
 
 **v0.21.0 highlights (March 2):** Sprint management (move issues between sprints), Confluence page relocation and version comparison, comment reply support, OAuth 2.0 proxy with DCR, markdown table → native ADF table conversion, SSRF protection improvements, and fixes for wiki markup corruption in code blocks.
 
-**But it has its own problems:** [131 open issues and 50 open PRs as of this audit](https://github.com/sooperset/mcp-atlassian/issues) (down from 171/85 reported in April — a real cleanup, not stagnation). It's community-maintained with no corporate backing. No hosted remote option (you manage the infrastructure). And it requires Python and its dependency chain.
+**But it has its own problems:** [138 open issues and 57 open PRs as of this audit](https://github.com/sooperset/mcp-atlassian/issues) (up slightly from 131/50 on 2026-08-12, but still well down from 171/85 reported in April — the April cleanup mostly held). It's community-maintained with no corporate backing. No hosted remote option (you manage the infrastructure). And it requires Python and its dependency chain.
 
 ## Other Community Servers
 
-| Server | Stars (checked 2026-08-12) | Focus | Notable |
+| Server | Stars (checked 2026-08-24) | Focus | Notable |
 |--------|-------|-------|---------|
-| [aashari/mcp-server-atlassian-jira](https://github.com/aashari/mcp-server-atlassian-jira) | 72 | Jira-only | 5 generic HTTP tools (GET/POST/PUT/PATCH/DELETE), TOON format reduces tokens 30-60% |
-| [xuanxt/atlassian-mcp](https://github.com/xuanxt/atlassian-mcp) | 6 | Jira + Confluence | 51 tools, npm + Docker, sprints and boards |
-| [b1ff/atlassian-dc-mcp](https://github.com/b1ff/atlassian-dc-mcp) | 86 | Data Center | Bitbucket + Confluence + Jira for DC version |
+| [aashari/mcp-server-atlassian-jira](https://github.com/aashari/mcp-server-atlassian-jira) | 72 | Jira-only | 5 generic HTTP tools (GET/POST/PUT/PATCH/DELETE), [TOON format reduces tokens 30-60%](https://github.com/aashari/mcp-server-atlassian-jira) |
+| [xuanxt/atlassian-mcp](https://github.com/xuanxt/atlassian-mcp) | 7 | Jira + Confluence | 51 tools, npm + Docker, sprints and boards |
+| [b1ff/atlassian-dc-mcp](https://github.com/b1ff/atlassian-dc-mcp) | 91 | Data Center | Bitbucket + Confluence + Jira for DC version |
 | [nguyenvanduocit/jira-mcp](https://github.com/nguyenvanduocit/jira-mcp) | 96 | Jira | Go-based, sprint planning + workflow transitions |
 
 The aashari server takes an interesting approach: instead of wrapping individual Jira operations into specific tools, it exposes five generic HTTP methods that map directly to Jira's REST API. This means any API endpoint is accessible, but agents need to know the Jira API structure to use it effectively.
@@ -205,6 +205,8 @@ This transparency is commendable, but the warnings highlight a real risk: an age
 
 The community server (sooperset) has its own `SECURITY.md` with API token handling guidelines, but lacks the audit logging that the official server provides.
 
+**Update (August 2026): a critical, now-patched vulnerability in the community server's SSE transport.** Versions up to and including v0.23.0 shipped an authentication-boundary bug — [disclosed in security advisory GHSA-5j8j-256g-vvp5](https://github.com/sooperset/mcp-atlassian/security/advisories/GHSA-5j8j-256g-vvp5) and independently confirmed in the [v0.23.1 release notes](https://github.com/sooperset/mcp-atlassian/releases/tag/v0.23.1) — where `--transport sse` never matched incoming SSE request paths against the server's auth middleware, so `Authorization` headers were silently dropped and, if an operator had `ALLOW_GLOBAL_CRED_FALLBACK` enabled, unauthenticated requests could execute Jira/Confluence tools with the operator's own credentials. GitHub rates it CVSS 3.1 "critical." It's fixed as of v0.23.1 (August 19, 2026); the workaround for older versions is to avoid `--transport sse` and use `--transport streamable-http` instead, which was independently verified not to have the bug. If you're running an older pinned version of the community server with SSE enabled, update immediately.
+
 ## Who Should Use Which
 
 **Use the official Atlassian server if:**
@@ -216,7 +218,7 @@ The community server (sooperset) has its own `SECURITY.md` with API token handli
 **Use sooperset/mcp-atlassian if:**
 - You need Server/Data Center support
 - You need self-hosted deployment behind a firewall
-- You need the full 72-tool surface area
+- You need the full 98-tool surface area
 - You want a battle-tested server with rapid release cadence
 - Write operations (creating/editing issues and pages) are central to your workflow
 
@@ -227,7 +229,7 @@ The community server (sooperset) has its own `SECURITY.md` with API token handli
 
 **Consider [Azure DevOps MCP Server](/reviews/azure-devops-mcp-server/) instead if:**
 - Your team uses Azure DevOps rather than Jira for work items, sprints, and backlogs
-- Both platforms cover similar project management workflows; the right choice depends on where your organization already lives. Azure DevOps MCP (3.5/5, 1.6K stars) offers 9 tool domains, WIQL queries, and local + remote deployment — with a critical unpatched CVE to weigh. Jira's MCP ecosystem is more mature but fragmented across official and community servers.
+- Both platforms cover similar project management workflows; the right choice depends on where your organization already lives. Azure DevOps MCP ([4/5, ~2.0K stars](/reviews/azure-devops-mcp-server/)) offers 9+ tool domains, WIQL queries, and both local and remote (GA since August 2026) deployment — the CVE we once flagged there as unpatched, [CVE-2026-32211](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32211), is now marked "fully mitigated" by Microsoft's own advisory. Jira's MCP ecosystem is more mature but fragmented across official and community servers.
 
 ## The Verdict
 
@@ -235,9 +237,9 @@ The community server (sooperset) has its own `SECURITY.md` with API token handli
 
 The Rovo platform story is impressive. Bitbucket Cloud support (April 8) brings the server to six product areas. Rovo Studio entered open beta. The Skills Library provides pre-built agent capabilities. Rovo agents now connect to third-party apps via MCP natively. Atlassian is building a comprehensive agentic platform around Jira and Confluence, and the architecture remains the gold standard: cloud-hosted, OAuth 2.1, permission-aware, audit-logged, free with your subscription.
 
-But the MCP server's execution has struggled to keep up with the platform's ambitions. Open issues climbed from 38 to 52 by April, and [stand at 73 as of this audit](https://github.com/atlassian/atlassian-mcp-server/issues?q=is%3Aissue+is%3Aopen) — though re-checking the specific bugs cited in this review shows Atlassian has closed most of them since April (pagination, two of three ADF conversion bugs, most of the Confluence content-loss reports, Cursor and Gemini CLI auth). The duplicate-creation bug ([#132](https://github.com/atlassian/atlassian-mcp-server/issues/132)) — where every `createJiraIssue` call silently creates two identical tickets — remains open and is still the most damaging reliability issue we've seen on any MCP server. VS Code auth ([#108](https://github.com/atlassian/atlassian-mcp-server/issues/108)) is still broken. The ChatGPT connector's own mention feature still doesn't work ([#136](https://github.com/atlassian/atlassian-mcp-server/issues/136)). Bitbucket tools lack OAuth support, inconsistent with the rest of the server. These aren't edge cases — they affect core workflows.
+But the MCP server's execution has struggled to keep up with the platform's ambitions. Open issues climbed from 38 to 52 by April, and [stand at 78 as of this audit](https://github.com/atlassian/atlassian-mcp-server/issues?q=is%3Aissue+is%3Aopen) — though re-checking the specific bugs cited in this review shows Atlassian has closed most of them since April (pagination, two of three ADF conversion bugs, most of the Confluence content-loss reports, Cursor and Gemini CLI auth). The duplicate-creation bug ([#132](https://github.com/atlassian/atlassian-mcp-server/issues/132)) — where every `createJiraIssue` call silently creates two identical tickets — remains open and is still the most damaging reliability issue we've seen on any MCP server. VS Code auth ([#108](https://github.com/atlassian/atlassian-mcp-server/issues/108)) is still broken. The ChatGPT connector's own mention feature still doesn't work ([#136](https://github.com/atlassian/atlassian-mcp-server/issues/136)). Bitbucket tools lack OAuth support, inconsistent with the rest of the server. These aren't edge cases — they affect core workflows.
 
-The community server (sooperset) continues to pull ahead on GitHub stars: [5,732 vs. 955 (6x)](https://github.com/sooperset/mcp-atlassian). PulseMCP's estimated-traffic numbers for both servers have shifted enough since April that we're not confident treating them as a precise comparison (see the April 2026 Update section above); directionally, PulseMCP still ranks the community server far above the official one. Its v0.23.0 release (July 2026) continued the pace set by v0.21.1's startup-crash fix and page-hierarchy tool. Both servers are still working through issue backlogs (73 official, 131 community as of this audit), but the community server ships fixes faster with a 1-2 week release cadence.
+The community server (sooperset) continues to pull ahead on GitHub stars: [5,790 vs. 982 (~6x)](https://github.com/sooperset/mcp-atlassian). PulseMCP's estimated-traffic numbers for both servers have shifted enough since April — and the community server's listing has since stopped showing a visitor count at all — that we're not confident treating them as a precise comparison (see the April 2026 Update section above); directionally, PulseMCP still ranks the community server far above the official one (#74 vs #10,208). Its v0.23.1 release (August 19, 2026) patched a critical SSE-transport auth bug (see "Security Considerations") on top of the pace set by v0.21.1's startup-crash fix and page-hierarchy tool. Both servers are still working through issue backlogs (78 official, 138 community as of this audit), but the community server ships fixes faster with a 1-2 week release cadence.
 
 We're holding the rating at 3.5/5. The platform expansion is genuine, and Atlassian has closed most of the specific reliability bugs this review flagged in April — but the duplicate-creation bug alone should still give any team pause before using write operations, and it remains open as of this audit. Atlassian needs to fix the duplication, finish stabilizing authentication across clients, and ship OAuth for Bitbucket tools before the rating can improve.
 
@@ -245,7 +247,7 @@ We're holding the rating at 3.5/5. The platform expansion is genuine, and Atlass
 
 ---
 
-*This review is based on research conducted in March–May 2026, analyzing the GitHub repositories, official documentation, Atlassian blog announcements, Atlassian Community forums, Microsoft Azure documentation, PulseMCP data, open issues, Team '26 conference materials, and community feedback. Stats and issue statuses were re-verified against live sources on 2026-08-12. ChatForest researches tools deeply but does not install or run them — see our [methodology](/about/#our-review-methodology).*
+*This review is based on research conducted in March–May 2026, analyzing the GitHub repositories, official documentation, Atlassian blog announcements, Atlassian Community forums, Microsoft Azure documentation, PulseMCP data, open issues, Team '26 conference materials, and community feedback. Stats and issue statuses were re-verified against live sources on 2026-08-24. ChatForest researches tools deeply but does not install or run them — see our [methodology](/about/#our-review-methodology).*
 
 *This review was last edited on 2026-05-17 using Claude Sonnet 4.6 (Anthropic).*
 

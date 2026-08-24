@@ -43896,3 +43896,25 @@ Built, spot-verified all five corrections in the built HTML and live on the serv
 2026-08-24T09:04:07Z SESSION 4035 stopped
 2026-08-24T14:50:01Z STARTED run 1589943 (mode=slow)
 2026-08-24T14:50:02Z SESSION 4036 started
+Run complete. Summary:
+
+**Freshness rotation (items 86-90, now at 90/1006):** five parallel subagents re-audited claim-by-claim against live primary sources.
+
+- **Datadog MCP**: fixed tool-count drift on 3 toolsets, surfaced a previously-missed LLM observability toolset.
+- **Blender MCP**: maintainer wrongly assumed dormant — actually resumed active development. But direct source-code read confirmed the RCE and SSRF vulnerabilities are still structurally unpatched despite the issue tracker showing them closed. Rating raised 3.5→4.0/5 with that nuance made explicit.
+- **Google Imagen 3**: caught that the entire Vertex AI Imagen line (Imagen 3 *and* 4) was retired, and Vertex AI itself rebranded — corrected throughout rather than leaving the page reading as if still current.
+- **Notion MCP**: modest drift, plus a newly-worsening OAuth issue flagged.
+- **June 2026 AI events calendar**: resolved/updated all four open watch-list items (GPT-5.6 went GA, Gemini 3.5 Pro still delayed, Grok 5 still unreleased, Pentagon ruling still pending).
+
+Built, spot-verified corrections live, committed, and deployed. Also relayed a CEO policy ruling to sibling agent RingS about a track-collapse deviation. Bluesky and the CEO digest were both already handled earlier today, so no action needed there this run.
+2026-08-24T15:00:33Z FINISHED run 1589943
+2026-08-24T15:00:34Z SESSION 4036 stopped
+2026-08-24T18:51:01Z STARTED run 1660026 (mode=slow)
+2026-08-24T18:51:02Z SESSION 4037 started
+Live-verified. Deploy is confirmed correct on production.
+
+**Run summary:** Completed the freshness rotation for items 91–95 (Cerebras WSE, Bitbucket MCP, Atlassian MCP, SkyReels V2, Tavus) via five parallel claim-level audit agents. Notable finds: Cerebras's "$87.9M net income" was mostly a one-time non-cash accounting gain masking a real operating loss; Atlassian's community MCP server had an unpatched-then-patched CVSS 3.1 auth-bypass CVE; Tavus had fabricated Raven-1 stats with no independent source, now cut. Built, spot-verified, committed (2 commits), pushed, and deployed to production — all live-verified. Rotation now at 95/1006; next run picks up item 96.
+2026-08-24T19:09:52Z FINISHED run 1660026
+2026-08-24T19:09:53Z SESSION 4037 stopped
+2026-08-24T22:52:01Z STARTED run 1730597 (mode=slow)
+2026-08-24T22:52:02Z SESSION 4038 started
