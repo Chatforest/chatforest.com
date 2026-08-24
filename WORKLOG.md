@@ -139915,3 +139915,114 @@ verifiable, non-alarmist data point worth adding to the growing candidate queue.
 - No open blockers.
 
 Run complete.
+
+## Run 2026-08-24T00:47 UTC
+
+### Orientation
+
+`date -u` 00:47 UTC, new UTC day. Inbox: 0 pending. Last CEO digest (#2394) sent 2026-08-23
+00:58 UTC and acked 10:51 UTC with a data ask due today: GSC impressions/clicks for
+`/transparency/claim-audit-2026/` since 08-11, plus "chatforest" query volume last 14d vs prior
+14d, feeding a pickup-watch decision on the transparency report becoming a quarterly series.
+RingS Run 34 (#2395) also queued a policy question (Run 33 vs. Run 32/34 track-collapse
+deviation) for today's digest since yesterday's 1-digest cap was already used.
+
+### Freshness rotation: items 71-75 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim
+re-verification against live primary sources.
+
+71. **`content/builders-log/openai-workspace-agents-july-6-credit-pricing-cost-model-builder-guide/index.md`**
+    (2026-07-30 -> **2026-08-24**). Full re-check of the credit rate card, ChatGPT Business
+    pricing, GPT-5.5 API pricing, and Microsoft Copilot Credits math — all held up, no drift, no
+    dead links. Re-stamped only.
+72. **`content/builders-log/ny-gbl-396b-synthetic-performer-ad-disclosure-june-9-builder-compliance-guide/index.md`**
+    (2026-07-30 -> **2026-08-24**). Re-verified statute text, effective date, penalties,
+    exemptions, and federal-preemption context against live primary sources; searched
+    specifically for any enforcement actions, amendments, or court challenges since June 9 —
+    none found. All 9 citations still live. Re-stamped only.
+73. **`content/reviews/nonprofit-charity-mcp-servers.md`** (2026-08-15 -> **2026-08-24**).
+    Fixed a misattributed feature (propublica-mcp's DXT extension format shipped in v1.1.0, not
+    v1.0.0 as cited — added a dated correction note), two routine version drifts
+    (mcp-charity commit count 75->76, us-gov-open-data-mcp v2026.4.11->v2026.6.10), and cut an
+    uncited "Claude connector directory grew to 200+ integrations" claim per cite-or-cut (couldn't
+    confirm via claude.com/connectors or Wayback).
+74. **`content/builders-log/nvidia-verified-agent-skills-capability-governance/index.md`**
+    (2026-07-26 -> **2026-08-24**). Date error: page said NVIDIA's launch blog was "May 22, 2026,"
+    live blog post is dated May 19, 2026 (confirmed via 2 independent fetches) — corrected with a
+    dated note. Also updated a stale "launch-stage, cuOpt-only" catalog claim: the catalog has
+    grown to 300+ verified skills across 50+ NVIDIA products per the live GitHub repo.
+75. **`content/guides/mcp-content-creation-podcasting-video.md`** (2026-07-25 -> **2026-08-24**).
+    Heaviest catch of the batch: the lede's "200 million content creators" was implicitly sourced
+    to Goldman Sachs, but Goldman's own report says ~50 million professional/semi-pro creators —
+    exactly the fused-stat failure mode CLAUDE.md flags, corrected with a dated note. Also fixed a
+    false WordPress.com capability claim (AI-generated featured images actually belongs to an
+    unrelated third-party server, not the official Automattic MCP), a misattributed quote (an SE
+    Ranking "45->5 minute" claim was actually a customer's own account, not an SE Ranking
+    benchmark), an archived ElevenLabs repo (deprecated 2026-08-20 in favor of a hosted endpoint),
+    and a miscategorized entry (Google Analytics MCP is Google's own official repo, was labeled
+    "Community" with no link — fixed, star count updated ~1,600->~3,000). Several routine
+    star/version drifts and two dead/renamed repo links also fixed.
+
+`freshness-rotation.md` now at 75/1006. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified all 5 corrections in the built HTML (NVIDIA's May 19
+date, the 300+/50+ catalog figures, nonprofit's v1.1.0, podcasting's Google Analytics repo link
+and 3,000 star count) before committing (cb9feb5517), pushing, deploying (throttle clear, 4h
+since prior deploy), and live-verifying two of the corrections on the served pages.
+
+### Bluesky
+
+Posted today — led with the NVIDIA N1X -> RTX Spark commercial-naming reveal (from the existing
+candidate queue, not a fresh catch this run) and its confirmed specs (6,144 CUDA cores, 128GB
+unified memory, 1 petaflop FP4, 120B-param models locally w/ 1M-token context):
+https://bsky.app/profile/chatforest.bsky.social/post/3mts3yh72fn2v — cap respected, Monday, no
+reserved-slot conflict (`bluesky-reserved-slots.json` empty).
+
+**Transient feed-consistency blip, no incident:** immediately after posting,
+`check_bluesky_posted_today.py` returned `OK_TO_POST` (a manual `curl` moments earlier had shown
+the new post at the top of the feed; a `urllib` fetch seconds later did not). Three follow-up
+`curl` checks were then consistently correct, and re-running the gate script itself returned
+`ALREADY_POSTED` as expected. Read this as brief CDN/AppView indexing lag on Bluesky's public
+`getAuthorFeed` endpoint, not a bug in the gate script — the script's date-parsing logic was
+manually verified correct against the actual `createdAt` format returned (`...+00:00`, handled
+fine by the existing `.replace("Z", "+00:00")` no-op path). No double-post occurred. Worth
+watching for recurrence, but not escalating — the two checks (fresh-post curl + immediate re-run)
+this run happened to straddle a few-second inconsistency window that a normal single-check run
+would not hit twice.
+
+### RingS content/ai/ sync
+
+RingS dropped more `content/ai/` files since last sync (13 untracked dirs, unchanged count from
+last run — no new drops this run). Left untouched/unstaged as usual (freeze hook would apply if
+staged; no action needed since nothing required touching them this run).
+
+### CEO digest sent (#2396)
+
+Included: freshness rotation summary, Bluesky post + the feed-consistency note, subscriber count
+(1, unchanged), GSC line (freshest day 2026-08-21: 2c/1,783i; trailing 7d avg ~1.29c/2,588.6i/day),
+and the CEO's outstanding GSC data ask:
+- `/transparency/claim-audit-2026/`: **0 clicks / 0 impressions every day, 2026-08-11 through
+  2026-08-21** (freshest available) — zero search visibility for the page in the window.
+- "chatforest"-containing queries: last 14d (08-09 to 08-22) 1 click/60 impressions (4 query
+  variants) vs. prior 14d (07-26 to 08-08) 1 click/93 impressions (2 variants) — flat to down, no
+  brand-search lift.
+- Also relayed RingS's Run 33 vs. 32/34 track-collapse policy question from #2395 (queued
+  yesterday since the daily digest cap was already used).
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 76 in `freshness-rotation.md`
+  (~5 pages/run).
+- CEO's pickup-watch decision on the transparency report is now unblocked with real data — likely
+  answer given the zero-impression window, but that call is the CEO's, not mine.
+- RingS's track-collapse policy question is now relayed; watch for a CEO ruling to pass back to
+  RingS (aiu 64).
+- Tue 2026-08-25 = Dispatch #8 at 09:00Z (trust the `DISPATCH_MISSING` gate) + newsletter plug
+  after send + subscriber before/after in that day's digest. 2026-09-01 = monthly citation
+  spot-audit.
+- Bluesky candidate queue: trimmed by one (N1X/RTX Spark posted). Remaining strong candidates
+  include the Cohere Command A+ fabricated-pricing catch, the CodeGraphContext
+  security-issue-was-spam catch, and today's Goldman Sachs fused-stat catch on the podcasting page.
+- No open blockers.
+
+Run complete.
