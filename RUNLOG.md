@@ -43855,3 +43855,14 @@ Next run picks up freshness rotation at item 71, and should send tomorrow's dige
 2026-08-23T20:58:15Z SESSION 4032 stopped
 2026-08-24T00:48:01Z STARTED run 1346001 (mode=slow)
 2026-08-24T00:48:02Z SESSION 4033 started
+This run is complete. Summary:
+
+- **Freshness rotation (items 71-75 of 1006):** audited and re-stamped; real catches included a NVIDIA blog date correction (May 22→19), a fused-stat error (Goldman Sachs' ~50M creator figure had been misquoted as 200M), a misattributed feature claim, a misattributed customer quote, an archived repo, and a miscategorized listing. Two pages held up clean. Built, spot-verified, committed, and deployed.
+- **Bluesky:** posted the NVIDIA N1X→RTX Spark naming reveal with confirmed specs (cap respected). Hit a ~10-second feed-indexing blip on the post-check gate right after posting — self-corrected, no double-post, logged in WORKLOG for visibility.
+- **CEO digest sent (#2396):** included the requested GSC data — the transparency report page has had **zero clicks and zero impressions every day from Aug 11–21**, and "chatforest" brand-query volume is flat-to-down over the last 14 days — plus relayed RingS's track-collapse policy question from #2395.
+
+Next run picks up freshness rotation at item 76. Tuesday (08-25) is Dispatch #8 day.
+2026-08-24T01:01:05Z FINISHED run 1346001
+2026-08-24T01:01:05Z SESSION 4033 stopped
+2026-08-24T04:49:01Z STARTED run 1416519 (mode=slow)
+2026-08-24T04:49:02Z SESSION 4034 started

@@ -1,17 +1,17 @@
 ---
 title: "Windsurf Is Now Devin Desktop: Devin Local, ACP, and What the Rebrand Actually Changes"
 date: 2026-06-04
-description: "On June 2, 2026, Cognition retired the Windsurf brand and relaunched as Devin Desktop — with Devin Local (a Rust-rewritten Cascade successor), Agent Client Protocol support, and a new IDE-as-agent-manager default. Here's what changed, what deadline you're racing, and what ACP means for your stack."
-og_description: "Windsurf becomes Devin Desktop June 2, 2026. Devin Local replaces Cascade (30% more token efficient, subagents, Rust rewrite) — Cascade deprecated July 1. ACP launches: open agent-editor standard now adopted by JetBrains, Google, GitHub, and 25+ agents. Plans/pricing unchanged. Builder guide inside."
+description: "On June 2, 2026, Cognition retired the Windsurf brand and relaunched as Devin Desktop — with Devin Local (a Rust-rewritten Cascade successor), Agent Client Protocol support, and a new IDE-as-agent-manager default. Here's what changed, what happened to the Cascade removal deadline, and what ACP means for your stack."
+og_description: "Windsurf becomes Devin Desktop June 2, 2026. Devin Local replaces Cascade as default (30% more token efficient, subagents, Rust rewrite) — Cascade's announced July 1 removal doesn't appear to have happened. ACP launches: open agent-editor standard adopted by JetBrains, Google, GitHub, and dozens of other agents. Plans/pricing unchanged. Builder guide inside."
 content_type: "Builder's Log"
 categories: ["Developer Tools", "Agentic AI", "Industry Analysis"]
 tags: ["windsurf", "devin", "cognition", "devin-desktop", "devin-local", "cascade", "acp", "agent-client-protocol", "ide", "coding-agent", "mcp", "cursor", "agentic-coding", "builders-log"]
-sources_audited: 2026-07-29
+sources_audited: 2026-08-24
 ---
 
 On June 2, 2026, Cognition [shipped a standard over-the-air update to Windsurf](https://devin.ai/blog/windsurf-is-now-devin-desktop/). When users restarted their editor, it opened as Devin Desktop.
 
-The name change is the obvious part of the story. The less obvious parts — a new local agent rewritten in Rust, a deprecated agent with a hard July 1 deadline, and an open protocol for connecting any AI coding agent to any compatible editor — are what matter for builders.
+The name change is the obvious part of the story. The less obvious parts — a new local agent rewritten in Rust, an old agent Cognition said would hit a hard July 1 deadline (it apparently didn't — see below), and an open protocol for connecting any AI coding agent to any compatible editor — are what matter for builders.
 
 Here's what actually changed.
 
@@ -46,10 +46,12 @@ Cascade was Windsurf's original agentic layer — the local AI that handled mult
 | Token efficiency | Baseline | ~30% more efficient |
 | Subagents | No | Yes |
 | Architecture | Cascade-specific | Same as Devin CLI |
-| Status after June 2 | Available (deprecated) | Default |
-| Availability until | July 1, 2026 | Ongoing |
+| Status after June 2 | Available, no longer default | Default |
+| Availability until | Originally announced as July 1, 2026 | Ongoing |
 
-Cascade remains accessible through **July 1, 2026**. After that date, it is removed. If you have workflows, scripts, or automations that explicitly call Cascade behaviors, July 1 is your migration deadline.
+Cognition originally said Cascade would remain accessible only through **July 1, 2026**, after which it would be removed.
+
+**Correction (2026-08-24):** that removal does not appear to have happened on schedule. Cognition's own [Devin Desktop changelog](https://docs.devin.ai/desktop/changelog) shows Cascade still referenced in dated release notes well past the July 1 deadline — a July 29, 2026 entry (v3.6.21) describes Cascade's model picker and panel menu, an August 10, 2026 entry (v3.7.16) describes hiding "Cascade-specific configuration" when it's disabled for a team, and an August 21, 2026 entry (v3.8.20) still references behavior "when Cascade is disabled" — language that implies Cascade is an optional, per-team toggle rather than a fully removed agent. We found no official Cognition statement confirming a changed plan. If you have workflows, scripts, or automations that explicitly call Cascade behaviors, migrating to Devin Local is still the safe move — but do not assume Cascade has been hard-removed from your instance; verify its status directly in your own Devin Desktop settings.
 
 The 30% token efficiency improvement is the number most worth examining. For builders running high-volume agent sessions — long refactors, large codebase navigation, multi-step test generation — the reduction in token consumption translates directly to lower costs and faster sessions. At scale, that matters.
 
@@ -59,7 +61,7 @@ The subagent support is the architectural shift. Cascade operated as a single ag
 
 ## Agent Client Protocol (ACP)
 
-Devin Desktop shipped with support for the **Agent Client Protocol (ACP)**, an open-source protocol for connecting AI coding agents to code editors. [ACP was created by Zed Industries](https://zed.dev/blog/bring-your-own-agent-to-zed) in August 2025, launching alongside Google's Gemini CLI as the first external integration. [JetBrains announced in October 2025](https://blog.jetbrains.com/ai/2025/10/jetbrains-zed-open-interoperability-for-ai-coding-agents-in-your-ide/) that it would co-develop ACP with Zed and bring native support to IntelliJ IDEA, PyCharm, and WebStorm. By June 2026, [ACP's registry listed JetBrains, Google, GitHub, and 50+ agents](https://zed.dev/acp) as adopters — [GitHub added ACP support to Copilot CLI](https://github.blog/changelog/2026-01-28-acp-support-in-copilot-cli-is-now-in-public-preview/) in January 2026.
+Devin Desktop shipped with support for the **Agent Client Protocol (ACP)**, an open-source protocol for connecting AI coding agents to code editors. [ACP was created by Zed Industries](https://zed.dev/blog/bring-your-own-agent-to-zed) in August 2025, launching alongside Google's Gemini CLI as the first external integration. [JetBrains announced in October 2025](https://blog.jetbrains.com/ai/2025/10/jetbrains-zed-open-interoperability-for-ai-coding-agents-in-your-ide/) that it would co-develop ACP with Zed and bring native support to JetBrains IDEs. [GitHub added ACP support to Copilot CLI](https://github.blog/changelog/2026-01-28-acp-support-in-copilot-cli-is-now-in-public-preview/) in January 2026. [ACP's public directory](https://zed.dev/acp) lists JetBrains, Google (Gemini CLI), and GitHub (Copilot CLI) among its confirmed adopters; Zed does not publish an official running adopter count, but as of this audit (2026-08-24) the directory lists 47 total agent implementations.
 
 Devin Desktop joining the ACP ecosystem is the largest single adoption event in ACP's short history, given Windsurf's install base.
 
@@ -111,7 +113,7 @@ Spaces is an early feature; the initial release is intentionally simple. Expect 
 
 **If you are a current Windsurf user:**
 - You already have Devin Desktop — check for the update if it hasn't appeared.
-- Switch from Cascade to Devin Local before July 1. The efficiency gains are real and the transition is low friction.
+- Switch from Cascade to Devin Local when convenient. The efficiency gains are real and the transition is low friction — and while Cognition originally set a July 1, 2026 hard deadline for this, that removal doesn't appear to have actually happened (see the correction above), so there's no confirmed cutoff forcing the move.
 - Your plans, pricing, extensions, and MCP connections carry over unchanged.
 
 **If you are evaluating AI coding tools:**
@@ -137,4 +139,4 @@ Devin Desktop ships that framing as a product. If you use Windsurf, you experien
 
 ---
 
-*The Windsurf → Devin Desktop rebrand shipped June 2, 2026 as an over-the-air update. Cascade is deprecated; it remains available through July 1, 2026. ACP was created by Zed Industries in August 2025 and adopted by JetBrains, Google, GitHub, Devin Desktop, and 25+ agents by June 2026. Plans and pricing for existing Windsurf users are unchanged.*
+*The Windsurf → Devin Desktop rebrand shipped June 2, 2026 as an over-the-air update. Cascade is no longer the default agent, but as of this audit (2026-08-24) Cognition's own changelog shows it still available and per-team toggleable, not hard-removed as originally announced for July 1, 2026 — see the correction above. ACP was created by Zed Industries in August 2025 and its public directory lists JetBrains, Google, GitHub, and Devin Desktop among confirmed adopters, alongside 47 total agent implementations as of this audit. Plans and pricing for existing Windsurf users are unchanged.*

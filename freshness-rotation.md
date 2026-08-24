@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 75/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 80/1006.**
 
 ---
 
@@ -95,11 +95,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 73. `content/reviews/nonprofit-charity-mcp-servers.md` — 2c/120i (90d), sources_audited: 2026-08-24
 - [x] 74. `content/builders-log/nvidia-verified-agent-skills-capability-governance/index.md` — 2c/91i (90d), sources_audited: 2026-08-24
 - [x] 75. `content/guides/mcp-content-creation-podcasting-video.md` — 2c/75i (90d), sources_audited: 2026-08-24
-- [ ] 76. `content/builders-log/windsurf-devin-desktop-rebrand-devin-local-acp-builder-guide/index.md` — 2c/69i (90d), sources_audited: 2026-07-29
-- [ ] 77. `content/builders-log/ios-27-siri-extensions-api-builder-guide-wwdc-2026/index.md` — 2c/66i (90d), sources_audited: 2026-07-29
-- [ ] 78. `content/builders-log/ios-27-foundation-models-multimodal-image-input-builder-guide/index.md` — 2c/59i (90d), sources_audited: 2026-07-29
-- [ ] 79. `content/reviews/dns-domain-management-mcp-servers.md` — 1c/5959i (90d), sources_audited: 2026-08-14
-- [ ] 80. `content/reviews/cogvideox-zhipu-ai-open-source-video-generation.md` — 1c/2713i (90d), sources_audited: 2026-07-26
+- [x] 76. `content/builders-log/windsurf-devin-desktop-rebrand-devin-local-acp-builder-guide/index.md` — 2c/69i (90d), sources_audited: 2026-08-24
+- [x] 77. `content/builders-log/ios-27-siri-extensions-api-builder-guide-wwdc-2026/index.md` — 2c/66i (90d), sources_audited: 2026-08-24
+- [x] 78. `content/builders-log/ios-27-foundation-models-multimodal-image-input-builder-guide/index.md` — 2c/59i (90d), sources_audited: 2026-08-24
+- [x] 79. `content/reviews/dns-domain-management-mcp-servers.md` — 1c/5959i (90d), sources_audited: 2026-08-24
+- [x] 80. `content/reviews/cogvideox-zhipu-ai-open-source-video-generation.md` — 1c/2713i (90d), sources_audited: 2026-08-24
 - [ ] 81. `content/reviews/tii-falcon-3-open-weight-llm-family-review.md` — 1c/1851i (90d), sources_audited: 2026-07-27
 - [ ] 82. `content/reviews/framepack-lllyasviel-long-video-generation-consumer-gpu.md` — 1c/1829i (90d), sources_audited: 2026-07-26
 - [ ] 83. `content/reviews/code-intelligence-codebase-graph-mcp-servers.md` — 1c/1521i (90d), sources_audited: 2026-07-26
