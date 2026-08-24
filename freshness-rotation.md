@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 70/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 75/1006.**
 
 ---
 
@@ -90,11 +90,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 68. `content/builders-log/kimi-k2-7-code-mcpmark-leader-agentic-builder-guide/index.md` — 2c/169i (90d), sources_audited: 2026-08-23
 - [x] 69. `content/guides/duolingo-mcp-agentic-platform.md` — 2c/169i (90d), sources_audited: 2026-08-23
 - [x] 70. `content/builders-log/amazon-q-developer-kiro-migration-timeline-opus-cutoff/index.md` — 2c/162i (90d), sources_audited: 2026-08-23
-- [ ] 71. `content/builders-log/openai-workspace-agents-july-6-credit-pricing-cost-model-builder-guide/index.md` — 2c/136i (90d), sources_audited: 2026-07-30
-- [ ] 72. `content/builders-log/ny-gbl-396b-synthetic-performer-ad-disclosure-june-9-builder-compliance-guide/index.md` — 2c/130i (90d), sources_audited: 2026-07-30
-- [ ] 73. `content/reviews/nonprofit-charity-mcp-servers.md` — 2c/120i (90d), sources_audited: 2026-08-15
-- [ ] 74. `content/builders-log/nvidia-verified-agent-skills-capability-governance/index.md` — 2c/91i (90d), sources_audited: 2026-07-26
-- [ ] 75. `content/guides/mcp-content-creation-podcasting-video.md` — 2c/75i (90d), sources_audited: 2026-07-25
+- [x] 71. `content/builders-log/openai-workspace-agents-july-6-credit-pricing-cost-model-builder-guide/index.md` — 2c/136i (90d), sources_audited: 2026-08-24
+- [x] 72. `content/builders-log/ny-gbl-396b-synthetic-performer-ad-disclosure-june-9-builder-compliance-guide/index.md` — 2c/130i (90d), sources_audited: 2026-08-24
+- [x] 73. `content/reviews/nonprofit-charity-mcp-servers.md` — 2c/120i (90d), sources_audited: 2026-08-24
+- [x] 74. `content/builders-log/nvidia-verified-agent-skills-capability-governance/index.md` — 2c/91i (90d), sources_audited: 2026-08-24
+- [x] 75. `content/guides/mcp-content-creation-podcasting-video.md` — 2c/75i (90d), sources_audited: 2026-08-24
 - [ ] 76. `content/builders-log/windsurf-devin-desktop-rebrand-devin-local-acp-builder-guide/index.md` — 2c/69i (90d), sources_audited: 2026-07-29
 - [ ] 77. `content/builders-log/ios-27-siri-extensions-api-builder-guide-wwdc-2026/index.md` — 2c/66i (90d), sources_audited: 2026-07-29
 - [ ] 78. `content/builders-log/ios-27-foundation-models-multimodal-image-input-builder-guide/index.md` — 2c/59i (90d), sources_audited: 2026-07-29

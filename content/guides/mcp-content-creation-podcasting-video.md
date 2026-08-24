@@ -1,14 +1,16 @@
 ---
 title: "MCP and Content Creation: How AI Agents Connect to YouTube, Podcast Platforms, Video Editors, Social Media Schedulers, Design Tools, Audio Production, Image Generators, CMS Platforms, SEO Tools, and the Entire Creator Workflow"
 date: 2026-03-30T13:00:00+09:00
-description: "A comprehensive guide to 70+ MCP integrations for content creators — covering video production (Short Video Maker with 1,100 stars for TikTok/Reels/Shorts, FFmpeg MCP for"
+description: "A comprehensive guide to 70+ MCP integrations for content creators — covering video production (Short Video Maker with ~1,300 stars for TikTok/Reels/Shorts, FFmpeg MCP for"
 content_type: "Guide"
-card_description: "The creator economy reached $214 billion in 2026 with 200M+ creators worldwide. This guide covers 70+ MCP servers across the content creation stack — from Short Video Maker (1,100★) for TikTok/Reels/Shorts and FFmpeg-powered editing to ElevenLabs voice synthesis (1,300★), Epidemic Sound music licensing, Canva and Figma design automation, DALL-E and Midjourney image generation, 40+ YouTube transcript servers, Podcast Generator MCP with dual AI voices, Ayrshare social scheduling across 13 platforms, WordPress CMS with AI-powered publishing, and SE Ranking/Ahrefs/Semrush SEO tools. Architecture patterns cover AI-powered video pipelines, podcast-to-multichannel workflows, design-to-publish automation, and SEO-driven content optimization loops."
-last_refreshed: 2026-04-15
-sources_audited: 2026-07-25
+card_description: "Goldman Sachs projects the creator economy could approach $480 billion by 2027, up from $250 billion. This guide covers 70+ MCP servers across the content creation stack — from Short Video Maker (~1,300★) for TikTok/Reels/Shorts and FFmpeg-powered editing to ElevenLabs voice synthesis (~1,500★, now hosted-only), Epidemic Sound music licensing, Canva and Figma design automation, DALL-E and Midjourney image generation, 40+ YouTube transcript servers, Podcast Generator MCP with dual AI voices, Ayrshare social scheduling across 13 platforms, WordPress CMS with AI-powered publishing, and SE Ranking/Ahrefs/Semrush SEO tools. Architecture patterns cover AI-powered video pipelines, podcast-to-multichannel workflows, design-to-publish automation, and SEO-driven content optimization loops."
+last_refreshed: 2026-08-24
+sources_audited: 2026-08-24
 ---
 
-Content creation is one of the fastest-growing industries in the world. [The creator economy is projected to approach $480 billion by 2027](https://www.goldmansachs.com/insights/articles/the-creator-economy-could-approach-half-a-trillion-dollars-by-2027) per Goldman Sachs, with over 200 million content creators globally. From solo YouTubers and podcasters to professional content teams managing multi-platform publishing, creators face a common challenge: the workflow is deeply fragmented. Scripting happens in one tool, recording in another, editing in a third, thumbnails in a fourth, publishing across five platforms, and SEO optimization in yet another — with manual copy-paste bridging them all.
+Content creation is one of the fastest-growing industries in the world. [Goldman Sachs projects the creator economy could approach $480 billion by 2027](https://www.goldmansachs.com/insights/articles/the-creator-economy-could-approach-half-a-trillion-dollars-by-2027), up from roughly $250 billion, driven by an estimated 50 million professional and semi-professional creators globally. From solo YouTubers and podcasters to professional content teams managing multi-platform publishing, creators face a common challenge: the workflow is deeply fragmented. Scripting happens in one tool, recording in another, editing in a third, thumbnails in a fourth, publishing across five platforms, and SEO optimization in yet another — with manual copy-paste bridging them all.
+
+*Correction (2026-08-24): this section previously cited "over 200 million content creators globally" as if it came from the Goldman Sachs source above. Goldman Sachs' own report cites approximately 50 million professional/semi-professional creators, not 200 million — the two figures were conflated. Wording corrected to match what the cited source actually says.*
 
 The Model Context Protocol is emerging as the connective tissue that unifies these workflows. MCP lets AI agents interact with video editors, podcast platforms, design tools, social media schedulers, CMS systems, and analytics dashboards through a single standardized interface. Instead of switching between fifteen browser tabs and three desktop apps, a creator can describe what they need — "edit this podcast episode, generate a thumbnail, write show notes, and schedule posts across all platforms" — and an MCP-connected AI agent orchestrates the entire pipeline.
 
@@ -34,7 +36,7 @@ These MCP servers enable AI agents to create, edit, and process video content �
 
 ### Short Video Maker
 
-**Repository:** [gyoridavid/short-video-maker](https://github.com/gyoridavid/short-video-maker) | **Stars:** ~1,100 | **Type:** Community | **Language:** TypeScript
+**Repository:** [gyoridavid/short-video-maker](https://github.com/gyoridavid/short-video-maker) | **Stars:** ~1,300 | **Type:** Community | **Language:** TypeScript
 
 The most popular video creation MCP server, purpose-built for generating short-form content for [TikTok](https://www.tiktok.com/), [Instagram Reels](https://www.instagram.com/reels/), and [YouTube Shorts](https://www.youtube.com/shorts). Rather than using expensive GPU-based video generation, it takes a practical approach: combining text-to-speech, automatic captions, background videos, and music into polished short-form videos.
 
@@ -139,7 +141,7 @@ Gives AI agents direct access to podcast data — episode metadata, transcripts,
 
 **Provider:** [Podigee](https://www.podigee.com/) | **Type:** Official (first-party)
 
-Described as the "world's first MCP server for podcasts," Podigee's implementation connects LLMs directly to podcast analytics and management data. Enables AI agents to access episode performance metrics, listener demographics, and publishing workflows through the MCP standard.
+Described by Podigee as the ["world's first MCP server for podcasts"](https://www.podigee.com/en/blog/unlock-the-future-of-podcast-analytics-with-podigees-mcp-server/), Podigee's implementation connects LLMs directly to podcast analytics and management data. Enables AI agents to access episode performance metrics, listener demographics, and publishing workflows through the MCP standard.
 
 ### Barevalue MCP
 
@@ -176,7 +178,7 @@ These MCP servers handle audio production, voice synthesis, music licensing, and
 
 ### ElevenLabs MCP Server (Official)
 
-**Repository:** [elevenlabs/elevenlabs-mcp](https://github.com/elevenlabs/elevenlabs-mcp) | **Stars:** ~1,300 | **Type:** Official (first-party) | **Language:** Python
+**Repository:** [elevenlabs/elevenlabs-mcp](https://github.com/elevenlabs/elevenlabs-mcp) (archived) | **Stars:** ~1,500 | **Type:** Official (first-party) | **Language:** Python
 
 The official [ElevenLabs](https://elevenlabs.io/) MCP server provides direct access to their AI audio platform — one of the most capable voice AI platforms available.
 
@@ -187,7 +189,9 @@ Key capabilities:
 - **Multi-voice projects** — assign different voices across a project
 - **Voice agents** — build advanced voice agents capable of outbound calls
 
-Available on [PyPI](https://pypi.org/project/elevenlabs-mcp/) (`elevenlabs-mcp`), [Docker Hub](https://hub.docker.com/r/mcp/elevenlabs) (`mcp/elevenlabs`), and integrated with Google's [Agent Development Kit (ADK)](https://google.github.io/adk-docs/). Free tier includes 10,000 credits per month.
+Free tier includes 10,000 credits per month.
+
+*Correction (2026-08-24): ElevenLabs [archived the local `elevenlabs/elevenlabs-mcp` repository on 2026-08-20](https://github.com/elevenlabs/elevenlabs-mcp) and deprecated it in favor of a hosted MCP server at `https://api.elevenlabs.io/v1/mcp`, which authenticates via OAuth and needs no local install or PyPI/Docker package. The capabilities above still apply to the hosted server; the local install instructions previously linked here are no longer the recommended path.*
 
 ### Epidemic Sound MCP Server (Official)
 
@@ -201,7 +205,7 @@ Key capabilities:
 - **Voiceover assets** — retrieve voice recordings for content projects
 - **Metadata-driven discovery** — search by genre, mood, tempo, instrumentation, and scene description
 
-Epidemic Sound owns 100% of rights to their catalog (master rights, neighboring/performer rights, and composition rights), eliminating copyright concerns for creators. Artists receive upfront payments plus 50/50 streaming revenue split.
+Epidemic Sound [says it owns the rights to its catalog outright](https://www.epidemicsound.com/about/), letting creators publish worldwide without separate licensing concerns. Per [Epidemic Sound's own description of how it pays artists](https://corporate.epidemicsound.com/about-us/how-we-work-with-artists/), artists receive an upfront fixed fee per track plus a 50/50 split of streaming royalties.
 
 ### Whisper Transcription MCP Servers
 
@@ -292,7 +296,7 @@ For creators who need AI-generated visuals — thumbnails, social graphics, blog
 
 #### DALL-E MCP Server
 
-**Provider:** [sammyl720](https://github.com/sammyl720) and others | **Type:** Community
+**Repository:** [sammyl720/image-generator-mcp-server](https://github.com/sammyl720/image-generator-mcp-server) and others | **Type:** Community
 
 Integrates [DALL-E 3](https://openai.com/dall-e-3) for on-demand image generation from text prompts. Enables AI agents to generate custom thumbnails, blog illustrations, and social media visuals as part of content creation workflows.
 
@@ -337,7 +341,7 @@ Key capabilities:
 
 ### OpenTweet MCP
 
-**Provider:** [OpenTweet](https://opentweet.io/) | **Type:** Commercial | **Tools:** 12
+**Provider:** [OpenTweet](https://opentweet.io/) | **Type:** Commercial | **Tools:** [30+](https://opentweet.io/twitter-mcp-server)
 
 Purpose-built for Twitter/X with tools covering the full tweet lifecycle — from drafting to publishing to analytics. Focused on the platform where short-form text content and engagement drive creator growth.
 
@@ -359,13 +363,13 @@ These MCP servers connect AI agents to content management systems for blog posts
 
 ### WordPress MCP Servers
 
-[WordPress](https://wordpress.org/) powers [approximately 43% of the web](https://w3techs.com/technologies/details/cm-wordpress), making it the most important CMS integration for content creators.
+[WordPress](https://wordpress.org/) powers [approximately 41% of all websites, and nearly 59% of websites with a known CMS](https://w3techs.com/technologies/details/cm-wordpress), making it the most important CMS integration for content creators.
 
 #### WordPress.com Official MCP
 
-**Provider:** [WordPress.com](https://wordpress.com/) ([Automattic](https://automattic.com/)) | **Type:** Official (first-party) | **Write Tools:** 19
+**Provider:** [WordPress.com](https://wordpress.com/) ([Automattic](https://automattic.com/)) | **Type:** Official (first-party) | **Write Tools:** 18
 
-As of March 2026, [WordPress.com](https://wordpress.com/)'s MCP server supports both read and write operations across six content types, making AI agents into full WordPress collaborators.
+[As of March 20, 2026](https://www.prnewswire.com/news-releases/claude-chatgpt-cursor-and-other-ai-agents-can-now-take-direct-action-on-wordpresscom-sites-through-natural-conversation-302719391.html), [WordPress.com's MCP server](https://developer.wordpress.com/docs/mcp/tools-reference/) supports both read and write operations across six content types — posts, pages, comments, media, categories, and tags — making AI agents into full WordPress collaborators. Every write, update, and delete operation requires explicit user confirmation before it executes.
 
 Key capabilities:
 - **Post management** — create, edit, publish, and schedule blog posts
@@ -373,8 +377,9 @@ Key capabilities:
 - **Comment management** — moderate and respond to comments
 - **Category and tag management** — organize content taxonomy
 - **Media management** — upload and manage images, videos, and files
-- **AI-generated featured images** — automatic thumbnail generation using [DALL-E 3](https://openai.com/dall-e-3)
 - **Block pattern support** — create content using WordPress block patterns
+
+*Correction (2026-08-24): this section previously listed "AI-generated featured images — automatic thumbnail generation using DALL-E 3" as a capability of WordPress.com's official MCP server. That capability does not appear in [WordPress.com's official MCP tools reference](https://developer.wordpress.com/docs/mcp/tools-reference/) — it belongs to an unrelated third-party community server (SeOMentor/WPMCP), not the official Automattic server described here. Removed. Write-tool count corrected from 19 to 18 (3 write operations — create, update, delete — across each of the 6 content types) per the same source.*
 
 #### WordPress.org MCP Adapter
 
@@ -406,7 +411,7 @@ These MCP servers bring search data directly into content creation workflows —
 
 **Provider:** [SE Ranking](https://seranking.com/) | **Type:** Official (first-party)
 
-[SE Ranking](https://seranking.com/)'s MCP server connects their keyword and competitive intelligence data directly into AI assistants. Their Head of AI and Research Development reported that it reduced keyword research time from 45 minutes to under 5 minutes.
+[SE Ranking](https://seranking.com/)'s [MCP server](https://seranking.com/api/integrations/mcp/) connects their keyword and competitive intelligence data directly into AI assistants. One documented user account — [Chris Raulf's agency, describing work by its Head of AI and Research Development, Harold De Guzman](https://chrisraulf.com/se-ranking-mcp-keyword-research-automation/) — reported that connecting SE Ranking's MCP server to Claude cut keyword research time on a project from 45 minutes to under 5 minutes. This is a single customer's account, not an SE Ranking-published benchmark.
 
 Key capabilities:
 - **Keyword research** — search volume, difficulty, CPC, and related keywords
@@ -432,9 +437,11 @@ Covers two API suites:
 
 ### Google Analytics MCP
 
-**Stars:** ~1,600 | **Type:** Community
+**Repository:** [googleanalytics/google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp) | **Stars:** ~3,000 | **Type:** Official (first-party)
 
-One of the most popular analytics MCP servers, providing access to [Google Analytics](https://analytics.google.com/) data for content performance tracking. Enables AI agents to analyze traffic patterns, identify top-performing content, and recommend optimization strategies.
+The most popular analytics MCP server, providing access to [Google Analytics](https://analytics.google.com/) data for content performance tracking. Enables AI agents to analyze traffic patterns, identify top-performing content, and recommend optimization strategies.
+
+*Correction (2026-08-24): this section previously listed no repository link and classified this server as "Community." It is Google's own official repository (published under the `googleanalytics` GitHub org) and has grown to roughly 3,000 stars, up from the ~1,600 previously cited. Corrected.*
 
 ### Coupler.io MCP
 
@@ -444,7 +451,7 @@ A no-code data integration platform that connects [Google Search Console](https:
 
 ### SEO AI MCP (Google Ads Keyword Planner)
 
-**Repository:** [ccnn2509/seo-ai](https://github.com/ccnn2509/seo-ai) | **Type:** Community
+**Repository:** [ccnn2509/app-seo-ai](https://github.com/ccnn2509/app-seo-ai) (renamed from `seo-ai`) | **Type:** Community
 
 Integrates [Google Ads Keyword Planner](https://ads.google.com/home/tools/keyword-planner/) data for content-focused keyword research — particularly useful for creators monetizing through ads who want to target high-CPC keywords.
 
@@ -544,7 +551,7 @@ Continuous content optimization based on real search performance data:
 
 | Category | Server | Type | Key Strength | Stars/Tools |
 |----------|--------|------|-------------|-------------|
-| **Video** | Short Video Maker | Community | TikTok/Reels/Shorts automation | ~1,100★ |
+| **Video** | Short Video Maker | Community | TikTok/Reels/Shorts automation | ~1,300★ |
 | **Video** | video-audio-mcp | Community | FFmpeg professional editing | — |
 | **Video** | ffmpeg-mcp | Community | Conversational video editing | — |
 | **YouTube** | jkawamoto transcript | Community | Long-form transcript pagination | — |
@@ -553,7 +560,7 @@ Continuous content optimization based on real search performance data:
 | **Podcast** | Pod Engine | Commercial | Podcast data access for agents | — |
 | **Podcast** | Podigee | Official | Podcast analytics | — |
 | **Podcast** | Barevalue | Commercial | AI podcast editing service | — |
-| **Audio** | ElevenLabs | Official | TTS, voice cloning, agents | ~1,300★ |
+| **Audio** | ElevenLabs | Official | TTS, voice cloning, agents (hosted server now; local repo archived) | ~1,500★ |
 | **Audio** | Epidemic Sound | Official | Royalty-free music catalog | — |
 | **Audio** | Whisper MCP servers | Community | Audio transcription | — |
 | **Audio** | Transcribe | Commercial | Fast local transcription | — |
@@ -564,16 +571,16 @@ Continuous content optimization based on real search performance data:
 | **Image** | Midjourney MCP | Community | High-quality image generation | — |
 | **Image** | ImaginePro | Commercial | Multi-model generation | — |
 | **Social** | Ayrshare | Community/Commercial | 13+ platforms, 75+ tools | 75 tools |
-| **Social** | OpenTweet | Commercial | Twitter/X specialist | 12 tools |
+| **Social** | OpenTweet | Commercial | Twitter/X specialist | 30+ tools |
 | **Social** | BrandGhost | Commercial | AI-powered scheduling | — |
 | **Social** | Publora | Commercial | IDE-integrated social mgmt | — |
-| **CMS** | WordPress.com | Official | Full read/write CMS control | 19 write tools |
+| **CMS** | WordPress.com | Official | Full read/write CMS control | 18 write tools |
 | **CMS** | WordPress.org Adapter | Official | Self-hosted WordPress | — |
 | **CMS** | Easy MCP AI | Community | WordPress plugin approach | — |
 | **SEO** | SE Ranking | Official | Keyword research + tracking | — |
 | **SEO** | Ahrefs MCP | Official | Backlinks + competitive intel | — |
 | **SEO** | Semrush | Official | Market analysis + keywords | — |
-| **SEO** | Google Analytics MCP | Community | Traffic analytics | ~1,600★ |
+| **SEO** | Google Analytics MCP | Official | Traffic analytics | ~3,000★ |
 | **SEO** | Coupler.io | Commercial | Search Console integration | — |
 
 ## What's Missing: Ecosystem Gaps

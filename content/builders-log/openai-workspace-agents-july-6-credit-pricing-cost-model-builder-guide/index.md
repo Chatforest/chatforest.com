@@ -6,7 +6,7 @@ og_description: "ChatGPT Workspace Agents free period ends July 6. Credit billin
 content_type: "Builder's Log"
 categories: ["AI Industry", "Enterprise AI", "Pricing"]
 tags: ["openai", "workspace-agents", "chatgpt", "enterprise", "pricing", "credits", "billing", "slack", "salesforce", "custom-gpts", "builder-guide"]
-sources_audited: 2026-07-30
+sources_audited: 2026-08-24
 ---
 
 [OpenAI's free period for ChatGPT Workspace Agents](https://openai.com/index/introducing-workspace-agents-in-chatgpt/) originally ran through May 6, 2026, and was then [extended to July 6, 2026](https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes). That is 24 days from today. After that, credit-based metering begins for agents run inside ChatGPT.

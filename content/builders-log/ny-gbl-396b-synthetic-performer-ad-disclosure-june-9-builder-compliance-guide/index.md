@@ -6,7 +6,7 @@ og_description: "NY GBL §396-b is now in effect. Any advertisement featuring an
 content_type: "Builder's Log"
 categories: ["Regulation", "Compliance", "New York"]
 tags: ["new-york", "synthetic-performer", "ai-advertising", "disclosure", "gbl-396b", "compliance", "builder-guide", "ai-generated-content", "digital-human", "june-2026"]
-sources_audited: 2026-07-30
+sources_audited: 2026-08-24
 ---
 
 New York's synthetic performer disclosure law, codified as [General Business Law §396-b](https://www.nysenate.gov/legislation/bills/2025/S8420/amendment/A), went into effect on June 9, 2026 — 180 days after [Governor Hochul signed S.8420-A/A.8887-B](https://ktslaw.com/en/insights/alert/2025/12/new%20york%20governor%20signs%20bill%20requiring%20disclosure%20of%20ai%20generated%20performers%20in%20advertising) on December 11, 2025. If you build, deploy, or publish AI-generated advertising that reaches New York audiences and includes a digital human standing in for a real actor, you now have legal obligations.

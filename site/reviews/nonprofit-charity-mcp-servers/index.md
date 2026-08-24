@@ -107,7 +107,9 @@ Accesses **ProPublica's Nonprofit Explorer API** for Form 990 data — the gold 
 - **analyze_nonprofit_financials** — multi-year trend analysis of revenue, expenses, and assets
 - **search_similar_nonprofits** — discover comparable organizations by NTEE code and geography
 
-**Updated to v1.0.0** with MCP 2025-03-26 Streamable HTTP transport (breaking change — single `/` endpoint replaces separate `/sse` and `/messages` endpoints). New DXT extension format for easier installation. Docker, DigitalOcean, and Cloudflare Workers deployment options. 58 commits. Works with Claude Desktop and Cursor.
+**Now at [v1.1.0](https://github.com/asachs01/propublica-mcp/releases/tag/v1.1.0)** (v1.0.0 shipped MCP 2025-03-26 Streamable HTTP transport — breaking change, single `/` endpoint replaces separate `/sse` and `/messages` endpoints; v1.1.0 added the DXT extension format for easier installation). Docker, DigitalOcean, and Cloudflare Workers deployment options. 58 commits. Works with Claude Desktop and Cursor.
+
+*Correction (2026-08-24): our 2026-08-15 audit attributed the DXT extension format to v1.0.0; it actually shipped in the subsequent v1.1.0 release.*
 
 ### conorheffron/mcp-charity
 
@@ -115,7 +117,7 @@ Accesses **ProPublica's Nonprofit Explorer API** for Form 990 data — the gold 
 |--------|-------|----------|---------|-------|
 | [conorheffron/mcp-charity](https://github.com/conorheffron/mcp-charity) | 4 | Python | GPL-3.0 | 1 |
 
-A **sample/demonstration MCP server** for charity search. Includes a `query_charities` tool to search by name, location, and cause. **Updated to v1.0.7** ([July 17, 2026](https://github.com/conorheffron/mcp-charity/releases/tag/1.0.7)) — running Python 3.14 + fastmcp 3 with HTTP endpoints. 75 commits. More of a learning project than a production tool, but actively maintained.
+A **sample/demonstration MCP server** for charity search. Includes a `query_charities` tool to search by name, location, and cause. **Updated to v1.0.7** ([July 17, 2026](https://github.com/conorheffron/mcp-charity/releases/tag/1.0.7)) — running Python 3.14 + fastmcp 3 with HTTP endpoints. 76 commits. More of a learning project than a production tool, but actively maintained.
 
 ## Donor Management & Fundraising CRM
 
@@ -273,7 +275,7 @@ Not a data server but a structured analytical framework. Useful for organization
 |--------|-------|----------|---------|-------|
 | [lzinga/us-gov-open-data-mcp](https://github.com/lzinga/us-gov-open-data-mcp) | 108 | TypeScript | MIT | 300+ |
 
-**The largest government data MCP server by far** — 300+ tools covering 40+ US federal data APIs. [Featured on Hacker News](https://news.ycombinator.com/item?id=47236272). Created February 2026, v2026.4.11:
+**The largest government data MCP server by far** — 300+ tools covering 40+ US federal data APIs. [Featured on Hacker News](https://news.ycombinator.com/item?id=47236272). Created February 2026, now at [v2026.6.10](https://github.com/lzinga/us-gov-open-data-mcp/releases/tag/v2026.6.10):
 
 - **Economic** — Treasury fiscal data, FRED economic indicators, BLS labor statistics
 - **Legislative** — Congress.gov bills and votes, Federal Register regulations
@@ -349,7 +351,7 @@ The nonprofit MCP space has narrowed its gaps but several remain:
 
 ## Rating: 3.5/5
 
-**What works:** Grant discovery arrived with three options — Granted AI (140K+ grants, 133K+ foundations, free), Tar-ive/grants-mcp (government grants), and GSA-TTS's official Grants.gov MCP (government-built). Civic open data exploded with us-gov-open-data-mcp's 300+ tools across 40+ federal APIs and GovInfo's official GPO MCP. CiviCRM finally has a dedicated MCP server (11 tools) serving 14K+ organizations. Blackbaud launched "Development Agent" — the first fully autonomous fundraising AI agent. Salesforce rebranded to "Agentforce Nonprofit" with 4 purpose-built AI agents. The Claude connector directory grew to 200+ integrations.
+**What works:** Grant discovery arrived with three options — Granted AI (140K+ grants, 133K+ foundations, free), Tar-ive/grants-mcp (government grants), and GSA-TTS's official Grants.gov MCP (government-built). Civic open data exploded with us-gov-open-data-mcp's 300+ tools across 40+ federal APIs and GovInfo's official GPO MCP. CiviCRM finally has a dedicated MCP server (11 tools) serving 14K+ organizations. Blackbaud launched "Development Agent" — the first fully autonomous fundraising AI agent. Salesforce rebranded to "Agentforce Nonprofit" with 4 purpose-built AI agents.
 
 **What doesn't:** No grant *writing* assistance exists (only discovery). DonorPerfect and Bloomerang remain unconnected. Volunteer scheduling has no dedicated MCP server (though Salesforce's Volunteer Agent is GA early 2026). Open-source impact measurement is still absent. charity-mcp-server appears abandoned (3 stars, no commits since June 2025), and NationBuilder MCP was deleted. Industry-wide, [92% of nonprofits use AI but only 7% report major impact](https://virtuous.org/blog/2026-nonprofit-ai-adoption-report/) — an "efficiency plateau" that better tooling could address.
 

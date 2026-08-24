@@ -1,13 +1,15 @@
 # NVIDIA Verified Agent Skills: A Trust Layer for What Agents Can Do
 
-> NVIDIA launched Verified Agent Skills on May 22, a governance framework that catalogs, scans, signs, and documents portable agent capabilities with machine-readable skill cards. It's the first systematic answer to the question enterprises ask before deploying agent skills in production: can I trust this thing?
+> NVIDIA launched Verified Agent Skills on May 19, a governance framework that catalogs, scans, signs, and documents portable agent capabilities with machine-readable skill cards. It's the first systematic answer to the question enterprises ask before deploying agent skills in production: can I trust this thing?
 
 
 When you install a package from npm, you can run `npm audit`. You get a dependency graph, known CVEs, severity scores. You can make an informed decision about whether to ship it.
 
 AI agent skills have had no equivalent. You get a SKILL.md file and some documentation and you trust that the capability does what it says. For personal projects, that's fine. For enterprise deployments where an agent skill might have access to customer data, internal APIs, or production systems — it's a gap that shows up fast in security reviews.
 
-On May 22, 2026, [NVIDIA shipped an answer: **Verified Agent Skills**](https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/), a framework that brings catalog, scan, sign, and document infrastructure to portable agent capabilities.
+On May 19, 2026, [NVIDIA shipped an answer: **Verified Agent Skills**](https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/), a framework that brings catalog, scan, sign, and document infrastructure to portable agent capabilities.
+
+*Correction (2026-08-24): this article originally gave the ship date as May 22, 2026. NVIDIA's developer blog post is dated May 19, 2026; the date above has been corrected to match the live source.*
 
 ---
 
@@ -126,9 +128,11 @@ Verification tells you that a skill is what it says it is at the moment it was s
 - Whether the skill will behave correctly in environments NVIDIA didn't test
 - Whether a future update will pass the same standards (each version needs its own verification)
 
-The catalog is also, at launch, focused on NVIDIA's own tooling. The cuOpt skill demonstrates the framework, but the broader catalog build-out — third-party skill publishers submitting capabilities for verification — is the phase that will determine how useful this infrastructure becomes.
+The catalog was, at launch, focused on NVIDIA's own tooling — cuOpt was the first published skill. The broader catalog build-out — third-party skill publishers submitting capabilities for verification — is the phase that will determine how useful this infrastructure becomes.
 
 The agentskills.io specification is open, and the framework is designed for cross-platform use. Whether the verification program extends to non-NVIDIA-authored skills, and what that submission process looks like, isn't yet documented.
+
+*Update (2026-08-24): the catalog has grown substantially since launch. [NVIDIA's public skills repository](https://github.com/nvidia/skills) now lists 300+ verified skills across 50+ NVIDIA products (NeMo, Dynamo, Megatron-Core, cuDF, DeepStream, Earth2Studio, CUDA-Q, and more) — well beyond the single cuOpt example this article originally described. All of it remains NVIDIA-authored and NVIDIA-verified; the repository's own contributing guidance still does not describe a process for third-party (non-NVIDIA) skill submission, so the "isn't yet documented" claim above still holds as of this update.*
 
 ---
 
@@ -148,5 +152,5 @@ The question for builders is whether this infrastructure arrives fast enough to 
 
 ---
 
-**Sources:** [NVIDIA Verified Agent Skills Provide Capability Governance for AI Agents (NVIDIA Developer Blog)](https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/) · [agentskills.io open specification](https://agentskills.io) · [OWASP Top 10 for Large Language Model Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/) · [MITRE ATLAS — Adversarial Threat Landscape for AI Systems](https://atlas.mitre.org/)
+**Sources:** [NVIDIA Verified Agent Skills Provide Capability Governance for AI Agents (NVIDIA Developer Blog)](https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/) · [agentskills.io open specification](https://agentskills.io) · [OWASP Top 10 for Large Language Model Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/) · [MITRE ATLAS — Adversarial Threat Landscape for AI Systems](https://atlas.mitre.org/) · [NVIDIA/skills catalog on GitHub](https://github.com/nvidia/skills)
 
