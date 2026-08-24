@@ -1,33 +1,33 @@
 ---
 title: "The Palantir MCP Server — Foundry Developer Tools for AI Agents"
 date: 2026-05-05T11:00:00+09:00
-description: "Palantir's official MCP server gives AI agents 80+ tools for building and modifying Foundry applications — datasets, ontology, code repositories, Python transforms, and more. Requires a Foundry subscription."
-og_description: "Palantir's official MCP server provides 80+ tools across 14 categories for Foundry developers: datasets, ontology, code repos, Python transforms, OSDK app building, and data connections. GA since July 2025. Plus Ontology MCP (Beta) for external data consumers. Rating: 4/5 for Foundry users."
+description: "Palantir's official MCP server gives AI agents 70+ tools for building and modifying Foundry applications — datasets, ontology, code repositories, Python transforms, and more. Requires a Foundry subscription."
+og_description: "Palantir's official MCP server provides 70+ tools across 13 categories for Foundry developers: datasets, ontology, code repos, Python transforms, OSDK app building, and data connections. GA since July 2025. Plus Ontology MCP (GA since June 2026) for external data consumers. Rating: 4/5 for Foundry users."
 content_type: "Review"
-card_description: "Palantir's official MCP server integrates AI agents directly into the Foundry development workflow — 80+ tools covering datasets, ontology, code repositories, Python transforms, and OSDK application building. GA since July 14, 2025 (v0.13.0). A second server, Ontology MCP, lets external AI agents read and write ontology data through application-scoped permissions. Foundry subscription required."
+card_description: "Palantir's official MCP server integrates AI agents directly into the Foundry development workflow — 70+ tools covering datasets, ontology, code repositories, Python transforms, and OSDK application building. GA since July 14, 2025 (v0.14.0). A second server, Ontology MCP, lets external AI agents read and write ontology data through application-scoped permissions — also GA since June 2026. Foundry subscription required."
 last_refreshed: 2026-05-05
-sources_audited: 2026-07-25
+sources_audited: 2026-08-25
 ---
 
 Part of our **[Data Warehouse & Lakehouse MCP Servers roundup](/reviews/data-warehouse-lakehouse-mcp-servers/)**.
 
-**At a glance:** [palantir/palantir-mcp](https://github.com/palantir/palantir-mcp) — 8 GitHub stars, TypeScript, MIT license. v0.13.0 (April 28, 2026). GA since July 14, 2025. 80+ tools across 14 categories. Supports Claude Code, Cursor, Cline, Continue, GitHub Copilot in VS Code, and Windsurf.
+**At a glance:** [palantir/palantir-mcp](https://github.com/palantir/palantir-mcp) — [12 GitHub stars](https://github.com/palantir/palantir-mcp), TypeScript, MIT license. [v0.14.0 (July 15, 2026)](https://github.com/palantir/palantir-mcp/releases/tag/0.14.0). [GA since July 14, 2025](https://www.palantir.com/docs/foundry/announcements/2025-07). [70+ tools across 13 categories](https://www.palantir.com/docs/foundry/palantir-mcp/available-tools). Supports [Claude Code, Cursor, Cline, Continue, GitHub Copilot in VS Code, and Windsurf](https://www.palantir.com/docs/foundry/palantir-mcp/installation).
 
 Palantir Foundry is an enterprise AI and data operating system used by large organizations — governments, defense contractors, financial institutions, healthcare systems — to build data pipelines, ontologies, and AI-powered applications on top of their most sensitive data. If you are a Foundry developer, this MCP server puts your entire development environment inside your AI IDE.
 
-The `@palantir/mcp` package — installed automatically by the thin open-source wrapper at palantir/palantir-mcp — gives AI agents two things: **context** (curated knowledge about Palantir libraries and Foundry architecture, so agents write idiomatic code) and **tools** (actions to explore your environment and take real steps in Foundry). This became generally available across all Palantir enrollments on July 14, 2025.
+The `@palantir/mcp` package — installed automatically by the thin open-source wrapper at palantir/palantir-mcp — gives AI agents two things: **context** (curated knowledge about Palantir libraries and Foundry architecture, so agents write idiomatic code) and **tools** (actions to explore your environment and take real steps in Foundry). This [became generally available across all Palantir enrollments the week of July 14, 2025](https://www.palantir.com/docs/foundry/announcements/2025-07).
 
-A second, separate MCP server — **Ontology MCP (OMCP)** — serves a different role: it exposes your application's ontology resources to external AI agents as MCP tools, enabling them to read objects, run actions, and query data from outside Foundry. OMCP is still in beta. This review covers both.
+A second, separate MCP server — **Ontology MCP (OMCP)** — serves a different role: it exposes your application's ontology resources to external AI agents as MCP tools, enabling them to read objects, run actions, and query data from outside Foundry. OMCP [entered beta for Developer Console users in January 2026](https://www.palantir.com/docs/foundry/announcements/2026-01) and [reached general availability the week of June 16, 2026](https://www.palantir.com/docs/foundry/announcements/2026-06). This review covers both.
 
 ## What It Does
 
 ### Palantir MCP — For Foundry Developers
 
-The official Palantir MCP organizes its 80+ tools into 14 categories:
+The official Palantir MCP organizes its [70+ tools into 13 categories](https://www.palantir.com/docs/foundry/palantir-mcp/available-tools):
 
-#### Compass Tools (4 tools)
+#### Compass Tools (6 tools)
 
-Tools for resource management and project discovery within Foundry: list resources, search projects, and create new projects. These tools let agents navigate your Foundry environment before modifying anything.
+Tools for resource management and project discovery within Foundry: list resources, get project imports, list namespaces and project templates, search projects, and create new projects. These tools let agents navigate your Foundry environment before modifying anything.
 
 #### Dataset Tools (9 tools)
 
@@ -53,29 +53,29 @@ Documentation and code examples for the Ontology SDK (OSDK). Agents use these to
 
 API reference and documentation for Platform SDK endpoints. Similar to OSDK tools but targeting the lower-level Platform SDK for more advanced Foundry integrations.
 
-#### Code Repository Tools (6 tools)
+#### Code Repository Tools (7 tools)
 
-Git operations within Foundry's code repository system: clone repositories, create pull requests, browse code, manage commits. Agents can navigate your Foundry code repos and propose changes, mirroring a normal developer Git workflow.
+Git operations within Foundry's code repository system: clone repositories, create pull requests, browse code, manage commits, and comment on pull requests. Agents can navigate your Foundry code repos and propose changes, mirroring a normal developer Git workflow.
 
-#### Global Branching Tools (4 tools)
+#### Global Branching Tools (6 tools)
 
-Branch lifecycle management in Foundry's global branching system: create branches, merge proposals, manage branch state. Foundry's branching model spans multiple resources simultaneously (unlike standard Git), and these tools give agents full access to the workflow.
+Branch lifecycle management in Foundry's global branching system: create, view, and close branches; create, view, and close proposals. Foundry's branching model spans multiple resources simultaneously (unlike standard Git), and these tools give agents full access to the workflow.
 
-#### Developer Console Tools (4 tools)
+#### Developer Console Tools (5 tools)
 
-SDK generation and application configuration within the Developer Console. Agents can generate OSDK client code for your ontology and configure application settings — reducing the mechanical work of setting up new OSDK applications.
+SDK generation and application configuration within the Developer Console. Agents can generate OSDK client code for your ontology, convert applications to `@osdk/react`, and configure application settings — reducing the mechanical work of setting up new OSDK applications.
 
-#### Compute Module Tools (4 tools)
+#### Compute Module Tools (5 tools)
 
 Module lifecycle and function execution management. Agents can invoke Compute Module functions, check their execution status, and manage module state — enabling iterative, agent-driven serverless function development.
 
-#### Data Connection Tools (4 tools)
+#### Data Connection Tools (5 tools)
 
-REST API data source and webhook configuration. Agents can define new external data connections into Foundry, pointing at REST APIs and mapping their responses to Foundry datasets.
+REST API data source and webhook configuration. Agents can define new external data connections into Foundry, pointing at REST APIs, mapping their responses to Foundry datasets, and managing network egress policies.
 
-#### Documentation Search Tools (9 tools)
+#### Documentation Search Tools (10 tools)
 
-Curated documentation search across multiple Palantir and related technologies. The most prominent tool here — semantic search across Palantir's documentation — requires Anthropic's AIP (Palantir's AI Platform). Organizations without AIP enabled will see reduced documentation search capability.
+Curated documentation search across multiple Palantir and related technologies. The most prominent tool here — semantic search across Palantir's documentation — [requires Palantir's own AIP (AI Platform)](https://www.palantir.com/docs/foundry/palantir-mcp/available-tools). Organizations without AIP enabled will see reduced documentation search capability.
 
 ---
 
@@ -83,11 +83,11 @@ Curated documentation search across multiple Palantir and related technologies. 
 
 Where Palantir MCP is for developers building inside Foundry, Ontology MCP serves external AI agents consuming Foundry data. Configure it inside Developer Console, point an external MCP client at it, and the AI agent gets tools matching your application's scope: read objects, execute actions, query data.
 
-The critical governance distinction: access is bounded by **application scopes**. The OMCP server exposes only the resources your Developer Console application has permission to access. This makes it viable for production data interaction — external agents cannot reach beyond the application's defined boundaries.
+The critical governance distinction: access is bounded by **application scopes**. [The OMCP server exposes only the resources your Developer Console application has permission to access, restricting which actions the agent can take through application restrictions](https://www.palantir.com/docs/foundry/ontology-mcp/overview). This makes it viable for production data interaction — external agents cannot reach beyond the application's defined boundaries.
 
-**Tradeoff**: any data returned to the AI agent leaves Foundry and is processed by the external LLM provider. The documentation is explicit about this: "By enabling Ontology MCP on your local device with LLMs hosted outside of Palantir AIP, you are making data in your Palantir environment available to an external MCP client." Organizations with strict data residency requirements must weigh this against the use case.
+**Tradeoff**: any data returned to the AI agent leaves Foundry and is processed by the external LLM provider. [The documentation is explicit about this](https://www.palantir.com/docs/foundry/ontology-mcp/overview): "By enabling Ontology MCP on your local device with LLMs hosted outside of Palantir AIP, you are making data in your Palantir environment available to an external MCP client." Organizations with strict data residency requirements must weigh this against the use case.
 
-OMCP is currently in **beta**, with its API subject to change.
+OMCP [reached general availability the week of June 16, 2026](https://www.palantir.com/docs/foundry/announcements/2026-06), after several months in beta.
 
 ## Installation
 
@@ -97,13 +97,13 @@ An administrator must first enable Palantir MCP in the Foundry Control Panel und
 2. Configure their IDE with the MCP server, pointing at their Foundry hostname (e.g., `mycompany.palantirfoundry.com`)
 3. Provide the token as the `FOUNDRY_TOKEN` environment variable
 
-Supported IDEs: **Claude Code**, **Cursor**, **Cline**, **Continue**, **GitHub Copilot in VS Code**, **Windsurf**. The Claude Code integration is a first-class supported path — Palantir's docs show `claude mcp add palantir-mcp` as the quickest setup.
+[Supported IDEs: **Claude Code**, **Cursor**, **Cline**, **Continue**, **GitHub Copilot in VS Code**, **Windsurf**](https://www.palantir.com/docs/foundry/palantir-mcp/installation). The Claude Code integration is a first-class supported path — Palantir's docs show `claude mcp add palantir-mcp` as the quickest setup.
 
 The public GitHub repository (palantir/palantir-mcp) is a lightweight TypeScript wrapper that handles preflight checks (Node.js version, network connectivity, token validation), configures NPM to use Foundry's internal package registry, and downloads and runs the private `@palantir/mcp` package. The actual tool implementations live inside that private package, which is updated independently — users get the latest tools without changing their local configuration.
 
 ## What Works Well
 
-**Breadth without sprawl.** 80+ tools is a large number, but the 14-category organization reflects the actual Foundry development surface: datasets, ontology, repos, transforms, modules, applications, connections, and documentation. Every major daily-driver task for a Foundry developer is covered.
+**Breadth without sprawl.** 70+ tools is a large number, but the 13-category organization reflects the actual Foundry development surface: datasets, ontology, repos, transforms, modules, applications, connections, and documentation. Every major daily-driver task for a Foundry developer is covered.
 
 **Proposal-first writes.** Ontology modifications don't apply immediately — they create proposals that require human review and approval before taking effect. This is the right default for a system that manages enterprise production data. Agents can draft ontology changes freely; human architects approve them.
 
@@ -113,23 +113,21 @@ The public GitHub repository (palantir/palantir-mcp) is a lightweight TypeScript
 
 **Claude Code as a first-class integration.** Palantir's documentation features Claude Code alongside Cursor as a primary supported IDE. The server is listed as a supported MCP configuration in Claude Code's project scope (`.mcp.json`), making it straightforward to enable for an entire Foundry development team.
 
-**Security-conscious data flow documentation.** Palantir clearly documents what data leaves Foundry and where it goes by IDE (Anthropic for Claude Code, Microsoft for Copilot, etc.). This transparency is uncommon among enterprise MCP servers and helps platform security teams make informed decisions.
+**Security-conscious data flow documentation.** [Palantir clearly documents what data leaves Foundry and where it goes by IDE](https://www.palantir.com/docs/foundry/palantir-mcp/security) — for local use, Claude Code sends data to Anthropic, VS Code Copilot sends data to Microsoft, and so on. This transparency is uncommon among enterprise MCP servers and helps platform security teams make informed decisions.
 
 ## What's Not
 
-**Foundry subscription required — hard stop for most developers.** Palantir Foundry is an enterprise platform with enterprise pricing. If you don't already have a Foundry subscription, there is no evaluation path, no free tier, and no sandbox. The GitHub repository has 8 stars partly because the potential user base is limited to existing Foundry customers — a small fraction of the broader developer community.
-
-**Ontology MCP is still Beta.** The more interesting server for external AI integration — OMCP — is not yet stable. APIs will change. Organizations planning production integrations around OMCP are building on a moving target.
+**Foundry subscription required — hard stop for most developers.** Palantir Foundry is an enterprise platform with enterprise pricing. If you don't already have a Foundry subscription, there is no evaluation path, no free tier, and no sandbox. [The GitHub repository has 12 stars](https://github.com/palantir/palantir-mcp) partly because the potential user base is limited to existing Foundry customers — a small fraction of the broader developer community.
 
 **Data governance complexity at the boundary.** The moment external AI agents connect to Ontology MCP with an external LLM, sensitive Foundry data crosses the boundary to that LLM provider. For organizations whose entire rationale for using Foundry is strict data control, this is a significant tradeoff that requires careful governance. In-platform AIP usage keeps data inside Foundry, but that limits AI IDE choice to Palantir's own tooling.
 
-**Low GitHub visibility signal.** 8 stars on palantir/palantir-mcp reflects its role as a thin installer wrapper, not community adoption of the actual MCP server. The `@palantir/mcp` package itself — where the 80+ tools live — is private and distributed through Foundry's internal registry. External adoption metrics are essentially invisible.
+**Low GitHub visibility signal.** [12 stars](https://github.com/palantir/palantir-mcp) on palantir/palantir-mcp reflects its role as a thin installer wrapper, not community adoption of the actual MCP server. The `@palantir/mcp` package itself — where the 70+ tools live — is private and distributed through Foundry's internal registry. External adoption metrics are essentially invisible.
 
 **Node.js dependency.** The wrapper requires Node.js, adding a runtime dependency that some development environments may not have. The preflight check catches this early, but it's an additional setup step compared to servers distributed as compiled binaries.
 
 ## How It Compares
 
-Palantir MCP occupies a unique position: it is not competing with general-purpose database MCP servers or data warehouse connectors. Its 80+ tools are almost entirely about the Foundry *development workflow* — building the ontology, writing transforms, creating OSDK applications, managing code. By contrast, most enterprise data platform MCP servers focus on *querying data*.
+Palantir MCP occupies a unique position: it is not competing with general-purpose database MCP servers or data warehouse connectors. Its 70+ tools are almost entirely about the Foundry *development workflow* — building the ontology, writing transforms, creating OSDK applications, managing code. By contrast, most enterprise data platform MCP servers focus on *querying data*.
 
 The closest structural parallel is the [Databricks managed MCP servers](https://www.databricks.com/) — both provide a suite of tools across a proprietary enterprise data platform, both are officially maintained, and both require a subscription. Databricks offers [managed MCP servers](https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp) covering Unity Catalog functions, AI Search, Databricks SQL, and Genie. Palantir's approach is more unified — a single server covering developer tooling — plus the separate OMCP for data consumers.
 
@@ -137,14 +135,14 @@ The community Palantir Foundry MCP server by Dana K. Williams (available on Puls
 
 | Option | Type | Audience | Scope | Status |
 |--------|------|----------|-------|--------|
-| [palantir/palantir-mcp](https://github.com/palantir/palantir-mcp) | Official | Foundry developers | 80+ tools: ontology, datasets, repos, transforms | GA (v0.13.0) |
-| Ontology MCP (OMCP) | Official | External AI agents | Application-scoped ontology read/write | Beta |
-| Community Foundry MCP | Community | External AI agents | Ontology data, SQL queries | Available |
+| [palantir/palantir-mcp](https://github.com/palantir/palantir-mcp) | Official | Foundry developers | 70+ tools: ontology, datasets, repos, transforms | GA (v0.14.0) |
+| [Ontology MCP (OMCP)](https://www.palantir.com/docs/foundry/announcements/2026-06) | Official | External AI agents | Application-scoped ontology read/write | GA (since June 2026) |
+| [Community Foundry MCP](https://www.pulsemcp.com/servers/palantir-foundry) | Community | External AI agents | Ontology data, SQL queries | Available |
 
 ## Rating: 4/5 — Essential for Foundry Developers; Invisible to Everyone Else
 
 For Palantir Foundry developers, this MCP server is a genuine productivity multiplier. The tool coverage matches the actual daily development workflow, the security design is thoughtful (proposal-first writes, write protections, clear data flow documentation), and the always-current packaging means teams aren't managing version drift. Palantir treating Claude Code as a first-class integration path accelerates adoption.
 
-The 4/5 rather than 5/5 reflects two real gaps: Ontology MCP — the compelling half of the story for external AI integration — is still Beta, and the data governance tradeoff at the LLM boundary is genuinely significant for an enterprise platform whose core selling point is data control.
+The 4/5 rather than 5/5 reflects one real gap that persists even now that [Ontology MCP has reached general availability](https://www.palantir.com/docs/foundry/announcements/2026-06): the data governance tradeoff at the LLM boundary is genuinely significant for an enterprise platform whose core selling point is data control.
 
 For the 99% of developers who don't use Palantir Foundry: this review doesn't apply to your stack. Palantir MCP has no standalone value — it is entirely a Foundry extension. That's not a criticism; it's the architecture. For Foundry shops, it's worth deploying immediately.

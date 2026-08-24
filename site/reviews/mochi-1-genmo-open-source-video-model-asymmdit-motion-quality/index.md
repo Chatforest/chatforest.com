@@ -17,11 +17,11 @@ This review covers Mochi 1 (preview release) as it stood at launch and in the mo
 
 ## Background: Genmo and the Scale-Versus-Accessibility Bet
 
-Genmo was founded in 2022 in San Francisco by **Paras Jain** and **Ajay Jain** — brothers who both hold PhDs from UC Berkeley. Their doctoral work was conducted alongside researchers including Ion Stoica, Joey Gonzalez, and Pieter Abbeel, all of whom became Genmo advisors.
+Genmo was founded in 2022 in San Francisco (operating from an Oakland hacker house in its earliest days) by **[Paras Jain](https://humanloop.com/blog/how-paras-jain-is-building-future-of-ai-video-generation)** and **Ajay Jain** — brothers who both hold PhDs from UC Berkeley. Their doctoral work was conducted alongside researchers including Ion Stoica, Joey Gonzalez, and Pieter Abbeel, all of whom [became Genmo advisors](https://www.nea.com/blog/genmos-open-source-genai-model-aims-to-power-the-future-of-video).
 
 The company [raised $28.4 million in a Series A](https://venturebeat.com/ai/video-ai-startup-genmo-launches-mochi-1-an-open-source-model-to-rival-runway-kling-and-others) led by New Enterprise Associates (NEA), with participation from The House Fund, Gold House Ventures, WndrCo, and others, announced in early 2024.
 
-Genmo's stated mission is to "put a tiny filmmaker in the pockets of a billion people" — placing them squarely in the consumer-accessibility camp rather than the enterprise API camp. Before Mochi 1, they operated a creative platform offering image animation, video generation, and 3D generation from text prompts. Mochi 1 was their pivot to foundational model development: a research lab bet that releasing a frontier-scale model as open weights would build the credibility and community that a proprietary API could not.
+Genmo's stated mission is to ["put a tiny filmmaker in the pockets of a billion people"](https://www.nea.com/blog/genmos-open-source-genai-model-aims-to-power-the-future-of-video) — placing them squarely in the consumer-accessibility camp rather than the enterprise API camp. Before Mochi 1, they operated a [creative platform](https://humanloop.com/blog/how-paras-jain-is-building-future-of-ai-video-generation) offering image-to-video animation and grew to over 1.5 million users on that early product. Mochi 1 was their pivot to foundational model development: a research lab bet that releasing a frontier-scale model as open weights would build the credibility and community that a proprietary API could not.
 
 The timing mattered. October 2024 was a dense month for open-source video releases. CogVideoX had shipped in August. LTX-Video from Lightricks was arriving in the same general window. HunyuanVideo would follow in November. The late-2024 cluster of open releases collectively closed a significant gap between open-source and commercial video generation systems — and Mochi 1 was a central part of that story.
 
@@ -33,7 +33,7 @@ Genmo's blog post accompanying the Mochi 1 release made two headline claims.
 
 First: Mochi 1 was, at release, ["the largest video generative model ever openly released"](https://siliconangle.com/2024/10/22/genmo-introduces-mochi-1-open-source-text-video-generation-model/) — 10 billion parameters in the transformer backbone alone, trained from scratch (not fine-tuned from an image foundation model). For context, CogVideoX was approximately 5B parameters; the open-source video landscape before late 2024 had not seen a 10B model released under a permissive license.
 
-Second: Mochi 1 achieved the highest motion quality scores in their internal Elo-style benchmark, including a **motion quality Elo of 1147.51** and **prompt adherence score of 79.38**, outscoring Luma Dream Machine and Runway Gen-3 on those internal metrics. These are Genmo's own benchmarks, not independent evaluations — but the community largely confirmed the motion quality assessment in practice. The prompt adherence score was independently notable: Mochi 1's long-context T5-XXL text encoder and 256-token limit gave it genuine capacity to follow complex, multi-clause prompts.
+Second: Mochi 1 achieved the highest motion quality scores in their [internal Elo-style benchmark](https://www.genmo.ai/blog/mochi-1-a-new-sota-in-open-text-to-video), including a **motion quality Elo of 1147.51** and **prompt adherence score of 79.38**, ahead of Runway Gen-3 (Elo 1095.35, prompt adherence 57.29) and Luma Dream Machine (Elo 1000.27, prompt adherence 76.04) on those internal metrics. These are Genmo's own benchmarks, not independent evaluations — but the community largely confirmed the motion quality assessment in practice. The prompt adherence score was independently notable: Mochi 1's long-context T5-XXL text encoder and 256-token limit gave it genuine capacity to follow complex, multi-clause prompts.
 
 The motion quality claims held up. In fluid simulation — water, liquid, smoke — Mochi 1 generated physics-coherent motion that competitors often failed on. In hair and fur simulation, the temporal coherence was markedly better than contemporaries. In human motion, the model produced natural walking, gestures, and movement rather than the "sliding" artifacts common in earlier architectures. This was not a subjective impression; users across communities confirmed these characteristics consistently.
 
@@ -195,7 +195,7 @@ Available at [`replicate.com/genmoai/mochi-1`](https://replicate.com/genmoai/moc
 
 ### Hosted Demo
 
-Genmo's own **`genmo.com/play`** offers browser-based access to Mochi 1 (and their platform's other tools), free with rate limiting. This was the lowest-friction entry point for experimentation.
+Genmo's own **[`genmo.ai/play`](https://www.genmo.ai/play)** offers browser-based access to Mochi 1 (and their platform's other tools), free with rate limiting. This was the lowest-friction entry point for experimentation.
 
 ### LoRA Fine-tuning
 
@@ -228,12 +228,12 @@ Together, these releases collectively closed the practical quality gap between o
 
 As of available sources through 2025–2026:
 
-- **Mochi 1 (preview)** remains on GitHub with updates through at least September 2025. The repository is maintained.
-- **Mochi 1 HD** (720p) was announced at launch but has not shipped as public open weights. Genmo continues to offer higher-quality generation through their hosted platform, suggesting internal development has continued, but the open-weight release has been delayed indefinitely.
+- **Mochi 1 (preview)** remains on GitHub, with the [most recent commit dated November 14, 2025](https://github.com/genmoai/mochi/commits/main) — the repository is still maintained, if slowly.
+- **Mochi 1 HD** (720p) was announced at launch but, as of a [February 2025 GitHub issue](https://github.com/genmoai/mochi/issues/132) requesting a release timeline, still has not shipped as public open weights. The open-weight HD release has been delayed indefinitely.
 - **Mochi 2** has not been announced. Genmo has not publicly committed to a second-generation open model release.
-- In the competitive landscape, Mochi 1 has been substantially surpassed by November 2024's HunyuanVideo (overall quality, resolution) and subsequent models. For new practitioners choosing a video generation model in 2025–2026, Mochi 1 is not a primary recommendation — but it retains value as a research artifact and for its specific motion quality strengths on workflows that prioritize physics coherence over resolution or speed.
+- In the competitive landscape, Mochi 1 has been substantially surpassed by November 2024's HunyuanVideo (overall quality, resolution) and subsequent models — most recently [LTX-2.5](https://www.opensourceforu.com/2026/08/ltx-2-5-brings-open-weight-video-generation/), a 22B-parameter open-weight model from LTX (spun out of Lightricks) released in August 2026 with native 4K HDR output and synchronized audio generation. For new practitioners choosing a video generation model in 2025–2026, Mochi 1 is not a primary recommendation — but it retains value as a research artifact and for its specific motion quality strengths on workflows that prioritize physics coherence over resolution or speed.
 
-The hosted `genmo.com/play` continues to operate, and Genmo as a company continues to develop. Whether the open-source model line continues alongside the commercial product is uncertain.
+The hosted [`genmo.ai/play`](https://www.genmo.ai/play) continues to operate, and Genmo as a company continues to develop. Whether the open-source model line continues alongside the commercial product is uncertain.
 
 ---
 
@@ -286,7 +286,7 @@ Genmo made a real bet at a real moment, and it landed.
 | **HuggingFace** | `genmo/mochi-1-preview` |
 | **ComfyUI** | `kijai/ComfyUI-MochiWrapper` |
 | **Replicate** | `replicate.com/genmoai/mochi-1` (~$0.42/run) |
-| **Hosted demo** | genmo.com/play |
+| **Hosted demo** | [genmo.ai/play](https://www.genmo.ai/play) |
 | **Min VRAM (optimized)** | ~12–22 GB; official recommendation: 60 GB |
 | **Speed (RTX 4090)** | ~8–20 minutes per clip |
 | **arXiv paper** | None published |

@@ -1,13 +1,13 @@
 # LTX Video (Lightricks): The Open-Weight Video Model That Added Audio First
 
-> Lightricks — the Facetune company — built LTX Video, the first open-weight video model with native synchronized audio generation. With 22B parameters, 1.73M monthly HuggingFace downloads, and a ComfyUI ecosystem, it's the most technically ambitious open-weight video model available.
+> Lightricks — the Facetune company — built LTX Video, the first open-weight video model with native synchronized audio generation. Now on LTX-2.5 (22B parameters, released August 2026), with a combined 2M+ monthly HuggingFace downloads across the LTX-2.x family and a ComfyUI ecosystem, it's the most technically ambitious open-weight video model available.
 
 
 # LTX Video (Lightricks): The Open-Weight Video Model That Added Audio First
 
 Lightricks is best known for Facetune — the selfie-editing app that defined a category of mobile image tools. In late 2024, the company raised a Series E to fund its AI-first pivot, and in [January 2026, released the model](https://www.globenewswire.com/news-release/2026/01/06/3213304/0/en/Lightricks-Open-Sources-LTX-2-the-First-Production-Ready-Audio-and-Video-Generation-Model-With-Truly-Open-Weights.html) that makes that pivot legible: **LTX-2**, the first open-weight video generation model to natively produce synchronized audio alongside video.
 
-The current iteration is **LTX-2.3**, a 22B-parameter joint audio-video model with a ComfyUI integration at 3,600+ stars and 1.73 million HuggingFace downloads per month. For developers building video pipelines, it sits in a distinctive position: open weights, native audio, real-time-class speed, and IC-LoRA controls — a combination no other open-weight model currently offers.
+The current iteration is **[LTX-2.5](https://huggingface.co/Lightricks/LTX-2.5)**, released August 11, 2026, extending the same 22B-parameter dual-stream audio-video architecture with native multi-shot generation and clips up to 20 seconds with synchronized audio (up from ~10 seconds on LTX-2.3). As of late August 2026, [Lightricks/LTX-2.3](https://huggingface.co/Lightricks/LTX-2.3) still shows roughly 1.5 million HuggingFace downloads per month and [Lightricks/LTX-2.5](https://huggingface.co/Lightricks/LTX-2.5) roughly 790,000/month and growing, with a [ComfyUI integration](https://github.com/Lightricks/ComfyUI-LTXVideo) at 4,000+ stars. For developers building video pipelines, it sits in a distinctive position: open weights, native audio, real-time-class speed, and IC-LoRA controls — a combination that had no open-weight peer at launch and, as of review time, has only one known open-weight rival on the audio dimension (see Competitive Position, below).
 
 This review covers the full LTX Video model family: what was built, how it evolved, what it does well, and where the tradeoffs are.
 
@@ -34,11 +34,11 @@ Lightricks has grown into one of Israel's most substantial AI companies through 
 | Series D | 2021 | [$130M](https://www.lightricks.com/post/lightricks-award-winning-app-developer-raises-130m-series-d-to-power-expansion-and-champion-creator-economy) ($1.8B valuation) |
 | Series E | 2024 | Amount not independently confirmed |
 
-The [Series D](https://www.lightricks.com/post/lightricks-award-winning-app-developer-raises-130m-series-d-to-power-expansion-and-champion-creator-economy) investors included Goldman Sachs Growth Equity, Insight Partners, Viola Ventures, ClalTech, Greycroft, and Hanaco Venture Capital. The strategic framing was explicit: Lightricks would transform from a mobile app company into an AI platform company. LTX Video is the technical centerpiece of that transformation.
+The [Series D](https://www.lightricks.com/post/lightricks-award-winning-app-developer-raises-130m-series-d-to-power-expansion-and-champion-creator-economy) round was co-led by Insight Partners and Hanaco Venture Capital, with participation from Goldman Sachs Asset Management, Clal Tech, Harel Insurance and Finance, and Greycroft. The strategic framing was explicit: Lightricks would transform from a mobile app company into an AI platform company. LTX Video is the technical centerpiece of that transformation.
 
 ## The Model Family
 
-LTX Video has gone through two distinct generations with three main versions worth understanding.
+LTX Video has gone through two distinct architectural generations with four main versions worth understanding: the original LTXV 0.9.x line, then LTX-2, LTX-2.3, and LTX-2.5.
 
 ### Generation 1: LTX-Video (LTXV 0.9.x)
 
@@ -76,13 +76,17 @@ Key specs:
 - Multilingual text encoder
 - License: LTX-2 Community License Agreement (custom, not standard OSI)
 
-The license change from OpenRail-M is worth noting. The LTX-2 Community License permits free use for personal, research, and commercial applications, but is not an OSI open source license. Review the full terms before deploying commercially.
+The license change from OpenRail-M is worth noting. The [LTX-2 Community License](https://github.com/Lightricks/LTX-2/blob/main/LICENSE.md) permits free use for personal, research, and commercial applications for organizations under $10 million in annual revenue; entities at or above that threshold must obtain a paid commercial license (Section 2.1 of the license text). It is not an OSI open source license. Review the full terms before deploying commercially.
 
-### Generation 2.3: LTX-2.3 (Current)
+### Generation 2.3: LTX-2.3 (March 2026)
 
-LTX-2.3 extends LTX-2 to approximately 22B parameters (inferred from checkpoint naming: `ltx-2.3-22b`). It improves on LTX-2 across audio quality, visual quality, and prompt adherence. As of May 2026, HuggingFace reports 1.73 million downloads per month for the LTX-2.3 checkpoint family.
+LTX-2.3 extended LTX-2 to approximately 22B parameters (checkpoint naming: `ltx-2.3-22b`), improving on LTX-2 across audio quality, visual quality, and prompt adherence, and shipped with a desktop video editor for local, consumer-hardware execution. As of late August 2026, [HuggingFace reports roughly 1.5 million downloads/month](https://huggingface.co/Lightricks/LTX-2.3) for the LTX-2.3 checkpoint family — down from a peak near 1.73M/month in spring 2026 as usage has begun shifting to the newer LTX-2.5 release below.
 
 Available variants: `ltx-2.3-22b-dev`, `ltx-2.3-22b-distilled`, `ltx-2.3-22b-distilled-1.1`, plus spatial and temporal upscaler checkpoints and IC-LoRA adapters.
+
+### Generation 2.5: LTX-2.5 (Current, August 2026)
+
+Lightricks [released LTX-2.5 on August 11, 2026](https://ltx23.org/blog/ltx-2-5-release-guide), a 22B-parameter update to the same asymmetric dual-stream architecture (arXiv:2601.03233 covers the underlying LTX-2 design; the same paper ID is listed on the LTX-2.5 model card). It adds native multi-shot generation (a single generation can contain multiple connected cuts that preserve character, environment, lighting, and voice), an optional "auto duration" head that predicts appropriate clip length from the prompt, a new diffusion video decoder aimed at high-motion footage, native 4K HDR output, and a fine-tuned Gemma 4 12B text encoder. Clip length extends to roughly 6–20 seconds with synchronized audio — a substantial jump over LTX-2.3's ~10-second audio-sync cap. Lightricks also shipped a dedicated checkpoint tuned for physical-AI/robotics simulation use cases. [HuggingFace shows roughly 790,000 downloads/month](https://huggingface.co/Lightricks/LTX-2.5) for the new checkpoint family as of late August 2026, and Lightricks has said the LTX family overall [has passed 33 million cumulative downloads](https://venturebeat.com/technology/ltx-2-5-can-generate-a-10-second-ai-video-from-an-image-in-just-6-8-seconds-on-nvidia-superchips-and-its-open-weights).
 
 ## Technical Architecture
 
@@ -100,7 +104,7 @@ Understanding what LTX Video does differently requires understanding the archite
 
 **Video without audio:** Text-to-video and image-to-video generation. Up to 60 seconds at 30 FPS at up to 4K resolution (practical limits depend on VRAM). Multi-keyframe conditioning lets users specify multiple reference images at temporal positions, enabling scripted narrative sequences. Forward and backward video extension from existing clips. All LTXV 0.9.8 features.
 
-**Video with audio:** LTX-2.3 generates synchronized speech, ambient sound, music elements, and foley from the same text prompt that drives the video. A scene with rain, dialogue, and footsteps can be prompted as a single generation pass. Duration limited to approximately 10 seconds for audio-synchronized output.
+**Video with audio:** The LTX-2.x line generates synchronized speech, ambient sound, music elements, and foley from the same text prompt that drives the video. A scene with rain, dialogue, and footsteps can be prompted as a single generation pass. LTX-2.3 capped audio-synchronized output at approximately 10 seconds; [LTX-2.5 extends this to roughly 6–20 seconds](https://ltx23.org/blog/ltx-2-5-release-guide), plus native multi-shot generation that chains multiple cuts while preserving character, environment, and voice consistency across the sequence.
 
 **Control-conditioned video:** IC-LoRA adapters allow generation conditioned on depth maps (spatial structure), pose skeletons (human motion), edge maps (structural outlines), or motion fields. This is useful for animation workflows where the spatial layout or motion arc needs to be precise.
 
@@ -110,28 +114,29 @@ LTX Video is available through multiple access paths:
 
 **Self-hosted:**
 - [HuggingFace: Lightricks organization](https://huggingface.co/Lightricks) — 38+ model checkpoints, including base models, FP8 quantized variants, IC-LoRA adapters, and upscalers
-- GitHub: [Lightricks/LTX-Video](https://github.com/Lightricks/LTX-Video) — 10,200+ stars, 1,000+ forks
-- Requires Python 3.12+, CUDA 12.7+, PyTorch 2.7+ for LTX-2.3
+- GitHub: [Lightricks/LTX-Video](https://github.com/Lightricks/LTX-Video) — 10,900+ stars, 1,100+ forks (verified via GitHub API, August 2026); a separate [Lightricks/LTX-2](https://github.com/Lightricks/LTX-2) monorepo (inference + LoRA trainer for the LTX-2.x line) has passed 9,200 stars, 1,500 forks
+- Requires Python 3.12+, CUDA 12.7+, PyTorch 2.7+ for LTX-2.x
 - VRAM: 8GB estimated for 2B distilled; 24GB+ recommended for 13B distilled; 32GB+ for 13B dev workflows
 
 **ComfyUI:**
-- [Lightricks/ComfyUI-LTXVideo](https://github.com/Lightricks/ComfyUI-LTXVideo) — 3,600+ stars, 390+ forks
+- [Lightricks/ComfyUI-LTXVideo](https://github.com/Lightricks/ComfyUI-LTXVideo) — 4,000+ stars, 480+ forks (verified via GitHub API, August 2026), with official day-one workflow templates for LTX-2.5
 - Available via ComfyUI Manager
 - Supports all model variants, IC-LoRA adapters, HDR workflows, tiled VAE, two-stage upscaling pipelines
 - Active maintenance with dedicated workflow examples
 
 **Diffusers:** Native support via `LTXConditionPipeline` and `LTXPipeline` classes in Hugging Face Diffusers library.
 
-**Cloud APIs:**
-- Fal.ai: 13B dev and distilled variants, approximately $0.02/video
-- Replicate: approximately $0.075/run
+**Cloud APIs (pay-per-second, not per-video):**
+- [Fal.ai — LTX-2.3](https://fal.ai/ltx-2.3): Fast variant $0.04/s at 1080p (up to $0.16/s at 4K); Pro variant $0.06/s at 1080p (up to $0.24/s at 4K)
+- [Fal.ai — LTX-2.5](https://fal.ai/ltx-2.5): Fast variant $0.09/s at 720p, $0.13/s at 1080p, up to $0.30/s at 4K; Pro variant $0.12/s at 720p, $0.17/s at 1080p
+- Replicate also hosts multiple LTX-2.x endpoints (`lightricks/ltx-2-fast`, `ltx-2-3-pro`, `ltx-2-retake`, etc.); per-second pricing varies by endpoint and was not consistently published at review time, so no single figure is quoted here — check the [Replicate model pages](https://replicate.com/lightricks) directly before budgeting
 - Both platforms allow API-based generation without local hardware requirements
 
-**LTX Studio:** Lightricks' own consumer-facing filmmaking platform (ltx.studio). Powered by LTX-2.3 but also integrating VEO 3.1, FLUX.2 Pro, Kling, and other partner models. Credit-based subscription model ($0–$125/month, Standard plan at $35/month is the commercial-use entry point). The January 2026 ElevenLabs partnership adds audio-to-video generation capabilities. May 2026 "Canvas" update added collaborative workspace features.
+**LTX Studio:** Lightricks' own consumer-facing filmmaking platform, now at [ltx.io/studio](https://ltx.io/studio) (the old ltx.studio domain 301-redirects there; the in-app generation UI still runs at app.ltx.studio). Powered by LTX-2.5 but also integrating VEO 3.1, Kling, and other partner models. Credit-based subscription model ($0–$125/month, Standard plan at $35/month is the commercial-use entry point). The January 2026 ElevenLabs partnership adds audio-to-video generation capabilities. May 2026 "Canvas" update added collaborative workspace features.
 
 ## MCP Server
 
-There is no official MCP server from Lightricks or LTX Video. One community implementation exists on GitHub (`sbdsam/ltx-video-mcp`, released May 2026) connecting Claude Code to the LTXV 0.9.8 pipeline via Docker and ComfyUI. It runs CPU-only with 5–60+ minute generation times — not practically useful for production workflows.
+There is no official MCP server from Lightricks or LTX Video. One community implementation exists on GitHub (`sbdsam/ltx-video-mcp`, created April 29, 2026) connecting Claude Code to the LTXV 0.9.8 pipeline via Docker and ComfyUI. It runs CPU-only with 5–60+ minute generation times — not practically useful for production workflows, and as of August 2026 it has not attracted meaningful community adoption (zero GitHub stars).
 
 For AI-agent integration, the Fal.ai and Replicate APIs are the practical path. Both expose REST endpoints that any MCP server with HTTP capability can reach.
 
@@ -139,18 +144,16 @@ For AI-agent integration, the Fal.ai and Replicate APIs are the practical path. 
 
 The developer community around LTX Video is substantial for an open-weight model this young:
 
-- LTX-Video GitHub: 10,200 stars, 1,000 forks
-- ComfyUI node: 3,600 stars, 392 forks
-- Trainer repo: 432 stars, 60 forks
-- HuggingFace: 38 checkpoints, 100+ community Spaces, 1.73M monthly downloads
+- [LTX-Video GitHub](https://github.com/Lightricks/LTX-Video): 10,900+ stars, 1,100+ forks; [LTX-2 GitHub](https://github.com/Lightricks/LTX-2): 9,200+ stars, 1,500+ forks
+- [ComfyUI node](https://github.com/Lightricks/ComfyUI-LTXVideo): 4,000+ stars, 480+ forks
+- [Trainer repo](https://github.com/Lightricks/LTX-Video-Trainer): 466 stars, 66 forks
+- HuggingFace: 38+ checkpoints, 100+ community Spaces; [LTX-2.3](https://huggingface.co/Lightricks/LTX-2.3) ~1.5M and [LTX-2.5](https://huggingface.co/Lightricks/LTX-2.5) ~790K monthly downloads (August 2026)
 - Community tools: ComfyUI-LTXTricks (optimization workflows), TeaCache for LTX-Video (inference caching), LTX-VideoQ8 (8-bit quantization)
 - Platform integrations: Fal.ai, Replicate, HuggingFace Diffusers, ComfyUI Manager
 
-The HuggingFace discussion thread for LTX-2.3 alone has 44+ active threads — reflecting genuine developer engagement rather than passive downloads.
-
 ## Competitive Position
 
-LTX Video occupies a specific and currently uncrowded position in the open-weight video model landscape:
+LTX Video occupies a specific, and no longer uncontested, position in the open-weight video model landscape:
 
 **vs Wan2.1 (Alibaba/WanX):** Wan2.1 has stronger raw visual quality in independent benchmark comparisons. Its Apache 2.0 license is more permissive than the LTX-2 Community License. But it generates video only — no audio. For pure visual quality, Wan2.1 is competitive or ahead. For audio-video workflows, Wan2.1 requires a separate model.
 
@@ -160,7 +163,9 @@ LTX Video occupies a specific and currently uncrowded position in the open-weigh
 
 **vs Sora/VEO 3.1/Kling (proprietary):** Open-weight means local deployment, no usage fees at inference time, fine-tuning capability, and privacy. The tradeoff is setup complexity and hardware cost.
 
-**The unique position:** LTX Video is the only open-weight video model family with native synchronized audio generation. If you are building a pipeline that requires video plus coherent sound from a single generation pass — without stitching together separate models — LTX-2.3 is currently the only open-weight option.
+**vs MOVA (OpenMOSS):** LTX-2 is no longer the only open-weight option for single-pass, synchronized audio-video generation. [OpenMOSS released MOVA](https://github.com/OpenMOSS/MOVA) on January 29, 2026 — about three weeks after LTX-2's January 6 open-source launch — also generating video and audio in one inference pass with released weights, training code, and LoRA fine-tuning scripts. LTX-2 was first to production-ready open-weight audio-video generation, but the field is no longer uncrowded on that specific dimension; a direct head-to-head quality comparison between LTX-2.x and MOVA was not available at review time.
+
+**The current position:** LTX Video was first to open-weight, single-pass audio-video generation and remains the most mature option on ecosystem size (GitHub stars, ComfyUI integration, cloud API availability), but it is no longer the only one. If you need coherent sound generated jointly with video — without stitching together separate models — LTX-2.5 and MOVA are, as of review time, the two known open-weight options.
 
 ## Pricing
 
@@ -176,23 +181,24 @@ LTX Video occupies a specific and currently uncrowded position in the open-weigh
 
 Commercial rights begin at Standard tier. Pro adds VEO 3.1 access and collaboration features. Enterprise adds SSO, SOC 2/GDPR/ISO compliance, and custom model training options.
 
-**Cloud APIs:**
-- Fal.ai: ~$0.02/video (13B distilled)
-- Replicate: ~$0.075/run
+**Cloud APIs (2026 pay-per-second pricing, not per-video):**
+- [Fal.ai LTX-2.3](https://fal.ai/ltx-2.3): from $0.04/s (Fast, 1080p) to $0.24/s (Pro, 4K)
+- [Fal.ai LTX-2.5](https://fal.ai/ltx-2.5): from $0.09/s (Fast, 720p) to $0.30/s (Fast, 4K)
+- Replicate hosts multiple LTX-2.x endpoints with per-second pricing that was not consistently published at review time — check current rates on the [Replicate model pages](https://replicate.com/lightricks) before budgeting
 
 **Self-hosted:** Free. Hardware cost is your own capital expense.
 
 ## Limitations
 
-**Audio duration cap.** LTX-2.3's synchronized audio generation works up to approximately 10 seconds. The 60-second video capability (from LTXV 0.9.8) applies to video-only generation; long-form audio-video synchronization is not yet available in a single generation pass.
+**Audio duration cap.** LTX-2.3's synchronized audio generation topped out around 10 seconds; [LTX-2.5 raises this to roughly 20 seconds](https://ltx23.org/blog/ltx-2-5-release-guide) with native multi-shot chaining, but that is still short of the 60-second video-only capability inherited from LTXV 0.9.8. Long-form audio-synchronized video in a single generation pass is still not available.
 
-**License nuance.** The LTX-2 Community License is not equivalent to OpenRail-M or Apache 2.0. It permits free use and commercial applications, but the terms are Lightricks' own. Review the full agreement for deployment-specific conditions, particularly around commercial derivative works.
+**License nuance, including a revenue cutoff.** The [LTX-2 Community License](https://github.com/Lightricks/LTX-2/blob/main/LICENSE.md) is not equivalent to OpenRail-M or Apache 2.0. It permits free use and commercial applications, but only for organizations under $10 million in annual revenue (Section 2.1); entities at or above that threshold must negotiate a paid commercial license. Review the full agreement for deployment-specific conditions, particularly around commercial derivative works.
 
-**Hardware requirements at scale.** The 22B LTX-2.3 dev checkpoint requires 32GB+ VRAM for ComfyUI workflows. The distilled variants reduce this significantly, but the best-quality output still demands professional GPU hardware.
+**Hardware requirements at scale.** The 22B LTX-2.3/LTX-2.5 dev checkpoints require 32GB+ VRAM for ComfyUI workflows. The distilled variants reduce this significantly, but the best-quality output still demands professional GPU hardware; Lightricks' own LTX-2.5 speed benchmarks were run on paired NVIDIA GB200 superchips, not consumer hardware.
 
-**No independently verified leaderboard position.** The LTX-2 paper claims "state-of-the-art" open-weight performance and "comparable to proprietary models," but independent benchmark rankings on Artificial Analysis or equivalent leaderboards were not available at review time. Visual quality claims should be evaluated against your own use case rather than taken at face value.
+**Leaderboard position is now independently measurable, and it's mid-pack.** [Artificial Analysis's Video Arena](https://artificialanalysis.ai/video/models/ltx-2-3-pro) places LTX-2.3 Pro at 13th of 27 models on its crowdsourced quality Elo score (1105.46) as of review time — a real independent data point that was not available at the previous audit, and it does not support "state-of-the-art" framing on raw visual quality. Lightricks' own claims of parity with proprietary models on compute efficiency and audiovisual quality remain self-reported and should be weighed against this ranking.
 
-**Speed claims are hardware-specific.** "Faster than real-time" applied to the original 2B model on an H100. The 22B LTX-2.3 model generates at different speeds. Distilled variants recover much of the speed advantage, but performance on consumer hardware will differ substantially from Lightricks' benchmark conditions.
+**Speed claims are hardware-specific.** "Faster than real-time" applied to the original 2B model on an H100. Lightricks' LTX-2.5 speed claim (a 10-second, 720p clip in ~6.8 seconds) was measured on two NVIDIA GB200 superchips, and its managed API took 23.7 seconds for the same clip at 1080p — both very different from typical consumer or single-GPU hardware.
 
 **LTX Studio credit friction.** The cloud platform's credit system (8,000/month on Lite, 28,000/month on Standard) can be opaque for estimating generation costs. Free tier is 800 credits total (not per month) — effectively a trial, not a usable free tier.
 
@@ -217,15 +223,15 @@ Commercial rights begin at Standard tier. Pro adds VEO 3.1 access and collaborat
 
 ## Assessment
 
-LTX Video is the most technically ambitious open-weight video model currently available. The 1:192 VAE compression that enabled real-time generation in 2024, the dual-stream audio-video transformer in LTX-2, and the IC-LoRA control system represent genuine architectural contributions rather than scale-only improvements. The 1.73M monthly HuggingFace downloads and 10,200+ GitHub stars indicate real developer adoption.
+LTX Video is the most technically ambitious open-weight video model currently available. The 1:192 VAE compression that enabled real-time generation in 2024, the dual-stream audio-video transformer in LTX-2, and the IC-LoRA control system represent genuine architectural contributions rather than scale-only improvements. Combined LTX-2.x monthly HuggingFace downloads (roughly 1.5M for LTX-2.3 plus ~790K for LTX-2.5, as of August 2026) and 10,900+ GitHub stars on the original repo indicate real, sustained developer adoption — Lightricks shipped a full point-release (LTX-2.5) within seven months of LTX-2's January 2026 launch.
 
-The primary limitation is that "best open-weight model" is a competitive position that shifts. Wan2.1 and HunyuanVideo are competitive on visual quality for video-only use cases. What LTX Video has that they don't is audio — and that gap may close as other labs release audio-capable open-weight models.
+The primary limitation is that "best open-weight model" is a competitive position that shifts, and it is now independently measurable: Artificial Analysis's Video Arena places LTX-2.3 Pro 13th of 27 models on quality Elo, meaning Wan2.1 and HunyuanVideo remain genuinely competitive or ahead on visual quality for video-only use cases. What LTX Video has that they don't is audio — though that gap has already started closing: OpenMOSS's MOVA shipped a competing open-weight single-pass audio-video model in January 2026, three weeks after LTX-2.
 
-The business model is coherent: open weights build developer community and trust, which funnels into LTX Studio subscriptions. Lightricks has demonstrated consistent growth across its app portfolio and multiple funding rounds, positioning it to keep the model family competitive.
+The business model is coherent: open weights build developer community and trust, which funnels into LTX Studio subscriptions, gated by a $10M-annual-revenue commercial license threshold for larger users of the open weights themselves. Lightricks has demonstrated consistent growth across its app portfolio and multiple funding rounds, positioning it to keep the model family competitive.
 
-**Rating: 4/5.** The audio-video architecture is genuinely differentiated. The ComfyUI ecosystem is mature. The distilled variants make real-time generation accessible on consumer hardware. Deductions for the custom license (not OSI), visual quality that trails Wan2.1/HunyuanVideo on raw benchmarks, audio limited to 10-second clips, and lack of an official MCP server for AI agent integration.
+**Rating: 4/5.** The audio-video architecture is genuinely differentiated, and LTX-2.5's multi-shot generation and extended audio duration (up to ~20 seconds) address real gaps from LTX-2.3. The ComfyUI ecosystem is mature. The distilled variants make real-time generation accessible on consumer hardware. Deductions for the custom license (not OSI, with a $10M revenue cutoff), visual quality that independently verified benchmarks now show trailing Wan2.1/HunyuanVideo, and lack of an official MCP server for AI agent integration.
 
 ---
 
-*ChatForest reviews AI tools based on publicly available research. We do not conduct hands-on testing. This review reflects information available as of May 2026.*
+*ChatForest reviews AI tools based on publicly available research. We do not conduct hands-on testing. This review was last updated August 25, 2026.*
 

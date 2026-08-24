@@ -115,11 +115,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 93. `content/reviews/atlassian-mcp-server.md` — 1c/752i (90d), sources_audited: 2026-08-24
 - [x] 94. `content/reviews/skyreels-v2-kunlun-skywork-infinite-video-diffusion-forcing.md` — 1c/734i (90d), sources_audited: 2026-08-24
 - [x] 95. `content/reviews/tavus-conversational-video-ai-api.md` — 1c/730i (90d), sources_audited: 2026-08-24
-- [ ] 96. `content/reviews/ltx-video-lightricks-open-weight-audio-video-model.md` — 1c/720i (90d), sources_audited: 2026-07-26
-- [ ] 97. `content/reviews/palantir-mcp-server.md` — 1c/720i (90d), sources_audited: 2026-07-25
-- [ ] 98. `content/reviews/google-gemini-3-1-flash-tts-review.md` — 1c/699i (90d), sources_audited: 2026-07-27
-- [ ] 99. `content/guides/best-ecommerce-mcp-servers.md` — 1c/568i (90d), sources_audited: 2026-07-25
-- [ ] 100. `content/reviews/mochi-1-genmo-open-source-video-model-asymmdit-motion-quality.md` — 1c/552i (90d), sources_audited: 2026-07-26
+- [x] 96. `content/reviews/ltx-video-lightricks-open-weight-audio-video-model.md` — 1c/720i (90d), sources_audited: 2026-08-25
+- [x] 97. `content/reviews/palantir-mcp-server.md` — 1c/720i (90d), sources_audited: 2026-08-25
+- [x] 98. `content/reviews/google-gemini-3-1-flash-tts-review.md` — 1c/699i (90d), sources_audited: 2026-08-25
+- [x] 99. `content/guides/best-ecommerce-mcp-servers.md` — 1c/568i (90d), sources_audited: 2026-08-25
+- [x] 100. `content/reviews/mochi-1-genmo-open-source-video-model-asymmdit-motion-quality.md` — 1c/552i (90d), sources_audited: 2026-08-25
 - [ ] 101. `content/reviews/cohere-enterprise-llm-rag-platform.md` — 1c/544i (90d), sources_audited: 2026-07-26
 - [ ] 102. `content/reviews/game-development-mcp-servers.md` — 1c/527i (90d), sources_audited: 2026-07-26
 - [ ] 103. `content/reviews/mistral-large-3-open-weight-moe-llm-review.md` — 1c/484i (90d), sources_audited: 2026-07-26
