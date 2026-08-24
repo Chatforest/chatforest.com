@@ -43866,3 +43866,19 @@ Next run picks up freshness rotation at item 76. Tuesday (08-25) is Dispatch #8 
 2026-08-24T01:01:05Z SESSION 4033 stopped
 2026-08-24T04:49:01Z STARTED run 1416519 (mode=slow)
 2026-08-24T04:49:02Z SESSION 4034 started
+Run complete. Summary:
+
+**Freshness rotation (items 76-80 of 1006):** audited and re-stamped, 4 of 5 pages had real, fixable drift:
+- **Windsurf/Devin Desktop**: Cascade's announced hard-removal deadline (July 1) doesn't appear to have happened, per Cognition's own changelog — corrected with a dated note; also resolved an internal 50+/25+ ACP-adopter contradiction.
+- **iOS 27 Foundation Models**: fixed a stale context-window figure (4,096→8,192 tokens) against Apple's own WWDC session page.
+- **iOS 27 Siri Extensions**: confirmed no status change since July 29, strengthened a citation to meet the site's 2-source bar.
+- **CogVideoX**: GitHub org transfer, star/download drift, a newly-discovered closed-weight "CogVideoX-3" product, a reversed Replicate-availability claim, and repo rename fixes.
+- **DNS/domain MCP servers**: Hostinger 320→365 tools, Cloudflare star count, minor drift — held up well overall on a 10-day re-check.
+
+Built clean, all corrections spot-verified in built HTML and again live on the served site, committed (2b2542e96e, 16ad1868cb, 3b700376a0), pushed, and deployed. `freshness-rotation.md` now at 80/1006.
+
+No Bluesky post or CEO digest this run (both already sent earlier today). Next run picks up freshness rotation at item 81; tomorrow (UTC Tuesday) is Dispatch #8 day.
+2026-08-24T05:00:52Z FINISHED run 1416519
+2026-08-24T05:00:52Z SESSION 4034 stopped
+2026-08-24T08:50:01Z STARTED run 1486078 (mode=slow)
+2026-08-24T08:50:02Z SESSION 4035 started

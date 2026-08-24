@@ -1,6 +1,6 @@
 # FramePack Review — O(1) Long Video Generation on 6GB VRAM: ControlNet Creator's Architecture That Changes What Consumer GPUs Can Do
 
-> FramePack (April 2025) by Lvmin Zhang (lllyasviel, creator of ControlNet) applies context compression and inverted anti-drifting sampling to HunyuanVideo, enabling 60-120 second video generation on as little as 6GB VRAM. The key innovation is O(1) compute cost regardless of video length. Apache 2.0 license. 16,800 GitHub stars. No official MCP server. Rating 4/5.
+> FramePack (April 2025) by Lvmin Zhang (lllyasviel, creator of ControlNet) applies context compression and inverted anti-drifting sampling to HunyuanVideo, enabling 60-120 second video generation on as little as 6GB VRAM. The key innovation is O(1) compute cost regardless of video length. Apache 2.0 license. ~17,200 GitHub stars (Aug 2026). No official MCP server. Rating 4/5.
 
 
 # FramePack — O(1) Long Video Generation on 6GB VRAM: ControlNet Creator's Architecture That Changes What Consumer GPUs Can Do
@@ -13,7 +13,7 @@ FramePack's answer: compress past context based on temporal importance, so the t
 
 The second innovation is **inverted anti-drifting sampling**: instead of generating frames left-to-right (where errors accumulate over time), FramePack establishes the endpoint first and generates backward, so each new frame approaches a known anchor rather than extending an accumulating error chain.
 
-Together, these two techniques enabled something the community hadn't seen: 60-second and 120-second videos generated locally on gaming GPUs. The response was immediate — 16,800 GitHub stars within a year, viral coverage from Tom's Hardware, and dozens of community integrations that made long-form video generation accessible to creators who couldn't afford H100 clusters.
+Together, these two techniques enabled something the community hadn't seen: 60-second and 120-second videos generated locally on gaming GPUs. The response was immediate — [~17,200 GitHub stars](https://github.com/lllyasviel/FramePack) as of August 2026, viral coverage from Tom's Hardware, and dozens of community integrations that made long-form video generation accessible to creators who couldn't afford H100 clusters.
 
 This review is written from public sources, official documentation, the FramePack paper (arXiv 2504.12626), benchmark comparisons, and community data. We do not test AI video tools hands-on.
 
@@ -89,7 +89,7 @@ On June 26, 2025, lllyasviel previewed **FramePack-P1**, which introduces two fu
 - **Planned Anti-Drifting (PAD)**: A more sophisticated approach than the inverted sampling of the original — models future trajectory explicitly during generation
 - **History Discretization (HD)**: A different approach to the context compression problem, treating past frames as discrete historical summaries
 
-P1 results previewed on the FramePack GitHub page show improved visual consistency on long sequences compared to both the original and F1. However, as of May 2026, P1 has not been fully released. Community GitHub issues (#738, #768) have asked about the release timeline without resolution. This is consistent with lllyasviel's development pace on ControlNet — slow, high-quality releases with long gaps between major versions.
+P1 results previewed on the FramePack GitHub page show improved visual consistency on long sequences compared to both the original and F1. However, as of August 2026 — re-verified against the [live repo's releases page](https://github.com/lllyasviel/FramePack/releases), which still shows only the original April 2025 Windows build — P1 has still not been released as a downloadable model. Community [GitHub issue #738](https://github.com/lllyasviel/FramePack/issues/738) (opened August 2025, asking "Has it been published? If not, how long?") remains unanswered by the maintainer. This is consistent with lllyasviel's development pace on ControlNet — slow, high-quality releases with long gaps between major versions.
 
 ---
 
@@ -146,23 +146,23 @@ FramePack occupies a specific niche in the video generation landscape:
 5. **Creative experimentation** — low iteration cost on 6GB laptop GPUs makes FramePack accessible for testing prompts before committing to expensive API generation
 
 **Where FramePack falls short vs. alternatives:**
-- **Human subjects and talking avatars**: Community comparisons show Wan2.1 (Alibaba) delivers "markedly superior quality" for facial animation, lip sync, and realistic body movement
+- **Human subjects and talking avatars**: [LearnOpenCV's technical comparison](https://learnopencv.com/framepack-video-diffusion/) found "Wan 2.1 delivers markedly superior quality, despite its slower processing speed" for talking-avatar and facial-animation use cases
 - **Resolution**: Sub-640×640 is not suitable for final production output where HD is required
 - **Text-to-video**: FramePack is primarily I2V; T2V support exists but is a secondary use case and weaker in practice
-- **Quality vs. commercial models**: The underlying HunyuanVideo base means FramePack inherits HunyuanVideo's mid-tier (ELO ~1,020) position on Artificial Analysis human preference rankings — well below top commercial models
+- **Quality vs. commercial models**: FramePack's quality ceiling is bounded by its underlying HunyuanVideo (Dec 2024, 13B) base. That original model no longer appears on [Artificial Analysis's video generation leaderboards](https://artificialanalysis.ai/video/leaderboard/image-to-video) as of August 2026 — it has been superseded by newer open releases (including Tencent's own [HunyuanVideo-1.5](https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5), Nov 2025) and by commercial models now scoring well above it, so no current benchmark number can be cited for it
 
 ---
 
 ## Community Ecosystem
 
 **GitHub:**
-- `lllyasviel/FramePack`: approximately **16,800 stars**, Apache 2.0 license
+- [`lllyasviel/FramePack`](https://github.com/lllyasviel/FramePack): approximately **17,200 stars** (re-verified August 2026, up from ~16,800 at the July 2026 audit), Apache 2.0 license
 - Project page: [lllyasviel.github.io/frame_pack_gitpage](https://lllyasviel.github.io/frame_pack_gitpage/)
 - Hundreds of open issues and pull requests; community extension PR #491 added video input and end-frame control
 
 **Hugging Face:**
-- `lllyasviel/FramePackI2V_HY` — ~36,533 downloads/month
-- `lllyasviel/FramePack_F1_I2V_HY_20250503` — F1 variant
+- [`lllyasviel/FramePackI2V_HY`](https://huggingface.co/lllyasviel/FramePackI2V_HY) — ~60,200 downloads/month (re-verified August 2026, up from ~36,500 at the July 2026 audit)
+- [`lllyasviel/FramePack_F1_I2V_HY_20250503`](https://huggingface.co/lllyasviel/FramePack_F1_I2V_HY_20250503) — F1 variant, ~13,300 downloads/month
 - Featured as Daily Paper on April 17, 2025
 - Official HuggingFace Diffusers pipeline: `diffusers/api/pipelines/framepack`
 - Community collections including `linoyts/framepack-video-generation`
@@ -234,7 +234,7 @@ The Apache 2.0 license also covers the underlying FramePack checkpoints — thes
 
 ## MCP Server Support
 
-**No official FramePack MCP server** exists as of May 2026. **No significant community MCP implementation** was found.
+**No official FramePack MCP server** exists as of August 2026 (re-verified against the live [GitHub repo](https://github.com/lllyasviel/FramePack), which has no MCP references). **No significant community MCP implementation** was found.
 
 FramePack's programmatic access paths (fal.ai, Replicate, WaveSpeedAI REST APIs) could theoretically be wrapped in a custom MCP server, but no documented implementation exists. FramePack's primary use case is local deployment, which does not benefit from MCP server integration in the same way as cloud API tools.
 
@@ -288,13 +288,15 @@ The P1 delay is the most meaningful outstanding risk. The previewed P1 improveme
 
 Apache 2.0 licensing across the board is unusual and valuable in the open-source video generation space, where HunyuanVideo excludes three major developer markets and CogVideoX's 5B series carries PRC jurisdiction terms. FramePack offers genuinely clean commercial use with no territorial carve-outs.
 
-For the specific use case of long-form local video generation on consumer hardware, FramePack remains the best available option as of May 2026. For short-form quality-first generation on adequate hardware, Wan2.1 or HunyuanVideo-1.5 are stronger alternatives.
+For the specific use case of long-form local video generation on consumer hardware, FramePack remains the best available option as of this August 2026 re-audit — no competing model has matched its 6GB-VRAM, 60-120 second combination. For short-form quality-first generation on adequate hardware, Wan2.1 or HunyuanVideo-1.5 are stronger alternatives.
 
 **Rating: 4/5**
 
-The four reflects the genuinely novel O(1) compute architecture, the inverted anti-drifting sampling that makes long sequences viable, the 6GB VRAM accessibility that expands the addressable hardware base by orders of magnitude, 16,800 GitHub stars validating community adoption, Apache 2.0 licensing with no territorial restrictions, and Diffusers integration suggesting long-term maintenance. The one missing point covers: sub-640×640 resolution ceiling with no HD path, human motion quality below Wan2.1, P1 delays leaving the community on F1 for over a year, no audio, generation speed on low-VRAM hardware, and the fact that FramePack is an architectural technique on top of HunyuanVideo rather than a standalone model — its quality ceiling is ultimately bounded by the underlying base model's benchmark position (ELO ~1,020).
+The four reflects the genuinely novel O(1) compute architecture, the inverted anti-drifting sampling that makes long sequences viable, the 6GB VRAM accessibility that expands the addressable hardware base by orders of magnitude, ~17,200 GitHub stars validating community adoption, Apache 2.0 licensing with no territorial restrictions, and Diffusers integration suggesting long-term maintenance. The one missing point covers: sub-640×640 resolution ceiling with no HD path, human motion quality below Wan2.1, P1 delays leaving the community on F1 for well over a year, no audio, generation speed on low-VRAM hardware, and the fact that FramePack is an architectural technique on top of HunyuanVideo rather than a standalone model — its quality ceiling is ultimately bounded by that aging (Dec 2024) base model, which has since dropped off current third-party video-quality leaderboards entirely.
 
 ---
 
-*This review is based on public documentation, the FramePack GitHub repository (`lllyasviel/FramePack`), the FramePack technical paper (arXiv 2504.12626, versions 1-3), HuggingFace model cards for `lllyasviel/FramePackI2V_HY` and `lllyasviel/FramePack_F1_I2V_HY_20250503`, the official HuggingFace Diffusers pipeline documentation, API documentation from fal.ai, Replicate, and WaveSpeedAI, community discussion from r/StableDiffusion and r/LocalLLaMA, and coverage from Tom's Hardware and TechSpot. We do not test AI video tools hands-on.*
+*This review is based on public documentation, the FramePack GitHub repository (`lllyasviel/FramePack`), the FramePack technical paper (arXiv 2504.12626, versions 1-3), HuggingFace model cards for `lllyasviel/FramePackI2V_HY` and `lllyasviel/FramePack_F1_I2V_HY_20250503`, the official HuggingFace Diffusers pipeline documentation, API documentation from fal.ai, Replicate, and WaveSpeedAI, community discussion from r/StableDiffusion and r/LocalLLaMA, LearnOpenCV's technical comparison, and coverage from Tom's Hardware and TechSpot. We do not test AI video tools hands-on.*
+
+*Claim-level citation re-audit performed 2026-08-24: GitHub star count and HuggingFace download counts re-verified live and updated (stars ~16,800 → ~17,200; `FramePackI2V_HY` downloads ~36,500/mo → ~60,200/mo); P1 release status re-confirmed still unreleased against the live GitHub releases page and issue #738; confirmed no FramePack MCP server exists; the "ELO ~1,020" Artificial Analysis benchmark claim for the original HunyuanVideo model was removed because that model no longer appears on Artificial Analysis's current leaderboards and the figure could not be re-verified against a live source; the previously uncited Wan2.1 facial-animation superiority claim was sourced to LearnOpenCV's technical comparison. Apache 2.0 licensing (FramePack), the HunyuanVideo custom license's EU/UK/South Korea exclusion, CogVideoX-5B's PRC jurisdiction clause and 1M-monthly-visit cap, fal.ai's $0.0333/second pricing, and the arXiv paper's v3 (October 2025) status were all re-verified unchanged.*
 

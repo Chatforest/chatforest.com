@@ -1,9 +1,9 @@
 ---
 title: "Falcon 3 Review — TII's STEM-Focused Open-Weight Family (1B–10B + Mamba)"
 date: 2026-05-14
-description: "Released December 17, 2024 by the Technology Innovation Institute (Abu Dhabi), Falcon 3 is a five-model open-weight family (1B, 3B, 7B, 10B, plus a Mamba-7B SSM variant) with true Apache 2.0 licensing. The 7B flagship trained on 14 trillion tokens; the 10B was upscaled via layer duplication. MMLU 73.1 and GSM8K 83.0 for the 10B. We review the architecture, Mamba variant, training methodology, benchmarks, and where Falcon 3 lands in the crowded December 2024 open-weight market."
-tags: ["llm", "open-weight", "tii", "falcon", "falcon3", "apache2", "stem", "edge-ai", "model-compression"]
-sources_audited: 2026-07-27
+description: "Released December 17, 2024 by the Technology Innovation Institute (Abu Dhabi), Falcon 3 is a five-model open-weight family (1B, 3B, 7B, 10B, plus a Mamba-7B SSM variant) under TII's Apache-2.0-derived Falcon-LLM License (permissive, but with an Acceptable Use Policy and attribution clause — not literal unrestricted Apache 2.0). The 7B flagship trained on 14 trillion tokens; the 10B was upscaled via layer duplication. MMLU 73.1 and GSM8K 81.4 for the 10B. We review the architecture, Mamba variant, training methodology, benchmarks, and where Falcon 3 lands in the crowded December 2024 open-weight market."
+tags: ["llm", "open-weight", "tii", "falcon", "falcon3", "falcon-llm-license", "stem", "edge-ai", "model-compression"]
+sources_audited: 2026-08-24
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
@@ -15,7 +15,7 @@ author: "ChatForest"
 
 When [Technology Innovation Institute](https://www.tii.ae/news/falcon-3-uaes-technology-innovation-institute-launches-worlds-most-powerful-small-ai-models) released [Falcon 3 on December 17, 2024](https://huggingface.co/blog/falcon3), it was competing in the most crowded month the open-weight AI space had ever seen. December 2024 brought Llama 3.3 70B from Meta, Phi-4 from Microsoft, and a wave of Qwen 2.5 variants from Alibaba. In that context, Falcon 3's defining question was not whether it existed, but whether it could justify its place in a development environment already overflowing with choices.
 
-The answer, for a specific kind of practitioner, is yes. Falcon 3 is a disciplined, Apache-licensed, STEM-capable family built for deployment on real hardware — not just benchmark tables. The 10B model is genuinely competitive for its parameter count, and the methodology for building it (upscaling a trained 7B via layer duplication, rather than training the 10B from scratch) represents an unusual engineering choice that TII executed successfully.
+The answer, for a specific kind of practitioner, is yes. Falcon 3 is a disciplined, permissively-licensed, STEM-capable family built for deployment on real hardware — not just benchmark tables. The 10B model is genuinely competitive for its parameter count, and the methodology for building it (upscaling a trained 7B via layer duplication, rather than training the 10B from scratch) represents an unusual engineering choice that TII executed successfully.
 
 ---
 
@@ -25,7 +25,9 @@ The Technology Innovation Institute is a research center based in Abu Dhabi, par
 
 Falcon 2 (2024) was a quieter release, refining the architecture with multimodal capabilities in the 11B vision model. Falcon 3 returns to a text-only focus but applies what TII learned across three generations of model development.
 
-What stays constant across the Falcon lineage is the licensing: true Apache 2.0, with no use-case restrictions and no "community license" gates of the kind that complicate Meta's Llama releases for commercial deployments. For teams building products rather than running research, Apache 2.0 is a meaningful practical advantage.
+What stays constant across the Falcon lineage is the licensing approach: a permissive, Apache-2.0-derived license with no monthly-active-user threshold of the kind that complicates Meta's Llama releases for commercial deployments. For teams building products rather than running research, that's a meaningful practical advantage — see the correction below for what the license actually is, which is not literal Apache 2.0.
+
+**Correction (2026-08-24):** the original version of this review repeatedly described Falcon 3's license as "true Apache 2.0." That's inaccurate. Falcon 3's [model cards](https://huggingface.co/tiiuae/Falcon3-7B-Base) list `license: other`, `license_name: falcon-llm-license`, linking to the [TII Falcon-LLM License 2.0](https://falconllm.tii.ae/falcon-terms-and-conditions.html) — a document TII itself describes as "in part, based on the Apache License Version 2.0... with a series of modifications." Those modifications include a mandatory external [Acceptable Use Policy](https://falconllm.tii.ae/falcon-terms-and-conditions.html) and a required public attribution notice ("[name of work] is built using Falcon LLM technology from the Technology Innovation Institute") — obligations plain Apache 2.0 does not carry. It is still meaningfully more permissive than Meta's Llama Community License (no 700M-MAU threshold), but it is not the no-strings-attached Apache 2.0 this review previously claimed. Every "Apache 2.0" reference below has been corrected to reflect this.
 
 ---
 
@@ -63,7 +65,7 @@ The transformer layers range from 18 (1B) to 40 (10B). The vocabulary is 131K to
 
 ### The Mamba Variant
 
-Falcon3-Mamba-7B is a **State Space Model (SSLM)** — it contains no transformer attention mechanism at all. SSMs process sequences through structured state transitions rather than attention, which gives them linear (not quadratic) time and memory scaling with sequence length.
+Falcon3-Mamba-7B is what TII calls a **State Space Language Model ([SSLM](https://falconllm.tii.ae/tii-releases-first-sslm-with-falcon-mamba-7b.html))** — it contains no transformer attention mechanism at all. SSMs process sequences through structured state transitions rather than attention, which gives them linear (not quadratic) time and memory scaling with sequence length.
 
 TII positioned Falcon3-Mamba-7B as the top-performing SSLM available at release, claiming it matches or exceeds transformer-based 7B models on many tasks while offering memory efficiency advantages for long sequences. With 64 layers (compared to 28 for the transformer 7B), it is architecturally deeper despite the same parameter count.
 
@@ -118,9 +120,11 @@ TII published benchmark results comparing Falcon 3 models against the state of t
 |-----------|-------|-------|
 | MMLU | 73.1 | 5-shot |
 | MMLU-PRO | 42.5 | 5-shot |
-| GSM8K | 83.0 | Math reasoning |
-| MATH-Lvl5 | 22.9 | Hard competition math |
+| GSM8K | 81.4 | 5-shot, math reasoning |
+| MATH-Lvl5 | 22.9 | 4-shot, hard competition math |
 | MBPP | 73.8 | Python coding |
+
+(TII's [original December 2024 announcement blog](https://huggingface.co/blog/falcon3) listed GSM8K at 83.0; the current [Falcon3-10B-Base model card](https://huggingface.co/tiiuae/Falcon3-10B-Base) — the more specific, actively maintained source — shows 81.4. This table uses the model card's figure as of this audit.)
 
 ### Falcon3-7B-Base
 
@@ -136,9 +140,9 @@ TII published benchmark results comparing Falcon 3 models against the state of t
 | Multipl-E | 45.8 | Code generalization across languages |
 | BFCL | 86.3 | Berkeley Function-Calling Leaderboard |
 
-The 10B MMLU score of 73.1 is competitive for sub-13B models in late 2024. For context, Mistral 7B scored ~64 on MMLU; Llama 3.1 8B scored ~73 — so Falcon3-10B is roughly competitive with Llama 3.1 8B while having 2B more parameters. The GSM8K score of 83.0 reflects the STEM emphasis in training.
+The 10B MMLU score of 73.1 is competitive for sub-13B models in late 2024. For context, Mistral 7B scored ~64 on MMLU; Llama 3.1 8B scored ~73 — so Falcon3-10B is roughly competitive with Llama 3.1 8B while having 2B more parameters. The GSM8K score of 81.4 reflects the STEM emphasis in training.
 
-Where Falcon 3 faces more competition is in the December 2024 landscape specifically. [**Microsoft Phi-4**](https://huggingface.co/microsoft/phi-4) (14B) achieved ~84% on MMLU and over 91% on MATH, using a heavily synthetic data approach. For users who can accommodate 14B parameters, Phi-4 outperformed Falcon3-10B by a significant margin on math tasks. The tradeoff: Phi-4 uses a more restrictive license (MIT, but with conditions for certain fine-tuning uses), while Falcon 3 is clean Apache 2.0.
+Where Falcon 3 faces more competition is in the December 2024 landscape specifically. [**Microsoft Phi-4**](https://huggingface.co/microsoft/phi-4) (14B) achieved 84.8% on MMLU and 80.4% on the standard MATH benchmark, per [Microsoft's Phi-4 technical report](https://arxiv.org/pdf/2412.08905), using a heavily synthetic data approach. (Falcon3-10B's 22.9 score above is on MATH-Lvl5, the hardest competition-level subset of MATH — not the same slice, so the two numbers aren't directly comparable, but Phi-4's math-specialized training gives it a real edge at the 14B size.) For users who can accommodate 14B parameters, Phi-4 outperformed Falcon3-10B by a significant margin on math tasks. Phi-4's weights were released [under a plain MIT license in January 2025](https://the-decoder.com/microsoft-releases-full-phi-4-model-with-weights-under-mit-license/) — Microsoft had initially signaled a more restrictive research license at the December 2024 announcement but shipped MIT instead, with no special fine-tuning conditions. That makes the license comparison closer than it first appears: Falcon 3's Apache-derived license carries its own conditions (see correction above), while Phi-4 shipped unconditioned MIT.
 
 [**Qwen 2.5 7B**](https://huggingface.co/Qwen/Qwen2.5-7B) (September 2024) also scored competitively — ~74% MMLU for the 7B, comparable to Falcon3-10B with fewer parameters. Qwen 2.5 had a head start of several months by the time Falcon 3 shipped.
 
@@ -158,18 +162,17 @@ The Gaudi partnerships matter in a different context: organizations running EU o
 
 ---
 
-## License: Apache 2.0
+## License: the TII Falcon-LLM License 2.0
 
-Falcon 3 carries the **Apache 2.0 license** across all models — base and instruct. This is the cleanest possible open-weight license for commercial use:
+Falcon 3 carries the **[TII Falcon-LLM License 2.0](https://falconllm.tii.ae/falcon-terms-and-conditions.html)** across all models — base and instruct. Every Falcon 3 model card on Hugging Face lists `license: other`, `license_name: falcon-llm-license` (e.g. [Falcon3-7B-Base](https://huggingface.co/tiiuae/Falcon3-7B-Base)), not `apache-2.0`. TII describes the document as based in part on Apache 2.0 "with a series of modifications," and those modifications are real:
 
-- No use-case restrictions
-- No "community license" gating for commercial deployment
-- No attribution requirements beyond standard Apache
+- No monthly-active-user threshold or "community license" gating for commercial deployment (unlike Llama)
 - Fine-tuning and derivative works permitted
+- **But**: a mandatory external [Acceptable Use Policy](https://falconllm.tii.ae/falcon-terms-and-conditions.html) applies, and derivative public works must carry the attribution line "[name of work] is built using Falcon LLM technology from the Technology Innovation Institute" — obligations plain Apache 2.0 does not impose
 
-This is not trivial in the late 2024 landscape. Meta's Llama 3 models use the Llama 3 Community License, which restricts use in products serving over 700 million monthly active users and requires Meta attribution. Microsoft's Phi models use the MIT license with additional fine-tuning terms in some variants. Google's Gemma uses the Gemma Terms of Use.
+This is still meaningfully permissive in the late 2024 landscape. Meta's Llama 3 models use the Llama 3 Community License, which restricts use in products serving over 700 million monthly active users and requires Meta attribution. Microsoft's Phi-4 shipped under a plain MIT license (see above). Google's Gemma uses the Gemma Terms of Use.
 
-Falcon 3's Apache 2.0 is genuinely permissive in a way that matters for enterprise legal teams. If you're building something that will scale, or something in a regulated industry where software licensing affects compliance, the clean provenance matters.
+Falcon 3's license is genuinely more permissive than Llama's on the MAU-cap dimension specifically, which matters for enterprise legal teams evaluating scale risk. But it is not the "no-strings" open license this review previously described — a compliance team doing a license review should read the actual Falcon-LLM License 2.0 text and Acceptable Use Policy, not assume Apache 2.0 terms apply.
 
 ---
 
@@ -206,13 +209,13 @@ It is worth understanding what Falcon 3 was entering when it launched:
 - **Gemma 2 (Google, mid-2024)** — 2B and 9B variants, also competitive. Apache-like (Gemma license).
 - **Mistral 7B v0.3 and NeMo** — Older competition; Mistral 7B retained strong adoption but was architecturally behind Falcon 3 and Qwen 2.5 by late 2024.
 
-Falcon 3's clearest competitive advantage over all of these is: **Apache 2.0 at the 10B scale** + **STEM specialization** + **Intel hardware certification** + **validated edge deployment**. No single competitor covers all four.
+Falcon 3's clearest competitive advantage over all of these is: **a permissive, no-MAU-cap license at the 10B scale** (TII's Apache-derived Falcon-LLM License — see correction above, it does carry an attribution and acceptable-use clause) + **STEM specialization** + **Intel hardware certification** + **validated edge deployment**. No single competitor covers all four.
 
 ---
 
 ## Arabic Language Extension
 
-Shortly after the initial Falcon 3 release, TII published a **Falcon 3 Arabic model** — an Arabic-specialized variant targeting the Arabic NLP market. TII has geographic and institutional advantages here: as an Abu Dhabi institution with deep regional networks, it can invest in Arabic language quality in ways that US and Chinese labs typically do not prioritize.
+About five months after the initial Falcon 3 release, TII published **[Falcon Arabic](https://www.tii.ae/news/middle-easts-leading-ai-powerhouse-tii-launches-two-new-ai-models-falcon-arabic-first-arabic)** (May 21, 2025) — built on the Falcon3-7B architecture and described by TII as "the first-ever Arabic language model in the Falcon series." TII has geographic and institutional advantages here: as an Abu Dhabi institution with deep regional networks, it can invest in Arabic language quality in ways that US and Chinese labs typically do not prioritize.
 
 For Arabic-language enterprise applications in the Gulf region and broader MENA markets, the Arabic variant of Falcon 3 represents one of the few credible open-weight options from a regionally based institution. This positions TII differently from Meta, Google, and Alibaba in that specific market segment.
 
@@ -220,9 +223,9 @@ For Arabic-language enterprise applications in the Gulf region and broader MENA 
 
 ## 2026 Status and Reception
 
-As of 2026, the Falcon 3 family remains available on Hugging Face and is maintained by TII. The models were adopted in enterprise and research contexts where the Apache 2.0 license and Intel Gaudi support mattered.
+As of 2026, the Falcon 3 family remains available on Hugging Face and is maintained by TII. The models were adopted in enterprise and research contexts where the permissive, no-MAU-cap license and Intel Gaudi support mattered.
 
-TII has continued releasing models since Falcon 3, and the Falcon brand has remained a known quantity in the open-weight space — one of the few non-US, non-China model series with genuine institutional backing.
+TII has continued releasing models since Falcon 3 — including [Falcon Arabic](https://www.tii.ae/news/middle-easts-leading-ai-powerhouse-tii-launches-two-new-ai-models-falcon-arabic-first-arabic) and the [Falcon-H1 family](https://www.hpcwire.com/aiwire/2026/01/05/uaes-tii-launches-falcon-h1-arabic-models-in-3b-7b-and-34b-configurations/) — and the Falcon brand has remained a known quantity in the open-weight space, one of the few non-US, non-China model series with genuine institutional backing.
 
 The 7B and 10B variants see the most production usage. The 1B and 3B distilled models have found adoption in mobile and edge AI contexts where parameter constraints are hard.
 
@@ -234,10 +237,10 @@ Community reception was positive but measured. Practitioners acknowledged the co
 
 **Rating: 4/5**
 
-Falcon 3 does exactly what TII designed it to do. It is a STEM-capable, Apache-licensed, deployment-ready open-weight family with an unusual and effective training methodology for the 10B model and broad hardware certification.
+Falcon 3 does exactly what TII designed it to do. It is a STEM-capable, permissively-licensed, deployment-ready open-weight family with an unusual and effective training methodology for the 10B model and broad hardware certification.
 
 The reasons to choose Falcon 3 over alternatives are specific but real:
-- You need Apache 2.0 with no asterisks
+- You need a permissive license with no Llama-style user-count cap (though TII's Falcon-LLM License 2.0 does carry an attribution requirement and Acceptable Use Policy — read it before assuming plain Apache 2.0 terms apply)
 - You're deploying on Intel Gaudi or Xeon 6 infrastructure
 - Your use case is STEM-heavy (scientific text, code, math)
 - You need validated quantization options including GGUF for edge

@@ -9,7 +9,7 @@ On December 3, 2024, Tencent released the weights of HunyuanVideo to the public.
 
 The benchmarks were immediate validation. [HunyuanVideo topped VBench 1.0 at launch](https://github.com/Tencent-Hunyuan/HunyuanVideo), outperforming every prior open-source video model and matching or exceeding Runway Gen-3, Luma 1.6, and contemporaneous Chinese commercial systems. Within weeks, 12,000 GitHub stars. ComfyUI integrations emerged from the community in days. LoRA training pipelines arrived within months.
 
-Eleven months later, in November 2025, Tencent released HunyuanVideo-1.5 — a rearchitected 8.3B-parameter model with SSTA (Selective and Sliding Tile Attention), 1080p super-resolution output, and a 14GB VRAM requirement that put it within reach of consumer RTX 4090 hardware. The 1.5 model generates up to 10 seconds of video at 24fps. The step-distilled variant produces 480p I2V content in approximately 75 seconds on a single 4090.
+Eleven months later, on [November 20, 2025](https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5), Tencent released HunyuanVideo-1.5 — a rearchitected 8.3B-parameter model with SSTA (Selective and Sliding Tile Attention), 1080p super-resolution output, and a 14GB VRAM requirement that put it within reach of consumer RTX 4090 hardware. The 1.5 model generates up to 10 seconds of video at 24fps. The step-distilled variant produces 480p I2V content in approximately 75 seconds on a single 4090.
 
 Then there is the license. The Tencent Hunyuan Community License Agreement, which governs both the original and 1.5, explicitly excludes three jurisdictions from authorized use: the **European Union, United Kingdom, and South Korea**. Users in those territories are not permitted to use, reproduce, modify, distribute, or display the model or its outputs. The restriction appears driven by regulatory compliance avoidance — specifically the EU AI Act — and has generated significant community criticism.
 
@@ -33,7 +33,7 @@ Eight major releases in seventeen months:
 - **May 9, 2025**: HunyuanCustom — single-image video with synchronized audio and lip-sync (deepfake-relevant)
 - **May 28, 2025**: HunyuanVideo-Avatar — audio-driven human animation, multi-character, emotion-controllable (jointly with Tencent Music)
 - **Aug 2025**: HunyuanVideo-Foley — video-to-audio/sound effects, 48kHz, trained on 100k-hour multimodal dataset
-- **Nov 21, 2025**: HunyuanVideo-1.5 (8.3B parameters) — consumer GPU support, SSTA architecture, 1080p super-res, 10-second generation
+- **Nov 20, 2025**: HunyuanVideo-1.5 (8.3B parameters) — consumer GPU support, SSTA architecture, 1080p super-res, 10-second generation
 - **Dec 5, 2025**: Official LoRA training scripts for 1.5 (Muon optimizer)
 - **Dec 23, 2025**: FP8 GEMM inference for 1.5
 
@@ -72,7 +72,7 @@ HunyuanVideo encodes video using a 3D Causal VAE with CausalConv3D layers. Compr
 
 ## HunyuanVideo-1.5: Democratizing the Architecture
 
-November 21, 2025. [HunyuanVideo-1.5](https://arxiv.org/abs/2511.18870) drops to **8.3 billion parameters** and introduces **SSTA (Selective and Sliding Tile Attention)**, a new attention mechanism that makes consumer GPU deployment feasible.
+November 20, 2025. [HunyuanVideo-1.5](https://arxiv.org/abs/2511.18870) drops to **8.3 billion parameters** and introduces **SSTA (Selective and Sliding Tile Attention)**, a new attention mechanism that makes consumer GPU deployment feasible.
 
 **SSTA:**
 SSTA prunes redundant spatiotemporal key/value blocks from the full attention computation. The insight: not every spatial and temporal position pair contributes meaningfully to the output. SSTA selectively prunes low-contribution pairs while preserving the highest-impact attention relationships. Result: **1.87× speedup** vs. FlashAttention-3 for 10-second 720p synthesis, with no perceptible quality loss in Tencent's evaluations.
@@ -127,17 +127,17 @@ At launch, HunyuanVideo achieved the **highest overall VBench 1.0 score** among 
 
 **VBench-2.0 (Released March 2025):**
 
-The updated VBench-2.0, which adds dimensions like multi-object tracking, structure-driven generation, and world knowledge accuracy, shows HunyuanVideo performing strongly on **human fidelity** and **motion rationality** but weaker on structure-driven dimensions and multi-object tracking. The current open-source VBench-2.0 leader is Wan 2.2 (Alibaba, 27B parameters) with an 84.7% aggregate score.
+The updated [VBench-2.0](https://arxiv.org/abs/2503.21755), which adds dimensions like Commonsense, Creativity, Physics, and Human Fidelity to assess "intrinsic faithfulness," finds HunyuanVideo performing strongly on **Human Fidelity** and **Motion Rationality** (a Commonsense sub-dimension) relative to its overall standing, but weaker across most other intrinsic-faithfulness dimensions — consistent with a model whose training data skews toward human-centric content. (As of this audit, we could not independently re-verify a specific current VBench-2.0 aggregate-score leader from a live source, so no leader claim is made here.)
 
-**Artificial Analysis Arena (May 2026):**
+**Artificial Analysis Arena (checked August 24, 2026):**
 
-Artificial Analysis uses ELO scores derived from blind human preference voting. As of May 2026:
-- HunyuanVideo original: ELO **~1,000**, ranked approximately **#62** on T2V leaderboard
-- HunyuanVideo-1.5 (via fal.ai): ELO **~1,020**, ranked approximately **#59**
+[Artificial Analysis's Text-to-Video Arena](https://artificialanalysis.ai/video/leaderboard/text-to-video) uses ELO scores derived from blind human preference voting, and the board turns over continuously as new models enter. Pulling the live leaderboard directly on the date of this audit:
+- HunyuanVideo original: ELO **~996**, ranked in the bottom fifth of roughly 90 tracked model entries
+- HunyuanVideo-1.5 (via fal.ai): ELO **~1,015**, similarly bottom-fifth
 
-For reference, the current top tier: HappyHorse-1.0 (Alibaba ATH, ELO 1,355+), Seedance 2.0 (ByteDance, ELO ~1,272), Kling 3.0 (Kuaishou, ELO ~1,247), Veo 3 (Google DeepMind, ELO ~1,219).
+The top tier has changed hands multiple times since HunyuanVideo's original December 2024 launch and since this section was last checked in May 2026: current leaders include Gemini Omni Flash (Google, ELO ~1,238), MiniMax H3 (ELO ~1,227), Dreamina Seedance 2.0 (ByteDance, ELO ~1,221), and [HappyHorse](https://www.cnbc.com/2026/04/10/alibaba-happyhorse-ai-video-model-benchmark-reveal.html) (Alibaba's Future Life Lab/ATH unit, now on version 1.1 as of June 2026). A [June 2026 independent roundup](https://techsy.io/en/blog/best-ai-video-models) separately places HunyuanVideo-1.5 "outside the top 12" on this same board, corroborating the mid-tier read.
 
-HunyuanVideo is definitively mid-tier on human preference rankings as of May 2026. The model that was state-of-the-art in December 2024 has been surpassed by 17 months of commercial model development. This is not a quality regression — HunyuanVideo has not gotten worse. The field has moved.
+HunyuanVideo remains solidly mid-tier to lower-tier on human preference rankings. The model that was state-of-the-art in December 2024 has been surpassed by nearly two years of commercial model development. This is not a quality regression — HunyuanVideo has not gotten worse. The field has moved, and kept moving.
 
 ---
 
@@ -151,7 +151,9 @@ The **[Tencent Hunyuan Community License Agreement](https://github.com/Tencent-H
 
 **Territorial exclusion** — this is the controversial provision:
 
-> "This License Agreement is not applicable to users in the EU, UK, and South Korea."
+> "THIS LICENSE AGREEMENT DOES NOT APPLY IN THE EUROPEAN UNION, UNITED KINGDOM AND SOUTH KOREA AND IS EXPRESSLY LIMITED TO THE TERRITORY, AS DEFINED BELOW."
+
+(Correction 2026-08-24: quote re-checked verbatim against the [live license text](https://github.com/Tencent-Hunyuan/HunyuanVideo/blob/main/LICENSE.txt); wording above matches the source exactly, correcting a paraphrase previously presented as a direct quote.)
 
 Users in the **European Union**, **United Kingdom**, and **South Korea** are explicitly not authorized to use, reproduce, modify, distribute, or display the model or its outputs. This applies to both the weights and generated content.
 
@@ -180,8 +182,8 @@ By excluding these jurisdictions from the license, Tencent avoids the compliance
 - 480p; 121 frames maximum
 - ~3 minutes inference time at default 28 steps (1–50 steps configurable)
 
-**Replicate:**
-- ~$1.49 per run (4× H100 hardware)
+**[Replicate](https://replicate.com/tencent/hunyuan-video):**
+- **Correction (2026-08-24):** this review previously stated ~$1.49 per run; re-checked live against Replicate's own model page, the current displayed estimate is **~$2.55 per run** (4× H100 hardware, ~7-minute typical prediction time)
 - Pay-per-run, community-maintained deployments
 
 **Other providers:**
@@ -194,9 +196,9 @@ The dominant use case for community power users. fal.ai is priced appropriately 
 
 ## Community Ecosystem
 
-**GitHub:**
-- [`Tencent-Hunyuan/HunyuanVideo`](https://github.com/Tencent-Hunyuan/HunyuanVideo): **12,100+ stars**, ~1,200 forks, 158+ open issues
-- [`Tencent-Hunyuan/HunyuanVideo-1.5`](https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5): **4,500+ stars**, ~229 forks
+**GitHub (checked August 24, 2026 via the GitHub API):**
+- [`Tencent-Hunyuan/HunyuanVideo`](https://github.com/Tencent-Hunyuan/HunyuanVideo): **12,461 stars**, 1,316 forks, 182 open issues
+- [`Tencent-Hunyuan/HunyuanVideo-1.5`](https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5): **4,530 stars**, 218 forks, 37 open issues
 
 **Hugging Face:**
 - `hunyuanvideo-community/HunyuanVideo` — Diffusers-format weights (official since Dec 17, 2024)
@@ -212,7 +214,7 @@ ComfyUI added native HunyuanVideo support in January 2025. Community wrappers:
 - Official ComfyUI nodes are included directly in the HunyuanVideo-1.5 GitHub repository
 
 **LoRA Ecosystem:**
-Tencent released official LoRA training scripts on December 5, 2025, using the Muon optimizer. Kohya-ss independently added HunyuanVideo LoRA support via his widely-used training GUI.
+Tencent released official LoRA training scripts on December 5, 2025, using the Muon optimizer. Kohya-ss independently added HunyuanVideo (and Wan) LoRA training support via [`musubi-tuner`](https://github.com/kohya-ss/musubi-tuner), a companion project to his widely-used `sd-scripts`/Kohya SS training toolkit rather than the toolkit itself.
 
 [Civitai](https://civitai.com/) hosts **128+ search results** for "Hunyuan" LoRAs. The majority target character consistency, style transfer, and — significantly — NSFW applications. LoRA files are approximately 100× smaller than base model weights, making distribution trivial.
 
@@ -223,7 +225,7 @@ Tencent released official LoRA training scripts on December 5, 2025, using the M
 HunyuanVideo's open-source nature removes the content filters and identity detection systems that commercial platforms apply. The result: a documented misuse pattern.
 
 **LoRA training from minimal images:**
-[Research and community guides published in early 2025](https://www.unite.ai/the-rise-of-hunyuan-video-deepfakes/) found that convincing celebrity-likeness LoRAs can be trained from as few as 20–60 images — a dataset small enough to extract from a TV episode. The resulting LoRA runs without any content filter on a locally deployed HunyuanVideo instance.
+**Correction (2026-08-24):** this review previously cited "20–60 images" for this claim; re-checked against the source, that range does not appear in it. [The cited article](https://www.unite.ai/the-rise-of-hunyuan-video-deepfakes/) documented that one celebrity-likeness LoRA creator needed only 16 images — extracted from a single episode of *Mad Men* — to train a convincing Christina Hendricks likeness. Community reports characterize this class of LoRA generally as requiring low training-data volumes and short training times. The resulting LoRA runs without any content filter on a locally deployed HunyuanVideo instance.
 
 **[HunyuanCustom (May 9, 2025)](https://www.unite.ai/hunyuancustom-brings-single-image-video-deepfakes-with-audio-and-lip-sync/):**
 The most significant escalation. HunyuanCustom enables single-image-to-video generation with **synchronized audio and lip-sync**. The input: one photograph of a person. The output: a video of that person speaking, with audio synchronized to their mouth movements.
@@ -263,7 +265,7 @@ HunyuanVideo competes primarily with Wan2.1/2.2 (Alibaba Cloud) for the "self-ho
 | Min VRAM | 14GB | 24GB+ |
 | Max duration | 10s | Comparable |
 | License | Custom (excl. EU/UK/KR) | Apache 2.0 |
-| VBench aggregate | Competitive | 84.7% (current leader) |
+| VBench-2.0 | Strong on Human Fidelity/Motion Rationality; weaker elsewhere | Not independently re-verified this audit |
 | LoRA ecosystem | 128+ Civitai entries | Smaller but growing |
 | Foley audio | Separate model | Integrated closer to release |
 
@@ -271,7 +273,7 @@ Wan2.1's Apache 2.0 licensing gives it a significant advantage for EU/UK/South K
 
 **Commercial model comparison:**
 
-HunyuanVideo is not competitive with top commercial models on blind human preference rankings as of May 2026. ELO ~1,020 vs. HappyHorse-1.0 (ELO 1,355+) represents a gap of approximately 335 ELO points — roughly the difference between a beginner and intermediate chess player. Commercial models at the top of the leaderboard generate 1080p/4K natively, produce audio in the same inference pass, support 15–20 second clips, and have substantially larger training data investment.
+HunyuanVideo is not competitive with top commercial models on blind human preference rankings as of this audit (August 2026). HunyuanVideo-1.5's ELO ~1,015 vs. the current [Artificial Analysis](https://artificialanalysis.ai/video/leaderboard/text-to-video) leader (Gemini Omni Flash, ELO ~1,238) represents a gap of roughly 220 ELO points. Commercial models at the top of the leaderboard generate 1080p/4K natively, produce audio in the same inference pass, support 15–20 second clips, and have substantially larger training data investment.
 
 The comparison that matters for HunyuanVideo is not against HappyHorse-1.0. It is: "What do you get for free, locally, with full control?" On that question, HunyuanVideo-1.5 remains among the best answers available.
 
@@ -301,7 +303,7 @@ The license is the biggest problem in the family. Excluding the EU, UK, and Sout
 
 The deepfake and NSFW controversy is documented and intractable. HunyuanCustom expanded the surface in a direction that is difficult to justify from a misuse-prevention perspective.
 
-By May 2026, HunyuanVideo is a solid mid-tier choice for open-source video generation — not the best available, but well-understood, well-supported, and backed by an ecosystem of 12,000 GitHub stars, 128+ Civitai LoRAs, and a complete ComfyUI workflow library.
+As of this August 2026 audit, HunyuanVideo is a solid mid-tier choice for open-source video generation — not the best available, but well-understood, well-supported, and backed by an ecosystem of 12,400+ GitHub stars (both repos combined), 128+ Civitai LoRAs, and a complete ComfyUI workflow library.
 
 **Rating: 4/5**
 

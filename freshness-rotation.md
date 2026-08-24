@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 80/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 85/1006.**
 
 ---
 
@@ -100,11 +100,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 78. `content/builders-log/ios-27-foundation-models-multimodal-image-input-builder-guide/index.md` — 2c/59i (90d), sources_audited: 2026-08-24
 - [x] 79. `content/reviews/dns-domain-management-mcp-servers.md` — 1c/5959i (90d), sources_audited: 2026-08-24
 - [x] 80. `content/reviews/cogvideox-zhipu-ai-open-source-video-generation.md` — 1c/2713i (90d), sources_audited: 2026-08-24
-- [ ] 81. `content/reviews/tii-falcon-3-open-weight-llm-family-review.md` — 1c/1851i (90d), sources_audited: 2026-07-27
-- [ ] 82. `content/reviews/framepack-lllyasviel-long-video-generation-consumer-gpu.md` — 1c/1829i (90d), sources_audited: 2026-07-26
-- [ ] 83. `content/reviews/code-intelligence-codebase-graph-mcp-servers.md` — 1c/1521i (90d), sources_audited: 2026-07-26
-- [ ] 84. `content/reviews/hunyuanvideo-tencent-open-source-video-generation.md` — 1c/1442i (90d), sources_audited: 2026-07-26
-- [ ] 85. `content/reviews/microsoft-phi-4-small-language-model-family-review.md` — 1c/1411i (90d), sources_audited: 2026-07-26
+- [x] 81. `content/reviews/tii-falcon-3-open-weight-llm-family-review.md` — 1c/1851i (90d), sources_audited: 2026-08-24
+- [x] 82. `content/reviews/framepack-lllyasviel-long-video-generation-consumer-gpu.md` — 1c/1829i (90d), sources_audited: 2026-08-24
+- [x] 83. `content/reviews/code-intelligence-codebase-graph-mcp-servers.md` — 1c/1521i (90d), sources_audited: 2026-08-24
+- [x] 84. `content/reviews/hunyuanvideo-tencent-open-source-video-generation.md` — 1c/1442i (90d), sources_audited: 2026-08-24
+- [x] 85. `content/reviews/microsoft-phi-4-small-language-model-family-review.md` — 1c/1411i (90d), sources_audited: 2026-08-24
 - [ ] 86. `content/reviews/datadog-mcp-server.md` — 1c/1313i (90d), sources_audited: 2026-08-13
 - [ ] 87. `content/reviews/blender-mcp-server.md` — 1c/1159i (90d), sources_audited: 2026-08-01
 - [ ] 88. `content/reviews/google-imagen-3-text-to-image-generation-deepmind.md` — 1c/1113i (90d), sources_audited: 2026-07-26
