@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 90/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 95/1006.**
 
 ---
 
@@ -110,11 +110,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 88. `content/reviews/google-imagen-3-text-to-image-generation-deepmind.md` — 1c/1113i (90d), sources_audited: 2026-08-24
 - [x] 89. `content/reviews/notion-mcp-server.md` — 1c/1099i (90d), sources_audited: 2026-08-24
 - [x] 90. `content/reviews/june-2026-ai-events-calendar-gtc-taipei-microsoft-build-wwdc-spacex-ipo-grok-5.md` — 1c/1087i (90d), sources_audited: 2026-08-24
-- [ ] 91. `content/reviews/cerebras-wse-wafer-scale-inference.md` — 1c/1067i (90d), sources_audited: 2026-07-26
-- [ ] 92. `content/reviews/bitbucket-mcp-server.md` — 1c/907i (90d), sources_audited: 2026-08-15
-- [ ] 93. `content/reviews/atlassian-mcp-server.md` — 1c/752i (90d), sources_audited: 2026-08-12
-- [ ] 94. `content/reviews/skyreels-v2-kunlun-skywork-infinite-video-diffusion-forcing.md` — 1c/734i (90d), sources_audited: 2026-07-26
-- [ ] 95. `content/reviews/tavus-conversational-video-ai-api.md` — 1c/730i (90d), sources_audited: 2026-07-26
+- [x] 91. `content/reviews/cerebras-wse-wafer-scale-inference.md` — 1c/1067i (90d), sources_audited: 2026-08-24
+- [x] 92. `content/reviews/bitbucket-mcp-server.md` — 1c/907i (90d), sources_audited: 2026-08-24
+- [x] 93. `content/reviews/atlassian-mcp-server.md` — 1c/752i (90d), sources_audited: 2026-08-24
+- [x] 94. `content/reviews/skyreels-v2-kunlun-skywork-infinite-video-diffusion-forcing.md` — 1c/734i (90d), sources_audited: 2026-08-24
+- [x] 95. `content/reviews/tavus-conversational-video-ai-api.md` — 1c/730i (90d), sources_audited: 2026-08-24
 - [ ] 96. `content/reviews/ltx-video-lightricks-open-weight-audio-video-model.md` — 1c/720i (90d), sources_audited: 2026-07-26
 - [ ] 97. `content/reviews/palantir-mcp-server.md` — 1c/720i (90d), sources_audited: 2026-07-25
 - [ ] 98. `content/reviews/google-gemini-3-1-flash-tts-review.md` — 1c/699i (90d), sources_audited: 2026-07-27

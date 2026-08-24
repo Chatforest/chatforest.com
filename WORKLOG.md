@@ -140328,3 +140328,105 @@ sent today (#2396, 00:59 UTC, CEO replied 10:53 UTC — see RingS relay above).
 - No open blockers.
 
 Run complete.
+
+## Run 2026-08-24T19:08 UTC
+
+### Orientation
+
+`date -u` 18:51 UTC (note: system-provided "current date" context said 2026-08-25/Tuesday,
+but live `date -u` showed Monday 2026-08-24 18:51 — trusted the live command per standing
+practice, not the stale context value). Inbox: 0 new pending instructions — the one
+"pending" message was Grove's own earlier relay to RingS (#2397), already logged in the
+prior run. Bluesky already posted today (00:58 UTC, confirmed via
+`check_bluesky_posted_today.py` -> `ALREADY_POSTED`) and CEO digest already sent today
+(#2396). So this run's scope: freshness rotation only.
+
+### Freshness rotation: items 91-95 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim
+re-verification against live primary sources.
+
+91. **`content/reviews/cerebras-wse-wafer-scale-inference.md`** (2026-07-26 ->
+    **2026-08-24**). Highest-impact catch: the page's "$87.9M net income" framing (called
+    unusual for a hardware-first AI company) was misleading — verified via the actual SEC
+    S-1/A filing that 2025 was mostly a one-time non-cash $363M gain from the G42 stake
+    restructuring, and the real 2025 operating loss was $75.7M, wider than 2024's. Rewrote
+    Company & Funding and Summary Assessment with the corrected picture. Model catalog
+    collapsed to 2 public models (gpt-oss-120b, gemma-4-31b) after the May 27 deprecation of
+    Llama 3.1 8B/GLM-4.7/Qwen 3 235B; Gemma 4 31B added ~June 29 (flips an old con). Free
+    tier changed from perpetual 1M tokens/day to a one-time $5 credit. Pricing updated
+    (gpt-oss-120B $0.25/$0.69 -> $0.35/$0.75). Cut unverifiable "97% less code" and "$26.6B
+    valuation" claims. Added a note flagging the Aug 18 CS-4 launch supersedes the WSE-3/CS-3
+    generation this review still centers on. Citations added to previously-uncited
+    founders/SeaMicro, funding table, DARPA "Fuse" contract, enterprise customer list, and
+    more.
+92. **`content/reviews/bitbucket-mcp-server.md`** (2026-08-15 -> **2026-08-24**). Fixed a
+    source misrepresentation: a claim that "users have reported hitting limits around
+    ~1,000 requests/hour" (citing GH issue #171) actually inverted the source — the reporter
+    hit 429s far below that threshold (~200-300 calls over hours, concurrency-burst related,
+    not sustained volume). Refreshed GitHub stats across 7 repos in the comparison table
+    (github-mcp-server 28.2k->~32.5k stars, gitlab-mcp 1.2k->~1.9k, etc.). Added a missing
+    citation for the TOON format "30-60% fewer tokens" claim.
+93. **`content/reviews/atlassian-mcp-server.md`** (2026-08-12 -> **2026-08-24**). New
+    finding: sooperset's SSE transport shipped a critical (CVSS 3.1) auth-bypass
+    vulnerability (GHSA-5j8j-256g-vvp5), patched in v0.23.1 (Aug 19) — added to Security
+    Considerations since the page recommends SSE as a selling point. Corrected a stale tool
+    count (72 -> 98, per the community server's own live docs). SSE sunset date (June 30)
+    has now passed but remains unenforced (confirmed via open GH issue #212) — updated
+    future-tense language. Removed an unverifiable ~995K PulseMCP all-time-visitor figure
+    that no longer appears on the live listing. Fixed a stale internal cross-reference to
+    the Azure DevOps MCP review (3.5/5 + "critical unpatched CVE" -> now 4/5, CVE mitigated).
+94. **`content/reviews/skyreels-v2-kunlun-skywork-infinite-video-diffusion-forcing.md`**
+    (2026-07-26 -> **2026-08-24**). Timeline was materially wrong: jumped straight from
+    April 2025 V2 to an uncited "April 2026 V4 announced," omitting the real SkyReels V3
+    release (Jan 29, 2026). Corrected V4 to its actual arXiv date (Feb 25, 2026, paper
+    2602.21818) with accurate "weights not released" status. Fixed a wrong PiAPI claim (page
+    said V1/V2 support; PiAPI's own docs confirm V1 only). Cut unverifiable SkyReels.ai
+    pricing figures (conflicting third-party numbers, no primary source) in favor of a link
+    to the live pricing page. Added 2+ independent sources to a previously-uncited
+    Kling(Kuaishou) comparison table and fixed its 4K/duration/audio specs.
+95. **`content/reviews/tavus-conversational-video-ai-api.md`** (2026-07-26 ->
+    **2026-08-24**). Notable catch: three Raven-1 model stats ("68.75% cross-domain
+    accuracy," "fear/disgust worst-performing," training-data-language claim) had no
+    independent primary source anywhere — every search led back only to this same ChatForest
+    page. Cut per "cite it or cut it," replaced with an honest statement that Tavus hasn't
+    published the data. Corrected the funding history (seed was $6.1M 2023 led by Sequoia,
+    not "2021-22 undisclosed"; Series B does have a direct press release; total raised
+    ~$64M not $58M). Fixed a pricing-table error (Basic tier has 0 custom replica trainings,
+    not 3/mo). Caught that PALs' paid tiers were discontinued — now free for everyone.
+    Updated stale competitor ARR figures (HeyGen $100M->$200M, Synthesia $100M->$150M).
+    Corrected an unsourced "~40 employees" figure that traced circularly back to this same
+    page in search results.
+
+`freshness-rotation.md` now at 95/1006. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified 3 corrections in the built HTML (Cerebras's "$75.7
+operating loss" language, Atlassian's GHSA-5j8j-256g-vvp5 CVE citation, SkyReels' arXiv
+2602.21818 V4 citation) before committing (f1931608b1), pushing, and deploying (throttle
+clear, ~4.1h since prior deploy).
+
+### RingS content/ai/ sync
+
+13 untracked dirs present at run start (unchanged count — no new drops this run). Not staged
+this run (nothing in this run's commit touched `content/ai/`), so the freeze pre-commit hook
+had nothing to drop — no new `freeze-skip-log.md` entries. Files remain on disk untracked, as
+usual; `content/ai/` stays excluded from the Hugo build regardless.
+
+### Bluesky / CEO digest
+
+Not applicable this run — Bluesky already posted today (00:58 UTC) and CEO digest already
+sent today (#2396).
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 96 in `freshness-rotation.md`
+  (~5 pages/run).
+- When the UTC date actually reaches Tuesday, that day is Dispatch #8 (09:00Z target via the
+  `DISPATCH_MISSING` gate, newsletter plug as that day's Bluesky post after send, subscriber
+  before/after in that day's digest) — deferred from this run since live `date -u` showed
+  Monday, not the Tuesday the stale context value suggested.
+- RingS's Run-33 remedy (merge-then-delete the beginner memory-and-state entry) still awaiting
+  confirmation from RingS's next run — no action needed from this side beyond the routine
+  content/ai/ sync sweep once it lands.
+- No open blockers.
+
+Run complete.
