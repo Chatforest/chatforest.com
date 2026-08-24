@@ -140026,3 +140026,97 @@ and the CEO's outstanding GSC data ask:
 - No open blockers.
 
 Run complete.
+
+## Run 2026-08-24T04:49 UTC
+
+### Orientation
+
+`date -u` 04:49 UTC. Inbox: 0 new pending (only my own unread-by-CEO #2396 digest from the prior
+run showed up under status=pending, which is expected — no new instructions). Bluesky already
+posted today (`check_bluesky_posted_today.py` -> `ALREADY_POSTED`, 00:58 UTC). CEO digest cap
+already used today (#2396, same run). So this run's scope: freshness rotation only.
+
+### Freshness rotation: items 76-80 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim
+re-verification against live primary sources. 4 of 5 had real, fixable drift.
+
+76. **`content/builders-log/windsurf-devin-desktop-rebrand-devin-local-acp-builder-guide/index.md`**
+    (2026-07-29 -> **2026-08-24**). Biggest catch: the page said Cascade would be hard-removed
+    after July 1, 2026 — that deadline has passed, and Cognition's own Devin Desktop changelog
+    still references Cascade (as an optional, per-team toggle) in dated entries through August 21,
+    2026. Added a dated correction, softened the migration urgency, and fixed the table. Also
+    resolved an internal contradiction (the ACP adopter count was cited as both "50+" and "25+" in
+    the same page) against the live `zed.dev/acp` directory — settled on the actual current count
+    (47 agent implementations), since Zed doesn't publish an official adopter total. Fixed an
+    overclaimed JetBrains-products attribution (the source only says "JetBrains IDEs" generically).
+77. **`content/builders-log/ios-27-siri-extensions-api-builder-guide-wwdc-2026/index.md`**
+    (2026-07-29 -> **2026-08-24**). Confirmed no status change since the July 29 correction —
+    Siri Extensions remains reported-but-unconfirmed through iOS 27 developer beta 6 (Aug 17,
+    2026); checked 9to5Mac/MacRumors beta coverage and genai.apple.com directly. Strengthened a
+    citation (added The Next Web alongside 9to5Mac) to meet the site's >=2-source bar for the
+    named-provider claim, since close re-read showed 9to5Mac's framing of Gemini's role was more
+    nuanced than the original single-cite implied. Declined to cite a single-source developer forum
+    post claiming partial success getting a Claude extension working via SIP-disabled internal
+    APIs — correctly judged too thin to add per the site's single-source caution.
+78. **`content/builders-log/ios-27-foundation-models-multimodal-image-input-builder-guide/index.md`**
+    (2026-07-29 -> **2026-08-24**). Fixed a stale on-device context-window figure: a third-party
+    developer blog's "4,096 tokens" (that was iOS 26's limit) is now 8,192 tokens on iOS 27 per
+    Apple's own WWDC26 session page, fetched directly — primary source over aggregator, per house
+    style. All other links/claims held up clean.
+79. **`content/reviews/dns-domain-management-mcp-servers.md`** (2026-08-14 -> **2026-08-24**, only
+    10 days since last audit but this category moves fast). Hostinger's official MCP grew 320 ->
+    365 tools in those 10 days (verified against the live README), Cloudflare's official
+    `cloudflare/mcp` 731 -> 756 stars, minor star drift on 2 other servers. NameSilo, GoDaddy,
+    Instant Domain Search, and WhoisXML API's headline figures all held up unchanged.
+80. **`content/reviews/cogvideox-zhipu-ai-open-source-video-generation.md`** (2026-07-26 ->
+    **2026-08-24**). Heaviest catch: `THUDM/CogVideo` has been transferred to the `zai-org` GitHub
+    org (301 redirect), star count 12,700 -> 12,969 (title/meta/H1 all updated). HuggingFace
+    monthly-download counters drifted (5B model 36,141 -> 17,309 — a real drop worth naming, though
+    like counts stayed essentially flat, added as context). Discovered Zhipu/Z.ai quietly shipped a
+    commercial-only, closed-weight "CogVideoX-3" (4K, audio, first/last-frame) on its API — added a
+    correction clarifying it doesn't change the open-source picture this review covers. Reversed a
+    stale "no active CogVideoX on Replicate" claim (two models are now live and runnable). Fixed
+    several repo ownership/rename drifts: `finetrainers` moved to the official `huggingface` GitHub
+    org, `CogVideoX-Fun` renamed to `aigc-apps/VideoX-Fun`.
+
+`freshness-rotation.md` now at 80/1006. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified all 5 corrections in the built HTML (CogVideoX's 12,969
+stars + CogVideoX-3 mention, Hostinger's 365 tools, the Foundation Models 8,192-token fix, the
+Windsurf Cascade correction, the Siri Extensions Aug 24 update note) before committing (2b2542e96e,
+plus a small follow-up commit 16ad1868cb logging this run's freeze-skip hook drops), pushing,
+deploying (throttle clear, ~4h since prior deploy), and live-verifying two of the corrections
+(CogVideoX stars, Windsurf Cascade correction) on the served pages.
+
+### RingS content/ai/ sync
+
+13 untracked dirs present at run start (unchanged count — no new drops this run). Staged as usual;
+the freeze pre-commit hook mechanically dropped all 15 new-file additions from the commit (logged
+to `freeze-skip-log.md`, files remain on disk untracked) — this is routine, confirmed via
+`git log` that no `content/ai/` additions have actually landed in git since the freeze started
+2026-08-13 (98 freeze-skip-log entries for `content/ai` paths). Correcting prior-run WORKLOG
+language that implied these get "synced into git as usual" — they don't land; the *attempt* is
+routine, the hook always drops it. No live-site impact either way since `content/ai/` is excluded
+from the Hugo build regardless.
+
+### Bluesky / CEO digest
+
+Not applicable this run — Bluesky already posted today (00:58 UTC) and CEO digest already sent
+today (#2396, 01:00 UTC, still unread by CEO as of this run).
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 81 in `freshness-rotation.md`
+  (~5 pages/run).
+- **Tomorrow (2026-08-25, UTC Tuesday) = Dispatch #8 day**: 09:00Z target via the `DISPATCH_MISSING`
+  gate, newsletter plug as the day's Bluesky post after send, subscriber before/after in that day's
+  digest.
+- CEO's transparency-report pickup-watch data and RingS's track-collapse policy question (both
+  relayed in #2396) are still awaiting CEO reply — watch for it and relay any ruling back to RingS
+  (aiu 64) once it lands.
+- Correction noted above re: `content/ai/` sync language — future runs should describe this as
+  "sync attempted, hook drops per freeze" rather than "synced as usual," to avoid implying the
+  files actually land in git.
+- No open blockers.
+
+Run complete.
