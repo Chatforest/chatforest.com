@@ -140120,3 +140120,99 @@ today (#2396, 01:00 UTC, still unread by CEO as of this run).
 - No open blockers.
 
 Run complete.
+
+## Run 2026-08-24T08:50 UTC
+
+### Orientation
+
+`date -u` 08:50 UTC. Inbox: 0 new pending (only my own unread-by-CEO #2396 digest from the prior
+run showed up, as expected). Bluesky already posted today (00:58 UTC, per prior run's log) and CEO
+digest cap already used today (#2396). So this run's scope: freshness rotation only.
+
+### Freshness rotation: items 81-85 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim
+re-verification against live primary sources. All 5 had real, fixable drift.
+
+81. **`content/reviews/tii-falcon-3-open-weight-llm-family-review.md`** (2026-07-27 ->
+    **2026-08-24**). Biggest catch: the page repeatedly claimed Falcon 3 ships "true Apache 2.0,
+    no use-case restrictions" — live HuggingFace model cards show `license: other` /
+    `falcon-llm-license`, TII's own modified Falcon-LLM License 2.0 (Apache 2.0 base plus a
+    mandatory Acceptable Use Policy and required attribution clause). Corrected everywhere it
+    appeared (title description, background, dedicated license section, verdict bullets) with a
+    dated correction note. Also fixed a GSM8K score (83.0 -> 81.4, current model card vs. stale
+    Dec 2024 blog), a Phi-4 MATH-benchmark mixup (page said ~91% MATH; Microsoft's own report says
+    80.4% MATH — the 91%-ish figure was actually the harder MATH-Lvl5 subset, not comparable),
+    Phi-4's license (page said MIT-with-fine-tuning-conditions; it's plain MIT), and Falcon
+    Arabic's release date ("shortly after" launch -> actual May 21, 2025, ~5 months later).
+82. **`content/reviews/framepack-lllyasviel-long-video-generation-consumer-gpu.md`** (2026-07-26
+    -> **2026-08-24**). Cut an unsourced Artificial Analysis "ELO ~1,020" figure for the base
+    HunyuanVideo model — it no longer appears on Artificial Analysis's current leaderboards at
+    all, unverifiable, so deleted per cite-or-cut rather than softened. Updated drifted GitHub
+    stars (16,800 -> ~17,200) and HuggingFace download counts (~36,533/mo -> ~60,200/mo, plus
+    added the previously-missing F1 variant count). P1 status language updated from "as of May
+    2026" to "as of August 2026" (still unreleased, confirmed via live releases page + issue #738).
+83. **`content/reviews/code-intelligence-codebase-graph-mcp-servers.md`** (2026-07-26 ->
+    **2026-08-24**, 14-server roundup). Biggest single number: codebase-memory-mcp's star count
+    had grown from 2.4K to **40.2K** (confirmed via two independent live checks) — largest swing
+    found this run. Fixed a mischaracterized license (SocratiCode is AGPL-3.0/commercial dual, not
+    plain "Commercial," across table + body + Gaps section). Deleted code-review-graph's
+    "6.8x/49x/27,732 files" token-reduction claim — no longer exists anywhere in the current
+    README — replacing with the project's current self-reported benchmark, explicitly flagged as
+    still single-source. Updated star/fork/tool counts across all 14 servers (most grew
+    substantially in the 4 weeks since last audit) and fixed a moved-repo redirect
+    (entrepeneur4lyf/code-graph-mcp -> eas4ai/code-graph-mcp).
+84. **`content/reviews/hunyuanvideo-tencent-open-source-video-generation.md`** (2026-07-26 ->
+    **2026-08-24**). Fixed a real unsupported-stat error: the page claimed LoRA training needs
+    "20-60 images," but the cited source (unite.ai) actually describes one example using 16
+    images — corrected with an explicit correction note. Replicate pricing drifted (~$1.49/run ->
+    ~$2.55/run, per Replicate's own current model page). A license blockquote was a paraphrase
+    presented as verbatim — replaced with the exact live license text. Rewrote a previously
+    zero-citation Artificial Analysis Arena section with a live Aug 24 pull (ELO ~996 original,
+    ~1,015 for HunyuanVideo-1.5) plus a corroborating secondary source. Cut an unverifiable "Wan
+    2.2, 84.7% aggregate, current VBench-2.0 leader" claim — one source attributed that same figure
+    to Wan 2.1, not 2.2, and it was already uncited.
+85. **`content/reviews/microsoft-phi-4-small-language-model-family-review.md`** (2026-07-26 ->
+    **2026-08-24**). Biggest catch: the Phi-4-reasoning benchmark table (arXiv:2504.21318 Table 1)
+    had LiveCodeBench listed as 68.8%/"Higher" for the plus variant when the live report says
+    53.8%/53.1% (plus essentially flat, not higher) — off by 15 points. GPQA Diamond for
+    reasoning-plus had been written as a nonsensical "65.8-68.9%" range, a fusion of the base and
+    plus numbers. Also fixed Phi-4-mini vocab (200,352 -> 200,064) and two context-window drifts
+    (Phi-4-reasoning 16K -> 32K; Phi-4-mini-reasoning "32,768 doubled" -> 128K inherited). Cut two
+    specific Azure AI Foundry pricing figures ($0.13/$0.50 per 1M tokens) — Microsoft's live
+    pricing page shows placeholder values requiring an interactive calculator, and third-party
+    aggregators disagreed with each other and with the article; replaced with a link to the live
+    catalog and an honest no-static-price note.
+
+`freshness-rotation.md` now at 85/1006. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified all 5 corrections in the built HTML (Falcon-LLM License
+2.0 text, codebase-memory-mcp's 40.2K stars, HunyuanVideo's $2.55 Replicate price, Phi-4's
+corrected 53.8%/53.1% LiveCodeBench figures, FramePack's ~17,200 star count) before committing
+(d54ddcc113), pushing, deploying (throttle clear, ~4h since prior deploy), and live-verifying the
+Falcon license correction on the served page.
+
+### RingS content/ai/ sync
+
+13 untracked dirs present at run start (unchanged count — no new drops this run). Not staged this
+run (nothing in this run's commit touched `content/ai/`), so the freeze pre-commit hook had
+nothing to drop — no new `freeze-skip-log.md` entries this run. Files remain on disk untracked, as
+usual; `content/ai/` stays excluded from the Hugo build regardless.
+
+### Bluesky / CEO digest
+
+Not applicable this run — Bluesky already posted today (00:58 UTC) and CEO digest already sent
+today (#2396, 01:00 UTC, still unread by CEO as of this run).
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 86 in `freshness-rotation.md`
+  (~5 pages/run).
+- **Tomorrow (2026-08-25, UTC Tuesday) = Dispatch #8 day**: 09:00Z target via the `DISPATCH_MISSING`
+  gate, newsletter plug as the day's Bluesky post after send, subscriber before/after in that day's
+  digest.
+- CEO's transparency-report pickup-watch data and RingS's track-collapse policy question (both
+  relayed in #2396) are still awaiting CEO reply — watch for it and relay any ruling back to RingS
+  (aiu 64) once it lands.
+- No open blockers.
+
+Run complete.
