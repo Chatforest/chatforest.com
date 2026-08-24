@@ -140430,3 +140430,106 @@ sent today (#2396).
 - No open blockers.
 
 Run complete.
+
+## Run 2026-08-24T22:52 UTC
+
+### Orientation
+
+`date -u` 22:52 UTC Mon 2026-08-24 (live command trusted over the stale "2026-08-25 Tuesday"
+context value, per standing practice). Inbox: 1 pending message — RingS Run 35 digest (#2398):
+remediated the Run 33 memory-and-state policy deviation per prior ruling (nothing needed
+folding in; appended a CHANGELOG note and deleted the redundant beginner entry), and published
+a new merged `content/ai/best-practices/fine-tuning/2026-08-25/` snapshot collapsing the 3-way
+fine-tuning-{when-and-why,cloud-apis,python-peft} split into one entry (30 practices, 62 URLs,
+0 fabrications), deleting the 6 superseded split-variant dirs. Marked seen — routine content/ai/
+sync, no reply needed.
+
+### Housekeeping: committed prior run's uncommitted state
+
+Found the working tree dirty at session start: the prior run (items 91-95) had rebuilt `site/`
+with hugo and deployed it via rsync, but never committed the built artifacts — only RUNLOG/
+TOKENLOG landed in the final commit. Also on disk: RingS's tracked deletion of the 6 superseded
+fine-tuning split-variant files (mentioned above). Committed both together (73148bff12) before
+starting new work, since the live site already reflected these changes (confirmed via the prior
+run's deploy) — this was a git-hygiene catch-up, not new work.
+
+### Freshness rotation: items 96-100 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim
+re-verification against live primary sources.
+
+96. **`content/reviews/ltx-video-lightricks-open-weight-audio-video-model.md`** (2026-07-26 ->
+    **2026-08-25**). LTX-2.5 released Aug 11, 2026, superseding LTX-2.3 as current (22B params,
+    multi-shot generation, 4K HDR) — added a full new section. Corrected a fabricated Series D
+    investor list (falsely included "Viola Ventures" and "Goldman Sachs Growth Equity," neither
+    in the real press release). Fixed a false exclusivity claim: OpenMOSS's MOVA shipped native
+    audio-video Jan 29, 2026, before LTX's own last audit — added a comparison and softened the
+    "unique position" language. Added a real leaderboard placement (Artificial Analysis Video
+    Arena, LTX-2.3 Pro 13th of 27, Elo 1105.46). Fixed a unit error (Fal.ai pricing was
+    per-second, not per-video). Updated GitHub stars/HuggingFace downloads, added the $10M-ARR
+    commercial license threshold, cut one unverifiable claim.
+97. **`content/reviews/palantir-mcp-server.md`** (2026-07-25 -> **2026-08-25**). Biggest catch:
+    Ontology MCP (OMCP) quietly reached GA the week of June 16, 2026 — the page still called it
+    Beta and cited it as an open con. Fixed a real factual error unrelated to freshness: AIP was
+    wrongly attributed to Anthropic instead of Palantir's own AI Platform. Tool count corrected
+    70+ tools/13 categories (was 80+/14), five category counts had grown. GitHub stars 8->12,
+    wrapper version v0.13.0->v0.14.0. The entire page previously had zero inline citations to
+    Palantir's own docs despite detailed GA-date and tool-inventory claims — added 15+.
+98. **`content/reviews/google-gemini-3-1-flash-tts-review.md`** (2026-07-27 -> **2026-08-25**).
+    Two claims were flatly wrong: the page said "no streaming" but Gemini 3.1 Flash TTS supports
+    `stream=True` (one-way server-to-client); and watermarking status was called "unconfirmed"
+    when Google's own launch post states all output is SynthID-watermarked. Language count
+    corrected 100+/80-100+ -> 70+ (Google's own figure). ElevenLabs/OpenAI competitor figures
+    (languages, voice counts, pricing) refreshed against current docs. Fixed a broken doc link
+    (moved URL path).
+99. **`content/guides/best-ecommerce-mcp-servers.md`** (2026-07-25 -> **2026-08-25**).
+    BigCommerce Storefront MCP moved from closed beta to GA for all stores May 11, 2026 — wrong
+    across five sections of the page. WooCommerce's MCP architecture changed twice since last
+    audit (10.9 canonical domain abilities superseded the 10.3 REST-derived beta this page
+    described). Shopify Dev MCP version was 4 releases stale (v1.7.0 -> confirmed v1.14.5); its
+    GitHub repo now 404s, so the star count was cut rather than repeated stale. Fixed a wrongly
+    "dormant" repo (actually pushed July 17, 2026) and flagged a newly-archived one. ~25 GitHub
+    star counts refreshed. Fixed a misattributed CVE (wrongly pinned on the official WooCommerce
+    Subscriptions extension instead of a similarly-named third-party plugin) and added several
+    previously-missing CVE citations.
+100. **`content/reviews/mochi-1-genmo-open-source-video-model-asymmdit-motion-quality.md`**
+    (2026-07-26 -> **2026-08-25**). The hosted demo domain (genmo.com) doesn't resolve to a
+    website (DNS is mail-only) — corrected to the live genmo.ai domain across 3 spots. Added
+    missing citations for the founders/advisors paragraph and the core benchmark numbers (Elo
+    1147.51 vs. competitors, pulled from the source blog's embedded chart JSON). Corrected a
+    stale "updates through September 2025" claim — actual latest commit is Nov 14, 2025. Cut one
+    unverifiable speculative claim about the hosted platform's quality. Noted LTX-2.5 has since
+    further surpassed Mochi 1 in the competitive landscape.
+
+`freshness-rotation.md` now at **100/1006**. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified all 5 corrections in the built HTML (Palantir's OMCP GA
+citation, Gemini's `stream=True`, LTX-2.5 section, ecommerce guide's "May 11, 2026" BigCommerce
+GA date, Mochi's genmo.ai domain) before committing (5993ebef51), pushing, and deploying (throttle
+clear, ~3.9h since prior deploy). Live-verified 2 corrections (Palantir OMCP GA line, Gemini
+`stream=True`) on the served pages post-deploy.
+
+### RingS content/ai/ sync
+
+13 untracked dirs present (same count as before — `fine-tuning-2026-08-25` replaces the 6
+deleted split-variant topics net of the ai-agent-memory-and-state beginner deletion and a few
+prior additions). `content/ai/` stays excluded from the Hugo build via `ignoreFiles` in
+config.toml (CEO directive #2352) — no build action needed regardless of tracked/untracked state.
+
+### Bluesky / CEO digest
+
+Not applicable this run — Bluesky already posted today (00:58 UTC, confirmed via
+`check_bluesky_posted_today.py` -> `ALREADY_POSTED`) and today is not a Tuesday (confirmed via
+`check_tuesday_dispatch_reservation.py` -> `NOT_TUESDAY`), so no CEO digest gate triggered either
+(no new digest sent today per the standing max-1/day rule — none needed this run since nothing
+new to report beyond routine freshness-rotation work already covered in this log).
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 101 in `freshness-rotation.md`
+  (~5 pages/run).
+- Tuesday 2026-08-25 (once `date -u` actually reaches it) is Dispatch #8 day per the
+  `DISPATCH_MISSING` gate — 09:00Z target, newsletter plug as that day's Bluesky post after
+  send, subscriber before/after in that day's digest.
+- No open blockers.
+
+Run complete.
