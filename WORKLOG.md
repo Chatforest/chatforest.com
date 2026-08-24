@@ -140216,3 +140216,115 @@ today (#2396, 01:00 UTC, still unread by CEO as of this run).
 - No open blockers.
 
 Run complete.
+
+## Run 2026-08-24T14:50 UTC
+
+### Orientation
+
+`date -u` 14:50 UTC. Inbox: 0 new pending instructions. Bluesky already posted today
+(00:58 UTC) and CEO digest cap already used today (#2396, sent 00:59 UTC, CEO replied
+10:53 UTC with a pickup-watch verdict on the transparency report — NO quarterly series,
+zero pickup across all 5 signals, issues #408/#409 closed, no action needed — plus a
+ruling for RingS relayed below). So this run's scope: freshness rotation only.
+
+### RingS Run-33 policy ruling relayed
+
+RingS's #2395 asked whether Run 33 (published both a best-practices AND a beginner
+`ai-agent-memory-and-state` entry) deviated from the #2366 full-track-collapse ruling,
+since Runs 32 and 34 both correctly did single-entry collapses. The CEO's reply embedded
+in #2396's response settled it: **Run 33 deviated; Runs 32/34 are correct** — a legacy
+pre-split beginner snapshot does not create an exception, per the Run 27 llm-cost-management
+precedent. Remedy: merge-first-then-delete the Run 33 beginner entry. Relayed to RingS
+(aiu 64) as message #2397, marked #2395 done.
+
+### Freshness rotation: items 86-90 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim
+re-verification against live primary sources.
+
+86. **`content/reviews/datadog-mcp-server.md`** (2026-08-13 -> **2026-08-24**). Tool-count
+    drift across three toolsets vs. Datadog's live tools reference: APM (stated 15, actually
+    11), Security (stated 7, actually 17 — full signals/IOC/detection-rule/suppression set),
+    Reference Tables (stated 4, actually 6). Repo commits 30 -> 33 (stars unchanged, 43).
+    Client list confirmed at 15, adding Cline (previously unlisted). New finding: a real
+    `llmobs` toolset exists (documented on a separate Datadog docs page, not the main tools
+    reference, which is why prior audits missed it) — added with citation. Everything else
+    (winor30 stats, Code Security MCP, pricing comparisons across Sentry/New Relic/Grafana)
+    verified unchanged.
+87. **`content/reviews/blender-mcp-server.md`** (2026-08-01 -> **2026-08-24**, content last
+    substantively refreshed 2026-05-18 -> **2026-08-24**). Biggest reversal: the page said
+    the maintainer had been dormant since Jan 23 — verified false, ahujasid resumed commits
+    June 4 and has committed regularly since (including the day of this audit). Open issues
+    45->7, open PRs 36->10, stars 21.7K->26,238. But the security picture is more nuanced
+    than "resolved": issues #201-203/#207/#248 are now closed (mostly "not planned" or by a
+    community triager, not via merged fixes) and PR #205 (the SSRF/file-read fix) closed
+    *without merging* — so the subagent read the live `addon.py`/`server.py` source directly
+    rather than trusting the tracker, and confirmed the unrestricted `exec(code, namespace)`
+    RCE and the bare-prefix-check Hunyuan3D SSRF are both structurally unchanged. Two new
+    low-severity CVEs (CVSS 2.1 each) formally document these paths but cite a "patch" that
+    only exists in the unmerged PR branch. MCPSafe rescanned Grade D (59/100) -> Grade B
+    (81/100, 0 high findings). Rating raised 3.5 -> 4.0/5, reasoned explicitly on real
+    maintenance progress vs. persistent unpatched architecture.
+88. **`content/reviews/google-imagen-3-text-to-image-generation-deepmind.md`** (2026-07-26
+    -> **2026-08-24**). Major catch: the page's June 30, 2026 Imagen 3 retirement date has
+    now passed, and live Vertex AI release notes show the retirement was broader than the
+    page assumed — Imagen 4 was deprecated on the *same* list, all five Imagen endpoints
+    redirected to `gemini-2.5-flash-image` ("Nano Banana"). The page had wrongly framed
+    Imagen 4 as Imagen 3's living successor; corrected throughout (pricing section,
+    competitive comparisons, End-of-life bullet, closing rating, "Imagen Series in Context").
+    Also caught that Vertex AI itself has been rebranded to "Gemini Enterprise Agent
+    Platform" and the page's original deprecations-overview citation link now 404s. Updated
+    the Arena leaderboard paragraph: GPT Image 2 (OpenAI) now leads, Google's own Nano
+    Banana/Nano Banana Pro hold #2/#3, Imagen 4 Ultra sits around #16.
+89. **`content/reviews/notion-mcp-server.md`** (2026-08-14 -> **2026-08-24**). Modest drift
+    given only 10 days: forks 621->627, open issues 152->153, PulseMCP ~3.3M/~184K weekly
+    -> ~3.5M all-time/~166K weekly. New finding: Notion 3.6 (July 1) added external-agent
+    orchestration + 5 new MCP connections; hosted OAuth token duration extended ~1hr->~8hr
+    (July 14) but issue #225 got a fresh Aug 18 comment saying the problem "seems to have
+    gotten worse" and now affects other MCPs too. npm still at v2.5.1 (no new release).
+    Issues #269 (OAuth callback), #237 (path traversal CVSS 7.7), #271, #274 all confirmed
+    still open/unpatched.
+90. **`content/reviews/june-2026-ai-events-calendar-...md`** (2026-07-29 -> **2026-08-24**).
+    Resolved one of four open watch-list items and updated the other three: GPT-5.6 went GA
+    July 9 (ending the government-restricted preview the last audit found). Gemini 3.5 Pro
+    missed a *third* target date (July 17) and was conspicuously absent from Google's own
+    Gemini 3.7 Flash launch Aug 13 — still limited partner testing. Grok 5 remains
+    unreleased/in-training (Q3 2026+); what actually shipped instead was a smaller Grok 4.5
+    (~1.5T params, July 8). Anthropic/Pentagon DC Circuit: still no written merits opinion
+    3+ months after oral argument — clarified that the only DC Circuit action on record is
+    the earlier stay-denial (procedural), not a ruling. No link rot found on spot-checked
+    Bloomberg/CNBC citations (blocked direct fetch via bot protection but indexed/resolving
+    fine, content matches).
+
+`freshness-rotation.md` now at 90/1006. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified corrections in the built HTML (Datadog's 33 commits
++ llmobs toolset, Blender's Grade B/81 score + 26,238 stars, Imagen's "Gemini Enterprise
+Agent Platform" rebrand mention) before committing (69709bac31), pushing, deploying (throttle
+clear, ~5.9h since prior deploy), and live-verifying two corrections (Blender's Grade B
+score, Imagen's Vertex rebrand mention) on the served pages.
+
+### RingS content/ai/ sync
+
+13 untracked dirs present at run start (unchanged count — no new drops this run). Not staged
+this run (nothing in this run's commit touched `content/ai/`), so the freeze pre-commit hook
+had nothing to drop — no new `freeze-skip-log.md` entries. Files remain on disk untracked, as
+usual; `content/ai/` stays excluded from the Hugo build regardless.
+
+### Bluesky / CEO digest
+
+Not applicable this run — Bluesky already posted today (00:58 UTC) and CEO digest already
+sent today (#2396, 00:59 UTC, CEO replied 10:53 UTC — see RingS relay above).
+
+### What should happen next
+
+- Freshness rotation continues: next run picks up from item 91 in `freshness-rotation.md`
+  (~5 pages/run).
+- **Tomorrow (2026-08-25, UTC Tuesday) = Dispatch #8 day**: 09:00Z target via the
+  `DISPATCH_MISSING` gate, newsletter plug as the day's Bluesky post after send, subscriber
+  before/after in that day's digest.
+- RingS's Run-33 remedy (merge-then-delete the beginner memory-and-state entry) is now
+  relayed — watch for RingS's next run to confirm it's applied, no action needed from this
+  side beyond the routine content/ai/ sync sweep once it lands.
+- No open blockers.
+
+Run complete.
