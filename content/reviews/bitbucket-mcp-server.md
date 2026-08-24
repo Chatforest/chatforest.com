@@ -1,15 +1,15 @@
 ---
 title: "Bitbucket MCP Servers — The Missing Piece in Atlassian's AI Strategy"
 date: 2026-03-23T23:55:00+09:00
-sources_audited: 2026-08-15
+sources_audited: 2026-08-24
 description: "Atlassian's official MCP server added Bitbucket Cloud support in April 2026. Community servers cover Server/DC."
-og_description: "Bitbucket MCP ecosystem: official Atlassian support landed April 2026 (Cloud only, 7 tool categories). Community servers at 161 stars max. App Passwords deprecation starts June 2026, full removal July 28, 2026. Rating: 3.5/5."
+og_description: "Bitbucket MCP ecosystem: official Atlassian support landed April 2026 (Cloud only, 7 tool categories). Community servers at ~163 stars max. App Passwords deprecation starts June 2026, full removal July 28, 2026. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Atlassian's Rovo MCP server added official Bitbucket Cloud support in April 2026 — closing the BCLOUD-23748 gap that defined the original review. Community servers continue for Server/Data Center. App Passwords deprecation starts June 2026, full removal July 28, 2026. Rating upgraded 2.5→3.5/5."
-last_refreshed: 2026-05-03
+last_refreshed: 2026-08-24
 ---
 
-**At a glance:** Atlassian's [official Remote MCP Server](https://github.com/atlassian/atlassian-mcp-server) (964 stars, Apache-2.0) now supports **Jira, Confluence, Compass, and — as of April 8, 2026 — Bitbucket Cloud**. The [BCLOUD-23748](https://jira.atlassian.com/browse/BCLOUD-23748) feature request that defined this review at launch has been answered: [Atlassian's Rovo MCP server added 7 Bitbucket tool categories](https://www.atlassian.com/blog/bitbucket/the-atlassian-rovo-mcp-server-now-supports-bitbucket-cloud) covering workspaces, repositories, file contents, pull requests, pipelines, environments, and deployments. Community servers continue to serve supplemental needs: [aashari/mcp-server-atlassian-bitbucket](https://github.com/aashari/mcp-server-atlassian-bitbucket) (160 stars, 6 generic REST tools), [MatanYemini/bitbucket-mcp](https://github.com/MatanYemini/bitbucket-mcp) (161 stars, 25+ tools), and [garc33/bitbucket-server-mcp-server](https://github.com/garc33/bitbucket-server-mcp-server) (66 stars, 21 tools for Bitbucket Server/DC). The ecosystem still lags [GitHub](/reviews/github-mcp-server/) (28.2k-star official server) and [GitLab](/reviews/gitlab-mcp-server/) (built-in official server + 1.2k-star community leader), but the critical gap — zero official Bitbucket MCP support — is closed.
+**At a glance:** Atlassian's [official Remote MCP Server](https://github.com/atlassian/atlassian-mcp-server) (~982 stars, Apache-2.0) now supports **Jira, Confluence, Compass, and — as of April 8, 2026 — Bitbucket Cloud**. The [BCLOUD-23748](https://jira.atlassian.com/browse/BCLOUD-23748) feature request that defined this review at launch has been answered (ticket [closed/resolved April 9, 2026](https://jira.atlassian.com/browse/BCLOUD-23748)): [Atlassian's Rovo MCP server added 7 Bitbucket tool categories](https://www.atlassian.com/blog/bitbucket/the-atlassian-rovo-mcp-server-now-supports-bitbucket-cloud) covering workspaces, repositories, file contents, pull requests, pipelines, environments, and deployments. Community servers continue to serve supplemental needs: [aashari/mcp-server-atlassian-bitbucket](https://github.com/aashari/mcp-server-atlassian-bitbucket) (~160 stars, 6 generic REST tools), [MatanYemini/bitbucket-mcp](https://github.com/MatanYemini/bitbucket-mcp) (~163 stars, 25+ tools), and [garc33/bitbucket-server-mcp-server](https://github.com/garc33/bitbucket-server-mcp-server) (~66 stars, 21 tools for Bitbucket Server/DC). The ecosystem still lags [GitHub](/reviews/github-mcp-server/) (~32.5k-star official server) and [GitLab](/reviews/gitlab-mcp-server/) (built-in official server + ~1.9k-star community leader), but the critical gap — zero official Bitbucket MCP support — is closed.
 
 Atlassian reported [**$6,572M (~$6.6B) total revenue for fiscal year 2026**](https://www.businesswire.com/news/home/20260806396002/en/Atlassian-Announces-Fourth-Quarter-and-Fiscal-Year-2026-Results) (year ended June 30, 2026, up 26% YoY), a public company (NASDAQ: TEAM). The company announced a [**10% workforce reduction**](https://www.atlassian.com/blog/company-news/atlassian-team-update-march-2026) (March 11, 2026, ~1,600 employees) to fund AI development; [CTO Rajeev Rajan departed March 31](https://www.tradingview.com/news/tradingview:4f7f652e225f4:0-atlassian-s-rajeev-rajan-to-step-down-as-cto-taroon-mandhana-and-vikram-rao-promoted/). Bitbucket serves approximately [**65,000 companies** with a **1.17% market share**](https://enlyft.com/tech/products/bitbucket) in the software configuration management category — a distant third behind [GitHub (180M+ developers)](https://github.com/about) and [GitLab (50M+ users)](https://about.gitlab.com/press/releases/2026-03-03-gitlab-reports-fourth-quarter-fiscal-year-2026-financial-results/). Atlassian is a [**Silver member of the Agentic AI Foundation (AAIF)**](https://aaif.io/members) — not a top-tier (Platinum/Gold) member, but not absent from the group either. The company's AI investment is concentrated on **Rovo**, its AI assistant, which now powers official MCP coverage across Jira, Confluence, Compass, and Bitbucket Cloud.
 
@@ -26,7 +26,7 @@ Atlassian's **first-party MCP server** — updated April 8, 2026 to include Bitb
 | Aspect | Detail |
 |--------|--------|
 | Repository | [atlassian/atlassian-mcp-server](https://github.com/atlassian/atlassian-mcp-server) |
-| Stars | ~964 |
+| Stars | ~982 |
 | Products | Jira, Confluence, Compass, **Bitbucket Cloud** (added April 8, 2026) |
 | Authentication | OAuth 2.1, API tokens (Bitbucket: API token only — OAuth on roadmap) |
 | Pricing | Free for all Atlassian Cloud customers (rate-limited by plan) |
@@ -44,7 +44,7 @@ Dozens of tools cover Jira, Confluence, and Compass — plus [**7 new Bitbucket 
 | `bitbucketEnvironment` | Manage deployment environments |
 | `bitbucketDeployment` | Track deployment status and history |
 
-[Works with Claude, ChatGPT, Cursor, VS Code, and other MCP-compatible clients](https://github.com/atlassian/atlassian-mcp-server). Requests are rate-limited by plan tier, but Atlassian has not published exact per-hour quotas; users have [reported hitting limits around ~1,000 requests/hour on paid plans](https://github.com/atlassian/atlassian-mcp-server/issues/171) in community reports — not an official published figure.
+[Works with Claude, ChatGPT, Cursor, VS Code, and other MCP-compatible clients](https://github.com/atlassian/atlassian-mcp-server). Requests are rate-limited by plan tier, but Atlassian has not published exact quotas; one user [reported hitting 429 errors well below an expected ~1,000 requests/hour](https://github.com/atlassian/atlassian-mcp-server/issues/171) — only ~200–300 total calls over several hours, with the 429s correlating to bursts of ~20 parallel calls rather than sustained volume, suggesting a concurrency-based limit rather than a simple hourly quota. As of this audit the issue remains open and unanswered by Atlassian.
 
 **BCLOUD-23748 resolved:** The feature request that defined this review's original "no official support" conclusion was addressed directly by this April 8 release.
 
@@ -59,8 +59,8 @@ The **most feature-rich** community Bitbucket MCP server:
 | Aspect | Detail |
 |--------|--------|
 | Repository | [MatanYemini/bitbucket-mcp](https://github.com/MatanYemini/bitbucket-mcp) |
-| Stars | ~161 |
-| Forks | ~103 |
+| Stars | ~163 |
+| Forks | ~104 |
 | Commits | 69 |
 | Language | TypeScript |
 | License | MIT |
@@ -87,7 +87,7 @@ A leading **community Bitbucket MCP server** — still useful for its generic RE
 |--------|--------|
 | Repository | [aashari/mcp-server-atlassian-bitbucket](https://github.com/aashari/mcp-server-atlassian-bitbucket) |
 | Stars | ~160 |
-| Forks | ~61 |
+| Forks | ~60 |
 | Commits | 595 |
 | Language | TypeScript |
 | NPM Package | `@aashari/mcp-server-atlassian-bitbucket` |
@@ -103,7 +103,7 @@ A leading **community Bitbucket MCP server** — still useful for its generic RE
 | `bb_delete` | Remove resources from endpoints |
 | `bb_clone` | Clone repositories locally |
 
-**Key differentiator:** Rather than building specific tools for each operation, this server exposes generic CRUD operations against the Bitbucket API. The LLM constructs the correct API paths. Uses **TOON (Token-Oriented Object Notation)** format that claims 30-60% fewer tokens than JSON. Supports JMESPath filtering for response customization. Dual auth: Scoped API Tokens and legacy App Passwords.
+**Key differentiator:** Rather than building specific tools for each operation, this server exposes generic CRUD operations against the Bitbucket API. The LLM constructs the correct API paths. Uses the [**TOON (Token-Oriented Object Notation)**](https://github.com/toon-format/toon) format by default; the [server's own README claims 30-60% fewer tokens than JSON](https://github.com/aashari/mcp-server-atlassian-bitbucket), consistent with the [TOON project's own benchmark claims](https://github.com/toon-format/spec). Supports JMESPath filtering for response customization. Dual auth: Scoped API Tokens and legacy App Passwords.
 
 **Limitation:** Generic API tools put the burden on the LLM to know Bitbucket's API structure. More error-prone than purpose-built tools. The tool count (6) is misleading — it's really 5 HTTP verbs plus clone.
 
@@ -118,7 +118,7 @@ The leading **Bitbucket Server / Data Center** MCP server:
 | Repository | [garc33/bitbucket-server-mcp-server](https://github.com/garc33/bitbucket-server-mcp-server) |
 | Stars | ~66 |
 | Forks | ~46 |
-| Commits | 55 |
+| Commits | 61 |
 | Language | TypeScript |
 | Target | Bitbucket Server / Data Center |
 
@@ -151,19 +151,19 @@ The leading **Bitbucket Server / Data Center** MCP server:
 
 ### Other Notable Servers
 
-**[b1ff/atlassian-dc-mcp](https://github.com/b1ff/atlassian-dc-mcp)** (87 stars, TypeScript, MIT) — Multi-product MCP server covering Jira, Confluence, and Bitbucket for Data Center deployments. Monorepo with separate packages per product (`@atlassian-dc-mcp/bitbucket`). Good for teams that want one MCP server for the full Atlassian DC stack.
+**[b1ff/atlassian-dc-mcp](https://github.com/b1ff/atlassian-dc-mcp)** (~91 stars, TypeScript, MIT) — Multi-product MCP server covering Jira, Confluence, and Bitbucket for Data Center deployments. Monorepo with separate packages per product (`@atlassian-dc-mcp/bitbucket`). Good for teams that want one MCP server for the full Atlassian DC stack.
 
 **[Ibrahimogod/bitbucket-mcp](https://github.com/Ibrahimogod/bitbucket-mcp)** (0 stars, Rust, MIT, 20+ tools) — High-performance Rust implementation with comprehensive Bitbucket Cloud API coverage including pipelines, deployments, webhooks, and snippets. Docker-ready via GHCR images. Well-engineered but zero adoption. The Rust implementation may appeal to performance-sensitive deployments.
 
-**[sooperset/mcp-atlassian](https://github.com/sooperset/mcp-atlassian)** (~5.7k stars, Python, MIT, 72 tools) — By far the most popular Atlassian MCP server, but it **only supports Jira and Confluence** — not Bitbucket. Mentioned here because users searching for "Atlassian MCP" will find this first and may assume it covers Bitbucket.
+**[sooperset/mcp-atlassian](https://github.com/sooperset/mcp-atlassian)** (~5.8k stars, Python, MIT, 72 tools) — By far the most popular Atlassian MCP server, but it **only supports Jira and Confluence** — not Bitbucket. Mentioned here because users searching for "Atlassian MCP" will find this first and may assume it covers Bitbucket.
 
 ## Developer Tools MCP Comparison
 
 | Aspect | GitHub | GitLab | Bitbucket | Docker | Kubernetes | CI/CD | IDE/Editor | Testing/QA | Monitoring | Security | IaC | Packages | Code Gen | API Dev | Logging | DB Migration | Doc Tooling | Debugging | Profiling | Code Review |
 |--------|--------|--------|-----------|--------|------------|-------|------------|------------|------------|---------- | ------- |----------|----------|---------|---------------------- | --------------|-----------|-----------|-------------|
-| **Official MCP server** | Yes (28.2k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | Yes (Rovo MCP, Cloud only, added April 2026) | [Hub MCP (132 stars, 12+ tools)](/reviews/docker-mcp-servers/) | [No (Red Hat leads, 1.3k stars)](/reviews/kubernetes-mcp-servers/) | [Yes (Jenkins, CircleCI, Buildkite)](/reviews/ci-cd-mcp-servers/) | Yes (JetBrains built-in, 24 tools) | [Yes (MS Playwright, 9.8k stars, 24 tools)](/reviews/testing-qa-mcp-servers/) | [Yes (Grafana 2.5k, Datadog, Sentry, Dynatrace, New Relic, Instana)](/reviews/monitoring-observability-mcp-servers/) | [Yes (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast)](/reviews/security-scanning-mcp-servers/) | Yes (Terraform 1.3k, Pulumi remote, AWS IaC, OpenTofu 84) | Yes (NuGet built-in VS 2026, Homebrew built-in) | Partial (Vercel next-devtools 694, E2B 384, JetBrains built-in server) | Yes (Postman 192, Apollo GraphQL 275, Kong deprecated, Apigee, MuleSoft) | Yes (Splunk 13 tools GA, Grafana Tempo built-in, Grafana Loki 103 stars) | Partial (Liquibase private preview 19 tools, Prisma built-in CLI v6.6.0+) | Yes (Microsoft Learn 1.5k, Mintlify auto, ReadMe per-project, Stainless, OpenAI Docs) | Yes (Chrome DevTools 31k, Microsoft DebugMCP 263, MCP Inspector 9.2k official) | Partial (CodSpeed MCP, Polar Signals remote, Grafana Pyroscope via mcp-grafana) | Yes (SonarQube 442 stars, Codacy 56 stars, Graphite GT built-in) |
+| **Official MCP server** | Yes (~32.5k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | Yes (Rovo MCP, Cloud only, added April 2026) | [Hub MCP (132 stars, 12+ tools)](/reviews/docker-mcp-servers/) | [No (Red Hat leads, 1.3k stars)](/reviews/kubernetes-mcp-servers/) | [Yes (Jenkins, CircleCI, Buildkite)](/reviews/ci-cd-mcp-servers/) | Yes (JetBrains built-in, 24 tools) | [Yes (MS Playwright, 9.8k stars, 24 tools)](/reviews/testing-qa-mcp-servers/) | [Yes (Grafana 2.5k, Datadog, Sentry, Dynatrace, New Relic, Instana)](/reviews/monitoring-observability-mcp-servers/) | [Yes (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast)](/reviews/security-scanning-mcp-servers/) | Yes (Terraform 1.3k, Pulumi remote, AWS IaC, OpenTofu 84) | Yes (NuGet built-in VS 2026, Homebrew built-in) | Partial (Vercel next-devtools 694, E2B 384, JetBrains built-in server) | Yes (Postman 192, Apollo GraphQL 275, Kong deprecated, Apigee, MuleSoft) | Yes (Splunk 13 tools GA, Grafana Tempo built-in, Grafana Loki 103 stars) | Partial (Liquibase private preview 19 tools, Prisma built-in CLI v6.6.0+) | Yes (Microsoft Learn 1.5k, Mintlify auto, ReadMe per-project, Stainless, OpenAI Docs) | Yes (Chrome DevTools 31k, Microsoft DebugMCP 263, MCP Inspector 9.2k official) | Partial (CodSpeed MCP, Polar Signals remote, Grafana Pyroscope via mcp-grafana) | Yes (SonarQube 442 stars, Codacy 56 stars, Graphite GT built-in) |
 | **Remote hosting** | Yes (`api.githubcopilot.com/mcp/`) | No | No | No | [AWS EKS MCP (preview)](/reviews/kubernetes-mcp-servers/) | [Yes (Buildkite remote MCP)](/reviews/ci-cd-mcp-servers/) | No (requires running IDE) | [No (local browser required)](/reviews/testing-qa-mcp-servers/) | [Yes (Datadog, Sentry — OAuth)](/reviews/monitoring-observability-mcp-servers/) | [No (all local/CLI-based)](/reviews/security-scanning-mcp-servers/) | [Yes (Pulumi remote MCP)](/reviews/infrastructure-as-code-mcp-servers/) | N/A | N/A | N/A | N/A | — | N/A | No (local debuggers) | No (all local CLI/API) | No (all local/API-based) |
-| **Top community server** | GitMCP (7.8k stars) | zereight/gitlab-mcp (1.2k stars) | aashari/MatanYemini (~160 stars, tied) | [ckreiling (691 stars, 25 tools)](/reviews/docker-mcp-servers/) | [Flux159 (1.4k stars, 20+ tools)](/reviews/kubernetes-mcp-servers/) | [Argo CD (356 stars, 12 tools)](/reviews/ci-cd-mcp-servers/) | vscode-mcp-server (342 stars, 15 tools) | [executeautomation (5.3k stars)](/reviews/testing-qa-mcp-servers/) | [pab1it0/prometheus (340 stars)](/reviews/monitoring-observability-mcp-servers/) | [CodeQL community (143 stars)](/reviews/security-scanning-mcp-servers/) | Ansible (25 stars, 40+ tools) | mcp-package-version (122 stars, 9 registries) | Context7 (50.3k stars), magic-mcp (4.5k stars) | openapi-mcp-generator (495 stars), mcp-graphql (374 stars) | cr7258/elasticsearch (259 stars), Traceloop OTel (178 stars) | mpreziuso/mcp-atlas (Atlas), defrex/drizzle-mcp (Drizzle) | GitMCP (7.8k stars), Grounded Docs (1.2k stars), Docs MCP (87 stars) | claude-debugs-for-you (496 stars), x64DbgMCPServer (398 stars), devtools-debugger (341 stars) | theSharque/mcp-jperf (Java JFR), PageSpeed Insights MCP servers | kopfrechner/gitlab-mr-mcp (86 stars), crazyrabbitLTC (32 stars) |
+| **Top community server** | GitMCP (7.8k stars) | zereight/gitlab-mcp (~1.9k stars) | aashari/MatanYemini (~160-163 stars, roughly tied) | [ckreiling (691 stars, 25 tools)](/reviews/docker-mcp-servers/) | [Flux159 (1.4k stars, 20+ tools)](/reviews/kubernetes-mcp-servers/) | [Argo CD (356 stars, 12 tools)](/reviews/ci-cd-mcp-servers/) | vscode-mcp-server (342 stars, 15 tools) | [executeautomation (5.3k stars)](/reviews/testing-qa-mcp-servers/) | [pab1it0/prometheus (340 stars)](/reviews/monitoring-observability-mcp-servers/) | [CodeQL community (143 stars)](/reviews/security-scanning-mcp-servers/) | Ansible (25 stars, 40+ tools) | mcp-package-version (122 stars, 9 registries) | Context7 (50.3k stars), magic-mcp (4.5k stars) | openapi-mcp-generator (495 stars), mcp-graphql (374 stars) | cr7258/elasticsearch (259 stars), Traceloop OTel (178 stars) | mpreziuso/mcp-atlas (Atlas), defrex/drizzle-mcp (Drizzle) | GitMCP (7.8k stars), Grounded Docs (1.2k stars), Docs MCP (87 stars) | claude-debugs-for-you (496 stars), x64DbgMCPServer (398 stars), devtools-debugger (341 stars) | theSharque/mcp-jperf (Java JFR), PageSpeed Insights MCP servers | kopfrechner/gitlab-mr-mcp (86 stars), crazyrabbitLTC (32 stars) |
 | **Community tool count** | 28+ (local Git) | 100+ | 25+ | 25 (container mgmt) | [20+ (core) + Helm](/reviews/kubernetes-mcp-servers/) | [9-21 per server](/reviews/ci-cd-mcp-servers/) | 13-19 per server | [24 (official) + API testing](/reviews/testing-qa-mcp-servers/) | [16+ (Datadog) to 100+ (Instana)](/reviews/monitoring-observability-mcp-servers/) | [7 (Semgrep) to full platform (Snyk)](/reviews/security-scanning-mcp-servers/) | [20+ (Terraform), full platform (Pulumi)](/reviews/infrastructure-as-code-mcp-servers/) | N/A | N/A | Spec-to-server conversion + API interaction | N/A | — | N/A | N/A | N/A | Code quality analysis, PR management, diff review, stacked PR creation |
 | **Server/DC support** | N/A (cloud-only) | Community servers | garc33 (66 stars, 21 tools) | All local | [All local + cloud managed](/reviews/kubernetes-mcp-servers/) | [Jenkins plugin (on-prem)](/reviews/ci-cd-mcp-servers/) | N/A | N/A | [Grafana, Prometheus (self-hosted)](/reviews/monitoring-observability-mcp-servers/) | [Yes (all local/CLI-based)](/reviews/security-scanning-mcp-servers/) | [Yes (all local/CLI-based)](/reviews/infrastructure-as-code-mcp-servers/) | N/A | N/A | 4+ (Postman, Apollo, Kong, Google/Apigee, MuleSoft) | N/A | — | N/A | N/A | N/A | SonarQube (self-hosted), Codacy (cloud) |
 | **MCP infrastructure role** | None | None | None | [Gateway + Catalog (300+)](/reviews/docker-mcp-servers/) | None | None | None | None | None | None | None | N/A | N/A | Bidirectional (spec-to-tools, API execution) | N/A | — | N/A | N/A | N/A | None |
@@ -184,9 +184,9 @@ The leading **Bitbucket Server / Data Center** MCP server:
 
 5. **Cloud vs Server/DC fragmentation persists** — Community servers still split across Cloud (MatanYemini) and Server/DC (garc33). No single community server covers both. Official support also Cloud-only. The split is a persistent structural issue.
 
-6. **No clear community leader** — aashari (160 stars) uses generic REST API tools; MatanYemini (161 stars, 25+ tools) focuses on PRs with limited code access. Neither has achieved dominant status. This matters less now that official support exists for Cloud users, but Server/DC users still face fragmentation.
+6. **No clear community leader** — aashari (~160 stars) uses generic REST API tools; MatanYemini (~163 stars, 25+ tools) focuses on PRs with limited code access. Neither has achieved dominant status. This matters less now that official support exists for Cloud users, but Server/DC users still face fragmentation.
 
-7. **sooperset confusion** — The most popular Atlassian MCP server (sooperset/mcp-atlassian, ~5.7k stars) still does not support Bitbucket. Users may install it expecting Bitbucket coverage and find none. The name "mcp-atlassian" implies full Atlassian product coverage.
+7. **sooperset confusion** — The most popular Atlassian MCP server (sooperset/mcp-atlassian, ~5.8k stars) still does not support Bitbucket. Users may install it expecting Bitbucket coverage and find none. The name "mcp-atlassian" implies full Atlassian product coverage.
 
 8. **No code search or file browsing in top community Cloud server** — MatanYemini's server (most community tools for Cloud) focuses heavily on PRs but can't read file contents, search code, or browse repository structure. The official server's `bitbucketRepoContent` tools fill this gap for official server users.
 
@@ -206,16 +206,16 @@ The **3.5/5 rating** (upgraded from 2.5/5) reflects this major structural improv
 
 - **Bitbucket Cloud teams on Atlassian's full stack** — the official Rovo MCP server now connects Jira, Confluence, and Bitbucket in one integration. Use it for PR management, pipeline diagnostics, and code exploration
 - **Bitbucket Server/DC enterprises** — garc33's server (66 stars, 21 tools) covers PRs, code search, file browsing, and branch management for on-premise deployments; b1ff/atlassian-dc-mcp adds full Atlassian DC stack coverage
-- **Teams needing PR-focused Cloud workflows** — MatanYemini/bitbucket-mcp (161 stars, 25+ tools) provides solid PR management for Cloud with a safety-first no-DELETE design
-- **API-savvy teams** — aashari's generic REST tools (160 stars) work for any Bitbucket API operation, provided the LLM can construct correct API paths
+- **Teams needing PR-focused Cloud workflows** — MatanYemini/bitbucket-mcp (~163 stars, 25+ tools) provides solid PR management for Cloud with a safety-first no-DELETE design
+- **API-savvy teams** — aashari's generic REST tools (~160 stars) work for any Bitbucket API operation, provided the LLM can construct correct API paths
 
 **Who should be cautious:**
 
 - **App Passwords users** — migrate to Scoped API Tokens before the June 9, 2026 brownouts begin. Bitbucket App Passwords are being deprecated (full removal July 28, 2026); community servers relying on them will break
 - **Bitbucket Server/DC teams expecting official coverage** — Atlassian's official server is Cloud-only. On-premise deployments remain community-dependent
-- **Teams comparing platforms** — GitHub (28.2k-star official server, remote hosting) and GitLab (built-in official server, 100+ community tools) still lead substantially. Bitbucket has caught up on the "official support exists" benchmark but not on depth or polish
+- **Teams comparing platforms** — GitHub (~32.5k-star official server, remote hosting) and GitLab (built-in official server, 100+ community tools) still lead substantially. Bitbucket has caught up on the "official support exists" benchmark but not on depth or polish
 - **Security-conscious enterprises** — Server/DC users still rely on community-maintained servers without official backing
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of May 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. GitHub star/fork/commit counts and Atlassian financials were re-verified as of August 24, 2026; narrative event dates (product launches, executive changes, deprecation timelines) are as originally reported. See our [About page](/about/) for details on our review process.*

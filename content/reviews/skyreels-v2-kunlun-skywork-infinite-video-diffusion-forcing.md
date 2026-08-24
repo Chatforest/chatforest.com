@@ -4,7 +4,7 @@ date: 2026-05-11
 description: "SkyReels V2 (Skywork AI / Kunlun Wanwei, April 2025) is the highest-performing open-source image-to-video model at launch, scoring 3.29 on human evaluation — approaching Kling 1.6 (3.40) and Runway Gen-4 (3.39). Its Diffusion Forcing framework enables theoretically unlimited-length video. Built on Wan2.1 DiT, available in 1.3B (~14.7GB VRAM) and 14B (~51GB VRAM). Custom commercial-friendly license. No MCP server. Rating 4/5."
 tags: ["video-ai", "ai-video-generation", "open-source", "text-to-video", "image-to-video", "kunlun", "skywork", "diffusion-forcing", "infinite-video", "comfyui", "wan2.1", "diffusers", "chinese-ai"]
 rating: 4
-sources_audited: 2026-07-26
+sources_audited: 2026-08-24
 ---
 
 # SkyReels V2 — Kunlun's Open-Source Video Model: Diffusion Forcing, Infinite-Length Generation, and the Highest Open-Source I2V Score
@@ -19,11 +19,12 @@ This review is based on the published arXiv paper, GitHub repository, HuggingFac
 
 ## Timeline
 
-- **February 18–19, 2025**: **SkyReels V1** released — described as the first open-source human-centric video model for AI short drama creation. Built on fine-tuned HunyuanVideo. VBench score 82.43.
-- **February 2025**: **SkyReels-A1** (portrait animation spinoff, arXiv 2502.10841) and **SkyReels-A2** (element-to-video composition, arXiv 2504.02436) released as companion models.
-- **April 17, 2025**: SkyReels V2 paper submitted to arXiv (2504.13074). Full author list of 25 contributors under the Skywork AI / Kunlun banner, led by Guibin Chen.
-- **April 21–24, 2025**: Model weights and inference code released. 1.3B (540P) and 14B (540P + 720P) variants released April 24. 5B variants listed as "Coming Soon."
-- **April 2026**: **SkyReels V4** announced with technical paper; weights not yet released as of early May 2026.
+- **February 18–19, 2025**: **[SkyReels V1](https://github.com/SkyworkAI/SkyReels-V1)** released — described by its GitHub repository as "the first and most advanced open-source human-centric video foundation model," fine-tuned from HunyuanVideo. VBench score 82.43.
+- **February 2025**: **[SkyReels-A1](https://arxiv.org/abs/2502.10841)** (portrait animation spinoff, arXiv 2502.10841) and **[SkyReels-A2](https://arxiv.org/abs/2504.02436)** (element-to-video composition, arXiv 2504.02436) released as companion models.
+- **April 17, 2025**: SkyReels V2 paper submitted to arXiv ([2504.13074](https://arxiv.org/abs/2504.13074)). Full author list of 25 contributors under the Skywork AI / Kunlun banner, led by Guibin Chen.
+- **April 21–24, 2025**: Model weights and inference code released. 1.3B (540P) and 14B (540P + 720P) variants released April 24. 5B variants listed as "Coming Soon" — still unreleased as of August 2026 per the [GitHub repository](https://github.com/SkyworkAI/SkyReels-V2).
+- **January 29, 2026**: **[SkyReels V3](https://github.com/SkyworkAI/SkyReels-V3)** released — inference code and weights for reference-to-video, video extension, and talking-avatar tasks (14B–19B). The review below covers V2 only; V3 is a separate, later release.
+- **February 25, 2026**: **[SkyReels V4](https://arxiv.org/abs/2602.21818)** technical report published on arXiv (2602.21818) — a unified video+audio model (dual-stream MMDiT, up to 1080p/32fps/15s). As of this audit (August 2026), Skywork has not published open weights for V4; it remains available only via limited preview/API, and a [tracking issue on the V3 repo](https://github.com/SkyworkAI/SkyReels-V3/issues/11) asks Skywork directly when V4 will be released.
 
 ---
 
@@ -64,7 +65,7 @@ The repository documents generating 60-second videos (1,457 frames) in a single 
 | ~30 seconds | 737 frames |
 | ~60 seconds | 1,457 frames |
 
-**Important caveat**: Asynchronous mode introduces artifacts at block boundaries in practice. GitHub issue #90 in the SkyReels-V2 repository documents these frame-transition artifacts in community reports. The "unlimited length" claim holds theoretically; in practice, artifact accumulation increases with video length.
+**Important caveat**: Asynchronous mode introduces artifacts at block boundaries in practice. [GitHub issue #90](https://github.com/SkyworkAI/SkyReels-V2/issues/90) in the SkyReels-V2 repository (`--ar_step 5 --causal_block_size 5` artifact reports) documents these frame-transition artifacts in community reports. The "unlimited length" claim holds theoretically; in practice, artifact accumulation increases with video length.
 
 ---
 
@@ -112,7 +113,7 @@ SkyReels V2 is built on the **Wan2.1 (WanVideo)** DiT backbone — a departure f
 
 The 1.3B model fits on a single high-end consumer GPU (RTX 3090/4090). The 14B model requires an NVIDIA A100-80G, H100, or equivalent datacenter GPU — effectively inaccessible to individual users without cloud instances. The "Coming Soon" 5B variant would fill the mid-tier gap (estimated ~24–30 GB), but it had not shipped as of early May 2026.
 
-**Quantization routes**: Community-produced GGUF-quantized versions on HuggingFace (wsbagnsv1's repository) enable reduced-VRAM inference, though with quality tradeoffs.
+**Quantization routes**: Community-produced GGUF-quantized versions on HuggingFace ([wsbagnsv1's repositories](https://huggingface.co/wsbagnsv1/SkyReels-V2-I2V-14B-720P-GGUF), spanning BF16 down to Q3_K_S/Q4_0) enable reduced-VRAM inference, though with quality tradeoffs.
 
 **Multi-GPU**: xDiT USP distributed inference is supported for multi-GPU parallelism.
 
@@ -168,33 +169,29 @@ The code repository also cites **Creative Commons BY-4.0** for the paper documen
 
 ## Ecosystem
 
-**GitHub**: [github.com/SkyworkAI/SkyReels-V2](https://github.com/SkyworkAI/SkyReels-V2) — approximately 6,900 stars at time of writing, with ~1,500 forks. Strong early traction for an open-source video model.
+**GitHub**: [github.com/SkyworkAI/SkyReels-V2](https://github.com/SkyworkAI/SkyReels-V2) — approximately 7,400 stars as of this audit (August 2026), with ~1,600 forks. Strong traction for an open-source video model.
 
 **HuggingFace**: [Full model collection at `Skywork/skyreels-v2`](https://huggingface.co/collections/Skywork/skyreels-v2-6801b1b93df627d441d0d0d9). Individual models: `Skywork/SkyReels-V2-I2V-1.3B-540P`, `Skywork/SkyReels-V2-DF-1.3B-540P`, and 14B equivalents. Also mirrored on ModelScope.
 
 **HuggingFace Diffusers**: [Official SkyReels V2 pipeline](https://huggingface.co/docs/diffusers/api/pipelines/skyreels_v2) integrated into the Diffusers library. This is one of the clearest signals of ecosystem legitimacy — Diffusers pipelines have a review bar and are maintained alongside the library.
 
-**ComfyUI**: Available through [**ComfyUI-WanVideoWrapper** by kijai](https://github.com/kijai/ComfyUI-WanVideoWrapper) (the same wrapper used for Wan2.1). SkyReels V2 model weights ship in kijai's HuggingFace repository alongside WanVideo weights (`Wan2_1-SkyReels-V2-DF-1_3B-540P_fp32.safetensors`). GitHub issue #481 tracks SkyReels V2 workflow changes. Community workflows exist on OpenArt, Civitai, and RunningHub. GGUF quantized variants further reduce VRAM requirements for ComfyUI users.
+**ComfyUI**: Available through [**ComfyUI-WanVideoWrapper** by kijai](https://github.com/kijai/ComfyUI-WanVideoWrapper) (the same wrapper used for Wan2.1). SkyReels V2 model weights ship in kijai's HuggingFace repository alongside WanVideo weights (`Wan2_1-SkyReels-V2-DF-1_3B-540P_fp32.safetensors`). [GitHub issue #481 on the wrapper repo](https://github.com/kijai/ComfyUI-WanVideoWrapper/issues/481) tracks SkyReels V2 workflow changes. Community workflows exist on OpenArt, Civitai, and RunningHub. GGUF quantized variants further reduce VRAM requirements for ComfyUI users.
 
 **SwarmUI**: Also documented as supporting SkyReels V2.
 
 **HuggingFace Spaces**: Multiple community demonstration spaces launched immediately after release (fffiloni, bekimoon, svjack, Kingrane).
 
-**MCP server**: No MCP server wrapping SkyReels V2 has been published in any MCP registry or on GitHub as of this writing. This is an unfilled gap — PiAPI offers a third-party API for SkyReels (V1/V2) but no MCP wrapper has been built on top of it.
+**MCP server**: No MCP server wrapping SkyReels V2 has been published in any MCP registry or on GitHub as of this writing. This is an unfilled gap — [PiAPI](https://piapi.ai/skyreels) offers a third-party API, but as of this audit its SkyReels endpoint (`Qubico/skyreels` per its [API docs](https://piapi.ai/docs/skyreels-api/create-task)) covers **SkyReels V1 only, not V2**; no MCP wrapper for either version has been published.
 
 ---
 
 ## Hosted Platform: SkyReels.ai
 
-For users who cannot run the model locally, Skywork AI operates a hosted SaaS product at **skyreels.ai** (website.skyreels.ai):
-
-- **Free tier**: 300 credits on signup (7-day expiry), plus 50 credits/day
-- **Standard plan**: ~$28/month, approximately 1,000 credits
-- **Pro plan**: Higher tier for production use
+For users who cannot run the model locally, Skywork AI operates a hosted SaaS product at [**skyreels.ai**](https://skyreels.ai), offering a free credit tier plus multiple paid subscription tiers. Third-party pricing trackers report the exact credit amounts and prices changing between checks in 2026, so this review does not restate specific numbers here — check [skyreels.ai's own pricing page](https://skyreels.ai) for current figures before budgeting against it.
 
 The hosted platform adds features not present in the open-source weights: **audio** (voice, music, SFX), **lip sync**, and higher throughput. The open-source weights themselves have no audio capability.
 
-**Third-party API**: PiAPI (piapi.ai) offers pay-as-you-go API access to SkyReels, with free credits on signup. This is a community route, not an official Skywork API.
+**Third-party API**: [PiAPI](https://piapi.ai/skyreels) offers pay-as-you-go API access to **SkyReels V1** (not V2 — see the Ecosystem section above), with free credits on signup. This is a community route, not an official Skywork API.
 
 ---
 
@@ -207,16 +204,17 @@ Since these models are routinely confused as being from the same company, a dire
 | Maker | Kunlun Wanwei / Skywork AI | Kuaishou Technology |
 | Model access | Open-source (weights + code) | Closed / API only |
 | License | Skywork custom (commercial OK) | Proprietary |
-| Max resolution | 720P | Up to 4K (Kling 3.0) |
-| Max duration | ~60s demonstrated; theoretically unlimited | 15 seconds (single clip) |
-| Frame rate | 24 FPS | 30 FPS |
-| Human eval score | 3.29 (I2V) | 3.40 (Kling 1.6) |
-| Audio | Hosted platform only | Native audio, voice cloning |
+| Max resolution | 720P | Up to native 4K (Kling 3.0, Feb 2026) |
+| Max duration | ~60s demonstrated; theoretically unlimited | Up to 15 seconds (single clip, Kling 3.0) |
+| Human eval score | 3.29 (I2V) | 3.40 (Kling 1.6, per the SkyReels V2 paper's own benchmark above) |
+| Audio | Hosted platform only | Native audio (Kling 3.0) |
 | Self-hosting | Yes (14.7–51GB VRAM) | No |
-| Cost | Free self-host; $28/mo SaaS | ~$0.084–$0.112/sec via API |
+| Cost | Free self-host; paid SaaS tier available | ~$0.056/sec (Kling 1.6, standard) up to ~$0.42/sec (Kling 3.0, native 4K) via the fal.ai marketplace |
 | Positioning | Research open model for developers | Consumer/creator commercial SaaS |
 
-Kling wins on resolution (4K vs 720P), motion quality, audio, and overall human evaluation score. SkyReels V2 wins on openness, cost for self-hosted workloads, duration (genuine infinite-length vs. 15-second clips), and accessibility for developers who want to modify and extend the model.
+Kling 3.0's native-4K, 15-second, native-audio capabilities are confirmed by [Kuaishou's own launch announcement](https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be) (February 5, 2026) and independent coverage from [CineD](https://www.cined.com/kling-3-0-ai-video-model-introduced-native-4k-enhanced-photorealism-multi-shot-sequencing-and-integrated-audio/); per-second API pricing is from live [fal.ai](https://fal.ai/models/fal-ai/kling-video/v3/4k/image-to-video) model pages, not Kuaishou directly, since Kuaishou does not publish a public per-second API rate card. The human-evaluation comparison uses Kling 1.6 (the version current when the SkyReels V2 paper published its benchmark); the resolution/duration/audio/cost rows reflect Kling's current (2026) capabilities, which have since advanced past the 1.6-era model SkyReels V2 was originally benchmarked against — so treat this as "SkyReels V2 vs. today's best Kling," not an apples-to-apples same-vintage comparison.
+
+Kling wins on resolution (4K vs 720P), audio, and the vintage-matched human evaluation score. SkyReels V2 wins on openness, self-hosting cost, duration (genuine infinite-length vs. 15-second clips), and accessibility for developers who want to modify and extend the model.
 
 ---
 
@@ -224,7 +222,7 @@ Kling wins on resolution (4K vs 720P), motion quality, audio, and overall human 
 
 **Hardware wall for the 14B model**: At ~51GB VRAM, the full-quality 14B requires an A100-80G or H100. Most developers and creators are limited to the 1.3B model (14.7GB) or GGUF quantizations, which both sacrifice some quality. The 5B model — which would serve the RTX 4090/mid-tier professional user — was not available at launch.
 
-**Motion artifacts in Diffusion Forcing async mode**: The unlimited-length generation capability works via block-by-block autoregression, but frame-transition artifacts appear at block boundaries. The longer the video, the more block transitions, and the more visible the artifact accumulation. GitHub issue #90 documents this.
+**Motion artifacts in Diffusion Forcing async mode**: The unlimited-length generation capability works via block-by-block autoregression, but frame-transition artifacts appear at block boundaries. The longer the video, the more block transitions, and the more visible the artifact accumulation. [GitHub issue #90](https://github.com/SkyworkAI/SkyReels-V2/issues/90) documents this.
 
 **Motion quality**: The lowest human-evaluated dimension at 3.01/5. Reinforcement learning improved it, but it trails the commercial leaders.
 
