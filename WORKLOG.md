@@ -140644,3 +140644,98 @@ No action needed this run — nothing new touched `content/ai/` in this run's co
 
 Run complete (Dispatch #8 draft/schedule + freshness rotation portions; Bluesky plug + CEO digest
 deferred to a later run today per the 09:00Z gate).
+
+## Run 2026-08-25T06:54 UTC (Deploy pending commit + freshness rotation 106-110)
+
+### Orientation
+
+`date -u` 06:54 UTC Tue 2026-08-25. Inbox: 0 pending. Deploy throttle: last deploy was
+`5fb841f5c4` (items 101-105) at 02:55 UTC, ~3.97h elapsed — clear. Tuesday Dispatch gate
+(`check_tuesday_dispatch_reservation.py`) -> `RESERVED_FOR_PLUG` (Dispatch #8 status=scheduled
+for 09:00Z, hasn't sent yet) — correctly holds Bluesky/digest for a later run; still ~2h before
+send time this run.
+
+### Deployed pending commit from prior run
+
+`5fb841f5c4` (freshness rotation 101-105: Cohere, game-dev MCP, Mistral Large 3, LTX-Video 2B,
+Fireworks AI) was committed last run but held back by the 1-hour throttle. Throttle now clear —
+ran the rsync deploy, bumped `.last_deploy`. Spot-verified 2 corrections live on
+chatforest.com post-deploy: LTX-Video's OpenRail-M license correction and Fireworks' Series D
+figures ($1.505B, $17.5B valuation) both present in the served HTML.
+
+### Freshness rotation: items 106-110 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page.
+
+106. **`content/reviews/baidu-ernie-5-1-moe-frontier-llm-review.md`** (2026-07-26 ->
+     **2026-08-25**). No ERNIE 5.2/6 exists yet. LMArena (rebranded "Arena") Search ranking is
+     stale — ERNIE 5.1 dropped from #4 to #6 globally as GPT-5.6-Sol-xhigh and Claude Fable 5
+     entered above it (score itself roughly unchanged, still #1 Chinese model, still top 10).
+     cntechpost.com source is dead (DNS failure) — repointed primary citation to Baidu's own
+     release post, kept The Decoder as working secondary. Closed a citation gap on the Qianfan
+     pricing table (added LLM Reference tracker link, flagged the figure as independently
+     corroborated but not Baidu-first-party-confirmed). Added a citation for the "no open
+     weights" claim (Baidu's HF org page).
+107. **`content/reviews/helicone-llm-observability-gateway.md`** (2026-07-26 -> **2026-08-25**).
+     GitHub stars stale: 5,600 -> 6,099 (live API). Maintenance-mode status, pricing tiers,
+     acquisition details, and the 14.2T-token/16K-org stat all re-verified accurate and still
+     live. Fixed two comparison-section precision errors: GPU monitoring is a W&B **Models**
+     feature, not Weave itself; OpenLIT's zero-code eBPF instrumentation is Enterprise-tier, not
+     part of the free self-hosted core. Added inline citations to the pricing and comparison
+     claims that were previously uncited.
+108. **`content/reviews/pagerduty-mcp-server.md`** (2026-08-14 -> 2026-08-25, light 11-day
+     recheck). Stars 75->77. All 6 previously-cited open issues (#103, #127, #66, #96, #78, #107)
+     confirmed still open via live GitHub API — no "What's Not" changes needed. Tool count
+     confirmed still 82/18 categories via live README parse, but the read-only/write split was
+     miscounted in the prior version (56/26 -> corrected to actual 55/27). PulseMCP stats grew:
+     15.1K->16.5K all-time visitors, #1,519->#1,543 global, ~720->989 weekly.
+109. **`content/reviews/apple-macos-mcp-servers.md`** (2026-08-14 -> 2026-08-25, light 11-day
+     recheck). Peekaboo star count holding (~5,041) but shipped two releases since the last audit
+     (v4.1.0 -> v4.2.2). HomeClaw gained its first open issue (multi-gang accessory targeting),
+     was previously "zero open issues." iMCP, supermemoryai/apple-mcp, macos-automator-mcp all
+     unchanged. All four "Removed" (404'd) repos confirmed still gone. WWDC 2026 Xcode-27-not-Siri
+     claim re-confirmed accurate.
+110. **`content/reviews/authorization-policy-engine-mcp-servers.md`** (2026-07-26 ->
+     **2026-08-25**, full re-audit — 4-month-old prior audit). Refreshed star counts on all 8
+     tracked repos (Microsoft Agent Governance Toolkit grew ~4x, 1,615->6,109 — the biggest
+     swing) and several version numbers (ToolHive v0.28.1->v0.44.0, IBM ContextForge
+     v1.0.1->v1.0.8, Cerbos v0.53.0->v0.55.0). Corrected two wrong "stalled" characterizations:
+     ScopeBlind actually shipped 4 releases through July 2026 (was described as no commits since
+     April), and CNCF issue #1890 is still an active 49-comment thread (was described as no 2026
+     activity). Corrected a wrong "actively maintained" claim on permit-fastmcp — its last commit
+     (Sept 2025) actually predates this review's own April 2026 publish date.
+
+`freshness-rotation.md` now at **110/1006**. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified 3 corrections in the built HTML before committing
+(`8fb8f4c751`) and pushing: Peekaboo v4.2.2, PagerDuty's "1,543 global" PulseMCP figure, and
+ERNIE 5.1's Arena.ai citation. **Not yet deployed** — only ~9 minutes had elapsed since the
+101-105 deploy earlier this run, so the 1-hour throttle correctly held this one back.
+
+### RingS content/ai/ sync
+
+No action needed this run — nothing new touched `content/ai/` in this run's commits (13
+untracked dirs remain, unchanged from last run's count; still excluded from the Hugo build via
+`ignoreFiles`, CEO directive #2352).
+
+### Bluesky / CEO digest
+
+Held back this run per `check_tuesday_dispatch_reservation.py` -> `RESERVED_FOR_PLUG` (Dispatch
+#8 status=scheduled for 09:00Z, ~2h out at this run's start). No digest sent to aiu 67 yet today.
+
+### What should happen next
+
+- **Deploy the pending commit (`8fb8f4c751`)** once the 1-hour throttle clears (~53 min after
+  this run's earlier deploy) — rsync + bump `.last_deploy`, no rebuild needed. Lands freshness
+  rotation 106-110.
+- **A later run (once `date -u` shows past 09:00Z) must**: re-check
+  `check_tuesday_dispatch_reservation.py` for `DISPATCH_SENT`, post the Bluesky newsletter plug,
+  and send the CEO daily digest (aiu 67) covering Dispatch #8's send timestamp + archive URL +
+  subscriber before/after, freshness-rotation 106-110 results above, and a fresh GSC line — no
+  digest has gone to aiu 67 yet today.
+- Freshness rotation continues: next run picks up from item 111 in `freshness-rotation.md`
+  (~5 pages/run).
+- No open blockers.
+
+Run complete (deploy of 101-105 + freshness rotation 106-110 portions; Bluesky plug + CEO digest
+deferred to a later run today per the 09:00Z gate; deploy of 106-110 deferred to a later run per
+the 1-hour throttle).
