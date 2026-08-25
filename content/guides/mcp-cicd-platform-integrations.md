@@ -5,10 +5,10 @@ description: "A deep dive into MCP integrations for every major CI/CD platform �
 content_type: "Guide"
 card_description: "Every major CI/CD platform now has an MCP server. This guide covers platform-specific tool inventories, setup patterns, AI code review and testing workflows, security risks from the OWASP MCP Top 10, and real-world incident case studies."
 last_refreshed: 2026-03-29
-sources_audited: 2026-07-25
+sources_audited: 2026-08-25
 ---
 
-Every major CI/CD platform now has an MCP server — either official or community-maintained. GitHub's has 26,400+ stars. GitLab built theirs into the platform itself. Jenkins, CircleCI, Argo CD, Tekton, Azure DevOps, Harness, and CloudBees all ship dedicated MCP integrations.
+Every major CI/CD platform now has an MCP server — either official or community-maintained. GitHub's has 32,000+ stars. GitLab built theirs into the platform itself. Jenkins, CircleCI, Argo CD, Tekton, Azure DevOps, Harness, and CloudBees all ship dedicated MCP integrations.
 
 This means AI agents can now monitor builds, analyze test failures, trigger deployments, review pull requests, detect flaky tests, and roll back releases — all through standardized MCP tool calls instead of custom API integrations.
 
@@ -22,7 +22,7 @@ For a broader overview of MCP in DevOps including infrastructure-as-code, Kubern
 
 GitHub's MCP integration is the largest and most mature, spanning an official MCP server, a dedicated CI/CD action, and a new agentic workflows system.
 
-**Official GitHub MCP Server** ([github/github-mcp-server](https://github.com/github/github-mcp-server)) — 26,400+ stars. Released April 2025, became generally available as a remote server in September 2025. This is the most-used CI/CD-adjacent MCP server.
+**Official GitHub MCP Server** ([github/github-mcp-server](https://github.com/github/github-mcp-server)) — 32,000+ stars as of August 2026, up from 26,400+ a month earlier. Released April 2025, became generally available as a remote server in September 2025. This is the most-used CI/CD-adjacent MCP server.
 
 CI/CD-relevant tools:
 - **Workflow intelligence:** Monitor GitHub Actions runs, analyze build failures, view workflow logs
@@ -60,7 +60,7 @@ jobs:
 
 Claude Code Action uses a fleet of specialized agents that examine logic errors, security vulnerabilities, broken edge cases, and subtle regressions. It has 5+ documented copy-paste workflow recipes for common CI/CD scenarios.
 
-**GitHub Actions-specific MCP server** ([ko1ynnky/github-actions-mcp-server](https://github.com/ko1ynnky/github-actions-mcp-server)) — 40 stars, community-maintained. Predates the official server (released March 2025). Focused specifically on workflow operations: listing, triggering, canceling, and rerunning workflows. Useful when you only need Actions control without the broader GitHub MCP surface.
+**GitHub Actions-specific MCP server** ([ko1ynnky/github-actions-mcp-server](https://github.com/ko1ynnky/github-actions-mcp-server)) — 41 stars, community-maintained. Predates the official server (released March 2025). Focused specifically on workflow operations: listing, triggering, canceling, and rerunning workflows. Useful when you only need Actions control without the broader GitHub MCP surface.
 
 For more on GitHub's broader AI integration including Agentic Workflows, see our [MCP for DevOps and CI/CD guide](/guides/mcp-devops-cicd/).
 
@@ -68,7 +68,7 @@ For more on GitHub's broader AI integration including Agentic Workflows, see our
 
 GitLab took a different approach from GitHub: instead of a standalone MCP server, they built MCP support directly into the GitLab platform starting with version 18.6 (November 2025).
 
-**GitLab MCP Server** — built-in, Premium/Ultimate tier. Supports MCP protocol versions 2025-03-26 and 2025-06-18 (added in 18.7). Requires OAuth dynamic client registration.
+**GitLab MCP Server** — built-in, and as of GitLab 19.2 available on the Free tier as well as Premium/Ultimate (it launched Premium/Ultimate-only in 18.6, per [GitLab's MCP server docs](https://docs.gitlab.com/user/model_context_protocol/mcp_server/)). Supports MCP protocol versions 2025-03-26 and 2025-06-18 (added in 18.7). Requires OAuth dynamic client registration. Status is beta, not GA.
 
 CI/CD-specific tools:
 | Tool | What It Does |
@@ -124,27 +124,20 @@ Community alternatives:
 
 CircleCI's MCP server is notable for being the most CI-focused: every tool is designed for pipeline debugging and management, not general-purpose repository operations.
 
-**Official CircleCI MCP Server** ([CircleCI-Public/mcp-server-circleci](https://github.com/CircleCI-Public/mcp-server-circleci)) — nine tools, all CI-specific:
+**Update (August 2026): the standalone npm/GitHub server is deprecated.** [CircleCI-Public/mcp-server-circleci](https://github.com/CircleCI-Public/mcp-server-circleci), the package this section originally covered, is no longer receiving feature work and is slated for archival — its README now states plainly that "running an unmaintained server that holds a CircleCI Personal API Token is not recommended." CircleCI's [current MCP overview docs](https://circleci.com/docs/guides/toolkit/circleci-mcp-overview/) confirm: "That server is deprecated," and instruct users to remove it (e.g. `claude mcp remove circleci-mcp-server`).
 
-| Tool | Purpose |
-|------|---------|
-| `get_build_failure_logs` | Structured failure logs with exit codes and error messages |
-| `find_flaky_tests` | Leverages CircleCI's built-in flaky test detection analytics |
-| `config_helper` | Assists with `.circleci/config.yml` syntax and best practices |
-| `get_latest_pipeline_status` | Current pipeline health at a glance |
-| `get_job_test_results` | Test failure and performance analytics |
-| `run_pipeline` | Trigger new pipeline runs |
-| `list_followed_projects` | List projects the user follows |
-| `rerun_workflow` | Re-execute failed or partial workflows |
-| `run_rollback_pipeline` | First-class rollback support |
+CircleCI now offers two replacements, both still in preview:
 
-The `get_build_failure_logs` tool returns structured output including exit codes and failure messages — designed for AI parsing rather than human reading. The `find_flaky_tests` tool analyzes test execution history over time, surfacing patterns that would take manual effort to identify.
+- **Hosted MCP Server** (`https://mcp.circleci.com/v1/mcp`) — no local install, authenticates via OAuth2 or personal API token. Recommended for everyday diagnostics (failures, logs, reruns).
+- **CircleCI CLI MCP** — built into the CircleCI CLI, runs locally, uses credentials from `circleci auth login` or `CIRCLE_TOKEN`. Recommended when you need config authoring or orb management.
 
-Setup requires a CircleCI API token. Integrates with Cursor, Windsurf, and Augment Code. Featured in an AWS blog for use with AWS Agentic AI.
+The hosted server's tool set has also grown beyond the original nine: it now exposes 13 tools, including `hello`, `list_runs`, `get_run`, `list_workflows`, `get_workflow`, `rerun_workflow`, `cancel_workflow`, `list_jobs`, `get_job`, `get_job_logs`, `list_artifacts`, `list_job_tests`, and `download_usage_data` — still CI-specific, still designed for structured AI parsing of failure logs and flaky-test analytics, but delivered as a managed endpoint instead of an npm package developers self-host.
+
+Setup for the hosted server requires OAuth2 or a CircleCI API token; the CLI MCP uses your existing CircleCI CLI login. Both are documented as integrating with Cursor, Windsurf, and other MCP clients.
 
 ### Argo CD — GitOps via Natural Language
 
-**Official Argo CD MCP Server** ([akuity/argocd-mcp](https://github.com/akuity/argocd-mcp)) — 379 stars, by Akuity (the company behind Argo CD). Released May 2025.
+**Official Argo CD MCP Server** ([argoproj-labs/mcp-for-argocd](https://github.com/argoproj-labs/mcp-for-argocd)) — 558 stars as of August 2026. Originally built by Akuity (a company founded by Argo CD's creators) as `akuity/argocd-mcp` and released May 2025; since donated to the `argoproj-labs` org, the Argo project's own incubator for community tooling. The old `akuity/argocd-mcp` URL now redirects to this repo.
 
 Tools:
 - `list_applications` — list all Argo CD applications
@@ -159,7 +152,7 @@ The value proposition is specific: GitOps workflows typically require switching 
 
 ### Tekton — Cloud-Native Pipeline Control
 
-**Tekton MCP Server** ([tektoncd/mcp-server](https://github.com/tektoncd/mcp-server)) — community-maintained, part of the official Tekton project. Tekton v1.3.1 LTS (August 2025, supported through August 2026) added MCP integration alongside OPA/Kyverno policy enforcement and OpenTelemetry observability.
+**Tekton MCP Server** ([tektoncd/mcp-server](https://github.com/tektoncd/mcp-server)) — community-maintained, part of the official Tekton project. MCP integration was first added alongside OPA/Kyverno policy enforcement and OpenTelemetry observability in Tekton Pipelines v1.3.1 LTS (August 2025); that release's support window closed in August 2026. The current LTS is [v1.12.0](https://tekton.dev/blog/2026/05/04/tekton-pipelines-v1.12.0-lts-notifications-controllers-security-hardening-and-performance/) (May 2026, supported through May 2027), with MCP support carried forward in subsequent releases.
 
 Capabilities:
 - **Inspection:** "List all pipelines in namespace production"
@@ -171,7 +164,7 @@ Tekton's MCP integration is significant because Tekton runs as Kubernetes Custom
 
 ### Azure DevOps — Enterprise GA
 
-**Official Azure DevOps MCP Server** ([microsoft/azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp)) — exited public preview, generally available since late 2025. TypeScript server.
+**Official Azure DevOps MCP Server** ([microsoft/azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp)) — TypeScript, local/stdio server, actively maintained. Microsoft separately ships a **Remote MCP Server** (hosted, zero-install) that entered public preview March 17, 2026 and reached general availability on [August 5, 2026](https://devblogs.microsoft.com/devops/azure-devops-remote-mcp-server-ga/) — this is the piece that was still in preview at the time of the previous audit. Microsoft states it is "committed to maintaining feature parity between the local and remote servers," with the local server continuing to support clients the remote option doesn't yet cover.
 
 Tools cover the full Azure DevOps suite:
 - **Work items:** Create, update, query, sprint planning
@@ -181,11 +174,11 @@ Tools cover the full Azure DevOps suite:
 - **Wikis:** Documentation access
 - **Test plans:** Test case generation, execution, results
 
-Supports OAuth 2.1, local mode (stdio), and cloud mode via Microsoft Foundry (remote hosted — zero local installation). The Microsoft Foundry integration means enterprise teams can use Azure DevOps MCP without installing anything locally.
+The remote server authenticates via Microsoft Entra (dynamic OAuth client registration) and integrates with Microsoft Foundry's tools catalog, letting Foundry-based agents connect without local installation. The local server uses Microsoft account or Azure CLI (`azcli`) sign-in.
 
 ### Harness — DORA Metrics and Deployment Intelligence
 
-**Harness MCP Server** — official, available on AWS Marketplace's AI Agents and Tools category.
+**Harness MCP Server** — official ([harness/mcp-server](https://github.com/harness/mcp-server)), distributed via npm, source, or Docker. [Harness's own docs](https://developer.harness.io/docs/platform/harness-ai/connect-with-ai/harness-mcp-server/) describe 11 consolidated tools covering 139 resource types, plus pre-built prompt templates for common workflows. (Note: unlike CloudBees's MCP server below, we found no evidence Harness's is distributed via AWS Marketplace — a claim in a prior version of this page was unsupported and has been removed.)
 
 What sets Harness apart is the _data_ it exposes through MCP:
 - Pipeline execution history (success/failure, duration, stage-level details)
@@ -201,7 +194,7 @@ The DORA metrics exposure is unique. An engineering manager can ask "what's our 
 
 ### CloudBees — Enterprise Jenkins + AI
 
-**CloudBees Unify MCP Server** — enterprise-grade, launched on AWS Marketplace July 2025. Acts as a bridge between CloudBees Unify and the LLM ecosystem.
+**CloudBees Unify MCP Server** — enterprise-grade, launched on AWS Marketplace's AI Agents and Tools category on [July 16, 2025](https://www.globenewswire.com/news-release/2025/07/16/3116738/0/en/CloudBees-announces-the-availability-of-the-CloudBees-MCP-Server-the-latest-innovation-behind-CloudBees-Unify-in-the-new-AWS-Marketplace-AI-Agents-and-Tools-category.html). Acts as a bridge between CloudBees Unify and the LLM ecosystem.
 
 Key differentiator: CloudBees targets enterprise DevSecOps workflows that span multiple tools. Their MCP server enables agents to:
 - Auto-triage and fix flaky tests
@@ -218,7 +211,7 @@ Works with both Jenkins and CloudBees Unify pipelines. Natural language interfac
 | GitHub | Official standalone | Broad (repos, PRs, Actions, security) | PAT, OAuth | stdio, Streamable HTTP | Lockdown mode, 26K+ stars |
 | GitLab | Built-in platform | CI/CD + code + issues | OAuth 2.1 dynamic | Platform-native | No install needed (18.6+) |
 | Jenkins | Official plugin | Build/job management | Jenkins auth | stdio | Turns Jenkins into MCP server |
-| CircleCI | Official standalone | 9 CI-focused tools | API token | stdio | `find_flaky_tests`, rollback tool |
+| CircleCI | Official hosted + CLI (standalone npm server deprecated Aug 2026) | 13 CI-focused tools | OAuth2 or API token | Streamable HTTP (hosted), stdio (CLI) | Test-failure/flaky analytics, `rerun_workflow` |
 | Argo CD | Official standalone | GitOps app management | API token | stdio, Streamable HTTP | Natural language GitOps |
 | Tekton | Community (official project) | Pipeline CRD operations | K8s auth | stdio | Cloud-native K8s pipelines |
 | Azure DevOps | Official standalone | Full ADO suite | OAuth 2.1 | stdio, Foundry (remote) | Zero-install cloud mode |
@@ -276,11 +269,11 @@ The payment gateway mock is returning 503. Check if the mock
 server container started successfully."
 ```
 
-CircleCI's `get_build_failure_logs` returns structured output designed for AI parsing — exit codes, failure messages, and log context.
+CircleCI's `get_build_failure_logs` returns structured output designed for AI parsing — exit codes, failure messages, and log context. (As of August 2026 this tool name lives on the now-deprecated standalone server; the current hosted MCP server exposes the equivalent capability as `get_job_logs` — see the CircleCI section above.)
 
 ### Flaky Test Detection
 
-CircleCI's `find_flaky_tests` tool analyzes test execution history across runs, identifying tests that pass and fail intermittently. The agent can then:
+CircleCI's `find_flaky_tests` tool (standalone server; on the current hosted server this is `list_job_tests`) analyzes test execution history across runs, identifying tests that pass and fail intermittently. The agent can then:
 1. Identify the flaky tests
 2. Analyze their failure patterns (time-based? resource-based? order-dependent?)
 3. Suggest fixes or quarantine strategies
@@ -354,8 +347,8 @@ Adversaries compromise tool metadata — descriptions, parameters, hidden instru
 ### MCP04: Software Supply Chain Attacks
 
 Compromised MCP server packages alter agent behavior. This has already happened:
-- **Postmark MCP Supply Chain Breach (2025):** Hackers created a backdoor in an npm package used in MCP automation pipelines for transactional emails. The malicious code blind-copied every outgoing email to attackers.
-- **CVE-2025-6514** (CVSS 9.6): Critical OS command injection in `mcp-remote` versions 0.0.5–0.1.15 — an OAuth proxy package with 437,000+ downloads. A malicious MCP server could send a crafted `authorization_endpoint` URL that, when passed to the shell by `mcp-remote`, executed arbitrary code. Fixed in v0.1.16.
+- **Postmark MCP Supply Chain Breach (September 2025):** An attacker published a malicious npm package called `postmark-mcp`, impersonating an MCP connector for Postmark's transactional email service. Discovered by [Koi Security](https://www.koi.ai/blog/postmark-mcp-npm-malicious-backdoor-email-theft), the package behaved identically to a legitimate server for 15 versions before v1.0.16 added a hidden line that BCC'd every outgoing email to an attacker-controlled address. [Postmark's own security notice](https://postmarkapp.com/blog/information-regarding-malicious-postmark-mcp-package) confirms it "did not develop, authorize, or have any involvement with" the package, and that its legitimate API and services were unaffected.
+- **CVE-2025-6514** (CVSS 9.6): Critical OS command injection in `mcp-remote` versions 0.0.5–0.1.15 — an OAuth proxy package with 437,000+ downloads. A malicious MCP server could send a crafted `authorization_endpoint` URL that, when passed to the shell by `mcp-remote`, executed arbitrary code. Fixed in v0.1.16. Details: [GitHub Advisory GHSA-6xpm-ggf7-wc3p](https://github.com/advisories/GHSA-6xpm-ggf7-wc3p).
 
 ### MCP05: Command Injection
 
@@ -379,7 +372,7 @@ Unapproved MCP server deployments outside governance. In CI/CD:
 
 ### MCP Ecosystem Security Statistics (Astrix Research, 2025)
 
-Based on analysis of 5,000+ MCP server implementations:
+Based on [Astrix Security's analysis](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/) of 5,200+ open-source MCP server implementations:
 - **88%** of MCP servers require credentials
 - **53%** use static API keys or personal access tokens (rarely rotated)
 - **Only 8.5%** adopt OAuth for secure authentication
@@ -434,9 +427,9 @@ Every MCP tool call in CI should be logged with: timestamp, agent identity, tool
 
 **If you use Jenkins** — install the [MCP Server Plugin](https://plugins.jenkins.io/mcp-server). It auto-configures endpoints on installation.
 
-**If you use CircleCI** — install the [official MCP server](https://github.com/CircleCI-Public/mcp-server-circleci) with a CircleCI API token. Start with `get_build_failure_logs` and `find_flaky_tests` for immediate value.
+**If you use CircleCI** — the old standalone [mcp-server-circleci](https://github.com/CircleCI-Public/mcp-server-circleci) package is deprecated as of August 2026. Use the [hosted MCP server](https://circleci.com/docs/guides/toolkit/circleci-mcp-overview/) (`https://mcp.circleci.com/v1/mcp`) with OAuth2 or a CircleCI API token. Start with `get_job_logs` and `list_job_tests` for immediate value.
 
-**If you use Argo CD** — install the [official MCP server](https://github.com/akuity/argocd-mcp). Useful for natural language GitOps queries even if you don't automate sync operations.
+**If you use Argo CD** — install the [official MCP server](https://github.com/argoproj-labs/mcp-for-argocd). Useful for natural language GitOps queries even if you don't automate sync operations.
 
 **If you want multi-platform** — consider the agent gateway pattern described in our [MCP for DevOps guide](/guides/mcp-devops-cicd/). A single AI agent connects to multiple CI/CD MCP servers and orchestrates across them.
 

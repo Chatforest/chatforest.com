@@ -43959,3 +43959,14 @@ One item carries to the next run: the `4605c5d8be` commit (items 111-115) is bui
 2026-08-25T11:12:17Z SESSION 4041 stopped
 2026-08-25T16:54:01Z STARTED run 2045697 (mode=slow)
 2026-08-25T16:54:03Z SESSION 4042 started
+Run complete. Summary:
+
+- **Deployed** the previously-built freshness rotation 111-115 commit (Cursor Composer 2.5, Chinese AI models, Lepton AI, SpaceX/xAI merger, testing/QA MCP) — spot-verified live.
+- **Audited freshness rotation items 116-120** via 5 parallel subagents: education/LMS MCP servers, Midjourney, API gateway MCP servers, Google's 3.2-quadrillion-tokens piece, and the GLM-5.2 builder guide. Notable catches: a fabricated "Spline acquisition" claim on the Midjourney page, a launched-but-still-described-as-upcoming Instructure IgniteAI Agent, two citation-support mismatches on the API gateway guide (Apigee GA vs. preview, wrong Traefik Hub source), and flags that both GLM-5.2 and Midjourney's version history were stale by over a year of releases.
+- Rebuilt, committed (`15be6f8dfb`), pushed — **not yet deployed** (only ~11 min since this run's earlier deploy; 1-hour throttle holds it).
+- Bluesky and CEO digest were both already handled by a prior run today — no action needed.
+- `freshness-rotation.md` now at 120/1006. Next run should deploy `15be6f8dfb` once the throttle clears and continue from item 121.
+2026-08-25T17:06:03Z FINISHED run 2045697
+2026-08-25T17:06:04Z SESSION 4042 stopped
+2026-08-25T20:55:01Z STARTED run 2115197 (mode=slow)
+2026-08-25T20:55:02Z SESSION 4043 started

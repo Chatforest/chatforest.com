@@ -5,7 +5,9 @@
 
 **June 13 update: Two days remaining.** If you have not migrated yet, today is the day. The migration is a single line in most codebases — update the model string and ship. Instructions below.
 
-**The short version:** Anthropic [retires `claude-sonnet-4-20250514` and `claude-opus-4-20250514`](https://docs.anthropic.com/en/docs/about-claude/model-deprecations) on **June 15, 2026, at 9AM PT**. Any production application still calling those model IDs will receive API errors after that point. The migration is usually a single line — update the model string, run parallel tests, ship. The successors are strictly better on every benchmark that matters.
+**August 25 update — this page is now historical.** The June 15 retirement happened as scheduled; `claude-sonnet-4-20250514` and `claude-opus-4-20250514` have been returning errors since that date, confirmed by [Anthropic's live model-deprecations page](https://platform.claude.com/docs/en/about-claude/model-deprecations). But the migration targets below (Sonnet 4.6, Opus 4.7) are no longer Anthropic's current models: Anthropic shipped [Claude Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8) on May 28, 2026, [Claude Sonnet 5](https://www.anthropic.com/news/claude-sonnet-5) on June 30, 2026, and [Claude Opus 5](https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/) on July 24, 2026. Anthropic's own deprecations page now lists `claude-opus-4-8` — not `claude-opus-4-7` — as the recommended replacement for the retired `claude-opus-4-20250514`. **If you are migrating today, target Opus 5 or Sonnet 5, not the Sonnet 4.6 / Opus 4.7 strings below.** We're keeping the rest of this page intact as a record of the June 15 migration and are not rewriting it into a Sonnet 5 / Opus 5 guide.
+
+**The short version:** Anthropic [retired `claude-sonnet-4-20250514` and `claude-opus-4-20250514`](https://platform.claude.com/docs/en/about-claude/model-deprecations) on **June 15, 2026, at 9AM PT**. Any production application still calling those model IDs receives API errors. The migration was usually a single line — update the model string, run parallel tests, ship. The successors named below were strictly better on every benchmark that mattered at the time; see the update note above for what's current now.
 
 ---
 
@@ -26,12 +28,14 @@ After retirement, requests to either model ID return an error. Context window, p
 
 Anthropic's recommended successors:
 
-| Retiring model | Recommended replacement |
+| Retiring model | Recommended replacement (as of June 2026) |
 |---|---|
-| `claude-sonnet-4-20250514` | `claude-sonnet-4-6-20260217` |
-| `claude-opus-4-20250514` | `claude-opus-4-7-20260416` |
+| `claude-sonnet-4-20250514` | `claude-sonnet-4-6` |
+| `claude-opus-4-20250514` | `claude-opus-4-7` |
 
-If your workloads are primarily agentic or involve complex multi-step reasoning, consider moving directly to `claude-opus-4-7-20260416` regardless of whether you were previously on Sonnet 4. It is more capable than both retiring models on every published benchmark, and in several pricing configurations it costs less per useful output token than Opus 4 did on long-horizon tasks.
+**Correction (2026-08-25):** an earlier version of this table showed the model IDs with date suffixes (`claude-sonnet-4-6-20260217`, `claude-opus-4-7-20260416`). Anthropic's own [Sonnet 4.6](https://www.anthropic.com/news/claude-sonnet-4-6) and [Opus 4.7](https://www.anthropic.com/news/claude-opus-4-7) announcement pages, and the current [model-deprecations table](https://platform.claude.com/docs/en/about-claude/model-deprecations), use the undated strings `claude-sonnet-4-6` and `claude-opus-4-7` — Anthropic stopped appending release-date suffixes to model IDs starting with this generation. A dated string would fail as an API call. As noted above, both of these are now themselves superseded — see the update note at the top of this page.
+
+If your workloads are primarily agentic or involve complex multi-step reasoning, consider moving directly to `claude-opus-4-7` regardless of whether you were previously on Sonnet 4. It is more capable than both retiring models on every published benchmark, and in several pricing configurations it costs less per useful output token than Opus 4 did on long-horizon tasks.
 
 ---
 
@@ -76,7 +80,7 @@ client.messages.create(
 
 # After
 client.messages.create(
-    model="claude-opus-4-7-20260416",
+    model="claude-opus-4-7",
     ...
 )
 ```
@@ -114,7 +118,7 @@ If you are using the Claude Agent SDK and have agents explicitly parameterized t
 
 - **[Claude Opus 4.7 Deep Dive](/reviews/anthropic-claude-opus-4-7-deep-dive/)** — full benchmark analysis, Adaptive Thinking, and the Mythos disclosure
 - **[Claude 4.6 Sonnet and Opus: Adaptive Thinking Review](/reviews/anthropic-claude-4-6-sonnet-opus-adaptive-thinking-review/)** — detailed review of the Sonnet 4.6 successor
-- **[Claude Mythos Preview and Project Glasswing](/reviews/anthropic-claude-mythos-preview-project-glasswing-cybersecurity-review/)** — what sits above Opus 4.7 and why it is not publicly available
+- **[Claude Fable 5 — Mythos Comes to Everyone](/reviews/anthropic-claude-fable-5-mythos-class-general-availability-review-2026/)** — the publicly-released, safety-classifier-gated version of the Mythos-class model that sat above Opus 4.7
 
 ---
 

@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 120/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 125/1006.**
 
 ---
 
@@ -140,11 +140,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 118. `content/guides/best-api-gateway-mcp-servers.md` — 1c/313i (90d), sources_audited: 2026-08-26
 - [x] 119. `content/builders-log/google-3-2-quadrillion-tokens-ai-scale-economics/index.md` — 1c/311i (90d), sources_audited: 2026-08-26
 - [x] 120. `content/builders-log/glm-5-2-z-ai-1m-context-mit-open-weights-agentic-coding-builder-guide/index.md` — 1c/306i (90d), sources_audited: 2026-08-26
-- [ ] 121. `content/guides/mcp-cicd-platform-integrations.md` — 1c/306i (90d), sources_audited: 2026-07-25
-- [ ] 122. `content/guides/anthropic-claude-sonnet-4-opus-4-deprecation-june-15-2026.md` — 1c/298i (90d), sources_audited: 2026-07-25
-- [ ] 123. `content/guides/best-calendar-scheduling-mcp-servers.md` — 1c/279i (90d), sources_audited: 2026-07-25
-- [ ] 124. `content/guides/mcp-async-tasks-long-running.md` — 1c/272i (90d), sources_audited: 2026-08-11
-- [ ] 125. `content/reviews/stability-ai-stable-audio-3-open-weight-music-sfx-generation.md` — 1c/241i (90d), sources_audited: 2026-07-27
+- [x] 121. `content/guides/mcp-cicd-platform-integrations.md` — 1c/306i (90d), sources_audited: 2026-08-25
+- [x] 122. `content/guides/anthropic-claude-sonnet-4-opus-4-deprecation-june-15-2026.md` — 1c/298i (90d), sources_audited: 2026-08-25
+- [x] 123. `content/guides/best-calendar-scheduling-mcp-servers.md` — 1c/279i (90d), sources_audited: 2026-08-25
+- [x] 124. `content/guides/mcp-async-tasks-long-running.md` — 1c/272i (90d), sources_audited: 2026-08-25
+- [x] 125. `content/reviews/stability-ai-stable-audio-3-open-weight-music-sfx-generation.md` — 1c/241i (90d), sources_audited: 2026-08-25
 - [ ] 126. `content/reviews/government-public-sector-mcp-servers.md` — 1c/240i (90d), sources_audited: 2026-08-15
 - [ ] 127. `content/reviews/microsoft-copilot-studio-computer-use-ga-enterprise-agents-may-2026.md` — 1c/236i (90d), sources_audited: 2026-07-28
 - [ ] 128. `content/reviews/mongodb-mcp-server.md` — 1c/230i (90d), sources_audited: 2026-08-14

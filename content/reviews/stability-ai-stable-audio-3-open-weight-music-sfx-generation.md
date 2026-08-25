@@ -1,17 +1,17 @@
 ---
 title: "Stable Audio 3 Review — Open-Weight Music and SFX Generation on Licensed Data"
 date: 2026-05-21
-description: "Stability AI released Stable Audio 3 on May 20, 2026 — a family of open-weight audio generation models trained entirely on licensed data. The family includes four variants from 433M to 2.7B parameters, runs on consumer hardware including CPU-only inference, generates up to 380 seconds of audio, and ships with LoRA fine-tuning and inpainting support. We cover the model family, technical architecture, training data, licensing, hardware requirements, and how it compares to Suno v5.5 and other audio generation tools."
+description: "Stability AI released Stable Audio 3 on May 20, 2026 — a family of open-weight audio generation models trained entirely on licensed data. The family includes four variants from 459M to 2.7B parameters, runs on consumer hardware including CPU-only inference, generates up to 380 seconds of audio, and ships with LoRA fine-tuning and inpainting support. We cover the model family, technical architecture, training data, licensing, hardware requirements, and how it compares to Suno v5.5 and other audio generation tools."
 tags: ["audio", "music-generation", "open-weight", "stability-ai", "sfx", "creative-tools", "fine-tuning", "generative-ai"]
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
-sources_audited: 2026-07-27
+sources_audited: 2026-08-25
 ---
 
 Stability AI released **[Stable Audio 3](https://stability.ai/news-updates/meet-stable-audio-3-the-model-family-built-for-artistic-experimentation-with-open-weight-models)** on May 20, 2026 — a family of open-weight audio generation models that covers music composition, sound effects, and audio editing in a single unified architecture. The release is positioned explicitly for "artistic experimentation," trained entirely on fully licensed data, and ships with weights for the small and medium variants available for download today.
 
-The core technical claim is efficiency without quality sacrifice: the medium model generates audio in under two seconds on an H200 GPU and in a few seconds on a MacBook Pro M4. The small models run on CPU only, requiring no GPU at all. The large model (2.7B parameters) is API-only and not yet publicly available for self-hosting.
+The core technical claim is efficiency without quality sacrifice: the medium model generates audio in under two seconds on an H200 GPU and in a few seconds on a MacBook Pro M4 — [confirmed in the research paper's own abstract](https://arxiv.org/abs/2605.17991). The small models run on CPU only, requiring no GPU at all. The large model (2.7B parameters) does not ship open weights; it's reachable via Stability AI's API, through partner fal.ai, or by self-hosting under a paid Enterprise license.
 
 The release is notable for two reasons beyond the models themselves. First, the training data transparency: Stability AI published the full attribution for 1,278,902 audio recordings — a direct response to ongoing litigation and licensing disputes that have dogged audio AI. Second, the engineering choices — variable-length generation, LoRA fine-tuning, inpainting, and a modular model family — reflect a tool designed for production integration rather than a demo.
 
@@ -37,14 +37,14 @@ Stable Audio 3 ships as four variants:
 
 | Model | Parameters | Hardware | Max Duration |
 |---|---|---|---|
-| Small-Music | 433M | CPU-only | 120 seconds |
-| Small-SFX | 433M | CPU-only | 120 seconds |
+| Small-Music | 459M | CPU-only | 120 seconds |
+| Small-SFX | 459M | CPU-only | 120 seconds |
 | Medium | 1.4B | GPU (CUDA) | 380 seconds |
 | Large | 2.7B | API only | 380 seconds |
 
 The small variants are split by use case: Small-Music is optimized for melodic and harmonic generation; Small-SFX is optimized for sound design. Both run without a GPU, which is a meaningful accessibility step — teams that cannot provision CUDA infrastructure can still integrate audio generation into pipelines.
 
-The medium model handles both music and SFX at higher quality, requires CUDA (Flash Attention 2 required), and is the practical target for developers with standard GPU access. The large model remains API-only for now; Stability AI has not announced a timeline for weight release.
+The medium model handles both music and SFX at higher quality, requires CUDA (Flash Attention 2 required), and is the practical target for developers with standard GPU access. The large model does not ship open weights; Stability AI offers it via API, through partner fal.ai, or self-hosted under a paid Enterprise license, and has not announced a timeline for a freely downloadable release.
 
 ---
 
@@ -130,14 +130,14 @@ Required dependencies for the Medium model:
 
 **Open weights (Small and Medium):** Available on Hugging Face under the Stability AI Community License.
 
-**Community License terms:**
-- Free for personal, research, and non-commercial use
-- Commercial use requires a separate license from stability.ai
+**[Community License terms](https://stability.ai/license):**
+- Free for personal, research, and non-commercial use, **and** free for commercial use by individuals or organizations with under $1M in annual revenue
+- Organizations exceeding $1M in annual revenue must contact Stability AI for a paid Enterprise License (custom pricing, includes legal indemnification)
 - Includes Gemma Terms of Use for the T5Gemma text encoder component
 
-**API (Large model):** Available through Stability AI's API. Pricing not yet published for Stable Audio 3 specifically; Stable Audio 2.5 API pricing was available as a reference point.
+**API / self-hosting (Large model):** Available through Stability AI's API, through partner fal.ai, or self-hosted under the paid Enterprise License. Pricing not yet published for Stable Audio 3 specifically; Stable Audio 2.5 API pricing was available as a reference point.
 
-The dual structure — open weights for the small/medium tier, API-only for the large tier — follows the same pattern as many frontier model labs. The community license restriction on commercial use without a separate agreement is the main friction point for businesses that want to self-host.
+The dual structure — open weights for the small/medium tier, API/enterprise-license for the large tier — follows the same pattern as many frontier model labs. The actual friction point for businesses is narrower than a blanket "no commercial use": under-$1M-revenue commercial use is free under the Community License, and only larger organizations need to negotiate an Enterprise agreement.
 
 ---
 
@@ -170,11 +170,11 @@ Stable Audio 2.5 was enterprise-focused and proprietary. Stable Audio 3 is open-
 
 **No vocal generation**: Stable Audio 3 generates instrumental music and sound effects. It does not generate singing, lyrics, or voice. Teams that need vocal AI music generation should look at Suno v5.5 or Udio.
 
-**Large model is API-only**: The highest-capability variant is not yet available for self-hosting. Teams that need the full 2.7B model on their own infrastructure will need to wait.
+**Large model has no open weights**: The highest-capability 2.7B variant is reachable via API, through partner fal.ai, or self-hosted under a paid Enterprise License — but there's no free download for teams that want it on their own infrastructure without a commercial agreement.
 
-**Community license commercial restriction**: Self-hosting for commercial applications requires contacting Stability AI for a separate license agreement. This is a real procurement step that pure open-source models (Apache 2.0) do not require.
+**Community license commercial restriction above $1M revenue**: Commercial use is free under the Community License for individuals and organizations under $1M in annual revenue; larger organizations must contact Stability AI for a paid Enterprise License. This is a real procurement step (and a real cost) that pure open-source models (Apache 2.0) do not require, though it's narrower than a blanket commercial ban.
 
-**Limited community validation**: At launch ([106 GitHub stars, 7 forks](https://github.com/Stability-AI/stable-audio-3)), Stable Audio 3 has minimal community testing compared to established tools. Quality assessments from the broader audio AI community will accumulate over the coming months.
+**Community validation, still building**: At launch the GitHub repo had 106 stars and 7 forks; as of late August 2026 it has grown to roughly [695 stars and 86 forks](https://github.com/Stability-AI/stable-audio-3) — real but still modest traction next to established tools. Broader quality assessments from the audio AI community continue to accumulate.
 
 **No quality benchmarks published in the abstract**: The research paper's arXiv abstract does not include comparative benchmark numbers against other audio generation models. Community evaluations will fill this gap, but the absence of published head-to-head metrics at launch makes it harder to evaluate quality claims.
 
@@ -201,7 +201,7 @@ Less suited for:
 
 Stable Audio 3 is a technically solid open-weight release that fills a real gap: self-hostable, fine-tunable audio generation with documented training data. The variable-length architecture, inpainting support, CPU-only small models, and LoRA fine-tuning make it genuinely useful for production pipelines rather than just demo-worthy. The fully licensed training data is a meaningful compliance differentiator.
 
-The -1 from a perfect score reflects three genuine limitations: the large model is API-only at launch, the community license requires a separate commercial agreement for self-hosting at scale, and there are no published head-to-head quality benchmarks yet. These are solvable over time — particularly as community testing accumulates — but they are real constraints at the May 2026 release date.
+The -1 from a perfect score reflects three genuine limitations: the large model has no open weights and requires an API, fal.ai, or paid Enterprise agreement, larger organizations (over $1M annual revenue) need a separate Enterprise agreement to self-host commercially, and there are no published head-to-head quality benchmarks yet. These are solvable over time — particularly as community testing accumulates — but they are real constraints at the May 2026 release date.
 
 For teams that need self-hosted audio generation with fine-tuning capability and clean training data provenance, Stable Audio 3 is the strongest option available.
 
@@ -214,4 +214,5 @@ For teams that need self-hosted audio generation with fine-tuning capability and
 - [arXiv:2605.17991](https://arxiv.org/abs/2605.17991) — Stable Audio 3 research paper released simultaneously with the model
 - [Stable Audio 3 on Hugging Face](https://huggingface.co/stabilityai) — model weights for small and medium variants
 - [Music Business Worldwide — Stability AI WMG/UMG partnerships](https://www.musicbusinessworldwide.com/stability-ai-launches-new-audio-models-that-can-generate-6-minute-music-tracks/) — Warner Music Group and Universal Music Group partnership context
-- [Suno v5.5 — official launch post](https://suno.com/blog/v5-5) — March 26, 2026; features, capabilities used for competitive comparison
+- [Suno v5.5 — official launch post](https://suno.com/blog/v5-5) — March 26, 2026; features, capabilities used for competitive comparison; confirmed still Suno's current model as of August 2026 (v6 unreleased)
+- [Stability AI Community License](https://stability.ai/license) — commercial-use terms, $1M annual revenue threshold, Enterprise License requirements

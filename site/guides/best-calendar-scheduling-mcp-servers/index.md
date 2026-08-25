@@ -5,7 +5,7 @@
 
 Calendar integration is one of the most practical MCP use cases. Checking availability, scheduling meetings, finding conflicts across accounts — these are tasks AI assistants can genuinely make faster. The ecosystem has responded with servers for every major calendar platform.
 
-The landscape has shifted dramatically since March. **Google finally shipped an official managed Calendar MCP server** — the biggest gap we flagged is now filled (8 tools, remote, no local setup). **Microsoft launched Work IQ Calendar** (Preview) as its dedicated calendar MCP offering. Community servers continue to thrive alongside: **nspady/google-calendar-mcp** (1,100 stars, 13 tools) and **Softeria/ms-365-mcp-server** (614 stars, 70+ tools). **Booking platforms** Calendly and Cal.com both have official servers, with Cal.com expanding to 34 tools.
+The landscape has shifted dramatically since March. **Google finally shipped an official managed Calendar MCP server** — the biggest gap we flagged is now filled (8 tools, remote, no local setup). **Microsoft launched Work IQ Calendar** (Preview) as its dedicated calendar MCP offering. Community servers continue to thrive alongside: **nspady/google-calendar-mcp** (1,175 stars, 13 tools) and **Softeria/ms-365-mcp-server** (932 stars, 300+ tools). **Booking platforms** Calendly and Cal.com both have official servers, with Cal.com's hosted server (mcp.cal.com) now exposing 34 tools.
 
 What surprised us: **both Google and Microsoft now have official hosted calendar MCP servers**, but the community alternatives remain competitive — nspady's server has more tools (13 vs 8) and multi-account support that Google's official server doesn't yet match. Meanwhile, **Cal.com quietly expanded from 9 to 34 tools**, making it the most feature-dense booking platform MCP server.
 
@@ -31,15 +31,15 @@ What surprised us: **both Google and Microsoft now have official hosted calendar
 | Category | Our pick | Stars | Runner-up |
 |----------|----------|-------|-----------|
 | **Google Calendar (official)** | [Google Workspace Calendar MCP](https://developers.google.com/workspace/calendar/api/guides/configure-mcp-server) | Official | — |
-| **Google Calendar (community)** | [nspady/google-calendar-mcp](https://github.com/nspady/google-calendar-mcp) | 1,100 | [MarkusPfundstein/mcp-gsuite](https://github.com/MarkusPfundstein/mcp-gsuite) (428, Gmail+Calendar) |
-| **Google Calendar (full Workspace)** | [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | 1,900 | [MarkusPfundstein/mcp-gsuite](https://github.com/MarkusPfundstein/mcp-gsuite) (428) |
+| **Google Calendar (community)** | [nspady/google-calendar-mcp](https://github.com/nspady/google-calendar-mcp) | 1,175 | [MarkusPfundstein/mcp-gsuite](https://github.com/MarkusPfundstein/mcp-gsuite) (489, Gmail+Calendar) |
+| **Google Calendar (full Workspace)** | [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | 3,067 | [MarkusPfundstein/mcp-gsuite](https://github.com/MarkusPfundstein/mcp-gsuite) (489) |
 | **Microsoft 365 / Outlook (official)** | [Work IQ Calendar](https://learn.microsoft.com/en-us/microsoft-agent-365/mcp-server-reference/calendar) | Official | [microsoft/work-iq](https://github.com/microsoft/work-iq) (CLI) |
-| **Microsoft 365 / Outlook (community)** | [Softeria/ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | 614 | [hvkshetry/office-365-mcp-server](https://github.com/hvkshetry/office-365-mcp-server) (24 tools) |
-| **Apple / macOS** | [Omar-V2/mcp-ical](https://github.com/Omar-V2/mcp-ical) | 281 | [FradSer/mcp-server-apple-events](https://github.com/FradSer/mcp-server-apple-events) (61) |
+| **Microsoft 365 / Outlook (community)** | [Softeria/ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | 932 | [hvkshetry/office-365-mcp-server](https://github.com/hvkshetry/office-365-mcp-server) (24 tools) |
+| **Apple / macOS** | [Omar-V2/mcp-ical](https://github.com/Omar-V2/mcp-ical) | 326 | [FradSer/mcp-server-apple-events](https://github.com/FradSer/mcp-server-apple-events) (187) |
 | **Booking (Calendly)** | [Calendly MCP](https://developer.calendly.com/calendly-mcp-server) | Official | — |
-| **Booking (Cal.com)** | [calcom/cal-mcp](https://github.com/calcom/cal-mcp) | 18 | [Danielpeter-99/calcom-mcp](https://github.com/Danielpeter-99/calcom-mcp) (community) |
-| **CalDAV / universal** | [madbonez/caldav-mcp](https://github.com/madbonez/caldav-mcp) | 5 | [Cheffromspace/mcp-nextcloud-calendar](https://github.com/Cheffromspace/mcp-nextcloud-calendar) (5) |
-| **Multi-provider** | [MarimerLLC/calendar-mcp](https://github.com/MarimerLLC/calendar-mcp) | 7 | — |
+| **Booking (Cal.com)** | [Cal.com MCP](https://cal.com/docs/mcp-server) | Official (hosted) | [calcom/cal-mcp](https://github.com/calcom/cal-mcp) (30, local/self-hosted) |
+| **CalDAV / universal** | [madbonez/caldav-mcp](https://github.com/madbonez/caldav-mcp) | 14 | [Cheffromspace/mcp-nextcloud-calendar](https://github.com/Cheffromspace/mcp-nextcloud-calendar) (7) |
+| **Multi-provider** | [MarimerLLC/calendar-mcp](https://github.com/MarimerLLC/calendar-mcp) | 21 | — |
 
 ## Google Calendar Servers
 
@@ -70,7 +70,7 @@ Google has finally shipped an official managed Calendar MCP server as part of it
 
 ### nspady/google-calendar-mcp — Community Winner
 
-**Stars:** 1,100 | **Language:** TypeScript | **License:** MIT
+**Stars:** 1,175 | **Language:** TypeScript | **License:** MIT
 
 The most popular dedicated calendar MCP server. Mature, well-maintained, and still more feature-rich than Google's official server.
 
@@ -81,7 +81,7 @@ The most popular dedicated calendar MCP server. Mature, well-maintained, and sti
 - **Multi-calendar support** — work across all calendars in each account, not just the primary one
 - **Tool filtering** — expose only the tools you need to save context window tokens and improve security
 - **Smart imports** — can intelligently create events from images, PDFs, and web links
-- **23+ releases** — v2.6.1 as of March 2026. Active development with regular feature additions
+- **24 releases** — v2.6.2 as of June 2026. Active development with regular feature additions
 
 **Limitations:**
 - Google Calendar only — no Outlook, Apple, or other providers
@@ -92,7 +92,7 @@ The most popular dedicated calendar MCP server. Mature, well-maintained, and sti
 
 ### MarkusPfundstein/mcp-gsuite — Gmail + Calendar Combo
 
-**Stars:** 428 | **Language:** Python | **License:** MIT
+**Stars:** 489 | **Language:** Python | **License:** MIT
 
 A focused Google suite server covering Gmail and Calendar. Less scope than the full Workspace server, but well-targeted for the two services developers use most.
 
@@ -100,7 +100,7 @@ A focused Google suite server covering Gmail and Calendar. Less scope than the f
 - **Gmail + Calendar in one server** — email search, retrieval, drafting, and calendar event management
 - **Calendar tools** — create events, list events within time ranges, delete events
 - **Attachment handling** — save email attachments directly
-- **Well-maintained** — 96 forks, regular community contributions
+- **Well-maintained** — 98 forks, regular community contributions
 
 **Limitations:**
 - Calendar tools are more basic than nspady's (no freebusy, no multi-account, no event updates)
@@ -111,7 +111,7 @@ A focused Google suite server covering Gmail and Calendar. Less scope than the f
 
 ### taylorwilsdon/google_workspace_mcp — The Full Suite
 
-**Stars:** 1,900 | **Language:** Python | **License:** MIT
+**Stars:** 3,067 | **Language:** Python | **License:** MIT
 
 Covers Gmail, Calendar, Docs, Sheets, Slides, Chat, Forms, Tasks, Search, and Drive. Already covered in our [spreadsheet comparison](/guides/best-spreadsheet-mcp-servers/) and [file & storage comparison](/guides/best-file-storage-mcp-servers/), but worth mentioning here for its Calendar capabilities.
 
@@ -156,15 +156,15 @@ Microsoft's new **Work IQ** platform replaces the older microsoft/mcp catalog ap
 
 ### Softeria/ms-365-mcp-server — Community Powerhouse
 
-**Stars:** 614 | **Language:** TypeScript | **License:** MIT
+**Stars:** 932 | **Language:** TypeScript | **License:** MIT
 
-The most feature-rich community Microsoft 365 MCP server. 70+ tools across email, calendar, Teams, and more.
+The most feature-rich community Microsoft 365 MCP server. The project has since moved to a declarative, endpoint-based architecture — [300+ tools](https://github.com/Softeria/ms-365-mcp-server/blob/main/src/endpoints.json) mapped 1-to-1 to Microsoft Graph API endpoints, up sharply from the 70+ tools we saw in April.
 
 **What makes it stand out:**
-- **7 calendar tools** — list-calendars, list-calendar-events, get-calendar-event, get-calendar-view, create-calendar-event, update-calendar-event, delete-calendar-event
-- **70+ total tools** — covers email, calendar, SharePoint, Teams, and more in one server
-- **Actively maintained** — v0.36.0 (February 2026), with April 2026 fixes for delegated scope handling and token cache synchronization
-- **Multi-account mode** with 90+ tools in the expanded configuration
+- **Dozens of calendar tools** — list/get/create/update/delete events, per-calendar variants, accept/decline/tentatively-accept invitations, calendar views, and more (up from the original 7-tool set as the server expanded to cover nearly the full Graph API)
+- **300+ total tools** — covers email, calendar, SharePoint, Teams, and more in one server, organized into presets (`mail`, `calendar`, `files`, `teams`, etc.) to limit context usage
+- **Actively maintained** — v0.146.1 (August 2026), with ongoing fixes for delegated scope handling and token cache synchronization
+- **Multi-account mode** — a single server instance can serve multiple logged-in Microsoft accounts via an `account` parameter on each tool call
 
 **Limitations:**
 - Requires Microsoft Graph API setup with Azure AD app registration
@@ -193,7 +193,7 @@ Takes a different approach with 24 consolidated tools that use operation-based r
 
 ### elyxlz/microsoft-mcp — Minimal Option
 
-**Stars:** 41 | **Language:** Python | **License:** MIT
+**Stars:** 55 | **Language:** Python | **License:** MIT
 
 Minimal, focused MCP server for Microsoft Graph API covering Outlook, Calendar, OneDrive, and Contacts.
 
@@ -211,7 +211,7 @@ For macOS users, several servers tap into Apple's native EventKit framework for 
 
 ### Omar-V2/mcp-ical — The Winner
 
-**Stars:** 281 | **Language:** Python | **License:** MIT
+**Stars:** 326 | **Language:** Python | **License:** MIT
 
 The most popular macOS calendar MCP server. Interacts with the macOS Calendar app through natural language.
 
@@ -220,7 +220,7 @@ The most popular macOS calendar MCP server. Interacts with the macOS Calendar ap
 - **Recurring event support** — daily, weekly, monthly, yearly patterns
 - **Schedule viewing and availability checking** for finding free time slots
 - **Google Calendar integration** — if your Google Calendar is synced with iCloud, events created here appear in Google Calendar too
-- **Most adopted** — 281 stars, clear documentation
+- **Most adopted** — 326 stars, clear documentation
 
 **Limitations:**
 - macOS only — won't work on Linux or Windows
@@ -231,9 +231,9 @@ The most popular macOS calendar MCP server. Interacts with the macOS Calendar ap
 
 ### FradSer/mcp-server-apple-events — Native EventKit
 
-**Stars:** 61 | **Language:** TypeScript + Swift | **License:** MIT
+**Stars:** 187 | **Language:** TypeScript + Swift | **License:** MIT
 
-Native macOS integration with Apple Reminders and Calendar via EventKit. Takes a more architectural approach with a 4-layer Clean Architecture design. Note: FradSer has also split out a dedicated [mcp-server-apple-reminders](https://github.com/FradSer/mcp-server-apple-reminders) repo (32 stars) for Reminders-only use cases.
+Native macOS integration with Apple Reminders and Calendar via EventKit. Takes a more architectural approach with a 4-layer Clean Architecture design. Update: the separate `mcp-server-apple-reminders` repo we noted in an earlier revision no longer exists on its own — that URL now redirects to this same repo, which has consolidated back into a single combined Reminders + Calendar server.
 
 **What makes it stand out:**
 - **Combined Reminders + Calendar** — full CRUD for both in one server
@@ -241,7 +241,7 @@ Native macOS integration with Apple Reminders and Calendar via EventKit. Takes a
 - **Subtasks and checklists** with progress tracking
 - **Tags/labels** for cross-list categorization
 - **Swift-compiled binaries** for performance-critical operations
-- **v1.3.0** — multiple releases indicate active development
+- **v1.5.0** (August 2026) — multiple releases indicate active development; the EventKit backend was swapped for a vendored Swift CLI in this release
 
 **Limitations:**
 - macOS only
@@ -252,7 +252,7 @@ Native macOS integration with Apple Reminders and Calendar via EventKit. Takes a
 
 ### PsychQuant/che-ical-mcp — Most Tools
 
-**Stars:** 13 | **Language:** Swift | **License:** MIT
+**Stars:** 33 | **Language:** Swift | **License:** MIT
 
 The most feature-dense macOS calendar MCP server with 25 tools. Native Swift EventKit integration.
 
@@ -267,8 +267,8 @@ The most feature-dense macOS calendar MCP server with 25 tools. Native Swift Eve
 
 **Limitations:**
 - macOS only
-- Relatively new (v1.4.0, January 2026)
-- 13 stars — smaller community
+- Actively iterating (v1.15.0, July 2026)
+- 33 stars — smaller community
 
 **Best for:** Power users who need comprehensive calendar + reminders management across multiple macOS calendar sources.
 
@@ -297,26 +297,26 @@ Calendly's official MCP server is fully hosted — zero local infrastructure req
 
 **Best for:** Teams already using Calendly who want AI-powered scheduling management.
 
-### calcom/cal-mcp — Official Cal.com
+### Cal.com MCP — Now Hosted, and Cal.com Is No Longer Open Source
 
-**Stars:** 18 | **Language:** TypeScript | **License:** Not specified
+**Type:** Hosted Remote MCP (`mcp.cal.com`) + local/self-hosted option | **Backed by:** Cal.com
 
-The official MCP server for Cal.com, the popular open-source scheduling platform (39,000+ stars on the main Cal.com repo). Massively expanded since our last review.
+Two corrections to our last review. First, Cal.com's [official MCP documentation](https://cal.com/docs/mcp-server) now describes a **hosted server at `https://mcp.cal.com/mcp`**, using Streamable HTTP transport with OAuth 2.1 (no API key needed) — Cal.com is no longer "the last major holdout still running locally." A local, API-key-based option still exists via the `@calcom/cal-mcp` npm package ([calcom/cal-mcp](https://github.com/calcom/cal-mcp) on GitHub, 30 stars), but as of its current README, that local server still ships only [9 core tools by default](https://github.com/calcom/cal-mcp#supported-tools), requiring an `--all-tools` flag for full coverage — the "no longer requires `--all-tools`" claim in our last review does not match the live repo. The 34-tools-across-eight-categories figure belongs to the hosted `mcp.cal.com` server, not the default local install.
+
+Second: **Cal.com is no longer open source.** On April 15, 2026, Cal.com [went closed-source](https://cal.com/blog/cal-com-goes-closed-source-why), citing AI-driven security risk to customer data. The production codebase is now private; the former open-source repo was relaunched as [Cal.diy](https://cal.com/blog/cal-diy-open-source-to-closed-source), a separately-branded, community-driven MIT-licensed fork — not "Cal.com" itself. Our previous "open-source scheduling — Cal.com itself is open source, unlike Calendly" claim is no longer accurate and has been removed.
 
 **What makes it stand out:**
 - **Official Cal.com backing** — maintained by the Cal.com team
-- **34 tools** — expanded from 9 core tools to cover all Cal.com API endpoints (bookings, event types, availability, schedules, and more)
-- **Full API coverage by default** — no longer requires `--all-tools` flag for most operations
-- **Workflow support** — tested prompt workflows for rapid Cal.com application development
-- **Open-source scheduling** — Cal.com itself is open source, unlike Calendly
-- **AI agent positioning** — Cal.com actively promoting MCP for Claude Code and OpenClaw agent workflows
+- **34 tools across ~8 categories** (user profile, event types, bookings, schedules, availability, conferencing, routing forms, organizations) — via the hosted `mcp.cal.com` server
+- **OAuth 2.1 hosted option** — no API key or local install required
+- **Local/self-hosted fallback** — `@calcom/cal-mcp` for API-key-based stdio use, though it exposes fewer tools by default than the hosted server
 
 **Limitations:**
 - Cal.com-specific — doesn't integrate with external calendars directly
-- Requires Cal.com API key
-- Local stdio transport — no hosted remote option yet
+- Cal.com's core product is closed-source as of April 2026 — the open-source Cal.diy fork is a different, community-maintained project
+- Local npm package's default tool set is narrower than the hosted server's; check current docs before assuming parity
 
-**Best for:** Cal.com users who want comprehensive AI-managed scheduling. The 34-tool coverage makes this the most feature-dense booking platform MCP server.
+**Best for:** Cal.com users who want comprehensive AI-managed scheduling via the hosted server. The 34-tool coverage there makes it the most feature-dense booking platform MCP option.
 
 ## CalDAV / Universal Protocol Servers
 
@@ -324,7 +324,7 @@ CalDAV is the open standard for calendar access. These servers work with any Cal
 
 ### madbonez/caldav-mcp — Universal CalDAV
 
-**Stars:** 5 | **Language:** Python | **License:** MIT
+**Stars:** 14 | **Language:** Python | **License:** MIT
 
 A universal MCP server for the CalDAV protocol. The appeal is breadth: one server, any CalDAV provider.
 
@@ -335,7 +335,7 @@ A universal MCP server for the CalDAV protocol. The appeal is breadth: one serve
 - **Attendance tracking** — ACCEPTED/DECLINED/TENTATIVE/NEEDS-ACTION status
 
 **Limitations:**
-- Only 5 stars — small community, limited battle-testing
+- Only 14 stars — small community, limited battle-testing
 - End-to-end tested only against Yandex Calendar (other providers should work but untested)
 - 3 commits total — very early stage
 - CalDAV limits you to what the protocol supports (no provider-specific features like Google Meet integration)
@@ -344,7 +344,7 @@ A universal MCP server for the CalDAV protocol. The appeal is breadth: one serve
 
 ### Cheffromspace/mcp-nextcloud-calendar — Nextcloud-Specific
 
-**Stars:** 5 | **Language:** TypeScript | **License:** MIT
+**Stars:** 7 | **Language:** TypeScript | **License:** MIT
 
 A Nextcloud-focused CalDAV calendar MCP server with some unique features.
 
@@ -357,7 +357,7 @@ A Nextcloud-focused CalDAV calendar MCP server with some unique features.
 **Limitations:**
 - Nextcloud only — not a universal CalDAV server
 - Early development (0.1.x) — APIs may change
-- 5 stars
+- 7 stars
 
 **Best for:** Nextcloud users who want calendar integration with AI assistants.
 
@@ -365,7 +365,7 @@ A Nextcloud-focused CalDAV calendar MCP server with some unique features.
 
 ### MarimerLLC/calendar-mcp — Cross-Platform Unified
 
-**Stars:** 7 | **Language:** C# | **License:** MIT
+**Stars:** 21 | **Language:** C# | **License:** MIT
 
 A unified server that aggregates calendar access across Microsoft 365, Outlook.com, Google Workspace, ICS feeds, and JSON files.
 
@@ -377,9 +377,9 @@ A unified server that aggregates calendar access across Microsoft 365, Outlook.c
 - **Smart domain-based routing** — automatically routes operations to the right provider
 
 **Limitations:**
-- 7 stars — very early, small community
+- 21 stars — still early, small community
 - C# — less common in the MCP ecosystem (most servers are TypeScript or Python)
-- 82 commits but only one contributor visible
+- Small contributor base (3 contributors visible, up from 1)
 - Requires OAuth setup for each provider
 
 **Best for:** Users with calendars split across Google and Microsoft who want a single unified server.
@@ -421,7 +421,7 @@ Do you use macOS Calendar?
 │
 Do you use Calendly or Cal.com?
 ├── Calendly → Calendly MCP (mcp.calendly.com, DCR auth)
-├── Cal.com → calcom/cal-mcp (34 tools)
+├── Cal.com → Cal.com MCP, hosted at mcp.cal.com (34 tools)
 │
 Do you self-host (Nextcloud/ownCloud)?
 ├── Yes → madbonez/caldav-mcp or Cheffromspace/mcp-nextcloud-calendar
@@ -438,16 +438,16 @@ In March, we flagged Google's absence as the biggest gap in calendar MCP. One mo
 
 ### 2. Hosted remote MCP is winning — even for calendars
 
-Google, Microsoft, and Calendly all chose hosted remote MCP. Cal.com is the last major holdout still running locally. The privacy argument for local calendar servers is weakening as vendors add enterprise-grade auth (Google's Workspace permissions, Microsoft's admin controls, Calendly's DCR). The new question isn't "local vs remote" but "which remote server has the right auth model for your org."
+Google, Microsoft, Calendly, and now Cal.com (`mcp.cal.com`, OAuth 2.1) have all shipped hosted remote MCP servers — local-only was a temporary state, not a durable choice. The privacy argument for local calendar servers is weakening as vendors add enterprise-grade auth (Google's Workspace permissions, Microsoft's admin controls, Calendly's and Cal.com's OAuth/DCR flows). The new question isn't "local vs remote" but "which remote server has the right auth model for your org."
 
 ### 3. Tool count inflation — more isn't always better
 
-Cal.com jumped from 9 to 34 tools. Google's official server has 8. nspady has 13. Softeria has 70+. The "right" number depends on your use case — more tools means more context window consumption but broader capability. Google's suggest_time tool (unique to the official server) shows that a single well-designed tool can matter more than 20 CRUD variants. Watch for quality-over-quantity as the market matures.
+Cal.com's hosted server jumped to 34 tools. Google's official server has 8. nspady has 13. Softeria has 300+. The "right" number depends on your use case — more tools means more context window consumption but broader capability. Google's suggest_time tool (unique to the official server) shows that a single well-designed tool can matter more than 20 CRUD variants. Watch for quality-over-quantity as the market matures.
 
 ## What's Missing
 
 - ~~**No official Google Calendar MCP server**~~ — **FILLED** (April 2026). Google shipped a managed remote Calendar MCP with 8 tools. The community server still has more features, but the API compatibility gap is closed
-- **No Outlook.com standalone server** — Work IQ requires M365 Copilot license ($30/user/month); personal Outlook.com users are still underserved. MarimerLLC supports Outlook.com but at 7 stars it's niche
+- **No Outlook.com standalone server** — Work IQ requires M365 Copilot license ($30/user/month); personal Outlook.com users are still underserved. MarimerLLC supports Outlook.com but at 21 stars it's still niche
 - **No Zoom scheduling integration** — Zoom has calendar features but no MCP server for them
 - **No Reclaim.ai / Motion / Clockwise MCP servers** — AI-native scheduling tools that would benefit most from MCP integration haven't shipped servers yet
 - **No cross-platform free/busy aggregation** — checking availability across Google + Outlook + Apple simultaneously doesn't exist in a single tool. Google's suggest_time is provider-locked
