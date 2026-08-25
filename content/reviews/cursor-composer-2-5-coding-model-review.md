@@ -1,7 +1,7 @@
 ---
 title: "Cursor Composer 2.5 Review: 79.8% SWE-Bench, Claude Opus 4.7 Parity, 10× Cheaper"
 date: 2026-05-22T10:00:00+09:00
-sources_audited: 2026-07-27
+sources_audited: 2026-08-25
 description: "Cursor Composer 2.5 (May 18, 2026) is Cursor's proprietary coding model built on Kimi K2.5. 79.8% SWE-Bench Multilingual, 63.2% CursorBench v3.1, 69.3% Terminal-Bench 2.0 — nearly tying Claude Opus 4.7. Pricing: $0.50/$2.50 per million tokens (10× cheaper than Opus). Rating: 4/5."
 og_description: "Cursor Composer 2.5: Kimi K2.5-based coding model matching Claude Opus 4.7 on SWE-Bench and Terminal-Bench. $0.50/$2.50 per M tokens — 10× cheaper than Opus 4.6. Textual feedback RL, 25× more synthetic tasks, SpaceXAI partnership for next model. Rating: 4/5."
 card_description: "Cursor Composer 2.5 (May 18, 2026) — Cursor's proprietary coding agent built on Moonshot's Kimi K2.5 checkpoint. 79.8% SWE-Bench Multilingual. 63.2% CursorBench v3.1 (vs Claude Opus 4.7 Adaptive: 64.8%, GPT-5.5: 59.2%). 69.3% Terminal-Bench 2.0 — essentially tying Opus 4.7 at 69.4%. Pricing: $0.50/M input, $2.50/M output — 10× cheaper than Claude Opus 4.6. Training: textual feedback RL, 25× more synthetic tasks than Composer 2, MoE-scale sharded Muon optimizers. Note: SpaceXAI partnership is for a future, larger model — not this one. Rating: 4/5."
@@ -9,10 +9,14 @@ tags: ["llm", "coding", "ai-coding-assistant", "cursor", "swe-bench", "kimi", "m
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
-last_refreshed: 2026-05-22
+last_refreshed: 2026-08-25
 ---
 
 **At a glance:** Cursor Composer 2.5, released May 18, 2026. Built on Moonshot's Kimi K2.5 open-source checkpoint. 79.8% SWE-Bench Multilingual, 69.3% Terminal-Bench 2.0 (tying Claude Opus 4.7), 63.2% CursorBench v3.1. Pricing: $0.50/$2.50 per million input/output tokens — 10× cheaper than Claude Opus 4.6. Part of our **[AI Models & LLM reviews](/categories/ai-providers/)**.
+
+---
+
+**Editor's note (updated 2026-08-25):** The benchmark comparisons below were current at Composer 2.5's May 18, 2026 launch. Since then, both frontier labs it's compared against have shipped newer flagship models: Anthropic released [Claude Opus 5](https://www.anthropic.com/news/claude-opus-5) on July 24, 2026, and OpenAI released [GPT-5.6](https://openai.com/index/gpt-5-6/) (Sol/Terra/Luna) on July 9, 2026, both superseding the Claude Opus 4.7 / GPT-5.5 generation referenced throughout this review. Cursor has not published head-to-head benchmark data for Composer 2.5 against either newer model as of this update. Composer 2.5's own scores below are unchanged and still Cursor's current published numbers for this model.
 
 ---
 
@@ -107,8 +111,8 @@ Within the editor, Composer 2.5 powers the same interface as previous Composer v
 - Developers for whom Claude Opus 4.7 cost is a meaningful constraint on usage volume
 
 **Consider alternatives:**
-- If terminal-native automation and shell scripting are primary use cases, GPT-5.5 via Codex has a documented 13-point Terminal-Bench advantage
-- If you need the highest available capability ceiling regardless of cost, Claude Opus 4.7 still leads the overall benchmark cluster
+- If terminal-native automation and shell scripting are primary use cases, GPT-5.5 via Codex has a documented 13-point Terminal-Bench advantage (as of the models compared at Composer 2.5's launch)
+- If you need the highest available capability ceiling regardless of cost, note that Claude Opus 4.7 and GPT-5.5 — the models Composer 2.5 is benchmarked against here — have since been superseded by [Claude Opus 5](https://www.anthropic.com/news/claude-opus-5) (July 24, 2026) and [GPT-5.6](https://openai.com/index/gpt-5-6/) (July 9, 2026); Cursor has not published Composer 2.5 comparisons against either
 - If you are evaluating from outside the Cursor ecosystem, CursorBench scores are harder to interpret without Cursor-specific workflow context
 
 ---
@@ -117,7 +121,7 @@ Within the editor, Composer 2.5 powers the same interface as previous Composer v
 
 Cursor Composer 2.5 is a genuine milestone for coding-specialized AI. Taking an open-source Kimi K2.5 checkpoint and fine-tuning it to within 1.6 points of Claude Opus 4.7 on Cursor's own benchmark, while pricing at 10× less, is a meaningful technical and commercial achievement. The SWE-Bench Multilingual score is independently competitive. Terminal-Bench 2.0 parity with Opus 4.7 is strong.
 
-The limit case is GPT-5.5's 13-point Terminal-Bench lead, which matters for shell-heavy workflows. And the SpaceXAI model announced as a future partnership creates anticipation but does not change what is available today.
+The limit case is GPT-5.5's 13-point Terminal-Bench lead, which matters for shell-heavy workflows. The SpaceXAI model announced as a future partnership remains in training with no public release date or benchmark data as of this update. Separately, the Opus 4.7 / GPT-5.5 generation this review benchmarks against has itself been superseded: Anthropic shipped [Claude Opus 5](https://www.anthropic.com/news/claude-opus-5) on July 24, 2026, and OpenAI shipped [GPT-5.6](https://openai.com/index/gpt-5-6/) on July 9, 2026. Readers evaluating today should treat the benchmark comparisons in this review as a snapshot of the May 2026 competitive landscape, not the current one.
 
 For Cursor users doing long agentic coding sessions, Composer 2.5 is the clearest reason to use the Cursor model rather than routing through the Claude or GPT backend. The cost structure alone changes the math on what is feasible.
 
@@ -130,7 +134,12 @@ For Cursor users doing long agentic coding sessions, Composer 2.5 is the cleares
 ## Sources
 
 - [Composer 2.5 — Cursor blog, May 18, 2026](https://cursor.com/blog/composer-2-5) — architecture, training approach (textual feedback RL, 25× synthetic tasks), benchmarks (CursorBench v3.1, SWE-Bench Multilingual, Terminal-Bench 2.0), pricing, SpaceXAI partnership
+- [Composer 2.5 pricing/model card — Cursor changelog](https://cursor.com/changelog/composer-2-5) — confirms $0.50/$2.50 standard and $3.00/$15.00 Fast-variant pricing
 - [Kimi K2.5 open-weight MoE — Digital Applied](https://www.digitalapplied.com/blog/kimi-k2-5-open-weight-moe-composer-2-5) — base checkpoint context
+- [Composer 2.5: Benchmarks, Pricing, and How It Compares — DataCamp](https://www.datacamp.com/blog/composer-2-5) — independent transcription of Cursor's launch-post benchmark table (SWE-Bench Multilingual, Terminal-Bench 2.0, CursorBench v3.1 vs. Claude Opus 4.7 and GPT-5.5), corroborating the figures cited from Cursor's own post
+- [Cursor Composer 2.5 — Coding Agent Index — Artificial Analysis](https://artificialanalysis.ai/articles/cursor-composer-2-5-coding-agent-index) — independent third-party benchmark run (separate methodology from Cursor's self-reported CursorBench/SWE-Bench/Terminal-Bench scores); ranks Composer 2.5 third overall behind Claude Opus 4.7 and GPT-5.5 on cost-adjusted performance
+- [Introducing Claude Opus 5 — Anthropic, July 24, 2026](https://www.anthropic.com/news/claude-opus-5) — supersedes Claude Opus 4.7, the model this review benchmarks Composer 2.5 against
+- [GPT-5.6 — OpenAI, July 9, 2026](https://openai.com/index/gpt-5-6/) — supersedes GPT-5.5, the model this review benchmarks Composer 2.5 against
 
 ---
 
