@@ -140939,3 +140939,96 @@ if warranted.
   116-120.
 - Freshness rotation continues from item 121 next run.
 - No open blockers.
+
+## Run 2026-08-25T20:55 UTC (Deploy 116-120, freshness rotation 121-125)
+
+### Orientation
+
+`date -u` 20:55 UTC (note: system-provided "current date" context said 2026-08-26, but the live
+system clock reads 2026-08-25 — trusted the clock). Inbox: only the prior run's own sent CEO
+digest (#2401), no new pending instructions. Deploy throttle: `.last_deploy` showed 16:54:40 UTC,
+~4h elapsed, clear. Bluesky daily gate -> `ALREADY_POSTED` (Tuesday plug went out 10:55:50 UTC
+earlier today). No Bluesky action needed. CEO digest already sent today (#2401) — nothing new
+warranting an extra message, folding updates into WORKLOG only per cadence rule.
+
+### Deployed pending commit 15be6f8dfb (freshness rotation 116-120)
+
+Rsync deploy ran clean. Bumped `.last_deploy`.
+
+### Freshness rotation: items 121-125 audited (5 parallel subagents)
+
+121. **`content/guides/mcp-cicd-platform-integrations.md`** (2026-07-25 -> **2026-08-25**).
+     Biggest catch: CircleCI's official standalone MCP server
+     (`CircleCI-Public/mcp-server-circleci`), which the entire CircleCI section was built around,
+     is now deprecated — CircleCI's own docs say running it is "not recommended." Rewrote the
+     section around the two current replacements (hosted MCP server + CLI MCP), updated the tool
+     list (9->13, several renamed), and fixed downstream tool-name references. Also: Argo CD's
+     official repo moved (`akuity/argocd-mcp` -> `argoproj-labs/mcp-for-argocd`, donated to the
+     Argo project, stars 379->558); corrected an inaccurate Azure DevOps GA claim (Remote MCP
+     Server hit GA August 5, 2026 per Microsoft's devblog, not "late 2025" as stated); GitHub MCP
+     stars 26,400+->32,000+; GitLab MCP corrected to include Free tier (GitLab 19.2) but still
+     beta; removed an unsupported "Harness MCP Server on AWS Marketplace" claim (no primary
+     source found); added missing citations for the Postmark MCP breach, CVE-2025-6514, and Astrix
+     Research stats (previously uncited).
+122. **`content/guides/anthropic-claude-sonnet-4-opus-4-deprecation-june-15-2026.md`**
+     (2026-07-25 -> **2026-08-25**). Biggest catch: the code sample and tables used dated model ID
+     strings (`claude-sonnet-4-6-20260217`, `claude-opus-4-7-20260416`) but Anthropic's own
+     announcement pages and current deprecations table use undated strings
+     (`claude-sonnet-4-6`, `claude-opus-4-7`) — Anthropic stopped appending date suffixes this
+     generation. A reader copy-pasting the old string would get an API error. Fixed code block,
+     tables, and running text; added a correction note. Also added a dated update callout: since
+     publication Anthropic shipped Opus 4.8, Sonnet 5, and Opus 5, and the live deprecations page
+     now recommends `claude-opus-4-8` (not 4-7) as the Opus 4 replacement. Fixed a broken internal
+     link (pointed to a review slug that never existed; repointed to the actual Fable 5 review).
+     Confirmed unchanged: retirement date/time, retiring model IDs, SWE-bench figures, AA-Omniscience
+     comparison.
+123. **`content/guides/best-calendar-scheduling-mcp-servers.md`** (2026-07-25 -> **2026-08-25**).
+     Biggest catch: the Cal.com section was materially wrong on two counts — Cal.com shipped a
+     hosted remote MCP server (`mcp.cal.com`, 34 tools) while the article claimed Cal.com was "the
+     last major holdout still running locally" and wrongly described the local repo as having
+     34-tool coverage (it still shows 9 default tools live); and Cal.com went closed-source
+     April 15, 2026 (the "39,000+ stars, open source" claim is now stale — that repo relaunched as
+     the separately-branded Cal.diy MIT fork while the actual product went private). Rewrote the
+     section and downstream trend references. Refreshed star counts across 11 other servers
+     (material drift, not noise) and rewrote the Softeria/ms-365-mcp-server entry (moved to a
+     declarative endpoint architecture, 300+ tools not 70+).
+124. **`content/guides/mcp-async-tasks-long-running.md`** (2026-08-11 -> **2026-08-25**, light
+     2-week recheck). Biggest catch: as of FastMCP 4.0.0, background-task support split out of
+     core FastMCP into an optional `fastmcp-tasks` package — a server must now call
+     `mcp.add_extension(TasksExtension())` before `task=True` tools work, and progress reporting
+     moved to an injected `Progress` dependency instead of `ctx.report_progress()`. The guide's
+     three code samples would no longer run as written; rewrote all three against current FastMCP
+     docs and added a dated update note. Confirmed unchanged: Tasks extension spec details,
+     Discussion #269 status, SDK tracking issues, all 11 external links (200 OK), FastMCP's "70%
+     of MCP servers" claim, AWS AgentCore 8-hour/15-minute defaults (added a second, more precise
+     citation to AWS's `LifecycleConfiguration` API reference).
+125. **`content/reviews/stability-ai-stable-audio-3-open-weight-music-sfx-generation.md`**
+     (2026-07-27 -> **2026-08-25**). Biggest catch: licensing was materially misstated — the
+     article implied all commercial use requires a paid Enterprise License, but Stability AI's
+     Community License permits free commercial use for individuals/orgs under $1M annual revenue;
+     fixed in three places (licensing section, a limitations bullet, the rating summary). Also
+     fixed: small model parameter count (433M -> actual 459M per primary/secondary sources); large
+     model self-hosting claim (article said API-only; it's also reachable via fal.ai or
+     self-hostable under Enterprise License); GitHub stars/forks updated from launch-day snapshot
+     (106/7) to current (695/86), keeping the launch baseline for context. Confirmed unchanged:
+     training data counts, T5Gemma encoder ID, PANNs filtering, generation-speed claims, Suno v5.5
+     comparison.
+
+`freshness-rotation.md` now at **125/1006**. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified all 5 corrections in the built HTML: undated
+`claude-sonnet-4-6` model ID, CircleCI section "deprecated" language, Cal.com "closed-source",
+Stable Audio "Community License"/"$1M" threshold, and async-tasks "fastmcp-tasks"/`add_extension`.
+Committed (`0183c92eea`) and pushed. **Not yet deployed** — `.last_deploy` was bumped at the start
+of this run (for the 116-120 deploy), so the 1-hour throttle holds this commit back until next run.
+
+### RingS content/ai/ sync
+
+No action needed — 13 untracked dirs under `content/ai/` remain, unchanged count from last run,
+still excluded from the Hugo build (CEO directive #2352).
+
+### What should happen next
+
+- **Deploy the pending commit (`0183c92eea`)** once the 1-hour throttle clears — rsync + bump
+  `.last_deploy`, no rebuild needed. Lands freshness rotation 121-125.
+- Freshness rotation continues from item 126 next run.
+- No open blockers.
