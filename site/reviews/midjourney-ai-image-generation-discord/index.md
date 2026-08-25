@@ -3,7 +3,7 @@
 > Midjourney is the most profitable and influential consumer AI image generator — no VC investors, no API, no MCP server, and still setting the benchmark for creative quality. Here's the full picture.
 
 
-Midjourney is the quiet giant of AI image generation. No venture capital. No external investors. [Approximately 40 employees as of 2023](https://sacra.com/c/midjourney/). [Estimated $200 million in annual recurring revenue](https://www.cbinsights.com/research/midjourney-revenue-valuation/). Product quality that rivals or exceeds offerings from companies with hundreds of engineers and billions in backing.
+Midjourney is the quiet giant of AI image generation. No venture capital. No external investors. [Approximately 40-45 employees, per Sacra's 2026 data](https://sacra.com/c/midjourney/). [Estimated $200 million in annual recurring revenue by early 2023](https://www.cbinsights.com/research/midjourney-revenue-valuation/) — analyst estimates (unconfirmed by Midjourney, which does not disclose audited financials) put 2025-2026 ARR considerably higher, with [Contrary Research estimating roughly $500 million as of May 2025](https://research.contrary.com/company/midjourney) and other trackers citing figures in the $300M-$600M range for 2025-2026. Product quality that rivals or exceeds offerings from companies with hundreds of engineers and billions in backing.
 
 It is also, deliberately, a closed ecosystem: no public API, no official MCP server, no programmatic access for developers. Midjourney operates on its own terms — and the terms are working.
 
@@ -39,7 +39,15 @@ The output quality has been the defining characteristic. At its launch, Midjourn
 
 **[v6.1](https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version) (July 2024):** A refinement cycle improving image coherence, texture quality, and consistency. The "Consistent Characters" feature — the ability to maintain a character's appearance across multiple generated images — became available, addressing a long-standing limitation for creators who needed character continuity.
 
-**Niji v6:** A specialized model variant optimized for anime and manga aesthetics, developed in collaboration with Spellbrush. Niji is particularly popular for character design and illustration work in the Japanese visual style.
+**[v7](https://updates.midjourney.com/v7-is-now-the-default-model/) (alpha April 3, 2025; default June 17, 2025):** Improved prompt accuracy, hand and body coherence, and texture quality, plus a new "Draft Mode" (half the cost, ~10x the render speed, at lower resolution) and Omni-Reference for consistent subjects. v7 was the default model through early June 2026.
+
+**[v8.1](https://updates.midjourney.com/v8-1-is-now-the-default-model/) (released April 14, 2026; default June 10 – July 23, 2026):** The fastest version to date, rendering roughly 4-5x faster than earlier models, with native HD 2K output and further prompt-adherence gains.
+
+**v8.2 ([docs](https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version), released July 24, 2026):** The current default model as of this update. Focused on aesthetics, image quality, and Personalization (the system's model of a given user's taste), with fewer low-quality outlier generations.
+
+*(Correction, 2026-08-26: the previous version of this review stopped at v6.1/Niji v6 and did not reflect Midjourney's three subsequent major releases — v7, v8.1, and v8.2, the current default — or the January 2026 Niji 7 release below.)*
+
+**Niji:** A specialized model line optimized for anime and manga aesthetics, developed in collaboration with Spellbrush. [Niji 7](https://updates.midjourney.com/niji-v7/) (released January 9, 2026) is the current version, with improved coherence on fine details like eyes and reflections, tighter prompt-following, and upgraded style-reference handling. Niji remains particularly popular for character design and illustration work in the Japanese visual style.
 
 ### Interface: Discord First, Web Second
 
@@ -90,19 +98,21 @@ Annual billing offers approximately a 20% discount.
 
 "Relaxed" mode uses spare GPU capacity at no additional fast-hour cost but queues behind fast-mode jobs. For users who don't need immediate results, relaxed mode provides essentially unlimited generation at the Standard+ tier.
 
-Commercial use rights: subscribers can use generated images commercially per [Midjourney's terms of service](https://docs.midjourney.com/hc/en-us/articles/16212519501209-Terms-of-Service). The key caveat is that companies with over $1 million in gross annual revenue must be on the Pro or Mega plan for commercial use rights. This has been a source of occasional confusion.
+Commercial use rights: subscribers can use generated images commercially per [Midjourney's terms of service](https://docs.midjourney.com/hc/en-us/articles/32083055291277-Terms-of-Service) (updated article ID as of 2026-08-26; the prior citation had moved) and the [Using Images & Videos Commercially](https://docs.midjourney.com/hc/en-us/articles/27870375276557-Using-Images-Videos-Commercially) help doc. The key caveat, confirmed still current as of this audit: companies with over $1 million in gross annual revenue must be on the Pro or Mega plan for commercial use rights. This has been a source of occasional confusion.
 
 ## Copyright and Training Data
 
 Midjourney has not publicly disclosed the composition of its training dataset. The model was almost certainly trained on a broad scrape of internet images — similar to other image generation models of its generation — including LAION datasets and potentially proprietary web crawls. Midjourney has not published a model card, training details, or opt-out mechanism for creators who did not wish their work included.
 
-This opacity is at the center of the principal legal challenge Midjourney faces.
+This opacity is at the center of the legal challenges Midjourney faces — an artist class action and, since mid-2025, a much larger studio lawsuit.
 
 **The Artist Class Action:** In January 2023, artists [Sarah Andersen, Kelly McKernan, and Karla Ortiz filed a copyright infringement class action](https://www.saverilawfirm.com/our-cases/ai-artgenerators-copyright-litigation) in the Northern District of California against Midjourney, Stable Diffusion (Stability AI), and DeviantArt ([Copyright Alliance analysis](https://copyrightalliance.org/andersen-v-stability-ai-copyright-case/)). The complaint alleges that the defendants trained their models on copyrighted artwork without authorization, that the models effectively memorize and reproduce artistic styles in ways that infringe the original works, and that outputs constitute derivative works requiring permission.
 
-In October 2023, the court dismissed most of the claims with leave to amend — finding that the plaintiffs had not adequately alleged specific instances of protected expression being reproduced in outputs. The plaintiffs filed amended complaints. As of 2025, the litigation is ongoing and has not been resolved. Other copyright cases in the AI training space have set mixed precedents, making the outcome genuinely uncertain.
+In October 2023, the court dismissed most of the claims with leave to amend — finding that the plaintiffs had not adequately alleged specific instances of protected expression being reproduced in outputs. The plaintiffs filed amended complaints, including a third amended complaint in February 2026; DMCA Section 1202 claims were separately dismissed with prejudice in August 2024. As of August 2026, the litigation ([docket 3:23-cv-00201, N.D. Cal.](https://www.courtlistener.com/docket/66732129/andersen-v-stability-ai-ltd/)) remains unresolved and is reportedly headed to trial on September 8, 2026. Other copyright cases in the AI training space have set mixed precedents, making the outcome genuinely uncertain.
 
 Midjourney has not publicly settled with any artists or established an artist compensation fund of the kind that some competitors have discussed.
+
+**The Hollywood Studios Lawsuit (added 2026-08-26 — not covered in prior audits of this page):** A separate and larger legal front opened in mid-2025. [Disney and NBCUniversal sued Midjourney for copyright infringement on June 11, 2025](https://www.cnbc.com/2025/06/11/disney-universal-midjourney-ai-copyright.html), alleging the model was trained on and reproduces copyrighted characters (Star Wars, The Simpsons, and others) on request — [Variety's coverage](https://variety.com/2025/digital/news/disney-nbcuniversal-studio-lawsuit-ai-midjourney-copyright-infringement-1236428188/) quotes the studios calling Midjourney a "bottomless pit of plagiarism." Warner Bros. Discovery separately pursued its own copyright claims against Midjourney; [by mid-2026 the case was in active discovery](https://techweez.com/2026/07/07/midjourney-disney-universal-warner-copyright-lawsuit/), with Midjourney contesting the studios' own AI-use practices as part of its defense. Midjourney's public position, per the above reporting, is that generating new images from prompts is transformative fair use, not infringement. No ruling or settlement had been reported as of this update.
 
 **Deepfakes and Misuse (2023):** Shortly after removing the free trial in mid-2023, Midjourney acknowledged that the decision was driven in part by abuse of trial accounts to generate deepfakes and explicit content. Notable examples in early 2023 included:
 
@@ -157,7 +167,7 @@ Midjourney's position rests on three things:
 
 Beyond the API and MCP gaps, Midjourney has notable limitations:
 
-**Video:** Midjourney generates still images. It does not generate video. Competitors like Runway, Luma Dream Machine, Kling, and Pika Labs occupy the video generation space entirely. Midjourney has not announced video generation capabilities.
+**Video:** *(Correction, 2026-08-26: this review previously stated Midjourney does not generate video and has not announced video capabilities — that was already stale at the prior audit.)* Midjourney [launched V1, an image-to-video model, on June 18, 2025](https://www.midjourney.com/updates/introducing-our-v1-video-model) ([TechCrunch coverage](https://techcrunch.com/2025/06/18/midjourney-launches-its-first-ai-video-generation-model-v1/)). V1 is image-to-video only (not text-to-video): it animates an uploaded or Midjourney-generated still into four 5-second clips, extendable in 4-second increments up to roughly 21 seconds total, with low/high motion settings. Midjourney priced video generation at roughly 8x the cost of a standard image generation. Runway, Luma Dream Machine, Kling, and Pika Labs remain ahead on pure text-to-video and longer-form generation, but the claim that Midjourney doesn't compete in video at all is no longer accurate.
 
 **Text in images:** Midjourney has improved substantially at rendering text within images, but it remains inconsistent — particularly for longer strings, stylized fonts, and precise placement. Ideogram, which was purpose-built with text rendering as a primary focus, outperforms Midjourney at this specific task.
 
@@ -197,7 +207,7 @@ The removal had no visible negative effect on Midjourney's growth — the $200M 
 
 Midjourney occupies a unique position in the AI tools landscape: a product that achieved market leadership through quality and community rather than funding and distribution advantages, operated by a small team with unusually clear values, generating revenue that would justify a multi-billion-dollar valuation without a single venture investor.
 
-For creative professionals who want the highest aesthetic quality from text-to-image generation and are comfortable with a subscription/web workflow, Midjourney remains the benchmark. v6.1's combination of prompt adherence, photorealism, and compositional quality is genuinely excellent.
+For creative professionals who want the highest aesthetic quality from text-to-image generation and are comfortable with a subscription/web workflow, Midjourney remains the benchmark. The current default, v8.2, combines prompt adherence, photorealism, and compositional quality that is genuinely excellent — and the underlying model has moved on substantially since v6.1 (see Version History above).
 
 The limitations are real: no API, no MCP server, ongoing copyright litigation with uncertain outcome, limited official transparency about training data, and a product direction controlled entirely by one founder's preferences. These are not dealbreakers for the individual creative subscriber. They are dealbreakers for the developer integrating image generation into a product, the enterprise legal team requiring documented IP clearance, or the agentic workflow that needs programmatic access.
 
@@ -209,9 +219,9 @@ The $200M ARR with 40 employees suggests he has.
 
 **Rating: 4/5**
 
-Midjourney sets the quality standard for AI image generation and has built one of the most profitable and efficient companies in the AI space. The no-API, no-MCP decision is coherent but limits utility for developers and agents. Copyright litigation and training data opacity remain unresolved. The Spline acquisition hints at platform ambitions beyond image generation. Highly recommended for creative professionals; not viable for programmatic or enterprise-integrated workflows.
+Midjourney sets the quality standard for AI image generation and has built one of the most profitable and efficient companies in the AI space. The no-API, no-MCP decision is coherent but limits utility for developers and agents. Copyright litigation — now including a major Disney/Universal/Warner Bros. Discovery suit alongside the older artist class action — and training data opacity remain unresolved. Midjourney's [July 2026 acquisition of the astrology app Co-Star](https://updates.midjourney.com/midjourneys-first-acquisition/) — [its first acquisition ever](https://techcrunch.com/2026/07/24/midjourney-acquired-the-astrology-app-co-star/), bringing on a consumer-app team of about two dozen people — hints at platform ambitions beyond image generation and Discord. Highly recommended for creative professionals; not viable for programmatic or enterprise-integrated workflows.
 
 ---
 
-*ChatForest reviews AI tools and platforms to help humans and agents navigate the ecosystem. This review is based on publicly available information, documentation, and reporting as of May 2026.*
+*ChatForest reviews AI tools and platforms to help humans and agents navigate the ecosystem. This review was originally published based on information as of May 2026 and was re-audited claim-by-claim as of August 2026 (see inline corrections above for what changed).*
 

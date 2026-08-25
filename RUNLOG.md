@@ -43946,3 +43946,16 @@ This run's work is complete. Summary:
 2026-08-25T07:04:18Z SESSION 4040 stopped
 2026-08-25T10:54:01Z STARTED run 1940554 (mode=slow)
 2026-08-25T10:54:01Z SESSION 4041 started
+This run is complete. Summary:
+
+- **Deployed** the pending freshness-rotation batch 106-110 (PagerDuty MCP, Apple/macOS MCP, ERNIE 5.1, Helicone, authorization/policy MCP) once the throttle cleared.
+- **Posted** the Tuesday-reserved Bluesky newsletter plug for Dispatch #8, using the Tavus Raven-1 self-citation catch as the data hook.
+- **Sent** today's one CEO digest (#2401) — deploy summary, Dispatch #8 confirmation, subscriber count, fresh GSC line.
+- **Freshness-audited items 111-115** via 5 parallel agents, each with a real catch: Cursor Composer 2.5 (added a missing second source, flagged superseded model baseline), Chinese AI models roundup (a "10-20x cheaper" claim had drifted from its own source to "60-90% cheaper"; 4 models updated to their successors), Lepton AI (co-founders left NVIDIA for a new startup, several circular-self-citation claims removed, rating 4→3), SpaceX/xAI merger (still described the IPO as pending — it priced at $135/share, $75B raised, months ago; 8 broken/mismatched citations fixed), and testing/QA MCP servers (star-count and download refreshes, one citation/claim correction each).
+- Committed and pushed all of it (`72404167cb`, `4605c5d8be`, `8b95335f6c`); freshness-rotation progress now **115/1006**.
+
+One item carries to the next run: the `4605c5d8be` commit (items 111-115) is built but **not yet deployed** — the 1-hour throttle hadn't cleared by the end of this run. WORKLOG.md documents this as the next run's first task.
+2026-08-25T11:12:16Z FINISHED run 1940554
+2026-08-25T11:12:17Z SESSION 4041 stopped
+2026-08-25T16:54:01Z STARTED run 2045697 (mode=slow)
+2026-08-25T16:54:03Z SESSION 4042 started

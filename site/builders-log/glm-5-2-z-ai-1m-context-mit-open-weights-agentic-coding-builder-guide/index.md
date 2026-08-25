@@ -9,6 +9,10 @@ This guide covers what changed from GLM-5.1, what the benchmark picture actually
 
 ---
 
+**Update (2026-08-26):** Z.ai released [GLM-5.3](https://docs.z.ai/guides/llm/glm-5.3) on August 14, 2026, superseding GLM-5.2 as the current flagship and already rolled out to all GLM Coding Plan subscribers. Z.ai says 5.3 reuses the identical GLM-5.2 base model and derives its gains entirely from additional post-training — notably lifting Terminal-Bench 3.0 from 4.6% to 28.3% and adding cybersecurity-focused benchmarks — rather than a new architecture; see independent coverage from [MarkTechPost](https://www.marktechpost.com/2026/08/14/z-ai-ships-glm-5-3-without-retraining-the-base-model-better-at-complex-coding-and-long-horizon-tasks/) and [VentureBeat](https://venturebeat.com/technology/glm-5-3-is-here-with-advanced-cyber-capabilities-and-reportedly-already-found-a-serious-vulnerability-in-cursor). MIT-licensed open weights for 5.3 were not yet public as of this update — Z.ai said they'd follow roughly two weeks after launch, pending safety review. The rest of this article is preserved as written, covering the GLM-5.2 launch as it looked on June 14, 2026; read the benchmark and pricing comparisons below as a historical snapshot unless noted otherwise.
+
+---
+
 ## Context: The GLM-5 Line
 
 GLM-5 launched on [February 11, 2026](https://aireleasetracker.com/model/zai/glm-5) as a [744-billion-parameter Mixture-of-Experts model with 40 billion parameters active per forward pass](https://docs.z.ai/guides/llm/glm-5). That MoE ratio — 40B active out of 744B total — is what makes the model economically deployable at API scale and self-hostable with a fraction of the hardware you'd need for a dense equivalent.
@@ -57,7 +61,7 @@ The most relevant recent baseline is GLM-5.1's own published scorecard, [compare
 | BrowseComp | 68.0 | — | — |
 | BrowseComp + context mgmt | 79.3 | 84.0 | 82.7 |
 
-For additional context, the predecessor GLM-5 (Feb 2026) [published a fuller benchmark suite at its own launch](https://docs.z.ai/guides/llm/glm-5), scoring 77.8% on SWE-bench Verified against the then-frontier Claude Opus 4.5 (80.9%) and GPT-5.2 (80.0%), and leading GPT-5.2 on BrowseComp with context management (75.9% vs. 65.8%). Those are GLM-5's numbers, not GLM-5.1's — the two models were benchmarked on different suites against different competing model generations, and shouldn't be read as a single continuous line.
+For additional context, the predecessor GLM-5 (Feb 2026) [published a fuller benchmark suite at its own launch](https://docs.z.ai/guides/llm/glm-5) showing a 77.8% SWE-bench Verified score for itself. Z.ai's own [GLM-5 technical report](https://arxiv.org/abs/2602.15763) separately compares that against the then-frontier [Claude Opus 4.5 (80.9%, Anthropic's own reported score)](https://www.anthropic.com/news/claude-opus-4-5) and [GPT-5.2 (80.0%, OpenAI's own reported score)](https://openai.com/index/introducing-gpt-5-2/), and shows GLM-5 leading GPT-5.2 on BrowseComp with context management (75.9% vs. 65.8%). *(Correction, 2026-08-26: these three comparison figures were previously cited to the docs.z.ai overview page above, which does not contain them — re-verified against Z.ai's technical report and each competing lab's own announcement instead.)* Those are GLM-5's numbers, not GLM-5.1's — the two models were benchmarked on different suites against different competing model generations, and shouldn't be read as a single continuous line.
 
 Two things stand out:
 
@@ -88,16 +92,16 @@ Access is via z.ai. The model is served through the Coding Plan interface, not y
 
 The standalone API, enabling pay-per-token access without a subscription, is scheduled for the same week as the open weights. Pricing has not been announced; [GLM-5 Turbo on Z.ai's API runs at **$1.20 / $4.00 per million input / output tokens**](https://openrouter.ai/z-ai/glm-5-turbo). GLM-5.2 pricing will likely be in the same range.
 
-For comparison, GLM-5.1 is already available on OpenRouter at [roughly **$0.95 / $3.00 per million tokens**](https://openrouter.ai/z-ai/glm-5.1) — noticeably cheaper than the flagship tier, useful as a cheaper fallback for lower-stakes tasks.
+For comparison, GLM-5.1 is already available on OpenRouter at [roughly **$1.26 / $3.96 per million tokens**](https://openrouter.ai/z-ai/glm-5.1) (updated 2026-08-26, per OpenRouter's live model API — up from the ~$0.95/$3.00 rate at last audit) — still cheaper than the flagship tier, useful as a fallback for lower-stakes tasks.
 
 ### Self-Hosted (Week of June 16–20)
 
 MIT-licensed weights are arriving on HuggingFace the week of June 16–20. The GLM-5.1 self-hosting baseline from April gives a reasonable preview of requirements:
 
-- **Minimum hardware**: [a full node of 8× NVIDIA B200 GPUs at full precision](https://www.spheron.network/blog/deploy-glm-5-1-gpu-cloud/); the [FP8-quantized checkpoint needs roughly 800GB of VRAM](https://www.spheron.network/blog/deploy-glm-5-1-gpu-cloud/), which points to 8× H200 or H20 as the realistic production config (standard 80GB H100s don't have enough VRAM per GPU for this model at FP8)
+- **Minimum hardware**: [full-precision BF16 needs roughly 1,508GB and isn't practical on a single node](https://www.spheron.network/blog/deploy-glm-5-1-gpu-cloud/); the [FP8-quantized checkpoint needs roughly 754GB of VRAM, fitting on 8× H200 SXM5 (1,128GB total)](https://www.spheron.network/blog/deploy-glm-5-1-gpu-cloud/) as the realistic production config (standard 80GB H100s don't have enough VRAM per GPU for this model at FP8) *(corrected 2026-08-26 — this source does not mention B200 GPUs for GLM-5.1 deployment; the earlier "8× B200 at full precision" figure in this section was not supported by the cited source)*
 - **Runtimes**: [vLLM (v0.19.0+) and SGLang (v0.5.10+) both support the architecture](https://www.spheron.network/blog/deploy-glm-5-1-gpu-cloud/)
 - **Memory optimization**: FP8-quantized weights roughly halve VRAM requirements versus BF16
-- **Third-party managed options**: [Fireworks AI, DeepInfra, and Nebius all host GLM-5.1](https://artificialanalysis.ai/models/glm-5-1/providers) — US/EU-hosted, no data-residency exposure to Chinese infrastructure
+- **Third-party managed options**: [DeepInfra, Nebius, and CoreWeave all host GLM-5.1](https://artificialanalysis.ai/models/glm-5-1/providers) — US/EU-hosted, no data-residency exposure to Chinese infrastructure *(updated 2026-08-26 — Fireworks AI no longer appears in the live provider list at this source)*
 
 Self-hosting eliminates any jurisdictional data concerns while preserving full model capability. For teams already running GLM-5.1 inference clusters, upgrading the weights will be straightforward.
 
@@ -126,7 +130,7 @@ The honest comparison for builders considering GLM-5.2 as a primary coding agent
 - [GLM-5.1 is the first open-weight model to top the SWE-Bench Pro leaderboard](https://huggingface.co/zai-org/GLM-5.1) (58.4 vs. Claude Opus 4.6's 57.3 and GPT-5.4's 57.7), though the margin is narrow
 
 **Reasons to prefer Claude Opus 4.5 or GPT-5.2:**
-- On predecessor GLM-5's own launch benchmarks, [Claude Opus 4.5 and GPT-5.2 scored higher on SWE-bench Verified](https://docs.z.ai/guides/llm/glm-5) (80.9% and 80.0% vs. GLM-5's 77.8%) — GLM-5.1 has not published a directly comparable SWE-bench Verified number, so this isn't a clean apples-to-apples read against the current model
+- On predecessor GLM-5's own [launch benchmarks](https://docs.z.ai/guides/llm/glm-5) (77.8% SWE-bench Verified), [Claude Opus 4.5](https://www.anthropic.com/news/claude-opus-4-5) and [GPT-5.2](https://openai.com/index/introducing-gpt-5-2/) scored higher on the same test — 80.9% and 80.0% respectively, per each lab's own reported score — GLM-5.1 has not published a directly comparable SWE-bench Verified number, so this isn't a clean apples-to-apples read against the current model
 - Independent benchmark coverage is much deeper for the closed models
 - Ecosystem: Claude Code and Codex CLI have more mature tooling integrations
 - GLM-5.2 has no published benchmarks yet — the upgrade over 5.1 is unquantified
