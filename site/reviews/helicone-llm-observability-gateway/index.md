@@ -15,7 +15,7 @@ Helicone is an open-source LLM observability platform and AI gateway with a genu
 
 Helicone sits between your application and the LLM provider's API. Every request passes through Helicone's proxy, which logs the full request and response, tracks token counts and cost, and applies any configured behaviors — caching, rate limiting, custom metadata — before forwarding to the actual provider. The overhead claim is under 1ms in self-hosted mode.
 
-Alongside the proxy model, Helicone has an AI Gateway mode: a unified endpoint (`https://ai-gateway.helicone.ai`) that routes to 100+ models across providers, accepting a single API key and normalizing to an OpenAI-compatible interface. This is effectively a provider-agnostic LLM router bolted onto the observability layer.
+Alongside the proxy model, Helicone has an [AI Gateway mode](https://docs.helicone.ai/gateway/overview): a unified endpoint (`https://ai-gateway.helicone.ai`) that routes to 100+ models across providers, accepting a single API key and normalizing to an OpenAI-compatible interface. This is effectively a provider-agnostic LLM router bolted onto the observability layer.
 
 By March 2026, [Helicone had processed **14.2 trillion tokens** across **16,000 organizations**](https://helicone.ai/blog/joining-mintlify) — scale that suggests the proxy model works at production volumes.
 
@@ -85,6 +85,8 @@ Supported providers include OpenAI, Anthropic, Azure OpenAI, Google Gemini, Deep
 | Team | $799/month | 10k + usage overage | 3 months | Unlimited |
 | Enterprise | Custom | Custom | Custom | Custom |
 
+Tiers, prices, and limits verified live against [Helicone's pricing page](https://www.helicone.ai/pricing) as of 2026-08-25 — unchanged since the previous audit.
+
 The free tier's 7-day retention is a real limitation — trend analysis across a week is the ceiling. The Hobby → Pro jump ($0 to $79/month) is steep for early-stage projects. Helicone offers 50% off the first year for startups under two years old with less than $5M in funding, and $100 credit for open-source projects.
 
 Self-hosted deployments are available via Docker and Helm (Kubernetes). The self-hosted path removes the data-residency concern and eliminates per-request costs beyond infrastructure.
@@ -101,9 +103,9 @@ Helicone's clearest competitors in the observability space are LangSmith (LangCh
 - Unified multi-provider endpoint (100+ models) through a single API key
 
 **Where competitors have the edge:**
-- LangSmith: deeper LangChain tracing, dataset management, and prompt versioning; better if you're heavily invested in the LangChain ecosystem
-- W&B Weave: GPU monitoring, full ML experiment tracking, native multimodal evaluation — better for teams straddling LLM and classical ML
-- OpenLIT: OTel-native with zero-code Kubernetes instrumentation via eBPF; fully free self-hosted on ClickHouse; no acquisition/EOL concern
+- [LangSmith](https://docs.langchain.com/langsmith/manage-datasets): deeper LangChain tracing, versioned dataset management, and [prompt versioning](https://docs.langchain.com/langsmith/manage-datasets) via a commit-based Prompt Hub; better if you're heavily invested in the LangChain ecosystem
+- [W&B Weave](https://docs.wandb.ai/weave): full ML experiment tracking and native multimodal evaluation; GPU monitoring specifically lives in the sibling [W&B Models](https://wandb.ai/site/models/) product in the same workspace rather than Weave itself — better for teams straddling LLM and classical ML
+- [OpenLIT](https://openlit.io/): OTel-native, [fully free and Apache-2.0 self-hosted on ClickHouse](https://openlit.io/); zero-code Kubernetes instrumentation via eBPF is an Enterprise-tier feature, not part of the free self-hosted core; no acquisition/EOL concern
 
 ---
 
@@ -113,7 +115,7 @@ On March 3, 2026, Mintlify — the documentation tooling company — [acquired H
 
 **For Helicone as a standalone product, this means:**
 - **Maintenance mode**: security patches, bug fixes, and new model additions will ship; no new features
-- **Experiments feature deprecated**: September 1, 2025 — the A/B prompt testing UI is being removed
+- **[Experiments feature deprecated](https://docs.helicone.ai/features/experiments)**: September 1, 2025 — the A/B prompt testing UI is being removed
 - **Migration paths**: Mintlify is working with enterprise customers on transitions; no hard shutdown date announced
 
 This changes the evaluation significantly. Helicone is not end-of-life — the proxy still works, the GitHub repo (Apache 2.0) still accepts contributions, and the Docker image is still current. But a tool in maintenance mode is not one to build a new production dependency on unless you're prepared to self-host and own the maintenance burden.
@@ -157,7 +159,7 @@ The Mintlify acquisition is not a product failure, but it does represent an infl
 
 ---
 
-*Researched May 2026. Star count, pricing, and feature status reflect data available at that time. Helicone's acquisition by Mintlify was announced March 3, 2026.*
+*Researched May 2026. Helicone's acquisition by Mintlify was announced March 3, 2026. Freshness audit 2026-08-25: GitHub star count updated to 6,099 (from 5,600 at original publish) per the live [Helicone/helicone repository](https://github.com/Helicone/helicone); pricing, maintenance-mode status, the 14.2 trillion token / 16,000 organization figures, and the Experiments deprecation date were re-verified against live primary sources and are unchanged. No migration deadline or shutdown date has been announced as of this audit.*
 
 *ChatForest reviews are based on public documentation, GitHub repositories, and web research. We do not have hands-on access to the tools we review.*
 

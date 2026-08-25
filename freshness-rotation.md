@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 95/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 110/1006.**
 
 ---
 
@@ -125,11 +125,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 103. `content/reviews/mistral-large-3-open-weight-moe-llm-review.md` — 1c/484i (90d), sources_audited: 2026-08-25
 - [x] 104. `content/reviews/ltx-video-lightricks-fast-open-source-text-to-video-i2v-2b.md` — 1c/457i (90d), sources_audited: 2026-08-25
 - [x] 105. `content/reviews/fireworks-ai-inference-fine-tuning-platform.md` — 1c/406i (90d), sources_audited: 2026-08-25
-- [ ] 106. `content/reviews/baidu-ernie-5-1-moe-frontier-llm-review.md` — 1c/404i (90d), sources_audited: 2026-07-26
-- [ ] 107. `content/reviews/helicone-llm-observability-gateway.md` — 1c/403i (90d), sources_audited: 2026-07-26
-- [ ] 108. `content/reviews/pagerduty-mcp-server.md` — 1c/399i (90d), sources_audited: 2026-08-14
-- [ ] 109. `content/reviews/apple-macos-mcp-servers.md` — 1c/398i (90d), sources_audited: 2026-08-14
-- [ ] 110. `content/reviews/authorization-policy-engine-mcp-servers.md` — 1c/377i (90d), sources_audited: 2026-07-26
+- [x] 106. `content/reviews/baidu-ernie-5-1-moe-frontier-llm-review.md` — 1c/404i (90d), sources_audited: 2026-08-25
+- [x] 107. `content/reviews/helicone-llm-observability-gateway.md` — 1c/403i (90d), sources_audited: 2026-08-25
+- [x] 108. `content/reviews/pagerduty-mcp-server.md` — 1c/399i (90d), sources_audited: 2026-08-25
+- [x] 109. `content/reviews/apple-macos-mcp-servers.md` — 1c/398i (90d), sources_audited: 2026-08-25
+- [x] 110. `content/reviews/authorization-policy-engine-mcp-servers.md` — 1c/377i (90d), sources_audited: 2026-08-25
 - [ ] 111. `content/reviews/cursor-composer-2-5-coding-model-review.md` — 1c/377i (90d), sources_audited: 2026-07-27
 - [ ] 112. `content/reviews/chinese-ai-models-openrouter-dominance-deepseek-kimi-minimax-glm-2026.md` — 1c/372i (90d), sources_audited: 2026-07-28
 - [ ] 113. `content/reviews/lepton-ai-nvidia-dgx-cloud-gpu-platform.md` — 1c/368i (90d), sources_audited: 2026-07-26

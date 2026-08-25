@@ -9,11 +9,11 @@ categories: ["reviews"]
 rating: 3
 ratingHalf: true
 author: "ChatForest"
-last_refreshed: 2026-05-13
-sources_audited: 2026-07-26
+last_refreshed: 2026-08-25
+sources_audited: 2026-08-25
 ---
 
-**At a glance:** Baidu ERNIE 5.1, released May 8, 2026. Closed MoE model, ~800B total parameters, ~6% of typical pre-training compute. LMArena Search #4 globally (#1 Chinese model). AIME26 math: 99.6 (#2 globally). MMLU-Pro: last among frontier comparisons. No open weights. $0.59/$2.65 per M tokens on Qianfan API. 128K context window. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** Baidu ERNIE 5.1, released May 8, 2026. Closed MoE model, ~800B total parameters, ~6% of typical pre-training compute. Search Arena #4 globally at launch, **#6 as of this audit (August 2026)** as newer models entered the leaderboard — still #1 Chinese model. AIME26 math: 99.6 (#2 globally, self-reported). MMLU-Pro: last among frontier comparisons. No open weights. $0.59/$2.65 per M tokens on Qianfan API. 128K context window. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
@@ -23,7 +23,7 @@ When the company launched ERNIE (Enhanced Representation through kNowledge IntEg
 
 ERNIE 5.1 arrives in May 2026 as the clearest evidence yet that Baidu has caught up.
 
-This is not a frontier-scale brute-force model. It is a carefully engineered MoE architecture that squeezes frontier-competitive performance out of roughly six percent of the compute a comparable model at scale would require. It ranks fourth globally on LMArena's Search Arena — behind Claude Opus 4.6, GPT-5.5, and Claude Opus 4.7, but ahead of every other model on the planet, and first among all Chinese AI labs. On AIME26 mathematical reasoning with tools, it scores 99.6, trailing only Gemini 3.1 Pro's 99.9.
+This is not a frontier-scale brute-force model. It is a carefully engineered MoE architecture that squeezes frontier-competitive performance out of roughly six percent of the compute a comparable model at scale would require. At launch it ranked fourth globally on what was then called LMArena's Search Arena — behind Claude Opus 4.6, GPT-5.5, and Claude Opus 4.7, but ahead of every other model on the planet, and first among all Chinese AI labs. **Update (audit, August 25, 2026): it has since slipped to #6** as two newer models (GPT-5.6-Sol-xhigh and Claude Fable 5) entered above it — see the Benchmarks section for the current standing; it remains #1 among Chinese labs. On AIME26 mathematical reasoning with tools, it scores 99.6, trailing only Gemini 3.1 Pro's 99.9 (this figure is self-reported by Baidu; see the Benchmarks section for caveats).
 
 But the picture is not uniformly positive. MMLU-Pro — the broad academic knowledge benchmark that tends to expose gaps in training data coverage — comes in last among the frontier models Baidu compared it against. Coding generates "plausible but broken" programs. No weights are released. API access requires a Baidu account.
 
@@ -61,9 +61,11 @@ The "Once-For-All" framing means that instead of separate training passes for ea
 
 - **Total parameters**: approximately **800 billion** (~one-third of ERNIE 5.0's 2.4T)
 - **Active parameters at inference**: approximately half of ERNIE 5.0's active count
-- **Pre-training compute**: approximately [**6% of comparable frontier-scale models**](https://cntechpost.com/2026/05/09/baidu-releases-ernie-5-1-pre-training-cost-at-only-6-industry-peers/) (also covered by [The Decoder](https://the-decoder.com/baidus-ernie-5-1-cuts-94-percent-of-pre-training-costs-while-competing-with-top-models/))
+- **Pre-training compute**: approximately [**6% of comparable frontier-scale models**](https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/), per [Baidu's own release post](https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/) (also covered by [The Decoder](https://the-decoder.com/baidus-ernie-5-1-cuts-94-percent-of-pre-training-costs-while-competing-with-top-models/), which independently reports the same 6%/94%-reduction figure and adds the caveat that Baidu has not released weights so the claim "can't be independently verified")
 
 The 94% compute reduction claim is the headline of the release. Baidu cannot be independently verified on this — no weights are released, and "comparable models at similar scale" is undefined. But the benchmark results show genuine frontier-competitive performance on several dimensions, which means the efficiency claim is at least plausible as a relative measure.
+
+> **Note (audit, August 25, 2026):** this page previously cited [cntechpost.com's coverage](https://cntechpost.com/2026/05/09/baidu-releases-ernie-5-1-pre-training-cost-at-only-6-industry-peers/) of this claim as a second source alongside The Decoder. As of this audit, cntechpost.com does not resolve (DNS lookup failure, checked twice) — its current live status could not be confirmed. The claim itself remains adequately sourced via Baidu's own release post (primary) plus The Decoder's independent coverage (secondary); the cntechpost.com link has been de-emphasized above pending confirmation it is back online.
 
 ### Training Infrastructure and Post-Training Pipeline
 
@@ -103,11 +105,13 @@ This is an extraordinary result. AIME (American Invitational Mathematics Examina
 These rankings — consistently second globally on math, instruction following, and tool use — form the strong core of the ERNIE 5.1 story.
 
 **Search:**
-- [**LMArena Search Arena**](https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/): score **1,223**, ranked **#4 globally**, **#1 among all Chinese models**
-- Behind: Claude Opus 4.6 Search, GPT-5.5 Search, Claude Opus 4.7
+- [**LMArena Search Arena**](https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/) at launch (May 9, 2026): score **1,223**, ranked **#4 globally**, **#1 among all Chinese models**
+- Behind at launch: Claude Opus 4.6 Search, GPT-5.5 Search, Claude Opus 4.7
 - First Chinese model in the global top 10 for search
 
-This matters more for Baidu than for a typical AI lab. Baidu runs China's dominant search engine. ERNIE 5.1's search integration benefits from years of infrastructure investment in real-time web retrieval, query understanding, and result synthesis. The #4 global ranking in search is partially an engineering story, not just a model story — but that engineering counts.
+> **Correction (audit, August 25, 2026):** LMArena rebranded to "Arena" in January 2026 (lmarena.ai now redirects to [arena.ai](https://arena.ai/leaderboard/search)); the leaderboard itself is unchanged, just the operator's name. More importantly, rankings shift as new models are added — as of this audit, [Arena's live Search leaderboard](https://arena.ai/leaderboard/search) places ERNIE 5.1 at **#6 globally with a score of 1,227±10**. Its own score is essentially unchanged from launch (1,223 → 1,227, within the margin of error), but two models released after ERNIE 5.1 — GPT-5.6-Sol-xhigh (#1, 1,257) and Claude Fable 5 (#5, 1,230) — now rank above it, in addition to the three that outranked it at launch (Claude Opus 4.6 Search, GPT-5.5 Search, and Claude Opus 4.7, now #2–#4). ERNIE 5.1 remains the highest-ranked Chinese model and still sits inside the global top 10, both true at launch and as of this audit.
+
+This matters more for Baidu than for a typical AI lab. Baidu runs China's dominant search engine. ERNIE 5.1's search integration benefits from years of infrastructure investment in real-time web retrieval, query understanding, and result synthesis. The #4-at-launch (now #6, see correction above) global ranking in search is partially an engineering story, not just a model story — but that engineering counts.
 
 **LMArena Text:**
 - ERNIE 5.1-Preview (April 29): **#13 globally** (1,476 points)
@@ -170,9 +174,11 @@ One notable discrepancy: some sources describe ERNIE 5.0 and 5.1 as having "nati
 
 | Tier | Price |
 |---|---|
-| Input | $0.59 per million tokens |
-| Output | $2.65 per million tokens |
+| Input | [$0.59 per million tokens](https://www.llmreference.com/provider/baidu-qianfan/ernie-5.1) |
+| Output | [$2.65 per million tokens](https://www.llmreference.com/provider/baidu-qianfan/ernie-5.1) |
 | Model ID | `ernie-5.1` |
+
+> **Sourcing note (audit, August 25, 2026):** this table had no inline citation before this audit. $0.59/$2.65 is confirmed live (re-checked this audit) via the [LLM Reference pricing tracker](https://www.llmreference.com/provider/baidu-qianfan/ernie-5.1), and is repeated consistently across other third-party API guides. We could not locate this figure published directly on an official Baidu Qianfan blog or console page — one third-party API guide ([Apidog](https://apidog.com/blog/how-to-use-ernie-5-1-api/)) explicitly notes "public Qianfan pricing for ERNIE 5.1 was not in the release post" and advises checking the live console rate card. Treat this number as well-corroborated by independent trackers but not first-party confirmed.
 
 At $0.59/$2.65, ERNIE 5.1 sits in the mid-range of frontier model pricing — more expensive than IBM Granite 4.1 ($0.05/$0.10) or DeepSeek V4 ($0.14/$0.28 for non-reasoning), and cheaper than Claude Opus 4.6 or GPT-5.
 
@@ -184,13 +190,13 @@ At $0.59/$2.65, ERNIE 5.1 sits in the mid-range of frontier model pricing — mo
 - **Developer playground**: Baidu AI Studio
 - **API**: Baidu Qianfan platform (requires Baidu account)
 - **Creative platforms**: Rolling out to 10+ platforms including ISEKAI ZERO, Mulan AI, and Storymaster
-- **Global API aggregators**: Not yet available through OpenRouter, Together AI, or other Western-facing API platforms as of May 2026
+- **Global API aggregators**: Not available through OpenRouter, Together AI, or other Western-facing API platforms — true as of the May 2026 release and re-confirmed live on [OpenRouter's model listing](https://openrouter.ai/models?q=ernie) during this audit (August 25, 2026); only older ERNIE 4.5 variants appear there, not ernie-5.1
 
 The absence from OpenRouter is meaningful. DeepSeek V4 and Qwen 3 series are both available there. ERNIE 5.1 is not, which limits adoption among the developer audience that discovers models through OpenRouter's unified API.
 
 ### No Open Weights
 
-ERNIE 5.1 is closed-source. No weights are released. This is a deliberate choice — Baidu's competitive moat depends on keeping the architecture proprietary, especially given the efficiency innovations in the Once-For-All framework.
+ERNIE 5.1 is closed-source. No weights are released — unlike [ERNIE 4.5, which Baidu open-sourced under Apache 2.0](https://technode.com/2025/07/01/baidu-open-sources-ernie-4-5-series-models-including-multimodal-moe-architecture/) in 2025, the 5.x series is hosted-only; this remains true as of this audit (August 2026), re-confirmed via [Hugging Face's Baidu org page](https://huggingface.co/baidu), which lists no ERNIE 5.x weights. This is a deliberate choice — Baidu's competitive moat depends on keeping the architecture proprietary, especially given the efficiency innovations in the Once-For-All framework.
 
 This contrasts sharply with the open-weight approach of DeepSeek (MIT license) and Alibaba's Qwen series (also largely open). For Chinese AI labs, open-weight releases have been a key tool for driving international developer adoption. Baidu's closed approach may limit ERNIE 5.1's footprint outside of Baidu's own ecosystems.
 

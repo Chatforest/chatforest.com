@@ -1,13 +1,13 @@
 ---
 title: "Apple & macOS MCP Servers (2026) — 20+ Reviewed"
 date: 2026-03-16T23:30:00+09:00
-lastmod: 2026-08-14
+lastmod: 2026-08-25
 description: "20+ Apple and macOS MCP servers reviewed — Siri Shortcuts, HomeKit, Apple Music, Notes, Reminders, AppleScript automation, and more. Peekaboo (~5,000 stars) leads, supermemoryai/apple-mcp (3,100 stars, archived), iMCP (~1,500 stars) covers 7 Apple services natively. Rating: 4/5."
 og_description: "Apple & macOS MCP servers: Peekaboo (~5,000 stars — screenshots + GUI automation), supermemoryai/apple-mcp (3,100 stars, archived Jan 2026), iMCP (~1,500 stars — Messages, Calendar, Contacts, Maps, Weather), macos-automator-mcp (~870 stars — 200+ AppleScript recipes). 20+ servers reviewed. Rating: 4/5."
 content_type: "Review"
 card_description: "20+ Apple and macOS MCP servers reviewed. Peekaboo (~5,000 stars) provides screenshots and full GUI automation. supermemoryai/apple-mcp (3,100 stars, archived Jan 2026) covers Notes, Reminders, Calendar, Mail, Messages, Contacts, and Maps. iMCP (~1,500 stars) is a native macOS app integrating Messages, Calendar, Contacts, Reminders, Maps, and Weather. macos-automator-mcp (~870 stars) ships 200+ AppleScript recipes. Plus Siri Shortcuts, HomeKit, Apple Music, Safari, and Raycast. WWDC 2026 shipped MCP support in Xcode for developers, not native Siri/App Intents integration as had been speculated."
-last_refreshed: 2026-08-14
-sources_audited: 2026-08-14
+last_refreshed: 2026-08-25
+sources_audited: 2026-08-25
 ---
 
 Apple and macOS MCP servers let AI assistants control your Mac — running Siri Shortcuts, managing HomeKit devices, playing Apple Music, reading Notes, setting Reminders, capturing screenshots, and automating virtually any macOS application through AppleScript. Instead of manually switching between apps, you can orchestrate your entire Mac workflow through the Model Context Protocol.
@@ -172,7 +172,7 @@ A unified **Mac Catalyst app** providing HomeKit smart home control via MCP — 
 - **Characteristic-based automation triggers** — motion, contact, occupancy, and temperature-threshold conditions, plus [time-of-day windows added in v1.0.10](https://github.com/omarshahine/HomeClaw/releases)
 - **OpenClaw compatibility** — declared compatibility metadata for ClawHub integration
 
-Compatible with Claude Desktop, Claude Code, and OpenClaw. Distributed via the **Mac App Store** and **TestFlight** (beta) in addition to building from source. Zero open issues as of this audit.
+Compatible with Claude Desktop, Claude Code, and OpenClaw. Distributed via the **Mac App Store** and **TestFlight** (beta) in addition to building from source. [1 open issue](https://github.com/omarshahine/HomeClaw/issues) as of this audit (multi-gang accessory targeting in scenes/automations) — up from zero at the 2026-08-14 audit.
 
 ## Apple Music
 
@@ -263,7 +263,7 @@ The **most-starred Apple MCP server** — now far more than just screenshots. Cr
 - **App and dock control** — launch, focus, and manage applications
 - **Natural-language agent** — chains Peekaboo tools (see, click, type, scroll, hotkey, menu, window, app, dock, space)
 
-Built with TypeScript + Swift — TypeScript for MCP/npm distribution, Swift for [direct ScreenCaptureKit access](https://steipete.me/posts/2025/peekaboo-mcp-lightning-fast-macos-screenshots-for-ai-agents) without requiring focus changes. Part of Steinberger's growing ecosystem alongside macos-automator-mcp. Currently at [v4.1.0](https://github.com/openclaw/Peekaboo/releases/latest) (August 2026), up from the v3.x beta line covered in earlier versions of this review. Requires macOS 15+.
+Built with TypeScript + Swift — TypeScript for MCP/npm distribution, Swift for [direct ScreenCaptureKit access](https://steipete.me/posts/2025/peekaboo-mcp-lightning-fast-macos-screenshots-for-ai-agents) without requiring focus changes. Part of Steinberger's growing ecosystem alongside macos-automator-mcp. Currently at [v4.2.2](https://github.com/openclaw/Peekaboo/releases/latest) (August 20, 2026 — up from v4.1.0 covered in the previous audit), up from the v3.x beta line covered in earlier versions of this review. Requires macOS 15+.
 
 ### jhead/macos-screen-mcp
 
@@ -277,7 +277,7 @@ Screenshot and **window control** for macOS — captures screens and manages win
 
 ### lxman/safari-mcp-server (Removed)
 
-> **⚠️ Removed:** This repository is no longer available on GitHub (404) as of this audit. It previously used Selenium WebDriver to control Safari for browser automation and testing. A current alternative covering similar ground is [achiya-automation/safari-mcp](https://github.com/achiya-automation/safari-mcp) (167 stars), which drives Safari via AppleScript rather than Selenium — not independently reviewed here.
+> **⚠️ Removed:** This repository is no longer available on GitHub (404) as of this audit. It previously used Selenium WebDriver to control Safari for browser automation and testing. A current alternative covering similar ground is [achiya-automation/safari-mcp](https://github.com/achiya-automation/safari-mcp) (176 stars), which drives Safari via AppleScript rather than Selenium — not independently reviewed here.
 
 ## Clipboard & Utilities
 
@@ -334,4 +334,4 @@ The main limitation: **these servers are macOS-only by nature**, which limits th
 
 *This review is part of our [MCP Server Mega-Comparison](/guides/best-mcp-servers/). We research and analyze MCP servers — we do not test them hands-on. Star counts and tool numbers are approximations based on available data at publication time. Found an error or a server we missed? [Let us know](/about/).*
 
-*Last updated August 14, 2026 using Claude Sonnet 5 (Anthropic).*
+*Last updated August 25, 2026 using Claude Sonnet 5 (Anthropic).*
