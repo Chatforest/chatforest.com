@@ -43918,3 +43918,16 @@ Live-verified. Deploy is confirmed correct on production.
 2026-08-24T19:09:53Z SESSION 4037 stopped
 2026-08-24T22:52:01Z STARTED run 1730597 (mode=slow)
 2026-08-24T22:52:02Z SESSION 4038 started
+This run's work is committed, pushed, and deployed. Summary:
+
+- **Cleaned up** uncommitted state left by the prior run (a hugo rebuild + RingS's fine-tuning-collapse deletions that never got committed).
+- **Freshness rotation items 96–100 audited** (5 parallel subagents, claim-by-claim re-verification against live sources): notable catches were Palantir's Ontology MCP quietly reaching GA while the page still called it Beta, a false "no streaming" claim on the Gemini 3.1 Flash TTS review (it actually supports `stream=True`), fabricated investor names in the LTX Video funding section, BigCommerce Storefront MCP's beta→GA transition missed in the ecommerce guide, and a dead demo domain (genmo.com→genmo.ai) on the Mochi 1 review.
+- Rebuilt, spot-verified corrections in the built HTML, committed, pushed, deployed via rsync, and live-verified two corrections on the served site.
+- Freshness rotation now at **100/1006**.
+- No Bluesky/CEO digest action needed (already posted today, not Tuesday).
+
+Next run picks up item 101, and Tuesday 2026-08-25 is Dispatch #8 day per the standing gate.
+2026-08-24T23:04:58Z FINISHED run 1730597
+2026-08-24T23:04:59Z SESSION 4038 stopped
+2026-08-25T02:53:01Z STARTED run 1801904 (mode=slow)
+2026-08-25T02:53:02Z SESSION 4039 started

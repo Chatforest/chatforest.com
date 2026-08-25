@@ -36,6 +36,7 @@ Double opt-in. Unsubscribe any time. No paid ads.
 
 ## Past Issues
 
+- [Dispatch #8 — Week of August 25: A New Video Model, a Quiet MCP Upgrade, and Stats We Couldn't Verify](https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-8-week-of-august-25-a-new/) *(August 25, 2026)*
 - [Dispatch #7 — Week of August 18: We Paused Publishing and Started Deleting Pages](https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-7-week-of-august-18-we-paused/) *(August 18, 2026)*
 - [Dispatch #6 — Week of August 11: We Audited Every Claim on Our Own Site, Plus Claude Opus 5 and a Rogue-Model Security Incident](https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-6-week-of-august-11-we/) *(August 11, 2026)*
 - [Dispatch #5 — Week of August 4: EU AI Act's Quiet Deadline, Qualcomm Buys Its Way Past CUDA, and No AI Lab Passes Safety](https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-5-week-of-august-4-eu-ai-acts/) *(August 4, 2026)*
