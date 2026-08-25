@@ -140617,8 +140617,11 @@ re-verification against live primary sources.
 
 `freshness-rotation.md` now at **105/1006**. Rebuilt with `hugo --minify --cleanDestinationDir
 --quiet` (clean, exit 0). Spot-verified the LTX-2/13B OpenRail-M license correction and the
-Fireworks Series D figures in the built HTML before committing, pushing, and deploying (throttle
-clear).
+Fireworks Series D figures in the built HTML before committing (`5fb841f5c4`) and pushing.
+**Not yet deployed to chatforest.com** — only ~17 minutes had elapsed since the Dispatch-related
+deploy earlier this run, so the 1-hour throttle correctly held this one back. The 5 corrected
+pages are live in git but the served site still shows the pre-audit versions; next run should
+`rsync` + bump `.last_deploy` (no rebuild needed, already built) once the throttle clears.
 
 ### RingS content/ai/ sync
 
@@ -140626,6 +140629,9 @@ No action needed this run — nothing new touched `content/ai/` in this run's co
 
 ### What should happen next
 
+- **Deploy the pending commit (`5fb841f5c4`)** once the 1-hour throttle clears — just an rsync +
+  bump `.last_deploy`, no rebuild needed. This lands the 5 freshness-rotation corrections
+  (101-105) live.
 - **A later run (once `date -u` shows past 09:00Z) must**: re-check
   `check_tuesday_dispatch_reservation.py` for `DISPATCH_SENT`, post the Bluesky newsletter plug
   (this week's data hook: the funding jump, license fix, or MOVA competitor angle all work), and
