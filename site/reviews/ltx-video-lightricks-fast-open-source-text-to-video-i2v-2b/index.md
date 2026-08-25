@@ -1,23 +1,23 @@
 # LTX-Video Review — The Fastest Open-Source Video Model and the Architecture That Made It Possible
 
-> LTX-Video (Lightricks, November 2024) is a 2B-parameter DiT video model built on a radical VAE with 1:192 compression — 32× spatial, 8× temporal — that lets the transformer work on 8,192 times fewer tokens than raw video pixels. The result is the fastest open-source text-to-video model at its quality tier, with I2V, Apache 2.0, and official ComfyUI support. Paper: arXiv:2501.00103. Rating: 4/5.
+> LTX-Video (Lightricks, November 2024) is a 2B-parameter DiT video model built on a radical VAE with 1:192 compression — 32× spatial, 8× temporal — that lets the transformer work on 8,192 times fewer tokens than raw video pixels. The result is the fastest open-source text-to-video model at its quality tier, with I2V, an OpenRail-M open-weights license, and official ComfyUI support. Paper: arXiv:2501.00103. Rating: 4/5.
 
 
 # LTX-Video — The Speed Architecture Behind Lightricks's Open-Source Video Model
 
 By late 2024, the open-source AI video landscape had a quality problem and a speed problem simultaneously. HunyuanVideo generated impressive clips, but required 60+ GB VRAM and could take 20–30 minutes per generation on a single GPU. Wan 2.1 pushed consumer accessibility further but still demanded 16 GB and significant wait times. AnimateDiff ran on 6–8 GB but was architecturally limited to 16-frame clips built on aging SD 1.5 foundations. Something was missing in the middle: a modern DiT-based video model that could actually run at human-interaction speeds on mid-range hardware.
 
-**LTX-Video**, released by Lightricks in November 2024, addressed that gap not by sacrificing quality, but by rethinking where and how compression happens in the generation pipeline. Their core innovation — a video VAE with a 1:192 compression ratio — lets the transformer work on a fraction of the tokens required by competing architectures, enabling fast inference without a corresponding quality collapse.
+**LTX-Video**, [released by Lightricks on November 22, 2024](https://www.tomsguide.com/ai/ai-image-video/lightricks-unveils-new-open-source-ai-video-model-an-impressive-focus-on-speed-and-motion), addressed that gap not by sacrificing quality, but by rethinking where and how compression happens in the generation pipeline. Their core innovation — a video VAE with a 1:192 compression ratio — lets the transformer work on a fraction of the tokens required by competing architectures, enabling fast inference without a corresponding quality collapse.
 
-This review covers LTX-Video v0.9 through v0.9.8 (the 2B-parameter family), with notes on the subsequent LTX-2 and LTX-2.3 releases that followed in 2026. We write from public sources — the arXiv paper, GitHub, HuggingFace, and community documentation. We do not test AI video models hands-on.
+This review covers LTX-Video v0.9 through v0.9.8 (the 2B-parameter family), with notes on the subsequent LTX-2, LTX-2.3, and LTX-2.5 releases that followed in 2026. We write from public sources — the arXiv paper, GitHub, HuggingFace, and community documentation. We do not test AI video models hands-on.
 
 ---
 
 ## Background: Lightricks and the Commercial Stakes of Open-Source
 
-Lightricks is an Israeli software company founded in January 2013 by a group of Hebrew University researchers — Dr. Zeev Farbman, Nir Pochter, Yaron Inger, Amit Goldstein, and Itai Tsiddon. The company built its reputation on consumer photo and video editing apps: **Facetune** (portrait retouching), Videoleap (mobile video editor), and Photoleap. By 2019 it had [reached unicorn status with a $1 billion valuation](https://news.crunchbase.com/news/facetune-maker-lightricks-lands-135-million-series-c-at-a-1-billion-valuation/); [a 2021 Series D raised $130M and pushed that to $1.8 billion](https://www.lightricks.com/post/lightricks-award-winning-app-developer-raises-130m-series-d-to-power-expansion-and-champion-creator-economy).
+Lightricks is an [Israeli software company founded in January 2013](https://en.wikipedia.org/wiki/Lightricks) by five co-founders with roots at the Hebrew University of Jerusalem — Zeev Farbman (CEO), Nir Pochter, Yaron Inger, Amit Goldstein, and Itai Tsiddon (a former Supreme Court of Israel clerk). The company built its reputation on consumer photo and video editing apps: **Facetune** (portrait retouching), Videoleap (mobile video editor), and Photoleap. By 2019 it had [reached unicorn status with a $1 billion valuation](https://news.crunchbase.com/news/facetune-maker-lightricks-lands-135-million-series-c-at-a-1-billion-valuation/); [a 2021 Series D raised $130M and pushed that to $1.8 billion](https://www.lightricks.com/post/lightricks-award-winning-app-developer-raises-130m-series-d-to-power-expansion-and-champion-creator-economy).
 
-In 2022, Lightricks began integrating generative AI into its consumer apps. In February 2024 it launched **LTX Studio**, a full-stack AI video production platform for professionals. LTX-Video, released November 2024, is the open-source research artifact underlying that commercial product — released under Apache 2.0, with full weights available on HuggingFace and inference code on GitHub.
+In [August 2022, Lightricks launched a text-to-image generator inside Photoleap and Facetune](https://techcrunch.com/2022/08/26/mobile-photo-editing-app-creator-lightricks-launches-text-to-image-generator/), its first generative-AI feature. In [February 2024 it announced LTX Studio](https://techcrunch.com/2024/02/28/lightricks-announces-ai-powered-filmmaking-studio-to-help-creators-visualize-stories/), a full-stack AI video production platform for professionals. LTX-Video, [released November 22, 2024](https://www.tomsguide.com/ai/ai-image-video/lightricks-unveils-new-open-source-ai-video-model-an-impressive-focus-on-speed-and-motion), is the open-source research artifact underlying that commercial product — released under an [OpenRail-M open-weights license](https://huggingface.co/Lightricks/LTX-Video/blob/main/ltx-video-2b-v0.9.5.license.txt) (not Apache 2.0, contrary to some secondary coverage), with full weights available on [HuggingFace](https://huggingface.co/Lightricks/LTX-Video) and inference code on [GitHub](https://github.com/Lightricks/LTX-Video).
 
 This provenance matters for understanding both the model's design priorities and its engineering polish. Lightricks is not a pure research lab releasing a paper proof-of-concept. They needed a model fast enough for their commercial product's interactive workflows, accessible enough to run on hardware their professional users actually own, and good enough to justify subscription fees. Those commercial pressures pushed the architecture in unusual directions.
 
@@ -52,11 +52,11 @@ The decoder then combines the latent-to-pixel decoding with the denoising step, 
 With the compression handled by the VAE, the DiT backbone itself is a relatively standard video diffusion transformer:
 
 - **Parameter count**: ~2 billion (the published 2B model family)
-- **Text encoder**: T5-XXL (google/t5-v1_1-xxl, ~9.79 GB) — handles long, detailed prompts of 100+ words, consistent with models like Wan 2.1 and CogVideoX that also use T5-XXL for its capacity to encode complex scene descriptions
+- **Text encoder**: [T5-XXL](https://huggingface.co/google/t5-v1_1-xxl) (google/t5-v1_1-xxl, [~9.79 GB in the fp16 checkpoint commonly used in ComfyUI](https://huggingface.co/f5aiteam/ComfyUI/blob/main/clip/t5xxl_fp16.safetensors)) — handles long, detailed prompts of 100+ words. [CogVideoX also uses the same t5-v1_1-xxl encoder](https://huggingface.co/THUDM/CogVideoX-5b/tree/main/text_encoder); [Wan 2.1 uses a related but distinct multilingual variant, umT5-xxl](https://huggingface.co/Wan-AI/Wan2.1-T2V-14B), not T5-XXL itself
 - **Temporal attention**: Full spatiotemporal self-attention in the compressed latent space — the reduced token count makes this computationally feasible without sliding windows or other workarounds
 - **Conditioning**: Text via T5 cross-attention; image conditioning for I2V via reference frame tokens
 
-The decision to use T5-XXL for a 2B backbone is notable. T5-XXL alone adds ~5B parameters of text processing to the pipeline. This reflects Lightricks's emphasis on prompt following — a faster generation is less valuable if the model ignores half the prompt.
+The decision to use T5-XXL for a 2B backbone is notable. [T5-XXL alone is an ~11B-parameter model](https://huggingface.co/google/t5-v1_1-xxl), adding more text-processing capacity than the video backbone itself. This reflects Lightricks's emphasis on prompt following — a faster generation is less valuable if the model ignores half the prompt.
 
 ---
 
@@ -74,35 +74,39 @@ Later versions added **multi-keyframe conditioning** — providing both a first 
 
 ---
 
-## Version History: 2B Family Through LTX-2.3
+## Version History: 2B Family Through LTX-2.5
 
-### LTX-Video v0.9 (November 2024)
+### [LTX-Video v0.9 (November 22, 2024)](https://www.tomsguide.com/ai/ai-image-video/lightricks-unveils-new-open-source-ai-video-model-an-impressive-focus-on-speed-and-motion)
 
 Initial release. Demonstrated the core architecture and established baseline performance. Generated 5-second clips at 768×512 in approximately 45–90 seconds on an RTX 4090 — significantly faster than HunyuanVideo or Wan 2.1 at comparable quality. Quality was solid for the speed tier but showed some temporal consistency limitations on complex motion.
 
-### LTX-Video v0.9.1 (December 2024)
+### [LTX-Video v0.9.1 (December 2024)](https://digialps.com/lightricks-releases-ltx-video-0-9-1-an-open-source-ai-model-for-real-time-video-generation/)
 
 Described by Lightricks as approaching "real-time" generation on high-end hardware. Improved motion quality and reduced temporal artifacts. v0.9.1 became the community's preferred version for a period and was the most commonly referenced in ComfyUI workflows and community guides through early 2025.
 
-### v0.9.5, v0.9.6-dev, v0.9.8 (Early 2025)
+### [v0.9.5 (March 6, 2025)](https://huggingface.co/Lightricks/LTX-Video-0.9.5) and v0.9.6-dev (April 2025)
 
-Iterative improvements to the 2B family. v0.9.5 and v0.9.6 addressed specific motion artifacts. v0.9.8 added distilled variants that reduced VRAM requirements by 30–40% vs. the full model, extending accessibility to GPUs with 12–16 GB.
+Iterative improvements to the 2B family. v0.9.5 addressed motion artifacts and quality; the v0.9.6-dev checkpoint (dated 04-25 in Lightricks' own naming) followed in April 2025.
 
-### LTXV-13B (May 2025)
+### LTXV-13B / v0.9.7 ([May 6, 2025](https://www.prnewswire.com/news-releases/lightricks-launches-13b-parameters-ltx-video-model-breakthrough-rendering-approach-generates-high-quality-efficient-ai-video-30x-faster-than-comparable-models-302447660.html))
 
-A 13B-parameter model on the same architectural foundation. Substantially improved quality, particularly on complex scenes, at the cost of returning to higher VRAM requirements. The 13B became the recommended model for quality-focused workflows.
+A 13B-parameter model on the same architectural foundation, which Lightricks' launch materials described as "more than 30x faster than comparable models" (a vendor claim, not independently benchmarked here). Substantially improved quality, particularly on complex scenes, at the cost of returning to higher VRAM requirements. The 13B became the recommended model for quality-focused workflows.
 
-### [LTX-2 (January 6, 2026)](https://www.globenewswire.com/news-release/2026/01/06/3213304/0/en/Lightricks-Open-Sources-LTX-2-the-First-Production-Ready-Audio-and-Video-Generation-Model-With-Truly-Open-Weights.html) and LTX-2.3 (March 2026)
+### [LTX-Video v0.9.8 (July 16, 2025)](https://www.prnewswire.com/news-releases/lightricks-ltxv-breaks-60second-length-barrier-for-ai-video-generation-302506831.html)
 
-The architecture expanded significantly. LTX-2 introduced 19B total parameters (approximately 14B video + 5B audio) with audio generation, and extended maximum duration to 60 seconds. [LTX-2.3 added 22B parameters](https://wavespeed.ai/blog/posts/ltx-2-3-whats-new-2026/), native 4K resolution (up to 3840×2160), 50 FPS support, portrait formats (1080×1920 natively trained, not cropped), and duration up to 20 seconds at 4K.
+Added distilled 2B and 13B variants — Lightricks and third-party trackers describe distilled checkpoints as cutting VRAM usage by roughly 30–40% versus the corresponding full model, extending accessibility to smaller GPUs — plus streaming-style generation that pushed maximum clip length past 60 seconds ("8x greater length than the prior 8-second industry standard," per Lightricks) on a single H100 or a consumer GPU.
 
-*This review focuses primarily on the 2B family (v0.9–v0.9.8), which established the model and its community. LTX-2 and LTX-2.3 are architectural successors under continuing development.*
+### [LTX-2 (January 6, 2026)](https://www.globenewswire.com/news-release/2026/01/06/3213304/0/en/Lightricks-Open-Sources-LTX-2-the-First-Production-Ready-Audio-and-Video-Generation-Model-With-Truly-Open-Weights.html), LTX-2.3 (March 2026), and LTX-2.5 (August 2026)
+
+The architecture expanded significantly and moved to a new, custom LTX-2 Community License (not OpenRail-M, and not OSI-approved — free for orgs under $10M annual revenue, paid license required above that). LTX-2 introduced 19B total parameters (approximately 14B video + 5B audio) with native synchronized audio generation. [LTX-2.3 grew to 22B parameters](https://huggingface.co/Lightricks/LTX-2.3), native 4K resolution (up to 3840×2160), 50 FPS support, portrait formats (1080×1920 natively trained, not cropped), and a desktop video editor. Lightricks then [released LTX-2.5 on August 11, 2026](https://huggingface.co/Lightricks/LTX-2.5), keeping the 22B dual-stream architecture but adding native multi-shot generation, an auto-duration head, a new high-motion video decoder, native 4K HDR, and audio-synchronized clips up to roughly 20 seconds (up from LTX-2.3's ~10-second cap) — see [ChatForest's separate LTX-2.5 review](/reviews/ltx-video-lightricks-open-weight-audio-video-model/) for the full audio-video family.
+
+*This review focuses primarily on the 2B family (v0.9–v0.9.8), which established the model and its community. LTX-2, LTX-2.3, and LTX-2.5 are architectural successors under continuing development.*
 
 ---
 
 ## VRAM Requirements
 
-The 2B model's VRAM profile is more nuanced than early marketing suggested:
+The 2B model's VRAM profile, per [Lightricks' own repository documentation](https://github.com/Lightricks/LTX-Video), is more nuanced than early marketing suggested:
 
 | Configuration | VRAM | Notes |
 |---|---|---|
@@ -122,7 +126,7 @@ For context: this still compares favorably to HunyuanVideo (60+ GB without offlo
 The speed advantage is real and significant. On an RTX 4090:
 
 - **LTX-Video v0.9.1**: 5 seconds at 768×512 in approximately 45–90 seconds
-- **LTX-2.3 vs. Wan 2.2**: 10–14× faster for text-to-video
+- **LTX-2.3 vs. Wan 2.2**: [roughly 10–14× faster](https://wavespeed.ai/blog/posts/ltx-2-3-vs-wan-2-2-comparison-2026/) for text-to-video in one reviewer's side-by-side testing on a single RTX 4090 — this is informal, anecdotal comparison from a third-party blog (same prompt/seed across both models in ComfyUI), not a controlled benchmark, and a "~18×" figure the same source reports is described there as an outlier on one simple scene, not a typical result
 
 The mechanism is architectural, not just inference optimization. Competing models process hundreds of thousands of latent tokens; LTX-Video processes roughly 1,000–2,000 depending on resolution and frame count. For interactive professional workflows — where a videographer wants to preview dozens of variations before selecting one — this difference is the difference between practical and impractical.
 
@@ -130,7 +134,7 @@ The mechanism is architectural, not just inference optimization. Competing model
 
 ## ComfyUI Integration
 
-Lightricks maintains an official ComfyUI node repository: **`Lightricks/ComfyUI-LTXVideo`**. The nodes support:
+Lightricks maintains an official ComfyUI node repository: **[`Lightricks/ComfyUI-LTXVideo`](https://github.com/Lightricks/ComfyUI-LTXVideo)**. The nodes support:
 
 - Text-to-video generation
 - Image-to-video conditioning
@@ -139,13 +143,13 @@ Lightricks maintains an official ComfyUI node repository: **`Lightricks/ComfyUI-
 - Distilled model variants
 - Example workflows included in the repository
 
-Installation is supported through ComfyUI-Manager. The official repo is better-maintained than for some competing models because Lightricks has a commercial stake in ComfyUI compatibility — their professional users access the model through ComfyUI workflows.
+Installation is supported through ComfyUI-Manager. The official repo is better-maintained than for some competing models because Lightricks has a commercial stake in ComfyUI compatibility — their professional users access the model through ComfyUI workflows. [The base `Lightricks/LTX-Video` HuggingFace repo](https://huggingface.co/Lightricks/LTX-Video) shows roughly 500,000 downloads per month as of August 2026, indicating the 2B/13B family still sees active use even as the LTX-2.x line has become Lightricks' current focus.
 
 ---
 
 ## What LTX-Video Does Not Cover
 
-**No MCP server integration**: LTX-Video is fundamentally a local inference model. There is no known LTX-Video MCP server that would allow agents to call the model as a tool. ComfyUI's HTTP API could in principle be wrapped, but as of May 2026 this remains a community project waiting to happen.
+**No official MCP server integration**: LTX-Video is fundamentally a local inference model, and Lightricks does not ship an official MCP server. As of August 2026, one community implementation exists — [`sbdsam/ltx-video-mcp`](https://github.com/sbdsam/ltx-video-mcp), which wraps LTX-Video 0.9.8 via a Dockerized, CPU-only ComfyUI backend (its own README targets Macs without a supported CUDA/Metal PyTorch build) with generation times ranging from roughly 5 minutes to 2 hours depending on resolution and frame count, and zero GitHub stars — not a practically useful production path yet. ComfyUI's HTTP API could in principle be wrapped more efficiently, but no formally maintained, GPU-backed MCP integration exists yet.
 
 **No hosted API from Lightricks**: LTX Studio (Lightricks's commercial platform) provides hosted video generation, but this is a subscription product, not an open API. Third-party services (Replicate, fal.ai) host LTX-Video variants.
 
@@ -157,7 +161,7 @@ Installation is supported through ComfyUI-Manager. The official repo is better-m
 
 ## The MCP and Agent Ecosystem
 
-As of May 2026, LTX-Video has no known MCP server integration. The ComfyUI API-as-a-service pattern that some agent frameworks use could expose LTX-Video indirectly, but this is not a formally maintained integration.
+As of August 2026, LTX-Video has no official MCP server integration; the one community implementation ([`sbdsam/ltx-video-mcp`](https://github.com/sbdsam/ltx-video-mcp)) is CPU-only and impractical for production use (see above). The ComfyUI API-as-a-service pattern that some agent frameworks use could expose LTX-Video indirectly, but this is not a formally maintained integration.
 
 For AI agents looking to incorporate video generation, the current options remain either cloud APIs (Nova Reel via AWS Bedrock, Runway via API) or self-hosted ComfyUI with HTTP API wrapping. LTX-Video's speed advantage would be particularly valuable in agent workflows — a 45-second generation vs. 15 minutes is the difference between an agent that can iterate at interactive speed and one that requires multi-minute wait cycles.
 
@@ -168,7 +172,7 @@ For AI agents looking to incorporate video generation, the current options remai
 **Strong fit:**
 - Videographers and content creators with RTX 3080/4070/4080 class GPUs (12–16 GB VRAM) who need to evaluate many variations quickly
 - ComfyUI workflow builders who want a fast node for prototyping video segments before final rendering with a larger model
-- Developers evaluating video generation for product integration — the Apache 2.0 license removes licensing barriers
+- Developers evaluating video generation for product integration — the permissive OpenRail-M license allows commercial use
 - Anyone needing I2V on a budget — it is one of the more accessible I2V models architecturally
 
 **Poor fit:**
@@ -186,9 +190,9 @@ LTX-Video established several things for the open-source video generation ecosys
 
 2. **DiT-based video generation can run at interactive speeds on mid-range hardware.** Before LTX-Video, the assumption was that DiT video models required high-end hardware and long wait times. The 2B model at 768×512 in ~60 seconds shifted expectations.
 
-3. **Commercial AI companies can meaningfully contribute to open-source.** Lightricks's decision to Apache-2.0 the model — not for goodwill alone, but because community adoption drives LTX Studio's ecosystem — demonstrated a workable commercial open-source dynamic in video AI.
+3. **Commercial AI companies can meaningfully contribute to open-source.** Lightricks's decision to release the model with open weights (OpenRail-M for the 2B/13B family, a custom Community License for LTX-2 onward) — not for goodwill alone, but because community adoption drives LTX Studio's ecosystem — demonstrated a workable commercial open-weights dynamic in video AI.
 
-4. **The 2B → 13B → 19B scaling path.** LTX-Video established the architectural foundation that Lightricks then scaled through LTX-2 and LTX-2.3. The 1:192 VAE is a lasting architectural contribution regardless of the specific model version in use.
+4. **The 2B → 13B → 19B → 22B scaling path.** LTX-Video established the architectural foundation that Lightricks then scaled through LTX-2, LTX-2.3, and LTX-2.5. The 1:192 VAE is a lasting architectural contribution regardless of the specific model version in use.
 
 ---
 
@@ -196,7 +200,7 @@ LTX-Video established several things for the open-source video generation ecosys
 
 **Score: 4 / 5**
 
-LTX-Video earns its rating on the strength of a genuine architectural contribution — the 1:192 VAE — that produced the fastest open-source video generation at its quality tier when released, with Apache 2.0 licensing, official ComfyUI integration, and a clear scaling roadmap. The speed advantage is real and practically significant for interactive workflows.
+LTX-Video earns its rating on the strength of a genuine architectural contribution — the 1:192 VAE — that produced the fastest open-source video generation at its quality tier when released, with an OpenRail-M open-weights license, official ComfyUI integration, and a clear scaling roadmap. The speed advantage is real and practically significant for interactive workflows.
 
 The 4/5 rather than 5/5 reflects the 2B model's quality ceiling (noticeably below HunyuanVideo or Wan 2.1 for demanding scenes), VRAM requirements that proved higher than early marketing suggested (12 GB realistic, not 8 GB), and some early version instability that created mixed community impressions. The model improved significantly through v0.9.8 and the LTX-2/LTX-2.3 successors addressed many 2B limitations — but this review covers the 2B family specifically.
 

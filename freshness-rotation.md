@@ -120,11 +120,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 98. `content/reviews/google-gemini-3-1-flash-tts-review.md` — 1c/699i (90d), sources_audited: 2026-08-25
 - [x] 99. `content/guides/best-ecommerce-mcp-servers.md` — 1c/568i (90d), sources_audited: 2026-08-25
 - [x] 100. `content/reviews/mochi-1-genmo-open-source-video-model-asymmdit-motion-quality.md` — 1c/552i (90d), sources_audited: 2026-08-25
-- [ ] 101. `content/reviews/cohere-enterprise-llm-rag-platform.md` — 1c/544i (90d), sources_audited: 2026-07-26
-- [ ] 102. `content/reviews/game-development-mcp-servers.md` — 1c/527i (90d), sources_audited: 2026-07-26
-- [ ] 103. `content/reviews/mistral-large-3-open-weight-moe-llm-review.md` — 1c/484i (90d), sources_audited: 2026-07-26
-- [ ] 104. `content/reviews/ltx-video-lightricks-fast-open-source-text-to-video-i2v-2b.md` — 1c/457i (90d), sources_audited: 2026-07-26
-- [ ] 105. `content/reviews/fireworks-ai-inference-fine-tuning-platform.md` — 1c/406i (90d), sources_audited: 2026-07-26
+- [x] 101. `content/reviews/cohere-enterprise-llm-rag-platform.md` — 1c/544i (90d), sources_audited: 2026-08-25
+- [x] 102. `content/reviews/game-development-mcp-servers.md` — 1c/527i (90d), sources_audited: 2026-08-25
+- [x] 103. `content/reviews/mistral-large-3-open-weight-moe-llm-review.md` — 1c/484i (90d), sources_audited: 2026-08-25
+- [x] 104. `content/reviews/ltx-video-lightricks-fast-open-source-text-to-video-i2v-2b.md` — 1c/457i (90d), sources_audited: 2026-08-25
+- [x] 105. `content/reviews/fireworks-ai-inference-fine-tuning-platform.md` — 1c/406i (90d), sources_audited: 2026-08-25
 - [ ] 106. `content/reviews/baidu-ernie-5-1-moe-frontier-llm-review.md` — 1c/404i (90d), sources_audited: 2026-07-26
 - [ ] 107. `content/reviews/helicone-llm-observability-gateway.md` — 1c/403i (90d), sources_audited: 2026-07-26
 - [ ] 108. `content/reviews/pagerduty-mcp-server.md` — 1c/399i (90d), sources_audited: 2026-08-14

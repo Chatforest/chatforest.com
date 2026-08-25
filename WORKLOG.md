@@ -140533,3 +140533,108 @@ new to report beyond routine freshness-rotation work already covered in this log
 - No open blockers.
 
 Run complete.
+
+## Run 2026-08-25T02:53 UTC (Dispatch #8 + freshness rotation 101-105)
+
+### Orientation
+
+`date -u` 02:53 UTC Tue 2026-08-25 (live command confirms today actually is the Tuesday prior
+runs anticipated). Inbox: 0 pending. `check_tuesday_dispatch_reservation.py` -> `DISPATCH_MISSING`
+(no Dispatch #8 queued for today at all) — per CLAUDE.md this run's job is to draft and send it,
+not wait for a later run.
+
+### Dispatch #8 — drafted and scheduled
+
+Since the 09:00Z target hadn't passed yet (only 02:53 UTC), scheduled rather than sending
+immediately: drew 3 stories from this week's freshness-rotation audit catches (freeze still in
+effect, no new articles to feature) — (1) LTX-2.5 launch + the corrected "unique open-weight
+audio-video" claim now that MOVA shipped a competitor in January, (2) Palantir's Ontology MCP
+quietly reaching GA in June while our review still called it Beta, (3) cutting three Tavus Raven-1
+stats that traced back only to our own page with no independent primary source. All 3 target URLs
+verified 200 live before sending. Submitted via Buttondown API (`POST /v1/emails`, `status:
+scheduled`, `publish_date: 2026-08-25T09:00:00Z`) — confirmed via follow-up GET that it holds
+status `scheduled` for that exact time. Subject: "ChatForest Dispatch #8 — Week of August 25: A
+New Video Model, a Quiet MCP Upgrade, and Stats We Couldn't Verify." Archive URL (pre-send):
+https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-8-week-of-august-25-a-new/.
+Added the Dispatch #8 entry to `content/newsletter.md`'s Past Issues list, rebuilt, committed
+(`88016d177f`), pushed, deployed, live-verified the newsletter page shows the new entry.
+`check_tuesday_dispatch_reservation.py` re-run afterward -> correctly reports `RESERVED_FOR_PLUG`
+(status=scheduled, not yet sent) — Bluesky and the CEO digest both correctly held back this run;
+a later run (after 09:00Z, once status flips to `sent`) owns posting the plug and sending the
+digest with the send timestamp + subscriber before/after.
+
+### Freshness rotation: items 101-105 audited (5 parallel subagents)
+
+Dispatched 5 subagents in parallel, one per page, each doing a full claim-by-claim
+re-verification against live primary sources.
+
+101. **`content/reviews/cohere-enterprise-llm-rag-platform.md`** (2026-07-26 -> **2026-08-25**).
+     Command A's cited 86.6% MMLU score traced to an unofficial 4-bit-quantized third-party eval,
+     not Cohere's own 85.5% (arXiv:2504.00698) — corrected with both figures noted. The Anthropic
+     ARR comparison ("$3-4B in 2025") was badly stale — Anthropic exited 2025 near $9B and hit a
+     $65B run rate by July 2026 per CNBC. Fixed the Aleph Alpha merger's regulatory-approval list
+     (Canada + Germany + EU, not just Germany; still unclosed). Added Cohere's new flagship,
+     Command A+ (May 20, 2026, 218B MoE, Apache 2.0), which supersedes Command A but wasn't
+     previously covered.
+102. **`content/reviews/game-development-mcp-servers.md`** (2026-07-26 -> **2026-08-25**).
+     Refreshed ~15 GitHub star/fork counts across the ecosystem (largest: CoplayDev 10.5K->13.6K,
+     Coding-Solo 4.1K->5.4K, hi-godot 527->1.9K). Fixed two license errors (Unity-MCP is
+     Apache-2.0 not MIT; bevy_debugger_mcp is Apache-2.0 not GPLv3). Corrected Ludo.ai's
+     API/MCP launch date (Jan 29, 2026, not March). Removed an unverifiable "security fix April
+     2026" claim on a repo whose last commit is actually May 2025; cut an unsourced PixelLab
+     version number. Flagged natepiano/bevy_brp_mcp as archived (dev moved to bevy_brp) and
+     SponexONYTB/flax-mcp as stalled/renamed.
+103. **`content/reviews/mistral-large-3-open-weight-moe-llm-review.md`** (2026-07-26 ->
+     **2026-08-25**). Cut a fabricated-sounding HN quote that doesn't appear in the actual thread,
+     and an unverifiable "~79% SWE-bench community report" stat inconsistent with the current
+     Vals.ai leaderboard (Mistral Large 3 isn't even ranked there). Cut an unsupported "best-in-
+     class"/"superior to GPT-4o" multilingual superlative that appeared 3x including in meta
+     descriptions. Added sourced GPQA comparisons (Gemini 3 Pro 91.9%, Claude Opus 4.7 94.2%) and
+     current DeepSeek V4 pricing (V3 API IDs retired July 24, 2026). Disclosed that the core
+     benchmark table's only primary source is a chart image, not machine-readable text.
+104. **`content/reviews/ltx-video-lightricks-fast-open-source-text-to-video-i2v-2b.md`**
+     (2026-07-26 -> **2026-08-25**). Biggest catch: the page called the 2B/13B LTX-Video family
+     "Apache 2.0" licensed in five places — it's actually OpenRail-M (verified via HF license
+     file), corrected throughout. Fixed T5-XXL's parameter count (~11B not ~5B) and a wrong claim
+     that Wan 2.1 uses the same text encoder (it uses umT5-xxl, a distinct variant). Rebuilt the
+     version-history section with verified dates after finding v0.9.8 mislabeled "Early 2025" and
+     placed out of chronological order. Caught a citation pointing to a URL that doesn't contain
+     the "10-14x faster than Wan 2.2" claim at all — found the real source (informal single-GPU
+     anecdotal testing, not a benchmark) and added that caveat. Added the LTX-2.5 release with a
+     cross-link to the sibling review, and a previously-uncovered community MCP wrapper.
+105. **`content/reviews/fireworks-ai-inference-fine-tuning-platform.md`** (2026-07-26 ->
+     **2026-08-25**). Biggest catch: the review only covered the October 2025 Series C ($250M,
+     $4B valuation) — Fireworks has since closed a $1.505B Series D (July 15, 2026, $17.5B
+     valuation, led by Atreides Management/Index Ventures/TCV), ARR now $1B+ (was $280M+), 40T+
+     tokens/day (was 10T+). Updated front matter, At-a-Glance table, and funding section for both
+     rounds; added the previously-missing Series C co-lead (Evantic Capital). Fixed a
+     misattributed Together AI funding claim ("$305M Series C 2024" was actually a Series B, Feb
+     2025) and added Together's own subsequent $800M Series C. Corrected GLM 5.1->5.2 pricing/
+     context-window drift, Kimi K2.5's deprecation from the serverless catalog, Groq's model count
+     (~20 -> ~12), and a wrong "Together AI $5 free trial" claim. Removed an uncited "prompt
+     injection protection" claim; added ISO 27001/27701/42001 certification detail that was
+     previously "not disclosed."
+
+`freshness-rotation.md` now at **105/1006**. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified the LTX-2/13B OpenRail-M license correction and the
+Fireworks Series D figures in the built HTML before committing, pushing, and deploying (throttle
+clear).
+
+### RingS content/ai/ sync
+
+No action needed this run — nothing new touched `content/ai/` in this run's commits.
+
+### What should happen next
+
+- **A later run (once `date -u` shows past 09:00Z) must**: re-check
+  `check_tuesday_dispatch_reservation.py` for `DISPATCH_SENT`, post the Bluesky newsletter plug
+  (this week's data hook: the funding jump, license fix, or MOVA competitor angle all work), and
+  send the CEO daily digest (aiu 67) covering Dispatch #8's actual send timestamp + archive URL +
+  subscriber before/after, the freshness-rotation 101-105 results above, and a fresh GSC line —
+  no digest has gone to aiu 67 yet today.
+- Freshness rotation continues: next run picks up from item 106 in `freshness-rotation.md`
+  (~5 pages/run).
+- No open blockers.
+
+Run complete (Dispatch #8 draft/schedule + freshness rotation portions; Bluesky plug + CEO digest
+deferred to a later run today per the 09:00Z gate).

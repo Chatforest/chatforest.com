@@ -1,10 +1,10 @@
 ---
 title: "Mistral Large 3 — 675B MoE, Apache 2.0, and the Value Play for Enterprise"
 date: 2026-05-13T15:00:00+09:00
-sources_audited: 2026-07-26
+sources_audited: 2026-08-25
 description: "Mistral Large 3 (December 2, 2025) is Mistral AI's frontier open-weight release: 675B total parameters, 41B active per token via sparse MoE, Apache 2.0 license, 256K context, image understanding, and pricing at $0.50/$1.50 per million tokens — roughly 6x cheaper than Claude Sonnet. MMLU ~85.5%. HumanEval ~92%. Available on La Plateforme, AWS Bedrock, Azure, Ollama, Hugging Face. Not a reasoning model at launch. Rating: 3.5/5."
-og_description: "Mistral Large 3 (Dec 2, 2025): 675B MoE / 41B active, Apache 2.0, 256K context, image input, $0.50/$1.50 per million tokens. MMLU ~85.5%, HumanEval ~92%, GPQA Diamond ~44%. Best-in-class multilingual (40+ languages). 6x cheaper than Claude Sonnet. Not a reasoning model. Rating: 3.5/5."
-card_description: "Mistral Large 3 (December 2, 2025) is Mistral AI's flagship open-weight frontier model: 675B total parameters, 41B active per token (sparse MoE), 256K context window, image understanding, and a full Apache 2.0 license. Priced at $0.50/$1.50 per million tokens on La Plateforme — approximately 6x cheaper than Claude Sonnet 4.5. MMLU ~85.5%, HumanEval ~92%, GPQA Diamond ~43.9%. Best-in-class multilingual support across 40+ languages. Available on Mistral La Plateforme, Amazon Bedrock, Azure AI Foundry, IBM WatsonX, Hugging Face, OpenRouter, Ollama. No chain-of-thought reasoning at launch; a reasoning variant was listed as coming soon. Strong for enterprise multilingual, structured output, and cost-sensitive API workloads. Weaker on expert scientific QA and multi-step reasoning compared to frontier reasoning models. Rating: 3.5/5."
+og_description: "Mistral Large 3 (Dec 2, 2025): 675B MoE / 41B active, Apache 2.0, 256K context, image input, $0.50/$1.50 per million tokens. MMLU ~85.5%, HumanEval ~92%, GPQA Diamond ~44%. Multilingual (40+ languages). 6x cheaper than Claude Sonnet. Not a reasoning model. Rating: 3.5/5."
+card_description: "Mistral Large 3 (December 2, 2025) is Mistral AI's flagship open-weight frontier model: 675B total parameters, 41B active per token (sparse MoE), 256K context window, image understanding, and a full Apache 2.0 license. Priced at $0.50/$1.50 per million tokens on La Plateforme — approximately 6x cheaper than Claude Sonnet 4.5. MMLU ~85.5%, HumanEval ~92%, GPQA Diamond ~43.9%. Multilingual support across 40+ languages. Available on Mistral La Plateforme, Amazon Bedrock, Azure AI Foundry, IBM WatsonX, Hugging Face, OpenRouter, Ollama. No chain-of-thought reasoning at launch; a reasoning variant was listed as coming soon. Strong for enterprise multilingual, structured output, and cost-sensitive API workloads. Weaker on expert scientific QA and multi-step reasoning compared to frontier reasoning models. Rating: 3.5/5."
 tags: ["llm", "open-weight", "mistral", "moe", "enterprise", "multilingual", "long-context", "apache-license", "structured-output", "function-calling"]
 categories: ["reviews"]
 rating: 3.5
@@ -20,7 +20,7 @@ last_refreshed: 2026-05-13
 
 That is, roughly, how developers characterized Mistral Large 3 in the weeks after its [December 2, 2025 launch](https://mistral.ai/news/mistral-3/). At $0.50 per million input tokens — approximately six times cheaper than Claude Sonnet and far below GPT-4o — Mistral AI made a deliberate choice to compete on value over raw leaderboard position.
 
-The model itself is substantial: 675 billion total parameters organized in a sparse Mixture-of-Experts architecture, active at only 41 billion parameters per token during inference. A 256K context window that swallows most enterprise codebases. A genuine Apache 2.0 license with no Mistral-specific use restrictions. Multimodal image input. And 40+ language support that community reviewers and enterprise users consistently rate as the best available outside English-first closed models.
+The model itself is substantial: 675 billion total parameters organized in a sparse Mixture-of-Experts architecture, active at only 41 billion parameters per token during inference. A 256K context window that swallows most enterprise codebases. A genuine Apache 2.0 license with no Mistral-specific use restrictions. Multimodal image input. And [40+ language support](https://mistral.ai/news/mistral-3/) that community reviewers and enterprise users consistently describe as a strength relative to English-first closed models.
 
 The caveats are real too. Mistral Large 3 is not a reasoning model. At launch, no chain-of-thought or extended thinking variant existed. The GPQA Diamond score (~43.9%) reflects this gap plainly: expert-level scientific questions require something beyond what a base instruct model provides. A reasoning variant was announced as coming soon in December 2025. Whether it arrived and what it offered is a separate story.
 
@@ -52,7 +52,7 @@ Additional architecture details:
 - **Modality**: text + image; function calling and structured output support baked into the instruction-tuned variant
 - **Fill-in-the-middle (FIM)**: code completion and editing without a full-context rewrite
 - **Structured output / prefix completion**: strongly supported — a documented community strength
-- **Speculative decoding**: an "Eagle" variant on HuggingFace supports faster inference via speculative decoding
+- **Speculative decoding**: an ["Eagle" variant on HuggingFace](https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512-Eagle) supports faster inference via speculative decoding
 - **NVFP4 quantization**: the NVIDIA partnership variant enables efficient deployment on Blackwell-class hardware without significant quality degradation
 
 HuggingFace model IDs: [`mistralai/Mistral-Large-3-675B-Instruct-2512`](https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512) (instruction-tuned), `mistralai/Mistral-Large-3-675B-Base-2512` (base).
@@ -63,7 +63,7 @@ HuggingFace model IDs: [`mistralai/Mistral-Large-3-675B-Instruct-2512`](https://
 
 ## Benchmarks: Strong Generalist, Not a Reasoning Specialist
 
-Mistral Large 3's benchmark profile is consistent with a high-quality frontier instruct model without reasoning augmentation.
+Mistral Large 3's benchmark profile is consistent with a high-quality frontier instruct model without reasoning augmentation. Mistral does not publish these figures as a text table — they come from the benchmark charts in [Mistral's own launch post](https://mistral.ai/news/mistral-3/) and the [HuggingFace model card](https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512), consistently corroborated by independent write-ups (e.g. [DataCamp's Mistral 3 rundown](https://www.datacamp.com/blog/mistral-3)); treat the approximate ("~") figures below accordingly.
 
 | Benchmark | Score | Context |
 |---|---|---|
@@ -73,13 +73,12 @@ Mistral Large 3's benchmark profile is consistent with a high-quality frontier i
 | LiveCodeBench | ~82.8 | Competitive for recent-release evaluation |
 | MATH-500 | ~93.6% | Strong on structured mathematical calculation |
 | GPQA Diamond | ~43.9% | **Below frontier** — reflects lack of reasoning mode |
-| SWE-bench | ~79% (small sample) | Verify against larger evals before concluding |
 
-**The GPQA Diamond number is the most important data point to understand**. Graduate-level expert scientific questions require sustained multi-step reasoning — exactly what Mistral Large 3 does not provide in its base instruct configuration. Gemini 3 Pro posts ~91.9% on GPQA Diamond. Claude Opus 4.7 posts 94.2%. The ~44% from Mistral Large 3 is not a failure of knowledge; it is an architectural consequence of not having chain-of-thought reasoning at all. Models with thinking modes score roughly 2–2.5x higher on this benchmark.
+**The GPQA Diamond number is the most important data point to understand**. Graduate-level expert scientific questions require sustained multi-step reasoning — exactly what Mistral Large 3 does not provide in its base instruct configuration. [Gemini 3 Pro posts 91.9% on GPQA Diamond](https://blog.google/products-and-platforms/products/gemini/gemini-3/). [Claude Opus 4.7 posts 94.2%](https://www.anthropic.com/news/claude-opus-4-7) (released April 16, 2026, after this review's original writing). The ~44% from Mistral Large 3 is not a failure of knowledge; it is an architectural consequence of not having chain-of-thought reasoning at all. Models with thinking modes score roughly 2–2.5x higher on this benchmark.
 
 **The MATH-500 result (~93.6%) looks inconsistent** with a 43.9% GPQA Diamond score, but the benchmarks test different things: MATH-500 rewards structured calculation (where instruct models can perform well with the right prompting), while GPQA Diamond rewards genuine scientific insight across disciplines where domain reasoning matters more than computation.
 
-**SWE-bench caveat**: A community report of ~79% (38/48 tasks) is based on a small eval set. The metric is useful directionally but should not be compared directly to official SWE-bench Verified numbers from models evaluated on the full dataset. By early 2026, Mistral Large 3 was no longer competitive at the SWE-bench frontier.
+**SWE-bench**: Mistral has not published an official SWE-bench Verified score for Large 3, and we were unable to re-verify the specific small-sample figure previously cited here against any live source, so it has been removed. What is independently confirmable as of August 2026: on the [Vals.ai SWE-bench Verified leaderboard](https://www.vals.ai/benchmarks/swebench), the frontier has moved to Claude Opus 5 (97.0%) and DeepSeek V4 Pro (96.4%), and Mistral Large 3 does not appear among the top-ranked models shown — consistent with it no longer being competitive at the SWE-bench frontier.
 
 **What the numbers suggest overall**: Mistral Large 3 is a strong generalist model and a genuinely capable coder. It is not a specialist reasoning model, and should not be evaluated as if it were one. For the use cases it targets — multilingual pipelines, RAG, structured output, function calling, large-context summarization — these benchmarks are adequate. For tasks requiring extended reasoning, look elsewhere or wait for the reasoning variant.
 
@@ -89,7 +88,7 @@ Mistral Large 3's benchmark profile is consistent with a high-quality frontier i
 
 Multilingual capability is one of Mistral Large 3's clearest advantages over the field.
 
-The model supports 40+ languages, with documented strength in English, French, Spanish, German, Italian, Portuguese, Dutch, Chinese, Japanese, Korean, and Arabic. Multiple enterprise reviews describe its non-English instruction following as best-in-class for an open-weight model, and competitive with or superior to closed-source alternatives (including GPT-4o) for European languages in particular.
+The model [supports 40+ languages](https://mistral.ai/news/mistral-3/), with documented strength in English, French, Spanish, German, Italian, Portuguese, Dutch, Chinese, Japanese, Korean, and Arabic. We could not re-verify a specific, sourced comparison of its non-English instruction following against closed-source alternatives, so that claim has been removed rather than repeated uncited.
 
 This reflects Mistral AI's French origin and European enterprise focus. Mistral has historically invested in multilingual training data depth that American-headquartered labs have deprioritized. For companies with significant non-English user bases — European e-commerce, LATAM finance, APAC enterprise — this is a material capability difference that raw English-language benchmark comparisons obscure.
 
@@ -97,15 +96,15 @@ This reflects Mistral AI's French origin and European enterprise focus. Mistral 
 
 ## Pricing and Availability
 
-**Mistral La Plateforme pricing** (as of December 2025):
+**[Mistral La Plateforme pricing](https://docs.mistral.ai/models/model-cards/mistral-large-3-25-12)** (launch price, still current as of August 2026):
 - Input: $0.50 per million tokens
 - Output: $1.50 per million tokens
 - Free trial tier available (rate-limited)
 
-For context:
-- Claude Sonnet 4.5: ~$3.00/$15.00 per million tokens (~6x more expensive on input)
-- GPT-4o: higher than Mistral Large 3 at comparable quality tier
-- DeepSeek V3 API: competitive (though China-domiciled, raising enterprise compliance questions for some use cases)
+For context (checked August 2026):
+- [Claude Sonnet 4.5](https://www.anthropic.com/pricing): $3.00/$15.00 per million tokens (6x more expensive than Mistral Large 3 on input)
+- [GPT-4o](https://developers.openai.com/api/docs/pricing): $2.50/$10.00 per million tokens — still listed by OpenAI, though GPT-5.x models are now its frontier lineup
+- DeepSeek V3 API: the `deepseek-chat`/`deepseek-reasoner` (V3-era) model IDs were retired after July 24, 2026; the current comparable China-domiciled option is [DeepSeek V4 Flash](https://deepseek.ai/pricing) ($0.14/$0.28 per million tokens) or V4 Pro ($0.435/$0.87), still raising the same enterprise compliance questions for some use cases
 
 **Available on at launch**:
 - Mistral La Plateforme (primary API)
@@ -129,9 +128,9 @@ The Apache 2.0 license also matters for enterprise procurement. Unlike Llama mod
 
 ## What It Excels At
 
-**Multilingual enterprise content**: 40+ languages, best-in-class non-English instruction following. Significant advantage for companies serving European, LATAM, and APAC markets.
+**Multilingual enterprise content**: [40+ supported languages](https://mistral.ai/news/mistral-3/). Significant advantage for companies serving European, LATAM, and APAC markets.
 
-**Structured output and JSON generation**: Community feedback consistently notes that Mistral Large 3 produces reliable, well-formed structured output and adheres to JSON schemas even in complex nested scenarios. Developers in the Hacker News thread describe it outperforming "smarter" models (which score higher on benchmarks but fail in structured output adherence pipelines).
+**Structured output and JSON generation**: Community feedback consistently notes that Mistral Large 3 produces reliable, well-formed structured output and adheres to JSON schemas even in complex nested scenarios. Developers in the [Hacker News launch thread](https://news.ycombinator.com/item?id=46121889) describe it outperforming "smarter" models (which score higher on benchmarks but fail in structured output adherence pipelines).
 
 **Function calling and multi-tool agentic workflows**: Strong support for multi-function calling, parallel tool use, and stateful agent architectures. The 256K context is useful for maintaining large tool-use histories.
 
@@ -151,7 +150,7 @@ The Apache 2.0 license also matters for enterprise procurement. Unlike Llama mod
 
 **Competitive programming and SWE-bench frontier**: By early 2026, Mistral Large 3 had been surpassed on SWE-bench by multiple specialized models. It is a capable general coder, not a frontier agentic developer.
 
-**Extended multi-step reasoning**: Tasks that require planning 10+ steps ahead, exploring multiple solution paths, or maintaining a long internal reasoning trace are better handled by models with dedicated reasoning infrastructure. Hacker News community reactions specifically called out "unimpressive" multi-step reasoning in real-world evaluations.
+**Extended multi-step reasoning**: Tasks that require planning 10+ steps ahead, exploring multiple solution paths, or maintaining a long internal reasoning trace are better handled by models with dedicated reasoning infrastructure — this is the direct consequence of the GPQA Diamond gap discussed above, not a separate finding.
 
 **Self-hosting at consumer scale**: 675B total parameters requires multi-GPU data-center infrastructure. Unlike smaller Mistral models (7B, 8x7B, 24B), the full Mistral Large 3 is not practically self-hostable on consumer hardware. Quantized variants (NVFP4) reduce memory requirements significantly but still require enterprise-grade hardware.
 
