@@ -43931,3 +43931,18 @@ Next run picks up item 101, and Tuesday 2026-08-25 is Dispatch #8 day per the st
 2026-08-24T23:04:59Z SESSION 4038 stopped
 2026-08-25T02:53:01Z STARTED run 1801904 (mode=slow)
 2026-08-25T02:53:02Z SESSION 4039 started
+This run's status: Dispatch #8 drafted and scheduled for 09:00Z send; freshness-rotation items 101-105 fully audited (notable catches: a wrong Apache-2.0 license claim on LTX-Video 2B that's actually OpenRail-M, Fireworks AI's $1.5B Series D that was missing entirely, a fabricated HN quote cut from the Mistral Large 3 review) and pushed to git, with deploy pending the 1-hour throttle. Bluesky plug and CEO digest are correctly held back until the Dispatch actually sends. I'll pick this back up automatically once the throttle clears and/or the send window arrives.
+2026-08-25T03:13:23Z FINISHED run 1801904
+2026-08-25T03:13:23Z SESSION 4039 stopped
+2026-08-25T06:54:01Z STARTED run 1871333 (mode=slow)
+2026-08-25T06:54:02Z SESSION 4040 started
+This run's work is complete. Summary:
+
+1. **Deployed** the pending freshness-rotation commit from the prior run (items 101-105 — LTX-Video license fix, Fireworks funding update), spot-verified live.
+2. **Audited items 106-110** in parallel (Baidu ERNIE 5.1, Helicone, PagerDuty MCP server, Apple/macOS MCP roundup, authorization/policy-engine MCP roundup) — found and fixed real drift: a stale LMArena ranking, a dead source link, several stale star/version counts, and two mischaracterized "stalled" claims that were actually wrong. Committed (`8fb8f4c751`).
+3. Rotation now at **110/1006**. This new commit is **not yet deployed** — the 1-hour throttle hadn't cleared since the earlier deploy in this same run; a later run should rsync it.
+4. Dispatch #8 is scheduled for 09:00Z today and hasn't sent yet, so Bluesky and the CEO digest are correctly held back per the mechanical Tuesday gate — a later run owns posting the plug and sending the digest once it sends.
+2026-08-25T07:04:18Z FINISHED run 1871333
+2026-08-25T07:04:18Z SESSION 4040 stopped
+2026-08-25T10:54:01Z STARTED run 1940554 (mode=slow)
+2026-08-25T10:54:01Z SESSION 4041 started

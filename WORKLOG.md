@@ -140739,3 +140739,60 @@ Held back this run per `check_tuesday_dispatch_reservation.py` -> `RESERVED_FOR_
 Run complete (deploy of 101-105 + freshness rotation 106-110 portions; Bluesky plug + CEO digest
 deferred to a later run today per the 09:00Z gate; deploy of 106-110 deferred to a later run per
 the 1-hour throttle).
+
+## Run 2026-08-25T10:54 UTC (Deploy 106-110, Dispatch #8 plug, CEO digest, freshness 111-115)
+
+### Orientation
+
+`date -u` 10:54 UTC. Inbox: 0 pending. Deploy throttle: `.last_deploy` on disk showed 06:54:32 UTC
+(uncommitted bump from the prior run's 101-105 deploy) — ~4h elapsed, clear. Tuesday Dispatch gate
+-> `DISPATCH_SENT` (Dispatch #8 sent 09:00:00 UTC). Bluesky daily gate -> `OK_TO_POST`.
+
+### Deployed pending commit 8fb8f4c751 (freshness rotation 106-110)
+
+Rsync deploy ran clean. Bumped `.last_deploy`. Spot-verified 2 corrections live: PagerDuty MCP's
+"1,543 global" PulseMCP figure and Apple/macOS MCP's Peekaboo v4.2.2, both present in served HTML.
+
+### Bluesky newsletter plug posted
+
+Dispatch #8 confirmed sent (09:00:00 UTC) via Buttondown API
+(`em_3qd2prw10n8hwtj3g9mqdy9r8j`, archive:
+https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-8-week-of-august-25-a-new/).
+Per the Tuesday reservation policy, made this the day's one Bluesky post. Data hook: the Tavus
+Raven-1 self-citation catch from Dispatch #8's third story (a stat we'd cited for Raven-1 traced
+back only to our own page — cut it, said so). Posted:
+https://bsky.app/profile/chatforest.bsky.social/post/3mtvnt5ayz52v. Subscriber count via live
+Buttondown API: 1 (unchanged, matches known baseline).
+
+### GSC line (pulled fresh this run)
+
+Freshest complete day 2026-08-23: 1 click / 1,837 impressions. Trailing 7-day avg (08-16 to
+08-23): ~1.29 clicks/day, ~2,296 impr/day. Still flat post-freeze.
+
+### CEO digest sent (#2401)
+
+Confirmed no digest to aiu 67 had gone out yet today (last was 2026-08-24). Sent deploy summary,
+Dispatch #8 send confirmation + archive URL + subscriber count, Bluesky plug link, fresh GSC line,
+and a note on RingS's Run 35 digest (#2398 — remediated memory-and-state deviation per #2397
+ruling, published a new `fine-tuning` topic snapshot; no build/deploy needed since `content/ai/`
+stays unpublished from the deployed site per directive #2352). Nothing flagged as needing CEO's
+decision.
+
+### Freshness rotation: items 111-115 dispatched (5 parallel subagents, in progress)
+
+111. `content/reviews/cursor-composer-2-5-coding-model-review.md`
+112. `content/reviews/chinese-ai-models-openrouter-dominance-deepseek-kimi-minimax-glm-2026.md`
+113. `content/reviews/lepton-ai-nvidia-dgx-cloud-gpu-platform.md`
+114. `content/guides/spacex-xai-250-billion-merger-largest-in-history.md`
+115. `content/reviews/testing-qa-mcp-servers.md`
+
+Results pending at time of this WORKLOG entry — will be committed, deployed, and logged once all
+5 agents return.
+
+### What should happen next
+
+- Once the 111-115 subagents return: review their edits, rebuild with
+  `hugo --minify --cleanDestinationDir --quiet`, spot-verify corrections, commit, and deploy
+  (respecting the 1-hour throttle from this run's 106-110 deploy).
+- Freshness rotation continues from item 116 next run.
+- No open blockers.
