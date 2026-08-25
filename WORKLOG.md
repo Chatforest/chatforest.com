@@ -140841,3 +140841,101 @@ finished, so the 1-hour throttle holds this one back.
   correction.
 - Freshness rotation continues from item 116 next run.
 - No open blockers.
+
+## Run 2026-08-26T16:54 UTC (Deploy 111-115, freshness rotation 116-120)
+
+### Orientation
+
+`date -u` 16:54 UTC. Inbox: only the prior run's own sent CEO digest (#2401, already done, no
+new pending instructions). Deploy throttle: `.last_deploy` showed 10:54:42 UTC — ~6h elapsed,
+clear. Bluesky daily gate -> `ALREADY_POSTED` (Tuesday plug went out earlier today at 10:55:50
+UTC, per prior run). No Bluesky action needed this run.
+
+### Deployed pending commit 4605c5d8be (freshness rotation 111-115)
+
+Rsync deploy ran clean. Bumped `.last_deploy`. Spot-verified 3 corrections live: Cursor Composer
+2.5's second benchmark citation (DataCamp + Artificial Analysis both present), Lepton AI's
+"Intent Lab" co-founder-exodus correction, and the SpaceX IPO "$135" share price.
+
+### Freshness rotation: items 116-120 audited (5 parallel subagents)
+
+116. **`content/reviews/education-lms-mcp-servers.md`** (2026-08-15 -> **2026-08-26**). Biggest
+     catch: the "Instructure IgniteAgent (Official — Upcoming)" section was stale — IgniteAgent
+     already launched as **IgniteAI Agent** (March 12, 2026, free for US Canvas customers through
+     June 30, global through Sept 30) — added 2 independent primary sources. Docebo item updated
+     from "GA planned for July 2026" to confirmed GA. Refreshed GitHub star counts on 4 tracked
+     repos (canvas-mcp 190->203, anki-mcp-server 437->454, leetcode-mcp-server 139->140,
+     moodle-mcp-server 41->42) and caught canvas-mcp's hosted public endpoint being retired for
+     security reasons per the project's own README. Declined to chase ~10 servers showing only
+     ±1-star noise; Canvas/Instructure breach paragraph's 2 sources still resolve and support the
+     claim, left untouched.
+117. **`content/reviews/midjourney-ai-image-generation-discord.md`** (2026-07-26 ->
+     **2026-08-26**). Biggest catch: the page still claimed Midjourney "has not announced video
+     generation capabilities" and froze the version history at v6.1 (July 2024) — both false since
+     mid-2025. Added V1 (image-to-video, June 2025), v7 (June 2025), v8.1 (June 2026), v8.2 (July
+     2026) with primary citations. Caught and removed a fabricated "Spline acquisition" claim,
+     replaced with Midjourney's actual first-ever acquisition (Co-Star, July 2026, dual-sourced).
+     Added a previously-missing legal-risk section: the Disney/NBCUniversal/WBD copyright suit
+     (filed June 2025, now in discovery, 3 independent sources) — Midjourney's largest legal
+     exposure and it wasn't on the page at all. Updated Andersen v. Stability AI status and
+     employee count (40-45, Sacra). Pricing tiers and no-API/no-MCP status re-verified unchanged.
+118. **`content/guides/best-api-gateway-mcp-servers.md`** (2026-08-10 -> **2026-08-26**). Two
+     citation-support failures caught (not just staleness): Google Apigee was stated "GA" while
+     its own cited source says MCP support is still "in preview" — corrected. Traefik Hub's "GA
+     May 2026" cite linked to a post that never mentions MCP Gateway — swapped in the actual May 6
+     GA press release. Softened an overstated CVE-2026-33032 claim ("compromised 2,689 servers"
+     was actually Shodan's exposed-instance count, not confirmed compromises) and added a second
+     source (Picus Security) per the >=2-source rule for named-product breach claims. Major star-
+     count/status drift across 8 repos verified live via GitHub API: IBM ContextForge reached 1.0
+     GA (was described as RC3), Envoy AI Gateway reached v1.0.0 GA in June (was "still early,
+     v0.5.0"), Cloudflare MCP 371->760 stars, Bifrost 4,200->7,566, Agent Gateway 2,500->4,530 now
+     v1.4.1. AWS AgentCore Gateway expanded 9->20 regions. Declined to re-verify the Cloudflare
+     Code Mode token-reduction claim this pass (lower risk, time prioritized elsewhere).
+119. **`content/builders-log/google-3-2-quadrillion-tokens-ai-scale-economics/index.md`**
+     (2026-07-27 -> **2026-08-26**). Three of four I/O-era Google stats were already superseded by
+     Alphabet's Q2 2026 earnings call (July 22): 19B->22B tokens/min, 375+ -> nearly 500 trillion-
+     token customers, 8.5M->9M+ monthly developers — added a dated update note rather than
+     silently overwriting the historical figures. Also fixed: stale capex guidance ($180-190B ->
+     $195-205B FY26, 2 sources); a misattributed "tokenmaxxing" quote (the page claimed developers
+     deliberately maximize consumption; the source is actually Pichai using the term self-
+     referentially about Google's own numbers) — rewrote and added a second source; a false "OpenAI
+     doesn't publish equivalent figures" claim (OpenAI disclosed 15B tokens/min via CFO Sarah
+     Friar, WSJ) — narrowed to the accurate distinction; Anthropic's "projected $10.9B Q2" updated
+     to actual reported $11.5B+. The 3.2-quadrillion headline figure reconfirmed unchanged.
+120. **`content/builders-log/glm-5-2-z-ai-1m-context-mit-open-weights-agentic-coding-builder-guide/index.md`**
+     (2026-07-30 -> **2026-08-26**). Biggest catch: GLM-5.2 has been superseded by GLM-5.3 (shipped
+     Aug 14, 2026, same base model, post-training gains only — e.g. Terminal-Bench 3.0 4.6%->
+     28.3%) — added a dated update block with 3 sources, left the historical snapshot intact.
+     Second catch: the "8x NVIDIA B200 GPUs at full precision" self-hosting claim wasn't supported
+     by its own cited source, which actually describes FP8 on 8x H200 SXM5 (~754GB, not "~800GB")
+     — corrected both numbers. Third: SWE-bench/BrowseComp comparison figures were cited to a
+     Z.ai docs page that (checked live + via Wayback near GLM-5's launch) never contained them —
+     the numbers themselves checked out via primary sources, so re-cited properly (Z.ai's GLM-5
+     technical report, Anthropic's Opus 4.5 announcement, OpenAI's GPT-5.2 announcement) rather
+     than cut. Updated GLM-5.1's OpenRouter pricing and hosting-provider list.
+
+`freshness-rotation.md` now at **120/1006**. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified 5 corrections in the built HTML: "IgniteAI Agent,"
+"image-to-video," Envoy "v1.1.0"/"1,955" stars, "22 billion tokens," and "GLM-5.3." Committed
+(`15be6f8dfb`) and pushed. **Not yet deployed** — only ~11 minutes had elapsed since this run's
+111-115 deploy, so the 1-hour throttle correctly held this one back.
+
+### RingS content/ai/ sync
+
+No action needed — 13 untracked dirs under `content/ai/` remain, unchanged count from last run,
+still excluded from the Hugo build (CEO directive #2352).
+
+### Bluesky / CEO digest
+
+No action this run — Bluesky already posted today (Tuesday plug, 10:55:50 UTC, prior run) and a
+CEO digest (#2401) already went out today (10:57 UTC, prior run). Nothing new to report to aiu 67
+beyond what this run's WORKLOG entry covers; will fold into tomorrow's digest or a later run today
+if warranted.
+
+### What should happen next
+
+- **Deploy the pending commit (`15be6f8dfb`)** once the 1-hour throttle clears (~49 min after this
+  run's 111-115 deploy) — rsync + bump `.last_deploy`, no rebuild needed. Lands freshness rotation
+  116-120.
+- Freshness rotation continues from item 121 next run.
+- No open blockers.
