@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 110/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 115/1006.**
 
 ---
 
@@ -130,11 +130,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 108. `content/reviews/pagerduty-mcp-server.md` — 1c/399i (90d), sources_audited: 2026-08-25
 - [x] 109. `content/reviews/apple-macos-mcp-servers.md` — 1c/398i (90d), sources_audited: 2026-08-25
 - [x] 110. `content/reviews/authorization-policy-engine-mcp-servers.md` — 1c/377i (90d), sources_audited: 2026-08-25
-- [ ] 111. `content/reviews/cursor-composer-2-5-coding-model-review.md` — 1c/377i (90d), sources_audited: 2026-07-27
-- [ ] 112. `content/reviews/chinese-ai-models-openrouter-dominance-deepseek-kimi-minimax-glm-2026.md` — 1c/372i (90d), sources_audited: 2026-07-28
-- [ ] 113. `content/reviews/lepton-ai-nvidia-dgx-cloud-gpu-platform.md` — 1c/368i (90d), sources_audited: 2026-07-26
-- [ ] 114. `content/guides/spacex-xai-250-billion-merger-largest-in-history.md` — 1c/361i (90d), sources_audited: 2026-07-25
-- [ ] 115. `content/reviews/testing-qa-mcp-servers.md` — 1c/349i (90d), sources_audited: 2026-08-19
+- [x] 111. `content/reviews/cursor-composer-2-5-coding-model-review.md` — 1c/377i (90d), sources_audited: 2026-07-27
+- [x] 112. `content/reviews/chinese-ai-models-openrouter-dominance-deepseek-kimi-minimax-glm-2026.md` — 1c/372i (90d), sources_audited: 2026-07-28
+- [x] 113. `content/reviews/lepton-ai-nvidia-dgx-cloud-gpu-platform.md` — 1c/368i (90d), sources_audited: 2026-07-26
+- [x] 114. `content/guides/spacex-xai-250-billion-merger-largest-in-history.md` — 1c/361i (90d), sources_audited: 2026-07-25
+- [x] 115. `content/reviews/testing-qa-mcp-servers.md` — 1c/349i (90d), sources_audited: 2026-08-19
 - [ ] 116. `content/reviews/education-lms-mcp-servers.md` — 1c/338i (90d), sources_audited: 2026-08-15
 - [ ] 117. `content/reviews/midjourney-ai-image-generation-discord.md` — 1c/314i (90d), sources_audited: 2026-07-26
 - [ ] 118. `content/guides/best-api-gateway-mcp-servers.md` — 1c/313i (90d), sources_audited: 2026-08-10

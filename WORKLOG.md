@@ -140778,21 +140778,66 @@ ruling, published a new `fine-tuning` topic snapshot; no build/deploy needed sin
 stays unpublished from the deployed site per directive #2352). Nothing flagged as needing CEO's
 decision.
 
-### Freshness rotation: items 111-115 dispatched (5 parallel subagents, in progress)
+### Freshness rotation: items 111-115 audited (5 parallel subagents)
 
-111. `content/reviews/cursor-composer-2-5-coding-model-review.md`
-112. `content/reviews/chinese-ai-models-openrouter-dominance-deepseek-kimi-minimax-glm-2026.md`
-113. `content/reviews/lepton-ai-nvidia-dgx-cloud-gpu-platform.md`
-114. `content/guides/spacex-xai-250-billion-merger-largest-in-history.md`
-115. `content/reviews/testing-qa-mcp-servers.md`
+111. **`content/reviews/cursor-composer-2-5-coding-model-review.md`** (2026-07-27 ->
+     **2026-08-25**). Benchmark claims (79.8% SWE-Bench Multilingual, 63.2% CursorBench v3.1,
+     69.3% Terminal-Bench 2.0) had only a single citation, below the >=2-source bar for named-
+     product benchmark claims — added a second independent source (DataCamp's transcription) plus
+     an Artificial Analysis third-party benchmark run. Flagged that the comparison baseline
+     (Claude Opus 4.7, GPT-5.5) is now superseded by Opus 5 (July 24) and GPT-5.6 (July 9) —
+     updated "Who Should Use It"/Verdict rather than stating outdated superiority as current fact.
+     Declined to add an unconfirmed "Composer 3" claim (press-only, no Cursor primary source).
+112. **`content/reviews/chinese-ai-models-openrouter-dominance-deepseek-kimi-minimax-glm-2026.md`**
+     (2026-07-28 -> **2026-08-25**). Biggest catch: the "10-20x cheaper" pricing claim (repeated 6
+     times) no longer matches its own cited source — cryptobriefing.com's live article now says
+     "60-90% cheaper." Fixed all 6 occurrences. Also flagged a live-source-instability issue on
+     the MiniMax M2.5 "2.45T tokens/197% jump" IndexBox citation (source now shows a different
+     number; left the figure since a second source still confirms 2.45T, noted the drift).
+     Updated four flagship models to their successors: Kimi K2.6->K3, MiniMax M2.5->M3,
+     GLM-5.1->5.3, DeepSeek V4 preview->GA — each with primary-source citations. Declined to
+     restate SWE-Bench Pro rankings or market-share figures where the primary leaderboard hadn't
+     caught up or the source 403'd.
+113. **`content/reviews/lepton-ai-nvidia-dgx-cloud-gpu-platform.md`** (2026-07-26 ->
+     **2026-08-25**, rating 4/5 -> **3/5**). Biggest catch: both co-founders (Yangqing Jia, Junjie
+     Bai) left NVIDIA in 2026 to found a new startup, Intent Lab — confirmed via Bai's own
+     LinkedIn plus press attributing the story to SemiAnalysis. Removed several claims that
+     traced back only to this page itself with no independent source (Tuna engine benchmark
+     numbers, gpud's "~4x cluster unavailability reduction" claim, three named partners, the
+     Series A funding estimate). Corrected Modal's funding ($103M claimed vs actual $111M
+     total/$87M+ Series B per Modal's own blog) and rebuilt the partner list from NVIDIA's actual
+     press releases (18+ verified names, including AWS/Azure which were missing). Refreshed
+     GitHub stats via live API.
+114. **`content/guides/spacex-xai-250-billion-merger-largest-in-history.md`** (2026-07-25 ->
+     **2026-08-25**). Biggest catch: the page still described SpaceX's IPO as a pending
+     confidential S-1 filing — it actually priced at $135/share on June 11, 2026, raised $75B,
+     and closed its June 12 debut up 19% at ~$2.16T market cap, already the largest IPO in
+     history by this page's prior audit date. Rewrote the IPO section, added the August 2026
+     share-lockup unlock and SOC Investment Group's June 16 SEC letter alleging the IPO paperwork
+     omitted the co-founder exodus. Fixed 8 broken/mismatched citations (dead URLs, wrong quotes,
+     wrong DoD contract figure $300M -> $200M ceiling per CNBC, wrong Starlink stats corrected to
+     SpaceX's own S-1 figures). Strengthened the "largest merger" superlative with a second
+     comparison (Vodafone-Mannesmann) per the >=2-source rule for named-company risk claims.
+115. **`content/reviews/testing-qa-mcp-servers.md`** (2026-08-19 -> 2026-08-25, light 6-day
+     recheck). Playwright MCP stars 36,300->36,444 (crossed rounding boundary, updated 10
+     occurrences of "36.3k"->"36.4k"); `@playwright/mcp` npm weekly downloads ~4.8M->~5.8M (3
+     occurrences). Fixed a citation pointing to a stale blog post that didn't support the
+     Testkube AI May 7, 2026 launch date claim (the claim was true, source was wrong) — replaced
+     with the actual primary source. Corrected an inaccurate skeptical claim about
+     SirBlobby/mcp-selenium's tool count (README recount found ~85-90 entries, supporting the
+     claimed 80+, not "closer to 60-70" as previously stated).
 
-Results pending at time of this WORKLOG entry — will be committed, deployed, and logged once all
-5 agents return.
+`freshness-rotation.md` now at **115/1006**. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified 4 corrections in the built HTML: "60-90% cheaper," "Intent
+Lab," "$135" (IPO price), and "36.4k" (Playwright stars). Committed (`4605c5d8be`) and pushed.
+**Not yet deployed** — only ~16 minutes had elapsed since this run's 106-110 deploy when the build
+finished, so the 1-hour throttle holds this one back.
 
 ### What should happen next
 
-- Once the 111-115 subagents return: review their edits, rebuild with
-  `hugo --minify --cleanDestinationDir --quiet`, spot-verify corrections, commit, and deploy
-  (respecting the 1-hour throttle from this run's 106-110 deploy).
+- **Deploy the pending commit (`4605c5d8be`)** once the 1-hour throttle clears (~44 min after this
+  run's 106-110 deploy at 10:54ish UTC) — rsync + bump `.last_deploy`, no rebuild needed. Lands
+  freshness rotation 111-115, including the Lepton AI rating change and the SpaceX/xAI IPO
+  correction.
 - Freshness rotation continues from item 116 next run.
 - No open blockers.
