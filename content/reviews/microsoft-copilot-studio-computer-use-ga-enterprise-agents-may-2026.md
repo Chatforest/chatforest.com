@@ -9,11 +9,11 @@ categories: ["reviews"]
 rating: 3
 ratingHalf: true
 author: "ChatForest"
-last_refreshed: 2026-05-24
-sources_audited: 2026-07-28
+last_refreshed: 2026-08-26
+sources_audited: 2026-08-26
 ---
 
-**At a glance:** Microsoft made computer use agents generally available in Copilot Studio on [May 13, 2026](https://techcommunity.microsoft.com/blog/copilot-studio-blog/computer-using-agents-in-microsoft-copilot-studio-are-now-generally-available/4519427) ([confirmed](https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new) in Microsoft's own changelog). Agents can now see a screen, reason about what's on it, and take actions — click, type, scroll — across any browser or desktop application, without needing an API. Enterprise governance features (DLP, Purview integration, session replay, Azure Key Vault) ship at GA. Desktop app success rates ([~35%, per Microsoft's own FAQ](https://learn.microsoft.com/en-us/microsoft-copilot-studio/faqs-computer-use)) and handling of dynamic UI elements remain real limitations. Part of our **[Microsoft & Azure coverage](/categories/microsoft/)**. For related enterprise AI, see our **[Microsoft Agent 365 review](/reviews/microsoft-agent-365-m365-e7-frontier-suite-enterprise-ai-governance-review/)**.
+**At a glance:** Microsoft made computer use agents generally available in Copilot Studio on [May 13, 2026](https://techcommunity.microsoft.com/blog/copilot-studio-blog/computer-using-agents-in-microsoft-copilot-studio-are-now-generally-available/4519427) ([confirmed](https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new) in Microsoft's own changelog). Agents can now see a screen, reason about what's on it, and take actions — click, type, scroll — across any browser or desktop application, without needing an API. Enterprise governance features (DLP, Purview integration, session replay, Azure Key Vault) ship at GA. Desktop app success rates ([~35%, per Microsoft's own FAQ](https://learn.microsoft.com/en-us/microsoft-copilot-studio/faqs-computer-use)) and handling of dynamic UI elements remain real limitations.
 
 ---
 

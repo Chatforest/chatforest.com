@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 125/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 130/1006.**
 
 ---
 
@@ -145,11 +145,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 123. `content/guides/best-calendar-scheduling-mcp-servers.md` — 1c/279i (90d), sources_audited: 2026-08-25
 - [x] 124. `content/guides/mcp-async-tasks-long-running.md` — 1c/272i (90d), sources_audited: 2026-08-25
 - [x] 125. `content/reviews/stability-ai-stable-audio-3-open-weight-music-sfx-generation.md` — 1c/241i (90d), sources_audited: 2026-08-25
-- [ ] 126. `content/reviews/government-public-sector-mcp-servers.md` — 1c/240i (90d), sources_audited: 2026-08-15
-- [ ] 127. `content/reviews/microsoft-copilot-studio-computer-use-ga-enterprise-agents-may-2026.md` — 1c/236i (90d), sources_audited: 2026-07-28
-- [ ] 128. `content/reviews/mongodb-mcp-server.md` — 1c/230i (90d), sources_audited: 2026-08-14
-- [ ] 129. `content/reviews/outlook-mcp-servers.md` — 1c/217i (90d), sources_audited: 2026-08-13
-- [ ] 130. `content/reviews/oracle-oci-managed-mcp-server.md` — 1c/206i (90d), sources_audited: 2026-07-27
+- [x] 126. `content/reviews/government-public-sector-mcp-servers.md` — 1c/240i (90d), sources_audited: 2026-08-26
+- [x] 127. `content/reviews/microsoft-copilot-studio-computer-use-ga-enterprise-agents-may-2026.md` — 1c/236i (90d), sources_audited: 2026-08-26
+- [x] 128. `content/reviews/mongodb-mcp-server.md` — 1c/230i (90d), sources_audited: 2026-08-26
+- [x] 129. `content/reviews/outlook-mcp-servers.md` — 1c/217i (90d), sources_audited: 2026-08-26
+- [x] 130. `content/reviews/oracle-oci-managed-mcp-server.md` — 1c/206i (90d), sources_audited: 2026-08-26
 - [ ] 131. `content/guides/mcp-nonprofit-social-impact.md` — 1c/205i (90d), sources_audited: 2026-07-25
 - [ ] 132. `content/reviews/legal-contract-management-mcp-servers.md` — 1c/193i (90d), sources_audited: 2026-08-15
 - [ ] 133. `content/builders-log/holo-3-1-local-computer-use-agent-12gb-gpu-builder-guide/index.md` — 1c/192i (90d), sources_audited: 2026-07-28
