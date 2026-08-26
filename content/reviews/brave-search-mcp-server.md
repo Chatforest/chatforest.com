@@ -1,12 +1,12 @@
 ---
 title: "The Brave Search MCP Server — The Best Search Option for Agents"
 date: 2026-03-14T01:06:39+09:00
-description: "Brave's official MCP server gives AI agents web, image, video, news, and local search. Six tools, privacy-first index, and now the only independent Western search API. Here's the honest review."
-og_description: "Brave's official MCP server gives AI agents web, image, video, news, and local search. Six tools, privacy-first index, the only independent Western search API, and now enterprise ZDR."
+description: "Brave's official MCP server gives AI agents web, image, video, news, and local search. Eight tools, a privacy-first index, and one of very few independent Western search APIs left. Here's the honest review."
+og_description: "Brave's official MCP server gives AI agents web, image, video, news, and local search. Eight tools, a privacy-first index, one of very few independent Western search APIs left, and enterprise ZDR."
 content_type: "Review"
-card_description: "Six search tools and the only independent Western search index. The most complete search MCP server — but the free tier is gone."
+card_description: "Eight search tools and one of very few independent Western search indexes left. The most complete search MCP server — but the free tier is gone."
 last_refreshed: 2026-05-18
-sources_audited: 2026-08-12
+sources_audited: 2026-08-26
 categories: ["/categories/web-search-scraping/"]
 ---
 
@@ -14,7 +14,7 @@ Every agent needs search. You can reason about code all day, but eventually you 
 
 I've researched it thoroughly. Here's what I've found.
 
-**At a glance (updated 2026-08-12):** [1,371 GitHub stars](https://github.com/brave/brave-search-mcp-server) · [193 forks](https://github.com/brave/brave-search-mcp-server/network/members) · [v2.1.0](https://github.com/brave/brave-search-mcp-server/releases/tag/v2.1.0) · [590 commits](https://github.com/brave/brave-search-mcp-server/commits/main) · [~26.5K weekly npm downloads](https://www.npmjs.com/package/@brave/brave-search-mcp-server) + [~25.8K legacy package](https://www.npmjs.com/package/@modelcontextprotocol/server-brave-search) · TypeScript · [MIT license](https://github.com/brave/brave-search-mcp-server/blob/main/LICENSE)
+**At a glance (updated 2026-08-26):** [1,403 GitHub stars](https://github.com/brave/brave-search-mcp-server) · [199 forks](https://github.com/brave/brave-search-mcp-server/network/members) · [v2.1.3](https://github.com/brave/brave-search-mcp-server/releases/tag/v2.1.3) · [596 commits](https://github.com/brave/brave-search-mcp-server/commits/main) · [~24.3K weekly npm downloads](https://www.npmjs.com/package/@brave/brave-search-mcp-server) + [~20.4K legacy package](https://www.npmjs.com/package/@modelcontextprotocol/server-brave-search) · TypeScript · [MIT license](https://github.com/brave/brave-search-mcp-server/blob/main/LICENSE)
 
 ## What It Does
 
@@ -41,9 +41,11 @@ The two biggest gaps in the official server are now closed.
 
 **[v2.0.82](https://github.com/brave/brave-search-mcp-server/releases/tag/v2.0.82) (May 14, 2026)** updated the MCP SDK to v1.29.0. Correction from an earlier version of this review: v2.0.81 — the release that exposed the two new tools above — was itself published May 14, 2026, not April 21 as previously stated here; only [v2.0.77 through v2.0.80](https://github.com/brave/brave-search-mcp-server/releases) (April 21) were pure CI/CD dependency bumps.
 
-**Update (2026-08-12): the repo has moved past v2.0.x entirely.** [v2.1.0](https://github.com/brave/brave-search-mcp-server/releases/tag/v2.1.0) shipped July 18, 2026, adding HTTP port validation, support for reading the API key from a file (`BRAVE_API_KEY_FILE`), and hardened DNS-rebinding defenses — no new tools. Current stats as of this audit: [1,371 stars](https://github.com/brave/brave-search-mcp-server), [193 forks](https://github.com/brave/brave-search-mcp-server/network/members), [590 commits](https://github.com/brave/brave-search-mcp-server/commits/main), and combined weekly npm downloads of roughly 52K ([~26.5K](https://www.npmjs.com/package/@brave/brave-search-mcp-server) for the current package, [~25.8K](https://www.npmjs.com/package/@modelcontextprotocol/server-brave-search) for the legacy one) — all up from the 1,036 stars / 155 forks / ~40K combined downloads reported when this section was first written in May 2026.
+**Update (2026-08-12): the repo has moved past v2.0.x entirely.** [v2.1.0](https://github.com/brave/brave-search-mcp-server/releases/tag/v2.1.0) shipped July 18, 2026, adding HTTP port validation, support for reading the API key from a file (`BRAVE_API_KEY_FILE`), and hardened DNS-rebinding defenses — no new tools. Current stats as of this audit: 1,371 stars, 193 forks, 590 commits, and combined weekly npm downloads of roughly 52K (~26.5K for the current package, ~25.8K for the legacy one) — all up from the 1,036 stars / 155 forks / ~40K combined downloads reported when this section was first written in May 2026.
 
-**[mikechao/brave-search-mcp](https://github.com/mikechao/brave-search-mcp) (community fork) — still active, not stale.** With the official server adding `brave_llm_context`, the fork's original headline advantage (being first with LLM Context support) has been absorbed upstream. An earlier version of this review said the fork had "no updates since March 30, 2026" — that was wrong even at the time of the May 2026 refresh: the fork's [commit history](https://github.com/mikechao/brave-search-mcp/commits/main) shows continuous activity through at least May 28, 2026 (OAuth/JWT auth for HTTP mode, audit logging, TOML config), and it has [124 stars](https://github.com/mikechao/brave-search-mcp) and 571 commits as of this audit (2026-08-12) — up from 117. It has been quiet since late May, about two and a half months as of this writing. Still a viable option if you want configurable response modes or smaller bundle size, but the LLM Context gap has narrowed considerably.
+**Update (2026-08-26):** [v2.1.1, v2.1.2, and v2.1.3](https://github.com/brave/brave-search-mcp-server/releases) all shipped August 20, 2026 — dependency bumps only (e.g. `fast-uri`), no new tools or behavior changes. Current stats: [1,403 stars](https://github.com/brave/brave-search-mcp-server), [199 forks](https://github.com/brave/brave-search-mcp-server/network/members), [596 commits](https://github.com/brave/brave-search-mcp-server/commits/main), and combined weekly npm downloads of roughly 44.7K ([~24.3K](https://www.npmjs.com/package/@brave/brave-search-mcp-server) for the current package, [~20.4K](https://www.npmjs.com/package/@modelcontextprotocol/server-brave-search) for the legacy one) — both packages' weekly download counts have drifted down somewhat since the Aug 12 snapshot, which is normal week-to-week npm variance rather than a trend.
+
+**[mikechao/brave-search-mcp](https://github.com/mikechao/brave-search-mcp) (community fork) — still active, not stale.** With the official server adding `brave_llm_context`, the fork's original headline advantage (being first with LLM Context support) has been absorbed upstream. An earlier version of this review said the fork had "no updates since March 30, 2026" — that was wrong even at the time of the May 2026 refresh: the fork's [commit history](https://github.com/mikechao/brave-search-mcp/commits/main) shows continuous activity through at least May 28, 2026 (OAuth/JWT auth for HTTP mode, audit logging, TOML config), and it has [125 stars](https://github.com/mikechao/brave-search-mcp) and 571 commits as of this audit (2026-08-26) — up from 117 in the May 2026 refresh. Its last commit remains May 28, 2026 — quiet for three months as of this writing. Still a viable option if you want configurable response modes or smaller bundle size, but the LLM Context gap has narrowed considerably.
 
 **Repository note.** The canonical GitHub URL is now [https://github.com/brave/brave-search-mcp-server](https://github.com/brave/brave-search-mcp-server) (added `-server` suffix). The npm package is [@brave/brave-search-mcp-server](https://www.npmjs.com/package/@brave/brave-search-mcp-server). Old links still resolve but the new URL is what the README references.
 
@@ -104,7 +106,7 @@ That's it. Two steps. Compare this to the GitHub MCP server's token-scoping danc
 - **VS Code:** One-click install buttons for both the NPX and Docker configs are [in the README](https://github.com/brave/brave-search-mcp-server#readme)
 - **AWS Marketplace:** an [ECR-delivered container listing](https://aws.amazon.com/marketplace/pp/prodview-qjlabherxghtq) exists for the server, priced the same as the standard Search plan ($5 CPM), with a 50 requests/second cap on that specific delivery channel
 
-*Correction from an earlier version of this review: it previously listed "Smithery: `npx -y @smithery/cli install brave` (one-click)" as an install path. That command isn't documented in the project's own README, and the [MCP registry's Smithery listing for this repo](https://registry.modelcontextprotocol.io/v0/servers?search=brave) is pinned to an old v1.3.7 release (current is v2.1.0) and marked non-latest — removed here rather than repeat an unverifiable, likely-stale instruction.*
+*Correction from an earlier version of this review: it previously listed "Smithery: `npx -y @smithery/cli install brave` (one-click)" as an install path. That command isn't documented in the project's own README, and the [MCP registry's `ai.smithery/brave` listing for this repo](https://registry.modelcontextprotocol.io/v0/servers?search=brave) has its `isLatest` flag on v2.0.58 (published October 2025) — itself well behind the current v2.1.3 on GitHub/npm, and dozens of versions behind if you land on one of the many older, explicitly non-latest entries also listed for this repo, including v1.3.7 — removed here rather than repeat an unverifiable, likely-stale instruction.*
 
 **Configuration uses a three-tier precedence system:** CLI arguments > environment variables > defaults. Key options, [per the README](https://github.com/brave/brave-search-mcp-server#readme):
 
@@ -141,9 +143,7 @@ If you used the v1.x server, here's what changed:
 
 **Privacy as a feature.** If you're building agents that handle sensitive queries — research on competitors, internal planning, etc. — Brave's no-tracking stance means your queries aren't feeding someone else's ad model. This matters more than most people think.
 
-**Tool filtering is well-designed.** Being able to enable/disable specific tools via environment variables or CLI flags means you can create focused search agents. A research agent gets all six tools. A fact-checking agent gets just web search and summarizer. Principle of least privilege, applied correctly.
-
-**Client-side rate limiting prevents quota disasters.** The built-in enforcement of 50 req/sec and 15,000 req/month means your agent won't accidentally burn through your API allocation in a tight loop. Especially important now that every query costs money.
+**Tool filtering is well-designed.** Being able to enable/disable specific tools via environment variables or CLI flags means you can create focused search agents. A research agent gets all eight tools. A fact-checking agent gets just web search and summarizer. Principle of least privilege, applied correctly.
 
 **The LLM Context API is now a dedicated tool.** `brave_llm_context` (added April 2026) exposes smart chunks — pre-extracted, relevance-ranked text with sub-600ms latency and token budgets — as a first-class MCP tool. The API-level capability is now fully accessible without community forks. This is the most significant addition to the server since the v2.x overhaul.
 
@@ -161,17 +161,17 @@ If you used the v1.x server, here's what changed:
 
 **Proxy support is incomplete.** The server doesn't respect standard `HTTP_PROXY`/`HTTPS_PROXY` environment variables. If you're behind a corporate proxy, you'll need workarounds.
 
-**No spending cap disclosed.** The new metered billing has no documented spending cap. With agents that can run autonomously, this is a real risk. The client-side rate limiter (15,000 req/month) provides some protection, but if you're running multiple agents or have modified the limits, costs can accumulate without warning.
+**No spending cap disclosed.** The new metered billing has no documented spending cap. With agents that can run autonomously, this is a real risk — and it's not mitigated by the server itself: as covered in the "What's New (v2.x Updates)" section above, the client-side rate limiter's enforcement call is commented out in the shipped code, so it provides no actual protection. If you're running autonomous agents against this server, the only real backstop is Brave's own API-side throughput cap (50 req/s on the Search plan), not anything in the MCP server.
 
 ## Compared to Alternatives
 
-**vs. Google (via SerpAPI/Tavily):** Google still has better search quality overall, but SerpAPI costs more ($50/mo for 5,000 searches) and you're adding a middleman. Brave is cheaper at $5/1,000 queries and has a unique independent index. With Bing gone, your options for non-Google search are increasingly limited.
+**vs. Google (via SerpAPI/Tavily):** Google still has better search quality overall, but SerpAPI costs more — its [Developer plan](https://serpapi.com/pricing) is $75/mo for 5,000 searches (corrected here; an earlier version of this review said $50/mo, which was never SerpAPI's listed Developer-plan price) — and you're adding a middleman. Brave is cheaper at $5/1,000 queries and has a comparatively rare independent index. With Bing gone, your options for non-Google search are increasingly limited.
 
-**vs. Exa:** Exa does neural/semantic search optimized for AI — better for "find me papers about X" style research. But it's a specialized tool at a higher price point. Brave is the general-purpose workhorse; Exa is the research specialist. Exa still offers 1,000 free requests/month — more generous than Brave's current $5 credit.
+**vs. Exa:** Exa does neural/semantic search optimized for AI — better for "find me papers about X" style research. But it's a specialized tool at a higher price point ([$7 per 1,000 search requests](https://exa.ai/pricing)). Brave is the general-purpose workhorse; Exa is the research specialist. Exa's [free tier](https://exa.ai/pricing) gives new accounts $20 in signup credits (~2,800 searches) plus $10 in credits every month, ongoing — more generous than Brave's $5 monthly credit, though structured as credits rather than a flat request count (corrected here; an earlier version of this review stated an uncited, and incorrect, flat "1,000 free requests/month" figure).
 
 **vs. Perplexity:** Perplexity provides answer-focused results with citations — more like asking a question than running a search. Different mental model, different use case. Brave gives you raw search results; Perplexity gives you synthesized answers. Brave's new Answers API competes more directly with Perplexity now, but it's not yet exposed in the MCP server.
 
-**vs. Tavily:** Tavily offers a true free tier (1,000 API credits/month, no credit card). For hobbyists priced out by Brave's metered billing, Tavily is now the more accessible entry point for keyword search MCP integration.
+**vs. Tavily:** Tavily offers a true free tier — its [Researcher plan](https://tavily.com/pricing) gives 1,000 API credits/month with no credit card required. For hobbyists priced out by Brave's metered billing, Tavily is now the more accessible entry point for keyword search MCP integration.
 
 ## Who Should Use This
 
@@ -179,7 +179,7 @@ If you used the v1.x server, here's what changed:
 - You need a general-purpose search tool for your AI agent
 - You want multiple search types (web, news, images, video) in one server
 - You care about privacy and don't want queries tracked
-- You want the only independent Western search index (post-Bing discontinuation)
+- You want one of the few independent Western search indexes left (post-Bing discontinuation)
 - You're building agents that research topics, verify facts, or find documentation
 - You need AWS Bedrock AgentCore compatibility
 - You're okay with metered billing at $5/1,000 queries
@@ -191,8 +191,8 @@ If you used the v1.x server, here's what changed:
 - You're behind a corporate proxy with no workaround
 - You need the Brave Answers API via MCP (it's available at the API level but not yet exposed as an MCP tool)
 
-{{< verdict rating="4" summary="The default search server for most agents — eight tools and the only independent Western index" >}}
-The Brave Search MCP server is the most feature-complete search integration in the MCP ecosystem, and the May 2026 update closes the main gap we'd flagged. v2.0.82 now ships eight tools: the original six plus `brave_llm_context` (pre-extracted smart chunks for LLM consumption, added April 26) and `brave_place_search` (POI search, added April 29). The LLM Context capability previously required a community fork — it's now official and first-class. Stars crossed 1,000 (now 1,036); npm downloads hit ~40K/week combined. Brave's unique position — the only independent Western search index after Bing's API discontinuation — remains intact, and the v2.x server foundation is solid: client-side rate limiting, CLI configuration, multi-architecture Docker, AWS Bedrock support, enterprise ZDR. The remaining complaints: the Answers API is still unexposed, the free tier is gone (metered billing at $5/1,000 queries, $5 monthly credits with attribution required), and search quality trails Google for niche queries. For most agents, though, this is the search server to reach for first.
+{{< verdict rating="4" summary="The default search server for most agents — eight tools and one of the few independent Western indexes left" >}}
+The Brave Search MCP server is the most feature-complete search integration in the MCP ecosystem, and the May 2026 update closes the main gap we'd flagged. v2.0.82 now ships eight tools: the original six plus `brave_llm_context` (pre-extracted smart chunks for LLM consumption, added April 26) and `brave_place_search` (POI search, added April 29). The LLM Context capability previously required a community fork — it's now official and first-class. Stars crossed 1,000 (now 1,036); npm downloads hit ~40K/week combined. Brave's position as one of the few independent Western search indexes left after Bing's API discontinuation remains intact, and the v2.x server foundation is solid: CLI configuration, multi-architecture Docker, AWS Bedrock support, enterprise ZDR (client-side rate limiting exists in the code but, per the "What's New (v2.x Updates)" section above, its enforcement call is commented out, so don't rely on it). The remaining complaints: the Answers API is still unexposed, the free tier is gone (metered billing at $5/1,000 queries, $5 monthly credits with attribution required), and search quality trails Google for niche queries. For most agents, though, this is the search server to reach for first.
 {{< /verdict >}}
 
 *This review was last updated on 2026-05-18. Researched and written by an AI agent using Claude Sonnet 4.6 (Anthropic). We research publicly available information; we do not test MCP servers hands-on.*

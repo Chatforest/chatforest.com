@@ -1,19 +1,19 @@
 ---
 title: "Google Gemini for Science Review — Literature Agents, Hypothesis Tournaments, and AlphaEvolve at I/O 2026"
 date: 2026-05-22T11:00:00+09:00
-sources_audited: 2026-07-27
+sources_audited: 2026-08-26
 description: "Google launched Gemini for Science at Google I/O 2026: three experimental AI tools (Literature Insights, Hypothesis Generation, Computational Discovery) plus 30+ life science databases bundled as Science Skills for Antigravity. We cover what's actually available, what it does well, and what researchers need to understand before relying on it."
 og_description: "Gemini for Science (Google I/O May 2026) bundles three AI research tools — Literature Insights via NotebookLM, Hypothesis Generation via Co-Scientist, and Computational Discovery via AlphaEvolve — plus 30+ life science databases as Science Skills for Antigravity. Experimental preview, no pricing announced, gradual access via Google Labs."
 content_type: "Review"
-card_description: "Google launched Gemini for Science at Google I/O 2026: three experimental tools that apply AI to the scientific method (literature synthesis, hypothesis generation, computational algorithm discovery) plus Science Skills, a bundle of 30+ life science databases for Antigravity. Literature Insights builds on NotebookLM to turn papers into structured tables, reports, and infographics. Hypothesis Generation runs a multi-agent idea tournament that generates, debates, and ranks research hypotheses. Computational Discovery uses AlphaEvolve — a Gemini-powered evolutionary algorithm agent — for discovering novel algorithms; early results showed improvements of 0.39% to 666% depending on problem type. Science Skills integrates AlphaFold Database, AlphaGenome API, UniProt, InterPro, and others for bioinformatics workflows in minutes vs. hours. Access is gradual via Google Labs (labs.google/science) and Google Cloud for enterprise; no pricing announced. Rating: 3.5/5."
+card_description: "Google launched Gemini for Science at Google I/O 2026: three experimental tools that apply AI to the scientific method (literature synthesis, hypothesis generation, computational algorithm discovery) plus Science Skills, a bundle of 30+ life science databases for Antigravity. Literature Insights builds on NotebookLM to turn papers into structured tables, reports, and infographics. Hypothesis Generation runs a multi-agent idea tournament that generates, debates, and ranks research hypotheses. Computational Discovery uses AlphaEvolve — a Gemini-powered evolutionary algorithm agent — for discovering novel algorithms; published results range from a 0.7% average compute-recovery gain across Google's data centers to a 32.5% kernel speedup on transformer attention operations. Science Skills integrates AlphaFold Database, AlphaGenome API, UniProt, InterPro, and others for bioinformatics workflows in minutes vs. hours. Access is gradual via Google Labs (labs.google/science) and Google Cloud for enterprise; no pricing announced. Rating: 3.5/5."
 tags: ["google", "science", "research", "llm", "agentic-ai", "bioinformatics", "notebooklm", "developer-tools", "multimodal", "enterprise-ai"]
 categories: ["reviews"]
-rating: 4
+rating: 3.5
 author: "ChatForest"
 last_refreshed: 2026-05-22
 ---
 
-On May 19, 2026, at Google I/O, Google introduced **Gemini for Science** — a suite of experimental AI tools designed to assist researchers at every major stage of scientific work. The announcement came from [James Manyika, Senior Vice President at Google](https://blog.google/authors/james-manyika/), and [Pushmeet Kohli, VP of Research at Google DeepMind and Chief Scientist at Google Cloud](https://research.google/people/105667/).
+On May 19, 2026, at Google I/O, Google introduced **Gemini for Science** — a suite of experimental AI tools designed to assist researchers at every major stage of scientific work. The [announcement](https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/) was authored by [Pushmeet Kohli, Chief Scientist at Google Cloud and VP of Research at Google DeepMind](https://research.google/people/105667/), and [Yossi Matias, Vice President at Google and General Manager of Google Research](https://blog.google/authors/yossi-matias/).
 
 The premise is not subtle: Google believes the same agentic stack that powers software development agents can be pointed at the scientific method itself. Literature review, hypothesis generation, experimental design, and algorithm discovery are all, in some sense, search-and-synthesis problems. Gemini for Science is the attempt to find out how much of that work an agent can carry.
 
@@ -31,7 +31,7 @@ The three experimental tools are:
 2. **Hypothesis Generation** — built on Co-Scientist
 3. **Computational Discovery** — built on AlphaEvolve and ERA
 
-Access to the experimental tools opens gradually through **Google Labs** (labs.google/science). Enterprise access is available via Google Cloud. Science Skills launched May 19 on GitHub and for Google Antigravity users.
+Access to the experimental tools opens gradually through **[Google Labs](https://labs.google/science)** (labs.google/science). Enterprise access is available via Google Cloud. Science Skills launched May 19 on [GitHub](https://github.com/google-deepmind/science-skills) and for Google Antigravity users.
 
 ---
 
@@ -78,14 +78,15 @@ The honest read: this tool is interesting as an **idea sparring partner** rather
 
 AlphaEvolve is a Gemini-powered evolutionary algorithm agent originally developed by Google DeepMind for algorithm discovery. The core mechanism: it generates candidate algorithms, evaluates them against verifiable criteria, iterates through evolutionary selection, and produces optimized solutions that were not in the original search space.
 
-AlphaEvolve's published results are concrete:
+AlphaEvolve's [published results](https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/) are concrete:
 
-- Discovered a **more efficient scheduling algorithm for Google's data centers**, reducing compute waste
-- Found a functionally equivalent **simplification in hardware accelerator circuit design**
-- Identified improvements that **accelerated the training of the LLM powering AlphaEvolve itself** — a recursive improvement result worth noting
-- In research benchmarks, improvement ranges from **0.39% to 666.02%** depending on problem type and how mature the initial algorithm was
+- Discovered a scheduling heuristic for Google's Borg data-center management system that **continuously recovers, on average, 0.7% of Google's worldwide compute resources** in production
+- Proposed a Verilog rewrite that removed unnecessary bits in a highly optimized **matrix-multiplication circuit for Google's TPU hardware accelerators**
+- Sped up a matrix-multiplication kernel in Gemini's own architecture by 23%, **a 1% reduction in Gemini's overall training time** — a recursive improvement result worth noting, since Gemini is also the model that powers AlphaEvolve
+- Achieved up to a **32.5% speedup on the FlashAttention kernel** used in transformer models by optimizing low-level GPU instructions
+- Applied to more than 50 open problems in mathematics, it rediscovered the best known solution in roughly three-quarters of cases and improved on the previous best-known solution in about one-fifth
 
-Early enterprise adopters include [BASF (supply chain optimization)](https://cloud.google.com/blog/products/ai-machine-learning/how-basf-manages-thousands-of-supply-chain-decisions-with-alphaevolve) and [Klarna (ML training speed)](https://medium.com/klarna-engineering/beyond-prompting-how-algorithmic-evolution-doubled-our-training-speed-8f874af3080d), using AlphaEvolve for materials science and engineering optimization problems respectively.
+Early enterprise adopters include [BASF](https://cloud.google.com/blog/products/ai-machine-learning/how-basf-manages-thousands-of-supply-chain-decisions-with-alphaevolve), which used AlphaEvolve to build a digital twin of its supply-chain network (Google Cloud reports over 80% relative improvement in simulation accuracy versus the initial seed model across more than 5,000 value chains), and [Klarna](https://medium.com/klarna-engineering/beyond-prompting-how-algorithmic-evolution-doubled-our-training-speed-8f874af3080d), which used AlphaEvolve to optimize one of its large transformer models, doubling training speed while improving model quality.
 
 ### ERA (Empirical Research Assistance)
 
@@ -125,7 +126,7 @@ Science Skills is the only component of Gemini for Science that is clearly produ
 | Computational Discovery | Google Labs + Google Cloud (enterprise) | Preview, application required |
 | Science Skills | GitHub + Google Antigravity | Available now |
 
-Pricing for the experimental tools has not been announced. Science Skills pricing follows Antigravity's standard token-based billing.
+Pricing for the experimental tools has not been announced. Science Skills usage draws on Antigravity's shared, [token-based subscription billing](https://antigravity.google/blog/changes-to-antigravity-plans), which Google has revised more than once in 2026 — check Antigravity's current plan page before budgeting.
 
 ---
 
@@ -149,7 +150,7 @@ Pricing for the experimental tools has not been announced. Science Skills pricin
 
 **Hypothesis quality has not been independently evaluated.** The multi-agent tournament structure is interesting, but scientific hypothesis quality is hard to measure without domain expertise and time. Google has not published comparative data against researcher-generated hypotheses.
 
-**AlphaEvolve's range of "0.39% to 666%"** is not a confidence interval — it reflects the enormous variance across problem types. The 666% improvement is likely on a problem where the original algorithm was poorly designed, not typical research conditions. Researchers should expect modest, specific improvements in well-scoped problem domains rather than order-of-magnitude discoveries on average.
+**AlphaEvolve's published results span a wide range** — from a 0.7% average compute-recovery gain across Google's entire fleet to a 32.5% kernel speedup on a specific transformer operation, per [DeepMind's own writeup](https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/). Infrastructure-wide gains tend to be small and durable; the larger figures come from narrowly scoped kernels and open math problems, not typical day-to-day research conditions. Researchers should expect modest, specific improvements in well-scoped problem domains rather than order-of-magnitude discoveries on average.
 
 **Science Skills is Antigravity-dependent.** Teams not already using Google Antigravity will need to adopt that platform to access the database bundle. For teams with existing bioinformatics pipelines on other infrastructure, the switching cost is real.
 
@@ -167,4 +168,4 @@ The honest summary: Google is serious about this direction, the infrastructure i
 
 ---
 
-*Sources: [Google I/O 2026 Gemini for Science announcement](https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/); [Engadget on Gemini for Science](https://www.engadget.com/2177120/google-debuts-ai-powered-tools-to-optimize-scientific-research-workflows/); [HPCwire on Google AI for Science](https://www.hpcwire.com/2026/05/20/google-advances-ai-for-science-with-new-tools-and-tech/); [AlphaEvolve technical paper](https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/AlphaEvolve.pdf); [SiliconANGLE on Subquadratic/SubQ launch](https://siliconangle.com/2026/05/05/subquadratic-launches-29m-bring-12m-token-context-windows-ai/)*
+*Sources: [Google I/O 2026 Gemini for Science announcement](https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/); [Google Research: "A New Era of Discovery" (Google I/O 2026)](https://research.google/blog/a-new-era-of-innovation-google-research-at-io-2026/); [Engadget on Gemini for Science](https://www.engadget.com/2177120/google-debuts-ai-powered-tools-to-optimize-scientific-research-workflows/); [DeepMind: AlphaEvolve — a Gemini-powered coding agent](https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)*

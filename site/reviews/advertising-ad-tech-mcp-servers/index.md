@@ -7,7 +7,7 @@ Advertising and ad-tech MCP servers connect AI agents to campaign management pla
 
 This review covers the **advertising and ad-tech** vertical — Google Ads, Meta/Facebook Ads, TikTok Ads, multi-platform campaign management, ad protocol standards, and ad auditing tools. For SEO and organic search tools, see our [SEO & Search Optimization review](/reviews/seo-search-optimization-mcp-servers/). For marketing automation and email, see our [Email & Communication review](/reviews/gmail-mcp-servers/). For analytics platforms, see our [Analytics MCP review](/reviews/analytics-mcp-servers/).
 
-The headline findings: **TikTok launched an official MCP server** (May 13, 2026 at TikTok World '26) — Google, Meta, Amazon, and TikTok now all have official MCP support, completing the big-four ad platform coverage. **Meta Ads has the most popular single server** — pipeboard-co/meta-ads-mcp at [1,171 stars](https://github.com/pipeboard-co/meta-ads-mcp) with 42 tools for full campaign lifecycle management, now available as a cloud-hosted Remote MCP service. **Google Ads has the deepest ecosystem** — 8+ servers including an [official one from Google](https://github.com/googleads/google-ads-mcp) now at 854 stars. **Amazon Ads finally has open-source coverage** — MarketplaceAdPros fills the biggest gap from our previous review. **Programmatic DSPs are arriving** — StackAdapt and zMaticoo both launched official MCP servers in April 2026. **Multi-platform servers keep growing** — ads-mcp now covers 6 networks (adding Amazon and ChatGPT Ads) while synter-mcp-server spans 19. **Ad auditing has exploded** — [claude-ads](https://github.com/AgriciDaniel/claude-ads) has grown past 8,000 stars and now covers 12 ad platforms.
+The headline findings: **TikTok launched an official MCP server** (May 13, 2026 at TikTok World '26) — Google, Meta, Amazon, and TikTok now all have official MCP support, completing the big-four ad platform coverage. **Meta Ads has the most popular single server** — pipeboard-co/meta-ads-mcp at [1,200 stars](https://github.com/pipeboard-co/meta-ads-mcp) with 42 tools for full campaign lifecycle management, now available as a cloud-hosted Remote MCP service. **Google Ads has the deepest ecosystem** — 8+ servers including an [official one from Google](https://github.com/googleads/google-ads-mcp) now at 887 stars. **Amazon Ads finally has open-source coverage** — MarketplaceAdPros fills the biggest gap from our previous review. **Programmatic DSPs are arriving** — StackAdapt and zMaticoo both launched official MCP servers in April 2026. **Multi-platform servers keep growing** — ads-mcp now covers 6 networks (adding Amazon and ChatGPT Ads) while synter-mcp-server spans 19. **Ad auditing has exploded** — [claude-ads](https://github.com/AgriciDaniel/claude-ads) has grown past 8,000 stars and now covers 12 ad platforms.
 
 **Category:** [Business & Productivity](/categories/business-productivity/)
 
@@ -19,7 +19,7 @@ The headline findings: **TikTok launched an official MCP server** (May 13, 2026 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-google-ads](https://github.com/cohnen/mcp-google-ads) | 683 | Python | MIT | 5 |
+| [mcp-google-ads](https://github.com/cohnen/mcp-google-ads) | 693 | Python | MIT | 5 |
 
 **The most popular community Google Ads MCP server:**
 
@@ -29,13 +29,13 @@ The headline findings: **TikTok launched an official MCP server** (May 13, 2026 
 - **Account listing** — discover and switch between multiple Google Ads accounts
 - **OAuth and service account auth** — supports both interactive and automated authentication flows
 
-At [683 stars](https://github.com/cohnen/mcp-google-ads), this is the most-starred dedicated (non-official) Google Ads MCP server. The GAQL interface means any data available through the Google Ads API is accessible — you're not limited to pre-built reports. MIT licensed, Python-based, and works with Claude, Cursor, and Windsurf. The trade-off is that effective use requires GAQL knowledge.
+At [693 stars](https://github.com/cohnen/mcp-google-ads), this is the most-starred dedicated (non-official) Google Ads MCP server. The GAQL interface means any data available through the Google Ads API is accessible — you're not limited to pre-built reports. MIT licensed, Python-based, and works with Claude, Cursor, and Windsurf. The trade-off is that effective use requires GAQL knowledge.
 
 ### googleads/google-ads-mcp — Official Google Ads Server
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [google-ads-mcp](https://github.com/googleads/google-ads-mcp) | 854 | Python | Apache-2.0 | 3 |
+| [google-ads-mcp](https://github.com/googleads/google-ads-mcp) | 887 | Python | Apache-2.0 | 3 |
 
 **Official Google Ads MCP server (experimental):**
 
@@ -45,27 +45,27 @@ At [683 stars](https://github.com/cohnen/mcp-google-ads), this is the most-starr
 - **4 LLM resources** — discovery document, metrics, segments, and release notes exposed as MCP resources
 - **Two auth methods** — Application Default Credentials (ADC) or client library configuration
 
-Google's official entry has grown from 2 to 3 tools since launch, adding resource metadata introspection and 4 MCP resources that give LLMs contextual knowledge about the Google Ads API. At [854 stars](https://github.com/googleads/google-ads-mcp), adoption has accelerated sharply — more than double the count from our previous audit. Read-only by design, which is a safety feature for production ad accounts. Supports Gemini Code Assist and Gemini CLI.
+Google's official entry has grown from 2 to 3 tools since launch, adding resource metadata introspection and 4 MCP resources that give LLMs contextual knowledge about the Google Ads API. At [887 stars](https://github.com/googleads/google-ads-mcp), adoption has accelerated sharply — more than double the count from our previous audit. Read-only by design, which is a safety feature for production ad accounts. Supports Gemini Code Assist and Gemini CLI.
 
-### google-marketing-solutions/google_ads_mcp_server — Archived, Merged Into the Official Server
+### google-marketing-solutions/google_ads_mcp_server — Gone, Merged Into the Official Server
 
-**Update: this server is no longer a separate option.** [google-marketing-solutions/google_ads_mcp_server](https://github.com/google-marketing-solutions/google_ads_mcp_server) — a separate implementation from Google's marketing solutions team that predated the official googleads org server — [was archived by its owner on December 13, 2025](https://github.com/google-marketing-solutions/google_ads_mcp_server), with the repository's own README stating: "This repo has been archived in favor of: [github.com/googleads/google-ads-mcp](https://github.com/googleads/google-ads-mcp)." It is now read-only with 11 stars. If you're evaluating Google's Google Ads MCP options, use the official googleads/google-ads-mcp server above rather than this one.
+**Update: this server is no longer a separate option, and its GitHub page is now gone entirely.** A prior version of this review reported that google-marketing-solutions/google_ads_mcp_server — a separate implementation from Google's marketing solutions team that predated the official googleads org server — had been archived (read-only) with its README pointing to the official successor. As of this audit, the repository URL returns a 404, and the [google-marketing-solutions org's repository list](https://github.com/google-marketing-solutions) no longer includes it at all — a step beyond "archived and read-only," and the earlier archive-date/star-count details can no longer be re-verified since the source page is gone. If you're evaluating Google's Google Ads MCP options, use the official [googleads/google-ads-mcp](https://github.com/googleads/google-ads-mcp) server above.
 
 ### Other Notable Google Ads Servers
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [gomarble-ai/google-ads-mcp-server](https://github.com/gomarble-ai/google-ads-mcp-server) | 140 | Python | MIT | 3 |
+| [gomarble-ai/google-ads-mcp-server](https://github.com/gomarble-ai/google-ads-mcp-server) | 142 | Python | MIT | 3 |
 | [promobase/google-ads-mcp](https://github.com/promobase/google-ads-mcp) | 22 | Python | MIT | 90/103 services |
-| [grantweston/google-ads-mcp-complete](https://github.com/grantweston/google-ads-mcp-complete) | 24 | Python | MIT | 45+ |
+| [grantweston/google-ads-mcp-complete](https://github.com/grantweston/google-ads-mcp-complete) | 25 | Python | MIT | 45+ |
 | [bjorndavidhansen/google-ads-mcp-server](https://github.com/bjorndavidhansen/google-ads-mcp-server) | 19 | Python | — | 30+ |
 | [DigitalRocket-biz/google-ads-mcp-v20](https://github.com/DigitalRocket-biz/google-ads-mcp-v20) | 11 | Python | MIT | ~15–20 |
 
 The Google Ads MCP ecosystem is remarkably deep:
 
-- **[GoMarble AI](https://github.com/gomarble-ai/google-ads-mcp-server)** (140 stars) — focused on performance analysis with a `run_keyword_planner` tool for keyword ideas and search-volume metrics, from a commercial ad-tech company (gomarble.ai)
+- **[GoMarble AI](https://github.com/gomarble-ai/google-ads-mcp-server)** (142 stars) — focused on performance analysis with a `run_keyword_planner` tool for keyword ideas and search-volume metrics, from a commercial ad-tech company (gomarble.ai)
 - **[Promobase](https://raw.githubusercontent.com/promobase/google-ads-mcp/main/README.md)** (22 stars) — implements 90 of 103 Google Ads API v20 services with type-safe Python, covering campaign, ad group, ad, budget, keyword, conversion, asset, audience, recommendation, account, billing, and reporting workflows — among the most comprehensive by raw API surface
-- **grantweston/google-ads-mcp-complete** (24 stars) — 45+ tools covering campaign lifecycle, Smart Bidding, ad extensions, and ROAS optimization using modern AssetService
+- **grantweston/google-ads-mcp-complete** (25 stars) — 45+ tools covering campaign lifecycle, Smart Bidding, ad extensions, and ROAS optimization using modern AssetService
 - **bjorndavidhansen** (19 stars) — unique for Docker/Kubernetes deployment support and automated anomaly detection with optimization suggestions
 - **DigitalRocket-biz** (11 stars) — Performance Max negative keywords support and automatic retry with exponential backoff
 
@@ -79,7 +79,7 @@ The range from Google's minimal 3-tool official server to Promobase's near-full 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [meta-ads-mcp](https://github.com/pipeboard-co/meta-ads-mcp) | 1,171 | Python | BSL-1.1 | 42 |
+| [meta-ads-mcp](https://github.com/pipeboard-co/meta-ads-mcp) | 1,200 | Python | BSL-1.1 | 42 |
 
 **The highest-starred advertising MCP server overall:**
 
@@ -93,13 +93,13 @@ The range from Google's minimal 3-tool official server to Promobase's near-full 
 - **AI-powered analysis** — intelligent campaign performance interpretation
 - **Remote MCP service** — cloud-hosted option for instant setup without local installation
 
-At [1,171 stars](https://github.com/pipeboard-co/meta-ads-mcp), up from 819 at our last audit, this continues its dominance as the most popular advertising MCP server, now with 42 tools (up from 24). Now available as a **Remote MCP cloud service** — the recommended approach for getting started quickly — alongside traditional local installation. Pipeboard has also launched **[Pipeboard CLI](https://github.com/pipeboard-co/pipeboard-cli)**, a single Go binary (117 commands) that now provides access to five platforms — Meta, Google, TikTok, Snap, and Reddit Ads — signaling the company's expansion from a single-platform MCP server to a multi-platform ad-tech company. Licensed under [BSL-1.1](https://raw.githubusercontent.com/pipeboard-co/meta-ads-mcp/main/LICENSE) (converts to Apache-2.0 on January 1, 2029). Works with Claude Pro/Max, Cursor, and other MCP-compatible platforms.
+At [1,200 stars](https://github.com/pipeboard-co/meta-ads-mcp), up from 819 at our last audit, this continues its dominance as the most popular advertising MCP server, now with 42 tools (up from 24). Now available as a **Remote MCP cloud service** — the recommended approach for getting started quickly — alongside traditional local installation. Pipeboard has also launched **[Pipeboard CLI](https://github.com/pipeboard-co/pipeboard-cli)**, a single Go binary with 117 commands. **Correction from a prior version of this review:** the CLI's own README currently describes coverage of **two platforms — Meta Ads (67 commands) and Google Ads (50 commands)** — not five; it does not mention TikTok, Snap, or Reddit Ads anywhere, so the earlier "five platforms" claim has been removed as unsupported by the primary source. Licensed under [BSL-1.1](https://raw.githubusercontent.com/pipeboard-co/meta-ads-mcp/main/LICENSE) (converts to Apache-2.0 on January 1, 2029). Works with Claude Pro/Max, Cursor, and other MCP-compatible platforms.
 
 ### gomarble-ai/facebook-ads-mcp-server — Activity History Tracking
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [facebook-ads-mcp-server](https://github.com/gomarble-ai/facebook-ads-mcp-server) | 351 | Python | MIT | 23 |
+| [facebook-ads-mcp-server](https://github.com/gomarble-ai/facebook-ads-mcp-server) | 356 | Python | MIT | 23 |
 
 **Meta Ads server with change history and simplified setup:**
 
@@ -110,7 +110,7 @@ At [1,171 stars](https://github.com/pipeboard-co/meta-ads-mcp), up from 819 at o
 - **One-click installers** — automated environment configuration for quick setup
 - **Pagination support** — handle large result sets across all endpoints
 
-From GoMarble AI (the same team behind the Google Ads server). The unique feature is activity/change history tracking — you can see what was modified and when, which is invaluable for auditing campaign changes. MIT licensed and [351 stars](https://github.com/gomarble-ai/facebook-ads-mcp-server) (up from 254 at our last audit) indicate strong adoption. The one-click installer reduces setup friction compared to manual OAuth configuration.
+From GoMarble AI (the same team behind the Google Ads server). The unique feature is activity/change history tracking — you can see what was modified and when, which is invaluable for auditing campaign changes. MIT licensed and [356 stars](https://github.com/gomarble-ai/facebook-ads-mcp-server) (up from 254 at our last audit) indicate strong adoption. The one-click installer reduces setup friction compared to manual OAuth configuration.
 
 ### gabe-almeida/meta-ads-mcp-server — TypeScript Alternative
 
@@ -163,7 +163,7 @@ TikTok announced the MCP server at TikTok World '26, their sixth annual global a
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [tiktok-ads-mcp](https://github.com/ysntony/tiktok-ads-mcp) | 40 | Python | MIT | 6 |
+| [tiktok-ads-mcp](https://github.com/ysntony/tiktok-ads-mcp) | 41 | Python | MIT | 6 |
 
 **Read-only TikTok Ads server with multi-advertiser support:**
 
@@ -183,7 +183,7 @@ Deliberately read-only — a safety-first approach for teams that want AI agents
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ads-mcp](https://github.com/amekala/ads-mcp) | 82 | Shell | Proprietary | 400+ |
+| [ads-mcp](https://github.com/amekala/ads-mcp) | 84 | Shell | Proprietary | 400+ |
 
 **Cross-platform ad management, now spanning six networks per the [project's own README](https://raw.githubusercontent.com/amekala/ads-mcp/main/README.md):**
 
@@ -196,13 +196,13 @@ Deliberately read-only — a safety-first approach for teams that want AI agents
 - **Strategy persistence** — saves campaign strategy to STRATEGY.md across sessions
 - **Hosted service** — available at mcp.adspirer.com
 
-**Update from a prior version of this review:** the platform and tool count both grew substantially — from 4 networks/~100 tools to 6 networks/400+ tools (Google, Amazon, Meta, LinkedIn, TikTok, and ChatGPT Ads) — and the license changed from unspecified to **Proprietary** ("See Terms of Service for usage terms," per the repo's own listing), so this is no longer an open-source option despite the public GitHub repo. The most notable feature is strategy persistence — the server maintains a STRATEGY.md file that carries campaign strategy context across AI sessions. The LinkedIn Ads coverage (54 tools) remains among the strongest available in any MCP server. Hosted cloud service model means no local setup required. At [82 stars](https://github.com/amekala/ads-mcp), up from 35 at our last audit.
+**Update from a prior version of this review:** the platform and tool count both grew substantially — from 4 networks/~100 tools to 6 networks/400+ tools (Google, Amazon, Meta, LinkedIn, TikTok, and ChatGPT Ads) — and the license changed from unspecified to **Proprietary** ("See Terms of Service for usage terms," per the repo's own listing), so this is no longer an open-source option despite the public GitHub repo. The most notable feature is strategy persistence — the server maintains a STRATEGY.md file that carries campaign strategy context across AI sessions. The LinkedIn Ads coverage (54 tools) remains among the strongest available in any MCP server. Hosted cloud service model means no local setup required. At [84 stars](https://github.com/amekala/ads-mcp), up from 35 at our last audit.
 
 ### jshorwitz/synter-mcp-server — 19 Platforms with AI Creative
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [synter-mcp-server](https://github.com/jshorwitz/synter-mcp-server) | 16 | TypeScript | MIT | 140+ |
+| [synter-mcp-server](https://github.com/jshorwitz/synter-mcp-server) | 17 | TypeScript | MIT | 140+ |
 
 **The widest platform coverage of any advertising MCP server, per the [project's own README](https://raw.githubusercontent.com/jshorwitz/synter-mcp-server/main/README.md):**
 
@@ -294,7 +294,7 @@ Guideline's MCP server connects AI agents to their media plan management platfor
 - **Sponsored Intelligence** — sponsored content and native advertising
 - **Curation** — content curation and recommendation
 
-Not an MCP server itself but a protocol standard built on top of MCP and A2A (Agent-to-Agent) transports. **[AdCP 3.0 reached General Availability in April 2026](https://docs.adcontextprotocol.org/docs/reference/release-notes)**, and the [project has continued iterating rapidly since](https://github.com/adcontextprotocol/adcp/releases) — it's now well past that milestone, at v3.1.13 as of this audit. At [241 stars](https://github.com/adcontextprotocol/adcp) and Apache-2.0 licensed, it's establishing itself as the industry standard for agentic advertising. The reference implementation and JSON schemas make it practical to adopt. The v3.0 GA release alongside StackAdapt and zMaticoo's MCP launches in the same week signals that the programmatic advertising industry is converging on MCP as its agent integration standard.
+Not an MCP server itself but a protocol standard built on top of MCP and A2A (Agent-to-Agent) transports. **[AdCP 3.0 reached General Availability in April 2026](https://docs.adcontextprotocol.org/docs/reference/release-notes)**, and the [project has continued iterating rapidly since](https://github.com/adcontextprotocol/adcp/releases) — it's now well past that milestone, at v3.1.19 (latest stable release tag; a v3.2.0 beta is also in progress) as of this audit. At [241 stars](https://github.com/adcontextprotocol/adcp) and Apache-2.0 licensed, it's establishing itself as the industry standard for agentic advertising. The reference implementation and JSON schemas make it practical to adopt. The v3.0 GA release alongside StackAdapt and zMaticoo's MCP launches in the same week signals that the programmatic advertising industry is converging on MCP as its agent integration standard.
 
 ---
 
@@ -304,7 +304,7 @@ Not an MCP server itself but a protocol standard built on top of MCP and A2A (Ag
 
 | Server | Stars | Language | License | Platforms |
 |--------|-------|----------|---------|-------|
-| [claude-ads](https://github.com/AgriciDaniel/claude-ads) | 8,000+ | Python | MIT | 12 |
+| [claude-ads](https://github.com/AgriciDaniel/claude-ads) | 8,500+ | Python | MIT | 12 |
 
 **The highest-starred project in the advertising AI space (Claude Code skill, not MCP server). Per the [project's own README](https://raw.githubusercontent.com/AgriciDaniel/claude-ads/main/README.md):**
 
@@ -315,17 +315,17 @@ Not an MCP server itself but a protocol standard built on top of MCP and A2A (Ag
 - **Approval-gated live changes** — the README states live account changes "stay disabled until the exact platform and operation pass approval, idempotency, verification, audit, and rollback gates"
 - **PDF reports** — renders Markdown, HTML, and optional PDF report bundles
 
-**Update from a prior version of this review — the project has changed substantially since our last audit, and several specifics in the earlier version of this entry no longer match the current README:** platform coverage expanded from 7 to 12 platforms (adding YouTube, Reddit, Snapchat, X, and Pinterest); stars grew from 3,200 to over 8,000; the previously-cited "weighted 0–100 scoring with letter grades A–F" has been replaced with the coverage-based graded/provisional/insufficient system described above; the previously-cited `/ads math` and `/ads test` commands do not appear in the current command list (test design now lives under `/ads experiment`); a previously-cited "250+ checks" total and "12 business-type industry templates" claim do not appear in the current README and have been removed rather than repeated unverified; and the previous "all analysis runs locally, no data sent to external servers" privacy claim overstated what the README actually says, which is narrower — that client data, credentials, and transcripts "must never enter Git history, reports, or release archives." MIT licensed, confirmed via the README's own license statement.
+**Update from a prior version of this review — the project has changed substantially since our last audit, and several specifics in the earlier version of this entry no longer match the current README:** platform coverage expanded from 7 to 12 platforms (adding YouTube, Reddit, Snapchat, X, and Pinterest); stars grew from 3,200 to over 8,500; the previously-cited "weighted 0–100 scoring with letter grades A–F" has been replaced with the coverage-based graded/provisional/insufficient system described above; the previously-cited `/ads math` and `/ads test` commands do not appear in the current command list (test design now lives under `/ads experiment`); a previously-cited "250+ checks" total and "12 business-type industry templates" claim do not appear in the current README and have been removed rather than repeated unverified; and the previous "all analysis runs locally, no data sent to external servers" privacy claim overstated what the README actually says, which is narrower — that client data, credentials, and transcripts "must never enter Git history, reports, or release archives." MIT licensed, confirmed via the README's own license statement.
 
 ---
 
 ## Also notable
 
-- **[JanNafta/propellerads-mcp](https://github.com/JanNafta/propellerads-mcp)** (3 stars, Python, MIT) — the only PropellerAds MCP server, with 16 tools for push/pop ad network campaign management, statistics/analytics, optimization, and zone-level targeting, including auto-blacklisting of underperforming zones
+- **[JanNafta/propellerads-mcp](https://github.com/JanNafta/propellerads-mcp)** (3 stars, Python, MIT) — the only PropellerAds MCP server, with 21 tools for push/pop ad network campaign management, statistics/analytics, optimization, and zone-level targeting, including auto-blacklisting of underperforming zones
 - **jshorwitz/awesome-agentic-advertising** — curated list of MCP servers and tools for AI-powered advertising across all major platforms
 - **[Amazon Ads MCP (official)](https://advertising.amazon.com/library/news/amazon-ads-mcp-server-open-beta)** — in open beta (announced Feb 2, 2026 at the IAB Annual Leadership Meeting) supporting campaign creation/updating/deletion, performance and report queries, account-level settings management, and billing/financial data access. Now complemented by MarketplaceAdPros' open-source server (see Amazon Ads section above)
 - **[AdRoll + PubMatic MCP integration](https://www.globenewswire.com/news-release/2026/04/23/3280009/0/en/adroll-and-pubmatic-enable-agent-powered-deal-troubleshooting-via-mcp-integration.html)** (April 23, 2026) — agent-to-agent diagnostics allowing demand-side AI agents to query supply-side diagnostics directly via MCP, demonstrating cross-ecosystem MCP adoption in programmatic advertising
-- **[Pipeboard CLI](https://github.com/pipeboard-co/pipeboard-cli)** — command-line tool from the meta-ads-mcp team now providing access to five platforms (Meta, Google, TikTok, Snap, and Reddit Ads) from a single binary, signaling Pipeboard's evolution from single-platform MCP server to multi-platform ad-tech company
+- **[Pipeboard CLI](https://github.com/pipeboard-co/pipeboard-cli)** — command-line tool from the meta-ads-mcp team providing 117 commands across two platforms (Meta Ads and Google Ads, per the [repo's own README](https://raw.githubusercontent.com/pipeboard-co/pipeboard-cli/main/README.md)) from a single Go binary; a prior version of this review overstated this as five platforms including TikTok, Snap, and Reddit Ads, which the README does not support
 
 ---
 
@@ -346,11 +346,11 @@ The advertising MCP ecosystem has matured significantly since our last review, b
 
 ## The bottom line
 
-The advertising MCP ecosystem earns **4.5 out of 5**. This is the strongest and fastest-growing MCP vertical, driven by clear commercial value — AI agents managing ad spend have an obvious ROI case. **The biggest story in May 2026 is TikTok's official MCP server** — announced at TikTok World '26 (May 13, 2026), TikTok joins Google, Meta, and Amazon as the fourth major ad platform with official MCP support. The big-four coverage is now complete. **StackAdapt remains the first major programmatic DSP** to launch an official MCP server, and AdCP reached v3.0 GA (now iterating past it, at v3.1.13) as the industry converges on MCP as its agent integration standard. **Meta Ads continues to dominate single-platform servers** — pipeboard-co now at 1,171 stars and 42 tools with a cloud-hosted Remote MCP service. **Google Ads has the deepest ecosystem** with 8+ servers and the official server now at 854 stars. **Ad auditing exploded further** — claude-ads has grown from 3,200 to over 8,000 stars and expanded from 7 to 12 audited ad platforms. **The programmatic advertising stack is maturing** — between StackAdapt, zMaticoo, Guideline, and the AdRoll/PubMatic agent-to-agent integration, MCP is spreading across the full advertising supply chain. The half-point deduction remains for the continued lack of cross-platform attribution/measurement tools and no retail media network coverage — you can manage campaigns across platforms but can't yet close the attribution loop through MCP.
+The advertising MCP ecosystem earns **4.5 out of 5**. This is the strongest and fastest-growing MCP vertical, driven by clear commercial value — AI agents managing ad spend have an obvious ROI case. **The biggest story in May 2026 is TikTok's official MCP server** — announced at TikTok World '26 (May 13, 2026), TikTok joins Google, Meta, and Amazon as the fourth major ad platform with official MCP support. The big-four coverage is now complete. **StackAdapt remains the first major programmatic DSP** to launch an official MCP server, and AdCP reached v3.0 GA (now iterating past it, at v3.1.19) as the industry converges on MCP as its agent integration standard. **Meta Ads continues to dominate single-platform servers** — pipeboard-co now at 1,200 stars and 42 tools with a cloud-hosted Remote MCP service. **Google Ads has the deepest ecosystem** with 8+ servers and the official server now at 887 stars. **Ad auditing exploded further** — claude-ads has grown from 3,200 to over 8,500 stars and expanded from 7 to 12 audited ad platforms. **The programmatic advertising stack is maturing** — between StackAdapt, zMaticoo, Guideline, and the AdRoll/PubMatic agent-to-agent integration, MCP is spreading across the full advertising supply chain. The half-point deduction remains for the continued lack of cross-platform attribution/measurement tools and no retail media network coverage — you can manage campaigns across platforms but can't yet close the attribution loop through MCP.
 
 ---
 
-*Last updated: 2026-08-14. This review reflects publicly available repositories and documentation as of this date. ChatForest researches MCP servers through their documentation, README files, GitHub metadata, and community discussions — we do not test servers hands-on. Star counts are approximate and change over time. "Tools" refers to MCP tool definitions exposed by each server. Have a correction or addition? [Let us know.](/about/)*
+*Last updated: 2026-08-26. This review reflects publicly available repositories and documentation as of this date. ChatForest researches MCP servers through their documentation, README files, GitHub metadata, and community discussions — we do not test servers hands-on. Star counts are approximate and change over time. "Tools" refers to MCP tool definitions exposed by each server. Have a correction or addition? [Let us know.](/about/)*
 
-*This review was last edited on 2026-08-14 using Claude Sonnet 5 (Anthropic) as part of a claim-level citation re-audit.*
+*This review was last edited on 2026-08-26 using Claude Sonnet 5 (Anthropic) as part of a claim-level citation re-audit.*
 

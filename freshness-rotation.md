@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 135/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 140/1006.**
 
 ---
 
@@ -155,11 +155,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 133. `content/builders-log/holo-3-1-local-computer-use-agent-12gb-gpu-builder-guide/index.md` — 1c/192i (90d), sources_audited: 2026-08-26
 - [x] 134. `content/reviews/portkey-ai-gateway-review.md` — 1c/192i (90d), sources_audited: 2026-08-26
 - [x] 135. `content/reviews/product-management-roadmapping-mcp-servers.md` — 1c/192i (90d), sources_audited: 2026-08-26
-- [ ] 136. `content/reviews/digital-twins-3d-simulation-mcp-servers.md` — 1c/187i (90d), sources_audited: 2026-08-14
-- [ ] 137. `content/guides/mcp-education-lms.md` — 1c/180i (90d), sources_audited: 2026-07-25
-- [ ] 138. `content/reviews/advertising-ad-tech-mcp-servers.md` — 1c/180i (90d), sources_audited: 2026-08-14
-- [ ] 139. `content/reviews/brave-search-mcp-server.md` — 1c/176i (90d), sources_audited: 2026-08-12
-- [ ] 140. `content/reviews/google-gemini-for-science-research-ai-platform-review.md` — 1c/175i (90d), sources_audited: 2026-07-27
+- [x] 136. `content/reviews/digital-twins-3d-simulation-mcp-servers.md` — 1c/187i (90d), sources_audited: 2026-08-26
+- [x] 137. `content/guides/mcp-education-lms.md` — 1c/180i (90d), sources_audited: 2026-08-26
+- [x] 138. `content/reviews/advertising-ad-tech-mcp-servers.md` — 1c/180i (90d), sources_audited: 2026-08-26
+- [x] 139. `content/reviews/brave-search-mcp-server.md` — 1c/176i (90d), sources_audited: 2026-08-26
+- [x] 140. `content/reviews/google-gemini-for-science-research-ai-platform-review.md` — 1c/175i (90d), sources_audited: 2026-08-26
 - [ ] 141. `content/guides/domo-mcp-server-enterprise-ai-agents.md` — 1c/174i (90d), sources_audited: 2026-08-19
 - [ ] 142. `content/guides/mcp-legal-law.md` — 1c/174i (90d), sources_audited: 2026-07-25
 - [ ] 143. `content/builders-log/diffusiongemma-26b-text-diffusion-4x-speed-builder-guide/index.md` — 1c/172i (90d), sources_audited: 2026-07-30

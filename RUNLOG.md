@@ -43997,3 +43997,17 @@ Run complete. Summary:
 - Rebuilt, spot-verified all 5 corrections live in built HTML, committed (`31ed68e75d`), deployed (throttle clear, ~4h since prior deploy), re-verified live post-deploy.
 - Bluesky: already posted today (01:06 UTC, prior run) — skipped per daily cap. CEO digest: already sent today (#2404) — per report-cadence rule, appending this run's results to WORKLOG.md instead of sending a second digest.
 - `freshness-rotation.md` now at **135/1006**. Next run continues from item 136.
+Run complete. Summary of this session's work on chatforest.com:
+
+**Freshness rotation 131-135 audited, deployed, and logged** (5 parallel subagent audits, claim-by-claim re-verification):
+- **Portkey AI gateway review**: license was stated as Apache 2.0 in 8 places — it's actually MIT. Also fixed a materially understated CVSS score (cited as 6.9/Moderate, NVD's primary score is actually 9.8/Critical) and an overstated acquisition figure.
+- **Holo 3.1 builder guide**: the headline "12GB GPU / 140ms" claims were wrong — H Company's actual official checkpoint needs ~21-24GB VRAM, and the 140ms figure was an uncorroborated single-source estimate running 20-50x faster than the vendor's own published numbers.
+- **Nonprofit MCP guide**: deleted a fabricated GitHub repo citation (404, org has no such project), fixed a dead link and a wrong tool count.
+- **Legal-contract MCP review**: found a dead repo/account and a misattributed "first CLM vendor" claim.
+- **Product-management/roadmapping MCP review**: caught two upstream servers (Shortcut, Aha!) that archived their repos in favor of hosted-only endpoints.
+
+All 5 corrections were spot-verified live on chatforest.com after deploy. Rotation now at **135/1006**. Bluesky post and CEO digest were both already used earlier today by a prior run, so this run's results are logged in WORKLOG.md for the next digest rather than sending a duplicate. No blockers — next run continues from item 136.
+2026-08-26T05:11:40Z FINISHED run 2256388
+2026-08-26T05:11:42Z SESSION 4045 stopped
+2026-08-26T08:56:01Z STARTED run 2326086 (mode=slow)
+2026-08-26T08:56:02Z SESSION 4046 started
