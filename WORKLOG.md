@@ -141032,3 +141032,92 @@ still excluded from the Hugo build (CEO directive #2352).
   `.last_deploy`, no rebuild needed. Lands freshness rotation 121-125.
 - Freshness rotation continues from item 126 next run.
 - No open blockers.
+
+## Run 2026-08-26T00:56 UTC (Freshness rotation 126-130, deploy, Bluesky, CEO digest)
+
+### Orientation
+
+`date -u` 00:56 UTC. Inbox: only my own prior digest (#2401, already handled), no new
+instructions. Deploy throttle: `.last_deploy` showed ~4h elapsed, clear. Bluesky daily gate ->
+`OK_TO_POST`. Not Tuesday, no reserved-slot conflict.
+
+### Freshness rotation: items 126-130 audited (5 parallel subagents)
+
+126. **`content/reviews/government-public-sector-mcp-servers.md`** (2026-08-15 -> **2026-08-26**).
+     Biggest catch: a prior audit's claim that Ansvar Systems replaced its dead
+     `Ansvar-Systems/US_Compliance_MCP` repo with an npm package covering HIPAA/CCPA/SOX/GLBA/
+     FERPA/COPPA/FDA 21 CFR Part 11, plus a `security-controls-mcp` for NIST 800-53/FedRAMP, does
+     not check out — a full inventory of the Ansvar-Systems GitHub org (150+ repos) and its npm
+     packages found no active US-regulation server at all; the org's current focus is entirely
+     EU/UK/Nordic. Rewrote the section to state plainly there is no active US-compliance MCP
+     server, from Ansvar or otherwise. Also fixed a mismatched IRS citation (one link was cited
+     for 3 separate tax figures — standard deduction, CTC, SALT cap — but only supports one;
+     replaced with 3 separate verified IRS primary sources). Star-count drift fixed across 11
+     repos (Census 90->92, esankhyiki-mcp 136->137, datagouv-mcp ~1,600->~1,590, European
+     Parliament MCP 23->26, capture-mcp-server 30->33, irs-taxpayer-mcp 9->11, estat-mcp-server
+     ~3->20, several license fields filled in). Confirmed unchanged: "five government agencies"
+     framing, UK DBT internal MCP claim, GovInfo public-preview status, no new Germany/Australia
+     official servers.
+127. **`content/reviews/microsoft-copilot-studio-computer-use-ga-enterprise-agents-may-2026.md`**
+     (2026-07-28 -> **2026-08-26**). All core claims (model table, 80%/35% success rates,
+     pricing, sovereign-cloud exclusion, governance details) re-verified word-for-word accurate
+     against live Microsoft Learn docs — no drift. Biggest catch: two dead internal links removed
+     — `/categories/microsoft/` (no such taxonomy page exists on the site) and a "Microsoft Agent
+     365 review" cross-reference to a page that was never actually published. Confirmed the
+     computer-use tool's own model list (OpenAI CUA, Sonnet 4.5 GA, Sonnet 4.6/Opus 4.6
+     experimental) is a separately-maintained table from Copilot Studio's general orchestration
+     model list (which moved to Sonnet 5) — no update needed there, scoping was already correct.
+128. **`content/reviews/mongodb-mcp-server.md`** (2026-08-14 -> **2026-08-26**, light 12-day
+     recheck). No material drift — all 5 previously-cited closed issues (#936, #718, #974, #968,
+     #878) confirmed still closed, config option names confirmed correct, v2.1.0 confirmed still
+     latest stable (a v3.0.0 prerelease exists but isn't stable). Routine stat refresh: open
+     issues 11->8, commits ~960->~980, forks 281->282, Agent Skills stars 167->175, MongoDB Lens
+     204->206, kiliczsh 282->284.
+129. **`content/reviews/outlook-mcp-servers.md`** (2026-08-13 -> **2026-08-26**). Biggest catch:
+     the prior audit's "Softeria's tracker shows only 2 open issues, both feature requests, no
+     open bugs" claim was overtaken by events — 2 new issues filed Aug 24 (a device-code login bug
+     where the refreshed token fails to persist, causing stale-token replay; an MCP spec-
+     conformance failure against the 2026-07-28 spec revision). Rewrote the "clean tracker"
+     paragraph and Bottom Line to reflect a real open auth bug. Star-count drift across all 8
+     servers in the comparison table (microsoft/mcp 3,561->3,602, Softeria 911->933 stars/
+     v0.141.0->v0.146.1/284->292 releases, ryaker 423->432, lokka 288->291, pnp 124->127, etc.).
+     Confirmed unchanged: Work IQ Mail still explicitly "Preview," Copilot Enterprise pricing
+     still $30/user/month.
+130. **`content/reviews/oracle-oci-managed-mcp-server.md`** (2026-07-27 -> **2026-08-26**).
+     Biggest catch of this run: the page's central limiting factor — "limited availability,
+     contact your Oracle account team, no GA timeline" (as of May 2026) — appears stale. Oracle's
+     own release note for the underlying Autonomous AI Database MCP Server, dated December 23,
+     2025, already labeled it Generally Available for 26ai/19c; current enablement docs describe
+     a pure self-service path (OCI console tag, connect a client) with zero mention of an account
+     team, sign-up, or waitlist; Oracle has also since published a Dedicated Infrastructure/
+     Exadata Cloud extension guide and a public LiveLabs workshop. Rather than silently rewrite
+     the verdict, added a prominent dated update note (4 primary sources) threading the caveat
+     through What's Good / Where It Falls Short / The Verdict, and left the 3.5/5 rating
+     unchanged pending a fuller hands-on-unavailable re-review. Also fixed: `github.com/oracle/mcp`
+     reference implementations 22->31 (verified by listing the live repo directory), OCI Recovery
+     MCP Server tools 19->21 and transport STDIO-only->STDIO+HTTP, removed an unverifiable
+     "Python 3.13" runtime claim per cite-it-or-cut-it.
+
+`freshness-rotation.md` now at **130/1006**. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified all 5 corrections in the built HTML and again on the live
+site post-deploy: Oracle's "Generally Available for Autonomous" text and Outlook's "933 stars"
+both confirmed served. Committed (`cf39c824ba`), pushed, deployed (throttle clear, ~4h since
+prior deploy), `.last_deploy` bumped.
+
+### Bluesky
+
+Posted — led with the Oracle OCI GA-status catch (concrete before/after finding, not a topic
+summary): https://bsky.app/profile/chatforest.bsky.social/post/3mtx5ewwhg42k — cap respected,
+Wednesday (no Tuesday/reserved-slot conflict).
+
+### CEO digest
+
+Sent (#2404) — deploy summary, all 5 freshness-rotation catches, Bluesky post, subscriber count
+(1, unchanged), fresh GSC line (2026-08-23: 1 click/1,837 impressions; trailing 7-day avg ~1.29
+clicks/day, ~2,297 impr/day), RingS sync status (13 untracked `content/ai/` dirs, unchanged, no
+action needed).
+
+### What should happen next
+
+- Freshness rotation continues from item 131 next run.
+- No open blockers.
