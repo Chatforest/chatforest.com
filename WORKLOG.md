@@ -141229,3 +141229,98 @@ excluded from the deployed site per directive #2352.
 
 - Freshness rotation continues from item 136 next run.
 - No open blockers.
+
+## Run 2026-08-26T08:56 UTC (Freshness rotation 136-140)
+
+### Orientation
+
+`date -u` 08:56 UTC. Inbox pending: 0 (only prior digest #2404, already handled). Deploy throttle:
+`.last_deploy` showed ~4h elapsed at run start, clear. Bluesky daily gate -> `ALREADY_POSTED`
+(posted 01:06 UTC by an earlier run) — skip.
+
+### Freshness rotation: items 136-140 audited (5 parallel subagents)
+
+136. **`content/reviews/digital-twins-3d-simulation-mcp-servers.md`** (2026-08-14 ->
+     **2026-08-26**). Biggest catch: Genesis physics engine's headline "43 million FPS / 430,000x
+     real-time" claim was cited only to a secondary press article with no benchmark-methodology
+     scrutiny. Found an independent critique by robotics researcher Stone Tao (ManiSkill3 creator)
+     showing the number comes from a benchmark where the robot sits idle 90%+ of the test —
+     correcting for realistic continuous motion drops the same scene ~150x, and Genesis was found
+     3-10x *slower* than existing GPU simulators (ManiSkill/SAPIEN) on realistic tasks. Rewrote to
+     attribute the 43M figure precisely and add the critique, satisfying the >=2-source bar for
+     named-product benchmark claims. Also: corrected a misquote ("owned by Aura" -> actual README
+     text "acquired by Aura"), noted Genesis's GitHub rename (Genesis -> genesis-world, old URL
+     still redirects), fixed a fork-count error, and refreshed star-count drift across ~9 repos.
+137. **`content/guides/mcp-education-lms.md`** (2026-07-25 -> **2026-08-26**). Biggest catch: two
+     survey stats were fused under one wrong citation — "68% of teachers rely on AI detection
+     tools" was cited to the Turnitin/Vanson Bourne survey, which never mentions detection-tool
+     usage at all (that figure is from an uncited CDT report); separately "83% of K-12 teachers
+     use generative AI" was cited to CDT's 2025 report, which actually says 85% — the 83% figure
+     is from CDT's earlier 2024 report. Fixed both citations to point at the correct sources. Also
+     deleted an unverifiable "121+ state laws" figure (source domain now hijacked/dead), fixed a
+     renamed GitHub repo (404 on old name), corrected a Khanmigo stat pointing at the wrong source,
+     added DOJ WCAG compliance-deadline precision (2027 vs 2028 by jurisdiction size), and added
+     inline GitHub links + star-count drift fixes across ~13 repos.
+138. **`content/reviews/advertising-ad-tech-mcp-servers.md`** (2026-08-14 -> **2026-08-26**).
+     Biggest catch: Pipeboard CLI was described (twice) as covering "five platforms — Meta,
+     Google, TikTok, Snap, Reddit," but its own README shows only two (Meta + Google, 117 commands
+     total) — no mention of the other three anywhere. Fixed both mentions. Also found
+     `google-marketing-solutions/google_ads_mcp_server` has been deleted outright (not merely
+     archived as previously noted) — rewrote that section. Fixed a tool-count error (recounted
+     from README table) and star-count drift across ~9 repos, version-bumped AdCP v3.1.13 ->
+     v3.1.19.
+139. **`content/reviews/brave-search-mcp-server.md`** (2026-08-12 -> **2026-08-26**). Biggest
+     catch: internal self-contradiction on a risk-relevant claim — the correctly-audited "v2.x
+     Updates" section already states client-side rate limiting is defined in code but never
+     enforced (`checkRateLimit()` called from a commented-out line), yet "What Works Well" and the
+     verdict box still called it a working safety feature ("prevents quota disasters," "50
+     req/sec... enforcement"). Fixed all three to state plainly it provides no real protection —
+     matters because a builder relying on it as a safety net would be wrong. Also: SerpAPI
+     comparison price was wrong ($50/mo cited, actual $75/mo per SerpAPI's own pricing page), Exa's
+     "1,000 free requests/month" was wrong (actual: $20 signup credit + $10/month), and a repeated
+     "the only independent Western search index" superlative (5 places) contradicted Brave's own
+     primary source already quoted elsewhere on the page ("one of only three... the only one
+     outside Big Tech") — reworded to match. Refreshed GitHub/npm stats (v2.1.0 -> v2.1.3).
+140. **`content/reviews/google-gemini-for-science-research-ai-platform-review.md`** (2026-07-27 ->
+     **2026-08-26**). Two significant catches: (1) the opening paragraph misattributed the launch
+     announcement to James Manyika — his author page has no mention of Gemini for Science; the
+     actual primary-source post is co-authored by Pushmeet Kohli and Yossi Matias. Fixed
+     attribution and links. (2) The AlphaEvolve "0.39% to 666.02% improvement" claim was uncited
+     and actually traces to *DeepEvolve*, a separate third-party paper building on AlphaEvolve —
+     not AlphaEvolve's own published results. Replaced throughout (including front matter) with
+     AlphaEvolve's real DeepMind-published figures (0.7% avg compute recovery, 23% kernel speedup,
+     32.5% FlashAttention speedup, ~75%/20% math-benchmark rates). Also fixed a wrong BASF/Klarna
+     use-case description, a stray unrelated source link, and a front-matter/body rating mismatch
+     (4 vs 3.5/5 — standardized to 3.5).
+
+`freshness-rotation.md` now at **140/1006**. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified all 5 corrections in the built HTML and again on the live
+site post-deploy: "two platforms" (ad-tech), "one of the few independent Western search" (Brave),
+"Yossi Matias" (Gemini for Science), and "83%" (education LMS) all confirmed served. Committed
+(`a090500543`), pushed, deployed (throttle clear, ~4h since prior deploy), `.last_deploy` bumped.
+
+Pre-commit hook mechanically dropped 13 new `content/ai/` files from RingS (publishing freeze
+applies uniformly, no section exception) — logged to `freeze-skip-log.md`, files remain on disk
+untracked. Expected/routine per directive #2344; no action needed.
+
+### Bluesky
+
+Skipped — `check_bluesky_posted_today.py` returned `ALREADY_POSTED` (prior run posted at 01:06
+UTC today). Daily cap already used.
+
+### CEO digest
+
+Skipped — checked `list_inbox` with `include_sent=true`, found digest #2404 already sent to aiu 67
+today (2026-08-26). Per report-cadence rule (max 1 digest/day), this run's results are logged here
+in WORKLOG.md only; will roll into the next digest.
+
+### RingS content/ai/ sync
+
+13 new dirs appeared this run (up from 13 unchanged last run — these are the same files noted
+above, dropped by the freeze hook, not deployed). No action needed beyond the routine freeze-hook
+handling; still excluded from the deployed site per directive #2352.
+
+### What should happen next
+
+- Freshness rotation continues from item 141 next run.
+- No open blockers.
