@@ -43970,3 +43970,30 @@ Run complete. Summary:
 2026-08-25T17:06:04Z SESSION 4042 stopped
 2026-08-25T20:55:01Z STARTED run 2115197 (mode=slow)
 2026-08-25T20:55:02Z SESSION 4043 started
+Run complete. Summary:
+
+- **Deployed** the pending freshness-rotation 116-120 commit (education/LMS MCP, Midjourney, API gateway MCP, Google 3.2Q tokens, GLM-5.2 guide).
+- **Audited freshness-rotation items 121-125** via 5 parallel subagents. Notable catches: CircleCI's official MCP server is now deprecated (guide's whole section was built around it), a Claude deprecation guide had copy-pasteable model ID strings that would 404/error against the live API, a calendar MCP guide's Cal.com section was wrong on two fronts (it shipped a hosted MCP server and went closed-source in April), an async-tasks MCP guide's code samples no longer run against current FastMCP, and a Stable Audio 3 review materially overstated Stability AI's commercial licensing requirements.
+- Rebuilt, spot-verified all 5 fixes live in HTML, committed (`0183c92eea` + `b4ff833ee6`), pushed. **Not yet deployed** — 1-hour throttle holds it for next run.
+- Bluesky and CEO digest were already handled by an earlier run today; no action needed.
+- `freshness-rotation.md` now at 125/1006. Next run should deploy the pending commit and continue from item 126.
+2026-08-25T21:04:38Z FINISHED run 2115197
+2026-08-25T21:04:39Z SESSION 4043 stopped
+2026-08-26T00:56:01Z STARTED run 2186225 (mode=slow)
+2026-08-26T00:56:02Z SESSION 4044 started
+This run is complete. Summary:
+
+- **Audited freshness-rotation items 126-130** (5 parallel subagents): government/public-sector MCP guide, Microsoft Copilot Studio computer use review, MongoDB MCP, Outlook MCP, Oracle OCI Managed MCP. Biggest catch: Oracle's "limited availability, contact your account team" status appears stale — Oracle's own Dec 2025 release note already called the server GA with self-service access. Also caught a fabricated Ansvar Systems claim from a prior audit, 2 new real bugs on Softeria's Outlook MCP tracker, and 2 dead internal links.
+- Rebuilt, spot-verified all corrections live, committed (`cf39c824ba`), deployed. Rotation now at **130/1006**.
+- Posted to Bluesky (Oracle GA catch), sent the CEO digest (#2404) with GSC/subscriber data, logged the run in WORKLOG.md.
+- Next run continues freshness rotation from item 131.
+2026-08-26T01:08:33Z FINISHED run 2186225
+2026-08-26T01:08:33Z SESSION 4044 stopped
+2026-08-26T04:56:01Z STARTED run 2256388 (mode=slow)
+2026-08-26T04:56:02Z SESSION 4045 started
+Run complete. Summary:
+
+- **Audited freshness-rotation items 131-135** (5 parallel subagents): nonprofit/social-impact MCP guide, legal-contract-management MCP servers review, Holo 3.1 local computer-use builder guide, Portkey AI gateway review, product-management/roadmapping MCP servers review. Biggest catches: Portkey review had "Apache 2.0" license wrong 8x throughout (actually MIT) plus a materially wrong CVSS severity (6.9/Moderate cited when NVD's primary score is 9.8/Critical); Holo 3.1 guide's headline "12GB GPU"/"140ms" claims were wrong (official checkpoint needs ~21-24GB VRAM, 140ms was an uncorroborated single-source estimate); nonprofit guide had a fabricated GitHub repo citation (404, org has no such project); legal-contract review had a dead repo/account and a misattributed "first CLM vendor" claim; roadmapping review caught two upstream MCP servers (Shortcut, Aha!) that archived their repos in favor of hosted-only endpoints.
+- Rebuilt, spot-verified all 5 corrections live in built HTML, committed (`31ed68e75d`), deployed (throttle clear, ~4h since prior deploy), re-verified live post-deploy.
+- Bluesky: already posted today (01:06 UTC, prior run) — skipped per daily cap. CEO digest: already sent today (#2404) — per report-cadence rule, appending this run's results to WORKLOG.md instead of sending a second digest.
+- `freshness-rotation.md` now at **135/1006**. Next run continues from item 136.

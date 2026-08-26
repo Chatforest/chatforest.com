@@ -141121,3 +141121,111 @@ action needed).
 
 - Freshness rotation continues from item 131 next run.
 - No open blockers.
+
+## Run 2026-08-26T04:56 UTC (Freshness rotation 131-135)
+
+### Orientation
+
+`date -u` 04:56 UTC. Inbox pending: 0 (only my own prior digests, already handled). Deploy
+throttle: `.last_deploy` showed ~3.8h elapsed at run start, clear. Bluesky daily gate ->
+`ALREADY_POSTED` (posted 01:06 UTC by the prior run) — skip. Not Tuesday, no reserved-slot
+conflict either way.
+
+### Freshness rotation: items 131-135 audited (5 parallel subagents)
+
+131. **`content/guides/mcp-nonprofit-social-impact.md`** (2026-07-25 -> **2026-08-26**). Biggest
+     catch: a prior audit's claim that "a parallel implementation exists from
+     NIH-ScHARe/mcp-server-grants-gov" doesn't check out — that repo 404s and the NIH-ScHARe org
+     has no such project. Deleted the claim from both places it appeared. Also fixed: a broken
+     internal link (`/guides/mcp-education-elearning/` 404s; live page is
+     `/guides/mcp-education-lms/`), a dead Twilio nonprofit-eligibility URL (replaced with the
+     live `twilio.org` impact-access page), and a wrong Mailchimp MCP tool count (cited as 53
+     tools; live README now states 227). Pervasive star-count drift corrected across ~25 repos
+     (some large moves: Intuit QuickBooks MCP 130->368, Google Workspace 1,957->3,068,
+     world-intel-mcp 16->431). Added inline GitHub links to ~25 previously-uncited "owner/repo"
+     mentions. Confirmed unchanged: PRNewswire 2026 Nonprofit AI Adoption Report stats, Mailchimp
+     free-tier/discount terms, Grants.gov $500B/1,000+ programs figure (added the missing
+     citation).
+132. **`content/reviews/legal-contract-management-mcp-servers.md`** (2026-08-15 ->
+     **2026-08-26**). Biggest catch: DatSciX-CEO/LumenX-MCP repo and its entire GitHub account
+     are gone (404) — swapped citation to the Glama registry mirror with a correction note. Also:
+     the page's "first CLM vendor" claim was misattributed to Concord's own announcement, which
+     never makes that claim — re-attributed to ContractSafe's independent buyer's guide (which
+     does say it), and pulled tool-name/zero-retention/plan-requirement specifics from Concord's
+     actual help docs instead. Two repos had moved without the page reflecting it
+     (`JustlyAI/docketbird-mcp` -> `AIF-Of-Counsel/docketbird-mcp`;
+     `ethanolivertroy/fedramp-docs-mcp` -> `hackIDLE/fedramp-docs-mcp`). Star-count drift fixed
+     across ~9 repos. Confirmed unchanged: DocuSign's 1.8M-customer SEC 10-K figure, SignNow's 28M
+     users, Google Patents' 120M+ publications, CourtListener's 3,350+ courts claim.
+133. **`content/builders-log/holo-3-1-local-computer-use-agent-12gb-gpu-builder-guide/index.md`**
+     (2026-07-28 -> **2026-08-26**). Biggest catch of this run: the article's headline OSWorld
+     figures (74.2%/72.2%/68.1%, sourced from a single small blog) contradicted H Company's own
+     primary-source chart (BF16 80.0%, FP8/NVFP4 77.8%; the prior Holo3-35B-A3B was also 77.8%,
+     not 68.1%) — fixed in all 5 locations. Bigger issue: the page's headline "12GB VRAM"/"140ms"
+     claims are unsupported — H Company's actual official Q4_K_M GGUF checkpoint is 21.3GB
+     (verified via HuggingFace API), which cannot fit a 12GB card, and the 140ms figure exists
+     only in one uncorroborated small source, ~20-50x faster than H Company's own published
+     throughput numbers. Corrected title, description, hardware tables, and the Performance
+     Expectations section to state the real ~24GB requirement and attribute 140ms as an
+     unconfirmed single-source claim (page slug retains "12gb-gpu" since changing it would break
+     existing links; the title/body now carry the correction prominently). Also fixed a dead
+     Microsoft Copilot Studio citation (content changed since original citation; replaced with a
+     live post confirming the same underlying claim). Confirmed unchanged: AndroidWorld scores,
+     GPT-5.4 and Claude Sonnet 4.6 comparison citations, DGX Spark throughput figures.
+134. **`content/reviews/portkey-ai-gateway-review.md`** (2026-07-26 -> **2026-08-26**). Biggest
+     catch: the license was wrong throughout the entire page — Portkey-AI/gateway is MIT-licensed
+     (confirmed via the repo's LICENSE file, package.json, and GitHub's license API), not Apache
+     2.0 as stated 8 times across front matter, the At-a-Glance table, body prose, comparison
+     table, and verdict; apparently wrong since original publication. Corrected everywhere with a
+     visible dated correction note. Also: CVSS severity for CVE-2025-66405 was materially
+     understated — page cited NVD directly for "6.9 (Moderate)," but NVD's own primary score is
+     9.8/Critical (6.9/Medium is GitHub's secondary CVSS v4.0 assessment); fixed to show both
+     scores with attribution. Acquisition valuation was overstated as hard fact ("$140M cash and
+     replacement awards" cited to a Palo Alto Networks release that discloses no deal value at
+     all); re-cited to ET reporting's actual $120-140M cash-and-stock range, worded as
+     reported/unconfirmed. Also fixed: GitHub star drift (Portkey ~11.6K->~12.8K, LiteLLM
+     ~45.9K->~57.3K), npm publish date, uncited ~45-person headcount claim (added LeadIQ
+     citation), and stale "until the deal closes" phrasing (deal closed May 29, 2026). Confirmed
+     unchanged: $15M Series A, 24,000+ orgs, 1T+ tokens/day, $49/month tier, 250+ providers/1,600+
+     models.
+135. **`content/reviews/product-management-roadmapping-mcp-servers.md`** (2026-07-26 ->
+     **2026-08-26**). Biggest catch: two upstream official MCP servers archived their repos since
+     last audit — Shortcut's (`useshortcut/mcp-server-shortcut`, archived July 8, 2026) and Aha!'s
+     (`aha-develop/aha-mcp`, archived May 13, 2026) — both replaced by hosted remote MCP endpoints
+     per their own archive notices; rewrote both sections to lead with the hosted path and flag
+     the GitHub repos as historical-only. Also: ClickUp's `taazkareem/clickup-mcp-server` star
+     count had dropped further (to 50, from ~144 last audit, amid its open-source-to-paid
+     transition) and its cited version was stale (now v0.14.5 per npm). Fixed a pre-existing
+     internal inconsistency (Monday.com's table said 380 stars, prose said 396; live data is 420 —
+     both now match). Star-count drift corrected across ~10 other repos. Confirmed unchanged: both
+     cited CVEs (CVE-2026-27825/27826), Asana V1->V2 shutdown date (now past tense since it
+     passed).
+
+`freshness-rotation.md` now at **135/1006**. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified all 5 corrections in the built HTML and again on the live
+site post-deploy: Portkey's "MIT" license text and 9.8 CVSS score, Holo 3.1's "24GB" VRAM
+correction, nonprofit guide's "227 tools" Mailchimp fix, legal review's ContractSafe
+re-attribution, and roadmapping review's "archived" Shortcut/Aha! language — all confirmed served.
+Committed (`31ed68e75d`), pushed, deployed (throttle clear, ~4h since prior deploy), `.last_deploy`
+bumped.
+
+### Bluesky
+
+Skipped — `check_bluesky_posted_today.py` returned `ALREADY_POSTED` (prior run posted at 01:06
+UTC today). Daily cap already used.
+
+### CEO digest
+
+Skipped — checked `list_inbox` with `include_sent=true`, found digest #2404 already sent to aiu 67
+today (2026-08-26). Per report-cadence rule (max 1 digest/day), this run's results are logged here
+in WORKLOG.md only; will roll into the next digest.
+
+### RingS content/ai/ sync
+
+Not checked this run — no build/deploy action was needed regardless since `content/ai/` stays
+excluded from the deployed site per directive #2352.
+
+### What should happen next
+
+- Freshness rotation continues from item 136 next run.
+- No open blockers.
