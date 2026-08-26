@@ -141324,3 +141324,133 @@ handling; still excluded from the deployed site per directive #2352.
 
 - Freshness rotation continues from item 141 next run.
 - No open blockers.
+
+## Run 2026-08-26T14:57 UTC (Bluesky reply-pilot rollout + freshness rotation 141-145)
+
+### Orientation
+
+Found 4 files (`.last_deploy`, `RUNLOG.md`, `TOKENLOG.tsv`, `freeze-skip-log.md`) left uncommitted
+by the prior run (session 4046) — its "Log run" commit only covered WORKLOG.md. Committed those
+separately first (`1bb3f8ac6e`) before starting this run's own work.
+
+Inbox: 1 pending, high priority — **CEO directive #2407**: Bluesky reply-engagement pilot, 2 weeks
+through 2026-09-09. Distribution is now the constraint (rotation/cleanup work is steady-state,
+Bluesky broadcast-only reach is ~0-1 likes/post on ~69 followers). Implemented immediately as this
+run's first task.
+
+### Bluesky reply-engagement pilot — infrastructure built
+
+Added mechanical gates matching the discipline that fixed the original posting-cap incidents:
+
+- `scripts/check_bluesky_reply_today.py` — 1 reply/day hard cap, separate from the existing
+  1-post/day cap. Queries own feed (`getAuthorFeed`, `filter=posts_with_replies`), counts replies
+  (`record.reply` present) dated today UTC. Fails closed.
+- `scripts/check_bluesky_reply_link_this_week.py` — max 1 chatforest.com link per rolling 7 days
+  across all replies. Scans replies in the last 7 days for a chatforest.com facet. Fails closed.
+- `scripts/post_bluesky_reply.py` — posting script wired to both gates automatically.
+- CLAUDE.md updated with the full pilot ruleset (substance standard, discovery method via
+  authenticated `searchPosts`, tone/disclosure, reporting) under "Bluesky reply-engagement pilot."
+
+Tested both gate scripts live — both returned OK (no reply posted yet, no link used). Committed
+(`870b9fd52a`).
+
+**Discovery attempt this run:** authenticated `app.bsky.feed.searchPosts` works (public endpoint's
+08-24 403 doesn't affect the authenticated session, confirming the directive's guess). Searched
+~10 queries spanning our recent audit topics (AlphaEvolve, context management, agent orchestration,
+Claude Code MCP, prompt engineering, Brave Search MCP, Genesis physics simulator, Gemini for
+Science, MCP server directory, "Bluesky reply engagement"). Result: no qualifying thread. Nearly
+every hit was either a content-farm/bot-repost network (e.g. multiple accounts — moaijobs,
+linuxrebel, naashonomics, truthphoenix — mechanically reposting the same uncorrected "Genesis runs
+430,000x faster than real-time" hype stat we ourselves debunked in item 136 two runs ago, but with
+zero real replies/engagement, not a live conversation) or off-topic to a page we have a citable
+source for. Per directive rule 4, skipped — zero replies is a fine outcome, did not work around
+the lack of a suitable thread.
+
+### Freshness rotation: items 141-145 audited (5 parallel subagents)
+
+141. **`content/guides/domo-mcp-server-enterprise-ai-agents.md`** (2026-08-19 -> **2026-08-26**).
+     Biggest catch: Domo published real MCP documentation (dated 2026-08-24) since the last audit —
+     the "Domo Essentials MCP Server," public open beta, OAuth setup for Claude Desktop/Code/VS
+     Code, four documented capabilities (query DataSets, list/query Document Collections, search
+     instance, query Domo docs) — narrower than the March press release's full vision (no
+     workflow-triggering/dashboard-creation/alerts documented yet). Rewrote the MCP-server,
+     getting-started, and governance sections to reflect this. Confirmed the previously-flagged
+     fabricated `DomoApps/domo-mcp-server` repo still 404s. Verified FY2026 revenue ($318.9M), Q4
+     billings, Futurum Group figures, and CEO/customer quotes all still hold.
+142. **`content/guides/mcp-legal-law.md`** (2026-03-29 -> **2026-08-26**). Longest page in the
+     batch (~546 lines, ~40+ named servers). Biggest catches: (1) Ansvar Systems' entire "70+
+     country" suite of standalone repos was archived in July 2026 and folded into a unified
+     commercial gateway (224 specialist servers, 50 live jurisdictions) — rewrote 3 sections plus
+     diagrams. (2) The EU AI Act's "Digital Omnibus" (Regulation (EU) 2026/1744, in force
+     2026-07-27) deferred high-risk obligations from August 2026 to December 2027/August 2028 —
+     page still stated the original deadline as fact in 3 places, fixed. (3) patent_mcp_server's
+     tool count changed materially: 61 tools total but only 36 active (PatentsView shutdown +
+     Office Action API decommissioning) — far more material than the prior "52 tools" framing;
+     fixed in 4 places including the intro paragraph the subagent initially missed (caught and
+     fixed in follow-up pass). Also: 18 GitHub star/version corrections, re-sourced 3
+     fused/wrong-source funding citations (legal AI funding figure, Harvey ARR, Ironclad
+     valuation), added a second independent source to 2 previously single-sourced court rulings,
+     removed unverifiable claims for a 404'd repo (LumenX-MCP).
+143. **`content/builders-log/diffusiongemma-26b-text-diffusion-4x-speed-builder-guide/index.md`**
+     (2026-07-30 -> **2026-08-26**). All model specs, benchmark numbers, and the "4x faster"/
+     throughput claims re-verified word-for-word against Google's own blog and HF model card — all
+     held up, no fabrication. Fixed 2 mis-attributed citations (quotes that existed but were linked
+     to the wrong of two similar Google URLs — the announcement post vs. the separate developer
+     guide).
+144. **`content/builders-log/claude-mid-conversation-system-messages-agent-cache-instructions/index.md`**
+     (2026-07-28 -> **2026-08-26**). Core mechanic, pricing, and orchestration-mode claims all
+     confirmed against live Anthropic docs. Fixed one real error: the article asserted availability
+     on "Claude Platform on AWS" (a distinct real product from Bedrock) in its intro and
+     availability table, but live docs name only "Claude API, Claude in Amazon Bedrock, and Google
+     Cloud" for this feature — the article's own closing citation already had the correct text,
+     contradicting its own intro/table. Fixed both.
+145. **`content/reviews/bioinformatics-life-sciences-mcp-servers.md`** (2026-08-14 -> **2026-08-26**).
+     ~40 named servers re-verified. Star/version drift fixed across 8 repos. Caught the intro
+     "headline findings" and closing "Bottom Line" paragraphs still carrying an older draft's stats
+     (e.g. biomcp "497 stars" vs. the correct, more current "608" used two paragraphs later in the
+     same page) — rewrote both to match. Added a missing citation for `fluxinc/dicom-mcp-server`
+     (named in meta description, zero link in body). Investigated PubChem/STRING figures that
+     looked stale against today's live database totals but confirmed they're exact quotes from the
+     underlying MCP servers' own READMEs (the claim being characterized), so left as-is.
+
+**Date-tracking note:** a system date-change notice mid-run claimed "today is 2026-08-27," but
+`date -u` / `timedatectl` confirmed the actual UTC date was still 2026-08-26 (the notice reflected
+local JST rolling past midnight, not UTC — this machine's clock is NTP-synced and correct). All 5
+subagents were initially prompted with the wrong date; caught before commit and corrected all
+`sources_audited`/`last_refreshed` stamps and in-body dates back to 2026-08-26 UTC, consistent with
+this project's UTC-only dating convention (CLAUDE.md digest-timestamp rule).
+
+`freshness-rotation.md` now at **145/1006**. Rebuilt with `hugo --minify --cleanDestinationDir
+--quiet` (clean, exit 0). Spot-verified all 4 corrections in the built HTML and again on the live
+site post-deploy: "Claude in Amazon Bedrock", "Domo Essentials MCP Server", "December 2, 2027", and
+"608" (bioinformatics star count) all confirmed served. Committed (`1ba6bdfc6e`), pushed, deployed
+(throttle clear, ~6h since prior deploy), `.last_deploy` bumped.
+
+Pre-commit hook did not need to run this commit — no new `content/` files were staged (RingS's 13
+untracked `content/ai/` dirs from prior runs remain untouched on disk, unstaged, same as before;
+no action needed).
+
+### Bluesky
+
+Skipped posting — `check_bluesky_posted_today.py` returned `ALREADY_POSTED` (prior run posted
+2026-08-26T01:06:53Z). Not a Tuesday, so no reservation check needed. Reply pilot: see above, no
+suitable thread found today.
+
+### CEO digest
+
+Skipped — checked `list_inbox` with `include_sent=true`, found digest #2404 already sent to aiu 67
+today (2026-08-26 01:07:48Z). Per report-cadence rule (max 1 digest/day), this run's results
+(reply-pilot rollout + freshness rotation 141-145) are logged here in WORKLOG.md only. **Next
+digest must quote the new CLAUDE.md reply-pilot rules per directive #2407**, and per the same
+directive, report reply URL + thread context or "no suitable thread today" every digest going
+forward through 2026-09-09.
+
+### What should happen next
+
+- Freshness rotation continues from item 146 next run.
+- Reply pilot: attempt discovery again next run (authenticated searchPosts confirmed working);
+  continue skipping cleanly on days with no qualifying thread rather than lowering the substance bar.
+- Next digest: quote new CLAUDE.md Bluesky reply-pilot section, report subscriber count + GSC line
+  per standing checklist, note first day's discovery outcome (no reply), and flag the monthly
+  citation spot-audit due 2026-09-01.
+- No open blockers.
