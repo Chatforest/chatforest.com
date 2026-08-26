@@ -7,7 +7,7 @@ Bioinformatics and life sciences MCP servers let AI agents query protein databas
 
 This review covers **bioinformatics and life sciences MCP servers** — protein/chemical databases, biomedical literature, clinical research, sequence analysis, systems biology, drug discovery, and healthcare interoperability. For related servers, see our [Scientific Research review](/reviews/science-research-mcp-servers/), [Data Science & Machine Learning review](/reviews/ai-ml-model-serving-mcp-servers/), and [Digital Twins & Simulation review](/reviews/digital-twins-3d-simulation-mcp-servers/).
 
-The headline findings: **Integrated platforms surging** — genomoncology/biomcp doubled to 497 stars with 13 entities across 15+ data sources. **Anthropic is going all-in on life sciences** — life-sciences marketplace at 321 stars, plus $400M acquisition of Coefficient Bio for drug discovery (April 2026), plus Owkin Pathology Explorer launched as first pathology AI via MCP. **Two major gaps filled** — AlphaFold MCP (33 stars, 25+ tools) and KEGG MCP (9 stars, 30 tools) now exist, both from Augmented-Nature. **Protein and chemical databases have the strongest MCP coverage** — Augmented-Nature now maintains 15+ servers. **Literature search is mature and growing** — cyanheads/pubmed surged 33% to 88 stars with Streamable HTTP. **Healthcare interoperability maturing** — LangCare FHIR (31 stars, Go) brings enterprise-grade EHR access with 40+ clinical skills. **Drug discovery has end-to-end coverage** from target identification through patent search. **Remaining gaps: Galaxy workflows, comprehensive single-cell pipelines, multi-omics integration.**
+The headline findings: **Integrated platforms surging** — genomoncology/biomcp grew to 608 stars with 13 entities across ~30 data sources. **Anthropic is going all-in on life sciences** — life-sciences marketplace at 578 stars, plus $400M acquisition of Coefficient Bio for drug discovery (April 2026), plus Owkin Pathology Explorer launched as first pathology AI via MCP. **Two major gaps filled** — AlphaFold MCP (35 stars, 25+ tools) and KEGG MCP (11 stars, 32 tools) now exist, both from Augmented-Nature. **Protein and chemical databases have the strongest MCP coverage** — Augmented-Nature now maintains 15+ servers. **Literature search is mature and growing** — cyanheads/pubmed grew to 139 stars with Streamable HTTP. **Healthcare interoperability maturing** — LangCare FHIR (52 stars, Go) brings enterprise-grade EHR access with 40+ clinical skills. **Drug discovery has end-to-end coverage** from target identification through patent search. **Remaining gaps: Galaxy workflows, comprehensive single-cell pipelines, multi-omics integration.**
 
 ---
 
@@ -17,9 +17,9 @@ The headline findings: **Integrated platforms surging** — genomoncology/biomcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [biomcp](https://github.com/genomoncology/biomcp) | 591 | Rust | MIT | 13 entities |
+| [biomcp](https://github.com/genomoncology/biomcp) | 608 | Rust | MIT | 13 entities |
 
-**The most popular standalone biomedical MCP server — now 591 stars (from 241 in our March review)** — a single-binary CLI and MCP server querying multiple authoritative data sources:
+**The most popular standalone biomedical MCP server — now 608 stars (from 241 in our March review)** — a single-binary CLI and MCP server querying multiple authoritative data sources:
 
 - **PubTator3 / PubMed** — peer-reviewed biomedical literature with entity annotations
 - **bioRxiv / medRxiv** — preprint servers for biology and health sciences
@@ -30,7 +30,7 @@ The headline findings: **Integrated platforms surging** — genomoncology/biomcp
 - **Cross-entity helpers** — pivot between related data types
 - **Local study analytics** — cBioPortal-style dataset analysis
 - **Compact markdown output** — optimized for LLM token efficiency
-- **2,814 commits** — rapid iteration cadence
+- **3,100+ commits** — rapid iteration cadence
 
 One command grammar, [13 entities across ~30 trusted biomedical sources](https://github.com/genomoncology/biomcp#what-is-biomcp) (11 "gettable" entities plus 2 search-only entities per the current README). The best choice if you want a single server covering the breadth of biomedical research.
 
@@ -38,9 +38,9 @@ One command grammar, [13 entities across ~30 trusted biomedical sources](https:/
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [life-sciences](https://github.com/anthropics/life-sciences) | 575 | Python | — | Marketplace |
+| [life-sciences](https://github.com/anthropics/life-sciences) | 578 | Python | — | Marketplace |
 
-**Anthropic's official life sciences marketplace — now 575 stars (from 259 in March)** — a marketplace registry providing remote MCP servers and skills:
+**Anthropic's official life sciences marketplace — now 578 stars (from 259 in March)** — a marketplace registry providing remote MCP servers and skills:
 
 - **Remote MCP servers** — PubMed, BioRender, Synapse.org, Wiley Scholar Gateway, Consensus, Cortellis Regulatory Intelligence (Clarivate), AdisInsight (Springer Nature) — the latter three added since our earlier reviews
 - **Local MCP server** — 10x Genomics Cloud
@@ -167,9 +167,9 @@ AlphaFold MCP was the most requested missing server in bioinformatics. Its arriv
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [pubmed-mcp-server](https://github.com/cyanheads/pubmed-mcp-server) | 134 | TypeScript | Apache 2.0 | 11 |
+| [pubmed-mcp-server](https://github.com/cyanheads/pubmed-mcp-server) | 139 | TypeScript | Apache 2.0 | 11 |
 
-**Production-grade biomedical literature server — now 134 stars (from 66 in March)** — comprehensive NCBI E-utilities integration:
+**Production-grade biomedical literature server — now 139 stars (from 66 in March)** — comprehensive NCBI E-utilities integration:
 
 - **Multi-format citations** — APA, MLA, BibTeX, RIS
 - **Batch metadata** — retrieve multiple articles at once
@@ -178,7 +178,7 @@ AlphaFold MCP was the most requested missing server in bioinformatics. Its arriv
 - **MeSH exploration** — navigate Medical Subject Headings hierarchy
 - **Spell-check** — correct biomedical query terms
 - **Streamable HTTP transport** — STDIO or hosted endpoint
-- **v2.10.2** — 339 commits, 11 tools (was 9), built on @cyanheads/mcp-ts-core
+- **v2.10.4** — 346 commits, 11 tools (was 9), built on @cyanheads/mcp-ts-core
 
 ### vitorpavinato/ncbi-mcp-server — NCBI with Analytics
 
@@ -202,7 +202,7 @@ AlphaFold MCP was the most requested missing server in bioinformatics. Its arriv
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) | 125 | JavaScript | MIT | 9 |
+| [healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) | 127 | JavaScript | MIT | 9 |
 
 **The most comprehensive healthcare MCP** — 9 tools spanning multiple authoritative medical sources:
 
@@ -222,16 +222,16 @@ All in one server with built-in caching, HTTP/SSE web interface, and Swagger UI 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [clinicaltrialsgov-mcp-server](https://github.com/cyanheads/clinicaltrialsgov-mcp-server) | 87 | TypeScript | MIT | 7 |
+| [clinicaltrialsgov-mcp-server](https://github.com/cyanheads/clinicaltrialsgov-mcp-server) | 91 | TypeScript | MIT | 7 |
 
-**Specialized clinical trials server — now 87 stars (from 59 in March)** — full ClinicalTrials.gov v2 API access:
+**Specialized clinical trials server — now 91 stars (from 59 in March)** — full ClinicalTrials.gov v2 API access:
 
 - **Study search** — full-text and field-specific queries (condition, intervention, sponsor, location)
 - **Study details** — complete protocol and results data
 - **Patient eligibility matching** — match patients to eligible trials
 - **Summary mode** — reduces study result payloads from ~200KB to ~5KB
 - **Study comparison** — side-by-side trial analysis
-- **v2.8.5** — 357 commits, STDIO or Streamable HTTP transport
+- **v2.9.2** — 381 commits, STDIO or Streamable HTTP transport
 
 ### JackKuo666/ClinicalTrials-MCP-Server — Clinical Trials with CSV Export
 
@@ -255,7 +255,7 @@ Healthcare interoperability is maturing rapidly, led by a new enterprise-grade e
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [langcare-mcp-fhir](https://github.com/langcare/langcare-mcp-fhir) | 53 | Go | MIT | 40+ clinical skills |
+| [langcare-mcp-fhir](https://github.com/langcare/langcare-mcp-fhir) | 52 | Go | MIT | 40+ clinical skills |
 
 **The most comprehensive healthcare MCP server to date** — enterprise-grade FHIR access:
 
@@ -272,8 +272,8 @@ Other FHIR MCP servers continue to mature:
 
 | Server | Stars | Language | Focus |
 |--------|-------|----------|-------|
-| [health-record-mcp](https://github.com/jmandel/health-record-mcp) | 84 | — | SMART on FHIR EHR access |
-| [wso2/fhir-mcp-server](https://github.com/wso2/fhir-mcp-server) | 130 | — | Expose any FHIR server as MCP |
+| [health-record-mcp](https://github.com/jmandel/health-record-mcp) | 85 | — | SMART on FHIR EHR access |
+| [wso2/fhir-mcp-server](https://github.com/wso2/fhir-mcp-server) | 132 | — | Expose any FHIR server as MCP |
 | [xSoVx/fhir-mcp](https://github.com/xSoVx/fhir-mcp) | 0 | — | PHI protection, audit logging, HL7 |
 | [the-momentum/fhir-mcp-server](https://github.com/the-momentum/fhir-mcp-server) | 97 | — | Full CRUD for FHIR resources |
 | [azure-fhir-mcp-server](https://github.com/erikhoward/azure-fhir-mcp-server) | 18 | — | Azure AHDS FHIR |
@@ -427,7 +427,7 @@ The [MCPmed](https://github.com/MCPmed) organization (Germany) is building an ac
 
 | Server | Stars | Focus |
 |--------|-------|-------|
-| GEOmcp | 11 | Gene Expression Omnibus via NCBI E-Utils |
+| GEOmcp | 12 | Gene Expression Omnibus via NCBI E-Utils |
 | STRINGmcp | 3 | STRING protein interactions |
 | PLSDBmcp | 2 | PLSDB plasmid database |
 | EMBL-EBI-Protein-mcp | 2 | EMBL-EBI protein database |
@@ -450,7 +450,7 @@ Coverage has improved dramatically since March, but gaps remain:
 
 - ~~**AlphaFold**~~ — **FILLED**: Augmented-Nature/AlphaFold-MCP-Server (35 stars, 25+ tools)
 - ~~**KEGG**~~ — **FILLED**: Augmented-Nature/KEGG-MCP-Server (11 stars, 32 tools)
-- ~~**Medical imaging AI**~~ — **PARTIALLY FILLED**: Owkin Pathology Explorer (pathology AI via Claude HCLS), fluxinc/dicom-mcp-server (PACS/VNA connectivity). Radiology AI still absent.
+- ~~**Medical imaging AI**~~ — **PARTIALLY FILLED**: Owkin Pathology Explorer (pathology AI via Claude HCLS), [fluxinc/dicom-mcp-server](https://github.com/fluxinc/dicom-mcp-server) (3 stars, Python, PACS/VNA connectivity). Radiology AI still absent.
 - ~~**EHR clinical decision support**~~ — **PARTIALLY FILLED**: LangCare MCP FHIR (40+ clinical skills). Full clinical reasoning still emerging.
 - **Galaxy workflows** — still no MCP wrapper for the Galaxy bioinformatics platform
 - **Single-cell pipelines** — no comprehensive scRNA-seq pipeline MCP (only QC skills via Anthropic marketplace)
@@ -459,7 +459,7 @@ Coverage has improved dramatically since March, but gaps remain:
 
 ## The Bottom Line
 
-Bioinformatics and life sciences is one of the most active and well-organized MCP server categories — and it got significantly stronger since our March review. BioMCP more than doubled to 591 stars, proving strong demand for biomedical AI tools. Anthropic's $400M Coefficient Bio acquisition and Owkin Pathology Explorer launch signal that major companies see life sciences as a primary MCP use case. The two biggest gaps we identified — AlphaFold and KEGG — are now filled. Augmented-Nature now maintains 15+ servers covering virtually every major biological database. The drug discovery pipeline is now truly end-to-end — from target identification through AlphaFold structure prediction to patent search. LangCare's enterprise FHIR server brings production-ready clinical infrastructure. The remaining gaps — Galaxy workflows, comprehensive single-cell pipelines, workflow orchestration, and multi-omics integration — are increasingly narrow. **Rating: 4.5/5.**
+Bioinformatics and life sciences is one of the most active and well-organized MCP server categories — and it got significantly stronger since our March review. BioMCP more than doubled to 608 stars, proving strong demand for biomedical AI tools. Anthropic's $400M Coefficient Bio acquisition and Owkin Pathology Explorer launch signal that major companies see life sciences as a primary MCP use case. The two biggest gaps we identified — AlphaFold and KEGG — are now filled. Augmented-Nature now maintains 15+ servers covering virtually every major biological database. The drug discovery pipeline is now truly end-to-end — from target identification through AlphaFold structure prediction to patent search. LangCare's enterprise FHIR server brings production-ready clinical infrastructure. The remaining gaps — Galaxy workflows, comprehensive single-cell pipelines, workflow orchestration, and multi-omics integration — are increasingly narrow. **Rating: 4.5/5.**
 
-*This review was refreshed on 2026-04-28 (previous: 2026-03-16) using Claude Opus 4.6 (Anthropic), and claim-level citation audited on 2026-08-14 (star counts, tool counts, versions, and commit counts re-verified against live GitHub sources) using Claude Sonnet 5 (Anthropic).*
+*This review was refreshed on 2026-04-28 (previous: 2026-03-16) using Claude Opus 4.6 (Anthropic), and claim-level citation audited on 2026-08-26 (star counts, tool counts, versions, and commit counts re-verified against live GitHub sources; secondary sources for the Coefficient Bio acquisition, Owkin Pathology Explorer, MCPmed journal publication, and BioinfoMCP benchmark re-checked) using Claude Sonnet 5 (Anthropic).*
 

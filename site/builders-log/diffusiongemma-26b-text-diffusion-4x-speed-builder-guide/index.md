@@ -7,7 +7,7 @@ On [June 10, 2026, Google DeepMind released **DiffusionGemma 26B-A4B-it**](https
 
 It's [open-weight, Apache 2.0, and fits in roughly 18GB of VRAM when quantized to NVFP4](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/), with [day-zero support in vLLM, Hugging Face Transformers, MLX, and Unsloth](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/) (NVIDIA NeMo also has day-zero support; [llama.cpp support is coming later](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/)).
 
-The trade-off is real: DiffusionGemma scores substantially lower than Gemma 4 on reasoning, math, and coding (see benchmarks below). [Google's own release material describes DiffusionGemma as experimental and recommends deploying standard Gemma 4 for "applications that demand maximum quality"](https://developers.googleblog.com/diffusiongemma-the-developer-guide/). For builders, the question is whether the speed profile makes sense for your specific use case — and in several cases, it might.
+The trade-off is real: DiffusionGemma scores substantially lower than Gemma 4 on reasoning, math, and coding (see benchmarks below). Google's own [developer guide](https://developers.googleblog.com/diffusiongemma-the-developer-guide/) calls DiffusionGemma "this experimental model," and its [announcement post](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/) states: "For applications that demand maximum quality, we recommend deploying standard Gemma 4." For builders, the question is whether the speed profile makes sense for your specific use case — and in several cases, it might.
 
 ---
 
@@ -230,7 +230,7 @@ You can trade quality for speed by reducing `max_denoising_steps` — fewer pass
 
 ## Thinking Mode
 
-DiffusionGemma includes [a thinking mode, triggered via a `<|think|>` system-prompt token, that produces internal reasoning before a final answer](https://developers.googleblog.com/diffusiongemma-the-developer-guide/):
+DiffusionGemma includes [a thinking mode, triggered via a `<|think|>` system-prompt token, that produces internal reasoning before a final answer](https://huggingface.co/google/diffusiongemma-26B-A4B-it):
 
 ```python
 # Enable thinking with system prompt
@@ -290,7 +290,7 @@ Important: thinking mode adds denoising passes for the reasoning canvas before t
 
 **Diffusion != autoregressive for all tasks.** The generation mechanics change what "temperature" and "sampling" mean. Some prompting techniques that work reliably for autoregressive models (few-shot examples, specific chain-of-thought formats) behave differently under text diffusion. Plan for a re-evaluation pass if you're porting an existing prompt library.
 
-**Experimental positioning.** [Google's own developer guide describes DiffusionGemma as "this experimental model," and its announcement post recommends deploying standard Gemma 4 for applications that demand maximum quality](https://developers.googleblog.com/diffusiongemma-the-developer-guide/). That's a meaningful signal from the team that built it.
+**Experimental positioning.** [Google's own developer guide describes DiffusionGemma as "this experimental model,"](https://developers.googleblog.com/diffusiongemma-the-developer-guide/) and its [announcement post](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/) recommends deploying standard Gemma 4 for applications that demand maximum quality. That's a meaningful signal from the team that built it.
 
 ---
 

@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 140/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 145/1006.**
 
 ---
 
@@ -160,11 +160,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 138. `content/reviews/advertising-ad-tech-mcp-servers.md` — 1c/180i (90d), sources_audited: 2026-08-26
 - [x] 139. `content/reviews/brave-search-mcp-server.md` — 1c/176i (90d), sources_audited: 2026-08-26
 - [x] 140. `content/reviews/google-gemini-for-science-research-ai-platform-review.md` — 1c/175i (90d), sources_audited: 2026-08-26
-- [ ] 141. `content/guides/domo-mcp-server-enterprise-ai-agents.md` — 1c/174i (90d), sources_audited: 2026-08-19
-- [ ] 142. `content/guides/mcp-legal-law.md` — 1c/174i (90d), sources_audited: 2026-07-25
-- [ ] 143. `content/builders-log/diffusiongemma-26b-text-diffusion-4x-speed-builder-guide/index.md` — 1c/172i (90d), sources_audited: 2026-07-30
-- [ ] 144. `content/builders-log/claude-mid-conversation-system-messages-agent-cache-instructions/index.md` — 1c/168i (90d), sources_audited: 2026-07-28
-- [ ] 145. `content/reviews/bioinformatics-life-sciences-mcp-servers.md` — 1c/163i (90d), sources_audited: 2026-08-14
+- [x] 141. `content/guides/domo-mcp-server-enterprise-ai-agents.md` — 1c/174i (90d), sources_audited: 2026-08-26
+- [x] 142. `content/guides/mcp-legal-law.md` — 1c/174i (90d), sources_audited: 2026-08-26
+- [x] 143. `content/builders-log/diffusiongemma-26b-text-diffusion-4x-speed-builder-guide/index.md` — 1c/172i (90d), sources_audited: 2026-08-26
+- [x] 144. `content/builders-log/claude-mid-conversation-system-messages-agent-cache-instructions/index.md` — 1c/168i (90d), sources_audited: 2026-08-26
+- [x] 145. `content/reviews/bioinformatics-life-sciences-mcp-servers.md` — 1c/163i (90d), sources_audited: 2026-08-26
 - [ ] 146. `content/reviews/cohere-mcp-server.md` — 1c/162i (90d), sources_audited: 2026-08-15
 - [ ] 147. `content/reviews/dspy-declarative-llm-programming.md` — 1c/162i (90d), sources_audited: 2026-07-26
 - [ ] 148. `content/reviews/anthropic-claude-agent-sdk-billing-split-june-15-2026-credit-pool-developer-guide.md` — 1c/156i (90d), sources_audited: 2026-07-28

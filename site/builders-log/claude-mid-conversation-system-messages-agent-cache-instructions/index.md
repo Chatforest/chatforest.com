@@ -5,7 +5,7 @@
 
 Anthropic shipped a quiet but useful API change alongside [Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8): you can now inject a `{"role": "system"}` message anywhere in the `messages` array, not just at the top-level `system` field. The instruction applies from that point in the conversation forward, with system-level priority over user turns, and without invalidating the prompt cache for everything that came before ([Anthropic docs: Mid-conversation system messages](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages)).
 
-The feature is called [mid-conversation system messages](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages). It is available on the Claude API, [Claude Platform on AWS](https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws), and Google Cloud with Opus 4.8 — no beta header required.
+The feature is called [mid-conversation system messages](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages). It is available on the Claude API, [Claude in Amazon Bedrock](https://platform.claude.com/docs/en/build-with-claude/claude-in-amazon-bedrock), and Google Cloud with Opus 4.8 — no beta header required.
 
 ---
 
@@ -125,9 +125,9 @@ Avoid editing or removing a system message you have already sent. Like any other
 | Platform | Available |
 |---|---|
 | Claude API (first-party) | Yes |
-| Claude Platform on AWS | Yes |
 | Amazon Bedrock | Yes |
 | Google Cloud (Vertex AI) | Yes |
+| Claude Platform on AWS | Not named for this feature |
 | Microsoft Azure Foundry | Not listed |
 
 Source: Anthropic's docs state mid-conversation system messages are "available on the Claude API, Claude in Amazon Bedrock, and Google Cloud," on Claude Fable 5, Claude Mythos 5, Claude Opus 4.8, and Claude Opus 5 — Microsoft Foundry is not among the platforms named ([Anthropic docs: Mid-conversation system messages](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages)). Not available on Claude Sonnet 5 or any Claude model earlier than this generation.
