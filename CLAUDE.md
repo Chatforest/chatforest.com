@@ -412,3 +412,42 @@ to any date:
 - **Follow pace**: ~10–15 genuinely relevant accounts per week, each individually chosen — never mass-follow tools or follow-for-follow schemes.
 - **Who to follow**: authors of MCP servers we've reviewed, AI-ecosystem writers, people who've engaged with our posts (liked/replied).
 - **Goal**: normal social behavior for discovery and reciprocity — not growth-hacking. Stay well inside platform norms.
+
+### Bluesky reply-engagement pilot (added 2026-08-26, CEO directive #2407 — PILOT through 2026-09-09)
+
+Context: cleanup programs are closed, rotation is steady-state, so distribution is now the
+constraint. Bluesky broadcast-only reach is near zero (0–1 likes/post, ~69 followers). This pilots
+replying into on-topic conversations, with the same mechanical discipline that fixed the posting
+cap. **Separate from, and in addition to, the existing 1-original-post/day cap — unchanged.**
+
+- **HARD CAP: max 1 reply per UTC day.** Mechanically enforced by
+  `scripts/check_bluesky_reply_today.py`, which queries the account's own feed
+  (`getAuthorFeed`, `filter=posts_with_replies`) and counts replies (`record.reply` present)
+  dated today (UTC). `OK_TO_REPLY` (exit 0) -> safe. `ALREADY_REPLIED` (exit 1) or `ERROR`
+  (exit 2) -> do not reply, regardless of session memory. Fails closed. `post_bluesky_reply.py`
+  calls this automatically before every reply.
+- **SUBSTANCE STANDARD (agent judgment, not mechanical):** reply only where the thread is
+  directly on-topic (MCP servers, AI dev tooling, model releases — something we have a cited
+  page on) AND the reply adds a concrete verifiable fact — a number, date, or primary-source
+  link that advances the thread. No "great post!", no generic takes, no correcting strangers'
+  opinions. Facts only, same number-led standard as original posts.
+- **LINK DISCIPLINE: max 1 chatforest.com link per rolling 7 days across all replies.**
+  Mechanically enforced by `scripts/check_bluesky_reply_link_this_week.py` (only invoked when
+  a reply includes a link arg) — scans replies in the last 7 days for a chatforest.com facet.
+  `OK_TO_LINK` -> safe to include the link. `LINK_USED` or `ERROR` -> do not include a
+  chatforest.com link this reply (fail closed); reply without a link instead, or skip. Default
+  is replying with the fact + the PRIMARY source, not our page — never link-drop.
+- **DISCOVERY:** use authenticated `app.bsky.feed.searchPosts` on specific topical terms first
+  (the public/unauthenticated search endpoint was bot-blocked 403 as of 2026-08-24 — the
+  authenticated session may work; use the same `createSession` credential flow as
+  `post_bluesky.py`). If search is blocked or unavailable, fall back to reading timelines of
+  accounts we already follow. **If neither yields a suitable thread, SKIP that day — zero
+  replies is a fine outcome. Do NOT work around a block.**
+- **TONE/DISCLOSURE:** the account bio already discloses AI authorship — if anyone asks in a
+  reply thread, confirm plainly. If a reply draws hostility, do not argue — disengage and flag
+  it in the next CEO digest.
+- **Posting mechanics:** `scripts/post_bluesky_reply.py <parent_uri> <parent_cid> <root_uri>
+  <root_cid> <text> [link_text=url]` — for a reply to a top-level post, root == parent.
+- **REPORT each digest:** reply URL + one-line thread context, or "no suitable thread today".
+  CEO reviews at ~2026-09-09: follower delta, engagement on replies, any negative reception ->
+  continue/adjust/stop.
