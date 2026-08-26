@@ -1,21 +1,21 @@
 ---
 title: "Product Management & Roadmapping MCP Servers — Jira, Linear, Productboard, Aha!, Monday.com, and More"
 date: 2026-04-26T20:00:00+09:00
-description: "Product management MCP servers reviewed: Atlassian Jira official remote MCP + sooperset community (5.4K stars, 72 tools; critical CVE-2026-27825 patched in v0.17.0), Linear official (OAuth 2.1, Agent MCP support), Productboard community (20+ tools), Aha! official (3 tools + cedricziel 12 tools with vector embeddings), Monday.com official (15+ tools + dynamic API), Asana official V2 GA, ClickUp community, Shortcut official (60+ tools), Notion official (3.7K stars, 22 tools, hosted-only), Plane official (55+ tools), Wrike official hosted, Smartsheet official hosted, Fibery, Canny, PostHog, LaunchDarkly, Mixpanel, Amplitude. Rating: 4.5/5."
-og_description: "Product management MCP servers: Jira (official remote + 5.4K-star community; critical CVE patched in v0.17.0), Linear (official hosted, Agent MCP support), Wrike + Smartsheet now official, Asana V2 GA, Notion (3.7K stars, hosted-only), Plane (228 stars). Rating: 4.5/5."
+description: "Product management MCP servers reviewed: Atlassian Jira official remote MCP + sooperset community (5.8K stars, 72 tools; critical CVE-2026-27825 patched in v0.17.0), Linear official (OAuth 2.1, Agent MCP support), Productboard community (20+ tools), Aha! official (hosted, replaced the archived 3-tool repo + cedricziel 12 tools with vector embeddings), Monday.com official (15+ tools + dynamic API), Asana official V2 GA, ClickUp community, Shortcut official (now hosted-only; GitHub repo archived), Notion official (4.6K stars, 22 tools, hosted-only), Plane official (55+ tools), Wrike official hosted, Smartsheet official hosted, Fibery, Canny, PostHog, LaunchDarkly, Mixpanel, Amplitude. Rating: 4.5/5."
+og_description: "Product management MCP servers: Jira (official remote + 5.8K-star community; critical CVE patched in v0.17.0), Linear (official hosted, Agent MCP support), Wrike + Smartsheet now official, Asana V2 GA, Notion (4.6K stars, hosted-only), Plane (296 stars). Rating: 4.5/5."
 content_type: "Review"
-card_description: "Product management MCP servers are among the most mature and well-served categories in the MCP ecosystem. Nearly every major PM tool now ships an official MCP server — Atlassian (Jira + Confluence), Linear, Monday.com, Asana, Shortcut, Notion, Aha!, Plane, Wrike, and Smartsheet all have official implementations. SECURITY ALERT: sooperset/mcp-atlassian CVE-2026-27825 (RCE, CVSS 9.1) and CVE-2026-27826 (SSRF, CVSS 8.2) are patched in v0.17.0 — upgrade immediately. The community ecosystem is equally strong: sooperset/mcp-atlassian has 5,400 stars and 72 tools, roychri/mcp-server-asana offers 50+ tools. The trend toward hosted remote MCP is dominant — Atlassian, Linear, Monday.com, Asana, Shortcut, Notion, Wrike, and Smartsheet all offer zero-config hosted endpoints with OAuth. Productboard is the notable gap among dedicated PM tools. The dedicated roadmapping tools (Roadmunk, airfocus, Craft.io) have no MCP servers at all. Rating: 4.5/5 — the strongest vendor participation of any enterprise software category."
-last_refreshed: 2026-06-12
-sources_audited: 2026-07-26
+card_description: "Product management MCP servers are among the most mature and well-served categories in the MCP ecosystem. Nearly every major PM tool now ships an official MCP server — Atlassian (Jira + Confluence), Linear, Monday.com, Asana, Shortcut, Notion, Aha!, Plane, Wrike, and Smartsheet all have official implementations. SECURITY ALERT: sooperset/mcp-atlassian CVE-2026-27825 (RCE, CVSS 9.1) and CVE-2026-27826 (SSRF, CVSS 8.2) are patched in v0.17.0 — upgrade immediately. The community ecosystem is equally strong: sooperset/mcp-atlassian has 5,800 stars and 72 tools, roychri/mcp-server-asana offers 50+ tools. The trend toward hosted remote MCP is dominant — Atlassian, Linear, Monday.com, Asana, Shortcut, Notion, Wrike, and Smartsheet all offer zero-config hosted endpoints with OAuth. Productboard is the notable gap among dedicated PM tools. The dedicated roadmapping tools (Roadmunk, airfocus, Craft.io) have no MCP servers at all. Rating: 4.5/5 — the strongest vendor participation of any enterprise software category."
+last_refreshed: 2026-08-26
+sources_audited: 2026-08-26
 ---
 
-Product management is one of the **best-served categories in the entire MCP ecosystem**. Nearly every major PM tool now ships an official MCP server, and the community ecosystem is deep. **Atlassian** (Jira + Confluence), **Linear**, **Monday.com**, **Asana**, **Shortcut**, **Notion**, **Aha!**, **Plane**, **Wrike**, and **Smartsheet** all have official MCP servers. The community adds heavyweight implementations for **ClickUp** and **Jira** (5,400 stars). **Hosted remote MCP** is the dominant pattern — most vendors offer zero-config endpoints with OAuth. Part of our **[Business & Productivity](/categories/business-productivity/)** category.
+Product management is one of the **best-served categories in the entire MCP ecosystem**. Nearly every major PM tool now ships an official MCP server, and the community ecosystem is deep. **Atlassian** (Jira + Confluence), **Linear**, **Monday.com**, **Asana**, **Shortcut**, **Notion**, **Aha!**, **Plane**, **Wrike**, and **Smartsheet** all have official MCP servers. The community adds heavyweight implementations for **ClickUp** and **Jira** (5,800 stars). **Hosted remote MCP** is the dominant pattern — most vendors offer zero-config endpoints with OAuth. Part of our **[Business & Productivity](/categories/business-productivity/)** category.
 
 **⚠️ Security alert:** sooperset/mcp-atlassian has two critical patched CVEs — [**CVE-2026-27825**](https://arcticwolf.com/resources/blog/cve-2026-27825/) (RCE, CVSS 9.1) and [**CVE-2026-27826**](https://www.sentinelone.com/vulnerability-database/cve-2026-27826/) (SSRF, CVSS 8.2). Upgrade to **mcp-atlassian >= 0.17.0** immediately if you run this server.
 
 This review covers **issue tracking and project management** (Jira, Linear, Asana, Monday.com, ClickUp, Shortcut, Plane, Wrike, Smartsheet), **dedicated product management** (Productboard, Aha!, Fibery), **knowledge and documentation** (Notion), **feature request management** (Canny), **product analytics** (PostHog, Mixpanel, Amplitude), and **feature flag management** (LaunchDarkly). For CRM platforms, see our [CRM MCP Servers](/reviews/crm-mcp-servers/) review. For IT service management, see [ITSM MCP Servers](/reviews/itsm-it-service-management-mcp-servers/).
 
-The headline finding: **vendor participation is extraordinary** — 10+ vendors now ship official MCP servers, most with hosted remote endpoints. **Atlassian leads on ecosystem depth** with an official remote MCP plus a 5,400-star community server (upgrade to v0.17.0 for critical security patches). **Linear leads on product-management-specific features** — and Linear Agent now connects to external MCP tools. **Wrike and Smartsheet join the official ecosystem** with hosted remote servers. **The biggest gap: dedicated roadmapping tools** — Roadmunk, airfocus, and Craft.io still have zero MCP presence.
+The headline finding: **vendor participation is extraordinary** — 10+ vendors now ship official MCP servers, most with hosted remote endpoints. **Atlassian leads on ecosystem depth** with an official remote MCP plus a 5,800-star community server (upgrade to v0.17.0 for critical security patches). **Linear leads on product-management-specific features** — and Linear Agent now connects to external MCP tools. **Wrike and Smartsheet join the official ecosystem** with hosted remote servers. **The biggest gap: dedicated roadmapping tools** — Roadmunk, airfocus, and Craft.io still have zero MCP presence.
 
 ## Issue Tracking & Project Management
 
@@ -24,13 +24,13 @@ The headline finding: **vendor participation is extraordinary** — 10+ vendors 
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
 | [Atlassian Remote MCP](https://www.atlassian.com/platform/remote-mcp-server) | — | Hosted | Proprietary | Rovo Search + CRUD | Yes |
-| [sooperset/mcp-atlassian](https://github.com/sooperset/mcp-atlassian) | ~5,400 | Python | MIT | 72 | No |
+| [sooperset/mcp-atlassian](https://github.com/sooperset/mcp-atlassian) | ~5,800 | Python | MIT | 72 | No |
 
 **Atlassian** offers both an official hosted remote MCP and the most popular community PM MCP server in the ecosystem.
 
 The **official Rovo MCP server** provides secure, OAuth-authenticated access to Jira and Confluence. Key capabilities include Rovo Search across all Atlassian products, bulk creation of Confluence pages and Jira issues, data summarization, and full CRUD operations. Access respects user-level permissions — the AI agent can only access what the authenticated user can access. Free for all Atlassian Cloud customers. Rate limits vary by plan: 500/hr (Free), 1,000/hr (Standard), up to 10,000/hr (Enterprise). No FedRAMP or HIPAA support yet.
 
-The community **sooperset/mcp-atlassian** server is a powerhouse — **72 tools** covering both Jira and Confluence, supporting Cloud and Server/Data Center (Confluence v6.0+, Jira v8.14+). Authentication via API tokens, Personal Access Tokens, or OAuth 2.0. Supports HTTP transport (SSE + Streamable HTTP). MIT license. At ~5,400 stars, it's one of the most starred MCP servers of any category.
+The community **sooperset/mcp-atlassian** server is a powerhouse — **72 tools** covering both Jira and Confluence, supporting Cloud and Server/Data Center (Confluence v6.0+, Jira v8.14+). Authentication via API tokens, Personal Access Tokens, or OAuth 2.0. Supports HTTP transport (SSE + Streamable HTTP). MIT license. At ~5,800 stars, it's one of the most starred MCP servers of any category.
 
 **⚠️ Critical security update:** Two CVEs were disclosed and patched in **v0.17.0**: [**CVE-2026-27825**](https://arcticwolf.com/resources/blog/cve-2026-27825/) (CVSS 9.1, RCE) — arbitrary file write via unconstrained `download_path` in `confluence_download_attachment` could allow unauthenticated remote code execution; [**CVE-2026-27826**](https://www.sentinelone.com/vulnerability-database/cve-2026-27826/) (CVSS 8.2, SSRF) — unauthenticated SSRF via custom HTTP header parsing, allowing attackers to probe internal networks and cloud metadata services. Version 0.17.0 adds `validate_safe_path()` and `validate_url_for_ssrf()` with path confinement, scheme/domain allowlisting, and private-IP blocking. **Upgrade to mcp-atlassian >= 0.17.0 immediately.**
 
@@ -41,8 +41,8 @@ The Jira ecosystem extends further: **blue7wings/mcp-jira-server** focuses on ti
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
 | [Linear Official MCP](https://mcp.linear.app/mcp) | — | Hosted | Proprietary | Issues + Projects + Initiatives | Yes |
-| [tacticlaunch/mcp-linear](https://github.com/tacticlaunch/mcp-linear) | 133 | TypeScript | MIT | Multiple | No |
-| [jerhadf/linear-mcp-server](https://github.com/jerhadf/linear-mcp-server) | 344 | JavaScript | MIT | 5 | No (deprecated) |
+| [tacticlaunch/mcp-linear](https://github.com/tacticlaunch/mcp-linear) | 146 | TypeScript | MIT | Multiple | No |
+| [jerhadf/linear-mcp-server](https://github.com/jerhadf/linear-mcp-server) | 347 | JavaScript | MIT | 5 | No (deprecated) |
 
 **Linear** expanded its official MCP server in **February 2026** with product-management-specific features that go beyond basic issue tracking:
 
@@ -55,18 +55,18 @@ The official server at `mcp.linear.app/mcp` uses **OAuth 2.1** with dynamic clie
 
 **April 2026 update: Linear Agent MCP support** — Linear's own built-in AI agent can now connect to external MCP tools, letting it pull data from GitHub, Sentry, Figma, or any MCP-compatible service directly into triage and planning workflows. **May 2026 update:** GitHub PR URLs in document content saved via MCP are now automatically converted to diff mentions.
 
-The community ecosystem includes **tacticlaunch/mcp-linear** (133 stars, TypeScript, MIT, issue/project/team management) and the now-deprecated **jerhadf/linear-mcp-server** (344 stars, which explicitly recommends migrating to the official server). **dvcrn/mcp-server-linear** adds multi-workspace support.
+The community ecosystem includes **tacticlaunch/mcp-linear** (146 stars, TypeScript, MIT, issue/project/team management) and the now-deprecated **jerhadf/linear-mcp-server** (347 stars, which explicitly recommends migrating to the official server). **dvcrn/mcp-server-linear** adds multi-workspace support.
 
 ### Asana (Official + Community)
 
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
 | [Asana Official MCP](https://mcp.asana.com/v2/mcp) | — | Hosted | Proprietary | Task + Project management | Yes |
-| [roychri/mcp-server-asana](https://github.com/roychri/mcp-server-asana) | 137 | TypeScript | MIT | 50+ | No |
+| [roychri/mcp-server-asana](https://github.com/roychri/mcp-server-asana) | 147 | TypeScript | MIT | 50+ | No |
 | [adlio/asanamcp](https://github.com/adlio/asanamcp) | — | Rust | — | — | No |
 | [n0zer0d4y/asana-project-ops](https://github.com/n0zer0d4y/asana-project-ops) | — | TypeScript | — | Batch ops | No |
 
-**Asana** provides an official hosted MCP at `mcp.asana.com/v2/mcp` with OAuth authentication and Streamable HTTP transport. **Asana V2 MCP is now GA.** The V1 Beta SSE endpoint at `mcp.asana.com/sse` is deprecated and [extended to shut down August 5, 2026](https://forum.asana.com/t/new-v2-mcp-server-now-generally-available/1122647) (original May 11 date was extended) — teams still on V1 need to migrate to `mcp.asana.com/v2/mcp`. Works with Claude, ChatGPT, and other MCP clients.
+**Asana** provides an official hosted MCP at `mcp.asana.com/v2/mcp` with OAuth authentication and Streamable HTTP transport. **Asana V2 MCP is now GA.** The V1 Beta SSE endpoint at `mcp.asana.com/sse` was deprecated and [shut down August 5, 2026](https://forum.asana.com/t/new-v2-mcp-server-now-generally-available/1122647) (extended from the original May 11 date) — teams still on V1 needed to migrate to `mcp.asana.com/v2/mcp`. Works with Claude, ChatGPT, and other MCP clients.
 
 The community **roychri/mcp-server-asana** is excellent — **50+ tools** with read-only mode option, advanced task filtering with custom fields, resource templates, and a comprehensive prompt system. MIT license. **n0zer0d4y/asana-project-ops** adds batch operations, direct section assignment, and selective tool activation for high-efficiency AI workflows. **adlio/asanamcp** provides a Rust implementation for teams that want STDIO transport.
 
@@ -74,24 +74,24 @@ The community **roychri/mcp-server-asana** is excellent — **50+ tools** with r
 
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
-| [mondaycom/mcp](https://github.com/mondaycom/mcp) | 380 | TypeScript | MIT | 15+ standard + dynamic API | Yes |
+| [mondaycom/mcp](https://github.com/mondaycom/mcp) | 420 | TypeScript | MIT | 15+ standard + dynamic API | Yes |
 
 **Monday.com** ships an official MCP server with two modes of operation:
 
 1. **Standard tools** (15+) — boards, items, columns, groups, updates, custom activities, user search, workflow automation
 2. **Dynamic API tools** (beta) — unlocks the **full Monday.com GraphQL API surface** dynamically, letting AI agents execute any API operation without hardcoded tool definitions
 
-The hosted MCP at `mcp.monday.com/mcp` is the recommended zero-config option (OAuth authentication). Local installation also available via npm with API token. Read-only mode supported. Apps Framework tools included for developers building Monday.com integrations. MIT license. 396 stars.
+The hosted MCP at `mcp.monday.com/mcp` is the recommended zero-config option (OAuth authentication). Local installation also available via npm with API token. Read-only mode supported. Apps Framework tools included for developers building Monday.com integrations. MIT license. 420 stars.
 
 ### ClickUp (Community)
 
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
-| [taazkareem/clickup-mcp-server](https://github.com/taazkareem/clickup-mcp-server) | ~144 | JavaScript/TS | Proprietary | 150+ | No |
+| [taazkareem/clickup-mcp-server](https://github.com/taazkareem/clickup-mcp-server) | ~50 | JavaScript/TS | Proprietary | 150+ | No |
 | [Nazruden/clickup-mcp-server](https://github.com/Nazruden/clickup-mcp-server) | — | TypeScript | — | — | No |
 | [hauptsacheNet/clickup-mcp](https://github.com/hauptsacheNet/clickup-mcp) | — | TypeScript | — | Search + CRUD | No |
 
-**ClickUp** has no official MCP server but has the largest community server by tool count. **taazkareem/clickup-mcp-server** provides **150+ enterprise-grade tools** covering tasks, checklists, sprints, comments, tags, spaces, lists, folders, files, docs, chat, and time tracking. Features OAuth 2.1 + API key hybrid auth, fuzzy search, OKR tracking, document management, file attachments, multi-workspace support, and Docker deployment. The current public repo has ~144 stars (relaunched; prior public repo had 460+ stars before reset). **v0.12.10** adds full @mention support in chat messages/comments and automatic markdown → rich text conversion. Note: this is a **proprietary/paid** offering, unlike most PM MCP servers.
+**ClickUp** has no official MCP server but has the largest community server by tool count. **taazkareem/clickup-mcp-server** provides **150+ enterprise-grade tools** covering tasks, checklists, sprints, comments, tags, spaces, lists, folders, files, docs, chat, and time tracking. Features OAuth 2.1 + API key hybrid auth, fuzzy search, OKR tracking, document management, file attachments, multi-workspace support, and Docker deployment. The current public repo has ~50 stars — it has reset star counts more than once amid its transition from open-source to a paid/proprietary model (an earlier public repo had 460+ stars before an initial reset). Latest published version is [**v0.14.5**](https://www.npmjs.com/package/@taazkareem/clickup-mcp-server), with recent releases adding a faster unified HTTP/SSE transport, production security hardening (HTTPS, rate-limiting, sandboxing), and full ClickUp Chat (v3 API) support. Note: this is a **proprietary/paid** offering (plans from $9/month to an $89 lifetime option), unlike most PM MCP servers.
 
 Multiple other community implementations exist from Nazruden, hauptsacheNet, DiversioTeam, and Leanware-io, all offering varying levels of ClickUp integration.
 
@@ -99,21 +99,22 @@ Multiple other community implementations exist from Nazruden, hauptsacheNet, Div
 
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
-| [useshortcut/mcp-server-shortcut](https://github.com/useshortcut/mcp-server-shortcut) | 98 | TypeScript | MIT | 60+ | Yes |
+| [Shortcut hosted MCP](https://mcp.shortcut.com/mcp) | — | Hosted | Proprietary | 60+ | Yes |
+| [useshortcut/mcp-server-shortcut](https://github.com/useshortcut/mcp-server-shortcut) (archived) | 98 | TypeScript | MIT | 60+ | Yes |
 
-**Shortcut** (formerly Clubhouse) ships one of the most comprehensive official PM MCP servers. **60+ tools across 11 categories** covering stories, epics, docs, iterations, milestones, labels, members, workflows, and more. The hosted server requires **no setup** — authentication handled via OAuth with no API token or local installation needed. Local installation also available with API token for teams that prefer it.
+**Shortcut** (formerly Clubhouse) ships one of the most comprehensive official PM MCP servers. **60+ tools across 11 categories** covering stories, epics, docs, iterations, milestones, labels, members, workflows, and more. The hosted server at `mcp.shortcut.com/mcp` requires **no setup** — authentication handled via OAuth with no API token or local installation needed.
 
-Notable features: read-only mode, tool limiting via environment variable (useful for restricting AI agent scope), and very active development (401 commits). MIT license. 98 stars.
+**Update:** Shortcut archived the `useshortcut/mcp-server-shortcut` GitHub repo on **July 8, 2026**; it is now read-only "for historical reference purposes only," with a note that "all future development on the Shortcut MCP server will be done on the remote server at `https://mcp.shortcut.com/mcp`." Teams still on the local/npm install should migrate to the hosted endpoint. Notable features carried into the hosted version: read-only mode and tool limiting via environment variable (useful for restricting AI agent scope). MIT license (archived repo); 98 stars, 411 commits.
 
 ### Plane (Official)
 
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
-| [makeplane/plane-mcp-server](https://github.com/makeplane/plane-mcp-server) | 228 | Python | MIT | 55+ | Yes |
+| [makeplane/plane-mcp-server](https://github.com/makeplane/plane-mcp-server) | 296 | Python | MIT | 55+ | Yes |
 
 **Plane** — the open-source project management tool — ships an official MCP server with **55+ tools across 8 categories**: projects, issues, cycles, modules, initiatives, work logs, labels, and states. Built with FastMCP and Pydantic models for type safety. Supports stdio, SSE, and Streamable HTTP transports.
 
-Authentication via API Key + Workspace Slug (stdio) or OAuth/PAT (remote HTTP). The server replaced an earlier Node.js implementation with a Python+FastMCP rewrite. MIT license. 228 stars.
+Authentication via API Key + Workspace Slug (stdio) or OAuth/PAT (remote HTTP). The server replaced an earlier Node.js implementation with a Python+FastMCP rewrite. MIT license. 296 stars.
 
 ### Wrike (Official)
 
@@ -137,8 +138,8 @@ Authentication via API Key + Workspace Slug (stdio) or OAuth/PAT (remote HTTP). 
 
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
-| [Enreign/productboard-mcp](https://github.com/Enreign/productboard-mcp) | 8 | TypeScript | MIT | 20+ | No |
-| [kenjihikmatullah/productboard-mcp](https://github.com/kenjihikmatullah/productboard-mcp) | 11 | TypeScript | MIT | 10 | No |
+| [Enreign/productboard-mcp](https://github.com/Enreign/productboard-mcp) | 20 | TypeScript | MIT | 20+ | No |
+| [kenjihikmatullah/productboard-mcp](https://github.com/kenjihikmatullah/productboard-mcp) | 13 | TypeScript | MIT | 10 | No |
 
 **Productboard** — one of the most popular dedicated product management platforms — has **no official MCP server**. Two community implementations fill the gap:
 
@@ -152,25 +153,26 @@ The absence of an official Productboard MCP server is a notable gap given the pl
 
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
-| [aha-develop/aha-mcp](https://github.com/aha-develop/aha-mcp) | 6 | TypeScript | ISC | 3 | Yes |
+| [Aha! hosted remote MCP](https://support.aha.io/aha-roadmaps/integrations/mcp-server/remote-mcp-server-connection~7611343859688960297) | — | Hosted | Proprietary | Read + write | Yes |
+| [aha-develop/aha-mcp](https://github.com/aha-develop/aha-mcp) (archived) | 8 | TypeScript | ISC | 3 | Yes (legacy) |
 | [cedricziel/aha-mcp](https://github.com/cedricziel/aha-mcp) | 6 | TypeScript | MIT | 12 | No |
 | [popand/aha-mcp](https://github.com/popand/aha-mcp) | 2 | TypeScript | ISC | 4 | No |
 
-**Aha!** ships an official MCP server, though it's **read-only and minimal** — just 3 tools (`get_record`, `get_page`, `search_documents`). Supports stdio and SSE transport. API token authentication. The official blog promotes integration with GitHub Copilot, Cursor, Claude Code, OpenAI Codex, and Devin — passing feature titles, descriptions, and to-dos to AI coding tools.
+**Update:** GitHub repo **aha-develop/aha-mcp** — the original official server, which was **read-only and minimal** (just 3 tools: `get_record`, `get_page`, `search_documents`) — was **archived on May 13, 2026**. Its README now states it is "replaced by the hosted Aha! remote MCP server instead." The [hosted remote MCP](https://support.aha.io/aha-roadmaps/integrations/mcp-server/remote-mcp-server-connection~7611343859688960297) at `https://[your-aha-domain].aha.io/api/v1/mcp` uses the connecting user's own Aha! permissions and has **broader capabilities than the old repo, including creating and editing records** — read, search, analyze, create, update, and generate reports. It shares the Aha! REST API rate limit (300 requests/minute) and requires AI functionality to be enabled on the account. The official blog promotes integration with GitHub Copilot, Cursor, Claude Code, OpenAI Codex, and Devin — passing feature titles, descriptions, and to-dos to AI coding tools.
 
-The community **cedricziel/aha-mcp** is significantly more capable with **12 tools** and a standout feature: **vector embeddings for semantic search**. Uses sentence transformers + SQLite vector extensions to enable offline semantic queries against Aha! data. Includes offline database sync to local SQLite, hybrid live API + cached queries, incremental updates, and three transport modes (stdio, SSE, HTTP). MIT license. OAuth 2.0 and Bearer token support.
+The community **cedricziel/aha-mcp** remains a distinct, more capable option with **12 tools** and a standout feature: **vector embeddings for semantic search**. Uses sentence transformers + SQLite vector extensions to enable offline semantic queries against Aha! data. Includes offline database sync to local SQLite, hybrid live API + cached queries, incremental updates, and three transport modes (stdio, SSE, HTTP). MIT license. OAuth 2.0 and Bearer token support.
 
-**popand/aha-mcp** is a fork of the official server that adds `create_feature` capability — the one write tool the official server is missing.
+**popand/aha-mcp** is a fork of the original official server that added `create_feature` capability — the write tool the archived repo lacked (the new hosted endpoint now supports writes natively, so this fork's differentiator is largely superseded).
 
 ### Fibery (Official)
 
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
-| [Fibery-inc/fibery-mcp-server](https://github.com/Fibery-inc/fibery-mcp-server) | 27 | Python | — | Dynamic | Yes |
+| [Fibery-inc/fibery-mcp-server](https://github.com/Fibery-inc/fibery-mcp-server) | 29 | Python | — | Dynamic | Yes |
 
 **Fibery** takes a schema-driven approach similar to Planhat. Instead of hardcoded tools, the MCP server **dynamically discovers your Fibery workspace structure** — databases, fields, types, and relationships. You can query entities using natural language, create new entities, and update existing ones through conversational interfaces. The server retrieves database schemas and provides flexible access through the Fibery API.
 
-Python-based, available on PyPI. 27 stars, 2.2K downloads. Works with Claude Desktop and any MCP-compatible client.
+Python-based, available on PyPI. 29 stars. Works with Claude Desktop and any MCP-compatible client.
 
 ## Knowledge & Documentation
 
@@ -178,10 +180,10 @@ Python-based, available on PyPI. 27 stars, 2.2K downloads. Works with Claude Des
 
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
-| [makenotion/notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | ~3,700 | TypeScript | — | 22 | Yes |
+| [makenotion/notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | ~4,600 | TypeScript | — | 22 | Yes |
 | [Notion Remote MCP](https://mcp.notion.com/mcp) | — | Hosted | Proprietary | — | Yes |
 
-**Notion** has one of the most starred PM MCP servers at ~3,700 stars. Version 2.0 introduced "data sources" as the primary abstraction for databases. 22 tools covering pages, databases, blocks, users, comments, and search. Docker support.
+**Notion** has one of the most starred PM MCP servers at ~4,600 stars. Version 2.0 introduced "data sources" as the primary abstraction for databases. 22 tools covering pages, databases, blocks, users, comments, and search. Docker support.
 
 **Recent updates (May–June 2026):** Meeting Notes and block comments are now supported. Creating and updating databases is **91% more token-efficient**. Each OAuth authorization now mints unique `access_token` + `refresh_token` pairs (fresh credentials per auth, not reused). New Developer portal centralizes management of connections, Workers, and personal access tokens.
 
@@ -208,7 +210,7 @@ The community **opensourceops/canny-mcp-server** is impressive — **37 tools** 
 
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
-| [PostHog/mcp](https://github.com/PostHog/mcp) | ~140 | — | — | 27+ | Yes |
+| [PostHog/mcp](https://github.com/PostHog/mcp) | ~150 | — | — | 27+ | Yes |
 
 **PostHog** ships an official MCP server with **27+ tools** covering analytics, feature flags, experiments, error tracking, and prompt management. Read-only mode available. One-command installation into 6+ IDEs. The standalone repo was archived January 2026 — the server now lives in the PostHog monorepo. Hosted MCP at `mcp.posthog.com`.
 
@@ -234,7 +236,7 @@ The community **opensourceops/canny-mcp-server** is impressive — **37 tools** 
 
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
-| [launchdarkly/mcp-server](https://github.com/launchdarkly/mcp-server) | 20 | TypeScript | MIT | 28 | Yes |
+| [launchdarkly/mcp-server](https://github.com/launchdarkly/mcp-server) | 27 | TypeScript | MIT | 28 | Yes |
 
 **LaunchDarkly** ships an official MCP server for feature flag management — essential infrastructure for product managers controlling gradual rollouts. **28 tools** covering flag creation, configuration, targeting rules, toggle management, AI configs, and gradual rollouts across multiple environments. Hosted MCP also available. MIT license. Works with Cursor, Claude Code, and other compatible editors.
 

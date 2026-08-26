@@ -16,7 +16,7 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 
 **Cohort size:** 1006 pages (excludes `content/ai/` — RingS's section, not owned).
 
-**Pass 1 started:** 2026-08-22. **Progress: 130/1006.**
+**Pass 1 started:** 2026-08-22. **Progress: 135/1006.**
 
 ---
 
@@ -150,11 +150,11 @@ preserve which items are already checked by path). Zero-traffic pages sort last.
 - [x] 128. `content/reviews/mongodb-mcp-server.md` — 1c/230i (90d), sources_audited: 2026-08-26
 - [x] 129. `content/reviews/outlook-mcp-servers.md` — 1c/217i (90d), sources_audited: 2026-08-26
 - [x] 130. `content/reviews/oracle-oci-managed-mcp-server.md` — 1c/206i (90d), sources_audited: 2026-08-26
-- [ ] 131. `content/guides/mcp-nonprofit-social-impact.md` — 1c/205i (90d), sources_audited: 2026-07-25
-- [ ] 132. `content/reviews/legal-contract-management-mcp-servers.md` — 1c/193i (90d), sources_audited: 2026-08-15
-- [ ] 133. `content/builders-log/holo-3-1-local-computer-use-agent-12gb-gpu-builder-guide/index.md` — 1c/192i (90d), sources_audited: 2026-07-28
-- [ ] 134. `content/reviews/portkey-ai-gateway-review.md` — 1c/192i (90d), sources_audited: 2026-07-26
-- [ ] 135. `content/reviews/product-management-roadmapping-mcp-servers.md` — 1c/192i (90d), sources_audited: 2026-07-26
+- [x] 131. `content/guides/mcp-nonprofit-social-impact.md` — 1c/205i (90d), sources_audited: 2026-08-26
+- [x] 132. `content/reviews/legal-contract-management-mcp-servers.md` — 1c/193i (90d), sources_audited: 2026-08-26
+- [x] 133. `content/builders-log/holo-3-1-local-computer-use-agent-12gb-gpu-builder-guide/index.md` — 1c/192i (90d), sources_audited: 2026-08-26
+- [x] 134. `content/reviews/portkey-ai-gateway-review.md` — 1c/192i (90d), sources_audited: 2026-08-26
+- [x] 135. `content/reviews/product-management-roadmapping-mcp-servers.md` — 1c/192i (90d), sources_audited: 2026-08-26
 - [ ] 136. `content/reviews/digital-twins-3d-simulation-mcp-servers.md` — 1c/187i (90d), sources_audited: 2026-08-14
 - [ ] 137. `content/guides/mcp-education-lms.md` — 1c/180i (90d), sources_audited: 2026-07-25
 - [ ] 138. `content/reviews/advertising-ad-tech-mcp-servers.md` — 1c/180i (90d), sources_audited: 2026-08-14

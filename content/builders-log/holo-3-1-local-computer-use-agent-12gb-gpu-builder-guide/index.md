@@ -1,16 +1,16 @@
 ---
-title: "Holo3.1: Local Computer Use Agents on 12GB GPUs — 140ms Step Time, Open Weights, Android + Desktop"
+title: "Holo3.1: Local Computer Use Agents on 24GB GPUs — 140ms Step Time (reported), Open Weights, Android + Desktop"
 date: 2026-06-02
-description: "H Company's Holo3.1 is the first open-weights computer use agent family to ship with quantized checkpoints for local inference — 0.8B to 35B-A3B sizes, 74.2% OSWorld, 79.3% AndroidWorld, 140ms per step on 12GB VRAM. This guide covers model selection, quantization options, hardware requirements, and how to deploy on Apple Silicon, Windows, and DGX Spark."
-og_description: "Holo3.1: local computer use agents from 0.8B to 35B-A3B. 74.2% OSWorld, 79.3% AndroidWorld, 140ms on 12GB VRAM. Open weights, Q4 GGUF, FP8, NVFP4. Builder guide for macOS, Windows, and DGX Spark deployment."
+description: "H Company's Holo3.1 is the first open-weights computer use agent family to ship with quantized checkpoints for local inference — 0.8B to 35B-A3B sizes, 80.0% OSWorld, 79.3% AndroidWorld. The 35B-A3B Q4 GGUF checkpoint is ~21GB, so plan for a ~24GB-class GPU rather than 12GB. This guide covers model selection, quantization options, hardware requirements, and how to deploy on Apple Silicon, Windows, and DGX Spark."
+og_description: "Holo3.1: local computer use agents from 0.8B to 35B-A3B. 80.0% OSWorld, 79.3% AndroidWorld. Open weights, Q4 GGUF, FP8, NVFP4. Builder guide for macOS, Windows, and DGX Spark deployment."
 content_type: "Builder's Log"
 categories: ["AI Agents", "Local AI", "Open Source Models", "Computer Use", "Developer Tools"]
 tags: ["holo3", "hcompany", "computer-use", "gui-automation", "local-inference", "open-weights", "gguf", "fp8", "nvfp4", "androidworld", "osworld", "apple-silicon", "builders-log"]
 draft: false
-sources_audited: 2026-07-28
+sources_audited: 2026-08-26
 ---
 
-On June 2, 2026, [H Company released Holo3.1](https://huggingface.co/blog/Hcompany/holo31) — the first production computer use agent family to ship with quantized local inference checkpoints. The headline number: 140ms per step on a 12GB GPU, using the Q4 GGUF variant of the 35B-A3B model.
+On June 2, 2026, [H Company released Holo3.1](https://huggingface.co/blog/Hcompany/holo31) — the first production computer use agent family to ship with quantized local inference checkpoints. [One third-party writeup reports](https://getaibook.com/news/holo31-brings-140ms-local-computer-use-agents-to-12gb-gpus/) 140ms per step for the Q4 GGUF variant of the 35B-A3B model on an RTX 4090; that figure isn't stated in H Company's own release post and hasn't been independently corroborated elsewhere, so treat it as a single-source estimate rather than a vendor-confirmed number. What H Company's release does confirm: the official Q4 GGUF checkpoint for 35B-A3B [is ~21GB](https://huggingface.co/Hcompany/Holo-3.1-35B-A3B-GGUF) — closer to a 24GB-class GPU than the 12GB figure some early coverage used.
 
 For builders, this is the inflection point where computer use agents become a realistic component of a local AI stack — not just a hosted API you call from the cloud, but a model you run on a developer laptop, a Mac workstation, or a private server that never sends screenshots offsite.
 
@@ -37,9 +37,9 @@ Holo3.1 changes the deployment model. The weights are open. The 35B-A3B model ru
 | Holo3.1-0.8B | 0.8B | CPU-capable, embedded | Ultra-lightweight local agents, always-on background tasks |
 | Holo3.1-4B | 4B | 6GB VRAM / 8GB RAM | Laptop agents, battery-constrained deployment |
 | Holo3.1-9B | 9B | 8–12GB VRAM | Developer workstations, balanced performance/cost |
-| Holo3.1-35B-A3B | 35B MoE, 3B active | 12GB VRAM (Q4 GGUF) | State-of-the-art accuracy, production agents |
+| Holo3.1-35B-A3B | 35B MoE, 3B active | ~24GB VRAM (Q4 GGUF) | State-of-the-art accuracy, production agents |
 
-The 35B-A3B is a mixture-of-experts architecture: 35 billion total parameters, 3 billion active per forward pass. MoE means you get 35B-level accuracy at roughly 3B-level inference cost — which is how a 35B model fits in 12GB VRAM with Q4 quantization.
+The 35B-A3B is a mixture-of-experts architecture: 35 billion total parameters, 3 billion active per forward pass. MoE means you get 35B-level accuracy at roughly 3B-level *compute* cost per token — but all 35B parameters still have to be resident in memory, since routing picks different experts per token. [H Company's official Q4 GGUF checkpoint](https://huggingface.co/Hcompany/Holo-3.1-35B-A3B-GGUF) is ~21GB on disk, plus a ~0.9GB vision projector and KV cache — in practice that needs a ~24GB-class GPU (RTX 4090, RTX 3090, A6000), not a 12GB card.
 
 All four variants are available on [Hugging Face under the `Hcompany` organization](https://huggingface.co/collections/Hcompany/holo31).
 
@@ -51,17 +51,17 @@ All four variants are available on [Hugging Face under the `Hcompany` organizati
 
 OSWorld measures the ability to complete real tasks in a Linux desktop environment — navigating file managers, editing documents, configuring settings. It is the primary benchmark for desktop computer use.
 
-[Per H Company's release notes](https://huggingface.co/blog/Hcompany/holo31) and [independent coverage](https://getaibook.com/news/holo31-brings-140ms-local-computer-use-agents-to-12gb-gpus/):
+[Per H Company's own benchmark charts and tables](https://huggingface.co/blog/Hcompany/holo31), published as part of the release post (H Company's own internal OSWorld implementation, which it notes "differ[s] slightly" from the official OSWorld-Verified numbers):
 
 | Model | OSWorld Score |
 |-------|---------------|
-| Holo3.1-35B-A3B (BF16) | 74.2% |
-| Holo3.1-35B-A3B (FP8) | ~72.2% |
-| Holo3.1-35B-A3B (NVFP4) | ~72.2% |
-| Holo3 (previous version) | 68.1% |
+| Holo3.1-35B-A3B (BF16) | 80.0% |
+| Holo3.1-35B-A3B (FP8) | 77.8% |
+| Holo3.1-35B-A3B (NVFP4) | 77.8% |
+| Holo3-35B-A3B (previous version) | 77.8% |
 | GPT-5.4 Computer Use | [75.0% (OSWorld-Verified)](https://www.datacamp.com/blog/gpt-5-4) |
 
-Holo3.1 is close to GPT-5.4 Computer Use's OSWorld-Verified score, a 6-point improvement over Holo3. The quantized variants (FP8, NVFP4) lose approximately 2 points versus full BF16 precision — a small accuracy cost for a large reduction in memory and latency. (Note: GPT-5.4's figure is on OSWorld-Verified, a related but distinct benchmark variant from the plain OSWorld numbers above, so treat the comparison as approximate.)
+Holo3.1's BF16 OSWorld score is now ahead of GPT-5.4 Computer Use's OSWorld-Verified figure, though the two are measured on different benchmark variants (H Company's own footnote flags this), so treat the comparison as directional rather than exact. The generational gain over Holo3-35B-A3B on H's own OSWorld implementation is a modest ~2 points, not the double-digit jump some early third-party coverage implied. The quantized variants (FP8, NVFP4) also lose about 2 points versus full BF16 precision — a small accuracy cost for a large reduction in memory and latency.
 
 ### AndroidWorld (Mobile GUI Automation)
 
@@ -72,7 +72,7 @@ AndroidWorld measures task completion in a real Android environment. Mobile auto
 | Model | AndroidWorld Score |
 |-------|-------------------|
 | Holo3.1-35B-A3B | 79.3% (↑ from 67%) |
-| Holo3.1-4B / 9B | 71–72% (↑ from 58%) |
+| Holo3.1-4B / 9B | 72.4% (↑ from 58%) |
 | Holo3 (previous) | 67% / 58% |
 
 The 12-point jump on AndroidWorld for the large model reflects targeted training work on mobile environments. The smaller models improved 13–14 points — suggesting the mobile training improvements transferred well across model scales.
@@ -100,18 +100,18 @@ Holo3.1's 35B-A3B model ships in four precision formats:
 - Available in the Hcompany HuggingFace collection
 
 ### NVFP4 (W4A16)
-- Same OSWorld score as FP8 (~72%)
+- Same OSWorld score as FP8 (77.8%)
 - [**1.74× the token throughput of BF16** (and 1.41× FP8) on DGX Spark](https://huggingface.co/blog/Hcompany/holo31)
 - Requires NVLink-connected GPU setup (DGX class hardware)
 - Best option for high-throughput server inference where throughput/dollar matters
 
 ### Q4 GGUF
-- Consumer hardware target: **runs on 12GB VRAM**
-- This is the format that achieves the 140ms per step headline
-- ~2 points below BF16 on OSWorld (same as FP8)
+- Consumer hardware target: **the official checkpoint is ~21GB on disk**, so plan for a ~24GB-class GPU, not 12GB
+- A third-party writeup [reports 140ms per step](https://getaibook.com/news/holo31-brings-140ms-local-computer-use-agents-to-12gb-gpus/) on an RTX 4090 — a single-source figure, not confirmed in H Company's own post
+- ~2 points below BF16 on OSWorld (same as FP8, per H Company's own numbers above)
 - Compatible with llama.cpp, Ollama, LM Studio, any GGUF runtime
-- Apple Silicon: runs well on M2/M3/M4 Pro with 18GB+ unified memory
-- Windows: RTX 3080 (10GB) is borderline; RTX 3080 Ti (12GB) or RTX 4070 (12GB) recommended
+- Apple Silicon: needs 24GB+ unified memory (an 18GB Mac cannot hold the ~21GB weight file plus overhead)
+- Windows: 12GB cards (RTX 3080 Ti, RTX 4070) are not sufficient for the 35B-A3B Q4 GGUF checkpoint; RTX 3090/4090 (24GB) recommended
 
 The 4B and 9B models are smaller and do not require the heavy quantization of the 35B — the 9B runs in BF16 on a 24GB GPU (RTX 4090, RTX 3090, A10G) with comfortable headroom.
 
@@ -124,11 +124,11 @@ The 4B and 9B models are smaller and do not require the heavy quantization of th
 | Mac | Recommended Model | Format |
 |-----|-------------------|--------|
 | M4 Pro 24GB | Holo3.1-9B or 35B-A3B | BF16 (9B) / Q4 GGUF (35B) |
-| M3/M4 Pro 18GB | Holo3.1-9B or 35B-A3B | BF16 (9B) / Q4 GGUF (35B) |
+| M3/M4 Pro 18GB | Holo3.1-9B | Q4 GGUF |
 | M3/M4 16GB | Holo3.1-4B or 9B | Q4 GGUF |
 | M1/M2 16GB | Holo3.1-4B | Q4 GGUF |
 
-Apple Silicon's unified memory architecture means you share RAM across CPU and GPU — an 18GB M3 Pro effectively has 18GB of VRAM available to llama.cpp or Ollama. Performance is excellent for GGUF inference.
+Apple Silicon's unified memory architecture means you share RAM across CPU and GPU — a 24GB M4 Pro effectively has 24GB of VRAM available to llama.cpp or Ollama, enough for the ~21GB 35B-A3B Q4 GGUF checkpoint with headroom for context. An 18GB Mac is not large enough for that checkpoint. Performance is excellent for GGUF inference at sizes that fit.
 
 ### Windows / Linux (Discrete GPU)
 
@@ -136,7 +136,7 @@ Apple Silicon's unified memory architecture means you share RAM across CPU and G
 |-----|-------------------|--------|
 | RTX 4090 / A6000 (24GB) | Holo3.1-9B or 35B-A3B | BF16 (9B) / Q4 GGUF (35B) |
 | RTX 4080 / 3090 (24GB) | Holo3.1-9B or 35B-A3B | BF16 (9B) / Q4 GGUF (35B) |
-| RTX 4070 / 3080 Ti (12GB) | Holo3.1-35B-A3B | Q4 GGUF |
+| RTX 4070 / 3080 Ti (12GB) | Holo3.1-9B | Q4 GGUF |
 | RTX 4060 (8GB) | Holo3.1-4B | Q4 GGUF |
 | RTX 3070 / 4060 Ti (8GB) | Holo3.1-4B | Q4 GGUF |
 
@@ -296,19 +296,22 @@ For enterprise environments with sensitive internal applications (ERP systems, H
 
 ## Performance Expectations
 
-The headline 140ms/step figure comes from [H Company's own reporting](https://huggingface.co/blog/Hcompany/holo31) on a 12GB-class GPU (independently corroborated as [an RTX 4090 in one third-party writeup](https://getaibook.com/news/holo31-brings-140ms-local-computer-use-agents-to-12gb-gpus/)); the other rows below are illustrative estimates based on relative compute class, not individually vendor-published numbers — treat them as rough guidance rather than benchmarked figures:
+A note on the 140ms figure some early coverage led with: [one third-party writeup reports](https://getaibook.com/news/holo31-brings-140ms-local-computer-use-agents-to-12gb-gpus/) 140ms per step on an RTX 4090, but that number does not appear in H Company's own release post, is not corroborated by any other outlet, and is roughly 20-50x faster than the agent-request rates H Company itself publishes for the 35B-A3B model (below) — so it should not be treated as a vendor-confirmed figure.
 
-| Scenario | Step Time | Hardware |
-|----------|-----------|----------|
-| 35B-A3B Q4 GGUF | ~140ms/step | 12GB-class GPU (e.g. RTX 4070 Ti / RTX 4090) |
-| 35B-A3B NVFP4 | ~100ms/step (est.) | DGX Spark (1.74× BF16 throughput) |
-| 35B-A3B BF16 | ~280ms/step (est.) | H100-class (baseline) |
-| 9B BF16 | ~80ms/step (est.) | RTX 4090 (24GB) |
-| 4B Q4 GGUF | ~50ms/step (est.) | RTX 3080 (10GB) |
+What H Company [actually published](https://huggingface.co/blog/Hcompany/holo31) is agent request throughput (requests/minute) for the 35B-A3B model, by hardware, quantization, and harness version. Converted to a rough per-step time:
 
-For reference, [H Company reports](https://huggingface.co/blog/Hcompany/holo31) that on DGX Spark, combining their NVIDIA-developed agent harness optimizations with NVFP4 quantization cuts average step time from 6.8s (FP8 baseline) to 3.3s — a compound ~2× end-to-end speedup over FP8, not a Holo3-to-Holo3.1 generational comparison.
+| Hardware | Quantization / Harness | Requests/min | ~Step Time |
+|----------|------------------------|--------------|------------|
+| MacBook M4 Pro | Q4 GGUF (llama.cpp), default harness | 3.6 | ~16.7s |
+| MacBook M4 Pro | Q4 GGUF (llama.cpp), fast harness | 5.5 | ~10.9s |
+| DGX Spark | FP8 (vLLM), default harness | 8.9 | ~6.7s |
+| DGX Spark | NVFP4 (vLLM), default harness | 13.5 | ~4.4s |
+| DGX Spark | FP8 (vLLM), fast harness | 11.9 | ~5.0s |
+| DGX Spark | NVFP4 (vLLM), fast harness | 18.1 | ~3.3s |
 
-At 140ms per model step, the bottleneck in a real agent loop is action execution (waiting for UI to respond, page loads, application state changes) rather than model inference. Holo3.1's step time is fast enough that model latency is no longer the limiting factor in most practical automation tasks.
+H Company separately states that on DGX Spark, combining its NVIDIA-developed agent harness optimizations with NVFP4 quantization cuts average step time from 6.8s (FP8 baseline) to 3.3s — a compound ~2x end-to-end speedup over FP8, consistent with the table above (not a Holo3-to-Holo3.1 generational comparison). llama.cpp figures are also depressed by a known gap: H Company's chart notes llama.cpp does not yet support prefix or image caching for this architecture, which lowers its throughput relative to vLLM.
+
+In practice, expect low-single-digit-second step times on capable local hardware (DGX Spark with NVFP4), not sub-200ms — the bottleneck in a real agent loop is still model inference time on consumer/prosumer hardware, not action execution, contrary to what a 140ms figure would suggest.
 
 ---
 
@@ -316,7 +319,7 @@ At 140ms per model step, the bottleneck in a real agent loop is action execution
 
 ### Use Holo3.1-35B-A3B (Q4 GGUF) when:
 - You need the highest task completion rate on complex workflows
-- Your hardware is a 12GB+ GPU (RTX 4070 or better, M3 Pro 18GB+)
+- Your hardware is a ~24GB+ GPU (RTX 3090/4090 or better, M4 Pro 24GB+) — the Q4 GGUF checkpoint is ~21GB before overhead, so 12GB cards are not sufficient
 - Privacy requirements mandate fully local execution
 - You are building production agents where accuracy directly affects user value
 
@@ -347,14 +350,14 @@ At 140ms per model step, the bottleneck in a real agent loop is action execution
 
 | Model | OSWorld (or OSWorld-Verified*) | AndroidWorld | Local? | License | Min VRAM (local) |
 |-------|---------|--------------|--------|---------|------------------|
-| Holo3.1-35B-A3B | 74.2% | 79.3% | Yes | Open weights | 12GB (Q4 GGUF) |
-| Holo3 (prev.) | 68.1% | 67% | No | Proprietary API | N/A |
+| Holo3.1-35B-A3B | 80.0% | 79.3% | Yes | Open weights | ~24GB (Q4 GGUF) |
+| Holo3-35B-A3B (prev.) | 77.8% | 67.2% | No | Proprietary API | N/A |
 | [GPT-5.4 Computer Use](https://www.datacamp.com/blog/gpt-5-4) | 75.0%* | N/A | No | Closed | N/A |
 | [Claude Sonnet 4.6 (computer use)](https://natural20.com/coverage/claude-sonnet-46-benchmarks-computer-use-vending-bench) | 72.5%* | N/A | No | Closed | N/A |
 
-\* OSWorld-Verified, a related but distinct benchmark variant; treat cross-row comparisons as approximate. Microsoft Copilot Studio's computer-use agents are omitted here because [Copilot Studio doesn't ship its own model for this — its GA computer-use stack routes to Claude Sonnet 4.5/4.6 and OpenAI's CUA model](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/new-and-improved-computer-using-agents-a-new-workflows-experience-and-real-time-voice-experiences/), so it doesn't have an independent OSWorld score to list.
+\* OSWorld-Verified, a related but distinct benchmark variant; H Company's own footnote on its benchmark table notes its OSWorld numbers are measured on its internal implementation and "differ slightly" from the official OSWorld-Verified results, so treat cross-row comparisons as approximate. Microsoft Copilot Studio's computer-use agents are omitted here because [Copilot Studio doesn't ship its own model for this — its computer-using agents route to Anthropic's Claude Sonnet 4.5 and OpenAI's Computer-Using Agent model](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/computer-using-agents-now-deliver-more-secure-ui-automation-at-scale/), so it doesn't have an independent OSWorld score to list.
 
-Holo3.1-35B-A3B is currently the highest-scoring open-weights computer use model. On OSWorld it is within a few points of GPT-5.4 Computer Use and Claude Sonnet 4.6 on OSWorld-Verified, while being the only option in this table that runs locally.
+Holo3.1-35B-A3B is currently the highest-scoring open-weights computer use model, and its own-implementation OSWorld score is now ahead of both GPT-5.4 Computer Use's and Claude Sonnet 4.6's OSWorld-Verified figures — though OSWorld and OSWorld-Verified are measured differently (see note above), so treat that gap as directional rather than exact. It remains the only option in this table that runs locally.
 
 ---
 
@@ -364,10 +367,10 @@ Holo3.1-35B-A3B is currently the highest-scoring open-weights computer use model
 |----------|-------|
 | Model family | Holo3.1 (0.8B, 4B, 9B, 35B-A3B) |
 | Released | June 2, 2026 |
-| OSWorld accuracy | 74.2% (35B-A3B) |
+| OSWorld accuracy | 80.0% (35B-A3B, BF16; H Company's own OSWorld implementation) |
 | AndroidWorld accuracy | 79.3% (35B-A3B) |
-| Min VRAM for 35B | 12GB (Q4 GGUF) |
-| Step latency (35B, Q4 GGUF) | ~140ms |
+| Min VRAM for 35B | ~24GB (Q4 GGUF checkpoint is ~21GB) |
+| Step latency (35B, DGX Spark, NVFP4, fast harness) | ~3.3s (H Company's own figure; a single third-party report of 140ms on RTX 4090 is unconfirmed) |
 | Quantization formats | BF16, FP8, NVFP4, Q4 GGUF |
 | Supported runtimes | Ollama, llama.cpp, LM Studio, DGX Spark |
 | Weights location | `https://huggingface.co/collections/Hcompany/holo31` |
@@ -375,7 +378,7 @@ Holo3.1-35B-A3B is currently the highest-scoring open-weights computer use model
 | License | Open weights |
 | Environments | Desktop (OSWorld), Mobile (AndroidWorld), Web |
 
-The practical unlock here is that computer use automation no longer requires sending screenshots to a cloud API. For any use case where that data sensitivity constraint was blocking adoption — internal tools, regulated industries, offline environments — Holo3.1 running on a local 12GB GPU is now a viable architecture.
+The practical unlock here is that computer use automation no longer requires sending screenshots to a cloud API. For any use case where that data sensitivity constraint was blocking adoption — internal tools, regulated industries, offline environments — Holo3.1 running on a local ~24GB GPU (or a DGX Spark for lower latency) is now a viable architecture.
 
 ---
 

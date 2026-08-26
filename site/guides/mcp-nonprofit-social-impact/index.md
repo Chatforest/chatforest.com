@@ -31,7 +31,7 @@ The CRM is the operational heart of most nonprofits. Salesforce — through its 
 
 ### Salesforce (Including NPSP/Nonprofit Cloud)
 
-**Salesforce CLI MCP** | **salesforcecli/mcp** | 334 stars | **Official (Salesforce)** | TypeScript
+**Salesforce CLI MCP** | **[salesforcecli/mcp](https://github.com/salesforcecli/mcp)** | 461 stars | **Official (Salesforce)** | TypeScript
 
 Salesforce's official MCP server is the most important single integration for nonprofit AI workflows. It works with any Salesforce org, including those running NPSP or Nonprofit Cloud. The server exposes Salesforce's core capabilities as MCP tools:
 
@@ -42,7 +42,7 @@ Salesforce's official MCP server is the most important single integration for no
 
 For nonprofits on NPSP, this means an AI agent can query donation roll-ups across households, check recurring donation status, identify lapsed donors, pull campaign performance metrics, and access all the NPSP-specific objects (Allocations, General Accounting Units, Engagement Plans) through standard SOQL queries.
 
-**Salesforce Hosted MCP** | **forcedotcom/mcp-hosted** | 34 stars | **Official (Salesforce)**
+**Salesforce Hosted MCP** | **[forcedotcom/mcp-hosted](https://github.com/forcedotcom/mcp-hosted)** | 132 stars | **Official (Salesforce)**
 
 A newer official option where Salesforce hosts the MCP server infrastructure, reducing self-hosting requirements.
 
@@ -62,19 +62,19 @@ The community has also produced substantial Salesforce MCP implementations:
 
 Many smaller nonprofits use HubSpot's free CRM tier. Two MCP implementations serve this market:
 
-**HubSpot MCP** | **peakmojo/mcp-hubspot** | 118 stars | Community | Built-in data validation for CRM operations
+**HubSpot MCP** | **[peakmojo/mcp-hubspot](https://github.com/peakmojo/mcp-hubspot)** | 128 stars | Community | Built-in data validation for CRM operations
 
-**HubSpot Official MCP** | **HubSpot/mcp-server** | 3 stars | **Official (HubSpot)** | Very new, still minimal
+**HubSpot Official MCP** | **[HubSpot/mcp-server](https://github.com/HubSpot/mcp-server)** | 5 stars | **Official (HubSpot)** | Very new, still minimal
 
 ### Donorbox Integration
 
-**nonprofit-fundraising-skill** | **abdul376/nonprofit-fundraising-skill** | Community | Claude Code skill + Donorbox MCP server
+**nonprofit-fundraising-skill** | **[abdul376/nonprofit-fundraising-skill](https://github.com/abdul376/nonprofit-fundraising-skill)** | Community | Claude Code skill + Donorbox MCP server
 
 The most purpose-built nonprofit MCP integration found. Connects Donorbox (donation processing), Mailchimp (email marketing), Instagram (social media), and Matomo (analytics) into a unified nonprofit digital fundraising workflow. This is notable as the only MCP implementation that specifically targets the nonprofit fundraising use case with multiple connected platforms.
 
 ### Nonprofit Financial Data
 
-**ProPublica Nonprofit Explorer MCP** | **ccowan190/propublica-nonprofits-mcp** | Community | TypeScript
+**ProPublica Nonprofit Explorer MCP** | **[ccowan190/propublica-nonprofits-mcp](https://github.com/ccowan190/propublica-nonprofits-mcp)** | Community | TypeScript
 
 Wraps the ProPublica Nonprofit Explorer API, providing access to IRS filing data, financial information, and tax-exempt status for U.S. nonprofits. Useful for prospect research (understanding a potential donor organization's finances), competitive analysis, and due diligence.
 
@@ -99,13 +99,11 @@ Grant funding is the lifeblood of many nonprofits, and the discovery and applica
 
 ### Grants.gov Integration
 
-**mcp-server-grants-gov** | **GSA-TTS/mcp-server-grants-gov** | **Semi-official (U.S. General Services Administration)**
+**mcp-server-grants-gov** | **[GSA-TTS/mcp-server-grants-gov](https://github.com/GSA-TTS/mcp-server-grants-gov)** | **Semi-official (U.S. General Services Administration)**
 
-Built by the General Services Administration's Technology Transformation Services division, this provides direct MCP access to the Grants.gov API — the single largest database of U.S. federal grant opportunities. Over $500 billion in grants are posted annually.
+Built by the General Services Administration's Technology Transformation Services division, this provides direct MCP access to the Grants.gov API — the single largest database of U.S. federal grant opportunities, [centralizing more than 1,000 grant programs across federal grant-making agencies awarding more than $500 billion annually](https://www.grants.gov/support/about-grants-gov.html).
 
-A parallel implementation exists from **NIH-ScHARe/mcp-server-grants-gov**, providing another access path to the same data.
-
-**MCP_Grants_Search** | **jhalsey87/MCP_Grants_Search** | Community | Grants.gov Search API access
+**MCP_Grants_Search** | **[jhalsey87/MCP_Grants_Search](https://github.com/jhalsey87/MCP_Grants_Search)** | Community | Grants.gov Search API access
 
 ### Grant Discovery Agents
 
@@ -117,12 +115,12 @@ Several MCP servers focus on automated grant discovery and matching:
 | ai-grant-crawler-a2a-pro (Datakult0r) | 8 | Autonomous 24/7 grant discovery with MCP scrapers, A2A orchestration, Google Sheets automation |
 | ai-grant-crawler-a2a (Datakult0r) | 8 | Autonomous grant discovery system |
 | mcp-grant-hunter (vitor-giacomelli) | 6 | Grant hunting and matching |
-| nonprofit-grant-intelligence-mcp (apifyforge) | 0 | 7 public data sources for philanthropic due diligence |
+| [nonprofit-grant-intelligence-mcp](https://github.com/apifyforge/nonprofit-grant-intelligence-mcp) (apifyforge) | 0 | 7 public data sources for philanthropic due diligence |
 | govrider-mcp-server (carlosahumada89) | 2 | Match products to government tenders, RFPs, and grants |
 
 ### Government Spending Data
 
-**USASpending MCP Server** | **WebDev70/USASpending_MCP_Server** | 1 star | Community
+**USASpending MCP Server** | **[WebDev70/USASpending_MCP_Server](https://github.com/WebDev70/USASpending_MCP_Server)** | 3 stars | Community
 
 Natural language access to USASpending.gov — useful for understanding federal spending patterns, identifying agencies with relevant grant programs, and researching how similar organizations have received funding.
 
@@ -149,11 +147,11 @@ One of the strongest MCP categories for nonprofits is access to public data sour
 
 ### World Bank and Development Economics
 
-**world_bank_mcp_server** | **anshumax/world_bank_mcp_server** | 45 stars | Python | Community
+**world_bank_mcp_server** | **[anshumax/world_bank_mcp_server](https://github.com/anshumax/world_bank_mcp_server)** | 50 stars | Python | Community
 
 Wraps the World Bank Open Data API, providing access to thousands of development indicators across 200+ countries — GDP, poverty rates, education metrics, health indicators, infrastructure data, and more. Essential for international development organizations contextualizing their work.
 
-**openecon-data** | **hanlulong/openecon-data** | 12 stars | Community
+**openecon-data** | **[hanlulong/openecon-data](https://github.com/hanlulong/openecon-data)** | 68 stars | Community
 
 Aggregates 330,000+ economic indicators from FRED, World Bank, IMF, Eurostat, and more into a single MCP interface. Particularly valuable for policy-oriented nonprofits that need cross-source economic analysis.
 
@@ -161,12 +159,12 @@ Aggregates 330,000+ economic indicators from FRED, World Bank, IMF, Eurostat, an
 |--------|-------|-------------|
 | worldbank-mcp (tianyuio) | 7 | World Bank Open Data |
 | data360-mcp (avsolatorio) | 4 | World Bank Data360 platform |
-| fred-mcp-server (stefanoamorelli) | 74 | Federal Reserve Economic Data (800K+ time series) |
+| [fred-mcp-server](https://github.com/stefanoamorelli/fred-mcp-server) (stefanoamorelli) | 117 | Federal Reserve Economic Data (800K+ time series) |
 | fred-mcp-server (kablewy) | 11 | FRED API |
 
 ### Humanitarian Data
 
-**hdx-mcp** | **dividor/hdx-mcp** | 6 stars | Python | Community
+**hdx-mcp** | **[dividor/hdx-mcp](https://github.com/dividor/hdx-mcp)** | 7 stars | Python | Community
 
 Connects to the Humanitarian Data Exchange (HDX) — OCHA's primary platform for sharing humanitarian data. HDX hosts thousands of datasets on crises, displacement, food security, health emergencies, and development across 250+ locations. Critical for humanitarian organizations and disaster response nonprofits.
 
@@ -174,11 +172,11 @@ Connects to the Humanitarian Data Exchange (HDX) — OCHA's primary platform for
 |--------|-------|-------|
 | reliefweb-mcp-server (elijah-tynes) | 0 | ReliefWeb humanitarian reports and situation updates |
 | humanitarian-mcp (escenariosparalatransformacion) | 0 | Humanitarian data access |
-| world-intel-mcp (marc-shade) | 16 | 100+ tools for conflict, military, cyber, climate, and global intelligence |
+| [world-intel-mcp](https://github.com/marc-shade/world-intel-mcp) (marc-shade) | 431 | 100+ tools for conflict, military, cyber, climate, and global intelligence |
 
 ### Public Health Data
 
-**healthcare-mcp-public** | **Cicatriiz/healthcare-mcp-public** | 103 stars | JavaScript | Community
+**healthcare-mcp-public** | **[Cicatriiz/healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public)** | 127 stars | JavaScript | Community
 
 Comprehensive health data access: FDA drug information, PubMed research, medRxiv preprints, clinical trials, ICD-10 codes, DICOM metadata, and medical calculators. Valuable for health-focused nonprofits.
 
@@ -189,11 +187,11 @@ Comprehensive health data access: FDA drug information, PubMed research, medRxiv
 
 ### U.S. Government and Census Data
 
-**us-gov-open-data-mcp** | **lzinga/us-gov-open-data-mcp** | 91 stars | TypeScript | Community
+**us-gov-open-data-mcp** | **[lzinga/us-gov-open-data-mcp](https://github.com/lzinga/us-gov-open-data-mcp)** | 108 stars | TypeScript | Community
 
-The most comprehensive government data MCP server — 40+ U.S. government APIs exposed through 250+ tools. Covers Treasury, FRED, Congress, FDA, CDC, FEC, and more. A single MCP connection provides the data foundation for policy analysis, advocacy research, and program planning.
+The most comprehensive government data MCP server — 40+ U.S. government APIs exposed through 300+ tools. Covers Treasury, FRED, Congress, FDA, CDC, FEC, and more. A single MCP connection provides the data foundation for policy analysis, advocacy research, and program planning.
 
-**civic-ai-tools** | **npstorey/civic-ai-tools** | 18 stars | JavaScript | Community
+**civic-ai-tools** | **[npstorey/civic-ai-tools](https://github.com/npstorey/civic-ai-tools)** | 41 stars | JavaScript | Community
 
 Access to 559 Socrata government data portals with a built-in anti-hallucination framework — particularly important for nonprofits that need verifiable data for grant applications and policy advocacy.
 
@@ -203,7 +201,7 @@ Access to 559 Socrata government data portals with a built-in anti-hallucination
 | mcp-census (shawndrake2) | 1 | U.S. Census Bureau API |
 | data-gov-il-mcp (DavidOsherdiagnostica) | 63 | Israeli government open data |
 | Riksdag-Regering-MCP (isakskogstad) | 25 | Swedish Parliament/Government data |
-| fed-data-mcp-registry (GSA-TTS) | 9 | Curated registry of federal data MCP servers |
+| [fed-data-mcp-registry](https://github.com/GSA-TTS/fed-data-mcp-registry) (GSA-TTS) | 15 | Curated registry of federal data MCP servers |
 
 ### Environmental and Climate Data
 
@@ -223,19 +221,19 @@ Nonprofits depend on multi-channel communication for fundraising, volunteer coor
 
 | Server | Stars | Official | Key Features |
 |--------|-------|----------|--------------|
-| mailchimp-mcp-server (damientilman) | 4 | Community | 53 tools — full campaign, audience, and automation control |
+| [mailchimp-mcp-server](https://github.com/damientilman/mailchimp-mcp-server) (damientilman) | 24 | Community | 227 tools — full campaign, audience, and automation control |
 | mailchimp-mcp (AgentX-ai) | 8 | Community | Read-only Mailchimp access |
 | mailchimp-mcp-server (LokiMCPUniverse) | 2 | Community | Email marketing automation |
-| sendgrid-mcp (Garoth) | 24 | Community | Twilio SendGrid v3 — contact lists, templates, single sends, stats |
+| [sendgrid-mcp](https://github.com/Garoth/sendgrid-mcp) (Garoth) | 29 | Community | Twilio SendGrid v3 — contact lists, templates, single sends, stats |
 | constant-contact-mcp-2026 (BusyBee3333) | 2 | Community | Constant Contact with 100+ tools |
 
-For nonprofits, Mailchimp is particularly significant — it offers a [free tier for up to 250 contacts](https://mailchimp.com/pricing/marketing/) and a [15% nonprofit discount](https://mailchimp.com/help/about-nonprofit-discount/). The 53-tool MCP server from damientilman enables AI agents to manage audience segments, create and schedule campaigns, set up automation workflows, and analyze engagement metrics.
+For nonprofits, Mailchimp is particularly significant — it offers a [free tier for up to 250 contacts](https://mailchimp.com/pricing/marketing/) and a [15% nonprofit discount](https://mailchimp.com/help/about-nonprofit-discount/). The 227-tool MCP server from damientilman enables AI agents to manage audience segments, create and schedule campaigns, set up automation workflows, and analyze engagement metrics.
 
 ### SMS and Messaging
 
-**Twilio MCP** | **twilio-labs/mcp** | 97 stars | **Official (Twilio)** | TypeScript
+**Twilio MCP** | **[twilio-labs/mcp](https://github.com/twilio-labs/mcp)** | 109 stars | **Official (Twilio)** | TypeScript
 
-Twilio's official MCP server exposes the full Twilio API as MCP tools, including an OpenAPI-to-MCP tool generator. For nonprofits, this enables AI-assisted SMS campaigns for fundraising, volunteer alerts, program reminders, and crisis communications. Twilio offers discounted nonprofit pricing through [Twilio.org](https://www.twilio.org/eligibility-requirements).
+Twilio's official MCP server exposes the full Twilio API as MCP tools, including an OpenAPI-to-MCP tool generator. For nonprofits, this enables AI-assisted SMS campaigns for fundraising, volunteer alerts, program reminders, and crisis communications. Twilio offers discounted nonprofit pricing and a $100 starting credit through the [Twilio.org Impact Access Program](https://www.twilio.org/en-us/support-and-resources/impact-access-program).
 
 | Server | Stars | Focus |
 |--------|-------|-------|
@@ -252,9 +250,9 @@ Twilio's official MCP server exposes the full Twilio API as MCP tools, including
 
 ### Team Communication
 
-**Slack MCP** | **korotovsky/slack-mcp-server** | 1,491 stars | Community
+**Slack MCP** | **[korotovsky/slack-mcp-server](https://github.com/korotovsky/slack-mcp-server)** | 1,795 stars | Community
 
-The most popular Slack MCP server — supports DMs, group messages, channels, and no special permission requirements. Many nonprofits use Slack's free tier or [discounted nonprofit plan](https://slack.com/intl/en-us/help/articles/204368833-Slack-for-Nonprofits) for internal coordination. An AI agent connected through this MCP server can assist with volunteer coordination, cross-team updates, and automated reporting.
+The most popular Slack MCP server — supports DMs, group messages, channels, and no special permission requirements. Many nonprofits use Slack's free tier or [discounted nonprofit plan](https://slack.com/help/articles/204368833-Apply-for-the-Slack-for-Nonprofits-discount) for internal coordination. An AI agent connected through this MCP server can assist with volunteer coordination, cross-team updates, and automated reporting.
 
 ### Video and Meetings
 
@@ -269,7 +267,7 @@ Accurate financial management is critical for nonprofits — funders expect tran
 
 ### QuickBooks
 
-**QuickBooks Online MCP** | **intuit/quickbooks-online-mcp-server** | 130 stars | **Official (Intuit)** | TypeScript
+**QuickBooks Online MCP** | **[intuit/quickbooks-online-mcp-server](https://github.com/intuit/quickbooks-online-mcp-server)** | 368 stars | **Official (Intuit)** | TypeScript
 
 QuickBooks is the most common accounting platform for small-to-mid nonprofits. Intuit's official MCP server provides real-time access to accounting data — invoices, expenses, accounts, reports, and more. For grant reporting, an AI agent can pull expenses by category and date range, compare actual spending against budgets, and flag anomalies.
 
@@ -280,7 +278,7 @@ QuickBooks is the most common accounting platform for small-to-mid nonprofits. I
 
 ### Donation Processing
 
-**PayPal MCP** | **paypal/paypal-mcp-server** | 8 stars | **Official (PayPal)** | JavaScript
+**PayPal MCP** | **[paypal/paypal-mcp-server](https://github.com/paypal/paypal-mcp-server)** | 12 stars | **Official (PayPal)** | JavaScript
 
 PayPal's official MCP server — many nonprofits use PayPal for online donations. Enables AI agents to query transaction histories, reconcile donations, and integrate payment data with CRM records.
 
@@ -303,11 +301,11 @@ Nonprofits rely heavily on general productivity tools, many of which have strong
 
 | Server | Stars | Official | Key Features |
 |--------|-------|----------|--------------|
-| Notion MCP (makenotion) | 4,121 | **Official** | Full Notion API — pages, databases, blocks |
-| Google Workspace MCP (taylorwilsdon) | 1,957 | Community | Gmail, Calendar, Docs, Sheets, Slides, Chat, Forms, Tasks, Drive |
-| Google Sheets MCP (xing5) | 774 | Community | Sheets + Drive integration |
-| Airtable MCP (domdomegg) | 431 | Community | Airtable bases — popular for program tracking and volunteer databases |
-| Airtable MCP (rashidazarang) | 75 | Community | Airtable for AI-powered apps |
+| [Notion MCP](https://github.com/makenotion/notion-mcp-server) (makenotion) | 4,605 | **Official** | Full Notion API — pages, databases, blocks |
+| [Google Workspace MCP](https://github.com/taylorwilsdon/google_workspace_mcp) (taylorwilsdon) | 3,068 | Community | Gmail, Calendar, Docs, Sheets, Slides, Chat, Forms, Tasks, Drive |
+| [Google Sheets MCP](https://github.com/xing5/mcp-google-sheets) (xing5) | 987 | Community | Sheets + Drive integration |
+| [Airtable MCP](https://github.com/domdomegg/airtable-mcp-server) (domdomegg) | 455 | Community | Airtable bases — popular for program tracking and volunteer databases |
+| [Airtable MCP](https://github.com/rashidazarang/airtable-mcp) (rashidazarang) | 87 | Community | Airtable for AI-powered apps |
 
 Many nonprofits use Airtable or Google Sheets as lightweight program tracking databases. The MCP servers for these platforms enable AI agents to query and update program data, generate reports, and cross-reference with donor or financial data from other systems.
 
@@ -329,18 +327,18 @@ Many nonprofits use Airtable or Google Sheets as lightweight program tracking da
 
 | Category | MCP Servers | Official | Top Stars | Maturity |
 |----------|------------|----------|-----------|----------|
-| CRM / Salesforce | 10+ | 2 (Salesforce, HubSpot) | 334 | High |
+| CRM / Salesforce | 10+ | 2 (Salesforce, HubSpot) | 461 | High |
 | Grant Discovery | 10+ | 2 (GSA) | 8 | Early |
-| World Bank / Economics | 6+ | 0 | 74 | Medium |
-| Humanitarian Data | 4+ | 0 | 16 | Early |
-| Public Health | 3+ | 0 | 103 | Medium |
-| Government / Census | 8+ | 1 (GSA registry) | 91 | Medium |
-| Email Marketing | 5+ | 0 | 24 | Medium |
-| SMS / Messaging | 4+ | 1 (Twilio) | 97 | High |
+| World Bank / Economics | 6+ | 0 | 117 | Medium |
+| Humanitarian Data | 4+ | 0 | 431 | Early |
+| Public Health | 3+ | 0 | 127 | Medium |
+| Government / Census | 8+ | 1 (GSA registry) | 108 | Medium |
+| Email Marketing | 5+ | 0 | 29 | Medium |
+| SMS / Messaging | 4+ | 1 (Twilio) | 109 | High |
 | Social Media | 3+ | 0 | 4 | Early |
-| Accounting | 6+ | 1 (Intuit) | 130 | High |
-| Donation Processing | 3+ | 2 (PayPal, Stripe) | 8 | Medium |
-| Productivity | 5+ | 1 (Notion) | 4,121 | High |
+| Accounting | 6+ | 1 (Intuit) | 368 | High |
+| Donation Processing | 3+ | 2 (PayPal, Stripe) | 12 | Medium |
+| Productivity | 5+ | 1 (Notion) | 4,605 | High |
 | Nonprofit-Specific | 4 | 0 | 0 | Nascent |
 
 ## Architecture Patterns
@@ -484,29 +482,28 @@ Nonprofit AI integration raises specific security and compliance concerns:
 
 Seven major vendors have published official MCP servers relevant to nonprofit operations:
 
-1. **Salesforce** (salesforcecli/mcp, 334 stars) — the most critical for nonprofits on NPSP/Nonprofit Cloud
-2. **Notion** (makenotion/notion-mcp-server, 4,121 stars) — widely used for nonprofit project management
-3. **Intuit/QuickBooks** (intuit/quickbooks-online-mcp-server, 130 stars) — core accounting
-4. **Twilio** (twilio-labs/mcp, 97 stars) — SMS and messaging
-5. **Salesforce Hosted** (forcedotcom/mcp-hosted, 34 stars) — hosted MCP infrastructure
-6. **PayPal** (paypal/paypal-mcp-server, 8 stars) — donation processing
-7. **HubSpot** (HubSpot/mcp-server, 3 stars) — CRM (very new)
+1. **Salesforce** ([salesforcecli/mcp](https://github.com/salesforcecli/mcp), 461 stars) — the most critical for nonprofits on NPSP/Nonprofit Cloud
+2. **Notion** ([makenotion/notion-mcp-server](https://github.com/makenotion/notion-mcp-server), 4,605 stars) — widely used for nonprofit project management
+3. **Intuit/QuickBooks** ([intuit/quickbooks-online-mcp-server](https://github.com/intuit/quickbooks-online-mcp-server), 368 stars) — core accounting
+4. **Twilio** ([twilio-labs/mcp](https://github.com/twilio-labs/mcp), 109 stars) — SMS and messaging
+5. **Salesforce Hosted** ([forcedotcom/mcp-hosted](https://github.com/forcedotcom/mcp-hosted), 132 stars) — hosted MCP infrastructure
+6. **PayPal** ([paypal/paypal-mcp-server](https://github.com/paypal/paypal-mcp-server), 12 stars) — donation processing
+7. **HubSpot** ([HubSpot/mcp-server](https://github.com/HubSpot/mcp-server), 5 stars) — CRM (very new)
 
 ### Semi-Official Government Servers
 
 The U.S. General Services Administration has invested in MCP infrastructure for government data:
 
-- **GSA-TTS/mcp-server-grants-gov** — Grants.gov API access
-- **GSA-TTS/fed-data-mcp-registry** — curated registry of federal data MCP servers
-- **NIH-ScHARe/mcp-server-grants-gov** — NIH implementation for Grants.gov
+- **[GSA-TTS/mcp-server-grants-gov](https://github.com/GSA-TTS/mcp-server-grants-gov)** — Grants.gov API access
+- **[GSA-TTS/fed-data-mcp-registry](https://github.com/GSA-TTS/fed-data-mcp-registry)** — curated registry of federal data MCP servers
 
 ### The Nonprofit-Specific Gap
 
 Only four MCP servers are built specifically for nonprofit use cases, all with zero GitHub stars:
-1. **propublica-nonprofits-mcp** — ProPublica Nonprofit Explorer API
-2. **nonprofit-grant-intelligence-mcp** (apifyforge) — philanthropic due diligence
-3. **nonprofit-grant-intelligence-mcp** (Ryan-Clinton) — fork/variant
-4. **nonprofit-fundraising-skill** — Donorbox + Mailchimp + Instagram + Matomo
+1. **[propublica-nonprofits-mcp](https://github.com/ccowan190/propublica-nonprofits-mcp)** — ProPublica Nonprofit Explorer API
+2. **[nonprofit-grant-intelligence-mcp](https://github.com/apifyforge/nonprofit-grant-intelligence-mcp)** (apifyforge) — philanthropic due diligence
+3. **[nonprofit-grant-intelligence-mcp](https://github.com/Ryan-Clinton/nonprofit-grant-intelligence-mcp)** (Ryan-Clinton) — fork/variant
+4. **[nonprofit-fundraising-skill](https://github.com/abdul376/nonprofit-fundraising-skill)** — Donorbox + Mailchimp + Instagram + Matomo
 
 This represents a significant ecosystem gap. Nonprofits must assemble their AI tooling from general-purpose MCP servers rather than purpose-built nonprofit solutions.
 
@@ -542,7 +539,7 @@ The following nonprofit-critical capabilities have no MCP server implementations
 
 **Executive Director / Operations:** Start with QuickBooks MCP for financial oversight and Salesforce MCP for organizational data. Add Notion or Google Workspace MCP for operational visibility. The fundraising intelligence pattern (Pattern 1) gives the most immediate return — connecting donor data, financial records, and communication metrics for a holistic organizational view.
 
-**Policy / Advocacy Staff:** Start with the US Government Open Data MCP (91 stars, 250+ tools) for the broadest data access. Add Census MCP for demographic analysis, FRED MCP for economic data, and CDC MCP for health statistics. The civic-ai-tools MCP (559 Socrata portals) provides additional state and local government data for advocacy research.
+**Policy / Advocacy Staff:** Start with the US Government Open Data MCP (108 stars, 300+ tools) for the broadest data access. Add Census MCP for demographic analysis, FRED MCP for economic data, and CDC MCP for health statistics. The civic-ai-tools MCP (559 Socrata portals) provides additional state and local government data for advocacy research.
 
 ## Conclusion
 
@@ -555,5 +552,5 @@ For nonprofits ready to experiment, the practical path is clear: connect what yo
 ## Related Guides
 
 - [Anthropic + Gates Foundation: $200M AI Partnership for Global Health and Education](/guides/anthropic-gates-foundation-ai-global-health/) — How Anthropic is applying Claude to neglected diseases, K-12 education in sub-Saharan Africa, and smallholder agriculture
-- [MCP and Education / E-Learning](/guides/mcp-education-elearning/) — AI agent integrations for educational platforms and learning management systems
+- [MCP and Education / E-Learning](/guides/mcp-education-lms/) — AI agent integrations for educational platforms and learning management systems
 
