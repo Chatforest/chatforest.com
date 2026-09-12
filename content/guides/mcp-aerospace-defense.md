@@ -128,11 +128,11 @@ This is the standout server in the space operations category. [Ansys STK](https:
 
 A dedicated aerospace MCP server from IO Aerospace, a software engineering company focused on space applications. This is one of the few purpose-built aerospace MCP implementations, signaling growing demand for AI integration in space operations.
 
-### SpaceFrontiers MCP
+### Machine Library by Space Frontiers
 
-**[SpaceFrontiers/mcp](https://github.com/SpaceFrontiers/mcp)** | 9 stars | Space Frontiers API
+**[Machine Library MCP](https://github.com/SpaceFrontiers/mcp)** | [Setup and documentation](https://machinelibrary.ai/mcp)
 
-MCP server for the Space Frontiers API, providing access to space industry data. Space Frontiers focuses on making space data more accessible — a mission that aligns naturally with MCP's goal of connecting AI agents to specialized data sources.
+Machine Library, the search and AI product by Space Frontiers, provides citable retrieval across papers, books, patents, Wikipedia, and public discussions. Its research corpus can support aerospace literature and patent research. Connect at `https://mcp.machinelibrary.ai/` using OAuth or a bearer API key.
 
 ### Satellite Tracking MCP
 
